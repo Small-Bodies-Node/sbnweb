@@ -1,0 +1,923 @@
+PDS_VERSION_ID                    = PDS3                                      
+RECORD_TYPE                       = STREAM                                    
+LABEL_REVISION_NOTE               = "2007-12-13  EPOXI:McLaughlin  Initial ver
+  2009-01-21  EPOXI:McLaughlin  Updated.                                      
+  2009-02-24  EPOXI:Deming      Added more information about Earth and stellar
+  obs and edited table of stellar target properties; clarified                
+  some explanations of EPOCh obs.                                             
+  2009-03-25  EPOXI:McLaughlin  Corrected DOYs for Earth Obs #4.              
+  2009-05-28  EPOXI:McLaughlin  Corrected DOYs for HRII Dark Retake Lunar Cal;
+    Corrected CHRISTIANSETETAL2008 to CHRISTIANSENETAL2009; Added additional  
+    references for EPOCh.                                                     
+  2009-06-26  EPOXI:McLaughlin  Added BALLARDETAL2009B.                       
+  2009-09-18  EPOXI:McLaughlin  Lien resolution for 23 Jul 2009 peer review.  
+"                                                                             
+                                                                              
+                                                                              
+OBJECT                            = MISSION                                   
+  MISSION_NAME                    = "EPOXI"                                   
+                                                                              
+  OBJECT                          = MISSION_INFORMATION                       
+    MISSION_START_DATE            = 2007-09-26                                
+    MISSION_STOP_DATE             = 2010-12-16                                
+    MISSION_ALIAS_NAME            = "EPOXI"                                   
+    MISSION_DESC                  = "                                         
+                                                                              
+  This material has been adapted from the EPOXI mission web site and will     
+  be updated as the mission progresses.                                       
+                                                                              
+  Mission Overview                                                            
+  ================                                                            
+    EPOXI, a Mission of Opportunity for the NASA Discovery program, is the    
+    combination of two independently proposed scientific investigations       
+    utilizing the Deep Impact (DI) flyby spacecraft as an extended mission:   
+    EPOCh (Extrasolar Planet Observation and Characterization) and DIXI       
+    (Deep Impact eXtended Investigation).                                     
+                                                                              
+    From 22 January through 31 August 2008, EPOCh took advantage of the       
+    permanent on-orbit defocus of the High Resolution telescope (HRI) by      
+    using the High Resolution Visible CCD (HRIV) to collect over 172,000      
+    usable, photometric-quality, visible light images of eight known          
+    transiting planet systems (hot Jupiters):  HAT-P-4, HAT-P-7, GJ 436,      
+    TrES-2, TrES-3, XO-2, XO-3, and WASP-3.  Time series of continuous        
+    50-second integrations in a subframe mode of 128x128 or 256x256 pixels    
+    with the clear #6 optical filter extending from 350 to 1000 nanometers    
+    were used to observe each system for about three weeks, typically         
+    covering five or more transits as well as secondary eclipses.  An         
+    exception is XO-3 which was observed only briefly before the spacecraft   
+    unexpectedly entered safe mode.  The transiting planet systems were       
+    observed in the integrated light of the planet and star; no spatially     
+    resolved image of the planet was possible.  The out-of-focus HRI          
+    telescope defocuses the images to about 10 pixels or 4 arcseconds at      
+    full-width half-max and introduces visible structure.  Each target        
+    series was typically bracketed by a set of dark and internal stimulator   
+    lamp frames to monitor changes in the HRIV CCD detector for calibration   
+    purposes.                                                                 
+                                                                              
+    On 18-19 March, 28-29 May, and 4-5 June 2008, EPOCh also observed Earth   
+    with the HRIV CCD and the High Resolution Infrared Imaging Spectrometer   
+    (HRII) to characterize it as an analog for extrasolar planets.  The       
+    observations comprised imaging in seven optical narrow-band (100          
+    nanometer) filters and 2- to 5-micron infrared spectroscopy over a full   
+    Earth rotation.  The optical images used a 512x512-pixel subarray of      
+    the HRIV CCD detector at a scale of about 0.4 arcsec/pixel, and each      
+    frame of the HRII spectrometer was 512 (wavelength) by 128 pixels         
+    (spatial, 2 arcsec/pixel).  HRIV CCD images were acquired once every      
+    hour with three filters centered on 350, 750 and 950 nanometers and       
+    once every 15 minutes with the 450-, 550-, 650- and 850-nanometer         
+    filters.  Infrared spectra were obtained twice per hour by scanning the   
+    slit of the HRII spectrometer over the earth, using three scans to        
+    ensure coverage of the entire disk; the slit was aligned perpendicular    
+    to the terminator during the scans.  The spacecraft orbit was             
+    approximately in the plane of the ecliptic which provided an equatorial   
+    view of Earth with about 62 to 77 percent of the disk illuminated. Each   
+    of the three Earth observing periods lasted approximately 24 hours.       
+    During the 29 May observation, the Moon transited Earth as seen from      
+    the spacecraft (0.3 AU from Earth).                                       
+                                                                              
+    DIXI consists of a flyby of comet 103P/Hartley 2 on 4 November 2010 in    
+    order to study a second comet with the same set of instrumentation as     
+    was used by the Deep Impact mission during the encounter with comet       
+    9P/Tempel 1 in July 2005.  Observations of Hartley 2 begin 60 days        
+    before and continue for three weeks after the flyby.                      
+                                                                              
+  Mission Phases                                                              
+  ==============                                                              
+    The EPOXI mission has four main phases:  Cruise 1, EPOCh, Cruise 2,       
+    and DIXI/Hartley 2 Encounter.  Each phase includes several events or      
+    activities.  The timeline for the mission and description of the          
+    phases and events are described below.                                    
+                                                                              
+    Mission Timeline                                                          
+    ----------------                                                          
+      Phases and Events                   Start Date/DOY  Stop Date/DOY       
+      ----------------------------------  --------------  --------------      
+      Cruise 1                            2007-09-26/269  2008-01-21/021      
+        Spacecraft Wakeup                 2007-09-26/269  2007-09-26/269      
+        Instrument Checkout               2007-10-04/277  2007-10-04/277      
+        EPOCh Photometry Test             2007-11-04/308  2007-11-09/313      
+        Instrument Checkout Retest        2007-12-04/338  2007-12-04/338      
+        HRIV Scattered Light Calibration  2007-12-17/351  2007-12-17/351      
+        Lunar Calibration                 2007-12-29/363  2007-12-29/363      
+        Earth Flyby #1                    2007-12-31/365  2007-12-31/365      
+        Standard Cruise Calibration       2008-01-09/009  2008-01-09/009      
+        HRII Dark Retake for Lunar Cal    2008-01-16/016  2008-01-17/017      
+                                                                              
+      EPOCh                               2008-01-22/022  2008-08-31/244      
+        Exoplanet Transit Observations    2008-01-22/022  2008-08-31/244      
+        Earth Observations (#1)           2008-03-18/078  2008-03-19/079      
+                           (#4)           2008-05-28/149  2008-05-29/150      
+                           (#5)           2008-06-04/156  2008-06-05/157      
+        Standard Cruise Calibration       2008-06-23/175  2008-06-25/177      
+                                                                              
+      Cruise 2                            2008-09-01/245  2010-09-03/246      
+        HRII Reciprocity Test             2008-09-18/262  2008-09-18/262      
+        HRII Dark Flush Test              2008-09-26/270  2008-09-26/270      
+        HRII Encounter Darks Rerun        2008-10-02/276  2008-10-02/276      
+        HRII Dark Gap Test                2008-10-08/282  2008-10-08/282      
+        Interplanetary Internet Test      2008-10-15/289  2010-11-15/319      
+        HRIV PSF Calibration              2008-12-17/352  2008-12-17/352      
+        Earth Flyby #2                    2008-12-29/364  2008-12-29/364      
+        HRII Subframe Gain Calibration    2009-01-26/026  2009-01-26/026      
+        EPOCh Earth Polar Obs #1 (North)  2009-03-27/086  2009-03-28/087      
+        Lunar Cal for HRII Flats          2009-06-01/152  2009-06-02/153      
+        Lunar Cal for HRII Antisat Filter 2009-06-09/160  2009-06-09/160      
+        HRII Linearity Calibration        2009-06-18/169  2009-06-18/169      
+        Distant Earth Flyby #1            2009-06-29/180  2009-06-29/180      
+        EPOCh Earth Polar Obs #2 (South)  2009-09-27/270  2009-09-28/271      
+        HRII Radiometric Cal (Beta Hyi)   2009-10-12/285  2009-10-13/286      
+        HRII Dark Subframe Test           2009-10-23/296  2009-10-23/296      
+        EPOCh Mars Obs (planned)          2009-10-23/296  2009-10-24/297      
+        Distant Earth Flyby #2            2009-12-28/362  2009-12-28/362      
+        Standard Cruise Calibrations      2010-05-01/121  2010-09-03/246      
+        Earth Flyby #3                    2010-06-27/178  2010-06-27/178      
+                                                                              
+      DIXI/Hartley 2                      2010-09-04/247  2010-12-16/350      
+        Hartley 2 Approach                2010-09-04/247  2010-11-03/307      
+        Hartley 2 Encounter               2010-11-04/308  2010-11-04/308      
+        Departure Imaging and Playback    2010-11-04/308  2010-11-25/329      
+        Standard Cruise Calibrations      2010-09-04/247  2010-12-16/350      
+                                                                              
+    Cruise 1                                                                  
+    --------                                                                  
+      Start Time : 2007-09-26 (DOY 269)                                       
+      Stop Time  : 2008-01-21 (DOY 021)                                       
+                                                                              
+      Spacecraft Wakeup and Instrument Checkout                               
+      -----------------------------------------                               
+        After 25 months in hibernation, the Deep Impact spacecraft was        
+        woken on 26 September 2007.  The spacecraft functioned as             
+        expected.  On 4 October 2007, the HRII (High Resolution Infrared      
+        Imaging Spectrometer), HRIV (High Resolution Visible CCD), and        
+        MRI (Medium Resolution Visible CCD) instruments were turned on        
+        for the first time in more than two years.  A brief checkout          
+        test was performed and confirmed the mechanical components were       
+        functioning.  The three science instruments exhibited nominal         
+        behavior of background levels although several HRII detector          
+        pixels had a different response when compared to Deep Impact.         
+        After checkout, several Trajectory Correction Maneuvers (TCM)         
+        were performed in November and December 2007 to alter the             
+        trajectory of the spacecraft to put it on course to flyby the         
+        Earth for a gravity-assist to reach comet 103P/Hartley 2 in 2010.     
+                                                                              
+      EPOCh Photometry Test                                                   
+      ---------------------                                                   
+        On 4-9 November 2007, EPOCh photometry tests were performed.          
+        During these tests, the HRIV instrument observed a bright (V=9)       
+        visual binary star (HD 80607) for 12 continuous hours to check        
+        pointing and photometric stability.  The observations were taken      
+        using the 256-by-256 sub-array mode of the HRIV CCD.  The             
+        spacecraft successfully captured the star images and held them on     
+        the sub-array for the full duration of the test.  However the         
+        images were unexpectedly offset by 29 microradian (12.2 arcsec).      
+        This was due to stellar aberration, which was not included for        
+        stellar observations during the Deep Impact mission.  After           
+        correcting for aberration, the spacecraft pointing was within         
+        specifications.                                                       
+                                                                              
+      Instrument Checkout Retest                                              
+      --------------------------                                              
+        Instrument Checkout Retest:  On 4 December 2007 a retest of the       
+        October instrument checkout sequence was performed for the three      
+        science instruments.  The focus of this retest was to determine       
+        if HRII pixels that had an odd response during checkout had           
+        changed or improved.                                                  
+                                                                              
+      HRIV Scattered Light Calibration                                        
+      --------------------------------                                        
+        On 17 December 2007, a calibration for scattered light using          
+        Earth's moon was performed for the HRIV instrument.  Many of these    
+        images were obtained with the moon outside but near the field of      
+        view of the HRIV CCD to allow analysis of the amount of light that    
+        is scattered into the field of view from bright objects just          
+        outside or within the field of view.                                  
+                                                                              
+      Lunar Calibration and Earth Flyby #1                                    
+      ------------------------------------                                    
+        On 29 December 2007 as the spacecraft approached Earth, the HRIV,     
+        HRII, and MRI instruments used the Moon as a target to acquire        
+        data for recalibration purposes.  Due to a minor error in the         
+        lunar calibration sequence, a series of HRII dark frames were not     
+        recorded.  A retest to acquire the missing HRII darks was             
+        scheduled for 16 January 2008.  At 19:29:20.66 UTC on 31 December     
+        2007, the flyby spacecraft achieved its closest approach to Earth     
+        at an altitude of only 15,567.63 km above eastern Asia.               
+                                                                              
+      Standard Cruise Calibration                                             
+      ---------------------------                                             
+        On 9 January 2008, the first of the standard cruise calibrations      
+        for the HRII, HRIV, and MRI instruments was performed.  The           
+        calibration sequence included observations of several standard        
+        stars, both solar analogs and hot stars with few absorption lines     
+        in their spectra for absolute calibration of all instruments, a       
+        stellar cluster for checking geometric distortion in the cameras,     
+        and a planetary nebula for checking the wavelength calibration of     
+        the spectrometer.  This sequence was designed such that it could      
+        be rerun, with few if any changes, after completion of the EPOCh      
+        observations and then again just before and just after the            
+        observing program for comet 103P/Hartley 2.                           
+                                                                              
+      HRII Dark Retake for Lunar Cal                                          
+      ------------------------------                                          
+        Due to a minor error in the lunar calibration sequence that was       
+        executed in December, a series of HRII dark frames was not recorded.  
+        However that sequence was successfully rerun on 16-17 January 2008.   
+                                                                              
+    EPOCh                                                                     
+    -----                                                                     
+      Start Time : 2007-01-22 (DOY 022)                                       
+      Stop Time  : 2008-08-31 (DOY 244)                                       
+                                                                              
+      EPOCh observations of eight known extrasolar planetary systems          
+      transits began on 22 January 2008 with the HAT-P-4 system and ended     
+      nearly six months later with the HAT-P-7 system on 31 August 2008.      
+      Taking advantage of the permanent on-orbit defocus of the HRI           
+      telescope, EPOCh used the HRIV CCD to collect over 172,000 usable,      
+      photometric-quality, visible light images of eight known transiting     
+      planet systems.  Time series of continuous 50-second integrations in a  
+      subframe mode of 128x128 or 256x256 pixels with the clear #6 optical    
+      filter extending from 350 to 1000 nanometers were used to observe each  
+      system for about three weeks, typically covering five or more transits  
+      as well as secondary eclipses.  An exception is XO-3 which was          
+      observed only briefly before the spacecraft unexpectedly entered safe   
+      mode.  In most instances, the 128x128-pixel subarray size was used.     
+      The 256x256-pixel subarray was utilized during some transit and         
+      secondary eclipse periods to ensure that pointing jitter did not cause  
+      the star to fall beyond the edges of the subarray.  Each series was     
+      typically bracketed by a set of dark and internal stimulator lamp       
+      frames to monitor changes in the HRIV CCD detector for calibration      
+      purposes.                                                               
+                                                                              
+      The transiting planet systems were observed in the integrated light of  
+      the planet and star; no spatially resolved image of the planet was      
+      possible.  The out-of-focus HRI telescope defocuses the images to       
+      about 10 pixels or 4 arcseconds at full-width half-max and introduces   
+      visible structure.                                                      
+                                                                              
+      The following extrasolar planetary systems were the targets for EPOCh   
+      transit photometry and are described in Ballard, et al. (2009)          
+      [BALLARDETAL2009]:                                                      
+                                                                              
+        Stellar       #Transits                                               
+        Target  V_mag  Observed Points of Interest                            
+        ------- ----- --------- -------------------------------------------   
+        HAT-P-4 11.22     10    Low density planet, large radius for          
+                                its mass                                      
+        XO-3     9.91      1    Eccentric orbit, second planet suspected      
+        TrES-3  12.40      7    Short period (31 hours), reflected light      
+                                target                                        
+        XO-2    11.18      3    Fainter component in wide visual binary,      
+                                metal rich                                    
+        GJ 436  10.67      8    Eccentric orbit, unseen planet suspected,     
+                                star is M-dwarf                               
+        TrES-2  11.41      7    Kepler target, additional planets possible    
+        WASP-3  10.64      8    Strongly heated, reflected light and          
+                                visible thermal emission possible             
+        HAT-P-7 10.50      8    Kepler target, even more strongly heated      
+                                than WASP-3                                   
+                                                                              
+      On 18-19 March, 28-29 May, and 4-5 June 2008, EPOCh also observed       
+      Earth with the HRIV CCD and the High Resolution Infrared Imaging        
+      Spectrometer (HRII) to characterize it as an analog for extrasolar      
+      planets.  The observations comprised imaging in seven optical           
+      narrow-band (100 nanometer) filters and 2- to 5-micron infrared         
+      spectroscopy over a full Earth rotation.  Because the HRI telescope     
+      is defocused, the spatial resolution as observed is about 4 arcsec in   
+      each case.                                                              
+                                                                              
+      The optical images of Earth used a 512x512-pixel subarray of the HRIV   
+      CCD detector at a scale of about 0.4 arcsec/pixel, and each frame of    
+      the HRII spectrometer was 512 (wavelength) by 128 pixels (spatial,      
+      2-arcsec/pixel scale).  HRIV CCD images were acquired once every hour   
+      with three filters centered on 350, 750 and 950 nanometers and once     
+      every 15 minutes with the 450-, 550-, 650- and 850-nanometer filters.   
+       Infrared spectra were obtained twice per hour by scanning the slit     
+      of the HRII spectrometer over the earth, using three scans to ensure    
+      coverage of the entire disk; the slit was aligned perpendicular to      
+      the terminator during the scans.  The spacecraft orbit was              
+      approximately in the plane of the ecliptic which provided an            
+      equatorial view of Earth with about 62 to 77 percent of the disk        
+      illuminated.  Each of the three Earth observing periods lasted          
+      approximately 24 hours.  During the 29 May observation, the Moon        
+      transited Earth as seen from the spacecraft (0.3 AU from Earth).        
+                                                                              
+      The following table chronologically lists EPOCh observations.  For      
+      most stellar exoplanet transit targets, preview imaging was performed   
+      to determine if the pointing bias needed to be modified for that        
+      target series.  Scheduled Earth observations #2 and #3 were canceled    
+      due to a telecommunications anomaly (see below).                        
+                                                                              
+        Target   Start Date/DOY  Stop Date/DOY   Comments                     
+        -------  --------------  --------------  --------------------------   
+        HAT-P-4  2008-01-22/022  2008-02-12/043                               
+        XO-3     2008-02-12/043  2008-02-17/048  S/C entered safe mode        
+        TrES-3   2008-03-06/066  2008-03-08/068                               
+        XO-2     2008-03-09/069  2008-03-11/071  Preview for pointing bias    
+        TrES-3   2008-03-11/071  2008-03-18/078                               
+        Earth    2008-03-18/078  2008-03-19/079  Obs #1                       
+        XO-2     2008-03-20/080  2008-03-28/088                               
+        GJ 436   2008-05-04/125  2008-05-27/148                               
+        Earth    2008-05-28/149  2008-05-29/150  Obs #4                       
+        Earth    2008-06-04/156  2008-06-05/157  Obs #5                       
+        TrES-2   2008-06-28/180  2008-06-29/181  Preview for pointing bias    
+        HAT-P-4  2008-06-29/181  2008-07-08/190                               
+        TrES-2   2008-07-08/190  2008-07-17/199                               
+        WASP-3   2008-07-17/199  2008-07-19/201  Preview for pointing bias    
+        TrES-2   2008-07-20/202  2008-07-30/212                               
+        WASP-3   2008-07-30/212  2008-08-08/221                               
+        HAT-P-7  2008-08-08/221  2008-08-10/223  Preview for pointing bias    
+        WASP-3   2008-08-10/223  2008-08-16/229                               
+        HAT-P-7  2008-08-16/229  2008-08-31/244                               
+                                                                              
+      After the observations of XO-3 on 17 February were downlinked, the      
+      spacecraft autonomously entered safe mode as it was turning to an       
+      optimal attitude to transmit data to Earth.  EPOXI mission              
+      controllers believed the safe mode was triggered when one of the        
+      reaction wheels, which helps maintain spacecraft attitude,              
+      experienced slightly higher temperatures than what the on-board fault   
+      protection software would allow.  After some engineering data was       
+      slowly brought down to Earth, controllers determined the                
+      spacecraft could be brought out of safe mode without triggering new     
+      problems.  On 29 February the spacecraft successfully exited safe       
+      mode and began downlinking the EPOCh images taken before safe mode      
+      was entered.                                                            
+                                                                              
+      On 6 March EPOCh observations were restarted with TrES-3 as the         
+      target.  EPOCh imaging continued without problems until a               
+      telecommunication anomaly occurred after the March 28th downlink of     
+      5000 photometric HRIV frames of transiting planet system XO-2.  This    
+      was the largest volume of data in a single downlink for EPOXI to        
+      date.  Following this downlink, EPOCh observations were paused to       
+      investigate the cause of an 8-dB (33%) loss of downlink signal and      
+      some slightly elevated temperatures on the spacecraft as it passed      
+      through perihelion.  As the spacecraft cooled over three weeks (a       
+      combination of moving further from the sun and all instruments being    
+      turned off), telemetry strength returned, and the project restarted     
+      EPOCh by first downlinking the images of XO-2 that had been stored on   
+      board the spacecraft since the end of March.  Telecommunications        
+      functioned as expected and observations of stellar exoplanet transit    
+      targets resumed with the remaining scheduled target, GJ 436.  The       
+      fourth and fifth sets of Earth observations were performed in late      
+      May and early June as planned, and a standard cruise calibration for    
+      the three instruments was successfully performed on 23-25 June 2008.    
+                                                                              
+      During the telecom anomaly, observations of these scheduled targets     
+      were missed:  the end of the XO-2 sequence, TrES-2, the second and      
+      third sets of Earth observations, and the beginning of GJ 436.  As a    
+      result of skipping these targets, the EPOCh investigation could no      
+      longer meet some of its objectives.  Therefore NASA approved            
+      contingency observations starting on 27 June 2008 and continuing        
+      through 31 August 2008 to replace the science lost during the safe      
+      mode entry and telecom problems experienced in the spring.  The         
+      targets for the contingent observations were TrES-2, HAT-P-4            
+      (revisit), WASP-3, and HAT-P-7.                                         
+                                                                              
+      While waiting for the EPOCh contingency observations to begin, a        
+      standard cruise calibration was performed on 23-25 June 2008 for the    
+      HRII and HRIV instruments.  The sequence was very similar to that       
+      used for the calibration performed on 9 January 2008, except the MRI    
+      instrument was turned off because of thermal and telecommunication      
+      concerns.  Also a trajectory correction maneuver was performed to       
+      put the flyby spacecraft on course for a rendezvous with Hartley 2      
+      on 4 November 2010.                                                     
+                                                                              
+      Since the second and third sets of EPOCh Earth imaging were canceled    
+      because of the telecommunications anomaly, NASA approved a request      
+      from the team to perform two Earth observations in 2009.                
+                                                                              
+                                                                              
+    Cruise 2                                                                  
+    --------                                                                  
+      Start Time  : 2008-09-01 (DOY 245)                                      
+      Stop Time   : 2010-09-03 (DOY 246)                                      
+                                                                              
+      Various calibration sequences and tests including several Earth         
+      flybys are scheduled for this phase.  As of 18 September 2009,          
+      several of these tests have already been completed.  Also EPOCh         
+      observations of Earth were continued during this phase as a             
+      contingency for the two observing periods that were lost in early       
+      2008 because the telecommunications anomaly.                            
+                                                                              
+      HRII Reciprocity Test                                                   
+      -------------------                                                     
+        On 18 September 2008, an HRII reciprocity test was performed to       
+        determine the background signal level of the READ and RESET frames    
+        of the IR spectrometer as a function of the past history of           
+        integration delay times and the timing gap between sets of frames     
+        using the diagnostic imaging mode (number 6).  The ultimate           
+        objective of this test along with the HRII Dark Flush, HRII Dark      
+        Gap, and HRII Subframe Gain tests performed over the next four        
+        months is to develop a more accurate model of the variation in the    
+        background level of the IR spectrometer.                              
+                                                                              
+      HRII Dark Flush Test                                                    
+      --------------------                                                    
+        On 26 September 2008, an HRII dark frame flush test was performed     
+        to determine the type of IR spectrometer instrument operation         
+        needed to remove all traces of the residual (previous) image.         
+                                                                              
+      HRII Encounter Darks Rerun                                              
+      --------------------------                                              
+        On 02 October 2008, a set of HRII dark frames for several IR          
+        exposure IDs from the Deep Impact Tempel 1 encounter sequence was     
+        acquired by the HRII spectrometer.  The exposures were those          
+        acquired from about 19 minutes before the impact with Tempel 1        
+        through the first few hours of lookback imaging.                      
+                                                                              
+      HRII Dark Gap Test                                                      
+      ------------------                                                      
+        On 10 October 2008, an HRII dark gap test was performed to            
+        characterize the change in the residual image and the dark level      
+        in the IR spectrometer as a function of wait time and number of       
+        readouts after acquiring data in the subframe imaging modes           
+        (numbers 2 and 3).                                                    
+                                                                              
+      First Interplanetary Internet Test                                      
+      ----------------------------------                                      
+        From mid-October to mid-November 2008, the first deep space           
+        communications network, also known as the Interplanetary Internet,    
+        was successfully tested using the Deep Impact flyby spacecraft.       
+        Using software called Delay-Tolerant Networking (DTN) dozens of       
+        images were transmitted to and from the flyby spacecraft located      
+        more than 32 million kilometers from Earth.                           
+                                                                              
+      HRIV PSF Calibration                                                    
+      --------------------                                                    
+        On 17 December 2008, additional data were acquired for improving      
+        point spread functions (PSF) for the HRIV CCD.  Analysis of early     
+        EPOXI calibration data and EPOCh stellar observations indicated       
+        the PSFs had changed since mid-2005 when the functions were last      
+        generated for Deep Impact.  The project plans to rerun this           
+        sequence in 2010 for the Hartley 2 flyby.                             
+                                                                              
+      Earth Flyby #2                                                          
+      --------------                                                          
+        At about 21:40 UTC on 29 December 2008, the Deep Impact flyby         
+        spacecraft achieved its closest approach to Earth at an altitude      
+        of only about 43,450 km, about midway between New Zealand and         
+        Tierra Del Fuego and at a latitude of about 49 degrees south.         
+                                                                              
+      HRII Subframe Gain Calibration                                          
+      ------------------------------                                          
+        On 26 January 2009, an HRII subframe gain calibration was             
+        conducted to observe differences in the IR spectrometer signal        
+        response rates when observing an external radiance source to          
+        differentiate between gain and offset effects when using the          
+        various subframe modes.  The test was performed by scanning the       
+        spectrometer across the moon at multiple speeds with various          
+        subframe modes while the HRI telescope barrel was warm.               
+                                                                              
+      EPOCh Earth Polar Obs #1 (North)                                        
+      --------------------------------                                        
+        On 27-28 March 2009, EPOCh observed Earth at high northern            
+        latitudes with the HRIV CCD and the IR spectrometer to continue       
+        characterizing it as an analog for extrasolar planets.  The           
+        observations comprised narrow band filter images (350-950             
+        nanometers) and 2- to 5-micron infrared spectroscopy, over a full     
+        Earth rotation. Observations were acquired once per hour with the     
+        filters centered on 350, 750 and 950 nanometers, whereas the 450-,    
+        550-, 650-, and 850-nanometer data were taken every 15 minutes.       
+        Infrared spectral scans of the Earth's disk were acquired twice       
+        per hour.                                                             
+                                                                              
+      Lunar Cal for HRII Flats                                                
+      ------------------------                                                
+        On 1-2 June 2009, a series of lunar flats was acquired by the HRII    
+        spectrometer.  These data were the best obtained to date for the      
+        purpose of generating flat fields for the IR spectrometer.            
+                                                                              
+      Lunar Cal for HRII Antisat Filter                                       
+      ---------------------------------                                       
+        On 9 June 2009, the HRII spectrometer imaged the moon to better       
+        characterize the effects of the anti-saturation filter in the         
+        IR spectra.                                                           
+                                                                              
+      HRII Linearity Calibration                                              
+      --------------------------                                              
+        On 18 June 2009, HRII darks were acquired to check the linearity      
+        of the IR spectrometer.  The sequence was identical to the one        
+        used during the standard cruise calibrations for IR linearity.        
+                                                                              
+      Distant Earth Flyby #1                                                  
+      ----------------------                                                  
+        A distant flyby of Earth occurred on 29 June 2009 at a geocentric     
+        distance of about 1,336,000 km.                                       
+                                                                              
+      EPOCh Earth Polar Obs #2 (South)                                        
+      --------------------------------                                        
+        On 27-28 September 2009, EPOCh observes Earth at high southern        
+        latitudes with the HRIV CCD and the IR spectrometer using the same    
+        sequence as Earth Polar Obs #1 in March 2009 to continue              
+        characterizing it as an analog for extrasolar planets.                
+                                                                              
+      HRII Radiometric Cal (Beta Hyi)                                         
+      -------------------------------                                         
+        Around 12-13 October 2009, the HRII spectrometer images the star      
+        Beta Hyi for improve the radiometric calibration for that             
+        instrument.                                                           
+                                                                              
+      HRII Dark Subframe Test                                                 
+      -----------------------                                                 
+        Around 23 October 2009, the HRII spectrometer acquires dark frames    
+        to further characterize the response for the subframe imaging         
+        modes (numbers 2 and 3).                                              
+                                                                              
+      EPOCh Mars Obs                                                          
+      --------------                                                          
+        Around 23-24 October 2009, EPOCh observes Mars for 24 hours with      
+        the HRIV CCD and the IR spectrometer using the same sequence as       
+        the 2008 Earth observations.                                          
+                                                                              
+      Distant Earth Flyby #2                                                  
+      ------------------------------                                          
+        Another distant flyby of Earth occurs 28 December 2009 at a           
+        geocentric distance of 1,324,000 km.                                  
+                                                                              
+      Earth Flyby #3                                                          
+      --------------                                                          
+        The final flyby of Earth for the EPOXI mission occurs on 27 June      
+        2010 at a geocentric distance of about 36,900 km.                     
+                                                                              
+      Standard Cruise Calibrations                                            
+      ----------------------------                                            
+        At least one standard cruise calibration the HRII, HRIV, and MRI      
+        instruments occurs between May and September 2010 in preparation      
+        for the Hartley 2 encounter.                                          
+                                                                              
+                                                                              
+    DIXI/Hartley 2                                                            
+    --------------                                                            
+      Start Time  : 2010-09-04 (DOY 247)                                      
+      Stop Time   : 2010-12-16 (DOY 350)                                      
+                                                                              
+      Comet 103P/Hartley 2, the target of DIXI, is more active than           
+      9P/Tempel 1, and the EPOXI encounter occurs at a smaller                
+      heliocentric distance than Deep Impact, therefore the project           
+      expects a significant improvement to the signal-to-noise ratio of       
+      all measurements.                                                       
+                                                                              
+      Hartley 2 Approach                                                      
+      -------------------                                                     
+        The approach phase begins 04 September 2010, 60 days before the       
+        encounter with comet 103P/Hartley 2.  For the first three weeks of    
+        this phase, the HRIV and MRI instruments observe the comet every      
+        four hours.  MRI will acquire navigation frames at the same           
+        frequency.  At the end of September, a pre-encounter calibration      
+        is performed for all instruments.  Beginning 34 days before the       
+        counter, about 1 October, the HRII spectrometer along with the        
+        HRIV and MRI CCDs sample once every hour.  MRI navigation imaging     
+        occurs at the same frequency but is halted about 2 days before        
+        encounter.  Beginning one day to 1 hour before encounter, the         
+        sampling by the three instruments changes to once every two hours     
+        until one hour before encounter when the cadence changes to once      
+        every 15 minutes until 30 minutes before encounter when continuous    
+        imaging begins.                                                       
+                                                                              
+      Hartley 2 Encounter                                                     
+      ------------------                                                      
+        On 28 October 2010, comet 103P/Hartley 2 goes through perihelion.     
+        Seven days later on 4 November 2010, the Deep Impact flyby            
+        spacecraft passes by the comet at a closet approach distance of       
+        about 800 km and a phase angle of about 80 degrees.   The             
+        spacecraft rotates through closest approach to image both sides       
+        of the nucleus, at a peak rate of 0.88 degrees per second.  Unlike    
+        the encounter with Tempel 1, the three instruments continue           
+        imaging throughout the flyby event because the spacecraft does        
+        not come close enough to the nucleus to need the protection of        
+        its meteoroid shields.                                                
+                                                                              
+        Continuous science imaging of the nucleus by the HRII, HRIV, and      
+        MRI begins 30 minutes before the encounter until one hour later       
+        when sampling slows to once every 15 minutes.                         
+                                                                              
+      Departure Imaging and Playback                                          
+      -------------------------------                                         
+        The HRII, HRIV, and MRI observe Hartley 2 once every hour,            
+        starting the first hour after encounter and ending 21 days later      
+        on 25 November 2010.  A post-encounter calibration for all three      
+        instruments is performed after this period of departure imaging.      
+        Beginning in early December 2010, any data not yet downlinked to      
+        Earth will be transmitted (i.e., played back).                        
+                                                                              
+      Standard Cruise Calibrations                                            
+      ----------------------------                                            
+        Additional cruise calibrations are executed as needed from            
+        early May through late December 2010.                                 
+                                                                              
+                                                                              
+  Recommended Reading                                                         
+  ===================                                                         
+                                                                              
+    Relevant Publications from Deep Impact                                    
+    --------------------------------------                                    
+      Information about the design of the Deep Impact mission, scientific     
+      objectives, and instrumentation that are relevant to EPOXI are found    
+      in the work by A'Hearn, et al. (2005) [AHEARNETAL2005B], Blume          
+      (2005) [BLUME2005], Hampton, et al. (2005) [HAMPTONETAL2005],           
+      Klaasen, et al. (2005), Mastrodemos, et al. (2005)                      
+      [MASTRODEMOSETAL2005], Thomas, et. al. (2005) [THOMASETAL2005], and     
+      Yeomans, et al. (2005) [YEOMANSETAL2005].  The calibration of the       
+      Deep Impact instruments and the resulting data processing pipeline      
+      are explained by Klaasen, et al. (2008) [KLAASENETAL2006] and           
+      Klaasen, et al. (2005) [KLAASENETAL2005].  Image restoration to         
+      correct for the HRI defocus is described by Lindler, et. al (2007)      
+      [LINDLERETAL2007].                                                      
+                                                                              
+      Initial results from the encounter at comet 9P/Tempel 1 in July 2005    
+      are described by A'Hearn, et al. (2005) [AHEARNETAL2005A].  A           
+      summary of the results from Deep Impact are presented by A'Hearn and    
+      Combi, (2007) [AHEARN&COMBI2007], A'Hearn and Combi, (2007)             
+      [AHEARN&COMBI2007B], and A'Hearn and Combi, (2007)                      
+      [AHEARN&COMBI2007D].  Three volumes of Icarus are dedicated to          
+      results from Deep Impact.  Please see Combi and A'Hearn, (2007)         
+      [COMBI&AHEARN2007], Combi and A'Hearn, (2007) [COMBI&AHEARN2007B],      
+      and A'Hearn and Combi, (2007) [AHEARN&COMBI2007C].                      
+                                                                              
+    EPOXI                                                                     
+    -----                                                                     
+      For a brief overview of the EPOXI mission including the EPOCh and       
+      DIXI investigation, see A'Hearn (2008) [AHEARN2008], A'Hearn, et al.,   
+      (2008) [AHEARNETAL2008], Deming, et al., (2007) [DEMINGETAL2007],       
+      Deming, et al., (2008) [DEMINGETAL2008], and Deming, et al., (2008b)    
+      [DEMINGETAL2008B].                                                      
+                                                                              
+      Initial results from the EPOCh investigation are presented by           
+      Ballard, et al., (2008) [BALLARDETAL2008], Ballard, et al., (2008b)     
+      [BALLARDETAL2008B], Ballard, et al., (2009) [BALLARDETAL2009],          
+      Christiansen, et al., (2008) [CHRISTIANSENETAL2008], and                
+      Hewagama, et al. (2008)[HEWAGAMAETAL2008].                              
+                                                                              
+      Detailed results based on the EPOCh observations of transiting          
+      planet systems are presented in publications by Christiansen,           
+      et al., (2009)[CHRISTIANSENETAL2009] and Ballard, et al., (2009b)       
+      [BALLARDETAL2009B].                                                     
+                                                                              
+      Detailed results based on the EPOCh Earth observations are presented    
+      in publications by Cowen, et al., (2009) [COWANETAL2009] and            
+      Livengood, et al., (2009) [LIVENGOODETAL2009].                          
+                                                                              
+      Rieber and Sharrow, (2009) [RIEBER&SHARROW2009] discuss the design      
+      approach for EPOCh exoplanet transit imaging as well as the pointing    
+      stability of the flyby spacecraft.                                      
+                                                                              
+                                                                              
+  Mission Data                                                                
+  ============                                                                
+    The following mission-related data are archived at the PDS:               
+                                                                              
+      o Raw HRII, HRIV, and MRI science and calibration observations          
+        acquired throughout the mission,                                      
+                                                                              
+      o Calibrated EPOCh exoplanet transit observations in units of           
+        radiance (HRIV only),                                                 
+                                                                              
+      o Calibrated EPOCH Earth observations in units of radiance (HRII        
+        and HRIV) and I/F (HRIV),                                             
+                                                                              
+      o Raw and calibrated science observations acquired during the           
+        approach to and encounter with comet Hartley 2 (HRII, HRIV,           
+        and MRI),                                                             
+                                                                              
+      o Raw and calibrated navigation images acquired during the              
+        approach to comet Hartley 2 (HRIV and MRI),                           
+                                                                              
+      o Radio science data from the Hartley 2 encounter,                      
+                                                                              
+      o SPICE data, including 5-Hz telemetry from the Attitude                
+        Determination and Control System (ADCS) as a CK kernel,               
+                                                                              
+      o Higher-level products, including light curves for EPOCh stellar       
+        transit (exoplanet) targets, EPOCh color maps of Earth, and a         
+        shape model and surface temperature maps for Hartley 2, and           
+                                                                              
+      o Select data from the Earth-based observing campaign for the           
+        Hartley 2 encounter."                                                 
+                                                                              
+    MISSION_OBJECTIVES_SUMMARY    = "                                         
+                                                                              
+                                                                              
+  Mission Objectives                                                          
+  ==================                                                          
+                                                                              
+    The scientific objectives of the EPOCh investigation of the EPOXI         
+    mission are:                                                              
+                                                                              
+      o Observe transits by known extrasolar planets (hot Jupiters) to        
+        search for perturbations due to terrestrial planets in low-order      
+        resonances,                                                           
+                                                                              
+      o Search those same systems for secondary occultations of the hot       
+        Jupiter by the star, and                                              
+                                                                              
+      o Characterize the Earth as an analog for extrasolar planets by         
+        observing its rotational light curve and integrating over the         
+        disk at wavelengths sensitive to vegetation (red edge), Rayleigh      
+        scattering, and clouds.                                               
+                                                                              
+    The general scientific objective of the DIXI investigation of the EPOXI   
+    mission is to study a second comet with the same set of instrumentation   
+    as was used at comet Tempel 1 to help determine which cometary features   
+    are primordial and which are the result of subsequent evolutionary        
+    processes.  Specific goals include:                                       
+                                                                              
+      o Search for outbursts and if found produce spectral maps of            
+        these events and correlate the outbursts with surface features,       
+                                                                              
+      o Obtain infrared spectral maps of gasses in the innermost coma         
+        and investigate the distribution of dust and gas in the coma,         
+                                                                              
+      o Search for frozen volatiles on the surface of the comet,              
+                                                                              
+      o Perform broad band imaging to determine the size of the nucleus       
+        and produce a shape model,                                            
+                                                                              
+      o Map the brightness and color variations of the surface and locate     
+        topographical features that disclose the processes by which the       
+        comet was formed, and                                                 
+                                                                              
+      o Map the temperature of the surface to assess the thermal              
+        conductivity of the interior and the migration of subsurface          
+        volatiles."                                                           
+                                                                              
+  END_OBJECT                      = MISSION_INFORMATION                       
+                                                                              
+  OBJECT                          = MISSION_HOST                              
+    INSTRUMENT_HOST_ID            = "DIF"                                     
+                                                                              
+    OBJECT                        = MISSION_TARGET                            
+      TARGET_NAME                 = "103P/HARTLEY 2 (1986 E2)"                
+    END_OBJECT                    = MISSION_TARGET                            
+                                                                              
+    OBJECT                        = MISSION_TARGET                            
+      TARGET_NAME                 = "CALIBRATION"                             
+    END_OBJECT                    = MISSION_TARGET                            
+                                                                              
+    OBJECT                        = MISSION_TARGET                            
+      TARGET_NAME                 = "EARTH"                                   
+    END_OBJECT                    = MISSION_TARGET                            
+                                                                              
+    OBJECT                        = MISSION_TARGET                            
+      TARGET_NAME                 = "GJ 436"                                  
+    END_OBJECT                    = MISSION_TARGET                            
+                                                                              
+    OBJECT                        = MISSION_TARGET                            
+      TARGET_NAME                 = "HAT-P-4"                                 
+    END_OBJECT                    = MISSION_TARGET                            
+                                                                              
+    OBJECT                        = MISSION_TARGET                            
+      TARGET_NAME                 = "HAT-P-7"                                 
+    END_OBJECT                    = MISSION_TARGET                            
+                                                                              
+    OBJECT                        = MISSION_TARGET                            
+      TARGET_NAME                 = "TRES-2"                                  
+    END_OBJECT                    = MISSION_TARGET                            
+                                                                              
+    OBJECT                        = MISSION_TARGET                            
+      TARGET_NAME                 = "TRES-3"                                  
+    END_OBJECT                    = MISSION_TARGET                            
+                                                                              
+    OBJECT                        = MISSION_TARGET                            
+      TARGET_NAME                 = "WASP-3"                                  
+    END_OBJECT                    = MISSION_TARGET                            
+                                                                              
+    OBJECT                        = MISSION_TARGET                            
+      TARGET_NAME                 = "XO-2"                                    
+    END_OBJECT                    = MISSION_TARGET                            
+                                                                              
+    OBJECT                        = MISSION_TARGET                            
+      TARGET_NAME                 = "XO-3"                                    
+    END_OBJECT                    = MISSION_TARGET                            
+                                                                              
+ END_OBJECT                      = MISSION_HOST                               
+                                                                              
+  OBJECT                          = MISSION_REFERENCE_INFORMATION             
+    REFERENCE_KEY_ID              = "AHEARN&COMBI2007"                        
+  END_OBJECT                      = MISSION_REFERENCE_INFORMATION             
+                                                                              
+  OBJECT                          = MISSION_REFERENCE_INFORMATION             
+    REFERENCE_KEY_ID              = "AHEARN&COMBI2007B"                       
+  END_OBJECT                      = MISSION_REFERENCE_INFORMATION             
+                                                                              
+  OBJECT                          = MISSION_REFERENCE_INFORMATION             
+    REFERENCE_KEY_ID              = "AHEARN&COMBI2007C"                       
+  END_OBJECT                      = MISSION_REFERENCE_INFORMATION             
+                                                                              
+  OBJECT                          = MISSION_REFERENCE_INFORMATION             
+    REFERENCE_KEY_ID              = "AHEARN&COMBI2007D"                       
+  END_OBJECT                      = MISSION_REFERENCE_INFORMATION             
+                                                                              
+  OBJECT                          = MISSION_REFERENCE_INFORMATION             
+    REFERENCE_KEY_ID              = "AHEARN2008"                              
+  END_OBJECT                      = MISSION_REFERENCE_INFORMATION             
+                                                                              
+  OBJECT                          = MISSION_REFERENCE_INFORMATION             
+    REFERENCE_KEY_ID              = "AHEARNETAL2005A"                         
+  END_OBJECT                      = MISSION_REFERENCE_INFORMATION             
+                                                                              
+  OBJECT                          = MISSION_REFERENCE_INFORMATION             
+    REFERENCE_KEY_ID              = "AHEARNETAL2005B"                         
+  END_OBJECT                      = MISSION_REFERENCE_INFORMATION             
+                                                                              
+  OBJECT                          = MISSION_REFERENCE_INFORMATION             
+    REFERENCE_KEY_ID              = "AHEARNETAL2008"                          
+  END_OBJECT                      = MISSION_REFERENCE_INFORMATION             
+                                                                              
+  OBJECT                          = MISSION_REFERENCE_INFORMATION             
+    REFERENCE_KEY_ID              = "BALLARDETAL2008"                         
+  END_OBJECT                      = MISSION_REFERENCE_INFORMATION             
+                                                                              
+  OBJECT                          = MISSION_REFERENCE_INFORMATION             
+    REFERENCE_KEY_ID              = "BALLARDETAL2008B"                        
+  END_OBJECT                      = MISSION_REFERENCE_INFORMATION             
+                                                                              
+  OBJECT                          = MISSION_REFERENCE_INFORMATION             
+    REFERENCE_KEY_ID              = "BALLARDETAL2009"                         
+  END_OBJECT                      = MISSION_REFERENCE_INFORMATION             
+                                                                              
+  OBJECT                          = MISSION_REFERENCE_INFORMATION             
+    REFERENCE_KEY_ID              = "BALLARDETAL2009B"                        
+  END_OBJECT                      = MISSION_REFERENCE_INFORMATION             
+                                                                              
+  OBJECT                          = MISSION_REFERENCE_INFORMATION             
+    REFERENCE_KEY_ID              = "BLUME2005"                               
+  END_OBJECT                      = MISSION_REFERENCE_INFORMATION             
+                                                                              
+  OBJECT                          = MISSION_REFERENCE_INFORMATION             
+    REFERENCE_KEY_ID              = "CHRISTIANSENETAL2008"                    
+  END_OBJECT                      = MISSION_REFERENCE_INFORMATION             
+                                                                              
+  OBJECT                          = MISSION_REFERENCE_INFORMATION             
+    REFERENCE_KEY_ID              = "CHRISTIANSENETAL2009"                    
+  END_OBJECT                      = MISSION_REFERENCE_INFORMATION             
+                                                                              
+  OBJECT                          = MISSION_REFERENCE_INFORMATION             
+    REFERENCE_KEY_ID              = "COMBI&AHEARN2007"                        
+  END_OBJECT                      = MISSION_REFERENCE_INFORMATION             
+                                                                              
+  OBJECT                          = MISSION_REFERENCE_INFORMATION             
+    REFERENCE_KEY_ID              = "COMBI&AHEARN2007B"                       
+  END_OBJECT                      = MISSION_REFERENCE_INFORMATION             
+                                                                              
+  OBJECT                          = MISSION_REFERENCE_INFORMATION             
+    REFERENCE_KEY_ID              = "COWANETAL2009"                           
+  END_OBJECT                      = MISSION_REFERENCE_INFORMATION             
+                                                                              
+  OBJECT                          = MISSION_REFERENCE_INFORMATION             
+    REFERENCE_KEY_ID              = "DEMINGETAL2007"                          
+  END_OBJECT                      = MISSION_REFERENCE_INFORMATION             
+                                                                              
+  OBJECT                          = MISSION_REFERENCE_INFORMATION             
+    REFERENCE_KEY_ID              = "DEMINGETAL2008"                          
+  END_OBJECT                      = MISSION_REFERENCE_INFORMATION             
+                                                                              
+  OBJECT                          = MISSION_REFERENCE_INFORMATION             
+    REFERENCE_KEY_ID              = "DEMINGETAL2008B"                         
+  END_OBJECT                      = MISSION_REFERENCE_INFORMATION             
+                                                                              
+  OBJECT                          = MISSION_REFERENCE_INFORMATION             
+    REFERENCE_KEY_ID              = "HAMPTONETAL2005"                         
+  END_OBJECT                      = MISSION_REFERENCE_INFORMATION             
+                                                                              
+  OBJECT                          = MISSION_REFERENCE_INFORMATION             
+    REFERENCE_KEY_ID              = "HEWAGAMAETAL2008"                        
+  END_OBJECT                      = MISSION_REFERENCE_INFORMATION             
+                                                                              
+  OBJECT                          = MISSION_REFERENCE_INFORMATION             
+    REFERENCE_KEY_ID              = "KLAASENETAL2005"                         
+  END_OBJECT                      = MISSION_REFERENCE_INFORMATION             
+                                                                              
+  OBJECT                          = MISSION_REFERENCE_INFORMATION             
+    REFERENCE_KEY_ID              = "KLAASENETAL2006"                         
+  END_OBJECT                      = MISSION_REFERENCE_INFORMATION             
+                                                                              
+  OBJECT                          = MISSION_REFERENCE_INFORMATION             
+    REFERENCE_KEY_ID              = "LINDLERETAL2007"                         
+  END_OBJECT                      = MISSION_REFERENCE_INFORMATION             
+                                                                              
+  OBJECT                          = MISSION_REFERENCE_INFORMATION             
+    REFERENCE_KEY_ID              = "LIVENGOODETAL2008"                       
+  END_OBJECT                      = MISSION_REFERENCE_INFORMATION             
+                                                                              
+  OBJECT                          = MISSION_REFERENCE_INFORMATION             
+    REFERENCE_KEY_ID              = "LIVENGOODETAL2009"                       
+  END_OBJECT                      = MISSION_REFERENCE_INFORMATION             
+                                                                              
+  OBJECT                          = MISSION_REFERENCE_INFORMATION             
+    REFERENCE_KEY_ID              = "MASTRODEMOSETAL2005"                     
+  END_OBJECT                      = MISSION_REFERENCE_INFORMATION             
+                                                                              
+  OBJECT                          = MISSION_REFERENCE_INFORMATION             
+    REFERENCE_KEY_ID              = "RIEBER&SHARROW2009"                      
+  END_OBJECT                      = MISSION_REFERENCE_INFORMATION             
+                                                                              
+  OBJECT                          = MISSION_REFERENCE_INFORMATION             
+    REFERENCE_KEY_ID              = "THOMASETAL2005"                          
+  END_OBJECT                      = MISSION_REFERENCE_INFORMATION             
+                                                                              
+  OBJECT                          = MISSION_REFERENCE_INFORMATION             
+    REFERENCE_KEY_ID              = "YEOMANSETAL2005"                         
+  END_OBJECT                      = MISSION_REFERENCE_INFORMATION             
+                                                                              
+END_OBJECT                        = MISSION                                   
+                                                                              
+END                                                                           

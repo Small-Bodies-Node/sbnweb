@@ -1,0 +1,52 @@
+PDS_VERSION_ID                    = PDS3                                      
+RECORD_TYPE                       = "STREAM"                                  
+LABEL_REVISION_NOTE               = "2008-12-15 EPOXI:McLaughlin Created.     
+  2009-08-06  EPOXI:McLaughlin  Lien resolution for 23 Jul 2009 peer review:  
+    Copied and dated latest properties from Extrasolar Planets Encyclopedia.  
+"                                                                             
+                                                                              
+OBJECT                            = TARGET                                    
+  TARGET_NAME                     = "XO-2"                                    
+                                                                              
+  OBJECT                          = TARGET_INFORMATION                        
+    TARGET_TYPE                   = "STAR"                                    
+    PRIMARY_BODY_NAME             = "N/A"                                     
+    ORBIT_DIRECTION               = "N/A"                                     
+    ROTATION_DIRECTION            = "N/A"                                     
+    TARGET_DESC                   = "                                         
+                                                                              
+    Target Description                                                        
+    ==================                                                        
+      XO-2 is a star with a detected substellar companion, XO-2 b, and        
+      is a target of the Extrasolar Planet Observation and CHaracterization   
+      (EPOCh) phase of the NASA EPOXI mission.  Other designations for this   
+      star are GSC 03413-00005 and 2MASS J07480647+5013328.  The star         
+      has the following astrometric and photometric properties:               
+                                                                              
+        Spectral type        : K0V                                            
+        Apparent V Magnitude : 11.18                                          
+        Distance             : 149 (-/+4) pc                                  
+        Mass                 : 0.98 (-/+0.02) solar masses                    
+        Radius               : 0.964 (-/+0.02) solar radii                    
+        RA                   : 07 48 06.468 (FK5, epoch and equinox 2000)     
+        Dec                  : +50 13 32.96 (FK5, epoch and equinox 2000)     
+                                                                              
+      The substellar companion XO-2 b was discovered in 2007 by the XO        
+      Project (XO).  The known properties of this extrasolar planet are:      
+                                                                              
+        Mass               : 0.57 (-/+0.06) Jupiter masses                    
+        Semi major axis    : 0.0369 (+/-0.002) AU                             
+        Orbital period     : 2.615838 (-/+8e-6) days                          
+        Eccentricity       : 0                                                
+        Radius             : 0.973 (-/+0.03) Jupiter radii                    
+        Inclination        : > 88.58 deg                                      
+                                                                              
+      The astrometric and photometric properties were taken from the          
+      17 March 2009 update for this planetary system in the Extrasolar        
+      Planets Encyclopedia.  The encyclopedia is maintained by the Paris      
+      Observatory and is available online at http://exoplanet.eu.  Please     
+      consult this web site for the most up-to-date properties.               
+    "                                                                         
+  END_OBJECT                      = TARGET_INFORMATION                        
+END_OBJECT                        = TARGET                                    
+END                                                                           

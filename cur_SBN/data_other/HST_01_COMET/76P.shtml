@@ -1,0 +1,211 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<title>PDS: Small Bodies Node</title>
+
+<!--
+########################
+ALL of the head, style links, header and menu code is in the include. Edit that file with extreme care!!
+########################
+ -->
+<!--#include virtual="/css-n-includes/incl_top.inc"-->
+
+<!-- ################################################ MAIN ################################################## -->
+<div id="centeronly">
+
+<a name="mainContent"></a>
+<!-- ************************************************** You may begin editing! ************************************************** -->
+
+<a name="top"></a><h3>Object: 76P/West-Kohoutek-Ikemura 1 (1975 D1) [<a href="../objclass.shtml#JFc">JFc</a>]</h3>
+
+<table width="95%" class="datatab">
+	<colgroup>
+		<col width="11%" />
+		<col width="13%" />
+		<col width="8%" />
+		<col width="8%" />
+		<col width="55%" />
+	</colgroup>
+	<thead><tr>
+		<td>Observation ID</td>
+		<td>Start Time</td>
+		<td>Instrument</td>
+		<td>Proposal ID</td>
+		<td>Proposal Title</td>
+	</tr></thead>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=W1KG0101T" onclick="this.target='_blank'">W1KG0101T</a></td>
+		<td>1993-09-15 12:19:16</td>
+		<td><a href="../HST_instruments.shtml">WFPC  </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=4549&mission=hst" onclick="this.target='_blank'">4549</a></td>
+		<td>ULTRAVIOLET SPECTROPOLARIMETRY OF COMET P/WEST-KOHOUTEK-IKEMURA -- CYCLE 3 MEDIUM</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=Y1KG0201T" onclick="this.target='_blank'">Y1KG0201T</a></td>
+		<td>1993-09-15 14:09:54</td>
+		<td><a href="../HST_instruments.shtml">FOS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=4549&mission=hst" onclick="this.target='_blank'">4549</a></td>
+		<td>ULTRAVIOLET SPECTROPOLARIMETRY OF COMET P/WEST-KOHOUTEK-IKEMURA -- CYCLE 3 MEDIUM</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=Y1KG0202T" onclick="this.target='_blank'">Y1KG0202T</a></td>
+		<td>1993-09-15 15:31:25</td>
+		<td><a href="../HST_instruments.shtml">FOS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=4549&mission=hst" onclick="this.target='_blank'">4549</a></td>
+		<td>ULTRAVIOLET SPECTROPOLARIMETRY OF COMET P/WEST-KOHOUTEK-IKEMURA -- CYCLE 3 MEDIUM</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=Y1KG0203T" onclick="this.target='_blank'">Y1KG0203T</a></td>
+		<td>1993-09-15 17:09:15</td>
+		<td><a href="../HST_instruments.shtml">FOS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=4549&mission=hst" onclick="this.target='_blank'">4549</a></td>
+		<td>ULTRAVIOLET SPECTROPOLARIMETRY OF COMET P/WEST-KOHOUTEK-IKEMURA -- CYCLE 3 MEDIUM</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=Y1KG0301T" onclick="this.target='_blank'">Y1KG0301T</a></td>
+		<td>1993-09-15 18:58:43</td>
+		<td><a href="../HST_instruments.shtml">FOS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=4549&mission=hst" onclick="this.target='_blank'">4549</a></td>
+		<td>ULTRAVIOLET SPECTROPOLARIMETRY OF COMET P/WEST-KOHOUTEK-IKEMURA -- CYCLE 3 MEDIUM</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=Y1KG0302T" onclick="this.target='_blank'">Y1KG0302T</a></td>
+		<td>1993-09-15 20:20:35</td>
+		<td><a href="../HST_instruments.shtml">FOS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=4549&mission=hst" onclick="this.target='_blank'">4549</a></td>
+		<td>ULTRAVIOLET SPECTROPOLARIMETRY OF COMET P/WEST-KOHOUTEK-IKEMURA -- CYCLE 3 MEDIUM</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=Y1KG0303T" onclick="this.target='_blank'">Y1KG0303T</a></td>
+		<td>1993-09-15 20:46:02</td>
+		<td><a href="../HST_instruments.shtml">FOS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=4549&mission=hst" onclick="this.target='_blank'">4549</a></td>
+		<td>ULTRAVIOLET SPECTROPOLARIMETRY OF COMET P/WEST-KOHOUTEK-IKEMURA -- CYCLE 3 MEDIUM</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U65Z8901R" onclick="this.target='_blank'">U65Z8901R</a></td>
+		<td>2001-04-12 17:49:14</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=8699&mission=hst" onclick="this.target='_blank'">8699</a></td>
+		<td>The Origin of Short-Period Comets</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U65Z8902R" onclick="this.target='_blank'">U65Z8902R</a></td>
+		<td>2001-04-12 18:10:14</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=8699&mission=hst" onclick="this.target='_blank'">8699</a></td>
+		<td>The Origin of Short-Period Comets</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U65Z9001R" onclick="this.target='_blank'">U65Z9001R</a></td>
+		<td>2001-04-12 19:26:14</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=8699&mission=hst" onclick="this.target='_blank'">8699</a></td>
+		<td>The Origin of Short-Period Comets</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U65Z9002R" onclick="this.target='_blank'">U65Z9002R</a></td>
+		<td>2001-04-12 19:47:14</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=8699&mission=hst" onclick="this.target='_blank'">8699</a></td>
+		<td>The Origin of Short-Period Comets</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U65Z9101R" onclick="this.target='_blank'">U65Z9101R</a></td>
+		<td>2001-04-12 21:02:14</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=8699&mission=hst" onclick="this.target='_blank'">8699</a></td>
+		<td>The Origin of Short-Period Comets</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U65Z9102R" onclick="this.target='_blank'">U65Z9102R</a></td>
+		<td>2001-04-12 21:23:14</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=8699&mission=hst" onclick="this.target='_blank'">8699</a></td>
+		<td>The Origin of Short-Period Comets</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U65Z9201R" onclick="this.target='_blank'">U65Z9201R</a></td>
+		<td>2001-04-12 22:38:14</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=8699&mission=hst" onclick="this.target='_blank'">8699</a></td>
+		<td>The Origin of Short-Period Comets</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U65Z9202R" onclick="this.target='_blank'">U65Z9202R</a></td>
+		<td>2001-04-12 22:59:14</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=8699&mission=hst" onclick="this.target='_blank'">8699</a></td>
+		<td>The Origin of Short-Period Comets</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U65Z9301R" onclick="this.target='_blank'">U65Z9301R</a></td>
+		<td>2001-04-13 00:15:14</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=8699&mission=hst" onclick="this.target='_blank'">8699</a></td>
+		<td>The Origin of Short-Period Comets</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U65Z9302R" onclick="this.target='_blank'">U65Z9302R</a></td>
+		<td>2001-04-13 00:36:14</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=8699&mission=hst" onclick="this.target='_blank'">8699</a></td>
+		<td>The Origin of Short-Period Comets</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U65Z9401R" onclick="this.target='_blank'">U65Z9401R</a></td>
+		<td>2001-04-13 01:51:14</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=8699&mission=hst" onclick="this.target='_blank'">8699</a></td>
+		<td>The Origin of Short-Period Comets</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U65Z9402R" onclick="this.target='_blank'">U65Z9402R</a></td>
+		<td>2001-04-13 02:12:14</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=8699&mission=hst" onclick="this.target='_blank'">8699</a></td>
+		<td>The Origin of Short-Period Comets</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U65Z9501R" onclick="this.target='_blank'">U65Z9501R</a></td>
+		<td>2001-04-13 03:27:14</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=8699&mission=hst" onclick="this.target='_blank'">8699</a></td>
+		<td>The Origin of Short-Period Comets</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U65Z9502R" onclick="this.target='_blank'">U65Z9502R</a></td>
+		<td>2001-04-13 03:48:14</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=8699&mission=hst" onclick="this.target='_blank'">8699</a></td>
+		<td>The Origin of Short-Period Comets</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U65Z9601R" onclick="this.target='_blank'">U65Z9601R</a></td>
+		<td>2001-04-13 05:04:14</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=8699&mission=hst" onclick="this.target='_blank'">8699</a></td>
+		<td>The Origin of Short-Period Comets</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U65Z9602R" onclick="this.target='_blank'">U65Z9602R</a></td>
+		<td>2001-04-13 05:25:14</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=8699&mission=hst" onclick="this.target='_blank'">8699</a></td>
+		<td>The Origin of Short-Period Comets</td>
+	</tr>
+</table>
+<br /><p>[<a href="#top">Back to Top</a>] [<a href="../HST.shtml#01_COMET">Back to Comets</a>]</p>
+
+<a name="bottom"></a>
+
+<!-- ************************************************** End editing! ************************************************** -->
+<!--#include virtual="/css-n-includes/incl_bottom.inc"-->
+<br />Last updated: <!--#config timefmt="%A %B %d, %Y"--><!--#echo var="LAST_MODIFIED" --></div><!-- close id whotext -->
+</div><!-- close id footer -->
+</div><!-- end id footwrap -->
+</div><!-- close wrapper -->
+</body>
+</html>

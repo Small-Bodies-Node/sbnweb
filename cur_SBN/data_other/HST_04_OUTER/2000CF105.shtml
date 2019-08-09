@@ -1,0 +1,162 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<title>PDS: Small Bodies Node</title>
+
+<!--
+########################
+ALL of the head, style links, header and menu code is in the include. Edit that file with extreme care!!
+########################
+ -->
+<!--#include virtual="/css-n-includes/incl_top.inc"-->
+
+<!-- ################################################ MAIN ################################################## -->
+<div id="centeronly">
+
+<a name="mainContent"></a>
+<!-- ************************************************** You may begin editing! ************************************************** -->
+
+<a name="top"></a><h3>Object: (2000 CF105) [<a href="../objclass.shtml#TNO">TNO</a>]</h3>
+
+<table width="95%" class="datatab">
+	<colgroup>
+		<col width="11%" />
+		<col width="13%" />
+		<col width="8%" />
+		<col width="8%" />
+		<col width="55%" />
+	</colgroup>
+	<thead><tr>
+		<td>Observation ID</td>
+		<td>Start Time</td>
+		<td>Instrument</td>
+		<td>Proposal ID</td>
+		<td>Proposal Title</td>
+	</tr></thead>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U6HTB001M" onclick="this.target='_blank'">U6HTB001M</a></td>
+		<td>2002-01-12 01:21:15</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=9060&mission=hst" onclick="this.target='_blank'">9060</a></td>
+		<td>Photometry of a Statistically Significant Sample of Kuiper Belt Objects</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U6HTB002M" onclick="this.target='_blank'">U6HTB002M</a></td>
+		<td>2002-01-12 01:28:15</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=9060&mission=hst" onclick="this.target='_blank'">9060</a></td>
+		<td>Photometry of a Statistically Significant Sample of Kuiper Belt Objects</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U6HTB003M" onclick="this.target='_blank'">U6HTB003M</a></td>
+		<td>2002-01-12 01:34:15</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=9060&mission=hst" onclick="this.target='_blank'">9060</a></td>
+		<td>Photometry of a Statistically Significant Sample of Kuiper Belt Objects</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U6HTB004M" onclick="this.target='_blank'">U6HTB004M</a></td>
+		<td>2002-01-12 01:41:15</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=9060&mission=hst" onclick="this.target='_blank'">9060</a></td>
+		<td>Photometry of a Statistically Significant Sample of Kuiper Belt Objects</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=N8I640B3Q" onclick="this.target='_blank'">N8I640B3Q</a></td>
+		<td>2003-02-24 03:31:06</td>
+		<td><a href="../HST_instruments.shtml">NICMOS</a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=9386&mission=hst" onclick="this.target='_blank'">9386</a></td>
+		<td>Infrared Photometry of a Statistically Significant Sample of KBOs</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=N8I640B4Q" onclick="this.target='_blank'">N8I640B4Q</a></td>
+		<td>2003-02-24 03:35:43</td>
+		<td><a href="../HST_instruments.shtml">NICMOS</a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=9386&mission=hst" onclick="this.target='_blank'">9386</a></td>
+		<td>Infrared Photometry of a Statistically Significant Sample of KBOs</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=N8I640B5Q" onclick="this.target='_blank'">N8I640B5Q</a></td>
+		<td>2003-02-24 03:45:13</td>
+		<td><a href="../HST_instruments.shtml">NICMOS</a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=9386&mission=hst" onclick="this.target='_blank'">9386</a></td>
+		<td>Infrared Photometry of a Statistically Significant Sample of KBOs</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=N8I640B6Q" onclick="this.target='_blank'">N8I640B6Q</a></td>
+		<td>2003-02-24 03:54:06</td>
+		<td><a href="../HST_instruments.shtml">NICMOS</a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=9386&mission=hst" onclick="this.target='_blank'">9386</a></td>
+		<td>Infrared Photometry of a Statistically Significant Sample of KBOs</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=N8I609LSQ" onclick="this.target='_blank'">N8I609LSQ</a></td>
+		<td>2003-04-22 21:56:04</td>
+		<td><a href="../HST_instruments.shtml">NICMOS</a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=9386&mission=hst" onclick="this.target='_blank'">9386</a></td>
+		<td>Infrared Photometry of a Statistically Significant Sample of KBOs</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=N8I609LTQ" onclick="this.target='_blank'">N8I609LTQ</a></td>
+		<td>2003-04-22 22:00:41</td>
+		<td><a href="../HST_instruments.shtml">NICMOS</a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=9386&mission=hst" onclick="this.target='_blank'">9386</a></td>
+		<td>Infrared Photometry of a Statistically Significant Sample of KBOs</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=N8I609LUQ" onclick="this.target='_blank'">N8I609LUQ</a></td>
+		<td>2003-04-22 22:10:11</td>
+		<td><a href="../HST_instruments.shtml">NICMOS</a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=9386&mission=hst" onclick="this.target='_blank'">9386</a></td>
+		<td>Infrared Photometry of a Statistically Significant Sample of KBOs</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=N8I609LVQ" onclick="this.target='_blank'">N8I609LVQ</a></td>
+		<td>2003-04-22 22:19:04</td>
+		<td><a href="../HST_instruments.shtml">NICMOS</a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=9386&mission=hst" onclick="this.target='_blank'">9386</a></td>
+		<td>Infrared Photometry of a Statistically Significant Sample of KBOs</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J8RL01011" onclick="this.target='_blank'">J8RL01011</a></td>
+		<td>2004-05-04 05:49:49</td>
+		<td><a href="../HST_instruments.shtml">ACS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=9746&mission=hst" onclick="this.target='_blank'">9746</a></td>
+		<td>Binary systems in the Kuiper Belt</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J8RL03011" onclick="this.target='_blank'">J8RL03011</a></td>
+		<td>2004-05-14 04:10:07</td>
+		<td><a href="../HST_instruments.shtml">ACS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=9746&mission=hst" onclick="this.target='_blank'">9746</a></td>
+		<td>Binary systems in the Kuiper Belt</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J8RL02011" onclick="this.target='_blank'">J8RL02011</a></td>
+		<td>2004-05-30 04:02:45</td>
+		<td><a href="../HST_instruments.shtml">ACS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=9746&mission=hst" onclick="this.target='_blank'">9746</a></td>
+		<td>Binary systems in the Kuiper Belt</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J8RL02021" onclick="this.target='_blank'">J8RL02021</a></td>
+		<td>2004-05-30 04:25:33</td>
+		<td><a href="../HST_instruments.shtml">ACS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=9746&mission=hst" onclick="this.target='_blank'">9746</a></td>
+		<td>Binary systems in the Kuiper Belt</td>
+	</tr>
+</table>
+<br /><p>[<a href="#top">Back to Top</a>] [<a href="../HST.shtml#04_OUTER">Back to Outer Asteroids</a>]</p>
+
+<a name="bottom"></a>
+
+<!-- ************************************************** End editing! ************************************************** -->
+<!--#include virtual="/css-n-includes/incl_bottom.inc"-->
+<br />Last updated: <!--#config timefmt="%A %B %d, %Y"--><!--#echo var="LAST_MODIFIED" --></div><!-- close id whotext -->
+</div><!-- close id footer -->
+</div><!-- end id footwrap -->
+</div><!-- close wrapper -->
+</body>
+</html>

@@ -1,0 +1,1520 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<title>PDS: Small Bodies Node</title>
+
+<!--
+########################
+ALL of the head, style links, header and menu code is in the include. Edit that file with extreme care!!
+########################
+ -->
+<!--#include virtual="/css-n-includes/incl_top.inc"-->
+
+<!-- ################################################ MAIN ################################################## -->
+<div id="centeronly">
+
+<a name="mainContent"></a>
+<!-- ************************************************** You may begin editing! ************************************************** -->
+
+<a name="top"></a><h3>Object: 9P/Tempel 1 (1867 G1) [<a href="../objclass.shtml#JFc">JFc</a>]</h3>
+
+<table width="95%" class="datatab">
+	<colgroup>
+		<col width="11%" />
+		<col width="13%" />
+		<col width="8%" />
+		<col width="8%" />
+		<col width="55%" />
+	</colgroup>
+	<thead><tr>
+		<td>Observation ID</td>
+		<td>Start Time</td>
+		<td>Instrument</td>
+		<td>Proposal ID</td>
+		<td>Proposal Title</td>
+	</tr></thead>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U4IQ0101R" onclick="this.target='_blank'">U4IQ0101R</a></td>
+		<td>1997-12-31 10:30:13</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=7916&mission=hst" onclick="this.target='_blank'">7916</a></td>
+		<td>The Nucleus of Comet 9P/Tempel 1</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U4IQ0102R" onclick="this.target='_blank'">U4IQ0102R</a></td>
+		<td>1997-12-31 10:53:13</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=7916&mission=hst" onclick="this.target='_blank'">7916</a></td>
+		<td>The Nucleus of Comet 9P/Tempel 1</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U4IQ0201M" onclick="this.target='_blank'">U4IQ0201M</a></td>
+		<td>1997-12-31 12:07:13</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=7916&mission=hst" onclick="this.target='_blank'">7916</a></td>
+		<td>The Nucleus of Comet 9P/Tempel 1</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U4IQ0202R" onclick="this.target='_blank'">U4IQ0202R</a></td>
+		<td>1997-12-31 12:29:13</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=7916&mission=hst" onclick="this.target='_blank'">7916</a></td>
+		<td>The Nucleus of Comet 9P/Tempel 1</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U4IQ0301R" onclick="this.target='_blank'">U4IQ0301R</a></td>
+		<td>1997-12-31 13:44:13</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=7916&mission=hst" onclick="this.target='_blank'">7916</a></td>
+		<td>The Nucleus of Comet 9P/Tempel 1</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U4IQ0302R" onclick="this.target='_blank'">U4IQ0302R</a></td>
+		<td>1997-12-31 14:06:13</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=7916&mission=hst" onclick="this.target='_blank'">7916</a></td>
+		<td>The Nucleus of Comet 9P/Tempel 1</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U4IQ0401R" onclick="this.target='_blank'">U4IQ0401R</a></td>
+		<td>1997-12-31 15:21:13</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=7916&mission=hst" onclick="this.target='_blank'">7916</a></td>
+		<td>The Nucleus of Comet 9P/Tempel 1</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U4IQ0402R" onclick="this.target='_blank'">U4IQ0402R</a></td>
+		<td>1997-12-31 15:43:13</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=7916&mission=hst" onclick="this.target='_blank'">7916</a></td>
+		<td>The Nucleus of Comet 9P/Tempel 1</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U4IQ0501R" onclick="this.target='_blank'">U4IQ0501R</a></td>
+		<td>1997-12-31 16:58:13</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=7916&mission=hst" onclick="this.target='_blank'">7916</a></td>
+		<td>The Nucleus of Comet 9P/Tempel 1</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U4IQ0502R" onclick="this.target='_blank'">U4IQ0502R</a></td>
+		<td>1997-12-31 17:20:13</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=7916&mission=hst" onclick="this.target='_blank'">7916</a></td>
+		<td>The Nucleus of Comet 9P/Tempel 1</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U4IQ0601R" onclick="this.target='_blank'">U4IQ0601R</a></td>
+		<td>1997-12-31 18:34:13</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=7916&mission=hst" onclick="this.target='_blank'">7916</a></td>
+		<td>The Nucleus of Comet 9P/Tempel 1</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U4IQ0602R" onclick="this.target='_blank'">U4IQ0602R</a></td>
+		<td>1997-12-31 18:56:13</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=7916&mission=hst" onclick="this.target='_blank'">7916</a></td>
+		<td>The Nucleus of Comet 9P/Tempel 1</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U4IQ0701R" onclick="this.target='_blank'">U4IQ0701R</a></td>
+		<td>1997-12-31 20:11:13</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=7916&mission=hst" onclick="this.target='_blank'">7916</a></td>
+		<td>The Nucleus of Comet 9P/Tempel 1</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U4IQ0702R" onclick="this.target='_blank'">U4IQ0702R</a></td>
+		<td>1997-12-31 20:33:13</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=7916&mission=hst" onclick="this.target='_blank'">7916</a></td>
+		<td>The Nucleus of Comet 9P/Tempel 1</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U4IQ0801R" onclick="this.target='_blank'">U4IQ0801R</a></td>
+		<td>1997-12-31 21:48:13</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=7916&mission=hst" onclick="this.target='_blank'">7916</a></td>
+		<td>The Nucleus of Comet 9P/Tempel 1</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U4IQ0802R" onclick="this.target='_blank'">U4IQ0802R</a></td>
+		<td>1997-12-31 22:10:13</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=7916&mission=hst" onclick="this.target='_blank'">7916</a></td>
+		<td>The Nucleus of Comet 9P/Tempel 1</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J8XK01010" onclick="this.target='_blank'">J8XK01010</a></td>
+		<td>2004-05-07 21:42:36</td>
+		<td><a href="../HST_instruments.shtml">ACS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10115&mission=hst" onclick="this.target='_blank'">10115</a></td>
+		<td>Rotation of Comet Tempel 1</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J8XK02010" onclick="this.target='_blank'">J8XK02010</a></td>
+		<td>2004-05-07 23:18:34</td>
+		<td><a href="../HST_instruments.shtml">ACS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10115&mission=hst" onclick="this.target='_blank'">10115</a></td>
+		<td>Rotation of Comet Tempel 1</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J8XK03010" onclick="this.target='_blank'">J8XK03010</a></td>
+		<td>2004-05-08 00:54:32</td>
+		<td><a href="../HST_instruments.shtml">ACS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10115&mission=hst" onclick="this.target='_blank'">10115</a></td>
+		<td>Rotation of Comet Tempel 1</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J8XK04010" onclick="this.target='_blank'">J8XK04010</a></td>
+		<td>2004-05-08 02:30:30</td>
+		<td><a href="../HST_instruments.shtml">ACS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10115&mission=hst" onclick="this.target='_blank'">10115</a></td>
+		<td>Rotation of Comet Tempel 1</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J8XK05010" onclick="this.target='_blank'">J8XK05010</a></td>
+		<td>2004-05-08 04:06:29</td>
+		<td><a href="../HST_instruments.shtml">ACS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10115&mission=hst" onclick="this.target='_blank'">10115</a></td>
+		<td>Rotation of Comet Tempel 1</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J8XK06010" onclick="this.target='_blank'">J8XK06010</a></td>
+		<td>2004-05-08 05:42:27</td>
+		<td><a href="../HST_instruments.shtml">ACS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10115&mission=hst" onclick="this.target='_blank'">10115</a></td>
+		<td>Rotation of Comet Tempel 1</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J8XK07010" onclick="this.target='_blank'">J8XK07010</a></td>
+		<td>2004-05-08 07:18:25</td>
+		<td><a href="../HST_instruments.shtml">ACS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10115&mission=hst" onclick="this.target='_blank'">10115</a></td>
+		<td>Rotation of Comet Tempel 1</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J8XK08010" onclick="this.target='_blank'">J8XK08010</a></td>
+		<td>2004-05-08 08:54:23</td>
+		<td><a href="../HST_instruments.shtml">ACS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10115&mission=hst" onclick="this.target='_blank'">10115</a></td>
+		<td>Rotation of Comet Tempel 1</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J8XK09010" onclick="this.target='_blank'">J8XK09010</a></td>
+		<td>2004-05-08 10:30:22</td>
+		<td><a href="../HST_instruments.shtml">ACS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10115&mission=hst" onclick="this.target='_blank'">10115</a></td>
+		<td>Rotation of Comet Tempel 1</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J8XK10010" onclick="this.target='_blank'">J8XK10010</a></td>
+		<td>2004-05-08 12:06:20</td>
+		<td><a href="../HST_instruments.shtml">ACS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10115&mission=hst" onclick="this.target='_blank'">10115</a></td>
+		<td>Rotation of Comet Tempel 1</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J8XK11010" onclick="this.target='_blank'">J8XK11010</a></td>
+		<td>2004-05-08 13:42:18</td>
+		<td><a href="../HST_instruments.shtml">ACS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10115&mission=hst" onclick="this.target='_blank'">10115</a></td>
+		<td>Rotation of Comet Tempel 1</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J8XK12010" onclick="this.target='_blank'">J8XK12010</a></td>
+		<td>2004-05-08 16:54:15</td>
+		<td><a href="../HST_instruments.shtml">ACS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10115&mission=hst" onclick="this.target='_blank'">10115</a></td>
+		<td>Rotation of Comet Tempel 1</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J8XK13010" onclick="this.target='_blank'">J8XK13010</a></td>
+		<td>2004-05-08 20:06:11</td>
+		<td><a href="../HST_instruments.shtml">ACS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10115&mission=hst" onclick="this.target='_blank'">10115</a></td>
+		<td>Rotation of Comet Tempel 1</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J8XK14010" onclick="this.target='_blank'">J8XK14010</a></td>
+		<td>2004-05-08 23:18:08</td>
+		<td><a href="../HST_instruments.shtml">ACS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10115&mission=hst" onclick="this.target='_blank'">10115</a></td>
+		<td>Rotation of Comet Tempel 1</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J8XK15010" onclick="this.target='_blank'">J8XK15010</a></td>
+		<td>2004-05-09 02:30:04</td>
+		<td><a href="../HST_instruments.shtml">ACS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10115&mission=hst" onclick="this.target='_blank'">10115</a></td>
+		<td>Rotation of Comet Tempel 1</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J8XK16010" onclick="this.target='_blank'">J8XK16010</a></td>
+		<td>2004-05-09 05:42:01</td>
+		<td><a href="../HST_instruments.shtml">ACS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10115&mission=hst" onclick="this.target='_blank'">10115</a></td>
+		<td>Rotation of Comet Tempel 1</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J8XK17010" onclick="this.target='_blank'">J8XK17010</a></td>
+		<td>2004-05-09 08:53:58</td>
+		<td><a href="../HST_instruments.shtml">ACS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10115&mission=hst" onclick="this.target='_blank'">10115</a></td>
+		<td>Rotation of Comet Tempel 1</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J8XK18010" onclick="this.target='_blank'">J8XK18010</a></td>
+		<td>2004-05-09 12:05:54</td>
+		<td><a href="../HST_instruments.shtml">ACS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10115&mission=hst" onclick="this.target='_blank'">10115</a></td>
+		<td>Rotation of Comet Tempel 1</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J8Z301011" onclick="this.target='_blank'">J8Z301011</a></td>
+		<td>2005-06-13 05:36:11</td>
+		<td><a href="../HST_instruments.shtml">ACS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10144&mission=hst" onclick="this.target='_blank'">10144</a></td>
+		<td>The Gas Environment of Comet 9P/Tempel 1 During the Deep Impact Encounter</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J8Z301021" onclick="this.target='_blank'">J8Z301021</a></td>
+		<td>2005-06-13 05:39:11</td>
+		<td><a href="../HST_instruments.shtml">ACS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10144&mission=hst" onclick="this.target='_blank'">10144</a></td>
+		<td>The Gas Environment of Comet 9P/Tempel 1 During the Deep Impact Encounter</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J8Z301031" onclick="this.target='_blank'">J8Z301031</a></td>
+		<td>2005-06-13 05:51:20</td>
+		<td><a href="../HST_instruments.shtml">ACS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10144&mission=hst" onclick="this.target='_blank'">10144</a></td>
+		<td>The Gas Environment of Comet 9P/Tempel 1 During the Deep Impact Encounter</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J8Z301041" onclick="this.target='_blank'">J8Z301041</a></td>
+		<td>2005-06-13 05:54:20</td>
+		<td><a href="../HST_instruments.shtml">ACS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10144&mission=hst" onclick="this.target='_blank'">10144</a></td>
+		<td>The Gas Environment of Comet 9P/Tempel 1 During the Deep Impact Encounter</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J8Z301051" onclick="this.target='_blank'">J8Z301051</a></td>
+		<td>2005-06-13 06:07:28</td>
+		<td><a href="../HST_instruments.shtml">ACS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10144&mission=hst" onclick="this.target='_blank'">10144</a></td>
+		<td>The Gas Environment of Comet 9P/Tempel 1 During the Deep Impact Encounter</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J8Z301061" onclick="this.target='_blank'">J8Z301061</a></td>
+		<td>2005-06-13 06:10:48</td>
+		<td><a href="../HST_instruments.shtml">ACS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10144&mission=hst" onclick="this.target='_blank'">10144</a></td>
+		<td>The Gas Environment of Comet 9P/Tempel 1 During the Deep Impact Encounter</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J8Z302011" onclick="this.target='_blank'">J8Z302011</a></td>
+		<td>2005-06-13 15:11:58</td>
+		<td><a href="../HST_instruments.shtml">ACS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10144&mission=hst" onclick="this.target='_blank'">10144</a></td>
+		<td>The Gas Environment of Comet 9P/Tempel 1 During the Deep Impact Encounter</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J8Z302021" onclick="this.target='_blank'">J8Z302021</a></td>
+		<td>2005-06-13 15:14:58</td>
+		<td><a href="../HST_instruments.shtml">ACS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10144&mission=hst" onclick="this.target='_blank'">10144</a></td>
+		<td>The Gas Environment of Comet 9P/Tempel 1 During the Deep Impact Encounter</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J8Z302031" onclick="this.target='_blank'">J8Z302031</a></td>
+		<td>2005-06-13 15:27:07</td>
+		<td><a href="../HST_instruments.shtml">ACS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10144&mission=hst" onclick="this.target='_blank'">10144</a></td>
+		<td>The Gas Environment of Comet 9P/Tempel 1 During the Deep Impact Encounter</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J8Z302041" onclick="this.target='_blank'">J8Z302041</a></td>
+		<td>2005-06-13 15:30:07</td>
+		<td><a href="../HST_instruments.shtml">ACS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10144&mission=hst" onclick="this.target='_blank'">10144</a></td>
+		<td>The Gas Environment of Comet 9P/Tempel 1 During the Deep Impact Encounter</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J8Z302051" onclick="this.target='_blank'">J8Z302051</a></td>
+		<td>2005-06-13 15:42:27</td>
+		<td><a href="../HST_instruments.shtml">ACS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10144&mission=hst" onclick="this.target='_blank'">10144</a></td>
+		<td>The Gas Environment of Comet 9P/Tempel 1 During the Deep Impact Encounter</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J8Z302061" onclick="this.target='_blank'">J8Z302061</a></td>
+		<td>2005-06-13 15:45:30</td>
+		<td><a href="../HST_instruments.shtml">ACS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10144&mission=hst" onclick="this.target='_blank'">10144</a></td>
+		<td>The Gas Environment of Comet 9P/Tempel 1 During the Deep Impact Encounter</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J8Z302071" onclick="this.target='_blank'">J8Z302071</a></td>
+		<td>2005-06-13 15:48:33</td>
+		<td><a href="../HST_instruments.shtml">ACS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10144&mission=hst" onclick="this.target='_blank'">10144</a></td>
+		<td>The Gas Environment of Comet 9P/Tempel 1 During the Deep Impact Encounter</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J8Z302081" onclick="this.target='_blank'">J8Z302081</a></td>
+		<td>2005-06-13 15:51:36</td>
+		<td><a href="../HST_instruments.shtml">ACS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10144&mission=hst" onclick="this.target='_blank'">10144</a></td>
+		<td>The Gas Environment of Comet 9P/Tempel 1 During the Deep Impact Encounter</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J8Z303011" onclick="this.target='_blank'">J8Z303011</a></td>
+		<td>2005-06-14 07:11:36</td>
+		<td><a href="../HST_instruments.shtml">ACS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10144&mission=hst" onclick="this.target='_blank'">10144</a></td>
+		<td>The Gas Environment of Comet 9P/Tempel 1 During the Deep Impact Encounter</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J8Z303021" onclick="this.target='_blank'">J8Z303021</a></td>
+		<td>2005-06-14 07:14:36</td>
+		<td><a href="../HST_instruments.shtml">ACS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10144&mission=hst" onclick="this.target='_blank'">10144</a></td>
+		<td>The Gas Environment of Comet 9P/Tempel 1 During the Deep Impact Encounter</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J8Z303031" onclick="this.target='_blank'">J8Z303031</a></td>
+		<td>2005-06-14 07:26:45</td>
+		<td><a href="../HST_instruments.shtml">ACS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10144&mission=hst" onclick="this.target='_blank'">10144</a></td>
+		<td>The Gas Environment of Comet 9P/Tempel 1 During the Deep Impact Encounter</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J8Z303041" onclick="this.target='_blank'">J8Z303041</a></td>
+		<td>2005-06-14 07:29:45</td>
+		<td><a href="../HST_instruments.shtml">ACS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10144&mission=hst" onclick="this.target='_blank'">10144</a></td>
+		<td>The Gas Environment of Comet 9P/Tempel 1 During the Deep Impact Encounter</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J8Z303051" onclick="this.target='_blank'">J8Z303051</a></td>
+		<td>2005-06-14 07:42:53</td>
+		<td><a href="../HST_instruments.shtml">ACS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10144&mission=hst" onclick="this.target='_blank'">10144</a></td>
+		<td>The Gas Environment of Comet 9P/Tempel 1 During the Deep Impact Encounter</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J8Z303061" onclick="this.target='_blank'">J8Z303061</a></td>
+		<td>2005-06-14 07:46:13</td>
+		<td><a href="../HST_instruments.shtml">ACS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10144&mission=hst" onclick="this.target='_blank'">10144</a></td>
+		<td>The Gas Environment of Comet 9P/Tempel 1 During the Deep Impact Encounter</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J8Z304011" onclick="this.target='_blank'">J8Z304011</a></td>
+		<td>2005-06-14 14:09:20</td>
+		<td><a href="../HST_instruments.shtml">ACS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10144&mission=hst" onclick="this.target='_blank'">10144</a></td>
+		<td>The Gas Environment of Comet 9P/Tempel 1 During the Deep Impact Encounter</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J8Z304021" onclick="this.target='_blank'">J8Z304021</a></td>
+		<td>2005-06-14 14:12:20</td>
+		<td><a href="../HST_instruments.shtml">ACS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10144&mission=hst" onclick="this.target='_blank'">10144</a></td>
+		<td>The Gas Environment of Comet 9P/Tempel 1 During the Deep Impact Encounter</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J8Z304031" onclick="this.target='_blank'">J8Z304031</a></td>
+		<td>2005-06-14 15:16:44</td>
+		<td><a href="../HST_instruments.shtml">ACS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10144&mission=hst" onclick="this.target='_blank'">10144</a></td>
+		<td>The Gas Environment of Comet 9P/Tempel 1 During the Deep Impact Encounter</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J8Z304041" onclick="this.target='_blank'">J8Z304041</a></td>
+		<td>2005-06-14 15:19:44</td>
+		<td><a href="../HST_instruments.shtml">ACS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10144&mission=hst" onclick="this.target='_blank'">10144</a></td>
+		<td>The Gas Environment of Comet 9P/Tempel 1 During the Deep Impact Encounter</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J8Z304051" onclick="this.target='_blank'">J8Z304051</a></td>
+		<td>2005-06-14 15:32:04</td>
+		<td><a href="../HST_instruments.shtml">ACS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10144&mission=hst" onclick="this.target='_blank'">10144</a></td>
+		<td>The Gas Environment of Comet 9P/Tempel 1 During the Deep Impact Encounter</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J8Z304061" onclick="this.target='_blank'">J8Z304061</a></td>
+		<td>2005-06-14 15:35:07</td>
+		<td><a href="../HST_instruments.shtml">ACS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10144&mission=hst" onclick="this.target='_blank'">10144</a></td>
+		<td>The Gas Environment of Comet 9P/Tempel 1 During the Deep Impact Encounter</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J8Z304071" onclick="this.target='_blank'">J8Z304071</a></td>
+		<td>2005-06-14 15:38:10</td>
+		<td><a href="../HST_instruments.shtml">ACS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10144&mission=hst" onclick="this.target='_blank'">10144</a></td>
+		<td>The Gas Environment of Comet 9P/Tempel 1 During the Deep Impact Encounter</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J8Z304081" onclick="this.target='_blank'">J8Z304081</a></td>
+		<td>2005-06-14 15:41:13</td>
+		<td><a href="../HST_instruments.shtml">ACS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10144&mission=hst" onclick="this.target='_blank'">10144</a></td>
+		<td>The Gas Environment of Comet 9P/Tempel 1 During the Deep Impact Encounter</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J9GR01010" onclick="this.target='_blank'">J9GR01010</a></td>
+		<td>2005-06-30 08:42:20</td>
+		<td><a href="../HST_instruments.shtml">ACS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10095&mission=hst" onclick="this.target='_blank'">10095</a></td>
+		<td>Hubble Heritage Observations of Deep Impact Target Comet Tempel-1</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J9GR01020" onclick="this.target='_blank'">J9GR01020</a></td>
+		<td>2005-06-30 09:04:59</td>
+		<td><a href="../HST_instruments.shtml">ACS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10095&mission=hst" onclick="this.target='_blank'">10095</a></td>
+		<td>Hubble Heritage Observations of Deep Impact Target Comet Tempel-1</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J9A801011" onclick="this.target='_blank'">J9A801011</a></td>
+		<td>2005-07-02 00:32:22</td>
+		<td><a href="../HST_instruments.shtml">ACS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10456&mission=hst" onclick="this.target='_blank'">10456</a></td>
+		<td>The Gas Environment of Comet 9P/Tempel 1 During the Deep Impact Encounter</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J9A801021" onclick="this.target='_blank'">J9A801021</a></td>
+		<td>2005-07-02 00:35:24</td>
+		<td><a href="../HST_instruments.shtml">ACS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10456&mission=hst" onclick="this.target='_blank'">10456</a></td>
+		<td>The Gas Environment of Comet 9P/Tempel 1 During the Deep Impact Encounter</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J9A801031" onclick="this.target='_blank'">J9A801031</a></td>
+		<td>2005-07-02 00:43:16</td>
+		<td><a href="../HST_instruments.shtml">ACS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10456&mission=hst" onclick="this.target='_blank'">10456</a></td>
+		<td>The Gas Environment of Comet 9P/Tempel 1 During the Deep Impact Encounter</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J9A801041" onclick="this.target='_blank'">J9A801041</a></td>
+		<td>2005-07-02 00:56:26</td>
+		<td><a href="../HST_instruments.shtml">ACS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10456&mission=hst" onclick="this.target='_blank'">10456</a></td>
+		<td>The Gas Environment of Comet 9P/Tempel 1 During the Deep Impact Encounter</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J9A801051" onclick="this.target='_blank'">J9A801051</a></td>
+		<td>2005-07-02 00:59:28</td>
+		<td><a href="../HST_instruments.shtml">ACS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10456&mission=hst" onclick="this.target='_blank'">10456</a></td>
+		<td>The Gas Environment of Comet 9P/Tempel 1 During the Deep Impact Encounter</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J9A801061" onclick="this.target='_blank'">J9A801061</a></td>
+		<td>2005-07-02 01:07:20</td>
+		<td><a href="../HST_instruments.shtml">ACS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10456&mission=hst" onclick="this.target='_blank'">10456</a></td>
+		<td>The Gas Environment of Comet 9P/Tempel 1 During the Deep Impact Encounter</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J9A802EAQ" onclick="this.target='_blank'">J9A802EAQ</a></td>
+		<td>2005-07-02 02:07:50</td>
+		<td><a href="../HST_instruments.shtml">ACS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10456&mission=hst" onclick="this.target='_blank'">10456</a></td>
+		<td>The Gas Environment of Comet 9P/Tempel 1 During the Deep Impact Encounter</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J9A802011" onclick="this.target='_blank'">J9A802011</a></td>
+		<td>2005-07-02 02:18:16</td>
+		<td><a href="../HST_instruments.shtml">ACS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10456&mission=hst" onclick="this.target='_blank'">10456</a></td>
+		<td>The Gas Environment of Comet 9P/Tempel 1 During the Deep Impact Encounter</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J9A803011" onclick="this.target='_blank'">J9A803011</a></td>
+		<td>2005-07-02 22:55:32</td>
+		<td><a href="../HST_instruments.shtml">ACS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10456&mission=hst" onclick="this.target='_blank'">10456</a></td>
+		<td>The Gas Environment of Comet 9P/Tempel 1 During the Deep Impact Encounter</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J9A803021" onclick="this.target='_blank'">J9A803021</a></td>
+		<td>2005-07-02 22:58:34</td>
+		<td><a href="../HST_instruments.shtml">ACS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10456&mission=hst" onclick="this.target='_blank'">10456</a></td>
+		<td>The Gas Environment of Comet 9P/Tempel 1 During the Deep Impact Encounter</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J9A803031" onclick="this.target='_blank'">J9A803031</a></td>
+		<td>2005-07-02 23:06:26</td>
+		<td><a href="../HST_instruments.shtml">ACS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10456&mission=hst" onclick="this.target='_blank'">10456</a></td>
+		<td>The Gas Environment of Comet 9P/Tempel 1 During the Deep Impact Encounter</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J9A803041" onclick="this.target='_blank'">J9A803041</a></td>
+		<td>2005-07-02 23:19:36</td>
+		<td><a href="../HST_instruments.shtml">ACS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10456&mission=hst" onclick="this.target='_blank'">10456</a></td>
+		<td>The Gas Environment of Comet 9P/Tempel 1 During the Deep Impact Encounter</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J9A803051" onclick="this.target='_blank'">J9A803051</a></td>
+		<td>2005-07-02 23:22:38</td>
+		<td><a href="../HST_instruments.shtml">ACS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10456&mission=hst" onclick="this.target='_blank'">10456</a></td>
+		<td>The Gas Environment of Comet 9P/Tempel 1 During the Deep Impact Encounter</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J9A803061" onclick="this.target='_blank'">J9A803061</a></td>
+		<td>2005-07-02 23:30:30</td>
+		<td><a href="../HST_instruments.shtml">ACS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10456&mission=hst" onclick="this.target='_blank'">10456</a></td>
+		<td>The Gas Environment of Comet 9P/Tempel 1 During the Deep Impact Encounter</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J9A804IGQ" onclick="this.target='_blank'">J9A804IGQ</a></td>
+		<td>2005-07-03 00:30:59</td>
+		<td><a href="../HST_instruments.shtml">ACS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10456&mission=hst" onclick="this.target='_blank'">10456</a></td>
+		<td>The Gas Environment of Comet 9P/Tempel 1 During the Deep Impact Encounter</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J9A804011" onclick="this.target='_blank'">J9A804011</a></td>
+		<td>2005-07-03 00:41:25</td>
+		<td><a href="../HST_instruments.shtml">ACS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10456&mission=hst" onclick="this.target='_blank'">10456</a></td>
+		<td>The Gas Environment of Comet 9P/Tempel 1 During the Deep Impact Encounter</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J9A805011" onclick="this.target='_blank'">J9A805011</a></td>
+		<td>2005-07-04 05:19:10</td>
+		<td><a href="../HST_instruments.shtml">ACS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10456&mission=hst" onclick="this.target='_blank'">10456</a></td>
+		<td>The Gas Environment of Comet 9P/Tempel 1 During the Deep Impact Encounter</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J9A805021" onclick="this.target='_blank'">J9A805021</a></td>
+		<td>2005-07-04 05:21:40</td>
+		<td><a href="../HST_instruments.shtml">ACS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10456&mission=hst" onclick="this.target='_blank'">10456</a></td>
+		<td>The Gas Environment of Comet 9P/Tempel 1 During the Deep Impact Encounter</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J9A805031" onclick="this.target='_blank'">J9A805031</a></td>
+		<td>2005-07-04 05:24:10</td>
+		<td><a href="../HST_instruments.shtml">ACS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10456&mission=hst" onclick="this.target='_blank'">10456</a></td>
+		<td>The Gas Environment of Comet 9P/Tempel 1 During the Deep Impact Encounter</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J9A805041" onclick="this.target='_blank'">J9A805041</a></td>
+		<td>2005-07-04 05:26:40</td>
+		<td><a href="../HST_instruments.shtml">ACS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10456&mission=hst" onclick="this.target='_blank'">10456</a></td>
+		<td>The Gas Environment of Comet 9P/Tempel 1 During the Deep Impact Encounter</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J9A805051" onclick="this.target='_blank'">J9A805051</a></td>
+		<td>2005-07-04 05:29:10</td>
+		<td><a href="../HST_instruments.shtml">ACS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10456&mission=hst" onclick="this.target='_blank'">10456</a></td>
+		<td>The Gas Environment of Comet 9P/Tempel 1 During the Deep Impact Encounter</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J9A805061" onclick="this.target='_blank'">J9A805061</a></td>
+		<td>2005-07-04 05:31:40</td>
+		<td><a href="../HST_instruments.shtml">ACS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10456&mission=hst" onclick="this.target='_blank'">10456</a></td>
+		<td>The Gas Environment of Comet 9P/Tempel 1 During the Deep Impact Encounter</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J9A805071" onclick="this.target='_blank'">J9A805071</a></td>
+		<td>2005-07-04 05:34:10</td>
+		<td><a href="../HST_instruments.shtml">ACS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10456&mission=hst" onclick="this.target='_blank'">10456</a></td>
+		<td>The Gas Environment of Comet 9P/Tempel 1 During the Deep Impact Encounter</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J9A805081" onclick="this.target='_blank'">J9A805081</a></td>
+		<td>2005-07-04 05:36:40</td>
+		<td><a href="../HST_instruments.shtml">ACS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10456&mission=hst" onclick="this.target='_blank'">10456</a></td>
+		<td>The Gas Environment of Comet 9P/Tempel 1 During the Deep Impact Encounter</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J9A805091" onclick="this.target='_blank'">J9A805091</a></td>
+		<td>2005-07-04 05:39:10</td>
+		<td><a href="../HST_instruments.shtml">ACS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10456&mission=hst" onclick="this.target='_blank'">10456</a></td>
+		<td>The Gas Environment of Comet 9P/Tempel 1 During the Deep Impact Encounter</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J9A8050A1" onclick="this.target='_blank'">J9A8050A1</a></td>
+		<td>2005-07-04 05:41:40</td>
+		<td><a href="../HST_instruments.shtml">ACS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10456&mission=hst" onclick="this.target='_blank'">10456</a></td>
+		<td>The Gas Environment of Comet 9P/Tempel 1 During the Deep Impact Encounter</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J9A8050B1" onclick="this.target='_blank'">J9A8050B1</a></td>
+		<td>2005-07-04 05:44:10</td>
+		<td><a href="../HST_instruments.shtml">ACS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10456&mission=hst" onclick="this.target='_blank'">10456</a></td>
+		<td>The Gas Environment of Comet 9P/Tempel 1 During the Deep Impact Encounter</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J9A8050C1" onclick="this.target='_blank'">J9A8050C1</a></td>
+		<td>2005-07-04 05:46:40</td>
+		<td><a href="../HST_instruments.shtml">ACS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10456&mission=hst" onclick="this.target='_blank'">10456</a></td>
+		<td>The Gas Environment of Comet 9P/Tempel 1 During the Deep Impact Encounter</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J9A8050D1" onclick="this.target='_blank'">J9A8050D1</a></td>
+		<td>2005-07-04 05:49:10</td>
+		<td><a href="../HST_instruments.shtml">ACS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10456&mission=hst" onclick="this.target='_blank'">10456</a></td>
+		<td>The Gas Environment of Comet 9P/Tempel 1 During the Deep Impact Encounter</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J9A8050E1" onclick="this.target='_blank'">J9A8050E1</a></td>
+		<td>2005-07-04 05:51:40</td>
+		<td><a href="../HST_instruments.shtml">ACS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10456&mission=hst" onclick="this.target='_blank'">10456</a></td>
+		<td>The Gas Environment of Comet 9P/Tempel 1 During the Deep Impact Encounter</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J9A8050F1" onclick="this.target='_blank'">J9A8050F1</a></td>
+		<td>2005-07-04 05:54:10</td>
+		<td><a href="../HST_instruments.shtml">ACS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10456&mission=hst" onclick="this.target='_blank'">10456</a></td>
+		<td>The Gas Environment of Comet 9P/Tempel 1 During the Deep Impact Encounter</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J9A8050G1" onclick="this.target='_blank'">J9A8050G1</a></td>
+		<td>2005-07-04 05:56:40</td>
+		<td><a href="../HST_instruments.shtml">ACS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10456&mission=hst" onclick="this.target='_blank'">10456</a></td>
+		<td>The Gas Environment of Comet 9P/Tempel 1 During the Deep Impact Encounter</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J9A8050H1" onclick="this.target='_blank'">J9A8050H1</a></td>
+		<td>2005-07-04 05:59:10</td>
+		<td><a href="../HST_instruments.shtml">ACS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10456&mission=hst" onclick="this.target='_blank'">10456</a></td>
+		<td>The Gas Environment of Comet 9P/Tempel 1 During the Deep Impact Encounter</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J9A8050I1" onclick="this.target='_blank'">J9A8050I1</a></td>
+		<td>2005-07-04 06:01:40</td>
+		<td><a href="../HST_instruments.shtml">ACS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10456&mission=hst" onclick="this.target='_blank'">10456</a></td>
+		<td>The Gas Environment of Comet 9P/Tempel 1 During the Deep Impact Encounter</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J9A8050J1" onclick="this.target='_blank'">J9A8050J1</a></td>
+		<td>2005-07-04 06:04:10</td>
+		<td><a href="../HST_instruments.shtml">ACS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10456&mission=hst" onclick="this.target='_blank'">10456</a></td>
+		<td>The Gas Environment of Comet 9P/Tempel 1 During the Deep Impact Encounter</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J9A806011" onclick="this.target='_blank'">J9A806011</a></td>
+		<td>2005-07-04 06:54:26</td>
+		<td><a href="../HST_instruments.shtml">ACS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10456&mission=hst" onclick="this.target='_blank'">10456</a></td>
+		<td>The Gas Environment of Comet 9P/Tempel 1 During the Deep Impact Encounter</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J9A806021" onclick="this.target='_blank'">J9A806021</a></td>
+		<td>2005-07-04 06:57:28</td>
+		<td><a href="../HST_instruments.shtml">ACS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10456&mission=hst" onclick="this.target='_blank'">10456</a></td>
+		<td>The Gas Environment of Comet 9P/Tempel 1 During the Deep Impact Encounter</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J9A806031" onclick="this.target='_blank'">J9A806031</a></td>
+		<td>2005-07-04 07:05:20</td>
+		<td><a href="../HST_instruments.shtml">ACS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10456&mission=hst" onclick="this.target='_blank'">10456</a></td>
+		<td>The Gas Environment of Comet 9P/Tempel 1 During the Deep Impact Encounter</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J9A806041" onclick="this.target='_blank'">J9A806041</a></td>
+		<td>2005-07-04 07:18:30</td>
+		<td><a href="../HST_instruments.shtml">ACS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10456&mission=hst" onclick="this.target='_blank'">10456</a></td>
+		<td>The Gas Environment of Comet 9P/Tempel 1 During the Deep Impact Encounter</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J9A806051" onclick="this.target='_blank'">J9A806051</a></td>
+		<td>2005-07-04 07:21:32</td>
+		<td><a href="../HST_instruments.shtml">ACS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10456&mission=hst" onclick="this.target='_blank'">10456</a></td>
+		<td>The Gas Environment of Comet 9P/Tempel 1 During the Deep Impact Encounter</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J9A806061" onclick="this.target='_blank'">J9A806061</a></td>
+		<td>2005-07-04 07:29:24</td>
+		<td><a href="../HST_instruments.shtml">ACS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10456&mission=hst" onclick="this.target='_blank'">10456</a></td>
+		<td>The Gas Environment of Comet 9P/Tempel 1 During the Deep Impact Encounter</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J9A807F1Q" onclick="this.target='_blank'">J9A807F1Q</a></td>
+		<td>2005-07-04 08:29:53</td>
+		<td><a href="../HST_instruments.shtml">ACS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10456&mission=hst" onclick="this.target='_blank'">10456</a></td>
+		<td>The Gas Environment of Comet 9P/Tempel 1 During the Deep Impact Encounter</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J9A807011" onclick="this.target='_blank'">J9A807011</a></td>
+		<td>2005-07-04 08:39:30</td>
+		<td><a href="../HST_instruments.shtml">ACS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10456&mission=hst" onclick="this.target='_blank'">10456</a></td>
+		<td>The Gas Environment of Comet 9P/Tempel 1 During the Deep Impact Encounter</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J9A808011" onclick="this.target='_blank'">J9A808011</a></td>
+		<td>2005-07-04 10:06:20</td>
+		<td><a href="../HST_instruments.shtml">ACS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10456&mission=hst" onclick="this.target='_blank'">10456</a></td>
+		<td>The Gas Environment of Comet 9P/Tempel 1 During the Deep Impact Encounter</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J9A808021" onclick="this.target='_blank'">J9A808021</a></td>
+		<td>2005-07-04 10:09:22</td>
+		<td><a href="../HST_instruments.shtml">ACS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10456&mission=hst" onclick="this.target='_blank'">10456</a></td>
+		<td>The Gas Environment of Comet 9P/Tempel 1 During the Deep Impact Encounter</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J9A808031" onclick="this.target='_blank'">J9A808031</a></td>
+		<td>2005-07-04 10:17:14</td>
+		<td><a href="../HST_instruments.shtml">ACS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10456&mission=hst" onclick="this.target='_blank'">10456</a></td>
+		<td>The Gas Environment of Comet 9P/Tempel 1 During the Deep Impact Encounter</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J9A808041" onclick="this.target='_blank'">J9A808041</a></td>
+		<td>2005-07-04 10:30:24</td>
+		<td><a href="../HST_instruments.shtml">ACS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10456&mission=hst" onclick="this.target='_blank'">10456</a></td>
+		<td>The Gas Environment of Comet 9P/Tempel 1 During the Deep Impact Encounter</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J9A808051" onclick="this.target='_blank'">J9A808051</a></td>
+		<td>2005-07-04 10:33:26</td>
+		<td><a href="../HST_instruments.shtml">ACS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10456&mission=hst" onclick="this.target='_blank'">10456</a></td>
+		<td>The Gas Environment of Comet 9P/Tempel 1 During the Deep Impact Encounter</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J9A808061" onclick="this.target='_blank'">J9A808061</a></td>
+		<td>2005-07-04 10:41:18</td>
+		<td><a href="../HST_instruments.shtml">ACS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10456&mission=hst" onclick="this.target='_blank'">10456</a></td>
+		<td>The Gas Environment of Comet 9P/Tempel 1 During the Deep Impact Encounter</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J9A809FKQ" onclick="this.target='_blank'">J9A809FKQ</a></td>
+		<td>2005-07-04 11:48:09</td>
+		<td><a href="../HST_instruments.shtml">ACS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10456&mission=hst" onclick="this.target='_blank'">10456</a></td>
+		<td>The Gas Environment of Comet 9P/Tempel 1 During the Deep Impact Encounter</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J9A809011" onclick="this.target='_blank'">J9A809011</a></td>
+		<td>2005-07-04 11:56:26</td>
+		<td><a href="../HST_instruments.shtml">ACS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10456&mission=hst" onclick="this.target='_blank'">10456</a></td>
+		<td>The Gas Environment of Comet 9P/Tempel 1 During the Deep Impact Encounter</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J9A810011" onclick="this.target='_blank'">J9A810011</a></td>
+		<td>2005-07-05 00:29:54</td>
+		<td><a href="../HST_instruments.shtml">ACS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10456&mission=hst" onclick="this.target='_blank'">10456</a></td>
+		<td>The Gas Environment of Comet 9P/Tempel 1 During the Deep Impact Encounter</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J9A810021" onclick="this.target='_blank'">J9A810021</a></td>
+		<td>2005-07-05 00:32:56</td>
+		<td><a href="../HST_instruments.shtml">ACS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10456&mission=hst" onclick="this.target='_blank'">10456</a></td>
+		<td>The Gas Environment of Comet 9P/Tempel 1 During the Deep Impact Encounter</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J9A810031" onclick="this.target='_blank'">J9A810031</a></td>
+		<td>2005-07-05 00:40:48</td>
+		<td><a href="../HST_instruments.shtml">ACS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10456&mission=hst" onclick="this.target='_blank'">10456</a></td>
+		<td>The Gas Environment of Comet 9P/Tempel 1 During the Deep Impact Encounter</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J9A810041" onclick="this.target='_blank'">J9A810041</a></td>
+		<td>2005-07-05 00:53:58</td>
+		<td><a href="../HST_instruments.shtml">ACS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10456&mission=hst" onclick="this.target='_blank'">10456</a></td>
+		<td>The Gas Environment of Comet 9P/Tempel 1 During the Deep Impact Encounter</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J9A810051" onclick="this.target='_blank'">J9A810051</a></td>
+		<td>2005-07-05 00:57:00</td>
+		<td><a href="../HST_instruments.shtml">ACS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10456&mission=hst" onclick="this.target='_blank'">10456</a></td>
+		<td>The Gas Environment of Comet 9P/Tempel 1 During the Deep Impact Encounter</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J9A810061" onclick="this.target='_blank'">J9A810061</a></td>
+		<td>2005-07-05 01:04:52</td>
+		<td><a href="../HST_instruments.shtml">ACS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10456&mission=hst" onclick="this.target='_blank'">10456</a></td>
+		<td>The Gas Environment of Comet 9P/Tempel 1 During the Deep Impact Encounter</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J9A811IYQ" onclick="this.target='_blank'">J9A811IYQ</a></td>
+		<td>2005-07-05 02:05:20</td>
+		<td><a href="../HST_instruments.shtml">ACS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10456&mission=hst" onclick="this.target='_blank'">10456</a></td>
+		<td>The Gas Environment of Comet 9P/Tempel 1 During the Deep Impact Encounter</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J9A811011" onclick="this.target='_blank'">J9A811011</a></td>
+		<td>2005-07-05 02:15:46</td>
+		<td><a href="../HST_instruments.shtml">ACS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10456&mission=hst" onclick="this.target='_blank'">10456</a></td>
+		<td>The Gas Environment of Comet 9P/Tempel 1 During the Deep Impact Encounter</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J9A812011" onclick="this.target='_blank'">J9A812011</a></td>
+		<td>2005-07-11 18:03:11</td>
+		<td><a href="../HST_instruments.shtml">ACS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10456&mission=hst" onclick="this.target='_blank'">10456</a></td>
+		<td>The Gas Environment of Comet 9P/Tempel 1 During the Deep Impact Encounter</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J9A812021" onclick="this.target='_blank'">J9A812021</a></td>
+		<td>2005-07-11 18:06:13</td>
+		<td><a href="../HST_instruments.shtml">ACS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10456&mission=hst" onclick="this.target='_blank'">10456</a></td>
+		<td>The Gas Environment of Comet 9P/Tempel 1 During the Deep Impact Encounter</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J9A812031" onclick="this.target='_blank'">J9A812031</a></td>
+		<td>2005-07-11 18:14:05</td>
+		<td><a href="../HST_instruments.shtml">ACS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10456&mission=hst" onclick="this.target='_blank'">10456</a></td>
+		<td>The Gas Environment of Comet 9P/Tempel 1 During the Deep Impact Encounter</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J9A812041" onclick="this.target='_blank'">J9A812041</a></td>
+		<td>2005-07-11 18:27:15</td>
+		<td><a href="../HST_instruments.shtml">ACS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10456&mission=hst" onclick="this.target='_blank'">10456</a></td>
+		<td>The Gas Environment of Comet 9P/Tempel 1 During the Deep Impact Encounter</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J9A812051" onclick="this.target='_blank'">J9A812051</a></td>
+		<td>2005-07-11 18:30:17</td>
+		<td><a href="../HST_instruments.shtml">ACS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10456&mission=hst" onclick="this.target='_blank'">10456</a></td>
+		<td>The Gas Environment of Comet 9P/Tempel 1 During the Deep Impact Encounter</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J9A812061" onclick="this.target='_blank'">J9A812061</a></td>
+		<td>2005-07-11 18:38:09</td>
+		<td><a href="../HST_instruments.shtml">ACS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10456&mission=hst" onclick="this.target='_blank'">10456</a></td>
+		<td>The Gas Environment of Comet 9P/Tempel 1 During the Deep Impact Encounter</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J9A822011" onclick="this.target='_blank'">J9A822011</a></td>
+		<td>2005-07-16 22:55:25</td>
+		<td><a href="../HST_instruments.shtml">ACS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10456&mission=hst" onclick="this.target='_blank'">10456</a></td>
+		<td>The Gas Environment of Comet 9P/Tempel 1 During the Deep Impact Encounter</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J9A822021" onclick="this.target='_blank'">J9A822021</a></td>
+		<td>2005-07-16 22:58:27</td>
+		<td><a href="../HST_instruments.shtml">ACS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10456&mission=hst" onclick="this.target='_blank'">10456</a></td>
+		<td>The Gas Environment of Comet 9P/Tempel 1 During the Deep Impact Encounter</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J9A822031" onclick="this.target='_blank'">J9A822031</a></td>
+		<td>2005-07-16 23:06:19</td>
+		<td><a href="../HST_instruments.shtml">ACS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10456&mission=hst" onclick="this.target='_blank'">10456</a></td>
+		<td>The Gas Environment of Comet 9P/Tempel 1 During the Deep Impact Encounter</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J9A822041" onclick="this.target='_blank'">J9A822041</a></td>
+		<td>2005-07-17 00:24:40</td>
+		<td><a href="../HST_instruments.shtml">ACS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10456&mission=hst" onclick="this.target='_blank'">10456</a></td>
+		<td>The Gas Environment of Comet 9P/Tempel 1 During the Deep Impact Encounter</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J9A822051" onclick="this.target='_blank'">J9A822051</a></td>
+		<td>2005-07-17 00:27:42</td>
+		<td><a href="../HST_instruments.shtml">ACS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10456&mission=hst" onclick="this.target='_blank'">10456</a></td>
+		<td>The Gas Environment of Comet 9P/Tempel 1 During the Deep Impact Encounter</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J9A822061" onclick="this.target='_blank'">J9A822061</a></td>
+		<td>2005-07-17 00:35:34</td>
+		<td><a href="../HST_instruments.shtml">ACS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10456&mission=hst" onclick="this.target='_blank'">10456</a></td>
+		<td>The Gas Environment of Comet 9P/Tempel 1 During the Deep Impact Encounter</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=IBCR01G7Q" onclick="this.target='_blank'">IBCR01G7Q</a></td>
+		<td>2009-09-12 10:47:43</td>
+		<td><a href="../HST_instruments.shtml">WFC3  </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=11998&mission=hst" onclick="this.target='_blank'">11998</a></td>
+		<td>Determining the Rotational Phase of Comet 9P/Tempel 1 in Support of the StardustNExT Mission</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=IBCR01G8Q" onclick="this.target='_blank'">IBCR01G8Q</a></td>
+		<td>2009-09-12 10:57:04</td>
+		<td><a href="../HST_instruments.shtml">WFC3  </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=11998&mission=hst" onclick="this.target='_blank'">11998</a></td>
+		<td>Determining the Rotational Phase of Comet 9P/Tempel 1 in Support of the StardustNExT Mission</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=IBCR02GLQ" onclick="this.target='_blank'">IBCR02GLQ</a></td>
+		<td>2009-09-12 13:59:28</td>
+		<td><a href="../HST_instruments.shtml">WFC3  </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=11998&mission=hst" onclick="this.target='_blank'">11998</a></td>
+		<td>Determining the Rotational Phase of Comet 9P/Tempel 1 in Support of the StardustNExT Mission</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=IBCR02GMQ" onclick="this.target='_blank'">IBCR02GMQ</a></td>
+		<td>2009-09-12 14:08:46</td>
+		<td><a href="../HST_instruments.shtml">WFC3  </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=11998&mission=hst" onclick="this.target='_blank'">11998</a></td>
+		<td>Determining the Rotational Phase of Comet 9P/Tempel 1 in Support of the StardustNExT Mission</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=IBCR02GOQ" onclick="this.target='_blank'">IBCR02GOQ</a></td>
+		<td>2009-09-12 14:18:37</td>
+		<td><a href="../HST_instruments.shtml">WFC3  </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=11998&mission=hst" onclick="this.target='_blank'">11998</a></td>
+		<td>Determining the Rotational Phase of Comet 9P/Tempel 1 in Support of the StardustNExT Mission</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=IBCR03GQQ" onclick="this.target='_blank'">IBCR03GQQ</a></td>
+		<td>2009-09-12 15:35:21</td>
+		<td><a href="../HST_instruments.shtml">WFC3  </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=11998&mission=hst" onclick="this.target='_blank'">11998</a></td>
+		<td>Determining the Rotational Phase of Comet 9P/Tempel 1 in Support of the StardustNExT Mission</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=IBCR03GRQ" onclick="this.target='_blank'">IBCR03GRQ</a></td>
+		<td>2009-09-12 15:44:39</td>
+		<td><a href="../HST_instruments.shtml">WFC3  </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=11998&mission=hst" onclick="this.target='_blank'">11998</a></td>
+		<td>Determining the Rotational Phase of Comet 9P/Tempel 1 in Support of the StardustNExT Mission</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=IBCR03GTQ" onclick="this.target='_blank'">IBCR03GTQ</a></td>
+		<td>2009-09-12 15:54:30</td>
+		<td><a href="../HST_instruments.shtml">WFC3  </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=11998&mission=hst" onclick="this.target='_blank'">11998</a></td>
+		<td>Determining the Rotational Phase of Comet 9P/Tempel 1 in Support of the StardustNExT Mission</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=IBCR04GVQ" onclick="this.target='_blank'">IBCR04GVQ</a></td>
+		<td>2009-09-12 17:11:15</td>
+		<td><a href="../HST_instruments.shtml">WFC3  </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=11998&mission=hst" onclick="this.target='_blank'">11998</a></td>
+		<td>Determining the Rotational Phase of Comet 9P/Tempel 1 in Support of the StardustNExT Mission</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=IBCR04GWQ" onclick="this.target='_blank'">IBCR04GWQ</a></td>
+		<td>2009-09-12 17:20:33</td>
+		<td><a href="../HST_instruments.shtml">WFC3  </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=11998&mission=hst" onclick="this.target='_blank'">11998</a></td>
+		<td>Determining the Rotational Phase of Comet 9P/Tempel 1 in Support of the StardustNExT Mission</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=IBCR04GYQ" onclick="this.target='_blank'">IBCR04GYQ</a></td>
+		<td>2009-09-12 17:30:24</td>
+		<td><a href="../HST_instruments.shtml">WFC3  </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=11998&mission=hst" onclick="this.target='_blank'">11998</a></td>
+		<td>Determining the Rotational Phase of Comet 9P/Tempel 1 in Support of the StardustNExT Mission</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=IBCR04H0Q" onclick="this.target='_blank'">IBCR04H0Q</a></td>
+		<td>2009-09-12 17:39:42</td>
+		<td><a href="../HST_instruments.shtml">WFC3  </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=11998&mission=hst" onclick="this.target='_blank'">11998</a></td>
+		<td>Determining the Rotational Phase of Comet 9P/Tempel 1 in Support of the StardustNExT Mission</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=IBCR05H7Q" onclick="this.target='_blank'">IBCR05H7Q</a></td>
+		<td>2009-09-12 20:23:00</td>
+		<td><a href="../HST_instruments.shtml">WFC3  </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=11998&mission=hst" onclick="this.target='_blank'">11998</a></td>
+		<td>Determining the Rotational Phase of Comet 9P/Tempel 1 in Support of the StardustNExT Mission</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=IBCR05H8Q" onclick="this.target='_blank'">IBCR05H8Q</a></td>
+		<td>2009-09-12 20:32:18</td>
+		<td><a href="../HST_instruments.shtml">WFC3  </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=11998&mission=hst" onclick="this.target='_blank'">11998</a></td>
+		<td>Determining the Rotational Phase of Comet 9P/Tempel 1 in Support of the StardustNExT Mission</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=IBCR05HAQ" onclick="this.target='_blank'">IBCR05HAQ</a></td>
+		<td>2009-09-12 20:41:36</td>
+		<td><a href="../HST_instruments.shtml">WFC3  </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=11998&mission=hst" onclick="this.target='_blank'">11998</a></td>
+		<td>Determining the Rotational Phase of Comet 9P/Tempel 1 in Support of the StardustNExT Mission</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=IBCR05HCQ" onclick="this.target='_blank'">IBCR05HCQ</a></td>
+		<td>2009-09-12 20:51:27</td>
+		<td><a href="../HST_instruments.shtml">WFC3  </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=11998&mission=hst" onclick="this.target='_blank'">11998</a></td>
+		<td>Determining the Rotational Phase of Comet 9P/Tempel 1 in Support of the StardustNExT Mission</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=IBCR05HEQ" onclick="this.target='_blank'">IBCR05HEQ</a></td>
+		<td>2009-09-12 21:00:45</td>
+		<td><a href="../HST_instruments.shtml">WFC3  </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=11998&mission=hst" onclick="this.target='_blank'">11998</a></td>
+		<td>Determining the Rotational Phase of Comet 9P/Tempel 1 in Support of the StardustNExT Mission</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=IBCR06HGQ" onclick="this.target='_blank'">IBCR06HGQ</a></td>
+		<td>2009-09-12 21:58:52</td>
+		<td><a href="../HST_instruments.shtml">WFC3  </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=11998&mission=hst" onclick="this.target='_blank'">11998</a></td>
+		<td>Determining the Rotational Phase of Comet 9P/Tempel 1 in Support of the StardustNExT Mission</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=IBCR06HHQ" onclick="this.target='_blank'">IBCR06HHQ</a></td>
+		<td>2009-09-12 22:08:10</td>
+		<td><a href="../HST_instruments.shtml">WFC3  </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=11998&mission=hst" onclick="this.target='_blank'">11998</a></td>
+		<td>Determining the Rotational Phase of Comet 9P/Tempel 1 in Support of the StardustNExT Mission</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=IBCR06HJQ" onclick="this.target='_blank'">IBCR06HJQ</a></td>
+		<td>2009-09-12 22:17:28</td>
+		<td><a href="../HST_instruments.shtml">WFC3  </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=11998&mission=hst" onclick="this.target='_blank'">11998</a></td>
+		<td>Determining the Rotational Phase of Comet 9P/Tempel 1 in Support of the StardustNExT Mission</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=IBCR06HLQ" onclick="this.target='_blank'">IBCR06HLQ</a></td>
+		<td>2009-09-12 22:27:19</td>
+		<td><a href="../HST_instruments.shtml">WFC3  </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=11998&mission=hst" onclick="this.target='_blank'">11998</a></td>
+		<td>Determining the Rotational Phase of Comet 9P/Tempel 1 in Support of the StardustNExT Mission</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=IBCR06HNQ" onclick="this.target='_blank'">IBCR06HNQ</a></td>
+		<td>2009-09-12 22:36:37</td>
+		<td><a href="../HST_instruments.shtml">WFC3  </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=11998&mission=hst" onclick="this.target='_blank'">11998</a></td>
+		<td>Determining the Rotational Phase of Comet 9P/Tempel 1 in Support of the StardustNExT Mission</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=IBCR07HTQ" onclick="this.target='_blank'">IBCR07HTQ</a></td>
+		<td>2009-09-12 23:34:45</td>
+		<td><a href="../HST_instruments.shtml">WFC3  </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=11998&mission=hst" onclick="this.target='_blank'">11998</a></td>
+		<td>Determining the Rotational Phase of Comet 9P/Tempel 1 in Support of the StardustNExT Mission</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=IBCR07HUQ" onclick="this.target='_blank'">IBCR07HUQ</a></td>
+		<td>2009-09-12 23:44:03</td>
+		<td><a href="../HST_instruments.shtml">WFC3  </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=11998&mission=hst" onclick="this.target='_blank'">11998</a></td>
+		<td>Determining the Rotational Phase of Comet 9P/Tempel 1 in Support of the StardustNExT Mission</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=IBCR07HWQ" onclick="this.target='_blank'">IBCR07HWQ</a></td>
+		<td>2009-09-12 23:53:21</td>
+		<td><a href="../HST_instruments.shtml">WFC3  </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=11998&mission=hst" onclick="this.target='_blank'">11998</a></td>
+		<td>Determining the Rotational Phase of Comet 9P/Tempel 1 in Support of the StardustNExT Mission</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=IBCR07I1Q" onclick="this.target='_blank'">IBCR07I1Q</a></td>
+		<td>2009-09-13 00:03:12</td>
+		<td><a href="../HST_instruments.shtml">WFC3  </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=11998&mission=hst" onclick="this.target='_blank'">11998</a></td>
+		<td>Determining the Rotational Phase of Comet 9P/Tempel 1 in Support of the StardustNExT Mission</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=IBCR07I3Q" onclick="this.target='_blank'">IBCR07I3Q</a></td>
+		<td>2009-09-13 00:12:30</td>
+		<td><a href="../HST_instruments.shtml">WFC3  </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=11998&mission=hst" onclick="this.target='_blank'">11998</a></td>
+		<td>Determining the Rotational Phase of Comet 9P/Tempel 1 in Support of the StardustNExT Mission</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=IBCR08JNQ" onclick="this.target='_blank'">IBCR08JNQ</a></td>
+		<td>2009-09-13 02:46:30</td>
+		<td><a href="../HST_instruments.shtml">WFC3  </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=11998&mission=hst" onclick="this.target='_blank'">11998</a></td>
+		<td>Determining the Rotational Phase of Comet 9P/Tempel 1 in Support of the StardustNExT Mission</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=IBCR08JOQ" onclick="this.target='_blank'">IBCR08JOQ</a></td>
+		<td>2009-09-13 02:55:48</td>
+		<td><a href="../HST_instruments.shtml">WFC3  </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=11998&mission=hst" onclick="this.target='_blank'">11998</a></td>
+		<td>Determining the Rotational Phase of Comet 9P/Tempel 1 in Support of the StardustNExT Mission</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=IBCR08JQQ" onclick="this.target='_blank'">IBCR08JQQ</a></td>
+		<td>2009-09-13 03:05:06</td>
+		<td><a href="../HST_instruments.shtml">WFC3  </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=11998&mission=hst" onclick="this.target='_blank'">11998</a></td>
+		<td>Determining the Rotational Phase of Comet 9P/Tempel 1 in Support of the StardustNExT Mission</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=IBCR08JSQ" onclick="this.target='_blank'">IBCR08JSQ</a></td>
+		<td>2009-09-13 03:14:57</td>
+		<td><a href="../HST_instruments.shtml">WFC3  </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=11998&mission=hst" onclick="this.target='_blank'">11998</a></td>
+		<td>Determining the Rotational Phase of Comet 9P/Tempel 1 in Support of the StardustNExT Mission</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=IBCR08JUQ" onclick="this.target='_blank'">IBCR08JUQ</a></td>
+		<td>2009-09-13 03:24:15</td>
+		<td><a href="../HST_instruments.shtml">WFC3  </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=11998&mission=hst" onclick="this.target='_blank'">11998</a></td>
+		<td>Determining the Rotational Phase of Comet 9P/Tempel 1 in Support of the StardustNExT Mission</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=IBCR09K1Q" onclick="this.target='_blank'">IBCR09K1Q</a></td>
+		<td>2009-09-13 04:22:23</td>
+		<td><a href="../HST_instruments.shtml">WFC3  </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=11998&mission=hst" onclick="this.target='_blank'">11998</a></td>
+		<td>Determining the Rotational Phase of Comet 9P/Tempel 1 in Support of the StardustNExT Mission</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=IBCR09K2Q" onclick="this.target='_blank'">IBCR09K2Q</a></td>
+		<td>2009-09-13 04:31:41</td>
+		<td><a href="../HST_instruments.shtml">WFC3  </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=11998&mission=hst" onclick="this.target='_blank'">11998</a></td>
+		<td>Determining the Rotational Phase of Comet 9P/Tempel 1 in Support of the StardustNExT Mission</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=IBCR09K4Q" onclick="this.target='_blank'">IBCR09K4Q</a></td>
+		<td>2009-09-13 04:40:59</td>
+		<td><a href="../HST_instruments.shtml">WFC3  </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=11998&mission=hst" onclick="this.target='_blank'">11998</a></td>
+		<td>Determining the Rotational Phase of Comet 9P/Tempel 1 in Support of the StardustNExT Mission</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=IBCR09K6Q" onclick="this.target='_blank'">IBCR09K6Q</a></td>
+		<td>2009-09-13 04:50:50</td>
+		<td><a href="../HST_instruments.shtml">WFC3  </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=11998&mission=hst" onclick="this.target='_blank'">11998</a></td>
+		<td>Determining the Rotational Phase of Comet 9P/Tempel 1 in Support of the StardustNExT Mission</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=IBCR09K8Q" onclick="this.target='_blank'">IBCR09K8Q</a></td>
+		<td>2009-09-13 05:00:08</td>
+		<td><a href="../HST_instruments.shtml">WFC3  </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=11998&mission=hst" onclick="this.target='_blank'">11998</a></td>
+		<td>Determining the Rotational Phase of Comet 9P/Tempel 1 in Support of the StardustNExT Mission</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=IBCR10KEQ" onclick="this.target='_blank'">IBCR10KEQ</a></td>
+		<td>2009-09-13 05:58:16</td>
+		<td><a href="../HST_instruments.shtml">WFC3  </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=11998&mission=hst" onclick="this.target='_blank'">11998</a></td>
+		<td>Determining the Rotational Phase of Comet 9P/Tempel 1 in Support of the StardustNExT Mission</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=IBCR10KFQ" onclick="this.target='_blank'">IBCR10KFQ</a></td>
+		<td>2009-09-13 06:07:34</td>
+		<td><a href="../HST_instruments.shtml">WFC3  </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=11998&mission=hst" onclick="this.target='_blank'">11998</a></td>
+		<td>Determining the Rotational Phase of Comet 9P/Tempel 1 in Support of the StardustNExT Mission</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=IBCR10KHQ" onclick="this.target='_blank'">IBCR10KHQ</a></td>
+		<td>2009-09-13 06:16:52</td>
+		<td><a href="../HST_instruments.shtml">WFC3  </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=11998&mission=hst" onclick="this.target='_blank'">11998</a></td>
+		<td>Determining the Rotational Phase of Comet 9P/Tempel 1 in Support of the StardustNExT Mission</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=IBCR10KJQ" onclick="this.target='_blank'">IBCR10KJQ</a></td>
+		<td>2009-09-13 06:26:43</td>
+		<td><a href="../HST_instruments.shtml">WFC3  </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=11998&mission=hst" onclick="this.target='_blank'">11998</a></td>
+		<td>Determining the Rotational Phase of Comet 9P/Tempel 1 in Support of the StardustNExT Mission</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=IBCR10KLQ" onclick="this.target='_blank'">IBCR10KLQ</a></td>
+		<td>2009-09-13 06:36:01</td>
+		<td><a href="../HST_instruments.shtml">WFC3  </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=11998&mission=hst" onclick="this.target='_blank'">11998</a></td>
+		<td>Determining the Rotational Phase of Comet 9P/Tempel 1 in Support of the StardustNExT Mission</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=IBCR11KTQ" onclick="this.target='_blank'">IBCR11KTQ</a></td>
+		<td>2009-09-13 09:10:02</td>
+		<td><a href="../HST_instruments.shtml">WFC3  </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=11998&mission=hst" onclick="this.target='_blank'">11998</a></td>
+		<td>Determining the Rotational Phase of Comet 9P/Tempel 1 in Support of the StardustNExT Mission</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=IBCR11KUQ" onclick="this.target='_blank'">IBCR11KUQ</a></td>
+		<td>2009-09-13 09:17:10</td>
+		<td><a href="../HST_instruments.shtml">WFC3  </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=11998&mission=hst" onclick="this.target='_blank'">11998</a></td>
+		<td>Determining the Rotational Phase of Comet 9P/Tempel 1 in Support of the StardustNExT Mission</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=IBCR12L1Q" onclick="this.target='_blank'">IBCR12L1Q</a></td>
+		<td>2009-09-13 10:45:56</td>
+		<td><a href="../HST_instruments.shtml">WFC3  </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=11998&mission=hst" onclick="this.target='_blank'">11998</a></td>
+		<td>Determining the Rotational Phase of Comet 9P/Tempel 1 in Support of the StardustNExT Mission</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=IBCR12L2Q" onclick="this.target='_blank'">IBCR12L2Q</a></td>
+		<td>2009-09-13 10:55:17</td>
+		<td><a href="../HST_instruments.shtml">WFC3  </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=11998&mission=hst" onclick="this.target='_blank'">11998</a></td>
+		<td>Determining the Rotational Phase of Comet 9P/Tempel 1 in Support of the StardustNExT Mission</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=IBCR13L4Q" onclick="this.target='_blank'">IBCR13L4Q</a></td>
+		<td>2009-09-13 12:21:49</td>
+		<td><a href="../HST_instruments.shtml">WFC3  </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=11998&mission=hst" onclick="this.target='_blank'">11998</a></td>
+		<td>Determining the Rotational Phase of Comet 9P/Tempel 1 in Support of the StardustNExT Mission</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=IBCR13L5Q" onclick="this.target='_blank'">IBCR13L5Q</a></td>
+		<td>2009-09-13 12:31:40</td>
+		<td><a href="../HST_instruments.shtml">WFC3  </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=11998&mission=hst" onclick="this.target='_blank'">11998</a></td>
+		<td>Determining the Rotational Phase of Comet 9P/Tempel 1 in Support of the StardustNExT Mission</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=IBCR14L7Q" onclick="this.target='_blank'">IBCR14L7Q</a></td>
+		<td>2009-09-13 15:33:35</td>
+		<td><a href="../HST_instruments.shtml">WFC3  </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=11998&mission=hst" onclick="this.target='_blank'">11998</a></td>
+		<td>Determining the Rotational Phase of Comet 9P/Tempel 1 in Support of the StardustNExT Mission</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=IBCR14L8Q" onclick="this.target='_blank'">IBCR14L8Q</a></td>
+		<td>2009-09-13 15:42:53</td>
+		<td><a href="../HST_instruments.shtml">WFC3  </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=11998&mission=hst" onclick="this.target='_blank'">11998</a></td>
+		<td>Determining the Rotational Phase of Comet 9P/Tempel 1 in Support of the StardustNExT Mission</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=IBCR14LAQ" onclick="this.target='_blank'">IBCR14LAQ</a></td>
+		<td>2009-09-13 15:52:44</td>
+		<td><a href="../HST_instruments.shtml">WFC3  </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=11998&mission=hst" onclick="this.target='_blank'">11998</a></td>
+		<td>Determining the Rotational Phase of Comet 9P/Tempel 1 in Support of the StardustNExT Mission</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=IBCR15LDQ" onclick="this.target='_blank'">IBCR15LDQ</a></td>
+		<td>2009-09-13 17:09:28</td>
+		<td><a href="../HST_instruments.shtml">WFC3  </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=11998&mission=hst" onclick="this.target='_blank'">11998</a></td>
+		<td>Determining the Rotational Phase of Comet 9P/Tempel 1 in Support of the StardustNExT Mission</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=IBCR15LEQ" onclick="this.target='_blank'">IBCR15LEQ</a></td>
+		<td>2009-09-13 17:18:46</td>
+		<td><a href="../HST_instruments.shtml">WFC3  </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=11998&mission=hst" onclick="this.target='_blank'">11998</a></td>
+		<td>Determining the Rotational Phase of Comet 9P/Tempel 1 in Support of the StardustNExT Mission</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=IBCR15LGQ" onclick="this.target='_blank'">IBCR15LGQ</a></td>
+		<td>2009-09-13 17:28:37</td>
+		<td><a href="../HST_instruments.shtml">WFC3  </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=11998&mission=hst" onclick="this.target='_blank'">11998</a></td>
+		<td>Determining the Rotational Phase of Comet 9P/Tempel 1 in Support of the StardustNExT Mission</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=IBCR15LIQ" onclick="this.target='_blank'">IBCR15LIQ</a></td>
+		<td>2009-09-13 17:37:55</td>
+		<td><a href="../HST_instruments.shtml">WFC3  </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=11998&mission=hst" onclick="this.target='_blank'">11998</a></td>
+		<td>Determining the Rotational Phase of Comet 9P/Tempel 1 in Support of the StardustNExT Mission</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=IBCR16LLQ" onclick="this.target='_blank'">IBCR16LLQ</a></td>
+		<td>2009-09-13 18:45:22</td>
+		<td><a href="../HST_instruments.shtml">WFC3  </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=11998&mission=hst" onclick="this.target='_blank'">11998</a></td>
+		<td>Determining the Rotational Phase of Comet 9P/Tempel 1 in Support of the StardustNExT Mission</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=IBCR16LMQ" onclick="this.target='_blank'">IBCR16LMQ</a></td>
+		<td>2009-09-13 18:54:40</td>
+		<td><a href="../HST_instruments.shtml">WFC3  </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=11998&mission=hst" onclick="this.target='_blank'">11998</a></td>
+		<td>Determining the Rotational Phase of Comet 9P/Tempel 1 in Support of the StardustNExT Mission</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=IBCR16LOQ" onclick="this.target='_blank'">IBCR16LOQ</a></td>
+		<td>2009-09-13 19:03:58</td>
+		<td><a href="../HST_instruments.shtml">WFC3  </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=11998&mission=hst" onclick="this.target='_blank'">11998</a></td>
+		<td>Determining the Rotational Phase of Comet 9P/Tempel 1 in Support of the StardustNExT Mission</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=IBCR16LQQ" onclick="this.target='_blank'">IBCR16LQQ</a></td>
+		<td>2009-09-13 19:13:49</td>
+		<td><a href="../HST_instruments.shtml">WFC3  </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=11998&mission=hst" onclick="this.target='_blank'">11998</a></td>
+		<td>Determining the Rotational Phase of Comet 9P/Tempel 1 in Support of the StardustNExT Mission</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=IBCR16LSQ" onclick="this.target='_blank'">IBCR16LSQ</a></td>
+		<td>2009-09-13 19:23:07</td>
+		<td><a href="../HST_instruments.shtml">WFC3  </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=11998&mission=hst" onclick="this.target='_blank'">11998</a></td>
+		<td>Determining the Rotational Phase of Comet 9P/Tempel 1 in Support of the StardustNExT Mission</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=IBCR17LUQ" onclick="this.target='_blank'">IBCR17LUQ</a></td>
+		<td>2009-09-13 21:57:09</td>
+		<td><a href="../HST_instruments.shtml">WFC3  </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=11998&mission=hst" onclick="this.target='_blank'">11998</a></td>
+		<td>Determining the Rotational Phase of Comet 9P/Tempel 1 in Support of the StardustNExT Mission</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=IBCR17LVQ" onclick="this.target='_blank'">IBCR17LVQ</a></td>
+		<td>2009-09-13 22:06:27</td>
+		<td><a href="../HST_instruments.shtml">WFC3  </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=11998&mission=hst" onclick="this.target='_blank'">11998</a></td>
+		<td>Determining the Rotational Phase of Comet 9P/Tempel 1 in Support of the StardustNExT Mission</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=IBCR17LXQ" onclick="this.target='_blank'">IBCR17LXQ</a></td>
+		<td>2009-09-13 22:15:45</td>
+		<td><a href="../HST_instruments.shtml">WFC3  </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=11998&mission=hst" onclick="this.target='_blank'">11998</a></td>
+		<td>Determining the Rotational Phase of Comet 9P/Tempel 1 in Support of the StardustNExT Mission</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=IBCR17LZQ" onclick="this.target='_blank'">IBCR17LZQ</a></td>
+		<td>2009-09-13 22:25:36</td>
+		<td><a href="../HST_instruments.shtml">WFC3  </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=11998&mission=hst" onclick="this.target='_blank'">11998</a></td>
+		<td>Determining the Rotational Phase of Comet 9P/Tempel 1 in Support of the StardustNExT Mission</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=IBCR17M1Q" onclick="this.target='_blank'">IBCR17M1Q</a></td>
+		<td>2009-09-13 22:34:54</td>
+		<td><a href="../HST_instruments.shtml">WFC3  </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=11998&mission=hst" onclick="this.target='_blank'">11998</a></td>
+		<td>Determining the Rotational Phase of Comet 9P/Tempel 1 in Support of the StardustNExT Mission</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=IBCR18A6Q" onclick="this.target='_blank'">IBCR18A6Q</a></td>
+		<td>2009-09-14 01:08:20</td>
+		<td><a href="../HST_instruments.shtml">WFC3  </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=11998&mission=hst" onclick="this.target='_blank'">11998</a></td>
+		<td>Determining the Rotational Phase of Comet 9P/Tempel 1 in Support of the StardustNExT Mission</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=IBCR18A7Q" onclick="this.target='_blank'">IBCR18A7Q</a></td>
+		<td>2009-09-14 01:17:38</td>
+		<td><a href="../HST_instruments.shtml">WFC3  </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=11998&mission=hst" onclick="this.target='_blank'">11998</a></td>
+		<td>Determining the Rotational Phase of Comet 9P/Tempel 1 in Support of the StardustNExT Mission</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=IBCR18A9Q" onclick="this.target='_blank'">IBCR18A9Q</a></td>
+		<td>2009-09-14 01:26:56</td>
+		<td><a href="../HST_instruments.shtml">WFC3  </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=11998&mission=hst" onclick="this.target='_blank'">11998</a></td>
+		<td>Determining the Rotational Phase of Comet 9P/Tempel 1 in Support of the StardustNExT Mission</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=IBCR18ABQ" onclick="this.target='_blank'">IBCR18ABQ</a></td>
+		<td>2009-09-14 01:36:47</td>
+		<td><a href="../HST_instruments.shtml">WFC3  </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=11998&mission=hst" onclick="this.target='_blank'">11998</a></td>
+		<td>Determining the Rotational Phase of Comet 9P/Tempel 1 in Support of the StardustNExT Mission</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=IBCR18ADQ" onclick="this.target='_blank'">IBCR18ADQ</a></td>
+		<td>2009-09-14 01:46:05</td>
+		<td><a href="../HST_instruments.shtml">WFC3  </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=11998&mission=hst" onclick="this.target='_blank'">11998</a></td>
+		<td>Determining the Rotational Phase of Comet 9P/Tempel 1 in Support of the StardustNExT Mission</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=IBCR19AFQ" onclick="this.target='_blank'">IBCR19AFQ</a></td>
+		<td>2009-09-14 02:44:14</td>
+		<td><a href="../HST_instruments.shtml">WFC3  </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=11998&mission=hst" onclick="this.target='_blank'">11998</a></td>
+		<td>Determining the Rotational Phase of Comet 9P/Tempel 1 in Support of the StardustNExT Mission</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=IBCR19AGQ" onclick="this.target='_blank'">IBCR19AGQ</a></td>
+		<td>2009-09-14 02:53:32</td>
+		<td><a href="../HST_instruments.shtml">WFC3  </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=11998&mission=hst" onclick="this.target='_blank'">11998</a></td>
+		<td>Determining the Rotational Phase of Comet 9P/Tempel 1 in Support of the StardustNExT Mission</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=IBCR19AIQ" onclick="this.target='_blank'">IBCR19AIQ</a></td>
+		<td>2009-09-14 03:02:50</td>
+		<td><a href="../HST_instruments.shtml">WFC3  </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=11998&mission=hst" onclick="this.target='_blank'">11998</a></td>
+		<td>Determining the Rotational Phase of Comet 9P/Tempel 1 in Support of the StardustNExT Mission</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=IBCR19ANQ" onclick="this.target='_blank'">IBCR19ANQ</a></td>
+		<td>2009-09-14 03:12:41</td>
+		<td><a href="../HST_instruments.shtml">WFC3  </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=11998&mission=hst" onclick="this.target='_blank'">11998</a></td>
+		<td>Determining the Rotational Phase of Comet 9P/Tempel 1 in Support of the StardustNExT Mission</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=IBCR19APQ" onclick="this.target='_blank'">IBCR19APQ</a></td>
+		<td>2009-09-14 03:21:59</td>
+		<td><a href="../HST_instruments.shtml">WFC3  </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=11998&mission=hst" onclick="this.target='_blank'">11998</a></td>
+		<td>Determining the Rotational Phase of Comet 9P/Tempel 1 in Support of the StardustNExT Mission</td>
+	</tr>
+</table>
+<br /><p>[<a href="#top">Back to Top</a>] [<a href="../HST.shtml#01_COMET">Back to Comets</a>]</p>
+
+<a name="bottom"></a>
+
+<!-- ************************************************** End editing! ************************************************** -->
+<!--#include virtual="/css-n-includes/incl_bottom.inc"-->
+<br />Last updated: <!--#config timefmt="%A %B %d, %Y"--><!--#echo var="LAST_MODIFIED" --></div><!-- close id whotext -->
+</div><!-- close id footer -->
+</div><!-- end id footwrap -->
+</div><!-- close wrapper -->
+</body>
+</html>

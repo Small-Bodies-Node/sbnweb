@@ -1,0 +1,302 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<title>PDS: Small Bodies Node</title>
+
+<!--
+########################
+ALL of the head, style links, header and menu code is in the include. Edit that file with extreme care!!
+########################
+ -->
+<!--#include virtual="/css-n-includes/incl_top.inc"-->
+
+<!-- ################################################ MAIN ################################################## -->
+<div id="centeronly">
+
+<a name="mainContent"></a>
+<!-- ************************************************** You may begin editing! ************************************************** -->
+
+<a name="top"></a><h3>Object: 29P/Schwassmann-Wachmann 1 (1927 V1) [<a href="../objclass.shtml#JFc">JFc</a>]</h3>
+
+<table width="95%" class="datatab">
+	<colgroup>
+		<col width="11%" />
+		<col width="13%" />
+		<col width="8%" />
+		<col width="8%" />
+		<col width="55%" />
+	</colgroup>
+	<thead><tr>
+		<td>Observation ID</td>
+		<td>Start Time</td>
+		<td>Instrument</td>
+		<td>Proposal ID</td>
+		<td>Proposal Title</td>
+	</tr></thead>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U3490101T" onclick="this.target='_blank'">U3490101T</a></td>
+		<td>1996-03-11 07:38:15</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=5829&mission=hst" onclick="this.target='_blank'">5829</a></td>
+		<td>THE ACTIVITY OF PERIODIC COMET SCHWASSMANN-WACHMANN 1</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U3490102T" onclick="this.target='_blank'">U3490102T</a></td>
+		<td>1996-03-11 07:42:16</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=5829&mission=hst" onclick="this.target='_blank'">5829</a></td>
+		<td>THE ACTIVITY OF PERIODIC COMET SCHWASSMANN-WACHMANN 1</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U3490103T" onclick="this.target='_blank'">U3490103T</a></td>
+		<td>1996-03-11 07:51:16</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=5829&mission=hst" onclick="this.target='_blank'">5829</a></td>
+		<td>THE ACTIVITY OF PERIODIC COMET SCHWASSMANN-WACHMANN 1</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U3490104T" onclick="this.target='_blank'">U3490104T</a></td>
+		<td>1996-03-11 08:08:16</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=5829&mission=hst" onclick="this.target='_blank'">5829</a></td>
+		<td>THE ACTIVITY OF PERIODIC COMET SCHWASSMANN-WACHMANN 1</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=Y3490201P" onclick="this.target='_blank'">Y3490201P</a></td>
+		<td>1996-03-11 22:40:29</td>
+		<td><a href="../HST_instruments.shtml">FOS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=5829&mission=hst" onclick="this.target='_blank'">5829</a></td>
+		<td>THE ACTIVITY OF PERIODIC COMET SCHWASSMANN-WACHMANN 1</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=Y3490202P" onclick="this.target='_blank'">Y3490202P</a></td>
+		<td>1996-03-11 23:53:54</td>
+		<td><a href="../HST_instruments.shtml">FOS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=5829&mission=hst" onclick="this.target='_blank'">5829</a></td>
+		<td>THE ACTIVITY OF PERIODIC COMET SCHWASSMANN-WACHMANN 1</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=Y3490203P" onclick="this.target='_blank'">Y3490203P</a></td>
+		<td>1996-03-12 01:19:09</td>
+		<td><a href="../HST_instruments.shtml">FOS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=5829&mission=hst" onclick="this.target='_blank'">5829</a></td>
+		<td>THE ACTIVITY OF PERIODIC COMET SCHWASSMANN-WACHMANN 1</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=Y3490204P" onclick="this.target='_blank'">Y3490204P</a></td>
+		<td>1996-03-12 01:41:00</td>
+		<td><a href="../HST_instruments.shtml">FOS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=5829&mission=hst" onclick="this.target='_blank'">5829</a></td>
+		<td>THE ACTIVITY OF PERIODIC COMET SCHWASSMANN-WACHMANN 1</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U3490401P" onclick="this.target='_blank'">U3490401P</a></td>
+		<td>1996-03-12 02:56:15</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=5829&mission=hst" onclick="this.target='_blank'">5829</a></td>
+		<td>THE ACTIVITY OF PERIODIC COMET SCHWASSMANN-WACHMANN 1</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U3490402T" onclick="this.target='_blank'">U3490402T</a></td>
+		<td>1996-03-12 03:00:16</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=5829&mission=hst" onclick="this.target='_blank'">5829</a></td>
+		<td>THE ACTIVITY OF PERIODIC COMET SCHWASSMANN-WACHMANN 1</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U3490403P" onclick="this.target='_blank'">U3490403P</a></td>
+		<td>1996-03-12 03:09:16</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=5829&mission=hst" onclick="this.target='_blank'">5829</a></td>
+		<td>THE ACTIVITY OF PERIODIC COMET SCHWASSMANN-WACHMANN 1</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U3490404T" onclick="this.target='_blank'">U3490404T</a></td>
+		<td>1996-03-12 03:26:16</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=5829&mission=hst" onclick="this.target='_blank'">5829</a></td>
+		<td>THE ACTIVITY OF PERIODIC COMET SCHWASSMANN-WACHMANN 1</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=Z3490302T" onclick="this.target='_blank'">Z3490302T</a></td>
+		<td>1996-03-12 04:35:40</td>
+		<td><a href="../HST_instruments.shtml">HRS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=5829&mission=hst" onclick="this.target='_blank'">5829</a></td>
+		<td>THE ACTIVITY OF PERIODIC COMET SCHWASSMANN-WACHMANN 1</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=Z3490304T" onclick="this.target='_blank'">Z3490304T</a></td>
+		<td>1996-03-12 04:57:46</td>
+		<td><a href="../HST_instruments.shtml">HRS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=5829&mission=hst" onclick="this.target='_blank'">5829</a></td>
+		<td>THE ACTIVITY OF PERIODIC COMET SCHWASSMANN-WACHMANN 1</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=Z3490306T" onclick="this.target='_blank'">Z3490306T</a></td>
+		<td>1996-03-12 06:07:54</td>
+		<td><a href="../HST_instruments.shtml">HRS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=5829&mission=hst" onclick="this.target='_blank'">5829</a></td>
+		<td>THE ACTIVITY OF PERIODIC COMET SCHWASSMANN-WACHMANN 1</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=Z3490308T" onclick="this.target='_blank'">Z3490308T</a></td>
+		<td>1996-03-12 06:30:54</td>
+		<td><a href="../HST_instruments.shtml">HRS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=5829&mission=hst" onclick="this.target='_blank'">5829</a></td>
+		<td>THE ACTIVITY OF PERIODIC COMET SCHWASSMANN-WACHMANN 1</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=Z349030AT" onclick="this.target='_blank'">Z349030AT</a></td>
+		<td>1996-03-12 07:44:24</td>
+		<td><a href="../HST_instruments.shtml">HRS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=5829&mission=hst" onclick="this.target='_blank'">5829</a></td>
+		<td>THE ACTIVITY OF PERIODIC COMET SCHWASSMANN-WACHMANN 1</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=Z349030CT" onclick="this.target='_blank'">Z349030CT</a></td>
+		<td>1996-03-12 08:07:24</td>
+		<td><a href="../HST_instruments.shtml">HRS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=5829&mission=hst" onclick="this.target='_blank'">5829</a></td>
+		<td>THE ACTIVITY OF PERIODIC COMET SCHWASSMANN-WACHMANN 1</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=Z349030ET" onclick="this.target='_blank'">Z349030ET</a></td>
+		<td>1996-03-12 09:21:00</td>
+		<td><a href="../HST_instruments.shtml">HRS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=5829&mission=hst" onclick="this.target='_blank'">5829</a></td>
+		<td>THE ACTIVITY OF PERIODIC COMET SCHWASSMANN-WACHMANN 1</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=Z349030GT" onclick="this.target='_blank'">Z349030GT</a></td>
+		<td>1996-03-12 09:43:48</td>
+		<td><a href="../HST_instruments.shtml">HRS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=5829&mission=hst" onclick="this.target='_blank'">5829</a></td>
+		<td>THE ACTIVITY OF PERIODIC COMET SCHWASSMANN-WACHMANN 1</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U5FZ1401R" onclick="this.target='_blank'">U5FZ1401R</a></td>
+		<td>2000-05-27 21:03:14</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=8274&mission=hst" onclick="this.target='_blank'">8274</a></td>
+		<td>A Size Survey of Cometary Nuclei</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U5FZ1402R" onclick="this.target='_blank'">U5FZ1402R</a></td>
+		<td>2000-05-27 21:09:14</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=8274&mission=hst" onclick="this.target='_blank'">8274</a></td>
+		<td>A Size Survey of Cometary Nuclei</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U5FZ1403R" onclick="this.target='_blank'">U5FZ1403R</a></td>
+		<td>2000-05-27 21:16:14</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=8274&mission=hst" onclick="this.target='_blank'">8274</a></td>
+		<td>A Size Survey of Cometary Nuclei</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U5FZ1404R" onclick="this.target='_blank'">U5FZ1404R</a></td>
+		<td>2000-05-27 21:22:14</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=8274&mission=hst" onclick="this.target='_blank'">8274</a></td>
+		<td>A Size Survey of Cometary Nuclei</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U5FZ1405R" onclick="this.target='_blank'">U5FZ1405R</a></td>
+		<td>2000-05-27 21:31:14</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=8274&mission=hst" onclick="this.target='_blank'">8274</a></td>
+		<td>A Size Survey of Cometary Nuclei</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U5FZ1406R" onclick="this.target='_blank'">U5FZ1406R</a></td>
+		<td>2000-05-27 21:35:14</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=8274&mission=hst" onclick="this.target='_blank'">8274</a></td>
+		<td>A Size Survey of Cometary Nuclei</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U5FZ1407R" onclick="this.target='_blank'">U5FZ1407R</a></td>
+		<td>2000-05-27 21:40:14</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=8274&mission=hst" onclick="this.target='_blank'">8274</a></td>
+		<td>A Size Survey of Cometary Nuclei</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=IB6M02D9Q" onclick="this.target='_blank'">IB6M02D9Q</a></td>
+		<td>2010-05-17 17:23:14</td>
+		<td><a href="../HST_instruments.shtml">WFC3  </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=11536&mission=hst" onclick="this.target='_blank'">11536</a></td>
+		<td>COS-GTO: Sleuthing the Source of Distant Cometary Activity</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=IB6M02DAQ" onclick="this.target='_blank'">IB6M02DAQ</a></td>
+		<td>2010-05-17 17:24:54</td>
+		<td><a href="../HST_instruments.shtml">WFC3  </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=11536&mission=hst" onclick="this.target='_blank'">11536</a></td>
+		<td>COS-GTO: Sleuthing the Source of Distant Cometary Activity</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=LB6MA2010" onclick="this.target='_blank'">LB6MA2010</a></td>
+		<td>2010-05-17 17:42:15</td>
+		<td><a href="../HST_instruments.shtml">COS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=11536&mission=hst" onclick="this.target='_blank'">11536</a></td>
+		<td>COS-GTO: Sleuthing the Source of Distant Cometary Activity</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=IB6M03BYQ" onclick="this.target='_blank'">IB6M03BYQ</a></td>
+		<td>2010-06-21 04:13:49</td>
+		<td><a href="../HST_instruments.shtml">WFC3  </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=11536&mission=hst" onclick="this.target='_blank'">11536</a></td>
+		<td>COS-GTO: Sleuthing the Source of Distant Cometary Activity</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=IB6M03BZQ" onclick="this.target='_blank'">IB6M03BZQ</a></td>
+		<td>2010-06-21 04:15:29</td>
+		<td><a href="../HST_instruments.shtml">WFC3  </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=11536&mission=hst" onclick="this.target='_blank'">11536</a></td>
+		<td>COS-GTO: Sleuthing the Source of Distant Cometary Activity</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=LB6MA3010" onclick="this.target='_blank'">LB6MA3010</a></td>
+		<td>2010-06-21 05:04:45</td>
+		<td><a href="../HST_instruments.shtml">COS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=11536&mission=hst" onclick="this.target='_blank'">11536</a></td>
+		<td>COS-GTO: Sleuthing the Source of Distant Cometary Activity</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=IB6M04CJQ" onclick="this.target='_blank'">IB6M04CJQ</a></td>
+		<td>2010-10-29 14:57:57</td>
+		<td><a href="../HST_instruments.shtml">WFC3  </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=11536&mission=hst" onclick="this.target='_blank'">11536</a></td>
+		<td>COS-GTO: Sleuthing the Source of Distant Cometary Activity</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=IB6M04CKQ" onclick="this.target='_blank'">IB6M04CKQ</a></td>
+		<td>2010-10-29 14:59:37</td>
+		<td><a href="../HST_instruments.shtml">WFC3  </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=11536&mission=hst" onclick="this.target='_blank'">11536</a></td>
+		<td>COS-GTO: Sleuthing the Source of Distant Cometary Activity</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=LB6MA4010" onclick="this.target='_blank'">LB6MA4010</a></td>
+		<td>2010-10-29 15:15:13</td>
+		<td><a href="../HST_instruments.shtml">COS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=11536&mission=hst" onclick="this.target='_blank'">11536</a></td>
+		<td>COS-GTO: Sleuthing the Source of Distant Cometary Activity</td>
+	</tr>
+</table>
+<br /><p>[<a href="#top">Back to Top</a>] [<a href="../HST.shtml#01_COMET">Back to Comets</a>]</p>
+
+<a name="bottom"></a>
+
+<!-- ************************************************** End editing! ************************************************** -->
+<!--#include virtual="/css-n-includes/incl_bottom.inc"-->
+<br />Last updated: <!--#config timefmt="%A %B %d, %Y"--><!--#echo var="LAST_MODIFIED" --></div><!-- close id whotext -->
+</div><!-- close id footer -->
+</div><!-- end id footwrap -->
+</div><!-- close wrapper -->
+</body>
+</html>

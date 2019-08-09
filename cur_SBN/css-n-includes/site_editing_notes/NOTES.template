@@ -1,0 +1,227 @@
+                      Filling in the index.blank template
+                      ===================================
+
+  1. Change "MISSION" in the title to the name of the spacecraft or mission.
+
+  2. Put the full name of the mission in the headline under "Mission Title".
+
+  3. Write a mission description which summarizes the purpose for and history
+     of the mission to date.  Include the following where available:
+ 
+       - launch dates and rendezvous dates
+       - scientific objectives
+       - mission turn-off date
+       - formal names of small body targets
+
+     This should be a couple of hundred words at most.  The intended audience
+     is professional astronomers, therefore the tone must be 3rd person formal.
+
+     You can find links to the various mission home pages at this URL:
+
+         http://www.hg.nasa.gov/office/oss/missions/
+
+  4. Provide a text link to the mission home page.
+
+  5. If you have a sentence or two describing the SBN role in the mission, 
+     place it in the appropriate spot.  Otherwise, leave the visible place
+     holder provided.
+
+  6. Edit the first pointer in the "Green Button Bar" to also lead to the 
+     mission home page.
+
+  7. Fill in the "Instrument List" Table:
+
+      a. Include all instruments/experiments
+      b. Include both the full name of the instrument and its acronym
+      c. The second column should contain at most one or two sentences
+         describing the type of observations made by the instrument
+      d. The third column contains either a 1-3 word description of the 
+         type of data we have here, with a link to the appropriate data 
+         set catalog file (see below), or the word "none" in italics.
+
+  8. Fill in the "Mission Data" Table:
+
+      a. Include only those instruments for which we have data sets in the
+         archive, sorted alphabetically by acronym
+      b. The first column contains the instrument acronym, linked to the 
+         on-line instrument catalog file, if any (see below)
+      c. The second column contains the target name, linked to the on-line
+         target catalog file, if any (see below)
+      d. The third column contains a very brief (2-4 words) description of
+         the type of data available, linked to the data set catalog file.
+         NOTE: Each data set catalog file should generate a separate row 
+         (or sub-row) in the table.
+      e. The fourth column contains a word indicating the format of the 
+         data and a link to its on-line location (see below).
+      f. Rows in this table may be subdivided logically to group the data
+         (see the galileo Mission Data Table for an example).
+
+  9. Fill in the "Other Target Observations" Table:
+ 
+      a. List each target mentioned in the Mission Data table.
+      b. The first column contains the target name, linked to the target
+         catalog file
+      c. The second column contains the target type (comet, asteroid or
+         interplanetary dust).
+      d. The third column lists other data sets in our own archive with a 
+         one-line description.  The data set name should be linked to the
+         data set catalog file. If there are no other data sets available,
+         leave this column blank by filling the table cell with a non-breaking
+         space, thus:
+
+              <td>&nbsp;
+
+      e. Subdivide the table row into separate rows for each referenced
+         data set.
+
+
+
+
+
+Structure of the SBN On-line Archives
+=====================================
+
+All SBN/PDS online archives are located under the root directory /pds/sbnguest.
+There are three main subdirectories:
+
+   /pds/sbnguest/SBNast        asteroid archives
+   /pds/sbnguest/SBNcomet      comet archives
+   /pds/sbnguest/SBNdust       dust archives
+
+The asteroid archives are the most extensive.  The comet archive does not yet
+contain any data in the permanent archive, and you should have no reason to
+reference any of the pending comet catalogs for these pages.
+
+Under the /SBN* archives, the permanent archive files - in the cases of 
+asteroids and dust, the only catalog files which you should reference - are
+under the /archive subdirectory tree.  So, the data files which you should 
+reference on these pages are under:
+
+   /pds/sbnguest/SBNast/archive     asteroids
+   /pds/sbnguest/SBNdust/archive    dust
+
+Data sets themselves should not be directly referenced in the archive 
+directories.  Instead, use the pre-formatted HTML pages for them, found in a 
+subdirectory parallel to the /archive directory:
+
+   /pds/sbnguest/SBNast/holdings    asteroids
+   /pds/sbnguest/SBNdust/holdings   dust
+
+
+Catalog Files
+-------------
+
+All catalog files (data set and target) are located in the /catalog subdirectory
+of these permanent archive directories:
+
+   /pds/sbnguest/SBNast/archive/catalog
+   /pds/sbnguest/SBNdust/archive/catalog
+
+except for the SL9 target catalog, which should be referenced here:
+
+   /pds/sbnguest/SBNcomet/prep/catalog/sl9.cat
+
+When referencing catalog files, ALWAYS use the files with all-lowercase file 
+names and the suffix '.cat'.  NEVER edit any of these files.  
+
+File names
+
+  o Target catalog files are named by the name of the target.  For example,
+    'ida.cat' is the Ida target catalog file.  If you cannot find a target
+    file in the on-line archives for a small bodies target, please let me 
+    know.
+
+  o Instrument catalog files are named by the local acronym for the dataset,
+    with an ending of "in", "ins" or "inst", depending on how many letters
+    are left.  For example, the Galileo DDS dataset, local acronym "gald",
+    has an instrument catalog file called "galdinst.cat".  In some cases
+    there may not be an instrument catalog file available.
+
+  o Data set catalog files are named by the local acronym of the dataset.
+    For example, the Galileo DDS data set catalog file is called "gald.cat".
+    Sometimes, usually on CDs, the data set catalog is named by the name of
+    the instrument/experiment, with a suffix like "ds" (data set) or "rd"
+    (reduced data).  There should always be a data set catalog file.
+
+Catalog files on CDs should be under a /catalog directory at the root level of
+the disk. In the case of the very old IHW disks, there may be no /catalog
+directory.  If this is the case, then check in the data directories for ".doc"
+files which provide data set information.  Use these in place of catalog files
+if necessary.
+
+
+Data Files
+----------
+
+Data files should only be reference through the pre-formatted HTML files in the
+/holdings subdirectory.  The names of these files come from the DATA_SET_ID
+fields (note that they are in all upper-case) in the corresponding data set
+catalog file, with an extension of ".html".  These are very ugly file names
+and easy to mistype.
+
+
+
+
+
+Pointing to PDS Files
+=====================
+
+You'll find PDS catalog files in one of several places - either in the on-line
+/catalog directory, or in the /catalog subdirectory of a CDROM.  Here are
+sample URLs for each type:
+
+
+  o Catalog file for Galileo/NIMS data from the CD directory:
+
+     <a href="/cdrom/cd20/catalog/gonimsrd.cat">
+
+    Note that /cdrom/cd20 points to /cdicarus20, /cdrom/cd8 points to
+    /cdicarus8, and so on.
+
+  o Instrument and target catalog files can also be displayed directly.
+    Here's a link to the Gaspra target template:
+
+     <a href="/SBNast/archive/catalog/gaspra.cat">
+
+  o Catalog files from the on-line archive should be piped through the
+    'pds_display' CGI script for display.  This requires a fairly complicated-
+    looking link.  This example displays the Galileo DDS data set 
+    catalog file:
+
+      <a href="/SBNcgi/pds_display?archive=SBNdust&directory=archive/catalog&filename=gald.cat">
+
+    To reference the Geographos radar data catalog file in the asteroids
+    archive:
+
+      <a href="/SBNcgi/pds_display?archive=SBNast&directory=archive/catalog&filename=geograph.cat">
+
+    Note that there should be no line breaks or extrat blanks in the "href"
+    parts of these links.
+
+  o The target catalog file for comet SL9 is in the SBNcomet archive:
+
+      <a href="/SBNcomet/prep/archive/sl9.cat">
+
+
+With one exception, data files are either in the on-line archives, in which 
+case they will have a preformatted HTML page to present the data saved in the 
+appropriate /holdings directory, or they will be on a CDROM.
+
+  o In the case of CDs, provide a link to the top-level directory of the 
+    specific dataset.  For example, this link directs the user to the
+    Galileo PPR instrument data for SL9:
+
+      <a href="/cdrom/cd20/galileo/ppr">
+
+  o For datasets from the on-line archive, link to the pre-formatted HTML 
+    using the DATA_SET_ID from the catalog file.  Here is a link to the 
+    Ulysses DDS page:
+
+      <a href="/SBNdust/holdings/ULY-D-UDDS-5-DUST-V2.0.html">
+
+  o There is a special collection of data relating to the asteroids Ida and 
+    Gaspra.  They are grouped together on the same page and there is no need
+    to call out each type of data (ground-based, NIMS, SSI, etc.) separately.
+    Just point to the top-level page:
+
+      <a href="/sbnhtml/asteroids/ida_gaspra.html">

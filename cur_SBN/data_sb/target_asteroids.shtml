@@ -22,6 +22,7 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
         <!--
 ===========================================================================
 EDIT HISTORY:
++ 2019-10-31 EMW    updated Rosetta MIDAS under Lutetia
 + 2019-08-27 EMW    added in links to O-REx bundles under Bennu
 + 2019-06-07 EMW	added 2 KC1 LORRI under 136472, 136108, 50000, 307261 and new 119951, 2014OE394, 516977, 5145, 38628, 2011HJ103, 2012HE85, 486958; added 2 KC1 MVIC under 486958
 + 2019-01-25 EMW	updated to PDS4 link to Comet Lightcurves
@@ -201,8 +202,9 @@ EDIT HISTORY:
             <!-- RO-A/CAL-ALICE-3-AST2-V1.0 -->
             <li><a href="/holdings/ro-a_cal-alice-4-ast2-v1.0/dataset.html">Rosetta-Orbiter ALICE Lutetia Resampled Data</a></li>
             <!-- RO-A/CAL-ALICE-4-AST2-V1.0 -->
-            <li><a href="/holdings/ro-a-midas-3-ast2-lute-v1.0/dataset.html">Rosetta-Orbiter MIDAS Lutetia Calibrated Data</a></li>
-            <!-- RO-A-MIDAS-3-AST2-LUTE-V1.0 -->
+            <li><a href="/holdings/ro-a-midas-3-ast2-lute-v3.0/dataset.html">Rosetta-Orbiter MIDAS Lutetia Calibrated Data v3.0</a></li>
+            <!-- RO-A-MIDAS-3-AST2-LUTE-V3.0 -->
+
             <li><a href="/holdings/ro-a-miro-2-ast2-lutetia-v1.0/dataset.html">Rosetta-Orbiter MIRO Lutetia Raw Data</a></li>
             <!-- RO-A-MIRO-2-AST2-LUTETIA-V1.0 -->
             <li><a href="/holdings/ro-a-miro-3-ast2-lutetia-v1.0/dataset.html">Rosetta-Orbiter MIRO Lutetia Calibrated Data</a></li>

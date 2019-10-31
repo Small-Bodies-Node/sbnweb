@@ -38,6 +38,7 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
         <!--
 ===========================================================================
 EDIT HISTORY:
++ 2019-10-31 EMW    updated/added 19 Rosetta MIDAS
 + 2019-10-02 EMW    Updated mission description...
 + 2019-03-01 EMW	24 Rosina datasets (PRL, ESC1-4, EXT1-3)
 + 2019-03-01 EMW	finished removing duplicate OSIRIS dataset (209)
@@ -230,8 +231,23 @@ EDIT HISTORY:
             <!-- RO/RL-CAL-CONSERT-2-GRNDBENCH-V1.0 -->
             <li><a href="/holdings/ro_rl-cal-consert-3-grnd-v1.0/dataset.html">Rosetta-Orbiter/Lander CONSERT Flight and Qualification Ground Calibrated Data</a></li>
             <!-- RO/RL-CAL-CONSERT-3-GRND-V1.0 -->
-            <li><a href="/holdings/ro-cal-midas-3-grnd-ref-2008-v1.0/dataset.html">Rosetta-Orbiter MIDAS Ground Reference Calibrated Data</a></li>
+
+
+            <li><a href="/holdings/ro-cal-midas-3-grnd-ref-2008-v1.0/dataset.html">Rosetta-Orbiter MIDAS 2008 Ground Reference Calibrated Data</a></li>
             <!-- RO-CAL-MIDAS-3-GRND-REF-2008-V1.0 -->
+            <li><a href="/holdings/ro-cal-midas-3-grnd-ref-2009-v1.0/dataset.html">Rosetta-Orbiter MIDAS 2009 Ground Reference Calibrated Data</a></li>
+            <!-- RO-CAL-MIDAS-3-GRND-REF-2009-V1.0 -->
+            <li><a href="/holdings/ro-cal-midas-3-grnd-ref-2010-v1.0/dataset.html">Rosetta-Orbiter MIDAS 2010 Ground Reference Calibrated Data</a></li>
+            <!-- RO-CAL-MIDAS-3-GRND-REF-2010-V1.0 -->
+            <li><a href="/holdings/ro-cal-midas-3-grnd-ref-2011-v1.0/dataset.html">Rosetta-Orbiter MIDAS 2011 Ground Reference Calibrated Data</a></li>
+            <!-- RO-CAL-MIDAS-3-GRND-REF-2011-V1.0 -->
+            <li><a href="/holdings/ro-cal-midas-3-grnd-ref-2013-v1.0/dataset.html">Rosetta-Orbiter MIDAS 2013 Ground Reference Calibrated Data</a></li>
+            <!-- RO-CAL-MIDAS-3-GRND-REF-2013-V1.0 -->
+            <li><a href="/holdings/ro-cal-midas-3-grnd-ref-2014-v1.0/dataset.html">Rosetta-Orbiter MIDAS 2014 Ground Reference Calibrated Data</a></li>
+            <!-- RO-CAL-MIDAS-3-GRND-REF-2014-V1.0 -->
+            <li><a href="/holdings/ro-cal-midas-3-grnd-ref-2015-v1.0/dataset.html">Rosetta-Orbiter MIDAS 2015 Ground Reference Calibrated Data</a></li>
+            <!-- RO-CAL-MIDAS-3-GRND-REF-2015-V1.0 -->
+
         </ul>
 
         <h3>Commissioning 1 &amp; Commissioning 2</h3>
@@ -246,7 +262,7 @@ EDIT HISTORY:
             <!-- RO/RL-CAL-CONSERT-2-CVP2-V1.0 -->
             <li><a href="/holdings/ro-x-gia-2-cvp1-commissioning1-v1.0/dataset.html">Rosetta-Orbiter GIADA Commissioning 1 Raw Data</a></li>
             <li><a href="/holdings/ro-x-gia-2-cvp2-commissioning2-v1.0/dataset.html">Rosetta-Orbiter GIADA Commissioning 2 Raw Data</a></li>
-            <li><a href="/holdings/ro-cal-midas-3-cvp-full-v1.0/dataset.html">Rosetta-Orbiter MIDAS Commissioning Calibrated Data</a></li>
+            <li><a href="/holdings/ro-cal-midas-3-cvp-full-v3.0/dataset.html">Rosetta-Orbiter MIDAS Commissioning Calibrated Data v3.0</a></li>
             <li><a href="/holdings/ro-x-miro-2-cvp-commissioning-v1.0/dataset.html">Rosetta-Orbiter MIRO Commissioning Raw Data</a></li>
             <li><a href="/holdings/ro-x-miro-3-cvp-commissioning-v1.1/dataset.html">Rosetta-Orbiter MIRO Commissioning Calibrated Data v1.1</a></li>
             <li><a href="/holdings/ro-x-osinac-2-cvp-commissioning-v1.4/dataset.html">Rosetta-Orbiter OSIRIS Narrow Angle Camera Commissioning Raw Data</a></li>
@@ -280,7 +296,7 @@ EDIT HISTORY:
             <li><a href="/holdings/ro_rl-cal-consert-2-ear1-v2.0/dataset.html">Rosetta-Orbiter/Lander CONSERT Earth Swing-by 1 Raw Data v2.0</a></li>
             <!-- RO/RL-CAL-CONSERT-2-EAR1-V2.0 -->
             <li><a href="/holdings/ro-x-gia-2-ear1-earthswingby1-v1.0/dataset.html">Rosetta-Orbiter GIADA Earth Swing-by 1 Raw Data</a></li>
-            <li><a href="/holdings/ro-x-midas-3-ear1-pc0-v1.0/dataset.html">Rosetta-Orbiter MIDAS Earth Swing-by 1 Calibrated Data</a></li>
+            <li><a href="/holdings/ro-x-midas-3-ear1-pc0-v3.0/dataset.html">Rosetta-Orbiter MIDAS Earth Swing-by 1 Calibrated Data v3.0</a></li>
             <li><a href="/holdings/ro-e-miro-2-ear1-earth1-v1.0/dataset.html">Rosetta-Orbiter MIRO Earth Swingby 1 Raw Data</a></li>
             <li><a href="/holdings/ro-e-miro-3-ear1-earth1-v1.1/dataset.html">Rosetta-Orbiter MIRO Earth Swingby 1 Calibrated Data v1.1</a></li>
             <li><a href="/holdings/ro-e-osinac-2-ear1-earthswingby1-v1.4/dataset.html">Rosetta-Orbiter OSIRIS Narrow Angle Camera Earth Swing-by 1 Raw Data</a></li>
@@ -306,7 +322,7 @@ EDIT HISTORY:
             <!-- RO/RL-CAL-CONSERT-2-CR2-V2.0 -->
             <li><a href="/holdings/ro_rl-cal-consert-3-cr2-v1.0/dataset.html">Rosetta-Orbiter/Lander CONSERT Cruise 2 Calibrated Data</a></li>
             <!-- RO/RL-CAL-CONSERT-3-CR2-V1.0 -->
-            <li><a href="/holdings/ro-x-midas-3-cr2-pc1-2-v1.0/dataset.html">Rosetta-Orbiter MIDAS Cruise 2 Calibrated Data</a></li>
+            <li><a href="/holdings/ro-x-midas-3-cr2-pc1-2-v3.0/dataset.html">Rosetta-Orbiter MIDAS Cruise 2 Calibrated Data v3.0</a></li>
             <li><a href="/holdings/ro-c-miro-2-cr2-9p-tempel1-v1.0/dataset.html">Rosetta-Orbiter MIRO Cruise 2 &amp; 9P/Tempel 1 Raw Data</a></li>
             <li><a href="/holdings/ro-c-miro-3-cr2-9p-tempel1-v1.1/dataset.html">Rosetta-Orbiter MIRO Cruise 2 &amp; 9P/Tempel 1 Calibrated Data v1.1</a></li>
             <li><a href="/holdings/ro-x-osinac-2-cr2-cruise2-v1.4/dataset.html">Rosetta-Orbiter OSIRIS Narrow Angle Camera Cruise 2 Raw Data</a></li>
@@ -343,6 +359,9 @@ EDIT HISTORY:
             <!-- RO-M-RPCICA-2-MARS-RAW-V2.0v -->
             <li><a href="/holdings/ro-m-rpcmip-3-mars-v1.0/dataset.html">Rosetta-Orbiter RPCMIP Mars Swingby Calibrated Data</a></li>
             <!-- RO-M-RPCMIP-3-MARS-V1.0 -->
+            <li><a href="/holdings/ro-x-midas-3-mars-pc3-5-v3.0/dataset.html">Rosetta-Orbiter MIDAS Mars Swing-by Calibrated Data v3.0</a></li>
+            <!-- RO-X-MIDAS-3-MARS-PC3-5-V3.0 -->
+
         </ul>
 
         <h3>Earth Swingby 2</h3>
@@ -367,6 +386,9 @@ EDIT HISTORY:
             <!-- RO-E-RPCICA-2-EAR2-RAW-V2.0 -->
             <li><a href="/holdings/ro-e-rpcmip-3-ear2-v2.0/dataset.html">Rosetta-Orbiter RPCMIP Earth Swingby 2 Calibrated Data v2.0</a></li>
             <!-- RO-E-RPCMIP-3-EAR2-V2.0 -->
+            <li><a href="/holdings/ro-x-midas-3-ear2-pc6-7-v3.0/dataset.html">Rosetta-Orbiter MIDAS Earth Swing-by 2 Calibrated Data v3.0</a></li>
+            <!-- RO-X-MIDAS-3-EAR2-PC6-7-V3.0 -->
+
         </ul>
 
         <h3>Cruise 4A</h3>
@@ -387,6 +409,9 @@ EDIT HISTORY:
             <li><a href="/holdings/ro-x-rpcmag-4-cr4a-resampled-v3.0/dataset.html">Rosetta-Orbiter RPCMAG Cruise 4A Resampled Data</a></li>
             <li><a href="/holdings/ro-cal-rpcmip-3-cr4a-v1.0/dataset.html">Rosetta-Orbiter RPCMIP Cruise 4A Calibrated Data</a></li>
             <!-- RO-CAL-RPCMIP-3-CR4A-V1.0 -->
+            <li><a href="/holdings/ro-x-midas-3-cr4a-pc8-v3.0/dataset.html">Rosetta-Orbiter MIDAS Cruise 4A Calibrated Data v3.0</a></li>
+            <!-- RO-X-MIDAS-3-CR4A-PC8-V3.0 -->
+
         </ul>
 
         <h3>Asteroid 2867 Steins Flyby</h3>
@@ -419,6 +444,9 @@ EDIT HISTORY:
             <!-- RO-SS-RPCICA-2-CR4B-RAW-V2.0 -->
             <li><a href="/holdings/ro-cal-rpcmip-3-cr4b-v1.0/dataset.html">Rosetta-Orbiter RPCMIP Cruise 4B Calibrated Data</a></li>
             <!-- RO-CAL-RPCMIP-3-CR4B-V1.0 -->
+            <li><a href="/holdings/ro-x-midas-3-cr4b-pc9-v3.0/dataset.html">Rosetta-Orbiter MIDAS Cruise 4B Calibrated Data v3.0</a></li>
+            <!-- RO-X-MIDAS-3-CR4B-PC9-V3.0 -->
+
         </ul>
 
         <h3>Earth Swingby 3</h3>
@@ -433,6 +461,9 @@ EDIT HISTORY:
             <!-- RO-E-RPCICA-2-EAR3-RAW-V1.0 -->
             <li><a href="/holdings/ro-e-rpcmip-3-ear3-v1.0/dataset.html">Rosetta-Orbiter RPCMIP Earth Swingby 3 Calibrated Data</a></li>
             <!-- RO-E-RPCMIP-3-EAR3-V1.0 -->
+            <li><a href="/holdings/ro-x-midas-3-ear3-pc10-v3.0/dataset.html">Rosetta-Orbiter MIDAS Earth Swing-by 3 Calibrated Data v3.0</a></li>
+            <!-- RO-X-MIDAS-3-EAR3-PC10-V3.0 -->
+
         </ul>
 
         <h3>Cruise 5</h3>
@@ -445,6 +476,9 @@ EDIT HISTORY:
             <!-- RO-SS-RPCIES-2-CR5-V1.0 -->
             <li><a href="/holdings/ro-cal-rpcmip-3-cr5-v1.0/dataset.html">Rosetta-Orbiter RPCMIP Cruise 5 Calibrated Data</a></li>
             <!-- RO-CAL-RPCMIP-3-CR5-V1.0 -->
+            <li><a href="/holdings/ro-x-midas-3-cr5-pc12-v3.0/dataset.html">Rosetta-Orbiter MIDAS Cruise 5 Calibrated Data v3.0</a></li>
+            <!-- RO-X-MIDAS-3-CR5-PC12-V3.0 -->
+
         </ul>
 
         <h3>Asteroid 21 Lutetia Flyby</h3>
@@ -454,7 +488,7 @@ EDIT HISTORY:
             <li><a href="/holdings/ro-a_cal-alice-2-ast2-v1.0/dataset.html">Rosetta-Orbiter ALICE Lutetia Raw Data</a></li>
             <li><a href="/holdings/ro-a_cal-alice-3-ast2-v1.0/dataset.html">Rosetta-Orbiter ALICE Lutetia Calibrated Data</a></li>
             <li><a href="/holdings/ro-a_cal-alice-4-ast2-v1.0/dataset.html">Rosetta-Orbiter ALICE Lutetia Resampled Data</a></li>
-            <li><a href="/holdings/ro-a-midas-3-ast2-lute-v1.0/dataset.html">Rosetta-Orbiter MIDAS Lutetia Calibrated Data</a></li>
+            <li><a href="/holdings/ro-a-midas-3-ast2-lute-v3.0/dataset.html">Rosetta-Orbiter MIDAS Lutetia Calibrated Data v3.0</a></li>
             <li><a href="/holdings/ro-a-miro-2-ast2-lutetia-v1.0/dataset.html">Rosetta-Orbiter MIRO Lutetia Raw Data</a></li>
             <li><a href="/holdings/ro-a-miro-3-ast2-lutetia-v1.0/dataset.html">Rosetta-Orbiter MIRO Lutetia Calibrated Data</a></li>
             <li><a href="/holdings/ro-a-rpcmag-2-ast2-raw-v3.0/dataset.html">Rosetta-Orbiter RPCMAG Lutetia Raw Data</a></li>
@@ -480,6 +514,9 @@ EDIT HISTORY:
             <!-- RO/RL-CAL-CONSERT-2-RVM1-V2.0 -->
             <li><a href="/holdings/ro-cal-rpcmip-3-rvm1-v1.0/dataset.html">Rosetta-Orbiter RPCMIP Rendezvous Maneuver 1 Calibrated Data</a></li>
             <!-- RO-CAL-RPCMIP-3-RVM1-V1.0 -->
+            <li><a href="/holdings/ro-x-midas-3-rvm1-pc13-v3.0/dataset.html">Rosetta-Orbiter MIDAS Rendezvous Maneuver 1 Calibrated Data v3.0</a></li>
+            <!-- RO-X-MIDAS-3-RVM1-PC13-V3.0 -->
+
         </ul>
 
         <h3>67P/C-G Prelanding (Orbiter only)</h3>
@@ -1243,7 +1280,31 @@ EDIT HISTORY:
 
 
 
+        <li><a href="/holdings/ro-cal-midas-3-cvp-full-v3.0/dataset.html">Rosetta-Orbiter MIDAS Commissioning Calibrated Data v3.0</a></li>
+        <!-- RO-CAL-MIDAS-3-CVP-FULL-V3.0 -->
+        <li><a href="/holdings/ro-x-midas-3-ear1-pc0-v3.0/dataset.html">Rosetta-Orbiter MIDAS Earth Swing-by 1 Calibrated Data v3.0</a></li>
+        <!-- RO-X-MIDAS-3-EAR1-PC0-V3.0 -->
+        <li><a href="/holdings/ro-x-midas-3-cr2-pc1-2-v3.0/dataset.html">Rosetta-Orbiter MIDAS Cruise 2 Calibrated Data v3.0</a></li>
+        <!-- RO-X-MIDAS-3-CR2-PC1-2-V3.0 -->
+        <li><a href="/holdings/ro-a-midas-3-ast2-lute-v3.0/dataset.html">Rosetta-Orbiter MIDAS Lutetia Calibrated Data v3.0</a></li>
+        <!-- RO-A-MIDAS-3-AST2-LUTE-V3.0 -->
 
+
+        <li><a href="/holdings/ro-x-midas-3-mars-pc3-5-v3.0/dataset.html">Rosetta-Orbiter MIDAS Mars Swing-by Calibrated Data v3.0</a></li>
+        <!-- RO-X-MIDAS-3-MARS-PC3-5-V3.0 -->
+        <li><a href="/holdings/ro-x-midas-3-ear2-pc6-7-v3.0/dataset.html">Rosetta-Orbiter MIDAS Earth Swing-by 2 Calibrated Data v3.0</a></li>
+        <!-- RO-X-MIDAS-3-EAR2-PC6-7-V3.0 -->
+        <li><a href="/holdings/ro-x-midas-3-cr4a-pc8-v3.0/dataset.html">Rosetta-Orbiter MIDAS Cruise 4A Calibrated Data v3.0</a></li>
+        <!-- RO-X-MIDAS-3-CR4A-PC8-V3.0 -->
+        <li><a href="/holdings/ro-x-midas-3-cr4b-pc9-v3.0/dataset.html">Rosetta-Orbiter MIDAS Cruise 4B Calibrated Data v3.0</a></li>
+        <!-- RO-X-MIDAS-3-CR4B-PC9-V3.0 -->
+        <li><a href="/holdings/ro-x-midas-3-ear3-pc10-v3.0/dataset.html">Rosetta-Orbiter MIDAS Earth Swing-by 3 Calibrated Data v3.0</a></li>
+        <!-- RO-X-MIDAS-3-EAR3-PC10-V3.0 -->
+        <li><a href="/holdings/ro-x-midas-3-cr5-pc12-v3.0/dataset.html">Rosetta-Orbiter MIDAS Cruise 5 Calibrated Data v3.0</a></li>
+        <!-- RO-X-MIDAS-3-CR5-PC12-V3.0 -->
+
+        <li><a href="/holdings/ro-x-midas-3-rvm1-pc13-v3.0/dataset.html">Rosetta-Orbiter MIDAS Rendezvous Maneuver 1 Calibrated Data v3.0</a></li>
+        <!-- RO-X-MIDAS-3-RVM1-PC13-V3.0 -->
 
 
 
@@ -1272,8 +1333,9 @@ EDIT HISTORY:
             <!-- RO-C-MULTI-5-67P-SHAPE-V2.0 -->
             <li><a href="/holdings/rl-c-multi-5-ancdr-v2.0/dataset.html">Rosetta-Lander Ancillary 67P data v2.0</a></li>
             <!-- RL-C-MULTI-5-ANCDR-V2.0 -->
-            <li><a href="/holdings/ro-c-midas-5-prl-to-ext3-v1.0/dataset.html">Rosetta-Orbiter MIDAS 67P Cometary Particles Derived Data</a></li>
-            <!-- RO-C-MIDAS-5-PRL-TO-EXT3-V1.0 -->
+            <li><a href="/holdings/ro-c-midas-5-prl-to-ext3-v2.0/dataset.html">Rosetta-Orbiter MIDAS 67P Cometary Particles Derived Data v2.0</a></li>
+            <!-- RO-C-MIDAS-5-PRL-TO-EXT3-V2.0 -->
+
         </ul>
 
         <h3>Related Datasets</h3>

@@ -105,6 +105,7 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
         <!--
 ===========================================================================
 EDIT HISTORY:
++ 2019-10-31 EMW    removed IHW Additional Nucleus Images since they've been incorporated into v2 dataset
 + 2019-10-31 EMW    updated Rosetta MIDAS under 67P
 + 2019-07-12 EMW	restore from copy on new SBN (Look at comet_type for possible items to update)
 + 2019-02-28 EMW	migrated datasets: Nuc Prop, Nuc Rotation, 19P, Devico, Faint comets
@@ -295,10 +296,10 @@ EDIT HISTORY:
             <!-- IHW-C-MSNVIS-3-RDR-HALLEY-ETA-AQUAR-V1.0 -->
             <li><a href="/holdings/ihw-c-msnvis-3-rdr-halley-orionid-v1.0/dataset.html">International Halley Watch Visual Observations of the Orionids Meteor Shower, 1984-1987</a></li>
             <!-- IHW-C-MSNVIS-3-RDR-HALLEY-ORIONID-V1.0 -->
-            <li><a href="/holdings/ihw-c-nnsn-3-edr-halley-addenda-v1.0/dataset.html">International Halley Watch - Additional Near Nucleus Images of Comet Halley</a></li>
-            <!-- IHW-C-NNSN-3-EDR-HALLEY-ADDENDA-V1.0 -->
+
             <li><a href="/holdings/ihw-c-nnsn-3-edr-halley-v2.0/dataset.html">International Halley Watch Near Nucleus Images of Comet Halley v2.0</a></li>
             <!-- IHW-C-NNSN-3-EDR-HALLEY-V2.0 -->
+
             <li><a href="/holdings/ihw-c-ppflx-3-rdr-halley-v2.0/dataset.html">International Halley Watch Photometric Fluxes of Comet Halley v2.0</a></li>
             <!-- IHW-C-PPFLX-3-RDR-HALLEY-V2.0 -->
             <li><a href="/holdings/ihw-c-ppmag-3-rdr-halley-v2.0/dataset.html">International Halley Watch Photometric Magnitudes of Comet Halley v2.0</a></li>

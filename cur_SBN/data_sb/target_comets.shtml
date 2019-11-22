@@ -442,7 +442,7 @@ EDIT HISTORY:
         <ul>
             <li><a href="/holdings/di_iras-c-fpa-5-9p-images-v1.0/dataset.html">IRAS Images of 9P/Tempel&nbsp;1 from 1983</a></li>
             <li><a href="/holdings/di_iras-c-fpa-5-9p-phot-v1.0/dataset.html">IRAS Photometry of 9P/Tempel&nbsp;1 from 1983</a></li>
-            <li><a href="/holdings/di_ear-c-i0071-2-irtf-mir-tmpl1-v1.0/dataset.html">IRTF/MIRSI Mid-IR Images of 9P/Tempel&nbsp;1 during Deep Impact Encounter</a></li>
+            <li><a href="/holdings/pds4-gbo-irtf:mirsi-9p-v1.0/SUPPORT/dataset.html">IRTF Mid-IR Imaging of Comet 9P/Tempel 1</a> <code>urn:nasa:pds:gbo-irtf:mirsi-9p::1.0</code> </li>
             <li><a href="/holdings/di_ear-c-i0046-2-irtf-nirimg-tmpl1-v1.0/dataset.html">IRTF/SpeX Near-IR Images of 9P/Tempel&nbsp;1 during Deep Impact Encounter</a></li>
             <li><a href="/holdings/di_ear-c-i0046-2-irtf-nirspec-tmpl1-v1.0/dataset.html">IRTF/SpeX Near-IR Spectra of 9P/Tempel&nbsp;1 during Deep Impact Encounter</a></li>
             <li><a href="/holdings/di_ear-c-keck1lws-3-9p-images-phot-v1.0/dataset.html">Keck I LWS Mid-IR Images and Photometry of 9P/Tempel&nbsp;1 from 2000</a></li>
@@ -451,9 +451,8 @@ EDIT HISTORY:
             <li><a href="/holdings/di_ear-c-lplccd-3-mtbg61-tmpl1-v1.0/dataset.html">Mt. Bigelow 61-inch Kuiper Telescope Visual Images of 9P/Tempel&nbsp;1 from 1994</a></li>
             <li><a href="/holdings/di_ear-c-i0276-2_3-martir15m-tmpl1-v1.0/dataset.html">San Pedro Martir 1.5m Visual Images of 9P/Tempel&nbsp;1 during Deep Impact Encounter</a></li>
             <li><a href="/holdings/di_ear-c-i0034-3-uh22m-tmpl1-v1.0/dataset.html">UH 2.2m Visual Images and Astrometry of 9P/Tempel&nbsp;1 from 1997-2000</a></li>
-            <li><a href="/holdings/ear-c-lcs-5-9ptmpl1-spectra-v1.0/dataset.html">McDonald Observatory Spectroscopy of 9P/Tempel&nbsp;1 from 1989-2005</a></li>
-            <li><a href="/holdings/ear-c-i0065_i1084-3-imgtempel1kpno-v1.0/dataset.html">KPNO 2.1m 9P/Tempel 1 Images from February to June 2005</a></li>
-            <!-- EAR-C-I0065/I1084-3-IMGTEMPEL1KPNO-V1.0 -->
+            <li><a href="/holdings/pds4-gbo-mcdonald:lcs-9p-v1.0/SUPPORT/dataset.html">McDonald Observatory 9P/Tempel 1 Spectral Observations</a> <code>urn:nasa:pds:gbo-mcdonald:lcs-9p::1.0</code> </li>
+            <li><a href="/holdings/pds4-gbo-kpno:image-9p-v1.0/SUPPORT/dataset.html">KPNO Images of Comet 9P/Tempel 1 from February to June 2005</a> <code>urn:nasa:pds:gbo-kpno:image-9p::1.0</code> </li>
             <li><a href="/holdings/ear-c-i0655-2_3-mosaictempel1-v1.0/dataset.html">Kitt Peak Mayall 4m MOSAIC Images of 9P/Tempel 1 from 2005 around DI Encounter</a></li>
             <li><a href="/holdings/di-c-hrii_hriv_mri_its-6-doc-set-v4.0/dataset.html">Deep Impact &amp; EPOXI Documentation Set v4.0</a></li>
             <li><a href="/holdings/dif-cal-hrii-2-9p-cruise-v1.0/dataset.html">Deep Impact/HRI-IR Raw Calibration Spectra from Cruise</a></li>
@@ -532,7 +531,7 @@ EDIT HISTORY:
             <!-- DS1-C-MICAS-3-RDR-VISCCD-BORRELLY-V1.0 -->
             <li><a href="/holdings/ds1-c-micas-2-edr-visccd-borrelly-v1.0/dataset.html">DS1/MICAS Uncalibrated VISCCD and SWIR Data</a></li>
             <!-- DS1-C-MICAS-2-EDR-VISCCD-BORRELLY-V1.0 -->
-            <li><a href="/holdings/ear-c-i0065-2-imgborrellykpno-v1.0/dataset.html">KPNO Images of Comet 19P/Borrelly from 21-23 Sep 2001</a></li>
+            <li><a href="/holdings/pds4-gbo-kpno:image-19p-v1.0/SUPPORT/dataset.html">KPNO Images of Comet 19P/Borrelly from 21-23 Sep 2001</a> <code>urn:nasa:pds:gbo-kpno:image-19p::1.0</code> </li>
             <!-- EAR-C-I0065-2-IMGBORRELLYKPNO-V1.0 -->
             <li><a href="https://naif.jpl.nasa.gov/naif/data_archived.html">Deep Space 1 Spice Kernels</a> (9969 Braille, 19P/Borrelly 1)</li>
             <!-- DS1-A/C-SPICE-6-V1.0 -->

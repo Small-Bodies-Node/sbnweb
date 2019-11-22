@@ -200,7 +200,7 @@ EDIT HISTORY:
             <li><a href="/holdings/dii-c-its-2-nav-9p-encounter-v1.1/dataset.html">Deep Impact/Navigation ITS-VIS Raw Images and Calibrations from Encounter v1.1</a></li>
             <li><a href="/holdings/dii-c-its-3-nav-9p-encounter-v1.0/dataset.html">Deep Impact/Navigation ITS-VIS Calibrated Images from Encounter</a></li>
             <li><a href="/holdings/di_iras-c-fpa-5-9p-images-v1.0/dataset.html">IRAS Images of 9P/Tempel&nbsp;1 from 1983</a></li>
-            <li><a href="/holdings/di_ear-c-i0071-2-irtf-mir-tmpl1-v1.0/dataset.html">IRTF/MIRSI Mid-IR Images of 9P/Tempel&nbsp;1 during Deep Impact Encounter</a></li>
+            <li><a href="/holdings/pds4-gbo-irtf:mirsi-9p-v1.0/SUPPORT/dataset.html">IRTF Mid-IR Imaging of Comet 9P/Tempel 1</a> <code>urn:nasa:pds:gbo-irtf:mirsi-9p::1.0</code> </li>
 
             <li><a href="/holdings/pds4-gbo-irtf:nirimg-9p-v1.0/SUPPORT/dataset.html">IRTF Near-IR Images of 9P/Tempel 1 during Deep Impact Encounter</a> <code>urn:nasa:pds:gbo-irtf:nirimg-9p::1.0</code></li>
 
@@ -213,7 +213,7 @@ EDIT HISTORY:
             <li><a href="/holdings/di_ear-c-i0276-2_3-martir15m-tmpl1-v1.0/dataset.html">San Pedro Martir 1.5m Visual Images of 9P/Tempel&nbsp;1 during Deep Impact Encounter</a></li>
             <li><a href="/holdings/di_ear-c-i0034-3-uh22m-tmpl1-v1.0/dataset.html">UH 2.2m Visual Images and Astrometry of 9P/Tempel&nbsp;1 from 1997-2000</a></li>
             <li><a href="/holdings/pds4-gbo-ctio:cfccd-19p-v1.0/SUPPORT/dataset.html">CTIO Images of 19P/Borrelly 1 with Photometry</a> <code>urn:nasa:pds:gbo-ctio:cfccd-19p::1.0</code></li>
-            <li><a href="/holdings/ear-c-i0065-2-imgborrellykpno-v1.0/dataset.html">KPNO Images of Comet 19P/Borrelly from 21-23 Sep 2001</a></li>
+            <li><a href="/holdings/pds4-gbo-kpno:image-19p-v1.0/SUPPORT/dataset.html">KPNO Images of Comet 19P/Borrelly from 21-23 Sep 2001</a> <code>urn:nasa:pds:gbo-kpno:image-19p::1.0</code> </li>
             <li><a href="/holdings/ear-c-igi-3-edr-borrelly-v1.0/dataset.html">McDonald Observatory Images of 19P/Borrelly 1</a></li>
             <li><a href="/holdings/ear-c-ccdimgr-3-meech-19p-borrelly-v1.0/dataset.html">CCD Images of 19P/Borrelly 1, 1987-2002</a></li>
             <li><a href="/holdings/soho-c-lasco-4-cometimages-v1.0/dataset.html">SOHO Comet Images</a></li>
@@ -266,8 +266,7 @@ EDIT HISTORY:
             <li><a href="/holdings/hst-j-wfpc2-3-sl9-impact-v1.0/dataset.html">Hubble Space Telescope Wide Field Planetary Camera 2 Images of D/Shoemaker-Levy 9 Impact and Aftermath</a></li>
             <li><a href="/holdings/ear-j_c-hsccd-3-rdr-sl9-v1.0/dataset.html">Ground-based Observations of D/Shoemaker-Levy 9 from Various Observatories</a></li>
             <li><a href="/holdings/eso-j-susi-3-rdr-sl9-v1.0/dataset.html">European Southern Observatory Superb Seeing Instrument Images of D/Shoemaker-Levy 9 Impacts and Aftermath</a></li>
-            <li><a href="/holdings/ear-c-i0065_i1084-3-imgtempel1kpno-v1.0/dataset.html">KPNO 2.1m 9P/Tempel 1 Images from February to June 2005</a></li>
-            <!-- EAR-C-I0065/I1084-3-IMGTEMPEL1KPNO-V1.0 -->
+            <li><a href="/holdings/pds4-gbo-kpno:image-9p-v1.0/SUPPORT/dataset.html">KPNO Images of Comet 9P/Tempel 1 from February to June 2005</a> <code>urn:nasa:pds:gbo-kpno:image-9p::1.0</code> </li>
             <li><a href="/holdings/ear-c-i0655-2_3-mosaictempel1-v1.0/dataset.html">Kitt Peak Mayall 4m MOSAIC Images of 9P/Tempel 1 from 2005 around DI Encounter</a></li>
             <li><a href="/holdings/nh-x-lorri-2-launch-v2.0/dataset.html">New Horizons LORRI Post-Launch Checkout Raw Data v2.0</a></li>
             <!-- NH-X-LORRI-2-LAUNCH-V2.0 -->
@@ -987,7 +986,7 @@ EDIT HISTORY:
         <a name="spect"></a>
         <h2>Spectra</h2>
         <ul>
-            <li><a href="/holdings/ear-c-lcs-5-9ptmpl1-spectra-v1.0/dataset.html">McDonald Observatory Spectroscopy of 9P/Tempel&nbsp;1 from 1989-2005</a></li>
+            <li><a href="/holdings/pds4-gbo-mcdonald:lcs-9p-v1.0/SUPPORT/dataset.html">McDonald Observatory 9P/Tempel 1 Spectral Observations</a> <code>urn:nasa:pds:gbo-mcdonald:lcs-9p::1.0</code> </li>
             <li><a href="/holdings/di_ear-c-i0046-2-irtf-nirspec-tmpl1-v1.0/dataset.html">IRTF/SpeX Near-IR Spectra of 9P/Tempel&nbsp;1 during Deep Impact Encounter</a></li>
             <li><a href="/holdings/dif-cal-hrii-2-9p-cruise-v1.0/dataset.html">Deep Impact/HRI-IR Raw Calibration Spectra from Cruise</a></li>
             <li><a href="/holdings/dif-c-hrii-2-9p-encounter-v1.0/dataset.html">Deep Impact/HRI-IR Raw Spectra and Calibrations from Encounter</a></li>

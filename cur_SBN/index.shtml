@@ -64,13 +64,17 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
         <ul class="news">
 
             <!-- 2019.11.07-->
-            <li><span class="date">2019.11.07</span> <a href="https://sbn.psi.edu/pds/resource/orex/ola.html">OSIRIS-REx Second Bennus release (OLA)</a>
-                <br />&nbsp;</li>
+            <li><span class="date">2019.11.07</span>
+                <br />+ <a href="https://sbn.psi.edu/pds/resource/orex/ola.html">OSIRIS-REx Second Bennu release (OLA)</a>
+                <br />+ <a href="/holdings/ro-x-alice-6-supplementary-v1.0/dataset.html">Rosetta-Orbiter ALICE Supplementary Documents and Data</a>
+                <!-- RO-X-ALICE-6-SUPPLEMENTARY-V1.0 -->
+                <br />&nbsp;
+
             </li>
 
             <!-- 2019.11.04-->
-            <li><span class="date">2019.11.04</span> <a href="https://sbn.psi.edu/pds/resource/orex/ocams.html">OSIRIS-REx Second Bennus release (OCAMS)</a>
-                <br />&nbsp;</li>
+            <li><span class="date">2019.11.04</span> <a href="https://sbn.psi.edu/pds/resource/orex/ocams.html">OSIRIS-REx Second Bennu release (OCAMS)</a>
+                <br />&nbsp;
             </li>
 
             <!-- 2019.10.31 -->

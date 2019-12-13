@@ -178,7 +178,7 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
                     <br /><a href="https://sbn.psi.edu/pds/resource/orex/tagcams.html">released Aug 2019</a>
                     <br /><a href="https://sbn.psi.edu/pds/resource/orex/ocams.html">released Nov 2019</a>
                     <br /><a href="https://sbn.psi.edu/pds/resource/orex/ovirs.html">released Aug 2019</a>
-                    <br />Dec 2019
+                    <br /><a href="https://sbn.psi.edu/pds/resource/orex/otes.html">released Dec 2019</a>
                     <br /><a href="https://sbn.psi.edu/pds/resource/orex/ola.html">released Nov 2019</a></td>
             </tr>
 
@@ -193,8 +193,8 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
                     <br /><a href="https://sbn.psi.edu/pds/resource/orex/tagcams.html">released Nov 2019</a>
                     <br /><a href="https://sbn.psi.edu/pds/resource/orex/ocams.html">released Nov 2019</a>
                     <br /><a href="https://sbn.psi.edu/pds/resource/orex/ovirs.html">released Nov 2019</a>
-                    <br />Dec 2019
-                    <br />Dec 2019</td>
+                    <br /><a href="https://sbn.psi.edu/pds/resource/orex/otes.html">released Dec 2019</a>
+                    <br /><a href="https://sbn.psi.edu/pds/resource/orex/ola.html">released Dec 2019</a></td>
             </tr>
 
 
@@ -333,27 +333,30 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
             </tr>
             <!-- ************************************************************************ Ground - Asteroid ************************************************************************ -->
             <tr class="odd">
-                <td rowspan="4"><a href="/data_sb/missions/ground.shtml">Ground based data</a><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em>Asteroid data</em></td>
+                <td rowspan="5"><a href="/data_sb/missions/ground.shtml">Ground based data</a><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em>Asteroid data</em></td>
                 <td>TNO and Centaur Diameters, Albedos, Densities V1.0</td>
                 <td><a href="https://sbn.psi.edu/pds/resource/tnocenalb.html">released Sep 2018</a></td>
             </tr>
 
             <tr class="odd">
-                <td>Asteroid Lightcurve Database (LCDB) V2.0</td>
-                <td><a href="https://sbn.psi.edu/pds/resource/lc.html">released Sep 2018</a></td>
+                <td>Asteroid Lightcurve Database (LCDB) V3.0</td>
+                <td><a href="https://sbn.psi.edu/pds/resource/lc.html">released Dec 2019</a></td>
             </tr>
 
             <tr class="odd">
-                <td>Asteroid Occultations V2.0</td>
-                <td><a href="https://sbn.psi.edu/pds/resource/occ.html">released Sep 2018</a></td>
+                <td>Asteroid Occultations V3.0</td>
+                <td><a href="https://sbn.psi.edu/pds/resource/occ.html">released Dec 2019</a></td>
             </tr>
 
             <tr class="odd">
-                <td>Binary Minor Planets Compilation V2.0</td>
-                <td><a href="https://sbn.psi.edu/pds/resource/binmp.html">released Sep 2018</a></td>
+                <td>Binary Minor Planets Compilation V3.0</td>
+                <td><a href="https://sbn.psi.edu/pds/resource/binmp.html">released Dec 2019</a></td>
             </tr>
 
-
+            <tr class="odd">
+                <td>Asteroid Polarmetric Database</td>
+                <td><a href="https://sbn.psi.edu/pds/resource/apd.html">released Dec 2019</a></td>
+            </tr>
 
             <!-- ************************************************************************ Ground - Satellite ************************************************************************ -->
             <tr>

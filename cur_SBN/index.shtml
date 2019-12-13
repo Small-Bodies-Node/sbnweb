@@ -63,13 +63,26 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
         <h2>New @ SBN</h2>
         <ul class="news">
 
+            <!-- 2019.12.12-->
+            <li><span class="date">2019.12.12</span> OSIRIS-REx
+                <br />+ <a href="https://sbn.psi.edu/pds/resource/orex/otes.html">2nd, 3rd OTES</a>
+                <br />+ <a href="https://sbn.psi.edu/pds/resource/orex/ola.html">3rd OLA</a>
+                <br />&nbsp;
+            </li>
+
+            <!-- 2019.12.10-->
+            <li><span class="date">2019.12.10</span> Ground-based Asteroid Data
+                <br />+ <a href="https://sbn.psi.edu/pds/resource/lc.html">Asteroid Lightcurve Database (LCDB) V3.0</a>
+                <br />+<a href="https://sbn.psi.edu/pds/resource/occ.html">Asteroid Occultations V3.0</a>
+                <br />+<a href="https://sbn.psi.edu/pds/resource/binmp.html">Binary Minor Planets Compilation V3.0</a>
+                <br />+<a href="https://sbn.psi.edu/pds/resource/apd.html">Asteroid Polarmetric Database</a>
+                <br />&nbsp;
+            </li>
+
             <!-- 2019.12.05-->
             <li><span class="date">2019.12.05</span> An updated version of all Rosetta-Orbiter OSIRIS Narrow and Wide Angle Camera PRL thru EXT3 67P Raw/Calibrated/Resampled-A Data <a href="/data_sb/missions/rosetta/index_OSIRIS.shtml">has been released (208 data sets)</a>.
                 <br />&nbsp;
             </li>
-
-
-
 
             <!-- 2019.12.03-->
             <li><span class="date">2019.12.03</span> Rosetta RPCIES L3/5 release

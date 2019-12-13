@@ -72,10 +72,10 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 
             <!-- 2019.12.10-->
             <li><span class="date">2019.12.10</span> Ground-based Asteroid Data
-                <br />+ <a href="https://sbn.psi.edu/pds/resource/lc.html">Asteroid Lightcurve Database (LCDB) V3.0</a>
-                <br />+ <a href="https://sbn.psi.edu/pds/resource/occ.html">Asteroid Occultations V3.0</a>
-                <br />+ <a href="https://sbn.psi.edu/pds/resource/binmp.html">Binary Minor Planets Compilation V3.0</a>
-                <br />+ <a href="https://sbn.psi.edu/pds/resource/apd.html">Asteroid Polarmetric Database</a>
+                <br />+ <a href="https://sbn.psi.edu/pds/resource/lc.html">Asteroid Lightcurve Database (LCDB) V3.0</a> <code>urn:nasa:pds:ast-lightcurve-database::3.0</code>
+                <br />+ <a href="https://sbn.psi.edu/pds/resource/occ.html">Asteroid Occultations V3.0</a> <code>urn:nasa:pds:smallbodiesoccultations::3.0</code>
+                <br />+ <a href="https://sbn.psi.edu/pds/resource/binmp.html">Binary Minor Planets Compilation V3.0</a> <code>urn:nasa:pds:ast_binary_parameters_compilation::3.0</code>
+                <br />+ <a href="https://sbn.psi.edu/pds/resource/apd.html">Asteroid Polarmetric Database V1.0</a> <code>urn:nasa:pds:asteroid_polarimetric_database::1.0</code>
                 <br />&nbsp;
             </li>
 

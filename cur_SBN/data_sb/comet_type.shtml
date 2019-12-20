@@ -22,6 +22,7 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
         <!--
 ===========================================================================
 EDIT HISTORY:
++ 2019-12-20 EMW	(have been making many edits with Rosetta and NH/KEM but using new process with Github and not always properly commenting here!)
 + 2019-10-31 EMW    added IHW NNSN under Imaging
 + 2019-10-31 EMW    updated/added 19 Rosetta MIDAS under Particles
 + 2019-08-27 EMW    added in links to O-REx bundles under imaging and spectra
@@ -383,14 +384,23 @@ EDIT HISTORY:
             <li><a href="/holdings/nh-p_psa-lorri_mvic-5-geophys-v1.0/dataset.html">New Horizons Pluto Encounter Geology and Geophysical Maps</a></li>
             <!-- NH-P/PSA-LORRI/MVIC-5-GEOPHYS-V1.0 -->
 
-            <li><a href="/holdings/nh-x-lorri-2-kemcruise1-v1.0/dataset.html">New Horizons LORRI KEM Cruise 1 Raw Data</a></li>
-            <!-- NH-X-LORRI-2-KEMCRUISE1-V1.0 -->
-            <li><a href="/holdings/nh-x-lorri-3-kemcruise1-v1.0/dataset.html">New Horizons LORRI KEM Cruise 1 Calibrated Data</a></li>
-            <!-- NH-X-LORRI-3-KEMCRUISE1-V1.0 -->
-            <li><a href="/holdings/nh-x-mvic-2-kemcruise1-v1.0/dataset.html">New Horizons MVIC KEM Cruise 1 Raw Data</a></li>
-            <!-- NH-X-MVIC-2-KEMCRUISE1-V1.0 -->
-            <li><a href="/holdings/nh-x-mvic-3-kemcruise1-v1.0/dataset.html">New Horizons MVIC KEM Cruise 1 Calibrated Data</a></li>
-            <!-- NH-X-MVIC-3-KEMCRUISE1-V1.0 -->
+            <li><a href="/holdings/nh-x-lorri-2-kemcruise1-v2.0/dataset.html">New Horizons LORRI KEM Cruise 1 Raw Data v2.0</a></li>
+            <!-- NH-X-LORRI-2-KEMCRUISE1-V2.0 -->
+            <li><a href="/holdings/nh-x-lorri-3-kemcruise1-v2.0/dataset.html">New Horizons LORRI KEM Cruise 1 Calibrated Data v2.0</a></li>
+            <!-- NH-X-LORRI-3-KEMCRUISE1-V2.0 -->
+            <li><a href="/holdings/nh-x-mvic-2-kemcruise1-v2.0/dataset.html">New Horizons MVIC KEM Cruise 1 Raw Data v2.0</a></li>
+            <!-- NH-X-MVIC-2-KEMCRUISE1-V2.0 -->
+            <li><a href="/holdings/nh-x-mvic-3-kemcruise1-v2.0/dataset.html">New Horizons MVIC KEM Cruise 1 Calibrated Data v2.0</a></li>
+            <!-- NH-X-MVIC-3-KEMCRUISE1-V2.0 -->
+
+            <li><a href="/holdings/nh-a-lorri-2-kem1-v1.0/dataset.html">New Horizons LORRI KEM1 Encounter Raw Data</a></li>
+            <!-- NH-A-LORRI-2-KEM1-V1.0 -->
+            <li><a href="/holdings/nh-a-lorri-3-kem1-v1.0/dataset.html">New Horizons LORRI KEM1 Encounter Calibrated Data</a></li>
+            <!-- NH-A-LORRI-3-KEM1-V1.0 -->
+            <li><a href="/holdings/nh-a-mvic-2-kem1-v1.0/dataset.html">New Horizons MVIC KEM1 Encounter Raw Data</a></li>
+            <!-- NH-A-MVIC-2-KEM1-V1.0 -->
+            <li><a href="/holdings/nh-a-mvic-3-kem1-v1.0/dataset.html">New Horizons MVIC KEM1 Encounter Calibrated Data</a></li>
+            <!-- NH-A-MVIC-3-KEM1-V1.0 -->
 
             <li><a href="https://sbn.psi.edu/pds/resource/orex/ocams.html">OSIRIS-REx OCAMS Bundle</a></li>
             <li><a href="https://sbn.psi.edu/pds/resource/orex/tagcams.html">OSIRIS-REx TAGCAMS Bundle</a></li>
@@ -763,18 +773,34 @@ EDIT HISTORY:
             <!-- RO-C-MIDAS-5-PRL-TO-EXT3-V2.0 -->
 
             <li><a href="/holdings/pds4-gbo-mcdonald:19p_col_density-v1.0/SUPPORT/dataset.html">McDonald Observatory Column Density Observations of 19P/Borrelly</a> <code>urn:nasa:pds:gbo-mcdonald:19p_col_density::1.0</code> </li>
-            <li><a href="/holdings/nh-x-swap-2-kemcruise1-v1.0/dataset.html">New Horizons SWAP KEM Cruise 1 Raw Data</a></li>
-            <!-- NH-X-SWAP-2-KEMCRUISE1-V1.0 -->
-            <li><a href="/holdings/nh-x-swap-3-kemcruise1-v1.0/dataset.html">New Horizons SWAP KEM Cruise 1 Calibrated Data</a></li>
-            <!-- NH-X-SWAP-3-KEMCRUISE1-V1.0 -->
-            <li><a href="/holdings/nh-x-pepssi-2-kemcruise1-v1.0/dataset.html">New Horizons PEPSSI KEM Cruise 1 Raw Data</a></li>
-            <!-- NH-X-PEPSSI-2-KEMCRUISE1-V1.0 -->
-            <li><a href="/holdings/nh-x-pepssi-3-kemcruise1-v1.0/dataset.html">New Horizons PEPSSI KEM Cruise 1 Calibrated Data</a></li>
-            <!-- NH-X-PEPSSI-3-KEMCRUISE1-V1.0 -->
-            <li><a href="/holdings/nh-x-sdc-2-kemcruise1-v1.0/dataset.html">New Horizons SDC KEM Cruise 1 Raw Data</a></li>
-            <!-- NH-X-SDC-2-KEMCRUISE1-V1.0 -->
-            <li><a href="/holdings/nh-x-sdc-3-kemcruise1-v1.0/dataset.html">New Horizons SDC KEM Cruise 1 Calibrated Data</a></li>
-            <!-- NH-X-SDC-3-KEMCRUISE1-V1.0 -->
+            <li><a href="/holdings/nh-x-swap-2-kemcruise1-v2.0/dataset.html">New Horizons SWAP KEM Cruise 1 Raw Data v2.0</a></li>
+            <!-- NH-X-SWAP-2-KEMCRUISE1-V2.0 -->
+            <li><a href="/holdings/nh-x-swap-3-kemcruise1-v2.0/dataset.html">New Horizons SWAP KEM Cruise 1 Calibrated Data v2.0</a></li>
+            <!-- NH-X-SWAP-3-KEMCRUISE1-V2.0 -->
+            <li><a href="/holdings/nh-x-pepssi-2-kemcruise1-v2.0/dataset.html">New Horizons PEPSSI KEM Cruise 1 Raw Data v2.0</a></li>
+            <!-- NH-X-PEPSSI-2-KEMCRUISE1-V2.0 -->
+            <li><a href="/holdings/nh-x-pepssi-3-kemcruise1-v2.0/dataset.html">New Horizons PEPSSI KEM Cruise 1 Calibrated Data v2.0</a></li>
+            <!-- NH-X-PEPSSI-3-KEMCRUISE1-V2.0 -->
+            <li><a href="/holdings/nh-x-sdc-2-kemcruise1-v2.0/dataset.html">New Horizons SDC KEM Cruise 1 Raw Data v2.0</a></li>
+            <!-- NH-X-SDC-2-KEMCRUISE1-V2.0 -->
+            <li><a href="/holdings/nh-x-sdc-3-kemcruise1-v2.0/dataset.html">New Horizons SDC KEM Cruise 1 Calibrated Data v2.0</a></li>
+            <!-- NH-X-SDC-3-KEMCRUISE1-V2.0 -->
+
+            <li><a href="/holdings/nh-a-pepssi-2-kem1-v1.0/dataset.html">New Horizons PEPSSI KEM1 Encounter Raw Data</a></li>
+            <!-- NH-A-PEPSSI-2-KEM1-V1.0 -->
+            <li><a href="/holdings/nh-a-pepssi-3-kem1-v1.0/dataset.html">New Horizons PEPSSI KEM1 Encounter Calibrated Data</a></li>
+            <!-- NH-A-PEPSSI-3-KEM1-V1.0 -->
+            <li><a href="/holdings/nh-a-sdc-2-kem1-v1.0/dataset.html">New Horizons SDC KEM1 Encounter Raw Data</a></li>
+            <!-- NH-A-SDC-2-KEM1-V1.0 -->
+            <li><a href="/holdings/nh-a-sdc-3-kem1-v1.0/dataset.html">New Horizons SDC KEM1 Encounter Calibrated Data</a></li>
+            <!-- NH-A-SDC-3-KEM1-V1.0 -->
+            <li><a href="/holdings/nh-a-swap-2-kem1-v1.0/dataset.html">New Horizons SWAP KEM1 Encounter Raw Data</a></li>
+            <!-- NH-A-SWAP-2-KEM1-V1.0 -->
+            <li><a href="/holdings/nh-a-swap-3-kem1-v1.0/dataset.html">New Horizons SWAP KEM1 Encounter Calibrated Data</a></li>
+            <!-- NH-A-SWAP-3-KEM1-V1.0 -->
+
+
+
 
             <li><a href="/holdings/ro-cal-midas-3-grnd-ref-2008-v1.0/dataset.html">Rosetta-Orbiter MIDAS 2008 Ground Reference Calibrated Data</a></li>
             <!-- RO-CAL-MIDAS-3-GRND-REF-2008-V1.0 -->
@@ -984,10 +1010,10 @@ EDIT HISTORY:
             <!-- RO/RL-C-CONSERT-3-FSS-V1.0 -->
             <li><a href="/holdings/ro_rl-c-consert-2-lts-v1.0/dataset.html">Rosetta-Orbiter/Lander CONSERT Long Term Science 67P Raw Data</a></li>
             <!-- RO/RL-C-CONSERT-2-LTS-V1.0 -->
-            <li><a href="/holdings/nh-x-rex-2-kemcruise1-v1.0/dataset.html">New Horizons REX KEM Cruise 1 Raw Data</a></li>
-            <!-- NH-X-REX-2-KEMCRUISE1-V1.0 -->
-            <li><a href="/holdings/nh-x-rex-3-kemcruise1-v1.0/dataset.html">New Horizons REX KEM Cruise 1 Calibrated Data</a></li>
-            <!-- NH-X-REX-3-KEMCRUISE1-V1.0 -->
+            <li><a href="/holdings/nh-x-rex-2-kemcruise1-v2.0/dataset.html">New Horizons REX KEM Cruise 1 Raw Data v2.0</a></li>
+            <!-- NH-X-REX-2-KEMCRUISE1-V2.0 -->
+            <li><a href="/holdings/nh-x-rex-3-kemcruise1-v2.0/dataset.html">New Horizons REX KEM Cruise 1 Calibrated Data v2.0</a></li>
+            <!-- NH-X-REX-3-KEMCRUISE1-V2.0 -->
 
         </ul>
 
@@ -1339,10 +1365,15 @@ EDIT HISTORY:
             <!-- RO-C-ROSINA-4-EXT3-V1.0 -->
             <li><a href="/holdings/ro-c-rosina-5-ext3-v1.0/dataset.html">Rosetta-Orbiter ROSINA Extension 3 67P Derived Data</a></li>
             <!-- RO-C-ROSINA-5-EXT3-V1.0 -->
-            <li><a href="/holdings/nh-x-alice-2-kemcruise1-v1.0/dataset.html">New Horizons ALICE KEM Cruise 1 Raw Data</a></li>
-            <!-- NH-X-ALICE-2-KEMCRUISE1-V1.0 -->
-            <li><a href="/holdings/nh-x-alice-3-kemcruise1-v1.0/dataset.html">New Horizons ALICE KEM Cruise 1 Calibrated Data</a></li>
-            <!-- NH-X-ALICE-3-KEMCRUISE1-V1.0 -->
+            <li><a href="/holdings/nh-x-alice-2-kemcruise1-v2.0/dataset.html">New Horizons ALICE KEM Cruise 1 Raw Data v2.0</a></li>
+            <!-- NH-X-ALICE-2-KEMCRUISE1-V2.0 -->
+            <li><a href="/holdings/nh-x-alice-3-kemcruise1-v2.0/dataset.html">New Horizons ALICE KEM Cruise 1 Calibrated Data v2.0</a></li>
+            <!-- NH-X-ALICE-3-KEMCRUISE1-V2.0 -->
+
+            <li><a href="/holdings/nh-a-alice-2-kem1-v1.0/dataset.html">New Horizons ALICE KEM1 Encounter Raw Data</a></li>
+            <!-- NH-A-ALICE-2-KEM1-V1.0 -->
+            <li><a href="/holdings/nh-a-alice-3-kem1-v1.0/dataset.html">New Horizons ALICE KEM1 Encounter Calibrated Data</a></li>
+            <!-- NH-A-ALICE-3-KEM1-V1.0 -->
 
             <li><a href="https://sbn.psi.edu/pds/resource/orex/ovirs.html">OSIRIS-REx OVIRS Bundle</a></li>
             <li><a href="https://sbn.psi.edu/pds/resource/orex/otes.html">OSIRIS-REx OTES Bundle</a></li>
@@ -1451,10 +1482,15 @@ EDIT HISTORY:
             <!-- RO-C-MIRO-3-EXT3-67P-V3.0 -->
             <li><a href="/holdings/ro-c-miro-4-ext3-67p-v1.0/dataset.html">Rosetta-Orbiter MIRO Extension 3 67P Resampled Data</a></li>
             <!-- RO-C-MIRO-4-EXT3-67P-V1.0 -->
-            <li><a href="/holdings/nh-x-leisa-2-kemcruise1-v1.0/dataset.html">New Horizons LEISA KEM Cruise 1 Raw Data</a></li>
-            <!-- NH-X-LEISA-2-KEMCRUISE1-V1.0 -->
-            <li><a href="/holdings/nh-x-leisa-3-kemcruise1-v1.0/dataset.html">New Horizons LEISA KEM Cruise 1 Calibrated Data</a></li>
-            <!-- NH-X-LEISA-3-KEMCRUISE1-V1.0 -->
+            <li><a href="/holdings/nh-x-leisa-2-kemcruise1-v2.0/dataset.html">New Horizons LEISA KEM Cruise 1 Raw Data v2.0</a></li>
+            <!-- NH-X-LEISA-2-KEMCRUISE1-V2.0 -->
+            <li><a href="/holdings/nh-x-leisa-3-kemcruise1-v2.0/dataset.html">New Horizons LEISA KEM Cruise 1 Calibrated Data v2.0</a></li>
+            <!-- NH-X-LEISA-3-KEMCRUISE1-V2.0 -->
+
+            <li><a href="/holdings/nh-a-leisa-2-kem1-v1.0/dataset.html">New Horizons LEISA KEM1 Encounter Raw Dat</a></li>
+            <!-- NH-A-LEISA-2-KEM1-V1.0 -->
+            <li><a href="/holdings/nh-a-leisa-3-kem1-v1.0/dataset.html">New Horizons LEISA KEM1 Encounter Calibrated Data</a></li>
+            <!-- NH-A-LEISA-3-KEM1-V1.0 -->
         </ul>
 
         <!-- Type Data ======================================================== -->

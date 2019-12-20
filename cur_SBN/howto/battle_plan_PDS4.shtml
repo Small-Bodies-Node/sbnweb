@@ -2,27 +2,27 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 
 <head>
-<meta http-equiv="content-type" content="text/html;charset=utf-8" />
-<title>PDS-SBN: Data Reviewers: Basic Battle Plan</title>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+    <title>PDS-SBN: Data Reviewers: Basic Battle Plan</title>
 
-<!-- 
+    <!-- 
 ########################
 ALL of the head, style links, header and menu code is in the include. Edit that file with extreme care!!
 ########################
  -->
-<!--#include virtual="/css-n-includes/incl_top.inc"-->
+    <!--#include virtual="/css-n-includes/incl_top.inc"-->
 
-<!-- ################################################ LEFT SIDEBAR ########################################## -->
-<!--#include virtual="/css-n-includes/incl_left-side.inc"-->
+    <!-- ################################################ LEFT SIDEBAR ########################################## -->
+    <!--#include virtual="/css-n-includes/incl_left-side.inc"-->
 
-<!-- ################################################ MAIN ################################################## -->
-<div id="centerwide">
-<a name="mainContent"></a>
-<!-- ************************************************** You may begin editing! ************************************************** -->
-<h1>SBN Data Reviewers: Basic Battle Plan</h1>
-<p>[This page is being revised for PDS4.]</p>
+    <!-- ################################################ MAIN ################################################## -->
+    <div id="centerwide">
+        <a name="mainContent"></a>
+        <!-- ************************************************** You may begin editing! ************************************************** -->
+        <h1>SBN Data Reviewers: Basic Battle Plan</h1>
+        <p>[This page is being revised for PDS4.]</p>
 
-<!-- <p>This page presents a basic plan of attack for reviewing a dataset. We assume you have already downloaded and unpacked the entire data set rather than just a few selected files, although these comments may also provide some ideas for working your way through a data set online without downloading the entire collection.</p>
+        <!-- <p>This page presents a basic plan of attack for reviewing a dataset. We assume you have already downloaded and unpacked the entire data set rather than just a few selected files, although these comments may also provide some ideas for working your way through a data set online without downloading the entire collection.</p>
 
 <p>As always, if you have any questions or problems with the data, please give us a call ASAP.</p>
 
@@ -77,7 +77,7 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 <h3>Rummage through the data</h3>
 <p>At this point you should have enough information to dive into the data and know where to look if you have questions about what you find in the data files and PDS labels. The <em>data/</em> directory itself may be subdivided in many ways, depending on the size of the data set. Small data sets may have no subdirectories; large mission data sets may have subdirectories for date or mission phase; and so on.</p>
 
-<p>In the data directories you will likely see files with an <em>.lbl</em> extension. These are detached PDS label files; they are plain text and can be displayed in any text editor. If you don't see any <em>.lbl</em> files, the PDS labels will appear at the top of the data files themselves. The labels, attached or detached, will have internal pointers to the data, a structural description of the observational data (usually at the bottom), and a series of <code>keyword = value</code> statements that should provide all the information essential to understanding and working with the data. Definitions for the <code>keywords</code> used in PDS labels are either in the <a href="https://pds.jpl.nasa.gov/tools/ddlookup/data_dictionary_lookup.cfm" onclick="this.target='_blank'">Planetary Science Data Dictionary</a> database or in a local data dictionary provided by the mission which should be included in the <em>document/</em> directory of the data set.</p>
+<p>In the data directories you will likely see files with an <em>.lbl</em> extension. These are detached PDS label files; they are plain text and can be displayed in any text editor. If you don't see any <em>.lbl</em> files, the PDS labels will appear at the top of the data files themselves. The labels, attached or detached, will have internal pointers to the data, a structural description of the observational data (usually at the bottom), and a series of <code>keyword = value</code> statements that should provide all the information essential to understanding and working with the data. Definitions for the <code>keywords</code> used in PDS labels are either in the <a href="https://pds.nasa.gov/tools/dd-search/" onclick="this.target='_blank'">Planetary Science Data Dictionary</a> database or in a local data dictionary provided by the mission which should be included in the <em>document/</em> directory of the data set.</p>
 
 <p>In examining the data files, you should check that all the keywords and the data themselves make sense. Try to use the data files to answer some observational question or scientific query. Apply any sanity checks that you can think of to the values you find in the label and data. The goal in reviewing the data files is to try to use them as an outside scientist would to do research. Verify that you have all the information needed to answer a scientific question based on the data and, if practical, work through to that answer.</p>
 
@@ -99,11 +99,19 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 <a name="present"></a>
 <h3>Present your results</h3>
 <p>Many of our reviewers prepare a PowerPoint summary of their findings to present to the review team. We find that this is often very helpful when provided. In any case, we need some sort of written report of your findings, preferably before you leave the review. Major findings will be discussed in the review, while minor points (editorial points, typos, etc.) can be submitted in writing without discussion as desired.</p> -->
-<!-- ************************************************** End editing! ************************************************** -->
-<!--#include virtual="/css-n-includes/incl_bottom.inc"-->
-<br />Last updated: <!--#config timefmt="%A %B %d, %Y"--><!--#echo var="LAST_MODIFIED" --></div><!-- close id whotext -->
-</div><!-- close id footer -->
-</div><!-- end id footwrap -->
-</div><!-- close wrapper -->
-</body>
+        <!-- ************************************************** End editing! ************************************************** -->
+        <!--#include virtual="/css-n-includes/incl_bottom.inc"-->
+        <br />Last updated:
+        <!--#config timefmt="%A %B %d, %Y"-->
+        <!--#echo var="LAST_MODIFIED" -->
+    </div>
+    <!-- close id whotext -->
+    </div>
+    <!-- close id footer -->
+    </div>
+    <!-- end id footwrap -->
+    </div>
+    <!-- close wrapper -->
+    </body>
+
 </html>

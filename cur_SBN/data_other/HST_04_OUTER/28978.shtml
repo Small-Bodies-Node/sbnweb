@@ -1,0 +1,111 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<title>PDS: Small Bodies Node</title>
+
+<!--
+########################
+ALL of the head, style links, header and menu code is in the include. Edit that file with extreme care!!
+########################
+ -->
+
+<!--#include virtual="/css-n-includes/incl_top.inc"-->
+
+<!-- ################################################ MAIN ################################################## -->
+
+<div id="centeronly">
+
+<a name="mainContent"></a>
+<!-- ************************************************** You may begin editing! ************************************************** -->
+
+<a name="top"></a><h3>Object: 28978 Ixion (2001 KX76) [<a href="../objclass.shtml#TNO">TNO</a>]</h3>
+
+<table width="95%" class="datatab">
+	<colgroup>
+		<col width="11%" />
+		<col width="13%" />
+		<col width="8%" />
+		<col width="8%" />
+		<col width="55%" />
+	</colgroup>
+	<thead><tr>
+		<td>Observation ID</td>
+		<td>Start Time</td>
+		<td>Instrument</td>
+		<td>Proposal ID</td>
+		<td>Proposal Title</td>
+	</tr></thead>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=O6E925010" onclick="this.target='_blank'">O6E925010</a></td>
+		<td>08/22/02 02:32 AM</td>
+		<td><a href="../HST_instruments.shtml">STIS  </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=9110&mission=hst" onclick="this.target='_blank'">9110</a></td>
+		<td>A Search for Kuiper Belt Object Satellites</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=O6E926010" onclick="this.target='_blank'">O6E926010</a></td>
+		<td>08/23/02 02:36 AM</td>
+		<td><a href="../HST_instruments.shtml">STIS  </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=9110&mission=hst" onclick="this.target='_blank'">9110</a></td>
+		<td>A Search for Kuiper Belt Object Satellites</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J9FS14WCQ" onclick="this.target='_blank'">J9FS14WCQ</a></td>
+		<td>02/05/06 10:45 PM</td>
+		<td><a href="../HST_instruments.shtml">ACS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10545&mission=hst" onclick="this.target='_blank'">10545</a></td>
+		<td>Icy planetoids of the outer solar system</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J9FS14011" onclick="this.target='_blank'">J9FS14011</a></td>
+		<td>02/05/06 10:52 PM</td>
+		<td><a href="../HST_instruments.shtml">ACS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10545&mission=hst" onclick="this.target='_blank'">10545</a></td>
+		<td>Icy planetoids of the outer solar system</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J9FS14WFQ" onclick="this.target='_blank'">J9FS14WFQ</a></td>
+		<td>02/05/06 11:26 PM</td>
+		<td><a href="../HST_instruments.shtml">ACS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10545&mission=hst" onclick="this.target='_blank'">10545</a></td>
+		<td>Icy planetoids of the outer solar system</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J9FS34H4Q" onclick="this.target='_blank'">J9FS34H4Q</a></td>
+		<td>04/10/06 06:30 PM</td>
+		<td><a href="../HST_instruments.shtml">ACS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10545&mission=hst" onclick="this.target='_blank'">10545</a></td>
+		<td>Icy planetoids of the outer solar system</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J9FS34011" onclick="this.target='_blank'">J9FS34011</a></td>
+		<td>04/10/06 06:38 PM</td>
+		<td><a href="../HST_instruments.shtml">ACS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10545&mission=hst" onclick="this.target='_blank'">10545</a></td>
+		<td>Icy planetoids of the outer solar system</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J9FS34H7Q" onclick="this.target='_blank'">J9FS34H7Q</a></td>
+		<td>04/10/06 07:11 PM</td>
+		<td><a href="../HST_instruments.shtml">ACS   </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10545&mission=hst" onclick="this.target='_blank'">10545</a></td>
+		<td>Icy planetoids of the outer solar system</td>
+	</tr>
+</table>
+<br /><p>[<a href="#top">Back to Top</a>] [<a href="../HST.shtml#04_OUTER">Back to Outer Asteroids</a>]</p>
+
+<a name="bottom"></a>
+
+<!-- ************************************************** End editing! ************************************************** -->
+<!--#include virtual="/css-n-includes/incl_bottom.inc"-->
+<br />Last updated: <!--#config timefmt="%A %B %d, %Y"--><!--#echo var="LAST_MODIFIED" --></div><!-- close id whotext -->
+
+</div><!-- close id footer -->
+</div><!-- end id footwrap -->
+
+</div><!-- close wrapper -->
+
+</body>
+</html>

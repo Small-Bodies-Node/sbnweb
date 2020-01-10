@@ -10,9 +10,11 @@
 ALL of the head, style links, header and menu code is in the include. Edit that file with extreme care!!
 ########################
  -->
+
 <!--#include virtual="/css-n-includes/incl_top.inc"-->
 
 <!-- ################################################ MAIN ################################################## -->
+
 <div id="centeronly">
 
 <a name="mainContent"></a>
@@ -37,56 +39,56 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 	</tr></thead>
 	<tr class="odd">
 		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U65Z1701R" onclick="this.target='_blank'">U65Z1701R</a></td>
-		<td>2000-08-05 06:07:15</td>
+		<td>08/05/00 06:07 AM</td>
 		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
 		<td><a href="http://archive.stsci.edu/proposal_search.php?id=8699&mission=hst" onclick="this.target='_blank'">8699</a></td>
 		<td>The Origin of Short-Period Comets</td>
 	</tr>
 	<tr>
 		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U65Z1702R" onclick="this.target='_blank'">U65Z1702R</a></td>
-		<td>2000-08-05 06:28:15</td>
+		<td>08/05/00 06:28 AM</td>
 		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
 		<td><a href="http://archive.stsci.edu/proposal_search.php?id=8699&mission=hst" onclick="this.target='_blank'">8699</a></td>
 		<td>The Origin of Short-Period Comets</td>
 	</tr>
 	<tr class="odd">
 		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U65Z2101R" onclick="this.target='_blank'">U65Z2101R</a></td>
-		<td>2000-08-05 12:33:15</td>
+		<td>08/05/00 12:33 PM</td>
 		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
 		<td><a href="http://archive.stsci.edu/proposal_search.php?id=8699&mission=hst" onclick="this.target='_blank'">8699</a></td>
 		<td>The Origin of Short-Period Comets</td>
 	</tr>
 	<tr>
 		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U65Z2102R" onclick="this.target='_blank'">U65Z2102R</a></td>
-		<td>2000-08-05 12:54:15</td>
+		<td>08/05/00 12:54 PM</td>
 		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
 		<td><a href="http://archive.stsci.edu/proposal_search.php?id=8699&mission=hst" onclick="this.target='_blank'">8699</a></td>
 		<td>The Origin of Short-Period Comets</td>
 	</tr>
 	<tr class="odd">
 		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U65Z2201R" onclick="this.target='_blank'">U65Z2201R</a></td>
-		<td>2000-08-05 14:09:15</td>
+		<td>08/05/00 02:09 PM</td>
 		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
 		<td><a href="http://archive.stsci.edu/proposal_search.php?id=8699&mission=hst" onclick="this.target='_blank'">8699</a></td>
 		<td>The Origin of Short-Period Comets</td>
 	</tr>
 	<tr>
 		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U65Z2202R" onclick="this.target='_blank'">U65Z2202R</a></td>
-		<td>2000-08-05 14:30:15</td>
+		<td>08/05/00 02:30 PM</td>
 		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
 		<td><a href="http://archive.stsci.edu/proposal_search.php?id=8699&mission=hst" onclick="this.target='_blank'">8699</a></td>
 		<td>The Origin of Short-Period Comets</td>
 	</tr>
 	<tr class="odd">
 		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U65Z2301R" onclick="this.target='_blank'">U65Z2301R</a></td>
-		<td>2000-08-05 15:46:15</td>
+		<td>08/05/00 03:46 PM</td>
 		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
 		<td><a href="http://archive.stsci.edu/proposal_search.php?id=8699&mission=hst" onclick="this.target='_blank'">8699</a></td>
 		<td>The Origin of Short-Period Comets</td>
 	</tr>
 	<tr>
 		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U65Z2302R" onclick="this.target='_blank'">U65Z2302R</a></td>
-		<td>2000-08-05 16:07:15</td>
+		<td>08/05/00 04:07 PM</td>
 		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
 		<td><a href="http://archive.stsci.edu/proposal_search.php?id=8699&mission=hst" onclick="this.target='_blank'">8699</a></td>
 		<td>The Origin of Short-Period Comets</td>
@@ -99,8 +101,11 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 <!-- ************************************************** End editing! ************************************************** -->
 <!--#include virtual="/css-n-includes/incl_bottom.inc"-->
 <br />Last updated: <!--#config timefmt="%A %B %d, %Y"--><!--#echo var="LAST_MODIFIED" --></div><!-- close id whotext -->
+
 </div><!-- close id footer -->
 </div><!-- end id footwrap -->
+
 </div><!-- close wrapper -->
+
 </body>
 </html>

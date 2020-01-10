@@ -78,7 +78,7 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
         <ul>
             <!-- <li><a href="http://impact.arc.nasa.gov/" onclick="this.target='_blank'">Asteroid and Comet Impact Hazards</a></li> -->
             <li><a href="https://cneos.jpl.nasa.gov/" onclick="this.target='_blank'">Center for Near Earth Object Studies</a></li>
-            <li><a href="http://spaceguard.iaps.inaf.it/" onclick="this.target='_blank'">Spaceguard Foundation</a></li>
+            <!-- <li><a href="http://spaceguard.iaps.inaf.it/" onclick="this.target='_blank'">Spaceguard Foundation</a></li> -->
             <li><a href="https://spacewatch.lpl.arizona.edu/" onclick="this.target='_blank'">The Spacewatch Project</a></li>
         </ul>
 
@@ -104,7 +104,7 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
             <li><a href="http://www.astro.caltech.edu/~george/dposs/" onclick="this.target='_blank'">The Palomar Digital Sky Survey (DPOSS)</a> (unfunded at the moment)</li>
             <li><a href="http://www.minorplanetcenter.net/iau/lists/InnerPlot.html" onclick="this.target='_blank'">IAU MPC: Plot of the Inner Solar System</a></li>
             <li><a href="http://www.minorplanetcenter.net/iau/lists/OuterPlot.html" onclick="this.target='_blank'">IAU MPC: Plot of the Outer Solar System</a></li>
-            <!-- <li><a href="http://www.astro.umd.edu/~ma/images/index.html" onclick="this.target='_blank'">Hale-Bopp</a></li> -->
+            <li><a href="MA_images/index.html" onclick="this.target='_blank'">Hale-Bopp images from Mike A'Hearn</a></li>
         </ul>
 
         <h2>Small Body (General Information)</h2>

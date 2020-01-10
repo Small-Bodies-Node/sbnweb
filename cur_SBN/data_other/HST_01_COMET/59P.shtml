@@ -10,9 +10,11 @@
 ALL of the head, style links, header and menu code is in the include. Edit that file with extreme care!!
 ########################
  -->
+
 <!--#include virtual="/css-n-includes/incl_top.inc"-->
 
 <!-- ################################################ MAIN ################################################## -->
+
 <div id="centeronly">
 
 <a name="mainContent"></a>
@@ -37,42 +39,42 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 	</tr></thead>
 	<tr class="odd">
 		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U5FZ1001R" onclick="this.target='_blank'">U5FZ1001R</a></td>
-		<td>2000-01-15 12:42:14</td>
+		<td>01/15/00 12:42 PM</td>
 		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
 		<td><a href="http://archive.stsci.edu/proposal_search.php?id=8274&mission=hst" onclick="this.target='_blank'">8274</a></td>
 		<td>A Size Survey of Cometary Nuclei</td>
 	</tr>
 	<tr>
 		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U5FZ1002R" onclick="this.target='_blank'">U5FZ1002R</a></td>
-		<td>2000-01-15 12:48:14</td>
+		<td>01/15/00 12:48 PM</td>
 		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
 		<td><a href="http://archive.stsci.edu/proposal_search.php?id=8274&mission=hst" onclick="this.target='_blank'">8274</a></td>
 		<td>A Size Survey of Cometary Nuclei</td>
 	</tr>
 	<tr class="odd">
 		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U5FZ1003R" onclick="this.target='_blank'">U5FZ1003R</a></td>
-		<td>2000-01-15 12:55:14</td>
+		<td>01/15/00 12:55 PM</td>
 		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
 		<td><a href="http://archive.stsci.edu/proposal_search.php?id=8274&mission=hst" onclick="this.target='_blank'">8274</a></td>
 		<td>A Size Survey of Cometary Nuclei</td>
 	</tr>
 	<tr>
 		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U5FZ1004R" onclick="this.target='_blank'">U5FZ1004R</a></td>
-		<td>2000-01-15 13:01:14</td>
+		<td>01/15/00 01:01 PM</td>
 		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
 		<td><a href="http://archive.stsci.edu/proposal_search.php?id=8274&mission=hst" onclick="this.target='_blank'">8274</a></td>
 		<td>A Size Survey of Cometary Nuclei</td>
 	</tr>
 	<tr class="odd">
 		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U5FZ1005R" onclick="this.target='_blank'">U5FZ1005R</a></td>
-		<td>2000-01-15 13:10:14</td>
+		<td>01/15/00 01:10 PM</td>
 		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
 		<td><a href="http://archive.stsci.edu/proposal_search.php?id=8274&mission=hst" onclick="this.target='_blank'">8274</a></td>
 		<td>A Size Survey of Cometary Nuclei</td>
 	</tr>
 	<tr>
 		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U5FZ1006R" onclick="this.target='_blank'">U5FZ1006R</a></td>
-		<td>2000-01-15 13:16:14</td>
+		<td>01/15/00 01:16 PM</td>
 		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
 		<td><a href="http://archive.stsci.edu/proposal_search.php?id=8274&mission=hst" onclick="this.target='_blank'">8274</a></td>
 		<td>A Size Survey of Cometary Nuclei</td>
@@ -85,8 +87,11 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 <!-- ************************************************** End editing! ************************************************** -->
 <!--#include virtual="/css-n-includes/incl_bottom.inc"-->
 <br />Last updated: <!--#config timefmt="%A %B %d, %Y"--><!--#echo var="LAST_MODIFIED" --></div><!-- close id whotext -->
+
 </div><!-- close id footer -->
 </div><!-- end id footwrap -->
+
 </div><!-- close wrapper -->
+
 </body>
 </html>

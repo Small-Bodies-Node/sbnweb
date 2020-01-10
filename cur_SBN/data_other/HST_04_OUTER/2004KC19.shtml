@@ -10,9 +10,11 @@
 ALL of the head, style links, header and menu code is in the include. Edit that file with extreme care!!
 ########################
  -->
+
 <!--#include virtual="/css-n-includes/incl_top.inc"-->
 
 <!-- ################################################ MAIN ################################################## -->
+
 <div id="centeronly">
 
 <a name="mainContent"></a>
@@ -37,28 +39,28 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 	</tr></thead>
 	<tr class="odd">
 		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=IBTP37FMQ" onclick="this.target='_blank'">IBTP37FMQ</a></td>
-		<td>2012-05-28 18:44:23</td>
+		<td>05/28/12 06:44 PM</td>
 		<td><a href="../HST_instruments.shtml">WFC3  </a></td>
 		<td><a href="http://archive.stsci.edu/proposal_search.php?id=12468&mission=hst" onclick="this.target='_blank'">12468</a></td>
 		<td>How Fast Did Neptune Migrate? A Search for Cold Red Resonant Binaries</td>
 	</tr>
 	<tr>
 		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=IBTP37FNQ" onclick="this.target='_blank'">IBTP37FNQ</a></td>
-		<td>2012-05-28 18:51:34</td>
+		<td>05/28/12 06:51 PM</td>
 		<td><a href="../HST_instruments.shtml">WFC3  </a></td>
 		<td><a href="http://archive.stsci.edu/proposal_search.php?id=12468&mission=hst" onclick="this.target='_blank'">12468</a></td>
 		<td>How Fast Did Neptune Migrate? A Search for Cold Red Resonant Binaries</td>
 	</tr>
 	<tr class="odd">
 		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=IBTP37FPQ" onclick="this.target='_blank'">IBTP37FPQ</a></td>
-		<td>2012-05-28 19:00:05</td>
+		<td>05/28/12 07:00 PM</td>
 		<td><a href="../HST_instruments.shtml">WFC3  </a></td>
 		<td><a href="http://archive.stsci.edu/proposal_search.php?id=12468&mission=hst" onclick="this.target='_blank'">12468</a></td>
 		<td>How Fast Did Neptune Migrate? A Search for Cold Red Resonant Binaries</td>
 	</tr>
 	<tr>
 		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=IBTP37FRQ" onclick="this.target='_blank'">IBTP37FRQ</a></td>
-		<td>2012-05-28 19:08:26</td>
+		<td>05/28/12 07:08 PM</td>
 		<td><a href="../HST_instruments.shtml">WFC3  </a></td>
 		<td><a href="http://archive.stsci.edu/proposal_search.php?id=12468&mission=hst" onclick="this.target='_blank'">12468</a></td>
 		<td>How Fast Did Neptune Migrate? A Search for Cold Red Resonant Binaries</td>
@@ -71,8 +73,11 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 <!-- ************************************************** End editing! ************************************************** -->
 <!--#include virtual="/css-n-includes/incl_bottom.inc"-->
 <br />Last updated: <!--#config timefmt="%A %B %d, %Y"--><!--#echo var="LAST_MODIFIED" --></div><!-- close id whotext -->
+
 </div><!-- close id footer -->
 </div><!-- end id footwrap -->
+
 </div><!-- close wrapper -->
+
 </body>
 </html>

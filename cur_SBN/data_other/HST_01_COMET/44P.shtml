@@ -10,9 +10,11 @@
 ALL of the head, style links, header and menu code is in the include. Edit that file with extreme care!!
 ########################
  -->
+
 <!--#include virtual="/css-n-includes/incl_top.inc"-->
 
 <!-- ################################################ MAIN ################################################## -->
+
 <div id="centeronly">
 
 <a name="mainContent"></a>
@@ -37,35 +39,35 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 	</tr></thead>
 	<tr class="odd">
 		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U65Z0101R" onclick="this.target='_blank'">U65Z0101R</a></td>
-		<td>2000-06-12 15:01:14</td>
+		<td>06/12/00 03:01 PM</td>
 		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
 		<td><a href="http://archive.stsci.edu/proposal_search.php?id=8699&mission=hst" onclick="this.target='_blank'">8699</a></td>
 		<td>The Origin of Short-Period Comets</td>
 	</tr>
 	<tr>
 		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U65Z0102R" onclick="this.target='_blank'">U65Z0102R</a></td>
-		<td>2000-06-12 15:09:14</td>
+		<td>06/12/00 03:09 PM</td>
 		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
 		<td><a href="http://archive.stsci.edu/proposal_search.php?id=8699&mission=hst" onclick="this.target='_blank'">8699</a></td>
 		<td>The Origin of Short-Period Comets</td>
 	</tr>
 	<tr class="odd">
 		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U65Z0103R" onclick="this.target='_blank'">U65Z0103R</a></td>
-		<td>2000-06-12 15:18:14</td>
+		<td>06/12/00 03:18 PM</td>
 		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
 		<td><a href="http://archive.stsci.edu/proposal_search.php?id=8699&mission=hst" onclick="this.target='_blank'">8699</a></td>
 		<td>The Origin of Short-Period Comets</td>
 	</tr>
 	<tr>
 		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U65Z0104R" onclick="this.target='_blank'">U65Z0104R</a></td>
-		<td>2000-06-12 15:26:14</td>
+		<td>06/12/00 03:26 PM</td>
 		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
 		<td><a href="http://archive.stsci.edu/proposal_search.php?id=8699&mission=hst" onclick="this.target='_blank'">8699</a></td>
 		<td>The Origin of Short-Period Comets</td>
 	</tr>
 	<tr class="odd">
 		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U65Z0105R" onclick="this.target='_blank'">U65Z0105R</a></td>
-		<td>2000-06-12 15:35:14</td>
+		<td>06/12/00 03:35 PM</td>
 		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
 		<td><a href="http://archive.stsci.edu/proposal_search.php?id=8699&mission=hst" onclick="this.target='_blank'">8699</a></td>
 		<td>The Origin of Short-Period Comets</td>
@@ -78,8 +80,11 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 <!-- ************************************************** End editing! ************************************************** -->
 <!--#include virtual="/css-n-includes/incl_bottom.inc"-->
 <br />Last updated: <!--#config timefmt="%A %B %d, %Y"--><!--#echo var="LAST_MODIFIED" --></div><!-- close id whotext -->
+
 </div><!-- close id footer -->
 </div><!-- end id footwrap -->
+
 </div><!-- close wrapper -->
+
 </body>
 </html>

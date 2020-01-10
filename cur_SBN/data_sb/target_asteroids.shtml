@@ -22,6 +22,7 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
         <!--
 ===========================================================================
 EDIT HISTORY:
++ 2020-01-10 EMW    added 2 Pluto datasets from PSI, moved Pluto section to be in order
 + 2019-12-20 EMW	(have been making many edits with Rosetta and NH/KEM but using new process with Github and not always properly commenting here!)
 + 2019-10-31 EMW    updated Rosetta MIDAS under Lutetia
 + 2019-08-27 EMW    added in links to O-REx bundles under Bennu
@@ -84,6 +85,7 @@ EDIT HISTORY:
                     <li><a href="#101955_Bennu">(101955)&nbsp;Bennu</a></li>
                     <li><a href="#119951_2002KX14">(119951)&nbsp;2002&nbsp;KX14</a></li>
                     <li><a href="#132524_APL">(132524)&nbsp;APL</a></li>
+                    <li><a href="#Pluto">(134340) Pluto (&amp; its Satellites)</a></li>
                     <li><a href="#136108_Haumea">(136108)&nbsp;Haumea</a></li>
                     <li><a href="#136472_Makemake">(136472)&nbsp;Makemake</a></li>
                     <!-- <li><a href="#141593_2002HK12">(141593)&nbsp;2002&nbsp;HK12</li> -->
@@ -99,7 +101,7 @@ EDIT HISTORY:
                     <li><a href="#_2011JY31">2011&nbsp;JY31</a></li>
                     <li><a href="#_2012HE85">2012&nbsp;HE85</a></li>
                     <li><a href="#_2014OE394">2014&nbsp;OE394</a></li>
-                    <li><a href="#Pluto">(134340) Pluto (&amp; its Satellites)</a></li>
+
                 </ul>
             </li>
 
@@ -613,6 +615,55 @@ EDIT HISTORY:
         </ul>
 
         <!-- Target Data ======================================================== -->
+        <a name="Pluto"></a>
+        <h2>(134340) Pluto (&amp; its Satellites)</h2>
+        <ul>
+            <li><a href="/holdings/nh-p-alice-2-pluto-v3.0/dataset.html">New Horizons ALICE Pluto Encounter Raw Data v3.0</a></li>
+            <!-- NH-P-ALICE-2-PLUTO-V3.0 -->
+            <li><a href="/holdings/nh-p-alice-3-pluto-v3.0/dataset.html">New Horizons ALICE Pluto Encounter Calibrated Data v3.0</a></li>
+            <!-- NH-P-ALICE-3-PLUTO-V3.0 -->
+            <li><a href="/holdings/nh-p-leisa-2-pluto-v3.0/dataset.html">New Horizons LEISA Pluto Encounter Raw Data v3.0</a></li>
+            <!-- NH-P-LEISA-2-PLUTO-V3.0 -->
+            <li><a href="/holdings/nh-p-leisa-3-pluto-v3.0/dataset.html">New Horizons LEISA Pluto Encounter Calibrated Data v3.0</a></li>
+            <!-- NH-P-LEISA-3-PLUTO-V3.0 -->
+            <li><a href="/holdings/nh-x-lorri-2-plutocruise-v2.0/dataset.html">New Horizons LORRI Pluto Cruise Raw Data v2.0</a></li>
+            <!-- NH-X-LORRI-2-PLUTOCRUISE-V2.0 -->
+            <li><a href="/holdings/nh-x-lorri-3-plutocruise-v2.0/dataset.html">New Horizons LORRI Pluto Cruise Calibrated Data v2.0</a></li>
+            <!-- NH-X-LORRI-3-PLUTOCRUISE-V2.0 -->
+            <li><a href="/holdings/nh-p-lorri-2-pluto-v3.0/dataset.html">New Horizons LORRI Pluto Encounter Raw Data v3.0</a></li>
+            <!-- NH-P-LORRI-2-PLUTO-V3.0 -->
+            <li><a href="/holdings/nh-p-lorri-3-pluto-v3.0/dataset.html">New Horizons LORRI Pluto Encounter Calibrated Data v3.0</a></li>
+            <!-- NH-P-LORRI-3-PLUTO-V3.0 -->
+            <li><a href="/holdings/nh-p-mvic-2-pluto-v3.0/dataset.html">New Horizons MVIC Pluto Encounter Raw Data v3.0</a></li>
+            <!-- NH-P-MVIC-2-PLUTO-V3.0 -->
+            <li><a href="/holdings/nh-p-mvic-3-pluto-v3.0/dataset.html">New Horizons MVIC Pluto Encounter Calibrated Data v3.0</a></li>
+            <!-- NH-P-MVIC-3-PLUTO-V3.0 -->
+            <li><a href="/holdings/nh-p-rex-2-pluto-v2.0/dataset.html">New Horizons REX Pluto Encounter Raw Data v2.0</a></li>
+            <!-- NH-P-REX-2-PLUTO-V2.0 -->
+            <li><a href="/holdings/nh-p-rex-3-pluto-v1.0/dataset.html">New Horizons REX Pluto Encounter Calibrated Data</a></li>
+            <!-- NH-P-REX-3-PLUTO-V1.0 -->
+            <li><a href="/holdings/ro-c-osinac-2-esc3-67pchuryumov-m18-v2.0/dataset.html">Rosetta-Orbiter OSIRIS Narrow Angle Camera Escort 3 MTP018 67P Raw Data v2.0</a></li>
+            <!-- RO-C-OSINAC-2-ESC3-67PCHURYUMOV-M18-V2.0 -->
+            <li><a href="/holdings/ro-c-osinac-3-esc3-67pchuryumov-m18-v2.0/dataset.html">Rosetta-Orbiter OSIRIS Narrow Angle Camera Escort 3 MTP018 67P Calibrated Data v2.0</a></li>
+            <!-- RO-C-OSINAC-3-ESC3-67PCHURYUMOV-M18-V2.0 -->
+            <li><a href="/holdings/ro-c-osiwac-2-esc3-67pchuryumov-m18-v2.0/dataset.html">Rosetta-Orbiter OSIRIS Wide Angle Camera Escort 3 MTP018 67P Raw Data v2.0</a></li>
+            <!-- RO-C-OSIWAC-2-ESC3-67PCHURYUMOV-M18-V2.0 -->
+            <li><a href="/holdings/ro-c-osiwac-3-esc3-67pchuryumov-m18-v2.0/dataset.html">Rosetta-Orbiter OSIRIS Wide Angle Camera Escort 3 MTP018 67P Calibrated Data v2.0</a></li>
+            <!-- RO-C-OSIWAC-3-ESC3-67PCHURYUMOV-M18-V2.0 -->
+            <!-- 2018.07.13 -->
+            <li><a href="/holdings/nh-p_psa-leisa_mvic-5-comp-v1.0/dataset.html">New Horizons Pluto Encounter Surface Composition Maps</a></li>
+            <!-- NH-P/PSA-LEISA/MVIC-5-COMP-V1.0 -->
+            <li><a href="/holdings/nh-p_psa-lorri_alice_rex-5-atmos-v1.0/dataset.html">New Horizons Pluto Encounter Atmosphere Data</a></li>
+            <!-- NH-P/PSA-LORRI/ALICE/REX-5-ATMOS-V1.0 -->
+            <li><a href="/holdings/nh-p_psa-lorri_mvic-5-geophys-v1.0/dataset.html">New Horizons Pluto Encounter Geology and Geophysical Maps</a></li>
+            <!-- NH-P/PSA-LORRI/MVIC-5-GEOPHYS-V1.0 -->
+            <li><a href="https://sbn.psi.edu/pds/resource/pcme.html">Pluto-Charon Mutual Events</a></li>
+            <!-- EAR-A-3-RDR-PCME-V3.1 and urn:nasa:pds:pluto-charon-mutual-events::1.0 -->
+            <li><a href="http://sbn.psi.edu/pds/resource/benecchiocc.html">P445.3 (Pluto) Occultation</a></li>
+            <!-- EAR-P-I0962/I0964-5-BENECCHIOCC-V1.0 -->
+        </ul>
+
+        <!-- Target Data ======================================================== -->
         <a name="136108_Haumea"></a>
         <h2>(136108)&nbsp;Haumea</h2>
         <ul>
@@ -791,50 +842,7 @@ EDIT HISTORY:
             <!-- NH-X-LORRI-3-KEMCRUISE1-V2.0 -->
         </ul>
 
-        <!-- Target Data ======================================================== -->
-        <a name="Pluto"></a>
-        <h2>(134340) Pluto (&amp; its Satellites)</h2>
-        <ul>
-            <li><a href="/holdings/nh-p-alice-2-pluto-v3.0/dataset.html">New Horizons ALICE Pluto Encounter Raw Data v3.0</a></li>
-            <!-- NH-P-ALICE-2-PLUTO-V3.0 -->
-            <li><a href="/holdings/nh-p-alice-3-pluto-v3.0/dataset.html">New Horizons ALICE Pluto Encounter Calibrated Data v3.0</a></li>
-            <!-- NH-P-ALICE-3-PLUTO-V3.0 -->
-            <li><a href="/holdings/nh-p-leisa-2-pluto-v3.0/dataset.html">New Horizons LEISA Pluto Encounter Raw Data v3.0</a></li>
-            <!-- NH-P-LEISA-2-PLUTO-V3.0 -->
-            <li><a href="/holdings/nh-p-leisa-3-pluto-v3.0/dataset.html">New Horizons LEISA Pluto Encounter Calibrated Data v3.0</a></li>
-            <!-- NH-P-LEISA-3-PLUTO-V3.0 -->
-            <li><a href="/holdings/nh-x-lorri-2-plutocruise-v2.0/dataset.html">New Horizons LORRI Pluto Cruise Raw Data v2.0</a></li>
-            <!-- NH-X-LORRI-2-PLUTOCRUISE-V2.0 -->
-            <li><a href="/holdings/nh-x-lorri-3-plutocruise-v2.0/dataset.html">New Horizons LORRI Pluto Cruise Calibrated Data v2.0</a></li>
-            <!-- NH-X-LORRI-3-PLUTOCRUISE-V2.0 -->
-            <li><a href="/holdings/nh-p-lorri-2-pluto-v3.0/dataset.html">New Horizons LORRI Pluto Encounter Raw Data v3.0</a></li>
-            <!-- NH-P-LORRI-2-PLUTO-V3.0 -->
-            <li><a href="/holdings/nh-p-lorri-3-pluto-v3.0/dataset.html">New Horizons LORRI Pluto Encounter Calibrated Data v3.0</a></li>
-            <!-- NH-P-LORRI-3-PLUTO-V3.0 -->
-            <li><a href="/holdings/nh-p-mvic-2-pluto-v3.0/dataset.html">New Horizons MVIC Pluto Encounter Raw Data v3.0</a></li>
-            <!-- NH-P-MVIC-2-PLUTO-V3.0 -->
-            <li><a href="/holdings/nh-p-mvic-3-pluto-v3.0/dataset.html">New Horizons MVIC Pluto Encounter Calibrated Data v3.0</a></li>
-            <!-- NH-P-MVIC-3-PLUTO-V3.0 -->
-            <li><a href="/holdings/nh-p-rex-2-pluto-v2.0/dataset.html">New Horizons REX Pluto Encounter Raw Data v2.0</a></li>
-            <!-- NH-P-REX-2-PLUTO-V2.0 -->
-            <li><a href="/holdings/nh-p-rex-3-pluto-v1.0/dataset.html">New Horizons REX Pluto Encounter Calibrated Data</a></li>
-            <!-- NH-P-REX-3-PLUTO-V1.0 -->
-            <li><a href="/holdings/ro-c-osinac-2-esc3-67pchuryumov-m18-v2.0/dataset.html">Rosetta-Orbiter OSIRIS Narrow Angle Camera Escort 3 MTP018 67P Raw Data v2.0</a></li>
-            <!-- RO-C-OSINAC-2-ESC3-67PCHURYUMOV-M18-V2.0 -->
-            <li><a href="/holdings/ro-c-osinac-3-esc3-67pchuryumov-m18-v2.0/dataset.html">Rosetta-Orbiter OSIRIS Narrow Angle Camera Escort 3 MTP018 67P Calibrated Data v2.0</a></li>
-            <!-- RO-C-OSINAC-3-ESC3-67PCHURYUMOV-M18-V2.0 -->
-            <li><a href="/holdings/ro-c-osiwac-2-esc3-67pchuryumov-m18-v2.0/dataset.html">Rosetta-Orbiter OSIRIS Wide Angle Camera Escort 3 MTP018 67P Raw Data v2.0</a></li>
-            <!-- RO-C-OSIWAC-2-ESC3-67PCHURYUMOV-M18-V2.0 -->
-            <li><a href="/holdings/ro-c-osiwac-3-esc3-67pchuryumov-m18-v2.0/dataset.html">Rosetta-Orbiter OSIRIS Wide Angle Camera Escort 3 MTP018 67P Calibrated Data v2.0</a></li>
-            <!-- RO-C-OSIWAC-3-ESC3-67PCHURYUMOV-M18-V2.0 -->
-            <!-- 2018.07.13 -->
-            <li><a href="/holdings/nh-p_psa-leisa_mvic-5-comp-v1.0/dataset.html">New Horizons Pluto Encounter Surface Composition Maps</a></li>
-            <!-- NH-P/PSA-LEISA/MVIC-5-COMP-V1.0 -->
-            <li><a href="/holdings/nh-p_psa-lorri_alice_rex-5-atmos-v1.0/dataset.html">New Horizons Pluto Encounter Atmosphere Data</a></li>
-            <!-- NH-P/PSA-LORRI/ALICE/REX-5-ATMOS-V1.0 -->
-            <li><a href="/holdings/nh-p_psa-lorri_mvic-5-geophys-v1.0/dataset.html">New Horizons Pluto Encounter Geology and Geophysical Maps</a></li>
-            <!-- NH-P/PSA-LORRI/MVIC-5-GEOPHYS-V1.0 -->
-        </ul>
+
 
         <!-- Target Data ======================================================== -->
         <!--

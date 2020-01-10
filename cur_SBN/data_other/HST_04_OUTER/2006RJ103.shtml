@@ -10,9 +10,11 @@
 ALL of the head, style links, header and menu code is in the include. Edit that file with extreme care!!
 ########################
  -->
+
 <!--#include virtual="/css-n-includes/incl_top.inc"-->
 
 <!-- ################################################ MAIN ################################################## -->
+
 <div id="centeronly">
 
 <a name="mainContent"></a>
@@ -37,28 +39,28 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 	</tr></thead>
 	<tr class="odd">
 		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U9YZG001M" onclick="this.target='_blank'">U9YZG001M</a></td>
-		<td>2007-10-03 22:16:17</td>
+		<td>10/03/07 10:16 PM</td>
 		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
 		<td><a href="http://archive.stsci.edu/proposal_search.php?id=11113&mission=hst" onclick="this.target='_blank'">11113</a></td>
 		<td>Binaries in the Kuiper Belt: Probes of Solar System Formation and Evolution</td>
 	</tr>
 	<tr>
 		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U9YZG002M" onclick="this.target='_blank'">U9YZG002M</a></td>
-		<td>2007-10-03 22:25:17</td>
+		<td>10/03/07 10:25 PM</td>
 		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
 		<td><a href="http://archive.stsci.edu/proposal_search.php?id=11113&mission=hst" onclick="this.target='_blank'">11113</a></td>
 		<td>Binaries in the Kuiper Belt: Probes of Solar System Formation and Evolution</td>
 	</tr>
 	<tr class="odd">
 		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U9YZG003M" onclick="this.target='_blank'">U9YZG003M</a></td>
-		<td>2007-10-03 22:34:17</td>
+		<td>10/03/07 10:34 PM</td>
 		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
 		<td><a href="http://archive.stsci.edu/proposal_search.php?id=11113&mission=hst" onclick="this.target='_blank'">11113</a></td>
 		<td>Binaries in the Kuiper Belt: Probes of Solar System Formation and Evolution</td>
 	</tr>
 	<tr>
 		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U9YZG004M" onclick="this.target='_blank'">U9YZG004M</a></td>
-		<td>2007-10-03 22:43:17</td>
+		<td>10/03/07 10:43 PM</td>
 		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
 		<td><a href="http://archive.stsci.edu/proposal_search.php?id=11113&mission=hst" onclick="this.target='_blank'">11113</a></td>
 		<td>Binaries in the Kuiper Belt: Probes of Solar System Formation and Evolution</td>
@@ -71,8 +73,11 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 <!-- ************************************************** End editing! ************************************************** -->
 <!--#include virtual="/css-n-includes/incl_bottom.inc"-->
 <br />Last updated: <!--#config timefmt="%A %B %d, %Y"--><!--#echo var="LAST_MODIFIED" --></div><!-- close id whotext -->
+
 </div><!-- close id footer -->
 </div><!-- end id footwrap -->
+
 </div><!-- close wrapper -->
+
 </body>
 </html>

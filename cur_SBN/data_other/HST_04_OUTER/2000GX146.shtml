@@ -10,9 +10,11 @@
 ALL of the head, style links, header and menu code is in the include. Edit that file with extreme care!!
 ########################
  -->
+
 <!--#include virtual="/css-n-includes/incl_top.inc"-->
 
 <!-- ################################################ MAIN ################################################## -->
+
 <div id="centeronly">
 
 <a name="mainContent"></a>
@@ -37,42 +39,42 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 	</tr></thead>
 	<tr class="odd">
 		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=IBZ124CWQ" onclick="this.target='_blank'">IBZ124CWQ</a></td>
-		<td>2013-04-05 10:51:53</td>
+		<td>04/05/13 10:51 AM</td>
 		<td><a href="../HST_instruments.shtml">WFC3  </a></td>
 		<td><a href="http://archive.stsci.edu/proposal_search.php?id=13031&mission=hst" onclick="this.target='_blank'">13031</a></td>
 		<td>Testing Collisional Grinding in the Kuiper Belt</td>
 	</tr>
 	<tr>
 		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=IBZ124CXQ" onclick="this.target='_blank'">IBZ124CXQ</a></td>
-		<td>2013-04-05 11:00:46</td>
+		<td>04/05/13 11:00 AM</td>
 		<td><a href="../HST_instruments.shtml">WFC3  </a></td>
 		<td><a href="http://archive.stsci.edu/proposal_search.php?id=13031&mission=hst" onclick="this.target='_blank'">13031</a></td>
 		<td>Testing Collisional Grinding in the Kuiper Belt</td>
 	</tr>
 	<tr class="odd">
 		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=IBZ124CZQ" onclick="this.target='_blank'">IBZ124CZQ</a></td>
-		<td>2013-04-05 11:11:09</td>
+		<td>04/05/13 11:11 AM</td>
 		<td><a href="../HST_instruments.shtml">WFC3  </a></td>
 		<td><a href="http://archive.stsci.edu/proposal_search.php?id=13031&mission=hst" onclick="this.target='_blank'">13031</a></td>
 		<td>Testing Collisional Grinding in the Kuiper Belt</td>
 	</tr>
 	<tr>
 		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=IBZ123JQQ" onclick="this.target='_blank'">IBZ123JQQ</a></td>
-		<td>2013-05-14 22:13:16</td>
+		<td>05/14/13 10:13 PM</td>
 		<td><a href="../HST_instruments.shtml">WFC3  </a></td>
 		<td><a href="http://archive.stsci.edu/proposal_search.php?id=13031&mission=hst" onclick="this.target='_blank'">13031</a></td>
 		<td>Testing Collisional Grinding in the Kuiper Belt</td>
 	</tr>
 	<tr class="odd">
 		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=IBZ123JRQ" onclick="this.target='_blank'">IBZ123JRQ</a></td>
-		<td>2013-05-14 22:22:09</td>
+		<td>05/14/13 10:22 PM</td>
 		<td><a href="../HST_instruments.shtml">WFC3  </a></td>
 		<td><a href="http://archive.stsci.edu/proposal_search.php?id=13031&mission=hst" onclick="this.target='_blank'">13031</a></td>
 		<td>Testing Collisional Grinding in the Kuiper Belt</td>
 	</tr>
 	<tr>
 		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=IBZ123JSQ" onclick="this.target='_blank'">IBZ123JSQ</a></td>
-		<td>2013-05-14 22:32:32</td>
+		<td>05/14/13 10:32 PM</td>
 		<td><a href="../HST_instruments.shtml">WFC3  </a></td>
 		<td><a href="http://archive.stsci.edu/proposal_search.php?id=13031&mission=hst" onclick="this.target='_blank'">13031</a></td>
 		<td>Testing Collisional Grinding in the Kuiper Belt</td>
@@ -85,8 +87,11 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 <!-- ************************************************** End editing! ************************************************** -->
 <!--#include virtual="/css-n-includes/incl_bottom.inc"-->
 <br />Last updated: <!--#config timefmt="%A %B %d, %Y"--><!--#echo var="LAST_MODIFIED" --></div><!-- close id whotext -->
+
 </div><!-- close id footer -->
 </div><!-- end id footwrap -->
+
 </div><!-- close wrapper -->
+
 </body>
 </html>

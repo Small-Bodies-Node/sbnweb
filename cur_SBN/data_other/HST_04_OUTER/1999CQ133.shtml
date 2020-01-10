@@ -10,9 +10,11 @@
 ALL of the head, style links, header and menu code is in the include. Edit that file with extreme care!!
 ########################
  -->
+
 <!--#include virtual="/css-n-includes/incl_top.inc"-->
 
 <!-- ################################################ MAIN ################################################## -->
+
 <div id="centeronly">
 
 <a name="mainContent"></a>
@@ -37,28 +39,28 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 	</tr></thead>
 	<tr class="odd">
 		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=N8I678EWQ" onclick="this.target='_blank'">N8I678EWQ</a></td>
-		<td>2003-04-25 20:22:00</td>
+		<td>04/25/03 08:22 PM</td>
 		<td><a href="../HST_instruments.shtml">NICMOS</a></td>
 		<td><a href="http://archive.stsci.edu/proposal_search.php?id=9386&mission=hst" onclick="this.target='_blank'">9386</a></td>
 		<td>Infrared Photometry of a Statistically Significant Sample of KBOs</td>
 	</tr>
 	<tr>
 		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=N8I678EXQ" onclick="this.target='_blank'">N8I678EXQ</a></td>
-		<td>2003-04-25 20:26:37</td>
+		<td>04/25/03 08:26 PM</td>
 		<td><a href="../HST_instruments.shtml">NICMOS</a></td>
 		<td><a href="http://archive.stsci.edu/proposal_search.php?id=9386&mission=hst" onclick="this.target='_blank'">9386</a></td>
 		<td>Infrared Photometry of a Statistically Significant Sample of KBOs</td>
 	</tr>
 	<tr class="odd">
 		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=N8I678EYQ" onclick="this.target='_blank'">N8I678EYQ</a></td>
-		<td>2003-04-25 20:36:07</td>
+		<td>04/25/03 08:36 PM</td>
 		<td><a href="../HST_instruments.shtml">NICMOS</a></td>
 		<td><a href="http://archive.stsci.edu/proposal_search.php?id=9386&mission=hst" onclick="this.target='_blank'">9386</a></td>
 		<td>Infrared Photometry of a Statistically Significant Sample of KBOs</td>
 	</tr>
 	<tr>
 		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=N8I678EZQ" onclick="this.target='_blank'">N8I678EZQ</a></td>
-		<td>2003-04-25 20:45:00</td>
+		<td>04/25/03 08:45 PM</td>
 		<td><a href="../HST_instruments.shtml">NICMOS</a></td>
 		<td><a href="http://archive.stsci.edu/proposal_search.php?id=9386&mission=hst" onclick="this.target='_blank'">9386</a></td>
 		<td>Infrared Photometry of a Statistically Significant Sample of KBOs</td>
@@ -71,8 +73,11 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 <!-- ************************************************** End editing! ************************************************** -->
 <!--#include virtual="/css-n-includes/incl_bottom.inc"-->
 <br />Last updated: <!--#config timefmt="%A %B %d, %Y"--><!--#echo var="LAST_MODIFIED" --></div><!-- close id whotext -->
+
 </div><!-- close id footer -->
 </div><!-- end id footwrap -->
+
 </div><!-- close wrapper -->
+
 </body>
 </html>

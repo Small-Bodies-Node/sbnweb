@@ -10,9 +10,11 @@
 ALL of the head, style links, header and menu code is in the include. Edit that file with extreme care!!
 ########################
  -->
+
 <!--#include virtual="/css-n-includes/incl_top.inc"-->
 
 <!-- ################################################ MAIN ################################################## -->
+
 <div id="centeronly">
 
 <a name="mainContent"></a>
@@ -37,42 +39,42 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 	</tr></thead>
 	<tr class="odd">
 		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=IBWZ01GPQ" onclick="this.target='_blank'">IBWZ01GPQ</a></td>
-		<td>2012-01-07 06:11:14</td>
+		<td>01/07/12 06:11 AM</td>
 		<td><a href="../HST_instruments.shtml">WFC3  </a></td>
 		<td><a href="http://archive.stsci.edu/proposal_search.php?id=12792&mission=hst" onclick="this.target='_blank'">12792</a></td>
 		<td>High Spatial Resolution Photometric Imaging of the Area Around the Nucleus of C/2011 W3 Lovejoy</td>
 	</tr>
 	<tr>
 		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=IBWZ01GQQ" onclick="this.target='_blank'">IBWZ01GQQ</a></td>
-		<td>2012-01-07 06:19:12</td>
+		<td>01/07/12 06:19 AM</td>
 		<td><a href="../HST_instruments.shtml">WFC3  </a></td>
 		<td><a href="http://archive.stsci.edu/proposal_search.php?id=12792&mission=hst" onclick="this.target='_blank'">12792</a></td>
 		<td>High Spatial Resolution Photometric Imaging of the Area Around the Nucleus of C/2011 W3 Lovejoy</td>
 	</tr>
 	<tr class="odd">
 		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=IBWZ01GSQ" onclick="this.target='_blank'">IBWZ01GSQ</a></td>
-		<td>2012-01-07 06:27:10</td>
+		<td>01/07/12 06:27 AM</td>
 		<td><a href="../HST_instruments.shtml">WFC3  </a></td>
 		<td><a href="http://archive.stsci.edu/proposal_search.php?id=12792&mission=hst" onclick="this.target='_blank'">12792</a></td>
 		<td>High Spatial Resolution Photometric Imaging of the Area Around the Nucleus of C/2011 W3 Lovejoy</td>
 	</tr>
 	<tr>
 		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=IBWZ01GUQ" onclick="this.target='_blank'">IBWZ01GUQ</a></td>
-		<td>2012-01-07 06:36:28</td>
+		<td>01/07/12 06:36 AM</td>
 		<td><a href="../HST_instruments.shtml">WFC3  </a></td>
 		<td><a href="http://archive.stsci.edu/proposal_search.php?id=12792&mission=hst" onclick="this.target='_blank'">12792</a></td>
 		<td>High Spatial Resolution Photometric Imaging of the Area Around the Nucleus of C/2011 W3 Lovejoy</td>
 	</tr>
 	<tr class="odd">
 		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=IBWZ01GWQ" onclick="this.target='_blank'">IBWZ01GWQ</a></td>
-		<td>2012-01-07 06:44:26</td>
+		<td>01/07/12 06:44 AM</td>
 		<td><a href="../HST_instruments.shtml">WFC3  </a></td>
 		<td><a href="http://archive.stsci.edu/proposal_search.php?id=12792&mission=hst" onclick="this.target='_blank'">12792</a></td>
 		<td>High Spatial Resolution Photometric Imaging of the Area Around the Nucleus of C/2011 W3 Lovejoy</td>
 	</tr>
 	<tr>
 		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=IBWZ01GYQ" onclick="this.target='_blank'">IBWZ01GYQ</a></td>
-		<td>2012-01-07 06:52:24</td>
+		<td>01/07/12 06:52 AM</td>
 		<td><a href="../HST_instruments.shtml">WFC3  </a></td>
 		<td><a href="http://archive.stsci.edu/proposal_search.php?id=12792&mission=hst" onclick="this.target='_blank'">12792</a></td>
 		<td>High Spatial Resolution Photometric Imaging of the Area Around the Nucleus of C/2011 W3 Lovejoy</td>
@@ -85,8 +87,11 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 <!-- ************************************************** End editing! ************************************************** -->
 <!--#include virtual="/css-n-includes/incl_bottom.inc"-->
 <br />Last updated: <!--#config timefmt="%A %B %d, %Y"--><!--#echo var="LAST_MODIFIED" --></div><!-- close id whotext -->
+
 </div><!-- close id footer -->
 </div><!-- end id footwrap -->
+
 </div><!-- close wrapper -->
+
 </body>
 </html>

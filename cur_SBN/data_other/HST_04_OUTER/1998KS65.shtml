@@ -10,9 +10,11 @@
 ALL of the head, style links, header and menu code is in the include. Edit that file with extreme care!!
 ########################
  -->
+
 <!--#include virtual="/css-n-includes/incl_top.inc"-->
 
 <!-- ################################################ MAIN ################################################## -->
+
 <div id="centeronly">
 
 <a name="mainContent"></a>
@@ -37,28 +39,28 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 	</tr></thead>
 	<tr class="odd">
 		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U6HT4301M" onclick="this.target='_blank'">U6HT4301M</a></td>
-		<td>2001-09-04 08:50:15</td>
+		<td>09/04/01 08:50 AM</td>
 		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
 		<td><a href="http://archive.stsci.edu/proposal_search.php?id=9060&mission=hst" onclick="this.target='_blank'">9060</a></td>
 		<td>Photometry of a Statistically Significant Sample of Kuiper Belt Objects</td>
 	</tr>
 	<tr>
 		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U6HT4302M" onclick="this.target='_blank'">U6HT4302M</a></td>
-		<td>2001-09-04 08:57:15</td>
+		<td>09/04/01 08:57 AM</td>
 		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
 		<td><a href="http://archive.stsci.edu/proposal_search.php?id=9060&mission=hst" onclick="this.target='_blank'">9060</a></td>
 		<td>Photometry of a Statistically Significant Sample of Kuiper Belt Objects</td>
 	</tr>
 	<tr class="odd">
 		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U6HT4303M" onclick="this.target='_blank'">U6HT4303M</a></td>
-		<td>2001-09-04 09:03:15</td>
+		<td>09/04/01 09:03 AM</td>
 		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
 		<td><a href="http://archive.stsci.edu/proposal_search.php?id=9060&mission=hst" onclick="this.target='_blank'">9060</a></td>
 		<td>Photometry of a Statistically Significant Sample of Kuiper Belt Objects</td>
 	</tr>
 	<tr>
 		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U6HT4304M" onclick="this.target='_blank'">U6HT4304M</a></td>
-		<td>2001-09-04 09:10:15</td>
+		<td>09/04/01 09:10 AM</td>
 		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
 		<td><a href="http://archive.stsci.edu/proposal_search.php?id=9060&mission=hst" onclick="this.target='_blank'">9060</a></td>
 		<td>Photometry of a Statistically Significant Sample of Kuiper Belt Objects</td>
@@ -71,8 +73,11 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 <!-- ************************************************** End editing! ************************************************** -->
 <!--#include virtual="/css-n-includes/incl_bottom.inc"-->
 <br />Last updated: <!--#config timefmt="%A %B %d, %Y"--><!--#echo var="LAST_MODIFIED" --></div><!-- close id whotext -->
+
 </div><!-- close id footer -->
 </div><!-- end id footwrap -->
+
 </div><!-- close wrapper -->
+
 </body>
 </html>

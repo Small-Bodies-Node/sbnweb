@@ -10,9 +10,11 @@
 ALL of the head, style links, header and menu code is in the include. Edit that file with extreme care!!
 ########################
  -->
+
 <!--#include virtual="/css-n-includes/incl_top.inc"-->
 
 <!-- ################################################ MAIN ################################################## -->
+
 <div id="centeronly">
 
 <a name="mainContent"></a>
@@ -37,21 +39,21 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 	</tr></thead>
 	<tr class="odd">
 		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=IBZ134IYQ" onclick="this.target='_blank'">IBZ134IYQ</a></td>
-		<td>2013-05-21 04:24:02</td>
+		<td>05/21/13 04:24 AM</td>
 		<td><a href="../HST_instruments.shtml">WFC3  </a></td>
 		<td><a href="http://archive.stsci.edu/proposal_search.php?id=13031&mission=hst" onclick="this.target='_blank'">13031</a></td>
 		<td>Testing Collisional Grinding in the Kuiper Belt</td>
 	</tr>
 	<tr>
 		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=IBZ134IZQ" onclick="this.target='_blank'">IBZ134IZQ</a></td>
-		<td>2013-05-21 04:31:45</td>
+		<td>05/21/13 04:31 AM</td>
 		<td><a href="../HST_instruments.shtml">WFC3  </a></td>
 		<td><a href="http://archive.stsci.edu/proposal_search.php?id=13031&mission=hst" onclick="this.target='_blank'">13031</a></td>
 		<td>Testing Collisional Grinding in the Kuiper Belt</td>
 	</tr>
 	<tr class="odd">
 		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=IBZ134J1Q" onclick="this.target='_blank'">IBZ134J1Q</a></td>
-		<td>2013-05-21 04:40:38</td>
+		<td>05/21/13 04:40 AM</td>
 		<td><a href="../HST_instruments.shtml">WFC3  </a></td>
 		<td><a href="http://archive.stsci.edu/proposal_search.php?id=13031&mission=hst" onclick="this.target='_blank'">13031</a></td>
 		<td>Testing Collisional Grinding in the Kuiper Belt</td>
@@ -64,8 +66,11 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 <!-- ************************************************** End editing! ************************************************** -->
 <!--#include virtual="/css-n-includes/incl_bottom.inc"-->
 <br />Last updated: <!--#config timefmt="%A %B %d, %Y"--><!--#echo var="LAST_MODIFIED" --></div><!-- close id whotext -->
+
 </div><!-- close id footer -->
 </div><!-- end id footwrap -->
+
 </div><!-- close wrapper -->
+
 </body>
 </html>

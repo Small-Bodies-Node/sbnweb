@@ -88,8 +88,9 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
             <dd>The PSDD contains the definitions for all keywords and data structures used in and available for archive datasets. A flat ASCII version of the PSDD is required to run some of the software tools; there is a Web interface into the dictionary
                 which allows you to retrieve specific keyword definitions.
                 <br /><a href="https://pds.nasa.gov/tools/dd-search/" onclick="this.target='_blank'">Web</a>
-                <br /><a href="https://pds.jpl.nasa.gov/documents/psdd/PSDDmain_1r71.pdf" onclick="this.target='_blank'">PDF</a></li>
-                <br />The latest ASCII version of the PSDD, including its index file, is available through a link in the lower left menu of the <a href="https://pds.nasa.gov/tools/tool-registry/ddlookup/data_dictionary_lookup.cfm" onclick="this.target='_blank'">Data Dictionary Lookup Page</a>.</dd>
+                <!-- <br /><a href="https://pds.jpl.nasa.gov/documents/psdd/PSDDmain_1r71.pdf" onclick="this.target='_blank'">PDF</a> -->
+                <!-- <br />The latest ASCII version of the PSDD, including its index file, is available through a link in the lower left menu of the <a href="https://pds.nasa.gov/tools/tool-registry/ddlookup/data_dictionary_lookup.cfm" onclick="this.target='_blank'">Data Dictionary Lookup Page</a>. -->
+            </dd>
         </dl>
         <a name="PDStools"></a>
         <h2>PDS Tools</h2>

@@ -10,9 +10,11 @@
 ALL of the head, style links, header and menu code is in the include. Edit that file with extreme care!!
 ########################
  -->
+
 <!--#include virtual="/css-n-includes/incl_top.inc"-->
 
 <!-- ################################################ MAIN ################################################## -->
+
 <div id="centeronly">
 
 <a name="mainContent"></a>
@@ -37,14 +39,14 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 	</tr></thead>
 	<tr class="odd">
 		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J9FW55010" onclick="this.target='_blank'">J9FW55010</a></td>
-		<td>2005-08-31 08:19:12</td>
+		<td>08/31/05 08:19 AM</td>
 		<td><a href="../HST_instruments.shtml">ACS   </a></td>
 		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10514&mission=hst" onclick="this.target='_blank'">10514</a></td>
 		<td>Kuiper Belt Binaries: Probes of Early Solar System Evolution</td>
 	</tr>
 	<tr>
 		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J9FW55020" onclick="this.target='_blank'">J9FW55020</a></td>
-		<td>2005-08-31 08:19:31</td>
+		<td>08/31/05 08:19 AM</td>
 		<td><a href="../HST_instruments.shtml">ACS   </a></td>
 		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10514&mission=hst" onclick="this.target='_blank'">10514</a></td>
 		<td>Kuiper Belt Binaries: Probes of Early Solar System Evolution</td>
@@ -57,8 +59,11 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 <!-- ************************************************** End editing! ************************************************** -->
 <!--#include virtual="/css-n-includes/incl_bottom.inc"-->
 <br />Last updated: <!--#config timefmt="%A %B %d, %Y"--><!--#echo var="LAST_MODIFIED" --></div><!-- close id whotext -->
+
 </div><!-- close id footer -->
 </div><!-- end id footwrap -->
+
 </div><!-- close wrapper -->
+
 </body>
 </html>

@@ -10,9 +10,11 @@
 ALL of the head, style links, header and menu code is in the include. Edit that file with extreme care!!
 ########################
  -->
+
 <!--#include virtual="/css-n-includes/incl_top.inc"-->
 
 <!-- ################################################ MAIN ################################################## -->
+
 <div id="centeronly">
 
 <a name="mainContent"></a>
@@ -37,56 +39,56 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 	</tr></thead>
 	<tr class="odd">
 		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U5FZ0701R" onclick="this.target='_blank'">U5FZ0701R</a></td>
-		<td>2000-01-14 10:28:14</td>
+		<td>01/14/00 10:28 AM</td>
 		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
 		<td><a href="http://archive.stsci.edu/proposal_search.php?id=8274&mission=hst" onclick="this.target='_blank'">8274</a></td>
 		<td>A Size Survey of Cometary Nuclei</td>
 	</tr>
 	<tr>
 		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U5FZ0702R" onclick="this.target='_blank'">U5FZ0702R</a></td>
-		<td>2000-01-14 10:31:14</td>
+		<td>01/14/00 10:31 AM</td>
 		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
 		<td><a href="http://archive.stsci.edu/proposal_search.php?id=8274&mission=hst" onclick="this.target='_blank'">8274</a></td>
 		<td>A Size Survey of Cometary Nuclei</td>
 	</tr>
 	<tr class="odd">
 		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U5FZ0703R" onclick="this.target='_blank'">U5FZ0703R</a></td>
-		<td>2000-01-14 10:35:14</td>
+		<td>01/14/00 10:35 AM</td>
 		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
 		<td><a href="http://archive.stsci.edu/proposal_search.php?id=8274&mission=hst" onclick="this.target='_blank'">8274</a></td>
 		<td>A Size Survey of Cometary Nuclei</td>
 	</tr>
 	<tr>
 		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U5FZ0704R" onclick="this.target='_blank'">U5FZ0704R</a></td>
-		<td>2000-01-14 10:38:14</td>
+		<td>01/14/00 10:38 AM</td>
 		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
 		<td><a href="http://archive.stsci.edu/proposal_search.php?id=8274&mission=hst" onclick="this.target='_blank'">8274</a></td>
 		<td>A Size Survey of Cometary Nuclei</td>
 	</tr>
 	<tr class="odd">
 		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U5FZ0705R" onclick="this.target='_blank'">U5FZ0705R</a></td>
-		<td>2000-01-14 10:42:14</td>
+		<td>01/14/00 10:42 AM</td>
 		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
 		<td><a href="http://archive.stsci.edu/proposal_search.php?id=8274&mission=hst" onclick="this.target='_blank'">8274</a></td>
 		<td>A Size Survey of Cometary Nuclei</td>
 	</tr>
 	<tr>
 		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U5FZ0706R" onclick="this.target='_blank'">U5FZ0706R</a></td>
-		<td>2000-01-14 10:45:14</td>
+		<td>01/14/00 10:45 AM</td>
 		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
 		<td><a href="http://archive.stsci.edu/proposal_search.php?id=8274&mission=hst" onclick="this.target='_blank'">8274</a></td>
 		<td>A Size Survey of Cometary Nuclei</td>
 	</tr>
 	<tr class="odd">
 		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U5FZ0707R" onclick="this.target='_blank'">U5FZ0707R</a></td>
-		<td>2000-01-14 10:51:14</td>
+		<td>01/14/00 10:51 AM</td>
 		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
 		<td><a href="http://archive.stsci.edu/proposal_search.php?id=8274&mission=hst" onclick="this.target='_blank'">8274</a></td>
 		<td>A Size Survey of Cometary Nuclei</td>
 	</tr>
 	<tr>
 		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U5FZ0708R" onclick="this.target='_blank'">U5FZ0708R</a></td>
-		<td>2000-01-14 11:00:14</td>
+		<td>01/14/00 11:00 AM</td>
 		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
 		<td><a href="http://archive.stsci.edu/proposal_search.php?id=8274&mission=hst" onclick="this.target='_blank'">8274</a></td>
 		<td>A Size Survey of Cometary Nuclei</td>
@@ -99,8 +101,11 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 <!-- ************************************************** End editing! ************************************************** -->
 <!--#include virtual="/css-n-includes/incl_bottom.inc"-->
 <br />Last updated: <!--#config timefmt="%A %B %d, %Y"--><!--#echo var="LAST_MODIFIED" --></div><!-- close id whotext -->
+
 </div><!-- close id footer -->
 </div><!-- end id footwrap -->
+
 </div><!-- close wrapper -->
+
 </body>
 </html>

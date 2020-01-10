@@ -10,9 +10,11 @@
 ALL of the head, style links, header and menu code is in the include. Edit that file with extreme care!!
 ########################
  -->
+
 <!--#include virtual="/css-n-includes/incl_top.inc"-->
 
 <!-- ################################################ MAIN ################################################## -->
+
 <div id="centeronly">
 
 <a name="mainContent"></a>
@@ -37,56 +39,56 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 	</tr></thead>
 	<tr class="odd">
 		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U6HT3301M" onclick="this.target='_blank'">U6HT3301M</a></td>
-		<td>2002-01-05 12:58:15</td>
+		<td>01/05/02 12:58 PM</td>
 		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
 		<td><a href="http://archive.stsci.edu/proposal_search.php?id=9060&mission=hst" onclick="this.target='_blank'">9060</a></td>
 		<td>Photometry of a Statistically Significant Sample of Kuiper Belt Objects</td>
 	</tr>
 	<tr>
 		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U6HT3302M" onclick="this.target='_blank'">U6HT3302M</a></td>
-		<td>2002-01-05 13:05:15</td>
+		<td>01/05/02 01:05 PM</td>
 		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
 		<td><a href="http://archive.stsci.edu/proposal_search.php?id=9060&mission=hst" onclick="this.target='_blank'">9060</a></td>
 		<td>Photometry of a Statistically Significant Sample of Kuiper Belt Objects</td>
 	</tr>
 	<tr class="odd">
 		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U6HT3303M" onclick="this.target='_blank'">U6HT3303M</a></td>
-		<td>2002-01-05 13:11:15</td>
+		<td>01/05/02 01:11 PM</td>
 		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
 		<td><a href="http://archive.stsci.edu/proposal_search.php?id=9060&mission=hst" onclick="this.target='_blank'">9060</a></td>
 		<td>Photometry of a Statistically Significant Sample of Kuiper Belt Objects</td>
 	</tr>
 	<tr>
 		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U6HT3304M" onclick="this.target='_blank'">U6HT3304M</a></td>
-		<td>2002-01-05 13:18:15</td>
+		<td>01/05/02 01:18 PM</td>
 		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
 		<td><a href="http://archive.stsci.edu/proposal_search.php?id=9060&mission=hst" onclick="this.target='_blank'">9060</a></td>
 		<td>Photometry of a Statistically Significant Sample of Kuiper Belt Objects</td>
 	</tr>
 	<tr class="odd">
 		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=N8I620GZQ" onclick="this.target='_blank'">N8I620GZQ</a></td>
-		<td>2002-10-04 07:41:46</td>
+		<td>10/04/02 07:41 AM</td>
 		<td><a href="../HST_instruments.shtml">NICMOS</a></td>
 		<td><a href="http://archive.stsci.edu/proposal_search.php?id=9386&mission=hst" onclick="this.target='_blank'">9386</a></td>
 		<td>Infrared Photometry of a Statistically Significant Sample of KBOs</td>
 	</tr>
 	<tr>
 		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=N8I620H0Q" onclick="this.target='_blank'">N8I620H0Q</a></td>
-		<td>2002-10-04 07:46:23</td>
+		<td>10/04/02 07:46 AM</td>
 		<td><a href="../HST_instruments.shtml">NICMOS</a></td>
 		<td><a href="http://archive.stsci.edu/proposal_search.php?id=9386&mission=hst" onclick="this.target='_blank'">9386</a></td>
 		<td>Infrared Photometry of a Statistically Significant Sample of KBOs</td>
 	</tr>
 	<tr class="odd">
 		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=N8I620H1Q" onclick="this.target='_blank'">N8I620H1Q</a></td>
-		<td>2002-10-04 07:55:53</td>
+		<td>10/04/02 07:55 AM</td>
 		<td><a href="../HST_instruments.shtml">NICMOS</a></td>
 		<td><a href="http://archive.stsci.edu/proposal_search.php?id=9386&mission=hst" onclick="this.target='_blank'">9386</a></td>
 		<td>Infrared Photometry of a Statistically Significant Sample of KBOs</td>
 	</tr>
 	<tr>
 		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=N8I620H2Q" onclick="this.target='_blank'">N8I620H2Q</a></td>
-		<td>2002-10-04 08:04:46</td>
+		<td>10/04/02 08:04 AM</td>
 		<td><a href="../HST_instruments.shtml">NICMOS</a></td>
 		<td><a href="http://archive.stsci.edu/proposal_search.php?id=9386&mission=hst" onclick="this.target='_blank'">9386</a></td>
 		<td>Infrared Photometry of a Statistically Significant Sample of KBOs</td>
@@ -99,8 +101,11 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 <!-- ************************************************** End editing! ************************************************** -->
 <!--#include virtual="/css-n-includes/incl_bottom.inc"-->
 <br />Last updated: <!--#config timefmt="%A %B %d, %Y"--><!--#echo var="LAST_MODIFIED" --></div><!-- close id whotext -->
+
 </div><!-- close id footer -->
 </div><!-- end id footwrap -->
+
 </div><!-- close wrapper -->
+
 </body>
 </html>

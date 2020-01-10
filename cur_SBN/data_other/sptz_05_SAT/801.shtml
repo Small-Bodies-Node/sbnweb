@@ -4,15 +4,19 @@
 <head>
 <meta http-equiv="content-type" content="text/html;charset=utf-8" />
 <title>PDS: Small Bodies Node</title>
+
 <!--
 ########################
 ALL of the head, style links, header and menu code is in the include. Edit that file with extreme care!!
 ########################
  -->
+
 <!--#include virtual="/css-n-includes/incl_top.inc"-->
 
 <!-- ################################################ MAIN ################################################## -->
+
 <div id="centeronly">
+
 <a name="mainContent"></a>
 <!-- ************************************************** You may begin editing! ************************************************** -->
 
@@ -59,10 +63,6 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 		<td><a href="http://sha.ipac.caltech.edu/applications/Spitzer/SHA/#id=SearchByNaifID&startIdx=0&shortDesc=Moving%20Object%20Search&isBookmarkAble=true&isDrillDownRoot=true&SearchByNaifID.field.naifID=801&DoSearch=true" onclick="this.target='_blank'">801</a></td>
 		<td>2006-05-31 10:28:28</td>
 	</tr>
-	<tr class="odd">
-		<td><a href="http://sha.ipac.caltech.edu/applications/Spitzer/SHA/#id=SearchByNaifID&startIdx=0&shortDesc=Moving%20Object%20Search&isBookmarkAble=true&isDrillDownRoot=true&SearchByNaifID.field.naifID=801&DoSearch=true" onclick="this.target='_blank'">801</a></td>
-		<td></td>
-	</tr>
 </table>
 <br /><p>[<a href="#top">Back to Top</a>] [<a href="../Spitzer.shtml#05_SAT">Back to Satellites</a>]</p>
 
@@ -71,8 +71,11 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 <!-- ************************************************** End editing! ************************************************** -->
 <!--#include virtual="/css-n-includes/incl_bottom.inc"-->
 <br />Last updated: <!--#config timefmt="%A %B %d, %Y"--><!--#echo var="LAST_MODIFIED" --></div><!-- close id whotext -->
+
 </div><!-- close id footer -->
 </div><!-- end id footwrap -->
+
 </div><!-- close wrapper -->
+
 </body>
 </html>

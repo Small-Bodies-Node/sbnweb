@@ -10,9 +10,11 @@
 ALL of the head, style links, header and menu code is in the include. Edit that file with extreme care!!
 ########################
  -->
+
 <!--#include virtual="/css-n-includes/incl_top.inc"-->
 
 <!-- ################################################ MAIN ################################################## -->
+
 <div id="centeronly">
 
 <a name="mainContent"></a>
@@ -37,42 +39,42 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 	</tr></thead>
 	<tr class="odd">
 		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=Y3B90601T" onclick="this.target='_blank'">Y3B90601T</a></td>
-		<td>1996-08-13 19:40:19</td>
+		<td>08/13/96 07:40 PM</td>
 		<td><a href="../HST_instruments.shtml">FOS   </a></td>
 		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6552&mission=hst" onclick="this.target='_blank'">6552</a></td>
 		<td>SPECTROPHOTOMETRY OF INNER JOVIAN SATELLITES</td>
 	</tr>
 	<tr>
 		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=Y3B90602T" onclick="this.target='_blank'">Y3B90602T</a></td>
-		<td>1996-08-13 19:53:19</td>
+		<td>08/13/96 07:53 PM</td>
 		<td><a href="../HST_instruments.shtml">FOS   </a></td>
 		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6552&mission=hst" onclick="this.target='_blank'">6552</a></td>
 		<td>SPECTROPHOTOMETRY OF INNER JOVIAN SATELLITES</td>
 	</tr>
 	<tr class="odd">
 		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=Y3B90603T" onclick="this.target='_blank'">Y3B90603T</a></td>
-		<td>1996-08-13 20:11:40</td>
+		<td>08/13/96 08:11 PM</td>
 		<td><a href="../HST_instruments.shtml">FOS   </a></td>
 		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6552&mission=hst" onclick="this.target='_blank'">6552</a></td>
 		<td>SPECTROPHOTOMETRY OF INNER JOVIAN SATELLITES</td>
 	</tr>
 	<tr>
 		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=Y3B90501T" onclick="this.target='_blank'">Y3B90501T</a></td>
-		<td>1996-08-17 12:11:26</td>
+		<td>08/17/96 12:11 PM</td>
 		<td><a href="../HST_instruments.shtml">FOS   </a></td>
 		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6552&mission=hst" onclick="this.target='_blank'">6552</a></td>
 		<td>SPECTROPHOTOMETRY OF INNER JOVIAN SATELLITES</td>
 	</tr>
 	<tr class="odd">
 		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=Y3B90502T" onclick="this.target='_blank'">Y3B90502T</a></td>
-		<td>1996-08-17 12:24:26</td>
+		<td>08/17/96 12:24 PM</td>
 		<td><a href="../HST_instruments.shtml">FOS   </a></td>
 		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6552&mission=hst" onclick="this.target='_blank'">6552</a></td>
 		<td>SPECTROPHOTOMETRY OF INNER JOVIAN SATELLITES</td>
 	</tr>
 	<tr>
 		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=Y3B90503T" onclick="this.target='_blank'">Y3B90503T</a></td>
-		<td>1996-08-17 12:42:47</td>
+		<td>08/17/96 12:42 PM</td>
 		<td><a href="../HST_instruments.shtml">FOS   </a></td>
 		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6552&mission=hst" onclick="this.target='_blank'">6552</a></td>
 		<td>SPECTROPHOTOMETRY OF INNER JOVIAN SATELLITES</td>
@@ -85,8 +87,11 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 <!-- ************************************************** End editing! ************************************************** -->
 <!--#include virtual="/css-n-includes/incl_bottom.inc"-->
 <br />Last updated: <!--#config timefmt="%A %B %d, %Y"--><!--#echo var="LAST_MODIFIED" --></div><!-- close id whotext -->
+
 </div><!-- close id footer -->
 </div><!-- end id footwrap -->
+
 </div><!-- close wrapper -->
+
 </body>
 </html>

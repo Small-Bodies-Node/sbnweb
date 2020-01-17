@@ -26,14 +26,27 @@
 	</ul></li>
 </ul>
 </div><!-- end class sidebarSection -->
+
+<div class="sidebarSection">
+<h2>MPC Databases</h2>
+<p></p>
+<ul>
+<li>Latest <a href="/MPC_database/statusDB.shtml">update of every table in MPC MariaDB and Postgres</a></li>
+<li>Latest <a href="/MPC_database/obs24.shtml">24hr observations</a></li>
+<li>Latest <a href="/MPC_database/obsCodes.shtml">updated observation for each observatory code</a></li>
+</ul>
+</div><!-- end class sidebarSection -->
+
 <div class="sidebarSection">
 <h2>SBN FEEDBACK</h2>
 <p>Please provide <a href="/about/comment_form.shtml">feedback on the SBN</a> website.</p>
 </div><!-- end class sidebarSection -->
+
 <div class="sidebarSection">
 <h2>MPC FEEDBACK</h2>
 <p>Please provide <a href="/about/comment_form_MPC.shtml">feedback on the MPC</a> website.</p>
 </div><!-- end class sidebarSection -->
+
 <div class="sidebarSection">
 <h2>PDS Nodes</h2>
 <ul>

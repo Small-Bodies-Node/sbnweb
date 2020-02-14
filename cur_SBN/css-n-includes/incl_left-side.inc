@@ -27,15 +27,19 @@
 </ul>
 </div><!-- end class sidebarSection -->
 
+
 <div class="sidebarSection">
 <h2>MPC Databases</h2>
 <p></p>
+
 <ul>
-<li>Latest <a href="/MPC_database/statusDB.shtml">update of every table in MPC MariaDB and Postgres</a></li>
-<li>Latest <a href="/MPC_database/obs24.shtml">24hr observations</a></li>
-<li>Latest <a href="/MPC_database/obsCodes.shtml">updated observation for each observatory code</a></li>
+<li>Latest <a href="http://sbn.astro.umd.edu/MPC_database/statusDB.shtml">update of every table in MPC MariaDB and Postgres</a></li>
+<li>Latest <a href="http://sbn.astro.umd.edu/MPC_database/obs24.shtml">24hr observations</a></li>
+<li>Latest <a href="http://sbn.astro.umd.edu/MPC_database/obsCodes.shtml">updated observation for each observatory code</a></li>
 </ul>
+
 </div><!-- end class sidebarSection -->
+
 
 <div class="sidebarSection">
 <h2>SBN FEEDBACK</h2>

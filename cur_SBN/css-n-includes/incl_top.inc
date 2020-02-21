@@ -136,12 +136,12 @@ a:active {} /* requires a blank style for :active to stop it being buggy */
 
 <div class="clear"></div>
 <!-- BEGIN Maintenance banner -->
-<!-- 
+<!--
 <table class="important">
 <tr>
 <td><h1>DOWNTIME ANNOUNCEMENT</h1>
-<h3>Due to scheduled server maintenance, the SBN website will be inaccessible<br />Thu 18 Apr 2019 between 10:30-12:30 EDT [14:30-16:30 UTC].</h3>
-
+<h3>Fri 21 Feb 2020: The system may be unresponsive or unavailable for short periods (up to 15 minutes) during the day for upgrades and maintenance.
+<br />Thank you for your patience.</h3>
 </td>
 </tr>
 </table>

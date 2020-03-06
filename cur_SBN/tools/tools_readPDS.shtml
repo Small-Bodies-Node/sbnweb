@@ -17,8 +17,7 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 
 <!-- ################################################ MAIN ################################################## -->
 <div id="centerwide">
-<a name="mainContent"></a>
-<!-- ************************************************** You may begin editing! ************************************************** -->
+<a name="mainContent"></a><!-- ************************************************** You may begin editing! ************************************************** -->
 <h2>PDS3 vs PDS4</h2>
 <p>NASA PDS is transitioning its archive structure and formatting from PDS3 to an XML-based version called PDS4. ReadPDS was originally developed for PDS3 data structures; a new edition has been made available for PDS4. We currently maintain both editions of readPDS.</p>
 <h1>ReadPDS (for PDS4)</h1>
@@ -34,7 +33,7 @@ document.write('<a h'+'ref="m'+'ailt'+'o:'+'%65%73%68%61%79%61%40%75%6d%64%2e%65
 <p>A Python package to read-in PDS4 data and meta data is <a href="http://sbndev.astro.umd.edu/wiki/Python_PDS4_Tools">available</a>. An easy to use graphical interface to display the data directly from Python is also available, as is a <a href="http://sbndev.astro.umd.edu/wiki/PDS4_Viewer">standalone version</a>. Follow the provided links for the latest version and documentation. In case of any problems, please contact 
 
 <script type="text/javascript" language="JavaScript">
-document.write('<a h'+'ref="m'+'ailt'+'o:'+'%77%61%72%6e%65%72%65%6d%40%61%73%74%72%6f%2e%75%6d%64%2e%65%64%75">&#69;&#108;&#105;&#122;&#97;&#98;&#101;&#116;&#104;&#32;&#87;&#97;&#114;&#110;&#101;&#114;<\/a>');
+document.write('<a h'+'ref="m'+'ailt'+'o:'+'%77%61%72%6e%65%72%65%6d%40%%75%6d%64%2e%65%64%75">&#69;&#108;&#105;&#122;&#97;&#98;&#101;&#116;&#104;&#32;&#87;&#97;&#114;&#110;&#101;&#114;<\/a>');
 </script> (temp contact)
 .</p>
 
@@ -49,22 +48,22 @@ document.write('<a h'+'ref="m'+'ailt'+'o:'+'%77%61%72%6e%65%72%65%6d%40%61%73%74
 	<p><strong>N.B.:</strong> This version is the latest one but it is still under development and user feedback will be appreciated. In case of any problems, please contact
 
 <script language="JavaScript">
-document.write('<a h'+'ref="m'+'ailt'+'o:'+'%6c%6e%61%67%64%69%31%40%61%73%74%72%6f%2e%75%6d%64%2e%65%64%75">&#76;&#101;&#118;&#32;&#78;&#46;<\/a>');
+document.write('<a h'+'ref="m'+'ailt'+'o:'+'%6c%6e%61%67%64%69%31%40%%75%6d%64%2e%65%64%75">&#76;&#101;&#118;&#32;&#78;&#46;<\/a>');
 </script>
 .</p>
 	<ul>
-	<li>ReadPDS 4.9, with examples: <a href="http://sbn.astro.umd.edu/ftp/tools/readpds_idl/pds3/4.9/readpdsx_4.9.zip">zip</a>, <a href="http://sbn.astro.umd.edu/ftp/tools/readpds_idl/pds3/4.9/readpdsx_4.9.tar.gz">tarball</a></li>
-	<li>ReadPDS 4.9, without examples: <a href="http://sbn.astro.umd.edu/ftp/tools/readpds_idl/pds3/4.9/readpds_4.9.zip">zip</a>, <a href="http://sbn.astro.umd.edu/ftp/tools/readpds_idl/pds3/4.9/readpds_4.9.tar.gz">tarball</a></li>
-	<li>Examples only <a href="http://sbn.astro.umd.edu/ftp/tools/readpds_idl/pds3/4.9/readpds_examples_4.9.zip">zip</a>, <a href="http://sbn.astro.umd.edu/ftp/tools/readpds_idl/pds3/4.9/readpds_examples_4.9.tar.gz">tarball</a></li>
-	<li><a href="http://sbn.astro.umd.edu/ftp/tools/readpds_idl/pds3/4.9/readpds_4.9.txt">ReadPDS Version 4.9 Package Description</a>. (Last update: <em>2 March 2016</em>)</li>
+	<li>ReadPDS 4.9, with examples: <a href="/toolsrc/readpds_idl/pds3/4.9/readpdsx_4.9.zip">zip</a>, <a href="/toolsrc/readpds_idl/pds3/4.9/readpdsx_4.9.tar.gz">tarball</a></li>
+	<li>ReadPDS 4.9, without examples: <a href="/toolsrc/readpds_idl/pds3/4.9/readpds_4.9.zip">zip</a>, <a href="/toolsrc/readpds_idl/pds3/4.9/readpds_4.9.tar.gz">tarball</a></li>
+	<li>Examples only <a href="/toolsrc/readpds_idl/pds3/4.9/readpds_examples_4.9.zip">zip</a>, <a href="/toolsrc/readpds_idl/pds3/4.9/readpds_examples_4.9.tar.gz">tarball</a></li>
+	<li><a href="/toolsrc/readpds_idl/pds3/4.9/readpds_4.9.txt">ReadPDS Version 4.9 Package Description</a>. (Last update: <em>2 March 2016</em>)</li>
 	</ul>
 </li>
 <li><h4>ReadPDS Version 4.0 Package for <em>IDL 5.x</em>:</h4>
 	<ul>
-	<li>ReadPDS 4.0 with examples: <a href="http://sbn.astro.umd.edu/ftp/tools/readpds_idl/pds3/4.0/readpdsx_4.0.zip"> zip</a> (39M packed, 81M unpacked), <a href="http://sbn.astro.umd.edu/ftp/tools/readpds_idl/pds3/4.0/readpdsx_4.0.tar.gz"> tarball</a> (50M packed, 82M unpacked)</li>
-	<li>ReadPDS 4.0 without examples: <a href="http://sbn.astro.umd.edu/ftp/tools/readpds_idl/pds3/4.0/readpds_4.0.zip"> zip</a> (73K packed, 380K unpacked), <a href="http://sbn.astro.umd.edu/ftp/tools/readpds_idl/pds3/4.0/readpds_4.0.tar.gz"> tarball</a> (111K packed, 380K unpacked)</li>
-	<li>Examples only <a href="http://sbn.astro.umd.edu/ftp/tools/readpds_idl/pds3/4.0/readpds_examples_4.0.zip"> zip</a> (39M packed, 82M unpacked), <a href="http://sbn.astro.umd.edu/ftp/tools/readpds_idl/pds3/4.0/readpds_examples_4.0.tar.gz"> tarball</a> (52M packed, 82M unpacked)</li>
-	<li><a href="http://sbn.astro.umd.edu/ftp/tools/readpds_idl/pds3/4.0/readpds_4.0.txt">ReadPDS Version 4.0 Package Description</a>. (Last update: <em>12 May, 2008</em>)</li>
+	<li>ReadPDS 4.0 with examples: <a href="/toolsrc/readpds_idl/pds3/4.0/readpdsx_4.0.zip"> zip</a> (39M packed, 81M unpacked), <a href="/toolsrc/readpds_idl/pds3/4.0/readpdsx_4.0.tar.gz"> tarball</a> (50M packed, 82M unpacked)</li>
+	<li>ReadPDS 4.0 without examples: <a href="/toolsrc/readpds_idl/pds3/4.0/readpds_4.0.zip"> zip</a> (73K packed, 380K unpacked), <a href="/toolsrc/readpds_idl/pds3/4.0/readpds_4.0.tar.gz"> tarball</a> (111K packed, 380K unpacked)</li>
+	<li>Examples only <a href="/toolsrc/readpds_idl/pds3/4.0/readpds_examples_4.0.zip"> zip</a> (39M packed, 82M unpacked), <a href="/toolsrc/readpds_idl/pds3/4.0/readpds_examples_4.0.tar.gz"> tarball</a> (52M packed, 82M unpacked)</li>
+	<li><a href="/toolsrc/readpds_idl/pds3/4.0/readpds_4.0.txt">ReadPDS Version 4.0 Package Description</a>. (Last update: <em>12 May, 2008</em>)</li>
 	</ul>
 </li>
 </ul>

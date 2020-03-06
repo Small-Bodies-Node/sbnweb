@@ -17,8 +17,7 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 
 <!-- ################################################ MAIN ################################################## -->
 <div id="centerwide">
-<a name="mainContent"></a>
-<!-- ************************************************** You may begin editing! ************************************************** -->
+<a name="mainContent"></a><!-- ************************************************** You may begin editing! ************************************************** -->
 <h1>Small Body Designation Formats</h1>
 <p>The following official designation formats are contained in the Small Bodies Database and recognized by the search utility:</p>
 <a name="comet_format"></a>
@@ -40,7 +39,7 @@ about the end of 1994.</dd>
 <dt><em>Obsolete Permanent Designation</em> (&quot;1378&quot;,&quot;1759 I&quot;, &quot;1993 XIII&quot;, ...)</dt>
 <dd>A year usually followed by a Roman numeral (which must be in <em>upper-case</em>) indicating the order of perihelion 
 passage of the comet in that year. When there was only one comet passing perihelion in a year, then just the year number 
-is used for this designation.  This system was used up until about the end of 1994.</dd>
+is used for this designation. This system was used up until about the end of 1994.</dd>
 </dl>
 <p>Note that years must include all significant digits, i.e., &quot;66&quot; is interpreted as the year 66, not 1966. Years may be negative.</p>
 <a name="asteroid_format"></a>
@@ -79,27 +78,27 @@ planets also included.</dd>
 <dd>A string of letters that might include apostrophes.</dd>
 <dt><em>Permanent Satellite Designation</em> (&quot;Earth I&quot;, &quot;Pluto I&quot;, &quot;(134340) Pluto IV&quot;, &quot;(243) Ida I&quot;, ...)</dt>
 <dd>The permanent designation of a satellite consists of the name of its primary body (what it orbits), followed by a roman
-numeral sequence number.  What constitues the &quot;name of the primary body&quot; varies depending on what is know about the
+numeral sequence number. What constitues the &quot;name of the primary body&quot; varies depending on what is know about the
 primary body at the time:
  <ul>
-  <li>If the primary body is a major planet, the <em>name</em> is just the planet name (&quot;Jupiter&quot;, e.g.).</li>  
-  <li>If the primary body is a dwarf planet or an asteroid that has both a <em>Minor Planet Number</em> and a name, 
-      the <em>name</em> of the primary body is written as the <em>Minor Planet Number</em>
-      enclosed in parentheses followed by the name of the primary.  For example: &quot;(243) Ida&quot; or 
-      &quot;(134340) Pluto&quot;.</li>
-  <li>If the primary body has a <em>Minor Planet Number</em> but no name, the <em>Minor Planet Number</em> enclosed in 
-      parenthese may constitute the entire name, or it might include a provisional designation of the primary (it would
-      be the principal provision designation).  The period of time when this sort of designation would be used is likely
-      to be extremely short - so there will rarely be anything like this in the cross-ID database.</li>
-  <li>In the case of Pluto, the three moons known prior to 2005 (Charon, Nix, and Hydra) will often be identified using 
-      just the name &quot;Pluto&quot; for the primary, rather than &quot;(134340) Pluto&quot;, as is used for the moons
-      more recently discovered.</li>
-  </ul>
+ <li>If the primary body is a major planet, the <em>name</em> is just the planet name (&quot;Jupiter&quot;, e.g.).</li> 
+ <li>If the primary body is a dwarf planet or an asteroid that has both a <em>Minor Planet Number</em> and a name, 
+ the <em>name</em> of the primary body is written as the <em>Minor Planet Number</em>
+ enclosed in parentheses followed by the name of the primary. For example: &quot;(243) Ida&quot; or 
+ &quot;(134340) Pluto&quot;.</li>
+ <li>If the primary body has a <em>Minor Planet Number</em> but no name, the <em>Minor Planet Number</em> enclosed in 
+ parenthese may constitute the entire name, or it might include a provisional designation of the primary (it would
+ be the principal provision designation). The period of time when this sort of designation would be used is likely
+ to be extremely short - so there will rarely be anything like this in the cross-ID database.</li>
+ <li>In the case of Pluto, the three moons known prior to 2005 (Charon, Nix, and Hydra) will often be identified using 
+ just the name &quot;Pluto&quot; for the primary, rather than &quot;(134340) Pluto&quot;, as is used for the moons
+ more recently discovered.</li>
+ </ul>
 </dd>
 <dt><em>Provisional Designation</em> (&quot;S/2004 N1&quot;, &quot;S/2012 (134340) 1&quot;, ...)</dt>
 <dd>The string &quot;S/&quot;, indicating a <em>satellite</em>, followed by the four-digit year of discovery, followed 
-by an indication of the primary body and a sequence number within that year.  If the primary is a major planet, it is
-identified by its initial - so &quot;S/2004 N1&quot; is the first new satellite of Neptune reported in 2004.  If the 
+by an indication of the primary body and a sequence number within that year. If the primary is a major planet, it is
+identified by its initial - so &quot;S/2004 N1&quot; is the first new satellite of Neptune reported in 2004. If the 
 primary is a dwarf planet or asteroid, it is identified by <em>Minor Planet Number</em> in parentheses - so 
 &quot;S/2011 (134340) 1&quot; is the first new satellite of Pluto (minor planet number 134340) discovered in 2011.
 </dd>

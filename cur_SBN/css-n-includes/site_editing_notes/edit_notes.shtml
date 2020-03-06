@@ -17,8 +17,7 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 
 <!-- ################################################ MAIN ################################################## -->
 <div id="centerwide">
-<a name="mainContent"></a>
-<!-- ************************************************** You may begin editing! ************************************************** -->
+<a name="mainContent"></a><!-- ************************************************** You may begin editing! ************************************************** -->
 <h1>Editing Notes for editing the PDS-SBN website</h1>
 <h2>Email addresses</h2>
 <p>There should be no plain text email addresses on the website!! We are using <!-- <a href="http://www.mways.co.uk/prog/hidemail.php" onclick="this.target='_blank'"> -->Protect email addresses in web pages (Version 2.1)<!-- </a> --> to generate the javascipt used in the incl_bottom.inc. Addresses elsewhere in the site should at a minimum use the 'no Javascript' output.

@@ -17,14 +17,13 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 
 <!-- ################################################ MAIN ################################################## -->
 <div id="centerwide">
-<a name="mainContent"></a>
-<!-- ************************************************** You may begin editing! ************************************************** -->
+<a name="mainContent"></a><!-- ************************************************** You may begin editing! ************************************************** -->
 <h1>Frequently Asked Questions</h1>
 <ul>
-<li><strong>Q1:</strong> <a href="#Q1">How do I download large files?</a><br /><br /></li>
-<li><strong>Q2:</strong> <a href="#Q2">What do I do with an ISO file?</a><br /><br /></li>
-<li><strong>Q3:</strong> <a href="#Q3">What do I do with a checksum?</a><br /><br /></li>
-<li><strong>Q4:</strong> <a href="#Q4">How do I open zip and tar files?</a><br /><br /></li>
+<li><strong>Q1:</strong><a href="#Q1">How do I download large files?</a><br /><br /></li>
+<li><strong>Q2:</strong><a href="#Q2">What do I do with an ISO file?</a><br /><br /></li>
+<li><strong>Q3:</strong><a href="#Q3">What do I do with a checksum?</a><br /><br /></li>
+<li><strong>Q4:</strong><a href="#Q4">How do I open zip and tar files?</a><br /><br /></li>
 </ul>
 
 <p>(Links to external sites will open in new tabs.)</p>
@@ -32,7 +31,7 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 <hr />
 <ul>
 <li><a name="Q1"></a><strong>Q1: How do I download large files?</strong>
-<br /><br /><strong>A:</strong> <em>Large files</em> are files with sizes greater than 2GB (i.e., 2^31 or 2,147,483,648 bytes). While most modern systems and browsers can handle large files without complaint, older 32-bit systems may still require some special attention. For the details on why, consult the Wikipedia article: <a href="https://en.wikipedia.org/wiki/Large_file_support" onclick="this.target='_blank'">Large File Support</a>.
+<br /><br /><strong>A:</strong><em>Large files</em> are files with sizes greater than 2GB (i.e., 2^31 or 2,147,483,648 bytes). While most modern systems and browsers can handle large files without complaint, older 32-bit systems may still require some special attention. For the details on why, consult the Wikipedia article: <a href="https://en.wikipedia.org/wiki/Large_file_support" onclick="this.target='_blank'">Large File Support</a>.
 <br />So, if you are downloading, say, a 5GB file, and find that it suddenly stops after 2GB or (more rarely) 4GB, first check to make sure you're not trying to download the file onto a FAT32-format disk drive (most USB drives come formatted FAT32) which has a 2GB limit on individual file size; then try updating your browser. If you're copying to a drive with a large file friendly format (Windows NTFS, Mac HFS+, Linux ext3 and similar) and updating the browser doesn't help or isn't possible, then try one of these utilities:
 
 <dl class="definitions">
@@ -52,7 +51,7 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 </dl>
 <hr /></li>
 <li><a name="Q2"></a><strong>Q2: What do I do with an ISO file?</strong>
-<br /><br /><strong>A:</strong> <em>ISO files</em> are files that have been formatted to the ISO 9660 (generally level 2) standard for CDROM data. This file format can be burned directly to CD and generally to DVD (in the UDF/ISO bridge form), or you can examine the file contents directly, depending on what resources you have available.
+<br /><br /><strong>A:</strong><em>ISO files</em> are files that have been formatted to the ISO 9660 (generally level 2) standard for CDROM data. This file format can be burned directly to CD and generally to DVD (in the UDF/ISO bridge form), or you can examine the file contents directly, depending on what resources you have available.
 <br /><br /><strong><em>Burning to Disk</em></strong>
 <br />Many commercial software packages for burning CDs will be able to burn an ISO image directly onto the disk, though you may have to hunt for the right option. Look in the help/manual for information on creating and burning &quot;disk images&quot;.
 <br />Note:If you just add the .iso file to the list of files to burn, you won't get a usable result - you'll get a CD which will just show the .iso file in its root directory. You may have to change the extension, depending on your software, to get it to recognize the .iso file as a pre-mastered disk image instead of a regular input file.
@@ -96,7 +95,7 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 <br /><br />If the MD5 string is different, try downloading the file again. If you still can't match the checksum in our file, please let us know as soon as possible - it maybe that our file has somehow been corrupted.
 <br /><hr /></li>
 <li><a name="Q4"></a><strong>Q4: How do I open zip and tar files?</strong>
-<br /><br /><strong>A:</strong> <em>Zip</em> and <em>tar</em> are two utilities we use to package entire directory trees for download. <em>Zip</em> compresses the files as it packages them; <em>tar</em> only copies the files and directory structure into a single file that can then be itself be compressed - usually via the GNU <em>gzip</em> (<em><strong>not</strong></em> the same as <em>zip</em>) routine. The &quot;.zip&quot; extension means the files have been packaged and compressed using <em>Zip</em> alone. The &quot;.tar&quot; extension means the files have been packaged by <em>tar</em> but are not compressed. The extensions &quot;.tar.gz&quot; and &quot;.tgz&quot; are used to indicate .tar files that have been compressed by <em>gzip</em> or the &quot;-z&quot; option of the <em>tar</em> command itself.
+<br /><br /><strong>A:</strong><em>Zip</em> and <em>tar</em> are two utilities we use to package entire directory trees for download. <em>Zip</em> compresses the files as it packages them; <em>tar</em> only copies the files and directory structure into a single file that can then be itself be compressed - usually via the GNU <em>gzip</em> (<em><strong>not</strong></em> the same as <em>zip</em>) routine. The &quot;.zip&quot; extension means the files have been packaged and compressed using <em>Zip</em> alone. The &quot;.tar&quot; extension means the files have been packaged by <em>tar</em> but are not compressed. The extensions &quot;.tar.gz&quot; and &quot;.tgz&quot; are used to indicate .tar files that have been compressed by <em>gzip</em> or the &quot;-z&quot; option of the <em>tar</em> command itself.
 <br /><br />To unpack the files, unix/linux users can run &quot;unzip&quot; and the extract form of the <em>tar</em> command; Mac users can generally click on any of these file types and get the right results; and Windows users can use the <em>WinZip</em> utility. Here are some representative links in case your system doesn't have the unpacking utility you want or need:
 <ul>
 <li><a href="http://www.winzip.com/" onclick="this.target='_blank'">Zip software</a></li>

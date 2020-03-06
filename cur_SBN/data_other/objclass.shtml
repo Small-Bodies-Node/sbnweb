@@ -14,8 +14,7 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 
 <!-- ################################################ MAIN ################################################## -->
 <div id="centeronly">
-<a name="mainContent"></a>
-<!-- ************************************************** You may begin editing! ************************************************** -->
+<a name="mainContent"></a><!-- ************************************************** You may begin editing! ************************************************** -->
 <h1>Object Classifications</h1>
 <p>This page describes the different <a href="#COMET">Comet</a> and <a href="#ASTEROID">Asteroid</a> classifications. Credit for the descriptions goes to <a href="https://ssd.jpl.nasa.gov/">JPL Solar System Dynamics</a> group.</p>
 
@@ -165,8 +164,7 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 </tr>
 </table>
 <br />
-<a href="#top">[Back to Top]</a>
-<!-- ************************************************** End editing! ************************************************** -->
+<a href="#top">[Back to Top]</a><!-- ************************************************** End editing! ************************************************** -->
 <!--#include virtual="/css-n-includes/incl_bottom.inc"-->
 <br />Last updated: <!--#config timefmt="%A %B %d, %Y"--><!--#echo var="LAST_MODIFIED" --></div><!-- close id whotext -->
 </div><!-- close id footer -->

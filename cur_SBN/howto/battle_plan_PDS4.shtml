@@ -2,27 +2,26 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 
 <head>
-    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
-    <title>PDS-SBN: Data Reviewers: Basic Battle Plan</title>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<title>PDS-SBN: Data Reviewers: Basic Battle Plan</title>
 
-    <!-- 
+<!-- 
 ########################
 ALL of the head, style links, header and menu code is in the include. Edit that file with extreme care!!
 ########################
  -->
-    <!--#include virtual="/css-n-includes/incl_top.inc"-->
+<!--#include virtual="/css-n-includes/incl_top.inc"-->
 
-    <!-- ################################################ LEFT SIDEBAR ########################################## -->
-    <!--#include virtual="/css-n-includes/incl_left-side.inc"-->
+<!-- ################################################ LEFT SIDEBAR ########################################## -->
+<!--#include virtual="/css-n-includes/incl_left-side.inc"-->
 
-    <!-- ################################################ MAIN ################################################## -->
-    <div id="centerwide">
-        <a name="mainContent"></a>
-        <!-- ************************************************** You may begin editing! ************************************************** -->
-        <h1>SBN Data Reviewers: Basic Battle Plan</h1>
-        <p>[This page is being revised for PDS4.]</p>
+<!-- ################################################ MAIN ################################################## -->
+<div id="centerwide">
+<a name="mainContent"></a><!-- ************************************************** You may begin editing! ************************************************** -->
+<h1>SBN Data Reviewers: Basic Battle Plan</h1>
+<p>[This page is being revised for PDS4.]</p>
 
-        <!-- <p>This page presents a basic plan of attack for reviewing a dataset. We assume you have already downloaded and unpacked the entire data set rather than just a few selected files, although these comments may also provide some ideas for working your way through a data set online without downloading the entire collection.</p>
+<!-- <p>This page presents a basic plan of attack for reviewing a dataset. We assume you have already downloaded and unpacked the entire data set rather than just a few selected files, although these comments may also provide some ideas for working your way through a data set online without downloading the entire collection.</p>
 
 <p>As always, if you have any questions or problems with the data, please give us a call ASAP.</p>
 
@@ -99,19 +98,19 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 <a name="present"></a>
 <h3>Present your results</h3>
 <p>Many of our reviewers prepare a PowerPoint summary of their findings to present to the review team. We find that this is often very helpful when provided. In any case, we need some sort of written report of your findings, preferably before you leave the review. Major findings will be discussed in the review, while minor points (editorial points, typos, etc.) can be submitted in writing without discussion as desired.</p> -->
-        <!-- ************************************************** End editing! ************************************************** -->
-        <!--#include virtual="/css-n-includes/incl_bottom.inc"-->
-        <br />Last updated:
-        <!--#config timefmt="%A %B %d, %Y"-->
-        <!--#echo var="LAST_MODIFIED" -->
-    </div>
-    <!-- close id whotext -->
-    </div>
-    <!-- close id footer -->
-    </div>
-    <!-- end id footwrap -->
-    </div>
-    <!-- close wrapper -->
-    </body>
+<!-- ************************************************** End editing! ************************************************** -->
+<!--#include virtual="/css-n-includes/incl_bottom.inc"-->
+<br />Last updated:
+<!--#config timefmt="%A %B %d, %Y"-->
+<!--#echo var="LAST_MODIFIED" -->
+</div>
+<!-- close id whotext -->
+</div>
+<!-- close id footer -->
+</div>
+<!-- end id footwrap -->
+</div>
+<!-- close wrapper -->
+</body>
 
 </html>

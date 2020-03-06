@@ -44,15 +44,15 @@ a:active {} /* requires a blank style for :active to stop it being buggy */
 <div id="searchbox">
 <!-- Google CSE Search Box Begins -->
 <script>
-  (function() {
-    var cx = '015451472342475041968:5enkm2l1xfu';
-    var gcse = document.createElement('script');
-    gcse.type = 'text/javascript';
-    gcse.async = true;
-    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
-    var s = document.getElementsByTagName('script')[0];
-    s.parentNode.insertBefore(gcse, s);
-  })();
+ (function() {
+ var cx = '015451472342475041968:5enkm2l1xfu';
+ var gcse = document.createElement('script');
+ gcse.type = 'text/javascript';
+ gcse.async = true;
+ gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+ var s = document.getElementsByTagName('script')[0];
+ s.parentNode.insertBefore(gcse, s);
+ })();
 </script>
 <gcse:searchbox-only></gcse:searchbox-only>
 <!-- Google CSE Search Box Ends -->
@@ -162,8 +162,7 @@ a:active {} /* requires a blank style for :active to stop it being buggy */
 </div><!-- end id leftcol -->
 <!-- ################################################ MAIN ################################################## -->
 <div id="centerwide">
-<a name="mainContent"></a>
-<!-- ************************************************** You may begin editing! ************************************************** -->
+<a name="mainContent"></a><!-- ************************************************** You may begin editing! ************************************************** -->
 <h1>Blah Blah blah change me!</h1>
 <p></p>
 
@@ -180,11 +179,11 @@ a:active {} /* requires a blank style for :active to stop it being buggy */
 <div id="mdlogo"><img src="/webdings/UM_primarysm.gif" width="185" height="32" alt="UMD Logo ball" /></div><!-- close id mdlogo -->
 <div id="whotext">SBN Webmaster: <!-- <a href="/mailto.shtml" onmouseover="this.href='mai' + 'lto:' + 'warnerem' + '@' + 'astro.umd.edu'">Elizabeth Warner</a> -->
 <script type="text/javascript" language="JavaScript">
-document.write('<a h'+'ref="m'+'ailt'+'o:'+'%77%61%72%6e%65%72%65%6d%40%61%73%74%72%6f%2e%75%6d%64%2e%65%64%75">&#69;&#108;&#105;&#122;&#97;&#98;&#101;&#116;&#104;&#32;&#87;&#97;&#114;&#110;&#101;&#114;<\/a>');
+document.write('<a h'+'ref="m'+'ailt'+'o:'+'%77%61%72%6e%65%72%65%6d%40%75%6d%64%2e%65%64%75">&#69;&#108;&#105;&#122;&#97;&#98;&#101;&#116;&#104;&#32;&#87;&#97;&#114;&#110;&#101;&#114;<\/a>');
 </script>
 <br />SBN Mgr: <!-- <a href="/mailto.shtml" onmouseover="this.href='mai' + 'lto:' + 'ludmilla' + '@' + 'astro.umd.edu'">Dr. Ludmilla Kolokolova</a> -->
 <script type="text/javascript" language="JavaScript">
-document.write('<a hre'+'f="ma'+'ilto'+':'+'%6c%75%64%6d%69%6c%6c%61%40%61%73%74%72%6f%2e%75%6d%64%2e%65%64%75">&#68;&#114;&#46;&#32;&#76;&#117;&#100;&#109;&#105;&#108;&#108;&#97;&#32;&#75;&#111;&#108;&#111;&#107;&#111;&#108;&#111;&#118;&#97;<\/a>');
+document.write('<a hre'+'f="ma'+'ilto'+':'+'%6c%6b%6f%6c%6f%6b%6f%6c%40%75%6d%64%2e%65%64%75">&#68;&#114;&#46;&#32;&#76;&#117;&#100;&#109;&#105;&#108;&#108;&#97;&#32;&#75;&#111;&#108;&#111;&#107;&#111;&#108;&#111;&#118;&#97;<\/a>');
 </script>
 <br />Last updated: <!--#config timefmt="%A %B %d, %Y"--><!--#echo var="LAST_MODIFIED" --></div><!-- close id whotext -->
 </div><!-- close id footer -->

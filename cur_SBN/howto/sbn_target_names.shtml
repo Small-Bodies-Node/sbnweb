@@ -17,8 +17,7 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 
 <!-- ################################################ MAIN ################################################## -->
 <div id="centerwide">
-<a name="mainContent"></a>
-<!-- ************************************************** You may begin editing! ************************************************** -->
+<a name="mainContent"></a><!-- ************************************************** You may begin editing! ************************************************** -->
 <h1>SBN Small Body TARGET_NAME Conventions</h1>
 <p>The only slightly facetious question has been asked:</p>
 <pre>
@@ -30,21 +29,18 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 <p>Consequently, the SBN has settled on a target name format that actually combines several IDs. It has the advantage of including the definitive ID, which is often not commonly known, as well as the name (where available), which is commonly known but often only unique in a limited context.</p>
 
 <p>A few examples of SBN TARGET_NAME values will illustrate some of the various subtleties:</p>
-<pre>
-                Halley's comet:  &quot;1P/HALLEY 1 (1682 Q1)&quot;
-          Halley, the asteroid:  &quot;2688 HALLEY&quot;
-   That bright comet from 1996:  &quot;C/HYAKUTAKE (1996 B2)&quot;
-       A faint comet from 1995:  &quot;C/HYAKUTAKE (1995 Y1)&quot;
-  One piece of split comet SL9:  &quot;D/SHOEMAKER-LEVY 9-G (1993 F2-G)&quot;
-         Comet/Asteroid Chiron:  &quot;95P/CHIRON (ASTEROID 2060)&quot; (comet dataset)
-                                 &quot;2060 CHIRON&quot;                (asteroid dataset)
-                 Asteroid Eros:  &quot;433 EROS&quot;
-           An Unnamed Asteroid:  &quot;ASTEROID 11000&quot;
-        An Unnumbered Asteroid:  &quot;2003 AR1&quot;
-        Amalthea, the asteroid:  &quot;113 AMALTHEA&quot;
- Amalthea, the moon of Jupiter:  &quot;J5 AMALTHEA&quot;
-        Castalia, the asteroid:  &quot;4769 CASTALIA&quot;
-       Castalia, the meteorite:  &quot;CASTALIA&quot;
+<pre> Halley's comet: &quot;1P/HALLEY 1 (1682 Q1)&quot;
+ Halley, the asteroid: &quot;2688 HALLEY&quot;
+ That bright comet from 1996: &quot;C/HYAKUTAKE (1996 B2)&quot;
+ A faint comet from 1995: &quot;C/HYAKUTAKE (1995 Y1)&quot;
+ One piece of split comet SL9: &quot;D/SHOEMAKER-LEVY 9-G (1993 F2-G)&quot;
+ Comet/Asteroid Chiron: &quot;95P/CHIRON (ASTEROID 2060)&quot; (comet dataset) &quot;2060 CHIRON&quot; (asteroid dataset) Asteroid Eros: &quot;433 EROS&quot;
+ An Unnamed Asteroid: &quot;ASTEROID 11000&quot;
+ An Unnumbered Asteroid: &quot;2003 AR1&quot;
+ Amalthea, the asteroid: &quot;113 AMALTHEA&quot;
+ Amalthea, the moon of Jupiter: &quot;J5 AMALTHEA&quot;
+ Castalia, the asteroid: &quot;4769 CASTALIA&quot;
+ Castalia, the meteorite: &quot;CASTALIA&quot;
 </pre>
 <p>For comets, the components are:</p>
 <ol>

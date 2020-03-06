@@ -17,22 +17,21 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 
 <!-- ################################################ MAIN ################################################## -->
 <div id="centerwide">
-<a name="mainContent"></a>
-<!-- ************************************************** You may begin editing! ************************************************** -->
+<a name="mainContent"></a><!-- ************************************************** You may begin editing! ************************************************** -->
 <h1>SBN Search</h1>
 <p>The <a href="/index.shtml"><strong><em>Small Bodies Node</em></strong></a> of <a href="https://www.nasa.gov/" onclick="this.target='_blank'">NASA</a>'s <a href="https://pds.jpl.nasa.gov/" onclick="this.target='_blank'">Planetary Data System</a> is devoted to archiving, cataloging, and distributing scientific data sets concerning small bodies of the Solar System (asteroids, comets, interplanetary dust).</p>
 
 <!-- Google CSE Search Box Begins -->
 <script>
-  (function() {
-    var cx = '015451472342475041968:5enkm2l1xfu';
-    var gcse = document.createElement('script');
-    gcse.type = 'text/javascript';
-    gcse.async = true;
-    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
-    var s = document.getElementsByTagName('script')[0];
-    s.parentNode.insertBefore(gcse, s);
-  })();
+ (function() {
+ var cx = '015451472342475041968:5enkm2l1xfu';
+ var gcse = document.createElement('script');
+ gcse.type = 'text/javascript';
+ gcse.async = true;
+ gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+ var s = document.getElementsByTagName('script')[0];
+ s.parentNode.insertBefore(gcse, s);
+ })();
 </script>
 <gcse:searchresults-only></gcse:searchresults-only>
 <!-- Google CSE Search Box Ends -->

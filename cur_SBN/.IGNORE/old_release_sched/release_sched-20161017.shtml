@@ -1,0 +1,319 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<title>PDS-SBN: Data Release Schedule</title>
+
+<!-- 
+########################
+ALL of the head, style links, header and menu code is in the include. Edit that file with extreme care!!
+########################
+ -->
+<!--#include virtual="/css-n-includes/incl_top.inc"-->
+
+<!-- ################################################ LEFT SIDEBAR ########################################## -->
+<!--#include virtual="/css-n-includes/incl_left-side.inc"-->
+
+<!-- ################################################ MAIN ################################################## -->
+<div id="centerwide">
+<a name="mainContent"></a><!-- ************************************************** You may begin editing! ************************************************** -->
+<h1>Data Release Schedule</h1>
+<p>This schedule is posted to show what data we expect to provide to the public in the <em>near future</em>. The unlinked date in the last column is a rough estimation of the data release (data however are expected to be <em>delivered</em> to SBN several months earlier so that they can be reviewed, lien-resolved, etc before release). After the release, we will link to the data from this page for up to 6 months after release. You can always find links to all of the released data from the &quot;Data Archives&quot; menu above.</p>
+<table class="datatab" cellspacing="0">
+<colgroup>
+<col width="30%" />
+<col width="30%" />
+<col width="20%" />
+</colgroup>
+<thead>
+<tr>
+<td>Mission<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em>mission phase or instrument</em></td>
+<td>Data Description</td>
+<td>Data Available Online</td>
+</tr>
+</thead>
+<!-- ************************************************************************* MISSION DIVIDER ************************************************************************* -->
+<!-- ***************************************************************************** BOPPS ******************************************************************************* -->
+<tr class="odd">
+<td><a href="/data_sb/missions/bopps/index.shtml">BOPPS</a></td>
+<td>BIRC data from 2014-09-25 flight</td>
+<td>July 2016</td>
+</tr>
+<!-- ***************************************************************************** Cassini ***************************************************************************** -->
+<tr>
+<td><a href="/data_sb/missions/cassini/index.shtml">Cassini CDA</a><br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em><strong>Data coverage dates {</strong></em>
+<br /><br />(this schedule continues quarterly through 2017)</td>
+<td>2014-10-01 to 2014-12-31
+<br />2015-01-01 to 2015-06-30</td>
+<td><a href="http://sbn.psi.edu/archive/cocda/">released Jan 2016</a>
+<br /><a href="http://sbn.psi.edu/archive/cocda/">released May 2016</a></td>
+</tr>
+<tr>
+<td><a href="/data_sb/missions/cassini/index.shtml">Cassini HRD</a><br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em><strong>Data coverage dates {</strong></em>
+<br /><br />(this schedule continues semi-annually through 2017)</td>
+<td>2015-01-01 to 2015-12-31
+<br />2016-01-01 to 2016-12-31
+</td>
+<td><a href="http://sbn.psi.edu/archive/cohrd/">released May 2016</a>
+<br />Mar 2017
+</td>
+</tr>
+<!-- ******************************************************************************* Dawn ****************************************************************************** -->
+<tr class="odd">
+<td><a href="/data_sb/missions/dawn/index.shtml">Dawn</a></td>
+<!-- <td colspan="2">The Small Bodies Node and the Dawn project are working together to try to get Dawn Ceres data submitted, reviewed, and released in PDS by Oct. 18 so they can be eligible for DDAP proposals. Here is our estimate of the prospects:
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Framing Camera Ceres LAMO L1a, L1b, and mosaics - likely.
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- VIR Ceres LAMO L1a and L1b - <em>not possible</em>.
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- GRaND Ceres LAMO L1a and L1b - likely.
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Vesta and Ceres digital terrain models - likely.</td> -->
+<td colspan="2">The following Dawn data have been released and are eligible for DDAP proposals: GRaND and Framing Camera L1a and L1b LAMO data, FC HAMO and LAMO mosaics, and Ceres and Vesta digital terrain models.</td></tr>
+<tr class="odd">
+<td><a href="/data_sb/missions/dawn/index.shtml">Dawn</a><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em>Vesta L1a and L1b:</em></td>
+<td>VIR IR with updated calibration</td>
+<td><a href="http://sbn.psi.edu/pds/resource/dwnvvir.html">released Aug 2016</a></td>
+</tr>
+<tr class="odd">
+<td rowspan="2"><a href="/data_sb/missions/dawn/index.shtml">Dawn</a><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em>Vesta higher level products:</em></td>
+<td>VIR Global Maps</td>
+<td><a href="http://sbn.psi.edu/pds/resource/dwnvvir.html">released Aug 2016</a></td>
+</tr>
+<tr class="odd">
+<td>Vesta digital terrain model</td>
+<td><a href="http://sbn.psi.edu/pds/resource/dwnvfc2.html">released Oct 2016</a></td>
+</tr>
+<tr class="odd">
+<td rowspan="7"><a href="/data_sb/missions/dawn/index.shtml">Dawn</a><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em>Ceres L1a and L1b:</em></td>
+<td>GRaND thru HAMO</td>
+<td><a href="http://sbn.psi.edu/pds/resource/dwncgrd.html">released Apr 2016</a></td>
+</tr>
+<tr class="odd">
+<td>FC thru HAMO</td>
+<td><a href="http://sbn.psi.edu/pds/resource/dwncfc2.html">released Jul 2016</a></td>
+</tr>
+<tr class="odd">
+<td>VIR IR and VIS Survey/HAMO L1a</td>
+<td><a href="http://sbn.psi.edu/pds/resource/dwncvir.html">released Aug 2016</a></td>
+</tr>
+<tr class="odd">
+<td>VIR IR Survey/HAMO L1b</td>
+<td><a href="http://sbn.psi.edu/pds/resource/dwncvir.html">released Aug 2016</a></td>
+</tr>
+<tr class="odd">
+<td>GRaND LAMO</td>
+<td><a href="http://sbn.psi.edu/pds/resource/dwncgrd.html">released Oct 2016</a></td>
+</tr>
+<tr class="odd">
+<td>FC LAMO</td>
+<td><a href="http://sbn.psi.edu/pds/resource/dwncfc2.html">released Oct 2016</a></td>
+</tr>
+<tr class="odd">
+<td>VIR Approach/RC3
+<br />VIR Survey/HAMO</td>
+<td>released Oct 2015
+<br />Sep 2016</td>
+</tr>
+<tr class="odd">
+<td rowspan="3"><a href="/data_sb/missions/dawn/index.shtml">Dawn</a><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em>Ceres higher level products:</em></td>
+<td>FC HAMO clear mosaics</td>
+<td><a href="http://sbn.psi.edu/pds/resource/dwncfc2.html">released Jul 2016</a></td>
+</tr>
+<tr class="odd">
+<td>Ceres digital terrain model</td>
+<td><a href="http://sbn.psi.edu/pds/resource/dwncfc2.html">released Oct 2016</a></td>
+</tr>
+<tr class="odd">
+<td>FC HAMO color and LAMO clear mosaics</td>
+<td><a href="http://sbn.psi.edu/pds/resource/dwncfc2.html">released Oct 2016</a></td>
+</tr>
+<!-- ****************************************************************************** EPOXI ****************************************************************************** -->
+<!-- ***************************************************************************** Galileo ***************************************************************************** -->
+<!-- ***************************************************************************** LADEE ***************************************************************************** -->
+<!-- *************************************************************************** New Horizons ************************************************************************** -->
+<tr>
+<td rowspan="10"><a href="/data_sb/missions/newhorizons/index.shtml">New Horizons</a></td>
+<td>ALICE
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cruise
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pluto Flyby</td>
+<td>
+<br />Aug 2016
+<br /><a href="/data_sb/missions/newhorizons/index.shtml">released June 2016</a></td>
+</tr>
+<tr>
+<td>LEISA
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cruise
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pluto Flyby</td>
+<td>
+<br />Aug 2016
+<br /><a href="/data_sb/missions/newhorizons/index.shtml">released June 2016</a></td>
+</tr>
+<tr>
+<td>LORRI
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cruise and recalibrated Jupiter
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pluto Flyby</td>
+<td>
+<br /><a href="/data_sb/missions/newhorizons/index.shtml">released April 2016</a>
+<br /><a href="/data_sb/missions/newhorizons/index.shtml">released June 2016</a></td>
+</tr>
+<tr>
+<td>MVIC
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cruise
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pluto Flyby</td>
+<td>
+<br />Aug 2016
+<br /><a href="/data_sb/missions/newhorizons/index.shtml">released June 2016</a></td>
+</tr>
+<tr>
+<td>PEPSSI
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cruise
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pluto Flyby</td>
+<td>
+<br />Aug 2016
+<br /><a href="/data_sb/missions/newhorizons/index.shtml">released June 2016</a></td>
+</tr>
+<tr>
+<td>REX
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;post-launch, Jupiter, cruise
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pluto Flyby</td>
+<td>
+<br />Aug 2016
+<br />Dec 2016</td>
+</tr>
+<tr>
+<td>SDC:
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;recalibrated post-launch &amp; Jupiter, cruise
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pluto Flyby</td>
+<td>
+<br />Aug 2016
+<br />Aug 2016</td>
+</tr>
+<tr>
+<td>SWAP
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cruise
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pluto Flyby</td>
+<td>
+<br /><a href="/data_sb/missions/newhorizons/index.shtml">released Feb 2016</a>
+<br />Aug 2016</td>
+</tr>
+<tr>
+<td>Raw and calibrated data on ground by 2016 Jan 31</td>
+<td>Dec 2016</td>
+</tr>
+<tr>
+<td>All remaining raw and calibrated data (on ground by 2016 Oct 31) and higher level products</td>
+<td>Jun 2017</td>
+</tr>
+<!-- ************************************************************************** Rosetta ******************************************************************************* -->
+<tr class="odd">
+<td rowspan="7"><a href="/data_sb/missions/rosetta/index.shtml">Rosetta</a>
+<br /><br /> (see <a href="/index.shtml">homepage</a> for detailed listing of recently released datasets and <a href="/data_sb/missions/rosetta/index.shtml">mission page</a> for listing of all datasets released)</td>
+<td>Asteroid Steins (remaining instruments: ROMAP, RPCICA, RPCLAP, VIRTIS)</td>
+<td>Sep 2017</td>
+</tr>
+<tr class="odd">
+<td>Asteroid Lutetia (remaining instruments: NAVCAM, RPCMAG)</td>
+<td>Sep 2017</td>
+</tr>
+<tr class="odd">
+<td>Rendezvous Maneuver data (remaining instruments: RPCMAG, VIRTIS)</td>
+<td>Sep 2017</td>
+</tr>
+<tr class="odd">
+<td>Comet 67P, pre-landing data, (all instruments)<br />[PSA-certified]</td>
+<td>released Aug 2015 - Feb 2016</td>
+</tr>
+<tr class="odd">
+<td>Comet 67P, Escort and Extension data, (all instruments)<br />[PSA-certified]</td>
+<td>released Feb 2016 - Feb 2017</td>
+</tr>
+<tr class="odd">
+<td>Comet 67P coordinate system</td>
+<td><a href="/holdings/ro-c-multi-5-67p-shape-v1.0/document/cheops_ref_frame_v1.pdf">released May 2015</a></td>
+</tr>
+<tr class="odd">
+<td>Rosetta Shape Models of Comet 67P/C-G</td>
+<td><a href="/holdings/ro-c-multi-5-67p-shape-v1.0/dataset.shtml">released Apr 2016</a><!-- RO-C-MULTI-5-67P-SHAPE-V1.0 --></td>
+</tr>
+<!-- ***************************************************************************** SOLAR ******************************************************************************* -->
+<tr>
+<td><a href="/data_sb/missions/soho/index.shtml">SOHO</a></td>
+<td>SOHO comet images and photometry v2</td>
+<td>Mar 2016</td>
+</tr>
+<tr>
+<td>STEREO</td>
+<td>STEREO comet images and photometry</td>
+<td>Mar 2016</td>
+</tr>
+<!-- *************************************************************************** Stardust ************************************************************************** -->
+<!-- ************************************************************************** div between space- and ground-based***************************************************** -->
+<tr>
+<td colspan="3"><hr /></td>
+</tr>
+<!-- ************************************************************************** Ground - Comet ************************************************************************* -->
+<tr>
+<td rowspan="5"><a href="/data_sb/missions/ground.shtml">Ground based data</a><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em>Comet Data</em></td>
+<td>9P/Tempel&nbsp;1 photometry from K. Meech (UH)</td>
+<td>unknown</td>
+</tr>
+<tr>
+<td>Unidentified Cometary Emissions</td>
+<td>unknown</td>
+</tr>
+<tr>
+<td>Comet Halley near-nucleus images, orientation corrected</td>
+<td>Jun 2016</td>
+</tr>
+<tr>
+<td>CARA comet AfRho data</td>
+<td>Jun 2016</td>
+</tr>
+<tr>
+<td>Comet Hyakutake KPNO spectra</td>
+<td><a href="/holdings/pds4-gbo-kpno:hyakutake_spectra-v1.0/SUPPORT/dataset.shtml">released May 2016</a></td>
+</tr>
+<!-- ************************************************************************ Ground - Asteroid ************************************************************************ -->
+<tr class="odd">
+<td rowspan="8"><a href="/data_sb/missions/ground.shtml">Ground based data</a><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em>Asteroid data</em></td>
+<td>Fevig-Fink NEA Spectra v1.0</td>
+<td>unknown</td>
+</tr>
+<tr class="odd">
+<td>Asteroid Occultations V14.0</td>
+<td><a href="http://sbn.psi.edu/pds/resource/occ.html">released Jun 2016</a></td>
+</tr>
+<tr class="odd">
+<td>NEOWISE Diameters and Albedos V1.0</td>
+<td><a href="http://sbn.psi.edu/pds/resource/neowisediam.html">released Jun 2016</a></td>
+</tr>
+<tr class="odd">
+<td>Hardersen IRTF Asteroid NIR Reflectance Spectra V1.0</td>
+<td><a href="http://sbn.psi.edu/pds/resource/hardersenspec.html">released Jun 2016</a></td>
+</tr>
+<tr class="odd">
+<td>Near Earth Asteroid Tracking (NEAT)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;vol. 3</td>
+<td>
+<br /><a href="http://sbn.psi.edu/pds/resource/neat.html">released May 2016</a></td>
+</tr>
+<tr class="odd">
+<td>Binary Minor Planets Summary V9.0</td>
+<td><a href="http://sbn.psi.edu/pds/resource/binmp.html">released Jul 2016</a></td>
+</tr>
+<tr class="odd">
+<td>TNO and Centaur Diameters, Albedos, and Densities V4.0</td>
+<td><a href="http://sbn.psi.edu/pds/resource/tnocenalb.html">released Jul 2016</a></td>
+</tr>
+<tr class="odd">
+<td>Reddy Main-Belt Asteroid Spectra V1.0</td>
+<td><a href="http://sbn.psi.edu/pds/resource/reddymbspec.html">released Aug 2016</a></td>
+</tr>
+</table>
+<!-- ************************************************** End editing! ************************************************** -->
+<!--#include virtual="/css-n-includes/incl_bottom.inc"-->
+<br />Last updated: <!--#config timefmt="%A %B %d, %Y"--><!--#echo var="LAST_MODIFIED" --></div><!-- close id whotext -->
+</div><!-- close id footer -->
+</div><!-- end id footwrap -->
+</div><!-- close wrapper -->
+</body>
+</html>

@@ -1,0 +1,303 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<title>PDS-SBN: Data Release Schedule</title>
+
+<!-- 
+########################
+ALL of the head, style links, header and menu code is in the include. Edit that file with extreme care!!
+########################
+ -->
+<!--#include virtual="/css-n-includes/incl_top.inc"-->
+
+<!-- ################################################ LEFT SIDEBAR ########################################## -->
+<!--#include virtual="/css-n-includes/incl_left-side.inc"-->
+
+<!-- ################################################ MAIN ################################################## -->
+<div id="centerwide">
+<a name="mainContent"></a><!-- ************************************************** You may begin editing! ************************************************** -->
+<h1>Data Release Schedule</h1>
+<p>This schedule is posted to show what data we expect to provide to the public in the <em>near future</em>. The unlinked date in the last column is a rough estimation of the data release (data however are expected to be <em>delivered</em> to SBN several months earlier so that they can be reviewed, lien-resolved, etc before release). After the release, we will link to the data from this page <strong><em>for up to 6 months after release</em></strong>. You can always find links to <em>all of the released data</em> from the &quot;Data Archives&quot; menu above.</p>
+<table class="datatab" cellspacing="0">
+<colgroup>
+<col width="30%" />
+<col width="30%" />
+<col width="20%" />
+</colgroup>
+<thead>
+<tr>
+<td>Mission<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em>mission phase or instrument</em></td>
+<td>Data Description</td>
+<td>Data Available Online</td>
+</tr>
+</thead>
+<!-- ************************************************************************* MISSION DIVIDER ************************************************************************* -->
+<!-- ***************************************************************************** BOPPS ******************************************************************************* -->
+<!-- ***************************************************************************** Cassini ***************************************************************************** -->
+<tr>
+<td><a href="/data_sb/missions/cassini/index.shtml">Cassini CDA</a></td>
+<td>complete through EOM</td>
+<td><a href="https://sbn.psi.edu/archive/cocda/">released Sep 2018</a></td>
+</tr>
+
+<tr>
+<td><a href="/data_sb/missions/cassini/index.shtml">Cassini HRD</a></td>
+<td>complete through EOM</td>
+<td><a href="https://sbn.psi.edu/archive/cohrd/">released Mar 2018</a></td>
+</tr>
+
+<tr>
+<td><a href="/data_sb/missions/cassini/index.shtml">Cassini</a></td>
+<td>Saturn Small Moon Shape Models</td>
+<td><a href="https://sbn.psi.edu/pds/resource/saturnsatshapes.html">released Sep 2018</a></td>
+</tr>
+
+<!-- ******************************************************************************* Dawn ****************************************************************************** -->
+<tr class="odd">
+<td rowspan="3"><a href="/data_sb/missions/dawn/index.shtml">Dawn</a><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em>Ceres L1a and L1b:</em></td>
+<td>FC XMO3 and XMO4</td>
+<td><a href="https://sbn.psi.edu/pds/resource/dawn/dwncfcL1.html">released Oct 2017</a></td>
+</tr>
+
+<tr class="odd">
+<td>GRAND XMO3 and XMO4</td>
+<td><a href="https://sbn.psi.edu/pds/resource/dawn/dwncgrdL1.html">released Nov 2017</a></td>
+</tr>
+
+<tr class="odd">
+<td>VIR XMO3 and XMO4</td>
+<td><a href="https://sbn.psi.edu/pds/resource/dawn/dwncvirL1.html">released Sep 2018</a></td>
+</tr>
+
+<tr class="odd">
+<td rowspan="5"><a href="/data_sb/missions/dawn/index.shtml">Dawn</a><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em>Ceres higher level products:</em></td>
+<td>GRaND Ceres map products</td>
+<td><a href="https://sbn.psi.edu/pds/resource/dawn/dwncgrdL1.html">released Nov 2017</a></td>
+</tr>
+
+<tr class="odd">
+<td>VIR Ceres map products</td>
+<td>TBD</td>
+</tr>
+
+<tr class="odd">
+<td>VIR artifact-reduced spectra</td>
+<td>TBD</td>
+</tr>
+
+<tr class="odd">
+<td>Ceres SPC shape model</td>
+<td><a href="https://sbn.psi.edu/pds/resource/dawn/dwncfcshape.html">released Nov 2018</a></td>
+</tr>
+
+<tr class="odd">
+<td>Ceres LAMO Regional DTM (Occator)</td>
+<td><a href="https://sbn.psi.edu/pds/resource/dawn/dwncfcshape.html">released Jan 2019</a></td>
+</tr>
+
+<tr class="odd">
+<td><a href="/data_sb/missions/dawn/index.shtml">Dawn</a><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em>Vesta higher level products:</em></td>
+<td><br />Vesta SPC shape model</td>
+<td><br />tbd</td>
+</tr>
+<!-- ****************************************************************************** EPOXI ****************************************************************************** -->
+<!-- ***************************************************************************** Galileo ***************************************************************************** -->
+<!-- ***************************************************************************** LADEE ***************************************************************************** -->
+<!-- *************************************************************************** New Horizons ************************************************************************** -->
+<tr>
+<td rowspan="2"><a href="/data_sb/missions/newhorizons/index.shtml">New Horizons</a></td>
+<td>Pluto P3 and P4 data, all instruments</td>
+<td>released Jul 2018</td>
+</tr>
+
+<tr>
+<td>KEM Cruise 1, all instruments</td>
+<td>Feb 2019</td>
+</tr>
+
+
+<!-- ************************************************************************** Rosetta ******************************************************************************* -->
+<tr class="odd">
+<td rowspan="7"><a href="/data_sb/missions/rosetta/index.shtml">Rosetta</a>
+<br /><br /> (see <a href="/index.shtml">homepage</a> for detailed listing of recently released datasets and <a href="/data_sb/missions/rosetta/index.shtml">mission page</a> for listing of all datasets released)</td>
+<td>Asteroid Steins (remaining instruments: ROMAP, RPCICA, RPCLAP, VIRTIS)</td>
+<td>unknown</td>
+</tr>
+
+<tr class="odd">
+<td>Asteroid Lutetia (remaining instruments: NAVCAM, RPCMAG)</td>
+<td>unknown</td>
+</tr>
+
+<tr class="odd">
+<td>Rendezvous Maneuver data (remaining instruments: RPCMAG, VIRTIS)</td>
+<td>unknown</td>
+</tr>
+
+<tr class="odd">
+<td>Comet 67P, pre-landing data, Escort and Extension data, (all instruments)<br />[PSA-certified]</td>
+<td>released</td>
+</tr>
+
+<tr class="odd">
+<td>67P Shape Models v2.0</td>
+<td><a href="/holdings/ro-c-multi-5-67p-shape-v2.0/dataset.shtml">released Jul 2017</a></td>
+</tr>
+
+<tr class="odd">
+<td>67P Ground-based Observations</td>
+<td>2019</td>
+</tr>
+
+<tr class="odd">
+<td>ALICE L3/4 recalibrated + derived
+<br />CONSERT L4 + Cruise
+<br />COSIMA L3 final + L49
+<br />GIADA L5 Maps
+<br />MIDAS L3 final + L5
+<br />MIRO L4 V1.0
+<br />MIRO L4 V2.0
+<br />OSIRIS L4a V1.0
+<br />OSIRIS L2/3 V3.0, L4a V2.0, L4b/c/d V1.0
+<br />ROMAP
+<br />ROSINA L3/4/5
+<br />RPCICA L2/3/4/5
+<br />RPCIES L2/3
+<br />RPCIES L4/5
+<br />RPCLAP L2/3/5
+<br />RPCMAG V9.0
+<br />RPCMIP L3
+<br />RPCMIP L5
+<br />RPCMIP/LAP cross-calibration
+<br />Illumination Maps
+<br />RSI
+<br />VIRTIS L3 V3.0</td>
+<td>Summer 2019
+<br />2019
+<br />early 2019
+<br />2019
+<br />early 2019
+<br />released Sept 2018
+<br />early 2019
+<br />Nov 2018
+<br />early 2019
+<br />Dec 2018
+<br />2019
+<br />2019
+<br />early 2019
+<br />2019
+<br />2019
+<br />early 2019
+<br />released Sept 2018
+<br />early 2019
+<br />late 2019
+<br />early 2019
+<br /><a href="/data_sb/missions/rosetta/index_RSI.shtml">ongoing</a>
+<br />early 2019</td>
+
+
+</tr>
+
+<!-- ***************************************************************************** SOLAR ******************************************************************************* -->
+<tr>
+<td rowspan="2"><a href="/data_sb/missions/soho/index.shtml">SOHO</a></td>
+<td>SOHO comet images and photometry v2</td>
+<td>unknown</td>
+</tr>
+
+<tr>
+<td>SWAN Mike Combi water production rates</td>
+<td>Feb 2019</td>
+</tr>
+
+<tr class="odd">
+<td>STEREO</td>
+<td>STEREO comet images and photometry</td>
+<td>unknown</td>
+</tr>
+<!-- *************************************************************************** Stardust ************************************************************************** -->
+<!-- ************************************************************************** div between space- and ground-based***************************************************** -->
+<tr>
+<td colspan="3"><hr /></td>
+</tr>
+<!-- ************************************************************************** Ground - Comet ************************************************************************* -->
+<tr>
+<td rowspan="5"><a href="/data_sb/missions/ground.shtml">Ground based data</a><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em>Comet Data</em></td>
+<td>9P/Tempel&nbsp;1 photometry from K. Meech (UH)</td>
+<td>unknown</td>
+</tr>
+
+<tr>
+<td>Unidentified Cometary Emissions</td>
+<td><a href="/holdings/pds4-compil-comet:unid-emis-v1.0/SUPPORT/dataset.shtml">released Nov 2018</a></td>
+</tr>
+
+<tr>
+<td>CARA comet AfRho data</td>
+<td>unknown</td>
+</tr>
+
+<tr>
+<td>Comet ISON images and spectra, various telescopes</td>
+<td>May 2019</td>
+</tr>
+
+<tr>
+<td>Comet Hale-Bopp photometry from multiple observers</td>
+<td><a href="/holdings/pds4-compil-comet:halebopp-v1.0/SUPPORT/dataset.shtml">released Oct 2018</a></td>
+</tr>
+<!-- ************************************************************************ Ground - Asteroid ************************************************************************ -->
+<tr class="odd">
+<td rowspan="5"><a href="/data_sb/missions/ground.shtml">Ground based data</a><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em>Asteroid data</em></td>
+<td>TNO and Centaur Diameters, Albedos, Densities V1.0</td>
+<td><a href="https://sbn.psi.edu/pds/resource/tnocenalb.html">released Sep 2018</a></td>
+</tr>
+
+<tr class="odd">
+<td>Asteroid Lightcurve Database (LCDB) V2.0</td>
+<td><a href="https://sbn.psi.edu/pds/resource/lc.html">released Sep 2018</a></td>
+</tr>
+
+<tr class="odd">
+<td>Asteroid Occultations V2.0</td>
+<td><a href="https://sbn.psi.edu/pds/resource/occ.html">released Sep 2018</a></td>
+</tr>
+
+<tr class="odd">
+<td>Binary Minor Planets Compilation V2.0</td>
+<td><a href="https://sbn.psi.edu/pds/resource/binmp.html">released Sep 2018</a></td>
+</tr>
+
+<tr class="odd">
+<td>NEOWISE Diameters and Albedos V1.0</td>
+<td><a href="https://sbn.psi.edu/pds/resource/neowisediam.html">released Nov 2018</a></td>
+</tr>
+
+<!-- ************************************************************************ Ground - Satellite ************************************************************************ -->
+<tr>
+<td><a href="/data_sb/missions/ground.shtml">Ground based data</a><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em>(Natural) Satellites data</em></td>
+<td>Uranian satellites NIR spectra</td>
+<td>May 2019</td>
+</tr>
+<!-- ************************************************************************ RESTORATION ************************************************************************ -->
+<tr class="odd">
+<td rowspan="2">DATA RESTORATION</td>
+<td>Comet Halley near-nucleus images, orientation corrected</td>
+<td>Dec 2018</td>
+</tr>
+
+<!-- <tr class="odd">
+<td>Photometry of comet 9P/Tempel 1 from Deep Impact, v2.0</td>
+<td>May 2018</td>
+</tr> -->
+</table>
+<!-- ************************************************** End editing! ************************************************** -->
+<!--#include virtual="/css-n-includes/incl_bottom.inc"-->
+<br />Last updated: <!--#config timefmt="%A %B %d, %Y"--><!--#echo var="LAST_MODIFIED" --></div><!-- close id whotext -->
+</div><!-- close id footer -->
+</div><!-- end id footwrap -->
+</div><!-- close wrapper -->
+</body>
+</html>

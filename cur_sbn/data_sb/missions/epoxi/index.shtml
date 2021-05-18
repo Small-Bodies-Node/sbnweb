@@ -1,0 +1,189 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<title>SBN Mission Support: EPOXI</title>
+
+<!-- 
+########################
+ALL of the head, style links, header and menu code is in the include. Edit that file with extreme care!!
+########################
+ -->
+<!--#include virtual="/css-n-includes/incl_top.inc"-->
+
+<!-- ################################################ LEFT SIDEBAR ########################################## -->
+<!--#include virtual="/css-n-includes/incl_left-side.inc"-->
+
+<!-- ################################################ RIGHT SIDEBAR ########################################## -->
+<div id="rightcol">
+<div class="sidebarSection">
+<h2>Mission Websites</h2>
+<p>Here we list links to the primary mission website as well as pages about the mission on other sites such as the NSSDC, NASA portal, etc.</p>
+<ul>
+<li>Mission: <a href="http://epoxi.astro.umd.edu/" onclick="this.target='_blank'">EPOXI</a></li>
+<li>NSSDC: <a href="https://nssdc.gsfc.nasa.gov/nmc/spacecraftDisplay.do?id=2005-001A" onclick="this.target='_blank'">Deep Impact/EPOXI</a></li>
+<li>NASA: <a href="https://www.nasa.gov/epoxi/" onclick="this.target='_blank'">EPOXI</a></li>
+<li>SSE: <a href="https://solarsystem.nasa.gov/missions/deep-impact-epoxi/in-depth/" onclick="this.target='_blank'">EPOXI</a></li>
+</ul>
+</div><!-- end class sidebarSection -->
+</div><!-- end id rightcol -->
+<!-- ################################################ MAIN ################################################## -->
+<div id="centercol">
+<a name="mainContent"></a>
+<!-- ************************************************** You may begin editing! ************************************************** -->
+<!--
+===========================================================================
+EDIT HISTORY:
++ 2018-05-30 EMW	updated MRI-VIS Hartley Photometry to PDS4 collection
++ 2014-11-20 EMW	updated link to Ferret
++ 2014-03-06 EMW	added EPOXI HRI-IR In-flight Lunar Calibrated Spectra
++ 2014-02-27 EMW	updated v2 to v3 of DI/EPOXI links, added EPOXI Mars calibrated spectra
++ 2014-01-31 EMW	added DI3 Garradd links
++ 2014-01-28 EMW	added DI3 ISON links
++ 2013-02-19 EMW	cleaned up SPICE links
++ 2013-01-25 EMW	added links to 103P shape v1
++ 2013-01-02 EMW	added links to new v2 datasets
++ 2012-09-07 EMW	updated some doc set links that had been overlooked from v2 to v3
++ 2012-07-26 EMW	removed link to rejected Mars dataset
++ 2012-02-08 EMW	removed ITS link from instruments
++ 2011-03-14 EMW	converted page to list format
++ 2011-02-22 EMW	added right sidebar space
++ 2010-08-18 EMW	converted to xhtml, updated to new look
++ 2009-09-24 SAM	Major revisions and additions in preparation for the release of lien-resolved EPOXI data sets reviewed on 23 Jul 2009.
++ 2009-10-20 SAM	Uncommented links to the lien-resolved EPOXI data sets, except for the raw and calibrated HRII Earth data sets that the team is still holding until papers are closer to publishing.
++ 2009-12-08 SAM	Fixed link to dif-x-hriv-3-epoxi-exoplanets-v1.0.
++ 2010-02-19 SAM	Added closest approach distance for Hartley2 encounter.
++ 2010-02-26 SAM	Opened links to raw and calibrated EPOCh Earth spectra.
+===========================================================================
+-->
+
+<!-- Mission Title ====================================================== -->
+<h1>EPOXI Mission</h1>
+
+<!-- Mission Description ================================================ -->
+<p>The EPOXI mission is the combination of two independently proposed scientific investigations using the flyby spacecraft of Deep Impact in an extended mission:</p>
+<ul>
+<li><strong>EPOCh</strong> (Extrasolar Planet Observation and Characterization) utilized the HRI Visible CCD on the Deep Impact flyby spacecraft from January through August 2008 to observe transits of known extrasolar planetary systems (GJ 436, HAT-P 4, HAT-P 7, TRES-2, TRES-3, WASP-3, XO-2, and XO-3) to look for perturbations due to terrestrial planets in low-order resonances and search those same systems for secondary occultations of the hot Jupiter by the star. In October 2009 EPOCh used the HRI Visible CCD to image the transiting exoplanet microlensing target MOA-2009-BLG-266. EPOCh also utilized the HRI Visible CCD and the HRI Infrared Spectrometer to characterize Earth (2008 and 2009) and Mars (2009 only) as analogs for extrasolar planets.</li>
+<li><strong>DIXI</strong> (Deep Impact eXtended Investigation) consisted of a flyby of 103P/Hartley 2 at a closest approach distance of 700 km on 4 November 2010 in order to study a second short-period comet with the same set of instrumentation as was used at 9P/Tempel&nbsp;1.</li>
+</ul>
+
+<!-- SBN Role =========================================================== -->
+<p>The SBN is the lead PDS node to archive the EPOXI mission data. The EPOXI project also delivered the PDS-formatted EPOCh data to the Multi-Mission Archive at the STScI (<a href="http://archive.stsci.edu/" onclick="this.target='_blank'">MAST</a>).</p>
+
+<!-- Instrument List ==================================================== -->
+<h2>Instruments</h2>
+<ul>
+<li><a href="/holdings/di-c-hrii_hriv_mri_its-6-doc-set-v4.0/catalog/hrii.cat"><strong>H</strong>igh <strong>R</strong>esolution <strong>I</strong>nstrument <strong>I</strong>nfra<strong>r</strong>ed Spectrometer</a> (HRI-IR)</li>
+<li><a href="/holdings/di-c-hrii_hriv_mri_its-6-doc-set-v4.0/catalog/hriv.cat"><strong>H</strong>igh <strong>R</strong>esolution <strong>I</strong>nstrument <strong>Vis</strong>ible CCD</a> (HRI-VIS)</li>
+<li><a href="/holdings/di-c-hrii_hriv_mri_its-6-doc-set-v4.0/catalog/mri.cat"><strong>M</strong>edium <strong>R</strong>esolution <strong>I</strong>nstrument <strong>Vis</strong>ible CCD</a> (MRI-VIS)</li>
+</ul>
+
+<!-- Mission Data ======================================================= -->
+<h2>Data Sets</h2>
+
+<h3>In-Flight Calibrations</h3>
+<ul>
+<li><a href="/holdings/dif-cal-hrii-2-epoxi-calibrations-v2.0/dataset.shtml">HRI-IR In-flight Calibration Spectra v2.0 - Raw</a></li>
+<li><a href="/holdings/dif-cal-hriv-2-epoxi-calibrations-v2.0/dataset.shtml">HRI-VIS In-flight Calibration Images v2.0 - Raw</a></li>
+<li><a href="/holdings/dif-cal-mri-2-epoxi-calibrations-v2.0/dataset.shtml">MRI-VIS In-flight Calibration Images v2.0 - Raw</a></li>
+</ul>
+
+<h3>EPOCh</h3>
+<ul>
+<li>HRII
+	<ul>
+	<li><a href="/holdings/dif-e-hrii-2-epoxi-earth-v1.0/dataset.shtml">HRI-IR EPOCh Earth Spectra - Raw</a></li>
+	<li><a href="/holdings/dif-e-hrii-3_4-epoxi-earth-v2.0/dataset.shtml">HRI-IR EPOCh Earth Calibrated Spectra v2.0</a></li><!-- DIF-E-HRII-3/4-EPOXI-EARTH-V2.0 -->
+	<li><a href="/holdings/dif-m-hrii-2-epoxi-mars-v1.0/dataset.shtml">HRI-IR EPOCh Mars Spectra - Raw</a></li>
+	<li><a href="/holdings/dif-m-hrii-3_4-epoxi-mars-v1.0/dataset.shtml">HRI-IR EPOCh Mars Calibrated Spectra</a></li><!-- DIF-M-HRII-3/4-EPOXI-MARS-V1.0 -->
+	<li><a href="/holdings/dif-l-hrii-3_4-epoxi-lunar-cals-v1.0/dataset.shtml">HRI-IR In-flight Lunar Calibrated Spectra</a></li><!-- DIF-L-HRII-3/4-EPOXI-LUNAR-CALS-V1.0 -->
+	</ul></li>
+<li>HRIV
+	<ul>
+	<li><a href="/holdings/dif-x-hriv-2-epoxi-exoplanets-v1.0/dataset.shtml">HRI-VIS EPOCh Exoplanet Transit Images - Raw</a></li>
+	<li><a href="/holdings/dif-x-hriv-3-epoxi-exoplanets-v1.0/dataset.shtml">HRI-VIS EPOCh Exoplanet Transit Images - Calibrated</a></li>
+	<li><a href="/holdings/dif-x-hriv-5-epoxi-exoplanets-phot-v1.0/dataset.shtml">HRI-VIS EPOCh Exoplanet Transit Photometry</a></li>
+	<li><a href="/holdings/dif-e-hriv-2-epoxi-earth-v1.0/dataset.shtml">HRI-VIS EPOCh Earth Images - Raw</a></li>
+	<li><a href="/holdings/dif-e-hriv-3_4-epoxi-earth-v2.0/dataset.shtml">HRI-VIS EPOCh Earth Images - Calibrated v2.0</a></li>
+	<li><a href="/holdings/dif-m-hriv-2-epoxi-mars-v1.0/dataset.shtml">HRI-VIS EPOCh Mars Images - Raw</a></li>
+	<li><a href="/holdings/dif-m-hriv-3_4-epoxi-mars-v2.0/dataset.shtml">HRI-VIS EPOCh Mars Images - Calibrated v2.0</a></li>
+	</ul></li>
+<li>MRI
+	<ul>
+	<li><a href="/holdings/dif-e-mri-2-epoxi-earth-v1.0/dataset.shtml">MRI-VIS EPOCh Earth Context Images - Raw</a></li>
+	<li><a href="/holdings/dif-e-mri-3_4-epoxi-earth-v2.0/dataset.shtml">MRI-VIS EPOCh Earth Context Images - Calibrated v2.0</a></li>
+	<li><a href="/holdings/dif-m-mri-2-epoxi-mars-v1.0/dataset.shtml">MRI-VIS EPOCh Mars Context Images - Raw</a></li>
+	<li><a href="/holdings/dif-m-mri-3_4-epoxi-mars-v2.0/dataset.shtml">MRI-VIS EPOCh Mars Context Images - Calibrated v2.0</a></li>
+	</ul></li>
+</ul>
+
+<h3>DIXI</h3>
+<ul>
+<li>HRII
+	<ul>
+	<li><a href="/holdings/dif-c-hrii-2-epoxi-hartley2-v1.0/dataset.shtml">HRI-IR Hartley 2 - Raw</a></li>
+	<li><a href="/holdings/dif-c-hrii-3_4-epoxi-hartley2-v3.0/dataset.shtml">HRI-IR 103P/Hartley 2 Calibrated Spectra v3.0</a></li>
+	</ul></li>
+<li>HRIV
+	<ul>
+	<li><a href="/holdings/dif-c-hriv-2-epoxi-hartley2-v1.0/dataset.shtml">HRI-VIS Hartley 2 - Raw</a></li>
+	<li><a href="/holdings/dif-c-hriv-3_4-epoxi-hartley2-v1.0/dataset.shtml">HRI-VIS Hartley 2 - Calibrated</a></li>
+	<li><a href="/holdings/dif-c-hriv-5-epoxi-hartley2-deconv-v1.0/dataset.shtml">HRI-VIS Hartley 2 - Deconvolved Images of the Nucleus</a></li>
+	</ul></li>
+<li>MRI
+	<ul>
+	<li><a href="/holdings/dif-c-mri-2-epoxi-hartley2-v1.0/dataset.shtml">MRI-VIS Hartley 2 - Raw</a></li>
+	<li><a href="/holdings/dif-c-mri-3_4-epoxi-hartley2-v1.0/dataset.shtml">MRI-VIS Hartley 2 - Calibrated</a></li>
+	<li><a href="/holdings/pds4-epoxi_mri:hartley2_photometry-v1.0/SUPPORT/dataset.shtml">EPOXI MRI-VIS 103P/Hartley 2 Encounter Photometry Collection</a><code>urn:nasa:pds:epoxi_mri:hartley2_photometry::1.0</code></li>
+	</ul></li>
+</ul>
+
+<h3>DI3</h3>
+<ul>
+<li>HRII
+	<ul>
+	<li><a href="/holdings/dif-c-hrii-2-epoxi-garradd-v1.0/dataset.shtml">EPOXI HRI-IR C/Garradd (2009 P1) Raw Spectra</a></li>
+	<li><a href="/holdings/dif-c-hrii-3_4-epoxi-garradd-v1.0/dataset.shtml">EPOXI HRI-IR C/Garradd (2009 P1) Calibrated Spectra</a></li>
+	<li><a href="/holdings/dif-c-hrii-2-epoxi-ison-v1.0/dataset.shtml">HRI-IR C/ISON (2012 S1) Raw Spectra</a></li>
+	<li><a href="/holdings/dif-c-hrii-3_4-epoxi-ison-v1.0/dataset.shtml">HRI-IR C/ISON (2012 S1) Calibrated Spectra</a></li>
+	</ul></li>
+<li>HRIV
+	<ul>
+	<li><a href="/holdings/dif-c-hriv-2-epoxi-garradd-v1.0/dataset.shtml">EPOXI HRI-VIS C/Garradd (2009 P1) Raw Images</a></li>
+	<li><a href="/holdings/dif-c-hriv-3_4-epoxi-garradd-v1.0/dataset.shtml">EPOXI HRI-VIS C/Garradd (2009 P1) Calibrated Images</a></li><!-- DIF-C-HRIV-3/4-EPOXI-GARRADD-V1.0 -->
+	</ul></li>
+<li>MRI
+	<ul>
+	<li><a href="/holdings/dif-c-mri-2-epoxi-garradd-v1.0/dataset.shtml">EPOXI MRI-VIS C/Garradd (2009 P1) Raw Images</a></li>
+	<li><a href="/holdings/dif-c-mri-3_4-epoxi-garradd-v1.0/dataset.shtml">EPOXI MRI-VIS C/Garradd (2009 P1) Calibrated Images</a></li>
+	<li><a href="/holdings/dif-c-mri-2-epoxi-ison-v1.0/dataset.shtml">MRI-VIS C/ISON (2012 S1) Raw Images</a></li>
+	<li><a href="/holdings/dif-c-mri-3_4-epoxi-ison-v1.0/dataset.shtml">MRI-VIS C/ISON (2012 S1) Calibrated Images</a></li>
+	</ul></li>
+</ul>
+
+
+<h3>Other Mission Data</h3>
+<ul>
+<li><a href="/holdings/dif-cal-hriv-6-epoxi-stellar-psfs-v1.0/dataset.shtml">HRI-VIS Stellar PSFs</a></li>
+<li><a href="/holdings/dif-cal-hrii_hriv_mri-6-epoxi-temps-v3.0/dataset.shtml">EPOXI Spacecraft Instrument Temperatures v3.0</a></li><!-- DIF-CAL-HRII/HRIV/MRI-6-EPOXI-TEMPS-V3.0 -->
+<li><a href="https://naif.jpl.nasa.gov/naif/data_archived.html">EPOXI Spice Kernels</a> (103P/Hartley 2, TRES-2, TRES-3, WASP-3, XO-2, GJ 436, XO-3, HAT-P-4, HAT-P-7)</li><!-- DIF-C_E_X-SPICE-6-V1.0 -->
+</ul>
+
+<h3>Derived Products</h3>
+<ul>
+<li><a href="/holdings/di-c-hrii_hriv_mri_its-6-doc-set-v4.0/dataset.shtml">Deep Impact &amp; EPOXI Documentation Set v4.0</a></li>
+<li><a href="/holdings/dif-c-hriv_mri-5-hartley2-shape-v1.0/dataset.shtml">Derived Shape Model of 103P/Hartley 2</a></li>
+</ul>
+
+<h3>Related Datasets</h3>
+<p>Use the <a href="https://sbnapps.psi.edu/ferret/">Small Bodies Data Ferret</a> to find other datasets for this mission/target.</p>
+
+<!-- ************************************************** End editing! ************************************************** -->
+<!--#include virtual="/css-n-includes/incl_bottom.inc"-->
+<br />Last updated: <!--#config timefmt="%A %B %d, %Y"--><!--#echo var="LAST_MODIFIED" --></div><!-- close id whotext -->
+</div><!-- close id footer -->
+</div><!-- end id footwrap -->
+</div><!-- close wrapper -->
+</body>
+</html>

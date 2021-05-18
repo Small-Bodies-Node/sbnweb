@@ -1,0 +1,155 @@
+PDS_VERSION_ID                    = PDS3                                      
+RECORD_TYPE                       = STREAM                                    
+LABEL_REVISION_NOTE               = "2004-09-01  S.McLaughlin  Created        
+2005-02-03  S.McLaughlin    Resolved liens from Oct 2004 thermal-vac review   
+2005-11-03  S.McLaughlin    Updated time of impact                            
+2006-05-22  DI:McLaughlin   Resolved liens from Apr 2006 peer review          
+2006-10-05  DI:S.McLaughlin Revised impact time based on Jan 2006 analysis    
+2006-12-04  DI:S.McLaughlin Resolved liens from Nov 2006 peer review          
+2007-05-07  DI:McLaughlin Added RECORD_TYPE                                   
+"                                                                             
+                                                                              
+OBJECT                            = INSTRUMENT_HOST                           
+  INSTRUMENT_HOST_ID              = "DII"                                     
+                                                                              
+  OBJECT                          = INSTRUMENT_HOST_INFORMATION               
+    INSTRUMENT_HOST_NAME          = "DEEP IMPACT IMPACTOR SPACECRAFT"         
+    INSTRUMENT_HOST_TYPE          = "SPACECRAFT"                              
+    INSTRUMENT_HOST_DESC          = "                                         
+                                                                              
+  Instrument Host Overview                                                    
+  ========================                                                    
+    The Deep Impact Impactor vehicle was a complete spacecraft with a         
+    CCD-based camera and telescope called the Impactor Targeting Sensor       
+    (ITS) for both scientific imaging and auto-navigation; a complete         
+    attitude control subsystem using hemispherical resonator gyros; a star    
+    tracker; and a complete, hydrazine-based propulsion system.               
+    Electrical power was supplied by an internal battery since the            
+    expected operating lifetime was very short (24 hours).                    
+                                                                              
+    The impactor was mechanically and electrically attached to the flyby      
+    spacecraft and both launched together.  They flew together until one      
+    day before the impact event.  On July 3, 2005, the impactor was           
+    released and gently pushed away from the flyby craft at a distance of     
+    about 864,000 km from comet Tempel 1.  The auto-navigation system took    
+    control and maneuvered the impactor to ensure an impact on an             
+    illuminated portion of the cometary nucleus.  On July 4, 2005, the        
+    impactor hit the nucleus at a relative speed of 10.3 km/s.  The 360-kg    
+    Impactor released 19 gigajoules of kinetic energy to excavate a crater    
+    on the surface of the nucleus.  The best estimate of the time of          
+    the impact was 05:44:34.200 UT (at the impactor spacecraft,               
+    Earth-received time 05:52:00 UT).                                         
+                                                                              
+    About half of the mass of the impactor was copper, a noble metal,         
+    which minimized chemical reactions that could lead to species that        
+    might contaminate the spectrum with bright lines.  About half this        
+    copper was in a spherical cap at the 'front' of the impactor.  This cap   
+    was made of chambered discs that were internally hollowed, much like a    
+    lightweight telescope mirror, to reduce the density by a factor two or    
+    so from the bulk density of copper.                                       
+                                                                              
+    Data taken by the ITS were white-light images and were used by the        
+    on-board software for auto-navigation and transmitted to the flyby        
+    craft over an S-band link at 64 kilobits per seconds (kbps).  Attitude    
+    control and minor trajectory corrections were performed using a small     
+    hydrazine propulsion subsystem.                                           
+                                                                              
+    Some of the last ITS frames taken before impact were blurred due to       
+    dust hits.  Analysis of ITS data show a slight degradation of the         
+    amount of light received by the CCD, apparently caused by the             
+    sandblasting of the optics by small particles.  The last ITS image        
+    was taken a few seconds before impact.                                    
+                                                                              
+    The system requirement specifications for the impactor were:              
+                                                                              
+      Image Data Volume       : Approximately 17 megabytes                    
+      Pointing Accuracy       : 2 milliradian 3-sigma                         
+      Pointing Knowledge      : 150 microradian, 3 axes, 3-sigma              
+      Targeting Accuracy      : 300 m 3-sigma with respect to the             
+                                center of brightness of the nucleus           
+      Telecom Band            : S-Band                                        
+      Data Rate to Flyby      : 64 kbps                                       
+      Command Rate            : 16 kbps                                       
+      Energy Storage          : 2.8 kilowatt-hr for 24 hr mission             
+      Propulsion              : 25 m/s delta-velocity                         
+                                                                              
+                                                                              
+  Flight Performance                                                          
+  ==================                                                          
+    Clock correlation packets indicated large drifts in the clocks            
+    on-board the flyby and impactor spacecraft due to thermal changes         
+    induced by trajectory correction maneuvers near encounter.  The           
+    drifts resulted in a difference of several seconds between impact         
+    times based on data from the flyby and impactor spacecraft and            
+    ground-based data.                                                        
+                                                                              
+    During January 2006 the project used available spacecraft data and        
+    advice from engineering personnel to correlate the flyby clock and        
+    Dynamical Barycentric Time (TDB) to within one or two seconds and         
+    the flyby and impactor clocks to one-half of a second.  The project       
+    moved the estimated impact time forward by two seconds, from              
+    05:44:36 UTC on 4 July 2005 as reported by A'Hearn, et al. (2005)         
+    [AHEARNETAL2005A] to 05:44:34.265 UTC at the flyby spacecraft and         
+    05:44:34.200 UTC at the impactor spacecraft.  The project also            
+    generated self-consistent SPICE CK kernels based on this analysis.        
+                                                                              
+    The improved kernels were included in the Deep Impact SPICE data          
+    set archived in the PDS.  The timing discrepancy is discussed in          
+    the 'Deep Impact Spacecraft Clock  Correlation' report included           
+    on the Deep Impact documentation volume, DIDOC_0001.                      
+                                                                              
+                                                                              
+  Recommended Reading                                                         
+  ===================                                                         
+    For a detailed descriptions of the impactor spacecraft and                
+    auto-navigation, see A'Hearn, et al. (2005) [AHEARNETAL2005B],            
+    Blume (2005) [BLUME2005], Hampton, et al. (2005) [HAMPTONETAL2005],       
+    and Mastrodemos, et al. (2005) [MASTRODEMOSETAL2005].                     
+                                                                              
+    For information about the anticipated flight data and the cratering       
+    experiment, see Klaasen, et al. (2005) [KLAASENETAL2005],                 
+    Richardson, et al. (2005) [RICHARDSONETAL2005], and Schultz and Ernst     
+    (2005) [SCHULTZ&ERNST2005].  Initial results from the mission were        
+    presented by A'Hearn, et al. (2005) [AHEARNETAL2005A].                    
+                                                                              
+  This instrument host description was provided by Dr. Michael A'Hearn,       
+  the principal investigator for the Deep Impact mission.                     
+                                                                              
+    "                                                                         
+                                                                              
+  END_OBJECT                      = INSTRUMENT_HOST_INFORMATION               
+                                                                              
+  OBJECT                          = INSTRUMENT_HOST_REFERENCE_INFO            
+    REFERENCE_KEY_ID              = "AHEARNETAL2005A"                         
+  END_OBJECT                      = INSTRUMENT_HOST_REFERENCE_INFO            
+                                                                              
+  OBJECT                          = INSTRUMENT_HOST_REFERENCE_INFO            
+    REFERENCE_KEY_ID              = "AHEARNETAL2005B"                         
+  END_OBJECT                      = INSTRUMENT_HOST_REFERENCE_INFO            
+                                                                              
+  OBJECT                          = INSTRUMENT_HOST_REFERENCE_INFO            
+    REFERENCE_KEY_ID              = "BLUME2005"                               
+  END_OBJECT                      = INSTRUMENT_HOST_REFERENCE_INFO            
+                                                                              
+  OBJECT                          = INSTRUMENT_HOST_REFERENCE_INFO            
+    REFERENCE_KEY_ID              = "HAMPTONETAL2005"                         
+  END_OBJECT                      = INSTRUMENT_HOST_REFERENCE_INFO            
+                                                                              
+  OBJECT                          = INSTRUMENT_HOST_REFERENCE_INFO            
+    REFERENCE_KEY_ID              = "KLAASENETAL2005"                         
+  END_OBJECT                      = INSTRUMENT_HOST_REFERENCE_INFO            
+                                                                              
+  OBJECT                          = INSTRUMENT_HOST_REFERENCE_INFO            
+    REFERENCE_KEY_ID              = "MASTRODEMOSETAL2005"                     
+  END_OBJECT                      = INSTRUMENT_HOST_REFERENCE_INFO            
+                                                                              
+  OBJECT                          = INSTRUMENT_HOST_REFERENCE_INFO            
+    REFERENCE_KEY_ID              = "RICHARDSONETAL2005"                      
+  END_OBJECT                      = INSTRUMENT_HOST_REFERENCE_INFO            
+                                                                              
+  OBJECT                          = INSTRUMENT_HOST_REFERENCE_INFO            
+    REFERENCE_KEY_ID              = "SCHULTZ&ERNST2005"                       
+  END_OBJECT                      = INSTRUMENT_HOST_REFERENCE_INFO            
+                                                                              
+END_OBJECT                        = INSTRUMENT_HOST                           
+END                                                                           

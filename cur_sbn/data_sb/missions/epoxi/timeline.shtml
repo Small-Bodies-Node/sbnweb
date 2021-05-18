@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<title>SBN Mission Support: EPOXI Mission Timeline</title>
+
+<!-- 
+########################
+ALL of the head, style links, header and menu code is in the include. Edit that file with extreme care!!
+########################
+ -->
+<!--#include virtual="/css-n-includes/incl_top.inc"-->
+
+<!-- ################################################ LEFT SIDEBAR ########################################## -->
+<!--#include virtual="/css-n-includes/incl_left-side.inc"-->
+
+<!-- ################################################ MAIN ################################################## -->
+<div id="centerwide">
+<a name="mainContent"></a>
+<!-- ************************************************** You may begin editing! ************************************************** -->
+<!--
+===========================================================================
+EDIT HISTORY:
++ 2010-08-18 EMW	converted to xhtml, updated to new look
++ 2009-09-24 SAM	Created
++ 2010-02-26 SAM	Added Mars & Align/Point Cals (microlensing)
++ 2010-03-04 SAM	Align/Point Cals #2 was cancelled (microlensing)
+===========================================================================
+-->
+<h1>EPOXI Mission Timeline</h1>
+<table width="96%" class="datatab">
+<colgroup>
+<col width="32%" />
+<col width="32%" />
+<col width="32%" />
+</colgroup>
+<thead>
+<tr>
+<td>Phases and Events</td>
+<td>Start Date</td>
+<td>Stop Date</td>
+</tr>
+</thead>
+<tr>
+<td><strong>Cruise 1</strong><br />In-Flight Calibrations<br />Earth Flyby #1</td>
+<td><strong>2007-09-01</strong><br />2007-10-04<br />2007-12-31</td>
+<td><strong>2008-01-21</strong><br />2008-01-21<br />2008-12-31</td>
+</tr>
+<tr>
+<td><strong>EPOCh</strong><br />Extrasolar Planet Transit Observations<br />Earth Observation #1 (Equatorial) **<br />Earth Observation #4 (Equatorial with lunar transit)<br />Earth Observation #5 (Equatorial)<br />In-Flight Calibrations</td>
+<td><strong>2008-01-22</strong><br />2008-01-22<br />2008-03-18<br />2008-05-28<br />2008-06-04<br />2008-01-22</td>
+<td><strong>2008-08-31</strong><br />2008-08-31<br />2008-03-19<br />2008-05-29<br />2008-06-05<br />2008-08-31</td>
+</tr>
+<tr>
+<td><strong>Cruise 2</strong><br />Earth Flyby #2<br />EPOCh Earth North Polar Obs<br />EPOCh Earth South Polar Obs<br />Alignment/Pointing Cal #1<br />EPOCh Mars Obs #1<br />EPOCh Mars Obs #2 (planned)<br />Alignment/Pointing Cal #2 (cancelled)<br />In-Flight Calibrations<br />Additional Earth Flybys</td>
+<td><strong>2008-09-01</strong><br />2008-12-29<br />2009-03-27<br />2009-09-27<br />2009-10-05<br />2009-11-21<br />2010-03-16<br />2010-06-23<br />2008-09-01<br />2009-06-01</td>
+<td><strong>2010-09-03</strong><br />2008-12-29<br />2009-03-28<br />2009-09-28<br />2009-10-08<br />2009-11-22<br />2010-03-16<br />2010-06-23<br />2010-09-03<br />2010-09-03</td>
+</tr>
+<tr>
+<td><strong>DIXI</strong><br />Hartley 2 Approach<br />Hartley 2 Encounter<br />Hartley 2 Lookback Imaging<br />In-Flight Calibrations</td>
+<td><strong>2010-09-04</strong><br />2010-09-04<br />2010-11-04<br />2010-11-04<br />2010-09-04</td>
+<td><strong>2010-12-16</strong><br />2010-11-03<br />2010-11-04<br />2010-11-25<br />2010-12-16</td>
+</tr>
+<tr>
+<td colspan="3">** Earth observations #2 and #3 were cancelled due to a telecommunications anomaly.</td>
+</tr>
+</table>
+<!-- ************************************************** End editing! ************************************************** -->
+<!--#include virtual="/css-n-includes/incl_bottom.inc"-->
+<br />Last updated: <!--#config timefmt="%A %B %d, %Y"--><!--#echo var="LAST_MODIFIED" --></div><!-- close id whotext -->
+</div><!-- close id footer -->
+</div><!-- end id footwrap -->
+</div><!-- close wrapper -->
+</body>
+</html>

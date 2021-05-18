@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<title>SBN Mission Support: Suisei</title>
+
+<!-- 
+########################
+ALL of the head, style links, header and menu code is in the include. Edit that file with extreme care!!
+########################
+ -->
+<!--#include virtual="/css-n-includes/incl_top.inc"-->
+
+<!-- ################################################ LEFT SIDEBAR ########################################## -->
+<!--#include virtual="/css-n-includes/incl_left-side.inc"-->
+
+<!-- ################################################ RIGHT SIDEBAR ########################################## -->
+<div id="rightcol">
+<div class="sidebarSection">
+<h2>Mission Websites</h2>
+<p>Here we list links to the primary mission website as well as pages about the mission on other sites such as the NSSDC, NASA portal, etc.</p>
+<ul>
+<li>Mission: <a href="http://www.isas.ac.jp/e/enterp/missions/suisei.shtml" onclick="this.target='_blank'">Suisei</a> (ISAS)</li>
+<li>NSSDC: <a href="https://nssdc.gsfc.nasa.gov/nmc/spacecraftDisplay.do?id=1985-073A" onclick="this.target='_blank'">Suisei</a></li>
+<li>NASA: <em>na</em></li>
+<li>Wikipedia: <a href="https://en.wikipedia.org/wiki/Suisei_%28spacecraft%29" onclick="this.target='_blank'"></a></li>
+</ul>
+</div><!-- end class sidebarSection -->
+</div><!-- end id rightcol -->
+<!-- ################################################ MAIN ################################################## -->
+<div id="centercol">
+<a name="mainContent"></a>
+<!-- ************************************************** You may begin editing! ************************************************** -->
+<!--
+===========================================================================
+EDIT HISTORY:
++ 2014-11-20 EMW	updated link to Ferret
++ 2012-06-06 EMW	updated page removing *volume* links
++ 2011-04-15 EMW	converted page to list format
++ 2011-02-22 EMW	added right sidebar space
++ 2011-01-28 EMW	added content from old comet/missions page, but need to rearrange now
++ 2010-08-18 EMW	converted to xhtml, updated to new look
+===========================================================================
+-->
+
+<!-- Mission Title ====================================================== -->
+<h1>Suisei Mission</h1>
+
+<!-- Mission Description ================================================ -->
+<p>Suisei (Planet-A) was a mission to flyby comet 1P/Halley planned by Japan's Institute of Space and Astronautical Science (ISAS). Launched on 18 August 1985, Suisei carried two instruments in order to study the growth and the decay of the cometary object's hydrogen corona, and the interaction of the solar wind with the cometary ionosphere. Suisei encountered 1P/Halley on 8 March 1986 at a distance of 151,000 kilometers on the sunward side.</p>
+
+<p>The spacecraft's thrusters were depleted of hydrazine on 22 February 1991 causing future planned encounters to be canceled. ISAS had planned to send Suisei by 21P/Giacobini-Zinner on 24 November 1998 and 55P/Tempel-Tuttle on 28 February 1998.</p>
+
+<!-- SBN Role =========================================================== -->
+<p>SBN lead the effort to archive the data from Suisei into the PDS.</p>
+
+<!-- Instrument List ==================================================== -->
+<a name="instruments"></a>
+<h2>Instruments</h2>
+<ul>
+<li>Instrument Details (Data from these instruments are archived at SBN.)
+	<ul>
+	<li>Energy Spectrum Particle (ESP) - Velocity distributions of the solar-wind ions and electrons in the energy range between 0.03 and 16 keV</li>
+	</ul></li>
+
+<!-- <li>Other Instruments (Spacecraft has other instruments, data from which are archived at another PDS node.)
+	<ul>
+	<li>Ultraviolet Imager (UVI) - Succession of synoptic images of the cometary object's hydrogen corona at the hydrogen Lyman-alpha line</li>
+	</ul></li> -->
+</ul>
+
+<!-- Mission Data ======================================================= -->
+<h2>Data Sets</h2>
+
+<h3>1P/Halley Encounter</h3>
+<ul>
+<li><a href="/holdings/suisei-c-esp-3-rdr-halley-v1.0/dataset.shtml">Suisei Solar Wind Experiment Data</a></li>
+</ul>
+
+<h3>Other Target Observations</h3>
+<ul>
+<li><a href="/data_sb/missions/ihw/">International Halley Watch Archive</a></li>
+</ul>
+
+<h3>Related Datasets</h3>
+<p>Use the <a href="https://sbnapps.psi.edu/ferret/">Small Bodies Data Ferret</a> to find other datasets for this mission/target.</p>
+
+<!-- ************************************************** End editing! ************************************************** -->
+<!--#include virtual="/css-n-includes/incl_bottom.inc"-->
+<br />Last updated: <!--#config timefmt="%A %B %d, %Y"--><!--#echo var="LAST_MODIFIED" --></div><!-- close id whotext -->
+</div><!-- close id footer -->
+</div><!-- end id footwrap -->
+</div><!-- close wrapper -->
+</body>
+</html>

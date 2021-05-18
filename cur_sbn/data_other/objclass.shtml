@@ -1,0 +1,175 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<title>PDS-SBN: Object Classifications</title>
+
+<!-- 
+########################
+ALL of the head, style links, header and menu code is in the include. Edit that file with extreme care!!
+########################
+ -->
+<!--#include virtual="/css-n-includes/incl_top.inc"-->
+
+<!-- ################################################ MAIN ################################################## -->
+<div id="centeronly">
+<a name="mainContent"></a>
+<!-- ************************************************** You may begin editing! ************************************************** -->
+<h1>Object Classifications</h1>
+<p>This page describes the different <a href="#COMET">Comet</a> and <a href="#ASTEROID">Asteroid</a> classifications. Credit for the descriptions goes to <a href="https://ssd.jpl.nasa.gov/">JPL Solar System Dynamics</a> group.</p>
+
+<hr />
+<a name="COMET"></a>
+<h3>Comet Orbit Classes</h3>
+<table width="95%" class="datatab">
+<colgroup>
+<col width="15%" />
+<col width="20%" />
+<col width="60%" />
+</colgroup>
+<thead>
+<tr>
+<td>Abbreviation</td>
+<td>Title</td>
+<td>Description</td>
+</tr>
+</thead>
+<tr>
+<td>COM<a name="COM"></a></td>
+<td>Comet</td>
+<td>Comet orbit not matching any defined orbit class.</td>
+</tr>
+<tr class="odd">
+<td>CTc<a name="CTc"></a></td>
+<td>Chiron-type Comet</td>
+<td>Chiron-type comet, as defined by Levison and Duncan (T<sustrong>Jupiter</sustrong> &gt; 3; a &gt; a<sustrong>Jupiter</sustrong>).</td>
+</tr>
+<tr>
+<td>ETc<a name="ETc"></a></td>
+<td>Encke-type Comet</td>
+<td>Encke-type comet, as defined by Levison and Duncan (T<sustrong>Jupiter</sustrong> &gt; 3; a &lt; a<sustrong>Jupiter</sustrong>).</td>
+</tr>
+<tr class="odd">
+<td>HTC<a name="HTC"></a></td>
+<td>Halley-type Comet*</td>
+<td>Halley-type comet, classical definition (20 y &lt; P &lt; 200 y).</td>
+</tr>
+<tr>
+<td>HYP<a name="HYP"></a></td>
+<td>Hyperbolic Comet</td>
+<td>Comets on hyperbolic orbits (e &gt; 1.0).</td>
+</tr>
+<tr class="odd">
+<td>JFc<a name="JFc"></a></td>
+<td>Jupiter-family Comet</td>
+<td>Jupiter-family comet, as defined by Levison and Duncan (2 &lt; T<sustrong>Jupiter</sustrong> &lt; 3).</td>
+</tr>
+<tr>
+<td>JFC<a name="JFC"></a></td>
+<td>Jupiter-family Comet*</td>
+<td>Jupiter-family comet, classical definition (P &lt; 20 y).</td>
+</tr>
+<tr class="odd">
+<td>PAR<a name="PAR"></a></td>
+<td>Parabolic Comet</td>
+<td>Comets on parabolic orbits (e = 1.0).</td>
+</tr>
+</table>
+<br />
+<a href="#top">[Back to Top]</a>
+<a name="ASTEROID"></a>
+<h3>Asteroid Orbit Classes</h3>
+<table width="95%" class="datatab">
+<colgroup>
+<col width="15%" />
+<col width="20%" />
+<col width="60%" />
+</colgroup>
+<thead>
+<tr>
+<td>Abbreviation</td>
+<td>Title</td>
+<td>Description</td>
+</tr>
+</thead>
+<tr>
+<td>AMO<a name="AMO"></a></td>
+<td>Amor</td>
+<td>Near-Earth asteroid orbits similar to that of 1221 Amor (a &gt; 1.0 AU; 1.017 AU &lt; q &lt; 1.3 AU).</td>
+</tr>
+<tr class="odd">
+<td>APO<a name="APO"></a></td>
+<td>Apollo</td>
+<td>Near-Earth asteroid orbits which cross the Earth's orbit similar to that of 1862 Apollo (a &gt; 1.0 AU; q &lt; 1.017 AU).</td>
+</tr>
+<tr>
+<td>AST<a name="AST"></a></td>
+<td>Asteroid</td>
+<td>Asteroid orbit not matching any defined orbit class.</td>
+</tr>
+<tr class="odd">
+<td>ATE<a name="ATE"></a></td>
+<td>Aten</td>
+<td>Near-Earth asteroid orbits similar to that of 2062 Aten (a &lt; 1.0 AU; Q &gt; 0.983 AU).</td>
+</tr>
+<tr>
+<td>CEN<a name="CEN"></a></td>
+<td>Centaur</td>
+<td>Objects with orbits between Jupiter and Neptune (5.5 AU &lt; a &lt; 30.1 AU).</td>
+</tr>
+<tr class="odd">
+<td>HYA<a name="HYA"></a></td>
+<td>Hyperbolic Asteroid</td>
+<td>Asteroids on hyperbolic orbits (e &gt; 1.0).</td>
+</tr>
+<tr>
+<td>IEO<a name="IEO"></a></td>
+<td>Interior Earth Object</td>
+<td>An asteroid orbit contained entirely within the orbit of the Earth (Q &lt; 0.983 AU).</td>
+</tr>
+<tr class="odd">
+<td>IMB<a name="IMB"></a></td>
+<td>Inner Main-belt Asteroid</td>
+<td>Asteroids with orbital elements constrained by (a &lt; 2.0 AU; q &gt; 1.666 AU).</td>
+</tr>
+<tr>
+<td>MBA<a name="MBA"></a></td>
+<td>Main-belt Asteroid</td>
+<td>Asteroids with orbital elements constrained by (2.0 AU &lt; a &lt; 3.2 AU; q &gt; 1.666 AU).</td>
+</tr>
+<tr class="odd">
+<td>MCA<a name="MCA"></a></td>
+<td>Mars-crossing Asteroid</td>
+<td>Asteroids that cross the orbit of Mars constrained by (1.3 AU &lt; q &lt; 1.666 AU; a &lt; 3.2 AU).</td>
+</tr>
+<tr>
+<td>OMB<a name="OMB"></a></td>
+<td>Outer Main-belt Asteroid</td>
+<td>Asteroids with orbital elements constrained by (3.2 AU &lt; a &lt; 4.6 AU).</td>
+</tr>
+<tr class="odd">
+<td>PAA<a name="PAA"></a></td>
+<td>Parabolic Asteroid</td>
+<td>Asteroids on parabolic orbits (e = 1.0).</td>
+</tr>
+<tr>
+<td>TJN<a name="TJN"></a></td>
+<td>Jupiter Trojan</td>
+<td>Asteroids traped in Jupiter's L4/L5 Lagrange points (4.6 AU &lt; a &lt; 5.5 AU; e &lt; 0.3).</td>
+</tr>
+<tr class="odd">
+<td>TNO<a name="TNO"></a></td>
+<td>TransNeptunian Object</td>
+<td>Objects with orbits outside Neptune (a &gt; 30.1 AU).</td>
+</tr>
+</table>
+<br />
+<a href="#top">[Back to Top]</a><!-- ************************************************** End editing! ************************************************** -->
+<!--#include virtual="/css-n-includes/incl_bottom.inc"-->
+<br />Last updated: <!--#config timefmt="%A %B %d, %Y"--><!--#echo var="LAST_MODIFIED" --></div><!-- close id whotext -->
+</div><!-- close id footer -->
+</div><!-- end id footwrap -->
+</div><!-- close wrapper -->
+</body>
+</html>

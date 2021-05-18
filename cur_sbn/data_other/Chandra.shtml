@@ -1,0 +1,262 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<title>PDS: Small Bodies Node</title>
+
+<!--
+########################
+ALL of the head, style links, header and menu code is in the include. Edit that file with extreme care!!
+########################
+ -->
+
+<!--#include virtual="/css-n-includes/incl_top.inc"-->
+
+<!-- ################################################ MAIN ################################################## -->
+
+<div id="centeronly">
+
+<a name="mainContent"></a>
+<!-- ************************************************** You may begin editing! ************************************************** -->
+
+<a name="top"></a>
+
+<!-- ************** preliminary text ************* -->
+
+<h1>Catalog of Chandra X-ray Telescope Small Bodies Observations</h1>
+<p>This page provides links to Small Bodies related observations made with the Chandra X-ray Telescope. The SBN does not archive any data from Chandra, but this page may assist scientists in finding the desired observations in the <a href="http://cxc.harvard.edu/cda/" onclick="this.target='_blank'">Chandra Data Archive</a>. <i><b>This listing is, as far as we know, complete through August 2019.</b></i> The list is updated periodically. Click <a href="https://cda.harvard.edu/chaser/mainEntry.do" onclick="this.target='_blank'">here</a> to search for the most up-to-date list of SOLAR SYSTEM observations from the source.</p>
+<p>The tables below each contain a list of related objects, their classification, and the number of their Chandra observations. Clicking on an object's name will bring you to a page for that object, listing each observation and providing important data to help you access the data using Chandra's <a href="http://cda.harvard.edu/chaser/" onclick="this.target='_blank'">observation search engine</a>.</p>
+<p>Because of the number of objects, the data have been broken up into different categories, seen by the links below. Feel free to use these links to get to the catagory that you are looking for, but note that some of these lists may be huge. It is recommended that you do a search within the web browser to find the object you are looking for. In most web browsers, to do this you will need to press CTRL-F and type part of the name or designation of the object.</p>
+
+<!-- ***************** end preliminary text ************* -->
+
+
+<hr /><p><a href="#COMET">Comets</a> | <a href="#ASTEROID">Asteroids</a> | <a href="#PLANET">Planets</a> | <a href="#SAT">Satellites</a> | [<a href="#bottom">To Bottom</a>]</p>
+
+<a name="COMET"></a>
+<h3>Comets</h3>
+
+<table width="95%" class="datatab">
+	<colgroup>
+		<col width="50%" />
+		<col width="30%" />
+		<col width="15%" />
+	</colgroup>
+	<thead><tr>
+		<td>Object Name</td>
+		<td>Classification</td>
+		<td>Records</td>
+	</tr></thead>
+	<tr>
+		<td><a href="cha_COMET/002P.shtml#top">2P/Encke 1 (1818 W1)</a></td>
+		<td><a href="objclass.shtml#ETc">ETc</a></td>
+		<td>30</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="cha_COMET/021P.shtml#top">21P/Giacobini-Zinner 1 (1900 Y1)</a></td>
+		<td><a href="objclass.shtml#JFc">JFc</a></td>
+		<td>16</td>
+	</tr>
+	<tr>
+		<td><a href="cha_COMET/103P.shtml#top">103P/Hartley 2 (1986 E2)</a></td>
+		<td><a href="objclass.shtml#JFc">JFc</a></td>
+		<td>14</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="cha_COMET/017P.shtml#top">17P/Holmes 1 (1892 V1)</a></td>
+		<td><a href="objclass.shtml#JFc">JFc</a></td>
+		<td>3</td>
+	</tr>
+	<tr>
+		<td><a href="cha_COMET/2002C1.shtml#top">153P/Ikeya-Zhang 1 (2002 C1)</a></td>
+		<td><a href="objclass.shtml#COM">COM</a></td>
+		<td>2</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="cha_COMET/2012S1.shtml#top">C/ISON (2012 S1)</a></td>
+		<td><a href="objclass.shtml#HYP">HYP</a></td>
+		<td>16</td>
+	</tr>
+	<tr>
+		<td><a href="cha_COMET/1999S4.shtml#top">C/LINEAR (1999 S4)</a></td>
+		<td><a href="objclass.shtml#HYP">HYP</a></td>
+		<td>24</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="cha_COMET/2000WM1.shtml#top">C/LINEAR (2000 WM1)</a></td>
+		<td><a href="objclass.shtml#HYP">HYP</a></td>
+		<td>4</td>
+	</tr>
+	<tr>
+		<td><a href="cha_COMET/2001A2.shtml#top">C/LINEAR (2001 A2)</a></td>
+		<td><a href="objclass.shtml#COM">COM</a></td>
+		<td>29</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="cha_COMET/1999T1.shtml#top">C/McNaught-Hartley (1999 T1)</a></td>
+		<td><a href="objclass.shtml#COM">COM</a></td>
+		<td>5</td>
+	</tr>
+	<tr>
+		<td><a href="cha_COMET/2001Q4.shtml#top">C/NEAT (2001 Q4)</a></td>
+		<td><a href="objclass.shtml#HYP">HYP</a></td>
+		<td>3</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="cha_COMET/2011L4.shtml#top">C/PanSTARRS (2011 L4)</a></td>
+		<td><a href="objclass.shtml#HYP">HYP</a></td>
+		<td>8</td>
+	</tr>
+	<tr>
+		<td><a href="cha_COMET/073PB.shtml#top">73P/Schwassmann-Wachmann 3-B (1930 J1-B)</a></td>
+		<td><a href="objclass.shtml#JFc">JFc</a></td>
+		<td>5</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="cha_COMET/2013A1.shtml#top">C/Siding Spring (2013 A1)</a></td>
+		<td><a href="objclass.shtml#HYP">HYP</a></td>
+		<td>4</td>
+	</tr>
+	<tr>
+		<td><a href="cha_COMET/009P.shtml#top">9P/Tempel 1 (1867 G1)</a></td>
+		<td><a href="objclass.shtml#JFc">JFc</a></td>
+		<td>35</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="cha_COMET/008P.shtml#top">8P/Tuttle 1 (1858 A1)</a></td>
+		<td><a href="objclass.shtml#JFC">JFC</a></td>
+		<td>15</td>
+	</tr>
+	<tr>
+		<td><a href="cha_COMET/046P.shtml#top">46P/Wirtanen 1 (1948 A1)</a></td>
+		<td><a href="objclass.shtml#JFc">JFc</a></td>
+		<td>18</td>
+	</tr>
+</table>
+
+<hr />
+<p><a href="#COMET">Comets</a> | <a href="#ASTEROID">Asteroids</a> | <a href="#PLANET">Planets</a> | <a href="#SAT">Satellites</a> | [<a href="#top">Back to Top</a>]</p>
+
+<a name="ASTEROID"></a>
+<h3>Asteroids</h3>
+
+<table width="95%" class="datatab">
+	<colgroup>
+		<col width="50%" />
+		<col width="30%" />
+		<col width="15%" />
+	</colgroup>
+	<thead><tr>
+		<td>Object Name</td>
+		<td>Classification</td>
+		<td>Records</td>
+	</tr></thead>
+	<tr>
+		<td><a href="cha_ASTEROID/33342.shtml#top">33342 (1998 WT24)</a></td>
+		<td><a href="objclass.shtml#ATE">ATE</a></td>
+		<td>3</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="cha_ASTEROID/134340.shtml#top">134340 Pluto</a></td>
+		<td><a href="objclass.shtml#TNO">TNO</a></td>
+		<td>4</td>
+	</tr>
+</table>
+
+<hr />
+<p><a href="#COMET">Comets</a> | <a href="#ASTEROID">Asteroids</a> | <a href="#PLANET">Planets</a> | <a href="#SAT">Satellites</a> | [<a href="#top">Back to Top</a>]</p>
+
+<a name="PLANET"></a>
+<h3>Planets</h3>
+
+<table width="95%" class="datatab">
+	<colgroup>
+		<col width="50%" />
+		<col width="30%" />
+		<col width="15%" />
+	</colgroup>
+	<thead><tr>
+		<td>Object Name</td>
+		<td>Classification</td>
+		<td>Records</td>
+	</tr></thead>
+	<tr>
+		<td><a href="cha_PLANET/venus.shtml#top">Venus</a></td>
+		<td><a href="objclass.shtml#"></a></td>
+		<td>44</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="cha_PLANET/earth.shtml#top">Earth</a></td>
+		<td><a href="objclass.shtml#"></a></td>
+		<td>11</td>
+	</tr>
+	<tr>
+		<td><a href="cha_PLANET/mars.shtml#top">Mars</a></td>
+		<td><a href="objclass.shtml#"></a></td>
+		<td>4</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="cha_PLANET/jupiter.shtml#top">Jupiter</a></td>
+		<td><a href="objclass.shtml#"></a></td>
+		<td>51</td>
+	</tr>
+	<tr>
+		<td><a href="cha_PLANET/saturn.shtml#top">Saturn</a></td>
+		<td><a href="objclass.shtml#"></a></td>
+		<td>6</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="cha_PLANET/uranus.shtml#top">Uranus</a></td>
+		<td><a href="objclass.shtml#"></a></td>
+		<td>3</td>
+	</tr>
+</table>
+
+<hr />
+<p><a href="#COMET">Comets</a> | <a href="#ASTEROID">Asteroids</a> | <a href="#PLANET">Planets</a> | <a href="#SAT">Satellites</a> | [<a href="#top">Back to Top</a>]</p>
+
+<a name="SAT"></a>
+<h3>Satellites</h3>
+
+<table width="95%" class="datatab">
+	<colgroup>
+		<col width="50%" />
+		<col width="30%" />
+		<col width="15%" />
+	</colgroup>
+	<thead><tr>
+		<td>Object Name</td>
+		<td>Classification</td>
+		<td>Records</td>
+	</tr></thead>
+	<tr>
+		<td><a href="cha_SAT/E1Moon.shtml#top">E1 Moon</a></td>
+		<td><a href="objclass.shtml#"></a></td>
+		<td>16</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="cha_SAT/S6Titan.shtml#top">S6 Titan</a></td>
+		<td><a href="objclass.shtml#"></a></td>
+		<td>3</td>
+	</tr>
+</table>
+
+<hr />
+<p><a href="#COMET">Comets</a> | <a href="#ASTEROID">Asteroids</a> | <a href="#PLANET">Planets</a> | <a href="#SAT">Satellites</a> | [<a href="#top">Back to Top</a>]</p>
+
+
+
+<a name="bottom"></a>
+
+<!-- ************************************************** End editing! ************************************************** -->
+<!--#include virtual="/css-n-includes/incl_bottom.inc"-->
+<br />Last updated: <!--#config timefmt="%A %B %d, %Y"--><!--#echo var="LAST_MODIFIED" --></div><!-- close id whotext -->
+
+</div><!-- close id footer -->
+</div><!-- end id footwrap -->
+
+</div><!-- close wrapper -->
+
+</body>
+</html>

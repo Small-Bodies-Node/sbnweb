@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<title>PDS-SBN: Coordinate Systems</title>
+
+<!-- 
+########################
+ALL of the head, style links, header and menu code is in the include. Edit that file with extreme care!!
+########################
+ -->
+<!--#include virtual="/css-n-includes/incl_top.inc"-->
+
+<!-- ################################################ LEFT SIDEBAR ########################################## -->
+<!--#include virtual="/css-n-includes/incl_left-side.inc"-->
+
+<!-- ################################################ RIGHT SIDEBAR ########################################## -->
+<div id="rightcol">
+<div class="sidebarSection">
+<h2>Coordinate Systems</h2>
+<ul>
+<li>+ <a href="CoordinateSystems-at-SBN_Final.pdf">SBN Policy</a><br /><br /></li>
+<li>+ <a href="/holdings/ro-c-multi-5-67p-shape-v1.0/document/cheops_ref_frame_v1.pdf">67P/C-G Reference Frames and Mapping Scheme</a></li>
+<li>+ <a href="https://sbnarchive.psi.edu/pds3/dawn/fc/DWNVFC2_1A/DOCUMENT/VESTA_COORDINATES/VESTA_COORDINATES_131018.PDF">Vesta Coordinate Systems</a></li>
+</ul>
+</div>
+<!-- end class sidebarSection -->
+</div>
+<!-- end id rightcol -->
+<!-- ################################################ MAIN ################################################## -->
+<div id="centercol">
+<a name="mainContent"></a>
+<!-- ************************************************** You may begin editing! ************************************************** -->
+<h1>Coordinate Systems at PDS-SBN</h1>
+<p>Any project or individual that will be submitting products to SBN that involve coordinates on the surface of a small body must adhere to the international guidelines for such coordinates and should carefully read the SBN policy statement on such coordinate systems. The policy is posted below and is also <a href="CoordinateSystems-at-SBN_Final.pdf">available as a PDF</a>. Examples of specific cases already submitted to PDS-SBN are in the right sidebar.</p>
+
+<h2>SBN Policy on Coordinate Systems</h2>
+<p>The PDS standards require that coordinate systems in archival products follow internationally accepted standards (<a href="https://pds.nasa.gov/datastandards/pds3/standards/sr/Chapter02.pdf">pds.nasa.gov/datastandards/pds3/standards/sr/Chapter02.pdf</a>). The prevailing international authority for the coordinates on the small bodies of the solar system is the Working Group on Cartographic Coordinates and Rotational Elements (WGCCRE) of the International Astronomical Union (IAU). This body issues a report approximately every third year, a report that is initiated during the triennial General Assembly of the IAU and published prior to the next General Assembly. The WGCCRE maintains a web page at <a href="http://astrogeology.usgs.gov/groups/iau-wgccre">astrogeology.usgs.gov/groups/iau-wgccre</a>, where one can find references to all reports and links to obtain the reports.</p>
+
+<p>It is important to realize that the WGCCRE has different guidelines for, on the one hand, the major planets and their satellites, and on the other hand, the small bodies of the solar system (asteroids, comets, Pluto, TNOs, etc.). For small bodies coordinate systems follow the right hand rule, with a positive and a negative pole, and with longitude increasing by the right hand rule. The concepts of north and south are not used, nor are the concepts of prograde and retrograde, since all cases are handled by the right hand rule. Thus coordinate systems at SBN typically follow guidelines different from those relevant to other nodes of PDS. See the reports of the WGCCRE for more details and for special cases, such as excited state rotation.</p>
+
+<p>One part of the PDS-SBN review process is to ensure that coordinate systems adhere to the guidelines of the WGCCRE, either by using the recommended coordinate systems or by &quot;improving&quot; the coordinate systems with new data according to guidelines in the reports. We note that the WGCCRE itself does not normally peer-review coordinate systems but rather looks at the results of external peer review, either in journal articles or in PDS reviews. The relationship between PDS and the IAU WG was discussed in a telecon on 14 December 2012, with representatives from both sides participating. It was agreed that a) the guidelines from the IAU WG need to be tightened up to clarify a number of fuzzy areas, and b) that PDS should take the lead in reviewing coordinate systems, with individuals from the WG participating in the review or assisting when needed. It was also noted that there is modest overlap between the PDS participants and the WG membership (currently A'Hearn and Acton), This document is intended to ensure that those aspects of peer review of datasets related to coordinate systems go smoothly, assuming that the WG guidelines are tightened in a timely manner.</p>
+
+<p>If archival products use a coordinate system explicitly recommended by the IAU WGCCRE, normally meaning a defined polar orientation and a rotation rate and a zero point of longitude, the associated documentation should just note that fact with a reference to the source of the definition (usually a table in one of the reports of the WGCCRE). The coordinate system should also be identified, with an appropriately abbreviated definition, in the product labels. The review of the data by SBN would include checking whether the coordinate system was correctly applied to the data but would not check the choice of coordinate system.</p>
+
+<p>If a data provider is defining a new coordinate system, whether the first system for a particular body or a refinement (e.g., for higher precision) of an older system, more will be required. The SBN will conduct a peer review of the new coordinate system, either prior to or in parallel with the reviews of any data using the system. The timing will depend on SBN's judgment of which is appropriate.</p>
+
+<p>For the peer review of the coordinate system, whatever the timing, the data provider must provide a document (or documents) describing the new coordinate system in some detail. These details should include, for example, the definition of the polar axis orientation in J2000 &alpha;, &delta;, with associated uncertainties, the rotation rate and its uncertainty, and a short discussion of how these were determined. The document should also include a discussion of the definition of longitude, specifically showing a figure of the feature that is used to define the zero point of longitude (whether it is at 0&deg; longitude or not) and a projected map of the body with the zero point identified, the defining feature identified, and whatever other information would be useful to a scientist in understanding the coordinate system. The document should also define the rotation rate and its uncertainty and the value of w <sustrong>0</sustrong>, the parameter defining the orientation of the zero point of longitude at epoch J2000.0. The document should also specify the precision of all relevant parameters of the model. Note that until now the WG has never dealt with cases of excited state rotation or even the case of acceleration/deceleration of a simple rotation rate, but will be doing so in the near future in order to deal with comets Hartley 2 and Tempel 1 respectively. These cases require additional parameters and constraints.</p>
+
+<p>If the new coordinate system is for a previously unstudied body, i.e. one for which there has never been defined a coordinate system, nothing else is normally required. However, if the coordinate system is for a body for which coordinate systems have been previously defined, particularly via any fixed surface features, the document should also show how the improved system follows the recommendations of the WGCCRE. This can be best accomplished by identifying in a figure and a map any feature(s) previously used to define the zero point of longitude and showing that the new definition is consistent with that definition.</p>
+
+<p>This document or these documents will be part of the peer review process and publicly available in the archive as a refereed product. During the review process, if appropriate, it could be shared with the WGCCRE in case they wish to comment but the Working Group as such is not an official part of the peer review process. An individual member of the WGCCRE may be one of the official peer reviewers but this need not always be the case.</p>
+<p align="right">Michael F. A'Hearn <br />PI: Small Bodies Node</p>
+
+<p>This document is based on internal discussions at SBN and on interaction with the IAU WG CCRE. It includes all inputs received until 2014 April 10.</p>
+<p align="right">Final Version: 10 April 2014</p>
+
+<!-- ************************************************** End editing! ************************************************** -->
+<!--#include virtual="/css-n-includes/incl_bottom.inc"-->
+<br />Last updated:
+<!--#config timefmt="%A %B %d, %Y"-->
+<!--#echo var="LAST_MODIFIED" -->
+</div>
+<!-- close id whotext -->
+</div>
+<!-- close id footer -->
+</div>
+<!-- end id footwrap -->
+</div>
+<!-- close wrapper -->
+</body>
+
+</html>

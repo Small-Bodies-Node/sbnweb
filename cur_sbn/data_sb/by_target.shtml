@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<title>SBN Data by Target Type</title>
+
+<!-- 
+########################
+ALL of the head, style links, header and menu code is in the include. Edit that file with extreme care!!
+########################
+ -->
+<!--#include virtual="/css-n-includes/incl_top.inc"-->
+
+<!-- ################################################ LEFT SIDEBAR ########################################## -->
+<!--#include virtual="/css-n-includes/incl_left-side.inc"-->
+
+<!-- ################################################ MAIN ################################################## -->
+<div id="centerwide">
+<a name="mainContent"></a>
+<!-- ************************************************** You may begin editing! ************************************************** -->
+<!--
+===========================================================================
+EDIT HISTORY:
++ 2018-02-28 EMW	14 NH datasets: v3 Pluto Encounter
++ 2012-05-01 EMW	added link to asteroid (mission targets) page
++ 2011-03-14 EMW	edited descriptions
++ 2011-02-01 EMW	rearranged page for new landing page, most original information copied over to target_comets.shtml
+===========================================================================
+-->
+<a name="top"></a>
+<h1>SBN Data by Target Type</h1>
+<p>The term 'small bodies' encompasses a variety of objects. To aid in the search for data, we have listed datasets by their target type. In addition, datasets for specific target objects are also listed.</p>
+<ul>
+<li><a href="https://sbn.psi.edu/pds/">Asteroids</a> (all)</li>
+<li><a href="/data_sb/target_asteroids.shtml">Asteroids</a> (that are targets of small body missions)</li>
+<li><a href="/data_sb/target_comets.shtml">Comets</a></li>
+<li><a href="https://sbn.psi.edu/pds/archive/dust.html">Dust</a></li>
+<li><a href="https://sbn.psi.edu/pds/archive/neos.html">Near Earth Objects</a></li>
+<li><a href="https://sbn.psi.edu/pds/archive/tnos.html">TNOs, Centaurs, and Pluto</a></li>
+<li><a href="https://sbn.psi.edu/pds/archive/sat.html">Planetary Satellites</a></li>
+<li><a href="https://sbn.psi.edu/pds/archive/meteorite.html">Meteorites</a></li>
+<li><a href="https://sbn.psi.edu/pds/archive/meteoroid.html">Meteoroids</a></li>
+</ul>
+
+<p>Although these are not small bodies, the data was collected as calibration, primary observations, or as comparison and are archived within the Small Bodies Node.</p>
+<ul>
+<li><a href="/data_sb/target_other.shtml#sun">Sun, Solar Wind</a></li>
+<li><a href="/data_sb/target_other.shtml#planets">Planets</a></li>
+<li><a href="/data_sb/target_other.shtml#exoplanets">Extra-solar planets</a><br /></li>
+<li><a href="/data_sb/target_other.shtml#lab">Laboratory Results</a></li>
+</ul>
+
+<p></p>
+
+<!-- ************************************************** End editing! ************************************************** -->
+<!--#include virtual="/css-n-includes/incl_bottom.inc"-->
+<br />Last updated: <!--#config timefmt="%A %B %d, %Y"--><!--#echo var="LAST_MODIFIED" --></div><!-- close id whotext -->
+</div><!-- close id footer -->
+</div><!-- end id footwrap -->
+</div><!-- close wrapper -->
+</body>
+</html>

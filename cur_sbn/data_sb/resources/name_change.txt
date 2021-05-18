@@ -1,0 +1,159 @@
+When the initial periodic comet list was compiled, a number of errors
+were made in assigning the order of the serial numbers in the PDS
+Names.  In 2005, a search of the IAUCs, MPECs and CBETs was done to
+determine the true order in which the comets were designated as
+periodic.  On January 13, 2006, the names in the list were corrected
+to reflect this order.
+
+This file gives a list of the changes that were made on that date.
+
+Any subsequent changes are also indicated at the end of the file, with
+a description of the change and why it was made.
+
+Changes Made January 13, 2006:
+
+   Official       Initial               New PDS Name
+   Designation    PDS Name              (Corrected on Jan 13 2006)
+					
+   P/1999 J5      LINEAR 5              LINEAR 4
+   P/1999 G1      LINEAR 4              LINEAR 5
+
+   P/1999 XS87    LINEAR 9              LINEAR 8
+   P/2000 B3      LINEAR 10             LINEAR 9
+165P/2000 B4      LINEAR 11             LINEAR 10
+   P/1999 XB69    LINEAR 8              LINEAR 11
+   P/2000 G1      LINEAR 13             LINEAR 12
+   P/2000 G2      LINEAR 14             LINEAR 13
+   P/2000 D2      LINEAR 12             LINEAR 14
+
+   P/2002 A1      LINEAR 19		LINEAR 18
+   P/2002 A2      LINEAR 20		LINEAR 19
+   P/2002 B1      LINEAR 22		LINEAR 20
+   P/2001 YX127   LINEAR 18             LINEAR 21
+   P/2002 CW134   LINEAR 23		LINEAR 22
+   P/2002 AR2     LINEAR 21		LINEAR 23
+					
+   P/2001 R1      LONEOS 5              LONEOS 4
+   P/2001 OG108   LONEOS 4              LONEOS 5
+
+   P/2001 K1      NEAT 4                NEAT 3
+   P/2001 J1      NEAT 3                NEAT 4
+
+
+
+Additional changes:
+
+April 13, 2006: The comet originally named "P/2005 N2 Hergenrother 3"
+was actually a re-discovery of the comet "P/1998 W2 Hergenrother 1".
+The MPC subsequently assigned the official designation "168P/2005 N2"
+and the PDS kept the original name "Hergenrother 1".  The name
+"Hergenrother 3" was withdrawn.
+
+
+Sept 11, 2009: The comet designated P/2003 A1 (IAUC 8044, 8053) remained
+unnamed for nearly 2 years. It was finally given the name LINEAR 44 in Nov
+2004 (IAUC 8430).  On Sept 11 2009, Kowalski independently discovered a comet
+that was subsequently linked to LINEAR 44 and then to Pigott 1.  With these
+connections, the comet was renamed Pigott-LINEAR-Kowalski 1 (IAUC 9072), and
+the names Pigott 1 and LINEAR 44 were withdrawn.
+
+
+May 8 2013:  During the compilation of the list, a number of provisional
+designations were incorrectly included as the official designation (those
+included were correct for the comet, but were from a different apparition).
+These have been corrected to match those adopted by the MPC.  
+
+Comet name                     Previous desig.       Changed to
+----------------------------   ---------------    ---------------
+156P/Russell-LINEAR 1            P/1986 R1          P/2000 QD181      
+168P/Hergenrother 1              P/2005 N2          P/1998 W2
+226P/Pigott-LINEAR-Kowalski 1    P/2009 R2          P/2003 A1
+234P/LINEAR 60                   P/2010 E4          P/2002 CF140
+235P/LINEAR 61                   P/2010 F2          P/2002 FA9
+237P/LINEAR 62                   P/2010 L2          P/2002 LN13
+247P/LINEAR 63                   P/2010 V3          P/2002 VP94
+   P/Christensen 13              P/2007 A2          P/2006 WY182
+   P/SOHO 1                      P/2007 R5          P/1999 R1
+   P/SOHO 2                      P/2008 K10         P/1999 X3  
+   P/SOHO 3                      P/2008 S2          P/1997 J6 
+   P/SOHO 4                      P/2008 N4          P/1996 X3                         
+   P/SOHO 5                      P/2010 H3          P/1999 J6 	    	 
+   P/SOHO 6                      P/2011 E1          P/2000 O3  	  
+   P/Wise 9                      P/2011 JC81        P/2010 JC81   (typo corrected)
+
+
+
+May 22, 2013: During the course of numbering some recent comets, it was found
+that on two occasions, early observations of a comet had shown it to have a
+periodic orbit, only to have subsequent observations lead to a solution that
+was not periodic.
+
+  C/2013 F3   McNaught 28
+       Designated periodic        2013 Apr  9  (2013-G31)
+       Listed as non-periodic     2013 Apr 23  (2013-H38)
+ 
+  Because this object is fairly obscure (to the point of little additional
+  photometry) it was felt that removing it from the list and allowing the
+  serial number to be reassigned would not cause any significant problems.
+
+  So C/2013 F3 McNaught 28 was removed from the list and the serial number 28
+  was opened up for the next periodic McNaught comet.
+
+
+  C/2013 G3   PanSTARRS 16
+       Designated periodic        2013 Apr 14  (CBET 3472)
+       Listed as non-periodic     2013 Apr 23  (2013-H38)
+ 
+  This comet has the additional complexity that a PanSTARRS 17 was discovered
+  before 16 was found to be non-periodic.  However, because both of these
+  objects are fairly obscure (again, little additional photometry has been
+  submitted for either) it was felt that removing 16 from the list and
+  renumbering 17 to 16 would not cause any significant problems.
+
+  So C/2013 G3 PanSTARRS 16 was removed from the list and P/2013 G4 PanSTARRS
+  17 Was renumbered to PanSTARRS 16.  The serial number 17 was opened up for
+  the next periodic PanSTARRS comet.
+
+
+
+July 29, 2014: In conjunction with other lists, errors in were discovered and corrected
+
+   P/2013 TL117 Lemmon 8 was changed to Lemmon 7.  Accidently skipped 7, so
+   there is no conflict in the change.
+ 
+   C/2011 P2 PanSTARRS 23 is the same comet as PanSTARRS 2, so this was a
+   duplicate name for the same comet.  Unfortunately, the change propagates
+   through the next five PanSTARRS comets.  A literature and web search was
+   done to determine if changing the serial numbers would raise any
+   confusion.  Only one object P/2013 P5 had any significant attention, as it
+   is a main belt comet.  None of the references that were found referred to
+   its serial number, however, so a change should not raise any confusion.
+   The rest of the objects are fairly obscure, so renumbering shouldn't be a
+   problem.
+   Changes:
+   C/2011 P2    PanSTARRS 23 --> Removed
+   P/2013 P5    PanSTARRS 24 --> PanSTARRS 23  
+   C/2013 P4    PanSTARRS 25 --> PanSTARRS 24  
+   P/2013 T1    PanSTARRS 26 --> PanSTARRS 25  
+   P/2013 W1    PanSTARRS 27 --> PanSTARRS 26  
+   C/2013 W2    PanSTARRS 28 --> PanSTARRS 27  
+
+These changes were made before updating the list for new comets that were
+discovered between Jan and Jul 2014, so additions in that interval account
+for these changes.
+
+
+Oct 25, 2016:  Renaming of comet P/2015 PD229
+
+On Feb 1, 2016, this comet was originally named ISON-Cameron.  In the OCT 25,
+2016 MPEC-2016-U66 and all subsequent references, it is called Cameron-ISON.
+No explanation is given for this.  The name ISON-Cameron 1 has been
+withdrawn.
+
+Mar 14, 2017
+C/2016 VZ18 was briefly given the designation PanSTARRS 63, before it was
+realized it was long period.  It has been removed from the list, and because
+it was changed before any subsequent PanSTARRS comets were numbered, the
+sequence is not affected.
+
+

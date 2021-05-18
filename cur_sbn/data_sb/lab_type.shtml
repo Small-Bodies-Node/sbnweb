@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<title>SBN Data by Type of Observation (Data Type)</title>
+
+<!-- 
+########################
+ALL of the head, style links, header and menu code is in the include. Edit that file with extreme care!!
+########################
+ -->
+<!--#include virtual="/css-n-includes/incl_top.inc"-->
+
+<!-- ################################################ LEFT SIDEBAR ########################################## -->
+<!--#include virtual="/css-n-includes/incl_left-side.inc"-->
+
+<!-- ################################################ MAIN ################################################## -->
+<div id="centerwide">
+<a name="mainContent"></a>
+<!-- ************************************************** You may begin editing! ************************************************** -->
+<!--
+===========================================================================
+EDIT HISTORY:
++ 2021-03-29 EMW	created page
+
+===========================================================================
+-->
+<a name="top"></a>
+<h1>SBN Laboratory Data</h1>
+<!-- <p>[Some text describing would be good here.]</p> -->
+
+<!-- Type Data ======================================================== -->
+<a name="??"></a>
+<h2></h2>
+<ul>
+<li><a href="/holdings/ear-x-i2041-5-ch3dicespec-v1.0/dataset.shtml">Lab CH3D Ice Absorption Coefficients</a></li>
+<li><a href="https://sbn.psi.edu/pds/resource/icespec.html">Optical Constants and Lab Spectra of Water Ice</a></li>
+<li><a href="https://sbn.psi.edu/pds/resource/olivspec.html">Olivine Laboratory Infrared Absorbance Spectra</a></li>
+</ul>
+
+
+<!-- ************************************************** End editing! ************************************************** -->
+<!--#include virtual="/css-n-includes/incl_bottom.inc"-->
+<br />Last updated:
+<!--#config timefmt="%A %B %d, %Y"-->
+<!--#echo var="LAST_MODIFIED" -->
+</div>
+<!-- close id whotext -->
+</div>
+<!-- close id footer -->
+</div>
+<!-- end id footwrap -->
+</div>
+<!-- close wrapper -->
+</body>
+
+</html>

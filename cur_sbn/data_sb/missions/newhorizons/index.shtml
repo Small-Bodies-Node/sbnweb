@@ -1,0 +1,215 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<title>SBN Mission Support: New Horizons</title>
+
+<!-- 
+########################
+ALL of the head, style links, header and menu code is in the include. Edit that file with extreme care!!
+########################
+ -->
+<!--#include virtual="/css-n-includes/incl_top.inc"-->
+
+<!-- ################################################ LEFT SIDEBAR ########################################## -->
+<!--#include virtual="/css-n-includes/incl_left-side.inc"-->
+
+<!-- ################################################ RIGHT SIDEBAR ########################################## -->
+<div id="rightcol">
+<div class="sidebarSection">
+<h2>Mission Websites</h2>
+<p>Here we list links to the primary mission website as well as pages about the mission on other sites such as the NSSDC, NASA portal, etc.</p>
+<ul>
+<li>Mission: <a href="http://pluto.jhuapl.edu/" onclick="this.target='_blank'">New Horizons</a></li>
+<li>NSSDC: <a href="https://nssdc.gsfc.nasa.gov/nmc/spacecraftDisplay.do?id=2006-001A" onclick="this.target='_blank'">New Horizons</a></li>
+<li>NASA: <a href="https://www.nasa.gov/newhorizons/" onclick="this.target='_blank'">New Horizons</a></li>
+<li>SSE: <a href="https://solarsystem.nasa.gov/missions/new-horizons/in-depth/" onclick="this.target='_blank'">New Horizons</a></li>
+<!-- <li>Campaign: <a href="http://guinan.space.swri.edu/nhcs/">NH Earth-Based Observing Campaign</a></li> -->
+</ul>
+</div>
+<!-- end class sidebarSection -->
+</div>
+<!-- end id rightcol -->
+<!-- ################################################ MAIN ################################################## -->
+<div id="centercol">
+<a name="mainContent"></a>
+<!-- ************************************************** You may begin editing! ************************************************** -->
+<!--
+===========================================================================
+EDIT HISTORY:
++ 2019-02-06 EMW	minor edits (needs more!) to description, link to KEM
++ 2018-07-19 EMW	8 datasets: L2 and L3 REX
++ 2018-07-13 EMW	5 datasets: Pluto Encounter PEPSSI, SWAP, ATMOS/COMP/GEOPHYS
++ 2018-02-28 EMW	14 datasets: v3 Pluto Encounter ALICE, LEISA, LORRI, MVIC, PEPSSI, SDC, SWAP
++ 2017-03-31 EMW	added REX Pluto Encounter
++ 2017-03-31 EMW	replaced 8 SDC datasets with newer versions
++ 2017-03-31 EMW	replaced 4 PEPSSI datasets with newer versions
++ 2016-03-30 EMW	replaced 6 SWAP datasets with newer versions, added 1 SWAP level 5
++ 2016-12-09 EMW	posted 20 datasets from review
++ 2016-09-22 EMW	posted 4 datasets under Pluto Enc
++ 2016-09-07 EMW	posted 13 datasets: 3 post-launch, 3 Jupiter, 7 Pluto cruise
++ 2016-06-30 EMW	posted 10 Pluto Encounter datasets (need to post on other pages, waiting on decision)
++ 2015-10-07 EMW	replaced DMAP
++ 2015-02-16 EMW	added v2.0 of NH LORRI launch, Jupiter, and v1.0 of Pluto Cruise
++ 2014-12-11 EMW	SWAP Jup v2 - -> v3; SWAP Plutocruise v1 - -> v2
++ 2014-11-20 EMW	updated link to Ferret
++ 2014-08-07 EMW	added NH SWAP datasets
++ 2014-02-17 EMW	added link for earth-based campaign
++ 2013-02-19 EMW	cleaned up SPICE links
++ 2012-02-15 EMW	changed links for SPICE from local holdings to NAIF
++ 2011-03-14 EMW	converted page to list format
++ 2011-02-22 EMW	added right sidebar space
++ 2010-08-18 EMW	converted to xhtml, updated to new look
++ 2010-03-29 SAM	Added links to v1.1 and v2.0 data sets; cleaned up
+					messier sections of the html code such as commenting
+					the "instruments" section that was redundant with the
+					"mission data" section. 
+===========================================================================
+-->
+
+<!-- Mission Title ====================================================== -->
+<h1>New Horizons Mission</h1>
+
+<!-- Mission Description ================================================ -->
+<p>New Horizons is a robotic spacecraft mission conducted by NASA. It was the first spacecraft to fly by and study the dwarf planet Pluto and its moons, Charon, Nix and Hydra. After the successfull flyby of Pluto, the spacecraft continued on for a Jan 2019 flyby of as part of the <a href="../nh-kem/index.shtml">New Horizons Kuiper Belt Extended Mission (KEM)</a>. The mission was prepared primarily by Southwest Research Institute (SwRI) and the Johns Hopkins Applied Physics Laboratory (APL). New Horizons was successfully launched on January 19, 2006. After a flyby of Jupiter on February 28, 2007 at 5:43:40 UTC, New Horizons is expected to arrive at Pluto in July 2015. As New Horizons passed through the Jovian system for a gravity assist in February, it performed scientific observations of Jupiter, the Galilean satellites, the Jovian rings, Himalia, Elara, and Earth.</p>
+
+<p>The New Horizons primary goal is to improve our understanding of the worlds at the edge of our solar system. The mission will image and map the surface appearance with visible-wavelength cameras, perform near infrared spectral studies to determine surface composition, and probe the atmospheres with ultraviolet spectrometers and radio waves to study escape of the atmosphere as well as the interaction of the atmosphere with the solar wind.</p>
+
+<!-- SBN Role =========================================================== -->
+<p>The SBN is the lead PDS node to archive the New Horizons mission data. Here is the current version of the <a href="05310-DMAP-01_R0_C0.pdf">NH Data Management Plan</a>. The <a href="NH_05310-DMAP-01_R0_Nov05.pdf">original DMAP</a> is also available as a PDF file.</p>
+
+<!-- PDS Subscription Service =========================================== -->
+<p>Use <a href="https://pds.nasa.gov/datasearch/subscription-service/top.cfm" onclick="this.target='_blank'"><strong>PDS Subscription Service</strong></a> to be first to get the New Horizons data. Sign up there to receive an e-mail notification when new data arrives for each New Horizons instrument.</p>
+
+<!-- Instrument List ==================================================== -->
+<h2>Instruments</h2>
+<ul>
+<li><a href="/catalogs/NewHorizons/alice.cat">ALICE Ultraviolet Imaging Spectrograph</a> (ALICE)</li>
+<li><a href="/catalogs/NewHorizons/leisa.cat">Linear Etalon Imaging Spectral Array</a> (LEISA/RALPH)</li>
+<li><a href="/catalogs/NewHorizons/lorri.cat">Long Range Reconnaissance Imager</a> (LORRI)</li>
+<li><a href="/catalogs/NewHorizons/mvic.cat">Multispectral Visible Imaging Camera</a> (MVIC/RALPH)</li>
+<li><a href="/catalogs/NewHorizons/pepssi.cat">Pluto Energetic Particle Spectrometer Science Investigation</a> (PEPSSI)</li>
+<li><a href="/catalogs/NewHorizons/rex.cat">Radio Science Experiment</a> (REX)</li>
+<li><a href="/catalogs/NewHorizons/sdc.cat">Student Dust Counter</a> (SDC)</li>
+<li><a href="/catalogs/NewHorizons/swap.cat">Solar Wind Around Pluto</a> (SWAP)</li>
+</ul>
+
+<!-- Mission Data ======================================================= -->
+<h2>Data Sets</h2>
+
+<h3>Post-Launch Checkout</h3>
+<ul>
+<li><a href="/holdings/nh-x-alice-2-launch-v2.0/dataset.shtml">New Horizons ALICE Post-Launch Checkout v2.0 - Raw</a></li>
+<li><a href="/holdings/nh-x-alice-3-launch-v2.0/dataset.shtml">New Horizons ALICE Post-Launch Checkout v2.0 - Calibrated</a></li>
+<li><a href="/holdings/nh-x-leisa-2-launch-v1.1/dataset.shtml">New Horizons LEISA Post-Launch Checkout v1.1 - Raw</a></li>
+<li><a href="/holdings/nh-x-leisa-3-launch-v1.1/dataset.shtml">New Horizons LEISA Post-Launch Checkout v1.1 - Calibrated</a></li>
+<li><a href="/holdings/nh-x-lorri-2-launch-v3.0/dataset.shtml">New Horizons LORRI Post-Launch Checkout Raw Data v3.0</a></li><!-- NH-X-LORRI-2-LAUNCH-V3.0 -->
+<li><a href="/holdings/nh-x-lorri-3-launch-v3.0/dataset.shtml">New Horizons LORRI Post-Launch Checkout Calibrated Data v3.0</a></li><!-- NH-X-LORRI-3-LAUNCH-V3.0 -->
+<li><a href="/holdings/nh-x-mvic-2-launch-v2.0/dataset.shtml">New Horizons MVIC Post-Launch Checkout v2.0 - Raw</a></li>
+<li><a href="/holdings/nh-x-mvic-3-launch-v2.0/dataset.shtml">New Horizons MVIC Post-Launch Checkout v2.0 - Calibrated</a></li>
+<li><a href="/holdings/nh-x-pepssi-2-launch-v1.1/dataset.shtml">New Horizons PEPSSI Post-Launch Checkout v1.1 - Raw</a></li>
+<li><a href="/holdings/nh-x-pepssi-3-launch-v1.1/dataset.shtml">New Horizons PEPSSI Post-Launch Checkout v1.1 - Calibrated</a></li>
+<li><a href="/holdings/nh-x-rex-2-launch-v2.0/dataset.shtml">New Horizons REX Post-Launch Checkout Raw Data v2.0</a></li><!-- NH-X-REX-2-LAUNCH-V2.0 -->
+<li><a href="/holdings/nh-x-rex-3-launch-v1.0/dataset.shtml">New Horizons REX Post-Launch Checkout Calibrated Data</a></li><!-- NH-X-REX-3-LAUNCH-V1.0 -->
+<li><a href="/holdings/nh-x-sdc-2-launch-v4.0/dataset.shtml">New Horizons SDC Post-Launch Checkout Raw Data v4.0</a></li><!-- NH-X-SDC-2-LAUNCH-V4.0 -->
+<li><a href="/holdings/nh-x-sdc-3-launch-v4.0/dataset.shtml">New Horizons SDC Post-Launch Checkout Calibrated Data v4.0</a></li><!-- NH-X-SDC-3-LAUNCH-V4.0 -->
+<li><a href="/holdings/nh-x-swap-2-launch-v2.0/dataset.shtml">New Horizons SWAP Post-Launch Checkout v2.0 - Raw</a></li>
+<li><a href="/holdings/nh-x-swap-3-launch-v2.0/dataset.shtml">New Horizons SWAP Post-Launch Checkout v2.0 - Calibrated</a></li>
+</ul>
+
+<h3>Jupiter Flyby</h3>
+<ul>
+<li><a href="/holdings/nh-j-alice-2-jupiter-v2.0/dataset.shtml">New Horizons ALICE Jupiter Encounter v2.0 - Raw</a></li>
+<li><a href="/holdings/nh-j-alice-3-jupiter-v2.0/dataset.shtml">New Horizons ALICE Jupiter Encounter v2.0 - Calibrated</a></li>
+<li><a href="/holdings/nh-j-leisa-2-jupiter-v1.1/dataset.shtml">New Horizons LEISA Jupiter Encounter v1.1 - Raw</a></li>
+<li><a href="/holdings/nh-j-leisa-3-jupiter-v1.1/dataset.shtml">New Horizons LEISA Jupiter Encounter v1.1 - Calibrated</a></li>
+<li><a href="/holdings/nh-j-lorri-2-jupiter-v3.0/dataset.shtml">New Horizons LORRI Jupiter Encounter Raw Data v3.0</a></li><!-- NH-J-LORRI-2-JUPITER-V3.0 -->
+<li><a href="/holdings/nh-j-lorri-3-jupiter-v3.0/dataset.shtml">New Horizons LORRI Jupiter Encounter Calibrated Data v3.0</a></li><!-- NH-J-LORRI-3-JUPITER-V3.0 -->
+<li><a href="/holdings/nh-j-mvic-2-jupiter-v2.0/dataset.shtml">New Horizons MVIC Jupiter Encounter v2.0 - Raw</a></li>
+<li><a href="/holdings/nh-j-mvic-3-jupiter-v2.0/dataset.shtml">New Horizons MVIC Jupiter Encounter v2.0 - Calibrated</a></li>
+<li><a href="/holdings/nh-j-pepssi-2-jupiter-v1.1/dataset.shtml">New Horizons PEPSSI Jupiter Encounter v1.1 - Raw</a></li>
+<li><a href="/holdings/nh-j-pepssi-3-jupiter-v1.1/dataset.shtml">New Horizons PEPSSI Jupiter Encounter v1.1 - Calibrated</a></li>
+<li><a href="/holdings/nh-j-rex-2-jupiter-v2.0/dataset.shtml">New Horizons REX Jupiter Encounter Raw Data v2.0</a></li><!-- NH-J-REX-2-JUPITER-V2.0 -->
+<li><a href="/holdings/nh-j-rex-3-jupiter-v1.0/dataset.shtml">New Horizons REX Jupiter Encounter Calibrated Data</a></li><!-- NH-J-REX-3-JUPITER-V1.0 -->
+<li><a href="/holdings/nh-j-sdc-2-jupiter-v4.0/dataset.shtml">New Horizons SDC Jupiter Encounter Raw Data v4.0</a></li><!-- NH-J-SDC-2-JUPITER-V4.0 -->
+<li><a href="/holdings/nh-j-sdc-3-jupiter-v4.0/dataset.shtml">New Horizons SDC Jupiter Encounter Calibrated Data v4.0</a></li><!-- NH-J-SDC-3-JUPITER-V4.0 -->
+<li><a href="/holdings/nh-j-swap-2-jupiter-v4.0/dataset.shtml">New Horizons SWAP Jupiter Encounter Raw Data v4.0</a></li><!-- NH-J-SWAP-2-JUPITER-V4.0 -->
+<li><a href="/holdings/nh-j-swap-3-jupiter-v4.0/dataset.shtml">New Horizons SWAP Jupiter Encounter Calibrated Data v4.0</a></li><!-- NH-J-SWAP-3-JUPITER-V4.0 -->
+</ul>
+
+<h3>Pluto Cruise</h3>
+<ul>
+<li><a href="/holdings/nh-x-alice-2-plutocruise-v2.0/dataset.shtml">New Horizons ALICE Pluto Cruise Raw Data v2.0</a></li><!-- NH-X-ALICE-2-PLUTOCRUISE-V2.0 -->
+<li><a href="/holdings/nh-x-alice-3-plutocruise-v2.0/dataset.shtml">New Horizons ALICE Pluto Cruise Calibrated Data v2.0</a></li><!-- NH-X-ALICE-3-PLUTOCRUISE-V2.0 -->
+<li><a href="/holdings/nh-x-leisa-2-plutocruise-v1.0/dataset.shtml">New Horizons LEISA Pluto Cruise Raw Data</a></li><!-- NH-X-LEISA-2-PLUTOCRUISE-V1.0 -->
+<li><a href="/holdings/nh-x-leisa-3-plutocruise-v1.0/dataset.shtml">New Horizons LEISA Pluto Cruise Calibrated Data</a></li><!-- NH-X-LEISA-3-PLUTOCRUISE-V1.0 -->
+<li><a href="/holdings/nh-x-lorri-2-plutocruise-v2.0/dataset.shtml">New Horizons LORRI Pluto Cruise Raw Data v2.0</a></li><!-- NH-X-LORRI-2-PLUTOCRUISE-V2.0 -->
+<li><a href="/holdings/nh-x-lorri-3-plutocruise-v2.0/dataset.shtml">New Horizons LORRI Pluto Cruise Calibrated Data v2.0</a></li><!-- NH-X-LORRI-3-PLUTOCRUISE-V2.0 -->
+<li><a href="/holdings/nh-x-mvic-2-plutocruise-v1.0/dataset.shtml">New Horizons MVIC Pluto Cruise Raw Data</a></li><!-- NH-X-MVIC-2-PLUTOCRUISE-V1.0 -->
+<li><a href="/holdings/nh-x-mvic-3-plutocruise-v1.0/dataset.shtml">New Horizons MVIC Pluto Cruise Calibrated Data</a></li><!-- NH-X-MVIC-3-PLUTOCRUISE-V1.0 -->
+<li><a href="/holdings/nh-x-pepssi-2-plutocruise-v2.0/dataset.shtml">New Horizons PEPSSI Pluto Cruise Raw Data v2.0</a></li><!-- NH-X-PEPSSI-2-PLUTOCRUISE-V2.0 -->
+<li><a href="/holdings/nh-x-pepssi-3-plutocruise-v2.0/dataset.shtml">New Horizons PEPSSI Pluto Cruise Calibrated Data v2.0</a></li><!-- NH-X-PEPSSI-3-PLUTOCRUISE-V2.0 -->
+<li><a href="/holdings/nh-x-rex-2-plutocruise-v2.0/dataset.shtml">New Horizons REX Pluto Cruise Raw Data v2.0</a></li><!-- NH-X-REX-2-PLUTOCRUISE-V2.0 -->
+<li><a href="/holdings/nh-x-rex-3-plutocruise-v1.0/dataset.shtml">New Horizons REX Pluto Cruise Calibrated Data</a></li><!-- NH-X-REX-3-PLUTOCRUISE-V1.0 -->
+<li><a href="/holdings/nh-x-sdc-2-plutocruise-v2.0/dataset.shtml">New Horizons SDC Pluto Cruise Raw Data v2.0</a></li><!-- NH-X-SDC-2-PLUTOCRUISE-V2.0 -->
+<li><a href="/holdings/nh-x-sdc-3-plutocruise-v2.0/dataset.shtml">New Horizons SDC Pluto Cruise Calibrated Data v2.0</a></li><!-- NH-X-SDC-3-PLUTOCRUISE-V2.0 -->
+<li><a href="/holdings/nh-x-swap-2-plutocruise-v3.0/dataset.shtml">New Horizons SWAP Pluto Cruise Raw Data v3.0</a></li><!-- NH-X-SWAP-2-PLUTOCRUISE-V3.0 -->
+<li><a href="/holdings/nh-x-swap-3-plutocruise-v3.0/dataset.shtml">New Horizons SWAP Pluto Cruise Calibrated Data v3.0</a></li><!-- NH-X-SWAP-3-PLUTOCRUISE-V3.0 -->
+</ul>
+
+<h3>Pluto Encounter</h3>
+<ul>
+<li><a href="/holdings/nh-p-alice-2-pluto-v3.0/dataset.shtml">New Horizons ALICE Pluto Encounter Raw Data v3.0</a></li><!-- NH-P-ALICE-2-PLUTO-V3.0 -->
+<li><a href="/holdings/nh-p-alice-3-pluto-v3.0/dataset.shtml">New Horizons ALICE Pluto Encounter Calibrated Data v3.0</a></li><!-- NH-P-ALICE-3-PLUTO-V3.0 -->
+<li><a href="/holdings/nh-p-leisa-2-pluto-v3.0/dataset.shtml">New Horizons LEISA Pluto Encounter Raw Data v3.0</a></li><!-- NH-P-LEISA-2-PLUTO-V3.0 -->
+<li><a href="/holdings/nh-p-leisa-3-pluto-v3.0/dataset.shtml">New Horizons LEISA Pluto Encounter Calibrated Data v3.0</a></li><!-- NH-P-LEISA-3-PLUTO-V3.0 -->
+<li><a href="/holdings/nh-p-lorri-2-pluto-v3.0/dataset.shtml">New Horizons LORRI Pluto Encounter Raw Data v3.0</a></li><!-- NH-P-LORRI-2-PLUTO-V3.0 -->
+<li><a href="/holdings/nh-p-lorri-3-pluto-v3.0/dataset.shtml">New Horizons LORRI Pluto Encounter Calibrated Data v3.0</a></li><!-- NH-P-LORRI-3-PLUTO-V3.0 -->
+<li><a href="/holdings/nh-p-mvic-2-pluto-v3.0/dataset.shtml">New Horizons MVIC Pluto Encounter Raw Data v3.0</a></li><!-- NH-P-MVIC-2-PLUTO-V3.0 -->
+<li><a href="/holdings/nh-p-mvic-3-pluto-v3.0/dataset.shtml">New Horizons MVIC Pluto Encounter Calibrated Data v3.0</a></li><!-- NH-P-MVIC-3-PLUTO-V3.0 -->
+<li><a href="/holdings/nh-p-pepssi-2-pluto-v3.0/dataset.shtml">New Horizons PEPSSI Pluto Encounter Raw Data v3.0</a></li><!-- NH-P-PEPSSI-2-PLUTO-V3.0 -->
+<li><a href="/holdings/nh-p-pepssi-3-pluto-v3.0/dataset.shtml">New Horizons PEPSSI Pluto Encounter Calibrated Data v3.0</a></li><!-- NH-P-PEPSSI-3-PLUTO-V3.0 -->
+<li><a href="/holdings/nh-p-pepssi-4-plasma-v1.0/dataset.shtml">New Horizons PEPSSI Pluto Encounter Resampled Plasma Fluxes</a></li><!-- NH-P-PEPSSI-4-PLASMA-V1.0 -->
+<li><a href="/holdings/nh-p-sdc-2-pluto-v3.0/dataset.shtml">New Horizons SDC Pluto Encounter Raw Data v3.0</a></li><!-- NH-P-SDC-2-PLUTO-V3.0 -->
+<li><a href="/holdings/nh-p-sdc-3-pluto-v3.0/dataset.shtml">New Horizons SDC Pluto Encounter Calibrated Data v3.0</a></li><!-- NH-P-SDC-3-PLUTO-V3.0 -->
+<li><a href="/holdings/nh-p-swap-2-pluto-v3.0/dataset.shtml">New Horizons SWAP Pluto Encounter Raw Data v3.0</a></li><!-- NH-P-SWAP-2-PLUTO-V3.0 -->
+<li><a href="/holdings/nh-p-swap-3-pluto-v3.0/dataset.shtml">New Horizons SWAP Pluto Encounter Calibrated Data v3.0</a></li><!-- NH-P-SWAP-3-PLUTO-V3.0 -->
+<li><a href="/holdings/nh-p-swap-5-derived-solarwind-v1.0/dataset.shtml">New Horizons SWAP Pluto Encounter Solar Wind Derived Characteristics</a></li><!-- NH-P-SWAP-5-DERIVED-SOLARWIND-V1.0 -->
+<li><a href="/holdings/nh-p-rex-2-pluto-v2.0/dataset.shtml">New Horizons REX Pluto Encounter Raw Data v2.0</a></li><!-- NH-P-REX-2-PLUTO-V2.0 -->
+<li><a href="/holdings/nh-p-rex-3-pluto-v1.0/dataset.shtml">New Horizons REX Pluto Encounter Calibrated Data</a></li><!-- NH-P-REX-3-PLUTO-V1.0 -->
+<li><a href="/holdings/nh-p_psa-leisa_mvic-5-comp-v1.0/dataset.shtml">New Horizons Pluto Encounter Surface Composition Maps</a></li><!-- NH-P/PSA-LEISA/MVIC-5-COMP-V1.0 -->
+<li><a href="/holdings/nh-p_psa-lorri_alice_rex-5-atmos-v1.0/dataset.shtml">New Horizons Pluto Encounter Atmosphere Data</a></li><!-- NH-P/PSA-LORRI/ALICE/REX-5-ATMOS-V1.0 -->
+<li><a href="/holdings/nh-p_psa-lorri_mvic-5-geophys-v1.0/dataset.shtml">New Horizons Pluto Encounter Geology and Geophysical Maps</a></li><!-- NH-P/PSA-LORRI/MVIC-5-GEOPHYS-V1.0 -->
+</ul>
+
+<h3>Other Mission Datasets</h3>
+<ul>
+<li><a href="https://naif.jpl.nasa.gov/naif/data_archived.html">New Horizons Spice Kernels</a></li><!-- NH-J_P_SS-SPICE-6-V1.0 -->
+<li><a href="/holdings/nh-x-swap-5-derived-solarwind-v1.0/dataset.shtml">New Horizons SWAP Solar Wind Derived Characteristics</a></li><!-- NH-X-SWAP-5-DERIVED-SOLARWIND-V1.0 -->
+</ul>
+
+<h3>Related Datasets</h3>
+<p>Use the <a href="https://sbnapps.psi.edu/ferret/">Small Bodies Data Ferret</a> to find other datasets for this mission/target.
+ </p>
+
+<h3>Other Links</h3>
+<p><!-- <a href="http://guinan.space.swri.edu/nhcs/">New Horizons Earth-Based Observing Campaign</a> -->
+<br />Rings Node <a href="http://tools.pds-rings.seti.org/opus" onclick="this.target='_blank'">OPUS search tool</a> can be used to search for New Horizons LORRI and MVIC data.</p>
+
+<!-- ************************************************** End editing! ************************************************** -->
+<!--#include virtual="/css-n-includes/incl_bottom.inc"-->
+<br />Last updated:
+<!--#config timefmt="%A %B %d, %Y"-->
+<!--#echo var="LAST_MODIFIED" -->
+</div>
+<!-- close id whotext -->
+</div>
+<!-- close id footer -->
+</div>
+<!-- end id footwrap -->
+</div>
+<!-- close wrapper -->
+</body>
+
+</html>

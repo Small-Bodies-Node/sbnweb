@@ -1,0 +1,204 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<title>SBN Mission Support: Nozomi</title>
+
+<!-- 
+########################
+ALL of the head, style links, header and menu code is in the include. Edit that file with extreme care!!
+########################
+ -->
+<!--#include virtual="/css-n-includes/incl_top.inc"-->
+
+<!-- ################################################ LEFT SIDEBAR ########################################## -->
+<!--#include virtual="/css-n-includes/incl_left-side.inc"-->
+
+<!-- ################################################ RIGHT SIDEBAR ########################################## -->
+<div id="rightcol">
+<div class="sidebarSection">
+<h2>Mission Websites</h2>
+<p>Here we list links to the primary mission website as well as pages about the mission on other sites such as the NSSDC, NASA portal, etc.</p>
+<ul>
+<li>Mission: <a href="http://www.isas.ac.jp/e/enterp/missions/nozomi/" onclick="this.target='_blank'">Nozomi</a> (ISAS)</li>
+<li>NSSDC: <a href="https://nssdc.gsfc.nasa.gov/nmc/spacecraftDisplay.do?id=1998-041A" onclick="this.target='_blank'">Nozomi</a></li>
+<li>NASA: <em>na</em></li>
+<li>Wikipedia: <a href="https://en.wikipedia.org/wiki/Nozomi_%28spacecraft%29" onclick="this.target='_blank'">Nozomi</a></li>
+</ul>
+</div><!-- end class sidebarSection -->
+</div><!-- end id rightcol -->
+<!-- ################################################ MAIN ################################################## -->
+<div id="centercol">
+<a name="mainContent"></a>
+<!-- ************************************************** You may begin editing! ************************************************** -->
+<!--
+===========================================================================
+EDIT HISTORY:
++ 2014-11-20 EMW	updated link to Ferret
++ 2011-02-22 EMW	added right sidebar space
++ 2010-08-18 EMW	converted to xhtml, updated to new look
+===========================================================================
+-->
+
+<!-- Mission Title ====================================================== -->
+<h1>Nozomi Mission</h1>
+
+<!-- Mission Description ================================================ -->
+<p>Nozomi is an international effort to study the upper atmosphere of Mars, with particular emphasis on its interaction with the solar wind. The Institute of Space and Astronautical Science of Japan (ISAS) is the lead investigator. The spacecraft launched from Kagoshima Space Center, Japan on July 4, 1998.</p>
+
+<!-- Pointer to project web site ======================================== -->
+<p>The <a href="http://www.isas.ac.jp/e/enterp/missions/nozomi/index.html" onclick="this.target='_blank'">Nozomi Mission web site</a> is maintained by ISAS.</p>
+
+<!-- SBN Role =========================================================== -->
+<p>The SBN will be archiving data from the Mars Dust Counter (MDC) instrument.</p>
+
+<!-- Instrument List ==================================================== -->
+<a name="instruments"></a>
+<h2>On-Board Instruments</h2>
+<table width="96%" class="datatab">
+<colgroup>
+<col width="32%" />
+<col width="32%" />
+<col width="32%" />
+</colgroup>
+<thead>
+<tr>
+<td>Instrument/Investigation</td>
+<td>Measuring</td>
+<td>Small Bodies Data<br /><em>available below</em></td>
+</tr>
+</thead>
+<tr>
+<td>Mars Imaging Camera<br />(MIC)</td>
+<td>Morphology</td>
+<td><em>none</em></td>
+</tr>
+<tr>
+<td>Magnetic Field Measurement<br />(MGF)</td>
+<td>Magnetic Fields of Mars</td>
+<td><em>none</em></td>
+</tr>
+<tr>
+<td>Probe for Electron Temperature<br />(PET)</td>
+<td>Electron temperature of Martian ionosphere</td>
+<td><em>none</em></td>
+</tr>
+<tr>
+<td>Electron Spectrum Analyzer<br />(ESA)</td>
+<td>Electron energy flux</td>
+<td><em>none</em></td>
+</tr>
+<tr>
+<td>Ion Spectrum Analyzer<br />(ISA)</td>
+<td>Ion energy flux</td>
+<td><em>none</em></td>
+</tr>
+<tr>
+<td>Electron and Ion Spectrometer<br />(EIS)</td>
+<td>Energy flux of high energy particles</td>
+<td><em>none</em></td>
+</tr>
+<tr>
+<td>Extra Ultraviolet Scanner<br />(XUV)</td>
+<td>Abundance and distribution of helium in Martian ionosphere</td>
+<td><em>none</em></td>
+</tr>
+<tr>
+<td>Ultraviolet Imaging Spectrometer<br />(UVS)</td>
+<td>FUV and MUV region from 115 to 310 mm</td>
+<td><em>none</em></td>
+</tr>
+<tr>
+<td>Plasma Wave Sounder<br />(PWS)</td>
+<td>Structure of the ionosphere</td>
+<td><em>none</em></td>
+</tr>
+<tr>
+<td>Low Frequency plasma wave Analyzer<br />(LFA)</td>
+<td>Martian plasma waves</td>
+<td><em>none</em></td>
+</tr>
+<tr>
+<td>Ion Mass Imager<br />(IMI)</td>
+<td>Ion mass composition</td>
+<td><em>none</em></td>
+</tr>
+<tr>
+<td>Mars Dust Counter<br />(MDC)</td>
+<td>Mass and velocity of particles</td>
+<td><em>none</em></td>
+</tr>
+<tr>
+<td>Neutral Mass Spectrometer<br />(NMS)</td>
+<td>Composition and density of neutral particles</td>
+<td><em>none</em></td>
+</tr>
+<tr>
+<td>Thermal Plasma Analyzer<br />(TPA)</td>
+<td>Characteristics of thermal ions in the upper atmosphere</td>
+<td><em>none</em></td>
+</tr>
+</table>
+<!-- Mission Data ======================================================= -->
+<h2>Mission Data</h2>
+<table width="96%" class="datatab">
+<colgroup>
+<col width="24%" />
+<col width="24%" />
+<col width="24%" />
+<col width="24%" />
+</colgroup>
+<thead>
+<tr>
+<td>Instrument/<br />Investigation</td>
+<td>Target</td>
+<td>Available Data</td>
+<td>Format/<br />Data Link</td>
+</tr>
+</thead>
+<tr>
+<td colspan="4">No data available yet</td>
+</tr>
+<!-- 
+<tr>
+<td>INSTRUMENT ACRONYM LINKED TO INSTRUMENT CATALOG FILE</td>
+<td>TARGET NAME LINKED TO TARGET CATALOG FILE</td>
+<td>DATA DESCRITPION LINKED TO DATA SET CATALOG FILE</td>
+<td>FORMAT DESCRIPTION LINKED TO DATA</td>
+</tr>
+ -->
+</table>
+<!-- Target Data ======================================================== -->
+<a name="targetdata"></a>
+<h2>Other Target Observations</h2>
+<table width="96%" class="datatab">
+<colgroup>
+<col width="32%" />
+<col width="32%" />
+<col width="32%" />
+</colgroup>
+<thead>
+<tr>
+<td>Target</td>
+<td>Target Type</td>
+<td>Other Data Sets Targeting this Object</td>
+</tr>
+</thead>
+<tr>
+<td>Deimos/Phobos</td>
+<td>Moons of Mars</td>
+<td>&nbsp;</td>
+</tr>
+</table>
+<h3>Related Datasets</h3>
+<p>Use the <a href="https://sbnapps.psi.edu/ferret/">Small Bodies Data Ferret</a> to find other datasets for this mission/target.</p>
+
+<!-- ************************************************** End editing! ************************************************** -->
+<!--#include virtual="/css-n-includes/incl_bottom.inc"-->
+<br />Last updated: <!--#config timefmt="%A %B %d, %Y"--><!--#echo var="LAST_MODIFIED" --></div><!-- close id whotext -->
+</div><!-- close id footer -->
+</div><!-- end id footwrap -->
+</div><!-- close wrapper -->
+</body>
+</html>

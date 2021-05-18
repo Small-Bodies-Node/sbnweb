@@ -1,0 +1,201 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<title>SBN Mission Support: Wirtanen Observations</title>
+
+<!-- 
+########################
+ALL of the head, style links, header and menu code is in the include. Edit that file with extreme care!!
+########################
+ -->
+<!--#include virtual="/css-n-includes/incl_top.inc"-->
+
+<!-- ################################################ LEFT SIDEBAR ########################################## -->
+<!--#include virtual="/css-n-includes/incl_left-side.inc"-->
+
+<!-- ################################################ MAIN ################################################## -->
+<div id="centerwide">
+<a name="mainContent"></a>
+<!-- ************************************************** You may begin editing! ************************************************** -->
+<!--
+===========================================================================
+EDIT HISTORY:
++ 2011-02-22 EMW	converted
+===========================================================================
+-->
+
+<!-- Mission Title ====================================================== -->
+<h1>Wirtanen Earth-Based Observations Archive</h1>
+
+<!-- Mission Description ================================================ -->
+<!-- Pointer to project web site ======================================== -->
+<!-- SBN Role =========================================================== -->
+<p>The SBN in cooperation with ESA has begun archiving Earth-based observations of comet 46P/Wirtanen obtained during its 1996/1997 apparition to support the Rosetta mission. The table below describes the data that the SBN is currently expecting to receive from the Submitters for the archive.</p>
+
+<!-- Ground Based Data ================================================== -->
+<h2>Supporting Observations of 46P/Wirtanen</h2>
+<table width="80%" class="datatab">
+<colgroup>
+<col width="20%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+</colgroup>
+<tr>
+<th>Date</th>
+<th>Submitter</th>
+<th>Instrument/Telescope</th>
+<th>Type of Data</th>
+<th>Data Status</th>
+<th>Number of Data</th>
+<th>Size of Dataset (MBytes)</th>
+</tr>
+<tr>
+<td>13-14/06/96, 17-18/08/96, 12/11/96</td>
+<td>K. Meech</td>
+<td>University of Hawaii 2.2m</td>
+<td>images</td>
+<td>calibrated</td>
+<td>56</td>
+<td>800</td>
+</tr>
+<tr>
+<td>22.7/07/96, 25.9/08/96, 15.2/01/97</td>
+<td>A. Stern</td>
+<td>Hubble Space Telescope</td>
+<td>UV spectra</td>
+<td>calibrated</td>
+<td>9 </td>
+<td>12.6</td>
+</tr>
+<tr>
+<td>10-11/11/96</td>
+<td>E. Epitani</td>
+<td>SAAO</td>
+<td>URI images</td>
+<td>calibrated</td>
+<td>5</td>
+<td>1.3</td>
+</tr>
+<tr>
+<td>9/11/96</td>
+<td>L. Colangeli</td>
+<td>ISO</td>
+<td>images</td>
+<td>calibrated</td>
+<td>2</td>
+<td>0.5</td>
+</tr>
+<tr>
+<td>25/04/96, 11-13/05/96, 18-19/06/96, 9-12/07/96, 18-23/08/96, 10-17/09/96, 2-4/10/96, 1-5/11/96, 6-11/12/96</td>
+<td>H. B&ouml;hnhardt,<br />A. Fiedler,<br />M. Geffert,<br />J. Sanner</td>
+<td>ESO La Silla</td>
+<td>images</td>
+<td>calibrated</td>
+<td>356</td>
+<td>4190</td>
+</tr>
+<tr>
+<td>10-11/07/96, 10-15/09/96, 15-18/10/96, 14-15/11/96, 8-12/12/96</td>
+<td>R. Schulz</td>
+<td>ESO La Silla</td>
+<td>spectra</td>
+<td>calibrated</td>
+<td>24</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>8/28/96</td>
+<td>P. Lamy</td>
+<td>HST</td>
+<td>images</td>
+<td>calibrated</td>
+<td>24</td>
+<td>600</td>
+</tr>
+<tr>
+<td>?</td>
+<td>P. Weisman</td>
+<td>TMO</td>
+<td>images</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>?</td>
+<td>A. Levasseur-Regourd</td>
+<td>Haute-Provence</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>10/7/96, 10/12/96</td>
+<td>U. Fink</td>
+<td>Catalina</td>
+<td>spectra</td>
+<td>calibrated</td>
+<td>&nbsp;15</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>2/8-9/92, 8/26/95</td>
+<td>I.M. Cartwright</td>
+<td>LaPalma</td>
+<td>images</td>
+<td>calibrated</td>
+<td>&nbsp;12</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>12/21/96, 5/17/97</td>
+<td>J. Bertaux</td>
+<td>SOHO</td>
+<td>Ly-alpha</td>
+<td>calibrated</td>
+<td>&nbsp;45</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>3/3/97, 3/11/97</td>
+<td>K. Jockers</td>
+<td>Pic Terskol</td>
+<td>images</td>
+<td>calibrated</td>
+<td>&nbsp;15</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>10/11/91, 2/12-15/97, 3/4-5/97, 6/4/97, 7/1/97</td>
+<td>D. Schleicher</td>
+<td>Lowell</td>
+<td>phot</td>
+<td>&nbsp;IHW filter</td>
+<td>&nbsp;8</td>
+<td>&nbsp;.01 </td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>E. Mueller</td>
+<td>KPNO</td>
+<td>images</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+</table>
+<!-- ************************************************** End editing! ************************************************** -->
+<!--#include virtual="/css-n-includes/incl_bottom.inc"-->
+<br />Last updated: <!--#config timefmt="%A %B %d, %Y"--><!--#echo var="LAST_MODIFIED" --></div><!-- close id whotext -->
+</div><!-- close id footer -->
+</div><!-- end id footwrap -->
+</div><!-- close wrapper -->
+</body>
+</html>

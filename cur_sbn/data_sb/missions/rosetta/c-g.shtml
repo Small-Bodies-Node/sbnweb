@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<title>SBN Mission Support: 67P/Churyumov-Gerasimenko Observations</title>
+
+<!-- 
+########################
+ALL of the head, style links, header and menu code is in the include. Edit that file with extreme care!!
+########################
+ -->
+<!--#include virtual="/css-n-includes/incl_top.inc"-->
+
+<!-- ################################################ LEFT SIDEBAR ########################################## -->
+<!--#include virtual="/css-n-includes/incl_left-side.inc"-->
+
+<!-- ################################################ MAIN ################################################## -->
+<div id="centerwide">
+<a name="mainContent"></a>
+<!-- ************************************************** You may begin editing! ************************************************** -->
+<!--
+===========================================================================
+EDIT HISTORY:
++ 2014-02-17 EMW	added link for earth-based campaign
++ 2013-11-22 EMW	edited SMOKA links
++ 2013-10-31 EMW	added in ESO and SMOKA links...
++ 2013-08-13 EMW	created page
+===========================================================================
+-->
+
+<!-- Mission Title ====================================================== -->
+<h1>67P/Churyumov-Gerasimenko Earth-Based Observations Archive</h1>
+
+<!-- Mission Description ================================================ -->
+<p><a href="http://www.rosetta-campaign.net/">67P/Churyumov-Gerasimenko ground-based observations in support of the Rosetta mission</a> (ground campaign website)</p>
+
+<!-- Pointer to project web site ======================================== -->
+<!-- SBN Role =========================================================== -->
+<p></p>
+
+<!-- Ground Based Data ================================================== -->
+<h2>Supporting Observations of 67P/Churyumov-Gerasimenko</h2>
+
+<h3>Links to space-based data sets</h3>
+<ul>
+<li><a href="/data_other/HST_01_COMET/67P.shtml">HST</a></li>
+<li><a href="/data_other/sptz_01_COMET/1000012.shtml">Spitzer</a></li>
+</ul>
+
+<h3>Links to ground-based data sets</h3>
+<ul>
+<li>ESO
+	<ul>
+	<li><a href="http://archive.eso.org/wdb/wdb/eso/eso_archive_main/query?wdbo=html%2fdisplay&max_rows_returned=5000&instrument=&tab_object=on&target=67P&resolver=none&ra=&dec=&box=00%2010%2000%C2%B0_or_hour=hours&tab_target_coord=on&format=SexaHour&wdb_input_file=&night=&stime=&starttime=12&etime=&endtime=12&tab_prog_id=on&prog_id=&gto=&pi_coi=&obs_mode=&title=&tab_dp_cat=on&tab_dp_type=on&dp_type=&dp_type_user=&tab_dp_tech=on&dp_tech=&dp_tech_user=&tab_dp_id=on&dp_id=&origfile=&tab_rel_date=on&rel_date=&obs_name=&ob_id=&tab_exptime=on&exptime=&tab_filter_path=on&filter_path=&gris_path=&grat_path=&slit_path=&tab_instrument=on&add=&tab_tel_airm_start=on&tab_HDR=on&tab_stat_instrument=on&tab_ambient=on&tab_PRV=on&tab_stat_exptime=on&tab_mjd_obs=on&aladin_colour=aladin_instrument&tab_stat_plot=on&order=&">Data sets with the following instruments: EFOSC, EMMI, FORS2, ISAAC, SOFI, WFI</a></li>
+	<li><a href="http://archive.eso.org/wdb/wdb/eso/eso_archive_main/query?prog_id=270.C-5035*&max_rows_returned=20000&">Data sets with instrument FORS1</a></li>
+	</ul></li>
+<li>SMOKA... from the Kiso Schmidt Telescope
+<br />*Instrument 1k CCD:*
+	<ul>
+	<li><a href="https://smoka.nao.ac.jp/search?resolver=NONE&object=67P/C-G&instruments=KCC&obs_mod=all&data_typ=OBJECT&dispcol=default&action=Search&diff=1000&asciitable=Table">(67P/C-G)</a></li>
+	<li><a href="https://smoka.nao.ac.jp/search?resolver=NONE&object=67P/C.G.&instruments=KCC&obs_mod=all&data_typ=OBJECT&dispcol=default&action=Search&diff=1000&asciitable=Table">(67P/C.G.)</a></li>
+	</ul>
+<br />*Instrument 2k CCD:*
+	<ul>
+	<li><a href="https://smoka.nao.ac.jp/search?resolver=NONE&object=67P%20field1&instruments=KCD&obs_mod=all&data_typ=OBJECT&dispcol=default&action=Search&diff=1000&asciitable=Table">(67P field1)</a></li>
+	<li><a href="https://smoka.nao.ac.jp/search?resolver=NONE&object=67P%20field2&instruments=KCD&obs_mod=all&data_typ=OBJECT&dispcol=default&action=Search&diff=1000&asciitable=Table">(67P field2)</a></li>
+	<li><a href="https://smoka.nao.ac.jp/search?resolver=NONE&object=67P/C-G&instruments=KCD&obs_mod=all&data_typ=OBJECT&dispcol=default&action=Search&diff=1000&asciitable=Table">(67P/C-G)</a></li>
+	<li><a href="https://smoka.nao.ac.jp/search?resolver=NONE&object=67P/CG&instruments=KCD&obs_mod=all&data_typ=OBJECT&dispcol=default&action=Search&diff=1000&asciitable=Table">(67P/CG)</a></li>
+	<li><a href="https://smoka.nao.ac.jp/search?resolver=NONE&object=67P/Cheryumov-Gerasimenko&instruments=KCD&obs_mod=all&data_typ=OBJECT&dispcol=default&action=Search&diff=1000&asciitable=Table">(67P/Cheryumov-Gerasimenko)</a></li>
+	<li><a href="https://smoka.nao.ac.jp/search?resolver=NONE&object=67P/Churymov-Gerasimenko&instruments=KCD&obs_mod=all&data_typ=OBJECT&dispcol=default&action=Search&diff=1000&asciitable=Table">(67P/Churymov-Gerasimenko)</a></li>
+	<li><a href="https://smoka.nao.ac.jp/search?resolver=NONE&object=67P/Churyumov-Gerasimenko&instruments=KCD&obs_mod=all&data_typ=OBJECT&dispcol=default&action=Search&diff=1000&asciitable=Table">(67P/Churyumov-Gerasimenko)</a></li>
+	</ul>
+</li>
+</ul>
+
+<p>[NOTE: These are data from only 2 instruments (1kCCD and 2kCCD). But as you can clearly see, for some reason, they separated the data with links having different spellings for the same comet. We do not know why they did it that way.</p>
+
+<!-- ************************************************** End editing! ************************************************** -->
+<!--#include virtual="/css-n-includes/incl_bottom.inc"-->
+<br />Last updated: <!--#config timefmt="%A %B %d, %Y"--><!--#echo var="LAST_MODIFIED" --></div><!-- close id whotext -->
+</div><!-- close id footer -->
+</div><!-- end id footwrap -->
+</div><!-- close wrapper -->
+</body>
+</html>

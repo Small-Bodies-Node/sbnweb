@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<title>PDS: Small Bodies Node</title>
+
+<!--
+########################
+ALL of the head, style links, header and menu code is in the include. Edit that file with extreme care!!
+########################
+ -->
+
+<!--#include virtual="/css-n-includes/incl_top.inc"-->
+
+<!-- ################################################ MAIN ################################################## -->
+
+<div id="centeronly">
+
+<a name="mainContent"></a>
+<!-- ************************************************** You may begin editing! ************************************************** -->
+
+<a name="top"></a><h3>Object: 73P/Schwassmann-Wachmann 3-B (1930 J1-B) [<a href="../objclass.shtml#JFc" >JFc</a>]</h3>
+
+<table width="95%" class="datatab">
+	<colgroup>
+		<col width="25%" />
+		<col width="25%" />
+		<col width="25%" />
+		<col width="20%" />
+	</colgroup>
+	<thead><tr>
+		<td>Observation ID</td>
+		<td>Start Time</td>
+		<td>Instrument</td>
+		<td>Proposal ID</td>
+	</tr></thead>
+	<tr class="odd">
+		<td><a href="http://cda.harvard.edu/chaser?obsid=7330" onclick="this.target='_blank'">7330</a></td>
+		<td>2006-05-23 05:13:58</td>
+		<td>ACIS-S</td>
+		<td>07108248</td>
+	</tr>
+	<tr>
+		<td><a href="http://cda.harvard.edu/chaser?obsid=7331" onclick="this.target='_blank'">7331</a></td>
+		<td>2006-05-23 06:42:31</td>
+		<td>ACIS-S</td>
+		<td>07108248</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://cda.harvard.edu/chaser?obsid=7332" onclick="this.target='_blank'">7332</a></td>
+		<td>2006-05-23 07:57:41</td>
+		<td>ACIS-S</td>
+		<td>07108248</td>
+	</tr>
+	<tr>
+		<td><a href="http://cda.harvard.edu/chaser?obsid=7333" onclick="this.target='_blank'">7333</a></td>
+		<td>2006-05-23 09:12:51</td>
+		<td>ACIS-S</td>
+		<td>07108248</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://cda.harvard.edu/chaser?obsid=7334" onclick="this.target='_blank'">7334</a></td>
+		<td>2006-05-23 10:28:01</td>
+		<td>ACIS-S</td>
+		<td>07108248</td>
+	</tr>
+</table>
+<br />
+<p>To access the information above, click <a href="http://cda.harvard.edu/chaser?obsid=7330,7331,7332,7333,7334" onclick="this.target='_blank'">here</a>, or go to the <a href="http://cda.harvard.edu/chaser/" onclick="this.target='_blank'">Chandra Observation Search site</a> and enter the Observation ID or Proposal Number in the fields provided and click the search button found on the upper-left-hand-corner.</p><br /><p>[<a href="#top">Back to Top</a>] [<a href="../Chandra.shtml#COMET">Back to Comets</a>]</p>
+
+<a name="bottom"></a>
+
+<!-- ************************************************** End editing! ************************************************** -->
+<!--#include virtual="/css-n-includes/incl_bottom.inc"-->
+<br />Last updated: <!--#config timefmt="%A %B %d, %Y"--><!--#echo var="LAST_MODIFIED" --></div><!-- close id whotext -->
+
+</div><!-- close id footer -->
+</div><!-- end id footwrap -->
+
+</div><!-- close wrapper -->
+
+</body>
+</html>

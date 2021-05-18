@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<title>SBN Mission Support: CONTOUR</title>
+
+<!-- 
+########################
+ALL of the head, style links, header and menu code is in the include. Edit that file with extreme care!!
+########################
+ -->
+<!--#include virtual="/css-n-includes/incl_top.inc"-->
+
+<!-- ################################################ LEFT SIDEBAR ########################################## -->
+<!--#include virtual="/css-n-includes/incl_left-side.inc"-->
+
+<!-- ################################################ RIGHT SIDEBAR ########################################## -->
+<div id="rightcol">
+<div class="sidebarSection">
+<h2>Mission Websites</h2>
+<p>Here we list links to the primary mission website as well as pages about the mission on other sites such as the NSSDC, NASA portal, etc.</p>
+<ul>
+<li>Mission: <em>na</em></li>
+<li>NSSDC: <a href="https://nssdc.gsfc.nasa.gov/nmc/spacecraftDisplay.do?id=2002-034A" onclick="this.target='_blank'">CONTOUR</a></li>
+<li>NASA: <em>na</em></li>
+<li>SSE: <a href="https://solarsystem.nasa.gov/missions/contour/in-depth/" onclick="this.target='_blank'">CONTOUR</a></li>
+</ul>
+</div><!-- end class sidebarSection -->
+</div><!-- end id rightcol -->
+<!-- ################################################ MAIN ################################################## -->
+<div id="centercol">
+<a name="mainContent"></a>
+<!-- ************************************************** You may begin editing! ************************************************** -->
+<!--
+===========================================================================
+EDIT HISTORY:
++ 2014-11-20 EMW	updated link to Ferret
++ 2012-06-08 EMW	updated instrument links to versions in holdings
++ 2012-05-17 EMW	added links to 5 datasets (replaced 4 links that were to catalog files only)
++ 2011-03-14 EMW	converted page to list format
++ 2011-02-22 EMW	added right sidebar space
++ 2010-08-18 EMW	converted to xhtml, updated to new look
+===========================================================================
+-->
+
+<!-- Mission Title ====================================================== -->
+<h1>CONTOUR (COmet Nucleus TOUR)</h1>
+
+<!-- Mission Description ================================================ -->
+<p>The CONTOUR (COmet Nucleus TOUR) spacecraft was launched on 3 July 2002 into a high-apogee Earth orbit. On 15 August 2002, the solid rocket was fired to put the spacecraft in a heliocentric trajectory. After the firing, contact was lost. On 16 August 2002, ground observations recorded what appeared to be three separate objects slightly behind CONTOUR's expected position. Several unsuccessful attempts were made over the next months to contact the spacecraft. The mission was terminated on 20 December 20 2002, when NASA and Johns Hopkins University/Applied Physics Laboratory concluded the spacecraft was lost. </p>
+
+<p>CONTOUR was a NASA Discovery class mission planned to fly by two comet nuclei (2P/Encke in 2003; 73P/SW3 in 2006) and possibly re-targeted for a third flyby (6P/d'Arrest in 2008). The spacecraft was to fly by the comet nuclei with a closest approach distance of approximately 100 km and near the period of maximum activity for each comet. Scientific objectives of the mission included imaging the nuclei at resolutions of 4&nbsp;m, spectral mapping of nuclei at resolutions of 100-200&nbsp;m, and acquiring detailed compositional data on both gas and dust in the near-nucleus environment.</p>
+
+<!-- Instrument List ==================================================== -->
+<h2>Instruments</h2>
+<ul>
+<li><a href="/holdings/con-cal-all-6-doc-set-v1.0/catalog/cri_inst.cat">CONTOUR Remote Imaging Spectrograph - Imager (CRISPIMAG)</a></li>
+<li><a href="/holdings/con-cal-all-6-doc-set-v1.0/catalog/crs_inst.cat">CONTOUR Remote Imaging Spectrograph - Spectrometer (CRISPEC)</a></li>
+<li><a href="/holdings/con-cal-all-6-doc-set-v1.0/catalog/cfiinst.cat">CONTOUR Forward Imager (CFI)</a></li>
+<li><a href="/holdings/con-cal-all-6-doc-set-v1.0/catalog/cidainst.cat">CONTOUR Interstellar Dust Analyzer (CIDA)</a> [no data]</li>
+<li><a href="/holdings/con-cal-all-6-doc-set-v1.0/catalog/ngiminst.cat">CONTOUR Neutral Gas and Ion Mass Spectrometer (NGIMS)</a> [no data]</li>
+<li><a href="/holdings/con-cal-all-6-doc-set-v1.0/catalog/tlm_inst.cat">CONTOUR Telemetry (TLM)</a></li>
+</ul>
+
+<!-- Mission Data ======================================================= -->
+<h2>Data Sets</h2>
+
+<h3>Pre-launch Testing</h3>
+<p>These data have been <strong>safed</strong>. <a href="/about/contact_info.shtml">Contact SBN</a>.</p>
+<ul>
+<li><a href="/holdings/con-cal-all-6-doc-set-v1.0/dataset.shtml">CONTOUR Mission and Data Documentation</a></li>
+<li><a href="/holdings/con-cal-cfi-1-edr-ground-ocf-v1.0/dataset.shtml">CONTOUR Forward Imager Ground Calibration Data</a></li>
+<li><a href="/holdings/con-cal-crispimag-1-edr-ground-ocf-v1.0/dataset.shtml">CONTOUR Remote Imaging Spectrograph Imaging Ground Calibration Data</a></li>
+<li><a href="/holdings/con-cal-crispspec-1-edr-ground-ocf-v1.0/dataset.shtml">CONTOUR Remote Imaging Spectrograph Spectrometer Ground Calibration Data</a></li>
+<li><a href="/holdings/con-cal-tlm-1-edr-ground-gse-v1.0/dataset.shtml">CONTOUR Telemetry Ground Calibration Data</a></li>
+</ul>
+
+<h3>Related Datasets</h3>
+<p>Use the <a href="https://sbnapps.psi.edu/ferret/">Small Bodies Data Ferret</a> to find other datasets for this mission/target.</p>
+
+<!-- ************************************************** End editing! ************************************************** -->
+<!--#include virtual="/css-n-includes/incl_bottom.inc"-->
+<br />Last updated: <!--#config timefmt="%A %B %d, %Y"--><!--#echo var="LAST_MODIFIED" --></div><!-- close id whotext -->
+</div><!-- close id footer -->
+</div><!-- end id footwrap -->
+</div><!-- close wrapper -->
+</body>
+</html>

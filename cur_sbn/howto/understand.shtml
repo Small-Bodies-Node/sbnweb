@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<title>PDS-SBN: How To Approach a PDS Data Set</title>
+
+<!-- 
+########################
+ALL of the head, style links, header and menu code is in the include. Edit that file with extreme care!!
+########################
+ -->
+<!--#include virtual="/css-n-includes/incl_top.inc"-->
+
+<!-- ################################################ LEFT SIDEBAR ########################################## -->
+<!--#include virtual="/css-n-includes/incl_left-side.inc"-->
+
+<!-- ################################################ MAIN ################################################## -->
+<div id="centerwide">
+<a name="mainContent"></a>
+<!-- ************************************************** You may begin editing! ************************************************** -->
+<h1>How to Approach a PDS 3 Data Set</h1>
+<p>This page presents a basic description of what is included in a data set for those unfamiliar with the PDS3 archive structure. It also suggests a sequence of actions that new users seem to find helpful for getting familiar with the contents of a data set. You may work your way through a data set online or by downloading the entire collection.</p>
+
+<p>Here is a typical sequence:</p>
+<ol>
+<li><a href="#directory">Examine the root directory</a></li>
+<li><a href="#catalog">Read the catalog files</a></li>
+<li><a href="#documents">Browse the documentation</a></li>
+<li><a href="#browse">Check for data-browsing help</a></li>
+<li><a href="#data">Rummage through the data</a></li>
+<li><a href="#other">Inspect any remaining directories</a></li>
+</ol>
+
+<hr />
+<a name="directory"></a>
+<h3>1. Examine the root directory</h3>
+<p>Each data set is organized as a directory tree. In the root directory of the data set you will usually find an &quot;AAREADME&quot; file (plain text or possibly HTML) that should provide some basic info about what is included where in the data set. You'll probably also see a file called &quot;VOLDESC.CAT&quot;, which you can safely ignore, and possibly an &quot;ERRATA.TXT&quot;, which you should probably not ignore.</p>
+
+<p>Most of the subdirectory names are dictated by the <a href="https://pds.nasa.gov/datastandards/pds3/standards/" onclick="this.target='_blank'">PDS Standards Requirements</a>. The directories you will most likely encounter are:</p>
+<ul>
+<li><strong><em>calib/</em>:</strong> An optional directory that, when present, will contain calibration data files used to produce the data set.</li>
+<li><strong><em>catalog/</em>:</strong> A required directory containing files with very high-level information used to populate the central PDS catalog for searching.</li>
+<li><strong><em>data/</em>:</strong> In an SBN data set you will usually find the data files in a subdirectory called <em>data/</em>, though this is by convention rather than requirement. Some data sets will have multiple data directories under the root directory, usually named mnemonically for observing modes, mission phases, targets, or such. The &quot;AAREADME&quot; should make the subdirectory layout clear in these cases.</li>
+<li><strong><em>document/</em>:</strong> An optional directory containing document files that provide detailed descriptions and explanations of various topics related to the data, like calibration procedures, instrument descriptions, observatory logbooks, etc.</li>
+<li><strong><em>index/</em>:</strong> At a minimum, this required directory will contain files called <em>index.tab</em>, which contains the PDS manifest for the data set, and <em>checksum.tab</em>, which has MD5 checksums for everything in the data set. There might be additional table files containing scientific indices into the data (look for <em>.lbl</em> files describing the contents of the <em>.tab</em> files), or you might find scientifically interesting fields added to the <em>index.tab</em> file.</li>
+</ul>
+
+<p>There may be additional optional subdirectories included with the data set, some of which are listed <a href="#other">below</a>. Each of these optional directories will include a plain text informational file with a name ending in <strong>info.txt</strong>. Look for the appropriate <em>*info.txt</em> file in these directories to learn more about their contents.</p>
+
+<hr />
+<a name="catalog"></a>
+<h3>2. Read the catalog files</h3>
+<p>After you've dispensed with the &quot;AAREADME&quot;, turn your attention to the <em>catalog/</em> directory and the <em>catinfo.txt</em> file. This file will tell you what is in all the other files in the directory. You can find the instrument catalog file, for example, by looking up its name in the <em>catinfo.txt</em> file.</p>
+
+<p>PDS catalog files provide overview information about various aspects of the data in a structured form that can be ingested directly into the PDS catalog database. There will always be a catalog file for the data set (usually called <em>dataset.cat</em>), which you should review carefully. Other catalog files will describe things like the mission, spacecraft and instrument, and you should review these as well - especially with regard to how they support the data set. Since these files are intended to provide high-level information, it is common for them to refer to other documents, either in the literature or included with the data in the <em>document/</em> directory, that contain more detailed descriptions. You'll also usually find one catalog file containing a reference list. (We don't expect you to technically edit the references, but if you notice a mistake, please report it.)</p>
+<blockquote>
+<h4><em>Note for</em> Windows <em>Users</em></h4>
+<p>The files of interest in here have an extension of <em>.cat</em> and are simple text files. If you are a Windows user you may have to force Windows to open them with a specific file editor, because Windows has reserved the <em>.cat</em> extension for security catalog files and gets nervous when ordinary users start messing with <em>.cat</em> files. Use the &quot;Open with&quot; right-click option in your Windows Explorer window to select an editor for viewing the files. Notepad and Wordpad usually work well. If you're trying to look at a <em>.cat</em> file in Internet Explorer, you will be stymied by the browser. You will have to download the file (right-click and &quot;Save target as&quot;) to your hard disk and then open it with any text editor. Alternately, you can use some browser other than IE. Google Chrome, for example, seems to be quite happy to display <em>.cat</em> files on Windows systems.</p>
+</blockquote>
+
+<hr />
+<a name="documents"></a>
+<h3>3. Browse the documentation</h3>
+<p>The <em>docinfo.txt</em> file provides a quick guide into the contents of the <em>document/</em> directory. This is the place to look for things like detailed instrument descriptions, calibration instructions, observers logs, or anything that serves to describe or explain the data and isn't an observational record.</p>
+
+<hr />
+<a name="browse"></a>
+<h3>4. Check for data-browsing help</h3>
+<p>Very large data sets frequently have a top-level directory called <em>browse/</em> which can provide a useful entry point for exploring the data. This directory may contain thumbnail representations of the data files, HTML files that can be opened in a browser for searching through the data, or specialized browsing indices (for use in Web browsers or spreadsheets, for example). There should be a <em>browinfo.txt</em> file in the directory to explain what has been provided.</p>
+
+<hr />
+<a name="data"></a>
+<h3>5. Rummage through the data</h3>
+<p>At this point you should have enough information to dive into the data and know where to look if you have questions about what you find in the data files and PDS labels. The <em>data/</em> directory itself may be subdivided in many ways, depending on the size of the data set. Small data sets may have no subdirectories; large mission data sets may have subdirectories for date or mission phase; and so on.</p>
+
+<p>In the data directories you will likely see files with an <em>.lbl</em> extension. These are detached PDS label files; they are plain text and can be displayed in any text editor. If you don't see any <em>.lbl</em> files, the PDS labels will appear at the top of the data files themselves. The labels, attached or detached, will have internal pointers to the data, a structural description of the observational data (usually at the bottom), and a series of <code>keyword = value</code> statements that should provide all the information essential to understanding and working with the data. Definitions for the <code>keywords</code> used in PDS labels are either in the <a href="https://pds.nasa.gov/tools/dd-search/" onclick="this.target='_blank'">Planetary Science Data Dictionary</a> data base, or in a local data dictionary provided by the mission which should be included in the <em>document/</em> directory of the data set.</p>
+
+<hr />
+<a name="other"></a>
+<h3>6. Inspect any remaining directories</h3>
+<p>Occasionally there are other directories included with the data that provide additional supporting information. For example:</p>
+<ul>
+<li><strong><em>geometry/</em>:</strong> This directory contains geometry data (pointing, target ephemeris, etc.). Sometimes this will be in the form of tables of text; sometimes this directory will contain kernel files for use with the NAIF SPICE system. The <em>geominfo.txt</em> file will provide content information.</li>
+<li><strong><em>label/</em>:</strong> This directory contains label include files - the repetitive parts of labels (the data structure, typically) extracted to simplify either the labels themselves or configuration management or both. If you see a line in a label that looks like this:
+<br />
+<code>^STRUCTURE = &quot;FILE.FMT&quot;</code>
+<br /> then you should find the &quot;FILE.FMT&quot; file in the <em>label</em> directory. </li>
+<li><strong><em>software/</em>:</strong> It is rare to see software delivered as software because PDS will not host, maintain or port mission software. A <em>softinfo.txt</em> file should list the contents of the directory. More often you will encounter software source code provided to document a calibration algorithm or as an example of how to read a particularly complex data format in the <em>document/</em> directory.</li>
+<li><strong><em>extras/</em>:</strong> In fact, this directory is not considered to be part of the permanent archive. It is used to hold things like specialized display code that might be useful on a few systems for a few years while the data are still new, but which is not essential to the long-term viability of the data. An <em>extrinfo.txt</em> file should explain what is in the directory and what it might be good for.</li>
+</ul>
+<hr />
+<h3>One last helpful link</h3>
+<p>There are several file types within a data set. We do have a <a href="/howto/file_types.shtml">file types page</a> that provides additional information on those file extensions, the information they contain, how to read them, and where they may be found in a data set.</a>
+</p>
+
+<!-- ************************************************** End editing! ************************************************** -->
+<!--#include virtual="/css-n-includes/incl_bottom.inc"-->
+<br />Last updated:
+<!--#config timefmt="%A %B %d, %Y"-->
+<!--#echo var="LAST_MODIFIED" -->
+</div>
+<!-- close id whotext -->
+</div>
+<!-- close id footer -->
+</div>
+<!-- end id footwrap -->
+</div>
+<!-- close wrapper -->
+</body>
+
+</html>

@@ -1,0 +1,232 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<title>PDS-SBN: ROSES 2021</title>
+
+<!-- 
+########################
+ALL of the head, style links, header and menu code is in the include. Edit that file with extreme care!!
+########################
+ -->
+<!--#include virtual="/css-n-includes/incl_top.inc"-->
+
+<!-- ################################################ LEFT SIDEBAR ########################################## -->
+<!--#include virtual="/css-n-includes/incl_left-side.inc"-->
+
+<!-- ################################################ RIGHT SIDEBAR ########################################## -->
+<div id="rightcol">
+<div class="sidebarSection">
+<h2>Past ROSES</h2>
+<ul>
+<li><a href="/proposals/ROSES2020.shtml">ROSES 2020</a></li>
+<li><a href="/proposals/ROSES2019.shtml">ROSES 2019</a></li>
+<li><a href="/proposals/ROSES2018.shtml">ROSES 2018</a></li>
+<li><a href="/proposals/ROSES2017.shtml">ROSES 2017</a></li>
+<li><a href="/proposals/ROSES2016.shtml">ROSES 2016</a></li>
+<li><a href="/proposals/ROSES2015.shtml">ROSES 2015</a></li>
+</ul>
+</div>
+<!-- end class sidebarSection -->
+</div>
+<!-- end id rightcol -->
+<!-- ################################################ MAIN ################################################## -->
+<div id="centercol">
+<a name="mainContent"></a>
+<!-- ************************************************** You may begin editing! ************************************************** -->
+<h1>PDS-SBN support for NASA <a href="https://nspires.nasaprs.com/external/solicitations/summary!init.do?solId=%7B7E892B3A-4F62-AEB4-6A08-9DCA1977F31A%7D" onclick="this.target='_blank'">ROSES 2021</a><br /></h1>
+<h2>Some general comments...</h2>
+<h4><em>For any questions regarding the Small Bodies Node, <strong>PLEASE</strong> contact:</em>
+<script type="text/javascript" language="JavaScript"> document.write('<a hre' + 'f="ma' + 'ilto' + ':' + '%6c%6b%6f%6c%6f%6b%6f%6c%40%75%6d%64%2e%65%64%75">&#68;&#114;&#46;&#32;&#76;&#117;&#100;&#109;&#105;&#108;&#108;&#97;&#32;&#75;&#111;&#108;&#111;&#107;&#111;&#108;&#111;&#118;&#97;<\/a>'); </script> !</h4>
+<dl>
+<dt>ROSES Data Management Plan Tips</dt>
+<dd>Almost all proposals to ROSES are required to have a data management plan (DMP) or an explanation of why one is not necessary. <a href="https://pds.nasa.gov/home/proposers/">Some tips have been put together to assist you.</a></dd>
+<dt>PDS4</dt>
+<dd>To better understand constituents and structure of the PDS archives and data formats, please consult <a href="https://pds.jpl.nasa.gov/datastandards/documents/" onclick="this.target='_blank'">PDS 4 Documentation</a>. Notice that PDS has moved to a <a href="https://pds.jpl.nasa.gov/datastandards/about/" onclick="this.target='_blank'">new system of PDS standards called PDS4</a>.</dd>
+</dl>
+
+<p>&nbsp;<br />&nbsp;</p>
+<h1>ROSES Programs</h1>
+<p><a href="https://nspires.nasaprs.com/external/viewrepositorydocument/cmdocumentid=798021/solicitationId=%7B7E892B3A-4F62-AEB4-6A08-9DCA1977F31A%7D/viewSolicitationDocument=1/ROSES-21%20Table%203%202021.html">All program elements.</a></p>
+
+<h2><a href="https://nspires.nasaprs.com/external/solicitations/summary.do?solId={AFE1AED6-884C-DF05-B0F2-A84105803FB9}&path=&method=init" onclick="this.target='_blank'">Planetary Data Archiving, Restoration, and Tools (C.4)</a></h2>
+<p>The Planetary Data Archiving, Restoration, and Tools (PDART) solicits proposals to generate higher-order data products, archive and restore data sets or products, create or consolidate reference databases, generate new reference information, digitize data, and develop or validate software tools.</p>
+
+<h2>Data Analysis Programs (DAP)</h2>
+<table class="important">
+<tr>
+<td><p><strong><em>Proposers please note:</em></strong> If you are planning to use PDS data for your ROSES data analysis proposal (e.g., Discovery Data Analysis Program, Cassini Data Analysis, Lunar Data Analysis, etc), check the archive status indicated on the top of each dataset webpage. A status of "archived" or "locally archived" indicates the data are in their final form, while "certified" indicates there are minor editing corrections still to be made. Data sets with other status levels may be either in active development, or considered to have some significant deficiency. Proposers are urged to consult the ROSES solicitation and the appendix for the Program Element to which they are proposing for the specific guidelines on the use of spacecraft data in general and data sets with known issues in particular.</p>
+</td>
+</tr>
+</table>
+
+<h2><a href="https://nspires.nasaprs.com/external/solicitations/summary.do?solId={EB451F2C-CCCC-FED6-045C-035EE29337E2}&path=&method=init" onclick="this.target='_blank'">New Frontiers Data Analysis Program (C.7)</a></h2>
+<dl>
+<dt>OSIRIS-REx</dt>
+<dd>Mission Overview: <a href="https://www.asteroidmission.org/" onclick="this.target='_blank'">OSIRIS-REx</a>
+<br />Available Data: <a href="/data_sb/missions/orex/index.shtml">OSIRIS-REx Data at SBN</a></dd>
+<dt>New Horizons</dt>
+<dd>Mission Overview: <a href="http://pluto.jhuapl.edu/" onclick="this.target='_blank'">New Horizons</a>
+<br />Available Data: <a href="/data_sb/missions/newhorizons/index.shtml">New Horizons Data at SBN</a></dd>
+</dl>
+
+<h2><a href="https://nspires.nasaprs.com/external/solicitations/summary.do?solId={C3A39264-C41F-EEB8-9FAD-9EB6DB045987}&path=&method=init" onclick="this.target='_blank'">Lunar Data Analysis (C.8)</a> and
+<br /><a href="https://nspires.nasaprs.com/external/solicitations/summary.do?solId={719B4AFE-AF47-827A-1D32-38698DCBF549}&path=&method=init" onclick="this.target='_blank'">Development and Advancement of Lunar Instrumentation Program (C.20)</a>
+</h2>
+<dl>
+<dt>LADEE</dt>
+<dd>Mission Overview: <a href="https://www.nasa.gov/ladee" onclick="this.target='_blank'">LADEE</a>
+<br />Available Data: <a href="/data_sb/missions/ladee/index.shtml">LADEE Data at SBN</a></dd>
+<dt>EPOXI</dt>
+<dd>Mission Overview: <a href="http://epoxi.astro.umd.edu/" onclick="this.target='_blank'">EPOXI Mission</a>
+<br />Available Data: <a href="/data_sb/missions/epoxi/index.shtml">EPOXI Data at SBN</a></dd>
+</dl>
+
+<h2><a href="https://nspires.nasaprs.com/external/solicitations/summary.do?solId={11400D12-C897-EEE8-67B5-480FEE1355F4}&path=&method=init" onclick="this.target='_blank'">Mars Data Analysis (C.9)</a></h2>
+<dl>
+<dt>EPOXI</dt>
+<dd>Mission Overview: <a href="http://epoxi.astro.umd.edu/" onclick="this.target='_blank'">EPOXI Mission</a>
+<br />Available Data: <a href="/data_sb/missions/epoxi/index.shtml">EPOXI Data at SBN</a></dd>
+<dt>Dawn</dt>
+<dd>Mission Overview: <a href="https://solarsystem.nasa.gov/missions/dawn/overview/" onclick="this.target='_blank'">Dawn Mission</a>
+<br />Available Data: <a href="/data_sb/missions/dawn/index.shtml">Dawn Data at SBN</a></dd>
+<dt>Rosetta</dt>
+<dd>Mission Overview: <a href="https://sci.esa.int/web/rosetta/" onclick="this.target='_blank'">Rosetta Mission</a>
+<br />Available Data: <a href="/data_sb/missions/rosetta/index.shtml">Rosetta Data at SBN</a></dd>
+</dl>
+
+<h2><a href="https://nspires.nasaprs.com/external/solicitations/summary.do?solId={F827DEE8-2297-D4EA-8EA6-E2ADA6D93252}&path=&method=init" onclick="this.target='_blank'">Cassini Data Analysis (C.10)</a></h2>
+<dl>
+<dt>Cassini</dt>
+<dd>Mission Overview: <a href="https://saturn.jpl.nasa.gov/" onclick="this.target='_blank'">Cassini</a>
+<br />Available Data: <a href="/data_sb/missions/cassini/index.shtml">Cassini dust data at SBN</a>
+<br />The website to support Cassini DAP can be found at the <a href="https://pds-rings.seti.org/roses/" onclick="this.target='_blank'">Rings Node.</a>
+<br />See also <a href="http://pds-atmospheres.nmsu.edu/" onclick="this.target='_blank'">Cassini and Huygens data at Atmospheres Node</a>.</dd>
+</dl>
+
+<h2><a href="https://nspires.nasaprs.com/external/solicitations/summary.do?solId={A128FA89-58EA-6ADE-F477-ED965C0ACB9B}&path=&method=init" onclick="this.target='_blank'">Discovery Data Analysis (C.11)</a></h2>
+<dl>
+<dt>NEAR</dt>
+<dd>Mission Overview: <a href="http://near.jhuapl.edu/" onclick="this.target='_blank'">NEAR Mission</a>
+<br />Available Data: <a href="/data_sb/missions/near/index.shtml">NEAR Data at SBN</a></dd>
+
+<dt>Stardust</dt>
+<dd>Mission Overview: <a href="http://stardust.jpl.nasa.gov/" onclick="this.target='_blank'">Stardust Mission</a>
+<br />Available Data: <a href="/data_sb/missions/stardust/index.shtml">Stardust Data at SBN</a></dd>
+
+<dt>Stardust-NExT</dt>
+<dd>Mission Overview: <a href="https://www.jpl.nasa.gov/missions/stardust-next" onclick="this.target='_blank'">Stardust-NExT Mission</a>
+<br />Available Data: <a href="/data_sb/missions/stardustnext/index.shtml">Stardust-NExT Data at SBN</a></dd>
+
+<dt>Deep Impact</dt>
+<dd>Mission Overview: <a href="http://deepimpact.umd.edu/" onclick="this.target='_blank'">Deep Impact Mission</a>
+<br />Available Data: <a href="/data_sb/missions/deepimpact/index.shtml">Deep Impact Data at SBN</a></dd>
+
+<dt>EPOXI</dt>
+<dd>Mission Overview: <a href="http://epoxi.astro.umd.edu/" onclick="this.target='_blank'">EPOXI Mission</a>
+<br />Available Data: <a href="/data_sb/missions/epoxi/index.shtml">EPOXI Data at SBN</a></dd>
+
+<dt>Dawn</dt>
+<dd>Mission Overview: <a href="https://solarsystem.nasa.gov/missions/dawn/overview/" onclick="this.target='_blank'">Dawn Mission</a>
+<br />Available Data: <a href="/data_sb/missions/dawn/index.shtml">Dawn Data at SBN</a></dd>
+
+<dt>Rosetta</dt>
+<dd>Mission Overview: <a href="https://sci.esa.int/web/rosetta/" onclick="this.target='_blank'">Rosetta Mission</a>
+<br />Available Data: <a href="/data_sb/missions/rosetta/index.shtml">Rosetta Data at SBN</a></dd>
+</dl>
+
+<h2><a href="https://nspires.nasaprs.com/external/solicitations/summary.do?solId={32EB4621-132E-9D0A-8320-5395D4CB03DF}&path=&method=init" onclick="this.target='_blank'">Planetary Science and Technology Through Analog Research (C.14)</a></h2>
+<p>Lab data at <a href="https://sbn.psi.edu/pds/archive/lab.html">PSI</a> and <a href="/data_sb/target_other.shtml#lab">UMD</a></p>
+
+<h2><a href="https://nspires.nasaprs.com/external/solicitations/summary.do?solId={C0839CEF-1872-7EC8-325A-89F5BAAA2EB4}&path=&method=init" onclick="this.target='_blank'">Planetary Protection Research (C.15)</a>,
+<br /><a href="https://nspires.nasaprs.com/external/solicitations/summary.do?solId={881C061C-5232-05CF-AE57-81064A6BA46D}&path=&method=init" onclick="this.target='_blank'">Yearly Opportunities for Research in Planetary Defense (C.23)</a></h2>
+<p><a href="https://sbn.psi.edu/pds/archive/neos.html">NEO Data at PSI</a>, <a href="https://www.minorplanetcenter.net/iau/mpc.html">MPC</a></p>
+
+<h2><a href="https://nspires.nasaprs.com/external/solicitations/summary.do?solId={78A0C930-57B2-F312-C123-5E66D3743CA2}&path=&method=init" onclick="this.target='_blank'">Exoplanets Research Program (F.3)</a></h2>
+<dl>
+<dt>EPOXI (EPOCh)</dt>
+<dd>Mission Overview: <a href="http://epoxi.astro.umd.edu/" onclick="this.target='_blank'">EPOXI</a>
+<br />Available Data: <a href="/data_sb/missions/epoxi/index.shtml">EPOXI data at SBN</a> (Exoplanet transits and Earth data)</dd>
+</dl>
+
+
+<h2><a href="https://nspires.nasaprs.com/external/solicitations/summary.do?solId={B170371F-6DDC-921C-2E85-1DEC49874C52}&path=&method=init" onclick="this.target='_blank'">Martian Moons eXploration Participating Scientist Program (C.24)</a>,
+<br /><a href="https://nspires.nasaprs.com/external/solicitations/summary.do?solId={25E361E0-C3ED-533F-6833-FE0059DFACCB}&path=&method=init" onclick="this.target='_blank'">Juno Participating Scientist Program (C.25)</a></h2>
+<p><a href="https://sbn.psi.edu/pds/archive/sat.html">Planetary Satellite Data at PSI</a></p>
+
+
+<h2>SBN data can be also used for the following ROSES programs:</h2>
+<ul>
+<li><a href="https://nspires.nasaprs.com/external/solicitations/summary.do?solId={D9A7AB87-436F-7DAE-0463-3D89895AB1CE}&path=&method=init" onclick="this.target='_blank'">Emerging Worlds (C.2)</a></li>
+<li><a href="https://nspires.nasaprs.com/external/solicitations/summary.do?solId={E2DCE8A5-BAA7-8490-9982-87FE486244C7}&path=&method=init" onclick="this.target='_blank'">Solar System Workings (C.3)</a></li>
+<li><a href="https://nspires.nasaprs.com/external/solicitations/summary.do?solId={D0B72A79-A27C-DF34-FA6E-E448B5C6B320}&path=&method=init" onclick="this.target='_blank'">Exobiology (C.5)</a></li>
+<li><a href="https://nspires.nasaprs.com/external/solicitations/summary.do?solId={DD1CC787-0EF8-03EA-2DDF-55A5A2E9B60A}&path=&method=init" onclick="this.target='_blank'">Solar System Observations (C.6)</a></li>
+<li><a href="https://nspires.nasaprs.com/external/solicitations/summary.do?solId={1CBD8944-7CB8-363C-7D37-32FA3D6F0AD7}&path=&method=init" onclick="this.target='_blank'">Habitable Worlds (F.4)</a></li>
+<li><a href="https://nspires.nasaprs.com/external/solicitations/summary.do?solId={A3C4E830-E305-C9C7-536E-A7744AEDECC0}&path=&method=init" onclick="this.target='_blank'">Planetary Instrument Concepts for the Advancement of Solar System Observations (C.12)</a></li>
+<li><a href="https://nspires.nasaprs.com/external/solicitations/summary.do?solId={2DD42D29-C286-95B3-8711-FAC2A45FA2AA}&path=&method=init" onclick="this.target='_blank'">Maturation of Instruments for Solar System Exploration (C.13)</a></li>
+<li><a href="https://nspires.nasaprs.com/external/solicitations/summary.do?solId={3EFD17E2-1FC4-BFCF-B647-2FC0B9846793}&path=&method=init" onclick="this.target='_blank'">Laboratory Analysis of Returned Samples (C.16)</a></li>
+<li><a href="https://nspires.nasaprs.com/external/solicitations/summary.do?solId={E01FBA77-15A6-8662-8207-90623D37CA2A}&path=&method=init" onclick="this.target='_blank'">Planetary Major Equipment and Facilities (C.17)</a></li>
+</ul>
+
+<p>Mission Data at SBN:</p>
+<ul>
+<li><a href="/data_sb/missions/bopps/index.shtml">BOPPS</a>: C/2013 A1 (Siding Spring), C/2012 K1 (PanSTARRS), C/2014 E2 (Jacques), (1) Ceres</li>
+<li><a href="/data_sb/missions/brrison/index.shtml">BRRISON</a>: C/2012 S1 (ISON)</li>
+<li><a href="/data_sb/missions/cassini/index.shtml">Cassini</a>: Interplanetary dust</li>
+<!-- <li><a href="/data_sb/missions/contour/index.shtml">Contour</a>: Safed ground calibrations</li> -->
+<!-- <li><a href="/data_sb/missions/dart/index.shtml">Double Asteroid Redirection Test (DART)</a>: Near-Earth binary asteroid Didymos, asteroid deflection test</li> -->
+<li><a href="/data_sb/missions/dawn/index.shtml">Dawn</a>: 1&nbsp;Ceres, 4&nbsp;Vesta</li>
+<li><a href="/data_sb/missions/deepimpact/index.shtml">Deep Impact</a>: 9P/Tempel&nbsp;1, Earth/Moon/Jupiter as calibrators</li>
+<li><a href="/data_sb/missions/deepspace1/index.shtml">Deep Space&nbsp;1</a>: 9969 Braille, 19P/Borrelly&nbsp;1, Cometary Dust</li>
+<li><a href="/data_sb/missions/epoxi/index.shtml">EPOXI</a>: 103P/Hartley&nbsp;2, Transiting exoplanet systems; Earth and Mars as exoplanet analogs, Moon; C/Garradd (2009 P1), C/ISON (2012 S1)</li>
+<li><a href="/data_sb/missions/galileo/index.shtml">Galileo</a>: 243 Ida and Dactyl, 951 Gaspra, Small planetary satellites, D/SL9, Interplanetary dust</li>
+<li><a href="/data_sb/missions/giotto/index.shtml">Giotto</a>: 1P/Halley, Interplanetary dust</li>
+<li><a href="/data_sb/missions/gem/index.shtml">Giotto Extended Mission</a>: 26P/Grigg-Skjellerup</li>
+<li><a href="/data_sb/missions/hayabusa/index.shtml">Hayabusa</a>: 25143 Itokawa</li>
+<li><a href="/data_sb/missions/hayabusa2/index.shtml">Hayabusa 2</a>: asteroid Ryugu</li>
+<li><a href="/data_sb/missions/ladee/index.shtml">LADEE</a>: lunar dust</li>
+<!-- <li><a href="/data_sb/missions/lucy/index.shtml">Lucy</a>: Jupiter Trojans</li> -->
+<li><a href="/data_sb/missions/mariner9/index.shtml">Mariner 9</a>: Deimos, Phobos</li>
+<li><a href="/data_sb/missions/near/index.shtml">NEAR</a>: 433 Eros, 253 Mathilde, C/Hyakutake (1996 B2)</li>
+<li><a href="/data_sb/missions/newhorizons/index.shtml">New Horizons</a>: Pluto, Charon, Kuiper Belt Objects, Earth, Jupiter, Jovian satellites and rings, Interplanetary dust, Solar wind</li>
+<li><a href="/data_sb/missions/nh-kem/index.shtml">NH Kuiper Belt Extended Mission (KEM)</a>: Kuiper Belt Objects, Centaurs, interplanetary medium</li>
+<li><a href="/data_sb/missions/orex/index.shtml">OSIRIS-REx</a>: Bennu</li>
+<li><a href="/data_sb/missions/phobos2/index.shtml">Phobos 2</a></li><!-- <li><a href="/data_sb/missions/phobos_sample/index.shtml">Phobos Sample Return</a>: Phobos, Mars</li> -->
+<li><a href="/data_sb/missions/rosetta/index.shtml">Rosetta</a>: 2867 Steins, 21 Lutetia, 67P/Churyumov-Gerasimenko, 9P/Tempel&nbsp;1, C/2002 T7 (LINEAR), Jupiter, Earth/Mars as calibrators
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/data_sb/missions/rosetta/c-g.shtml">67P/Churyumov-Gerasimenko Observations</a></li>
+<li><a href="/data_sb/missions/sakigake/index.shtml">Sakigake</a>: 1P/Halley, Interplanetary dust</li>
+<li><a href="/data_sb/missions/stardust/index.shtml">Stardust</a>: 5535 Annefrank, 81P/Wild&nbsp;2, Cometary dust</li>
+<li><a href="/data_sb/missions/stardustnext/index.shtml">Stardust-NExT</a>: 9P/Tempel&nbsp;1</li>
+<li><a href="/data_sb/missions/suisei/index.shtml">Suisei</a>: 1P/Halley, Interplanetary dust</li>
+<li><a href="/data_sb/missions/vega1/index.shtml">Vega&nbsp;1</a>: 1P/Halley, Interplanetary dust</li>
+<li><a href="/data_sb/missions/vega2/index.shtml">Vega&nbsp;2</a>: 1P/Halley, Interplanetary dust</li>
+<li><a href="/data_sb/missions/vikingorbiter/index.shtml">Viking Orbiters&nbsp;1&nbsp;&amp;&nbsp;2</a>: Phobos, Deimos</li>
+<li><a href="/data_sb/missions/voyager/index.shtml">Voyager&nbsp;1&nbsp;&amp;&nbsp;2</a>: Small planetary satellites<br /><br /></li>
+
+<li><a href="/data_sb/missions/hst/index.shtml">HST</a>: 1&nbsp;Ceres, 4&nbsp;Vesta</li>
+<li><a href="/data_sb/missions/iras/index.shtml">IRAS</a>: Interplanetary dust, Asteroids, 9P/Tempel&nbsp;1</li>
+<li><a href="/data_sb/missions/iue/index.shtml">IUE</a>: 38 comets including 1P/Halley, 19P/Borrelly 1, 21P/Giacobini-Zinner, 9P/Tempel&nbsp;1, 67P/Churyumov-Gerasimenko</li>
+<li><a href="/data_sb/missions/msx/index.shtml">MSX</a>: Interplanetary dust, Asteroids, Comets</li>
+<li><a href="/data_sb/missions/neowise/index.shtml">NEOWISE</a>: Survey of small bodies in the IR</li>
+<li><a href="/data_sb/missions/soho/index.shtml">SOHO</a>: Sungrazing comets; surveys of various short and long period comets</li>
+<li><a href="/data_sb/missions/ulysses/index.shtml">Ulysses</a>: Interplanetary dust</li>
+<li><a href="/data_sb/missions/ice/index.shtml">ICE/ISEE</a>: 21P/Giacobini-Zinner</li>
+</ul>
+
+<!-- ************************************************** End editing! ************************************************** -->
+<!--#include virtual="/css-n-includes/incl_bottom.inc"-->
+<br />Last updated:
+<!--#config timefmt="%A %B %d, %Y"-->
+<!--#echo var="LAST_MODIFIED" -->
+</div>
+<!-- close id whotext -->
+</div>
+<!-- close id footer -->
+</div>
+<!-- end id footwrap -->
+</div>
+<!-- close wrapper -->
+</body>
+
+</html>

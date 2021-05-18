@@ -1,0 +1,174 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<title>PDS-SBN: Related Links</title>
+
+<!-- 
+########################
+ALL of the head, style links, header and menu code is in the include. Edit that file with extreme care!!
+########################
+ -->
+<!--#include virtual="/css-n-includes/incl_top.inc"-->
+
+<!-- ################################################ LEFT SIDEBAR ########################################## -->
+<!--#include virtual="/css-n-includes/incl_left-side.inc"-->
+
+<!-- ################################################ MAIN ################################################## -->
+<div id="centerwide">
+<a name="mainContent"></a>
+<!-- ************************************************** You may begin editing! ************************************************** -->
+<h1>Related Links</h1>
+<p>(Links to external sites will open in new tabs.)</p>
+
+<h2>Small Body Ephemerides</h2>
+<ul>
+<li><a href="https://ssd.jpl.nasa.gov/?horizons" onclick="this.target='_blank'">HORIZONS</a> JPL Solar System Dynamics ephemeris generator</li>
+<li><a href="ftp://ftp.lowell.edu/pub/elgb/astorb.html" onclick="this.target='_blank'">The Asteroid Orbital Elements Database</a> (Ted Bowell, Lowell Observatory)</li>
+</ul>
+
+<h2>Astronomical Information and Data Resources</h2>
+<ul>
+<li><a href="https://ssd.jpl.nasa.gov/" onclick="this.target='_blank'">JPL Solar Systems Dynamics (SSD)</a></li>
+<li><a href="http://www.cbat.eps.harvard.edu/index.html" onclick="this.target='_blank'">IAU Central Bureau for Astronomical Telegrams</a></li>
+<li><a href="https://minorplanetcenter.net" onclick="this.target='_blank'">IAU Minor Planet Center</a></li>
+<li><a href="http://www.observatorij.org/" onclick="this.target='blank'">Crni Vrh Observatory Asteroid and Comet Observations</a></li>
+<li><a href="https://lowell.edu/research/" onclick="this.target='blank'">Lowell Observatory Research Programs</a></li>
+</ul>
+
+<h2>Asteroids (Observing, Research,...)</h2>
+<ul>
+<li><a href="http://www.gaiagosa.eu/" onclick="this.target='_blank'">Gaia-Groundbased Observational Service for Asteroids (Gaia-GOSA)</a></li>
+<li><a href="http://asteroid.lowell.edu/" onclick="this.target='_blank'">Lowell Observatory Asteroid Services</a></li>
+<li><a href="http://neo.jpl.nasa.gov/" onclick="this.target='_blank'">Near-Earth Object Program</a> at JPL offers an interactive orbit visualization tool as well as a link to an ephemeris generator.</li>
+<li><a href="http://hamilton.dm.unipi.it/astdys/" onclick="this.target='_blank'">Asteroids Dynamic Site (AstDyS-2)</a></li>
+<li><a href="http://newton.dm.unipi.it/neodys/" onclick="this.target='_blank'">Near Earth Objects Dynamic Site (NEODyS)</a></li>
+<li><a href="http://neo.jpl.nasa.gov/nhats/" onclick="this.target='_blank'">Near-Earth Object Human Space Flight Accessible Targets Study (NHATS)</a></li>
+
+<!-- <li><a href="http://www.vsuastro.dyndns.org/" onclick="this.target='_blank'">VsuAstro</a> (Solar System Dynamics, Encounter Detection and Observation Planning)</li> -->
+<li><a href="http://www.asu.cas.cz/~ppravec/neo_old.htm" onclick="this.target='_blank'">Ondrejov NEO Photometric Program</a></li>
+<li><a href="http://alcdef.org/" onclick="this.target='_blank'">Asteroid Lightcurve Photometry Database</a></li><!-- <li><a href="http://earn.dlr.de/" onclick="this.target='_blank'">European Asteroid Research Node (EARN)</a>, located at the Institute of Planetary Exploration in Berlin, Germany. This site was established to support communication and information exchange among observational and theoretical asteroid researchers.</li> -->
+<li><a href="https://www.esa.int/Safety_Security/Near-Earth_Object_Coordination_Centre" onclick="this.target='_blank'">Near-Earth Object Coordination Centre</a></li>
+<li><a href="http://echo.jpl.nasa.gov/" onclick="this.target='_blank'">Asteroid Radar Research</a></li>
+<li><a href="http://www.euronear.org/" onclick="this.target='_blank'">The European Near Earth Asteroids Research (EURONEAR)</a></li>
+
+<!-- <li><a href="https://neat.jpl.nasa.gov/" onclick="this.target='_blank'">Near-Earth Asteroid Tracking (NEAT)</a></li> -->
+</ul>
+
+<h2>Comets (Observing, Research,...)</h2>
+<ul>
+<li><a href="http://www.cometchasing.skyhound.com/" onclick="this.target='_blank'">Comet Chasing</a></li>
+<li><a href="http://cometography.com/" onclick="this.target='_blank'">Cometography</a> Page</li>
+<li><a href="https://cometografia.es/" onclick="this.target='_blank'">Cometografia</a></li>
+<li><a href="http://aerith.net/" onclick="this.target='_blank'">Seiichi Yoshida's Comet Observing</a></li>
+<li><a href="http://fg-kometen.vdsastro.de/fgk_hpe.htm" onclick="this.target='_blank'">The German comet group</a></li>
+<li><a href="http://www.ast.cam.ac.uk/~jds/" onclick="this.target='_blank'">British Astronomical Association</a> Comet Section</li>
+</ul>
+
+<h2>Man-made Satellites</h2>
+<ul>
+<li><a href="https://minorplanetcenter.net/iau/artsats/artsats.html" onclick="this.target='_blank'">IAU MPC: The Distant Artificial Satellites Observation Page</a></li>
+<li><a href="http://www.heavens-above.com/" onclick="this.target='_blank'">Heavens Above</a></li>
+<li><a href="https://www.space-track.org/" onclick="this.target='_blank'">Space Track: The Source for Space Surveillance Data</a></li>
+</ul>
+
+<h2>Impact Hazards</h2>
+<ul>
+<!-- <li><a href="http://impact.arc.nasa.gov/" onclick="this.target='_blank'">Asteroid and Comet Impact Hazards</a></li> -->
+<li><a href="https://cneos.jpl.nasa.gov/" onclick="this.target='_blank'">Center for Near Earth Object Studies</a></li><!-- <li><a href="http://spaceguard.iaps.inaf.it/" onclick="this.target='_blank'">Spaceguard Foundation</a></li> -->
+<li><a href="https://spacewatch.lpl.arizona.edu/" onclick="this.target='_blank'">The Spacewatch Project</a></li>
+</ul>
+
+<h2>Meteors, Meteorites</h2>
+<ul>
+<!-- <li><a href="https://curator.jsc.nasa.gov/" onclick="this.target='_blank'">Astromaterials Acquisition and Curation Office</a></li> -->
+</ul>
+
+<h2>Imagery, Plots</h2>
+<ul>
+<li><a href="https://archives.esac.esa.int/psa/" onclick="this.target='_blank'">ESA's Planetary Science Archive</a></li>
+<li><a href="https://planetarydata.org/" onclick="this.target='_blank'">International Planetary Data Alliance</a></li>
+<li><a href="http://vo.imcce.fr/webservices/skybot/" onclick="this.target='_blank'">The Virtual Observatory Sky Body Tracker (SkyBoT)</a> (allows users to seek and identify all the known solar system objects in a field of view)</li>
+<li><a href="http://archive.stsci.edu/cgi-bin/dss_form" onclick="this.target='_blank'">The STScI Digitized Sky Survey</a></li>
+<li><a href="http://www.usvao.org/" onclick="this.target='_blank'">US Virtual Astronomical Observatory</a>
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.virtualobservatory.org/" onclick="this.target='_blank'">VAO Education Site</a></li>
+<li><a href="http://irsa.ipac.caltech.edu/applications/wise/" onclick="this.target='_blank'">NASA/IPAC Infrared Science Archive</a></li>
+<li><a href="https://nssdc.gsfc.nasa.gov/photo_gallery/" onclick="this.target='_blank'">NSSDC Photo Gallery</a></li>
+<li><a href="https://airandspace.si.edu/research/resources/rpif/" onclick="this.target='_blank'">Regional Planetary Images Facility</a></li>
+<li><a href="http://www.sdss.org/" onclick="this.target='_blank'">Sloan Digital Sky Survey</a></li>
+<li><a href="https://skyview.gsfc.nasa.gov/skymorph/" onclick="this.target='_blank'">SkyMorph</a></li>
+<li><a href="https://www.usno.navy.mil/USNO/astrometry" onclick="this.target='_blank'">USNO Astrometry</a></li>
+<li><a href="http://www.astro.caltech.edu/~george/dposs/" onclick="this.target='_blank'">The Palomar Digital Sky Survey (DPOSS)</a> (unfunded at the moment)</li>
+<li><a href="http://www.minorplanetcenter.net/iau/lists/InnerPlot.html" onclick="this.target='_blank'">IAU MPC: Plot of the Inner Solar System</a></li>
+<li><a href="http://www.minorplanetcenter.net/iau/lists/OuterPlot.html" onclick="this.target='_blank'">IAU MPC: Plot of the Outer Solar System</a></li>
+<li><a href="MA_images/index.shtml" onclick="this.target='_blank'">Hale-Bopp images from Mike A'Hearn</a></li>
+</ul>
+
+<h2>Small Body (General Information)</h2>
+<ul>
+<li><a href="http://nineplanets.org/" onclick="this.target='_blank'">The Nine Planets Solar System Tour</a></li>
+<li><a href="http://www.solarviews.com/" onclick="this.target='_blank'">Views of the Solar System</a></li>
+<li><a href="https://ssd.jpl.nasa.gov/?bodies" onclick="this.target='_blank'">SSD: Solar System Bodies</a></li>
+<li><a href="https://www.iau.org/" onclick="this.target='_blank'">International Astronomical Union (IAU)</a>
+<ul><li><a href="https://www.iau.org/public/naming/#minorplanets" onclick="this.target='_blank'">Naming Minor Planets</a></li><li><a href="https://www.iau.org/public/nea/" onclick="this.target='_blank'">Near Earth Asteroids (NEAs): A Chronology of Milestones</a></li>
+</ul>
+</li>
+<li><a href="https://stardate.org/" onclick="this.target='_blank'">StarDate</a> Online</li>
+<li><a href="http://www.rmg.co.uk/royal-observatory" onclick="this.target='_blank'">Royal Greenwich</a> Observatory</li>
+<li><a href="http://www.skyandtelescope.com/" onclick="this.target='_blank'">Sky and Telescope Homepage</a> is a good source for information on recent and upcoming comets.</li>
+</ul>
+
+<h2>Small Body Missions</h2>
+<ul>
+<li><a href="https://www.nasa.gov/missions/index.html" onclick="this.target='_blank'">NASA Missions</a> (all)</li>
+<li><a href="https://www.nasa.gov/planetarymissions/index.html" onclick="this.target='_blank'">NASA Planetary Missions</a></li>
+<li><a href="http://www.esa.int/ESA" onclick="this.target='_blank'">ESA's Solar and Planetary Missions</a></li>
+<li><a href="http://www.jaxa.jp/countdown/f17/special/exploration_e.html" onclick="this.target='_blank'">JAXA's Planet Exploration Missions</a></li>
+<li><a href="http://planetary.org/explore/space-topics/space-missions/missions-beyond-mars.html" onclick="this.target='_blank'">The Planetary Society: Missions beyond Mars</a></li>
+</ul>
+
+<h2>Blogs and mailing lists</h2>
+<ul>
+<li><a href="http://remanzacco.blogspot.com/" onclick="this.target='_blank'">Comets &amp;Neo news</a> (blog for Remanzacco Observatory)</li>
+<li><a href="https://groups.io/g/mpml" onclick="this.target='_blank'">Minor Planet Mailing List [mpml]</a></li>
+</ul>
+
+<h2>Journals and Papers</h2>
+<ul>
+<li><a href="http://adswww.harvard.edu/" onclick="this.target='_blank'">The SAO/NASA Astrophysics Data System</a></li>
+<li><a href="https://arxiv.org/list/astro-ph.EP/recent/" onclick="this.target='_blank'">arXiv Astrophysics: Earth and Planetary Astronomy</a>, recent papers</li>
+<li><a href="http://digitalcommons.library.arizona.edu/holdings/journal?r=uadc://azu_maps/" onclick="this.target='_blank'">Meteoritics and Planetary Science</a></li>
+<li><a href="http://www.icq.eps.harvard.edu/CCDmags.html" onclick="this.target='_blank'">CCD Photometry of Faint Comets</li>
+</ul>
+
+<h2>Related Books</h2>
+<ul>
+<li>Festou M.C, Keller H.U., Weaver H.A. <span class="title">Comets II</span>. The University of Arizona Press, Tucson, 2004</li>
+<li>Bottke W.F., Cellino A., Paolicchi P., Binzel R.P. <span class="title">Asteroids III</span>. The University of Arizona Press, Tucson, 2002</li>
+<li>Weissman, P., McFadden, L.A., Johnson, T. <a href="https://www.elsevier.com/books/encyclopedia-of-the-solar-system/weissman/978-0-08-057313-7" onclick="this.target='_blank'"><span class="title">Encyclopedia of the Solar System, 1st Ed.</span></a>. Academic Press, August 1998.</li>
+<li>McFadden, L.A., Johnson, T., Weissman, P. <a href="https://www.elsevier.com/books/encyclopedia-of-the-solar-system/mcfadden/978-0-12-088589-3" onclick="this.target='_blank'"><span class="title">Encyclopedia of the Solar System, 2nd Ed.</span></a>. Academic Press, December 2006.</li>
+<li>Spohn, T., Breuer, D., Johnson, T. <a href="https://www.elsevier.com/books/encyclopedia-of-the-solar-system/spohn/978-0-12-415845-0" onclick="this.target='_blank'"><span class="title">Encyclopedia of the Solar System, 2nd Ed.</span></a>. Elsevier, April 2014.</li>
+<li>Chaisson, E., McMillian, S. <span class="title">Astronomy</span>. Prentice-Hall, Inc., Englewood Cliffs, NJ, 1995.</li>
+<li>Bailey, M.E., Clube, S.V.M., Napier, W.M. <span class="title">The Origin of Comets</span>. Pergamon Press, New York, 1990.</li>
+<li>Binzel, R.P., Gehrels, T., Matthews, M.S., Editors. <span class="title">Asteroids II</span>. The University of Arizona Press, Tucson, 1989.</li>
+<li>Brandt, J.C., Chapman, R.D. <span class="title">The Comet Book</span>. Jones and Bartlett Publications, Inc., Boston, 1984.</li>
+<li>Wilkening L.L, Matthews M.S. <span class="title">Comets</span>. The University of Arizona Press, 1982</li>
+</ul>
+
+<!-- ************************************************** End editing! ************************************************** -->
+<!--#include virtual="/css-n-includes/incl_bottom.inc"-->
+<br />Last updated:
+<!--#config timefmt="%A %B %d, %Y"-->
+<!--#echo var="LAST_MODIFIED" -->
+</div>
+<!-- close id whotext -->
+</div>
+<!-- close id footer -->
+</div>
+<!-- end id footwrap -->
+</div>
+<!-- close wrapper -->
+</body>
+
+</html>

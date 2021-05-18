@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<title>PDS-SBN: Testing Local Links!!</title>
+
+<!-- 
+########################
+ALL of the head, style links, header and menu code is in the include. Edit that file with extreme care!!
+########################
+ -->
+<!--#include virtual="/css-n-includes/incl_top.inc"-->
+
+<!-- ################################################ LEFT SIDEBAR ########################################## -->
+<!--#include virtual="/css-n-includes/incl_left-side.inc"-->
+
+<!-- ################################################ MAIN ################################################## -->
+<div id="centerwide">
+<a name="mainContent"></a>
+<!-- ************************************************** You may begin editing! ************************************************** -->
+<h1>Editing Notes for editing the PDS-SBN website</h1>
+<h2>Email addresses</h2>
+<p>There should be no plain text email addresses on the website!! We are using <!-- <a href="http://www.mways.co.uk/prog/hidemail.php" onclick="this.target='_blank'"> -->Protect email addresses in web pages (Version 2.1)<!-- </a> --> to generate the javascipt used in the incl_bottom.inc. Addresses elsewhere in the site should at a minimum use the 'no Javascript' output.
+<br />3 Feb 2015: It appears the website mways no longer exists, so might have to copy an existing coded email (on our site) and use as a template and then use <a href="http://www.htmlhelp.com/reference/html40/entities/symbols.html">www.htmlhelp.com/reference/html40/entities/symbols.html</a> to switch out letters.
+<br />20181105 -- try https://cryptii.com/pipes/text-decimal and https://www.w3schools.com/charsets/ref_utf_basic_latin.asp</p>
+
+<p>Alternate encoders:</p>
+<ul>
+<li>http://codebeautify.org/string-hex-converter (input email! hex codes, add in % before pairs; for the email part)</li>
+<li>https://www.freeformatter.com/html-entities.html (hunt through list)</li>
+<li>https://mothereff.in/html-entities </li>
+<li>http://hivelogic.com/enkoder/index.php</li>
+<li>http://www.hcidata.info/obfuscate-email-address.htm</li>
+<li>http://www.7is7.com/software/chars.html</li>
+</ul>
+
+<h2>Testing Local Links</h2>
+<p>This file is located in the <em>css-n-includes/</em> subdirectory in the PDS/SBN DocumentRoot, which is <code>/n/pds/www/html</code>. Following are examples of various types of links from this HTML page (<em>edit_notes.shtml</em>) to the places in question.</p>
+<ul>
+<li>To link to the local <em>full_test_2col.shtml</em> file, which is in the same directory as this HTML file, use:
+<pre><code>
+	<a href="full_test_2col.shtml">href=&quot;full_test_2col.shtml&quot;</a>
+</code></pre></li>
+<li>To link to a file which is in subdirectory of the directory this HTML file is in, use:
+<pre><code>
+	href=&quot;subdirectory/file.shtml&quot;
+</code></pre></li>
+<li>To link to a file in another subdirectory such as data_sb, which is in a subdirectory of DocumentRoot (<em>/n/pds/www/html/data_sb</em>), use:
+<pre><code>
+	<a href="/data_sb/index.shtml">href=&quot;/data_sb/index.shtml&quot;</a>
+</code></pre>
+<p>Note that this will <em>not</em> work:</p>
+<pre><code>
+	<a href="/data_sb/index.shtml">href=&quot;data_sb/index.shtml&quot;</a>
+</code></pre>
+<p>because there is no &quot;data_sb&quot; subdirectory in the directory containing <em>this page</em>. Pay attention to the leading / !!</p>
+</li>
+<li>There is an alias defined in the server to point to our review pages. It points to <code>/n/sbn/review</code>, which in turn contains subdirectories for each of our reviews. To link to the <em>index.html</em> page for the 2009 Rosetta review, use:
+<pre><code>
+	<a href="/review/rosetta200910/index.html">href=&quot;/review/rosetta2009/index.html&quot;</a>
+</code></pre></li>
+</ul>
+
+<h2>SHTML</h2>
+<p>Because this site uses includes, we've had to make the pages have the .shtml extension so that they get parsed correctly by the server.</p>
+
+<h2>Templates</h2>
+<!-- ************************************************** End editing! ************************************************** -->
+<!--#include virtual="/css-n-includes/incl_bottom.inc"-->
+<br />Last updated: <!--#config timefmt="%A %B %d, %Y"--><!--#echo var="LAST_MODIFIED" --></div><!-- close id whotext -->
+</div><!-- close id footer -->
+</div><!-- end id footwrap -->
+</div><!-- close wrapper -->
+</body>
+</html>

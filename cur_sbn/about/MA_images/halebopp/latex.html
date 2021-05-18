@@ -1,0 +1,106 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+ <TITLE>Latex templates</title>
+</HEAD>
+
+<BODY TEXT="#000000" LINK="#0000CC" VLINK="#FF0033" ALINK="#FF0033" 
+BGCOLOR="#ffffff">
+
+
+<h2>LaTeX Templates</h2>
+
+The formatting of the manuscripts is to be done using the LaTeX
+templates provided by Kluwer Academic Press. The templates are
+available at 
+<a href="http://kapis.www.wkap.nl/kapis/CGI-BIN/WORLD/jrnlstyle.htm?0167-9295">
+Kluwer's Web Site</a>.
+<p>
+
+Because there are several different versions of LaTeX in common use,
+there may be some problems using the style files. The style files
+were all designed to be used in LaTeX2.09, but many institutions are
+now using LaTeX2e, which is not well standardized. If you are running
+LaTeX2e, you will probably not be able to run LaTeX on the file
+kapins.tex in order to produce a nicely formatted set of insructions.
+You are likely to get an error message that the command \verb is not
+recognized. If this is the case, you can insert the following
+code in the preamble to kapins.tex in order to fix the problem:
+<p>
+<pre>
+\makeatletter
+\def\verb{\bgroup \catcode``=13 \@noligs
+\verbfont \let\do\@makeother \dospecials
+\@ifstar{\@sverb}{\@verb}}
+\makeatother
+(insert before the command \begin{opening})
+</pre>
+<p>
+It is also the case that LaTeX2.09 required separate style files for
+including figures into documents. These additional style files are
+on the same web page at Kluwer as are the basic files (see link above).
+However, some (most?, all?) versions of LaTeX2e have these features
+built into the basic compiler. You will not need the special style
+files but instead you can insert epsfig or psfig into the argument
+of the documentstyle command and omit the \include command as follows;
+<p>
+<pre>
+\documentstyle[epsfig, namedreferences]{kluwer}
+%\include{psfig} (i.e. do not use the include command)
+%and then for the figure environment (for example):
+\begin{figure}
+ \epsfig{file=filename.eps, width=12cm}
+ \caption{My caption.}
+\end{figure}
+</pre>
+<p>
+
+In the instructions for submission which you will get by running
+LaTeX on the file kapins.tex, you will find some instances in which
+you are told to choose a format according to the style of the journal
+to which the paper is being submitted. The default style for Earth,
+Moon, and Planets includes the following choices within kapins.tex:
+<ul>
+ <li>TITLE SHOULD BE IN ALL CAPS.
+ <li>An address for correspondence environment, {ao}, which includes
+ your email address as well as your mailing address,
+ <li>An abbreviations command only if you use abbreviations in the text
+ that are not otherwise defined,
+ <li>A \keywords{} command which lists a FEW keywords, such as
+ \keyword{comets, chemistry, nucleus},
+</ul>
+<p>
+
+Here are a couple of other points regarding the style that should
+be kept in mind when preparing your LaTeX file.
+<ul>
+ <li>Chemical formulae used in the text should be in Roman font, not
+ in italic font. If you are using equation mode to insert subscripts,
+ this means that you should, e.g., use "CO$_2$" 
+ instead of "$CO_2$".
+ <li>References, whether created manually or with BiBTeX, which
+ have comma-separated fields, are sorted alphabetically, and
+ include titles of journal articles and ending page numbers.
+ (Past practice in the journal has varied but we hope to establish
+ a common style for these special issues.)
+ <li>Units, when used in the text, are normally set with superscripts for
+ negative powers (rather than using the "/" notation) and are also
+ in Roman font, e.g., use "km s$^{-1}$" rather
+ than "$km s^-1$" or $kms^-1$".
+</ul>
+<p>
+If there are any questions about the style, authors should examine
+a recent issue of Earth, Moon, and Planets for examples. References
+to other papers presented at the conference and to be included in
+the procedings should be referenced as Earth, Moon and Planets in 1998
+but with the volume and page numbers marked 'TBD'.
+<p>
+
+<hr>
+Return to <a href="http://www.astro.umd.edu/~ma">M. F. A'Hearn's Home Page</a>.
+<hr>
+Created: 1998/2/21, <i>mfa</i>; 
+Last Update: 1998/2/21, <i>mfa</i>
+
+</BODY>
+</HTML>

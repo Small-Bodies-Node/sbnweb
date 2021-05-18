@@ -1,0 +1,143 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<title>PDS-SBN: ROSES 2014</title>
+
+<!-- 
+########################
+ALL of the head, style links, header and menu code is in the include. Edit that file with extreme care!!
+########################
+ -->
+<!--#include virtual="/css-n-includes/incl_top.inc"-->
+
+<!-- ################################################ LEFT SIDEBAR ########################################## -->
+<!--#include virtual="/css-n-includes/incl_left-side.inc"-->
+
+<!-- ################################################ MAIN ################################################## -->
+<div id="centerwide">
+<a name="mainContent"></a>
+<!-- ************************************************** You may begin editing! ************************************************** -->
+<h1>PDS-SBN support for NASA <a href="https://nspires.nasaprs.com/external/solicitations/summary.do?method=init&solId={5924CEB3-4EB7-FEF1-C85B-DD5745C1331C}&path=open" onclick="this.target='_blank'">ROSES 2014</a><br />Data Analysis Programs (DAP)</h1>
+<table class="important">
+<tr>
+<td><p><span class="red">ATTENTION!</span> If you are planning to use PDS data for your ROSES proposal, <strong><em>please</em></strong> check its status (indicated on the top of the dataset webpage). Only the datasets with the status &quot; <span class="green">certified</span>,&quot; &quot;<span class="green">archived</span>,&quot; or &quot;<span class="green">locally archived</span>&quot; are <span class="green">eligible</span> for the proposals. Datasets with the status &quot; <span class="red">non-certified</span>,&quot; &quot;<span class="red">safed</span>,&quot; or &quot;<span class="red">in peer review</span>&quot; are <span class="red">not eligible</span> for any DAP programs.</p>
+</td>
+</tr>
+</table>
+<h2><a href="https://nspires.nasaprs.com/external/solicitations/summary.do?method=init&solId={C33C9D34-76BB-A818-F62C-2069F03A4C17}&path=open" onclick="this.target='_blank'">Lunar Data Analysis (ROSES, C.8)</a></h2>
+<dl>
+<dt>EPOXI</dt>
+<dd>Mission Overview: <a href="http://epoxi.astro.umd.edu/" onclick="this.target='_blank'">EPOXI Mission</a>
+<br />Available Data: <a href="/data_sb/missions/epoxi/index.shtml">EPOXI Data at SBN</a></dd>
+</dl>
+<h2><a href="https://nspires.nasaprs.com/external/solicitations/summary.do?method=init&solId={28E683BC-22F3-F1D6-0C1E-15188201287F}&path=open" onclick="this.target='_blank'">Mars Data Analysis (ROSES, C.9)</a></h2>
+<dl>
+<dt>EPOXI</dt>
+<dd>Mission Overview: <a href="http://epoxi.astro.umd.edu/" onclick="this.target='_blank'">EPOXI Mission</a>
+<br />Available Data: <a href="/data_sb/missions/epoxi/index.shtml">EPOXI Data at SBN</a></dd>
+<dt>Dawn</dt>
+<dd>Mission Overview: <a href="https://solarsystem.nasa.gov/missions/dawn/overview/" onclick="this.target='_blank'">Dawn Mission</a>
+<br />Available Data: <a href="/data_sb/missions/dawn/index.shtml">Dawn Data at SBN</a></dd>
+<dt>Rosetta</dt>
+<dd>Mission Overview: <a href="http://sci.esa.int/science-e/www/area/index.cfm?fareaid=13" onclick="this.target='_blank'">Rosetta Mission</a>
+<br />Available Data: <a href="/data_sb/missions/rosetta/index.shtml">Rosetta Data at SBN</a></dd>
+</dl>
+<h2><a href="https://nspires.nasaprs.com/external/solicitations/summary.do?method=init&solId={640844FC-94E6-D492-464D-310CF546CA17}&path=open" onclick="this.target='_blank'">Cassini Data Analysis (ROSES, C.10)</a></h2>
+<dl>
+<dt>Cassini</dt>
+<dd>Mission Overview: <a href="https://saturn.jpl.nasa.gov/" onclick="this.target='_blank'">Cassini</a>
+<br />Available Data: <a href="/data_sb/missions/cassini/index.shtml">Cassini dust data at SBN</a>
+<br />The website to support Cassini DAP can be found at the <a href="https://pds-rings.seti.org/roses/" onclick="this.target='_blank'">Rings Node.</a>
+<br />See also <a href="http://pds-atmospheres.nmsu.edu/" onclick="this.target='_blank'">Cassini and Huygens data at Atmospheres Node</a>.</dd>
+</dl>
+<h2><a href="https://nspires.nasaprs.com/external/solicitations/summary.do?method=init&solId={548AC6C3-D118-5013-5568-884B426274D2}&path=open" onclick="this.target='_blank'">Dawn Focused Research and Analysis (ROSES, C.20)</a></h2>
+<dl>
+<dt>Dawn</dt>
+<dd>Mission Overview: <a href="https://solarsystem.nasa.gov/missions/dawn/overview/" onclick="this.target='_blank'">Dawn Mission</a>
+<br />Available Data: <a href="/data_sb/missions/dawn/index.shtml">Dawn Data at SBN</a></dd>
+</dl>
+<h2><a href="https://nspires.nasaprs.com/external/solicitations/summary.do?method=init&solId={3AF974B5-F9A8-1870-09DA-8A3BD64E74FF}&path=open" onclick="this.target='_blank'">Astrophysics Data Analysis (ROSES, D.2)</a></h2>
+<dl>
+<dt>EPOXI (EPOCh)</dt>
+<dd>Mission Overview: <a href="http://epoxi.astro.umd.edu/" onclick="this.target='_blank'">EPOXI</a>
+<br />Available Data: <a href="/data_sb/missions/epoxi/index.shtml">EPOXI data at SBN</a> (Exoplanet transits and Earth data)</dd>
+</dl>
+<h2><a href="https://nspires.nasaprs.com/external/solicitations/summary.do?method=init&solId={8E2C5B6A-63D1-FBE0-4013-8899401E0DDE}&path=open" onclick="this.target='_blank'">Exoplanet Research Program (ROSES, E.3)</a></h2>
+<dl>
+<dt>EPOXI (EPOCh)</dt>
+<dd>Mission Overview: <a href="http://epoxi.astro.umd.edu/" onclick="this.target='_blank'">EPOXI</a>
+<br />Available Data: <a href="/data_sb/missions/epoxi/index.shtml">EPOXI data at SBN</a> (Exoplanet transits and Earth data)</dd>
+</dl>
+<h2><a href="https://nspires.nasaprs.com/external/solicitations/summary.do?method=init&solId={52E335C7-29CC-F1BB-6E16-63FB247971A5}&path=open" onclick="this.target='_blank'">Discovery Data Analysis Program (ROSES, C.11)</a></h2>
+<dl>
+<dt>Deep Impact</dt>
+<dd>Mission Overview: <a href="http://deepimpact.umd.edu/" onclick="this.target='_blank'">Deep Impact Mission</a>
+<br />Available Data: <a href="/data_sb/missions/deepimpact/index.shtml">Deep Impact Data at SBN</a></dd>
+<dt>DS1</dt>
+<dd>Mission Overview: <a href="https://www.jpl.nasa.gov/nmp/ds1/index.php" onclick="this.target='_blank'">DS1 Mission</a>
+<br />Available Data: <a href="/data_sb/missions/deepspace1/index.shtml">DS1 Data at SBN</a></dd>
+<dt>EPOXI (DIXI)</dt>
+<dd>Mission Overview: <a href="http://epoxi.astro.umd.edu/" onclick="this.target='_blank'">EPOXI Mission</a>
+<br />Available Data: <a href="/data_sb/missions/epoxi/index.shtml">EPOXI Data at SBN</a></dd>
+<dt>Hayabusa</dt>
+<dd>Mission Overview: <a href="http://www.isas.jaxa.jp/e/enterp/missions/hayabusa/index.shtml" onclick="this.target='_blank'">Dawn Mission</a>
+<br />Available Data: <a href="/data_sb/missions/hayabusa/index.shtml">Hayabusa Data at SBN</a></dd>
+<dt>NEAR</dt>
+<dd>Mission Overview: <a href="http://near.jhuapl.edu/" onclick="this.target='_blank'">NEAR Mission</a>
+<br />Available Data: <a href="/data_sb/missions/near/index.shtml">NEAR data at SBN</a></dd>
+<dt>New Horizons</dt>
+<dd>Mission Overview: <a href="http://pluto.jhuapl.edu/" onclick="this.target='_blank'">New Horizons</a>
+<br />Available Data: <a href="/data_sb/missions/newhorizons/index.shtml">New Horizons data at SBN</a> (Post-launch test and Jupiter flyby data)
+<br /><a href="http://pds-rings.seti.org/" onclick="this.target='_blank'">New Horizons data at Planetary Rings node</a>
+<br /><a href="http://pds-atmospheres.nmsu.edu/" onclick="this.target='_blank'">New Horizons data at Atmospheres node</a></dd>
+<dt>Rosetta</dt>
+<dd>Mission Overview: <a href="http://sci.esa.int/science-e/www/area/index.cfm?fareaid=13" onclick="this.target='_blank'">Rosetta Mission</a>
+<br />Available Data: <a href="/data_sb/missions/rosetta/index.shtml">Rosetta Data at SBN</a></dd>
+<dt>Stardust</dt>
+<dd>Mission Overview: <a href="http://stardust.jpl.nasa.gov/" onclick="this.target='_blank'">Stardust Mission</a>
+<br />Available Data: <a href="/data_sb/missions/stardust/index.shtml">Stardust Data at SBN</a></dd>
+<dt>Stardust-NExT</dt>
+<dd>Mission Overview: <a href="https://www.jpl.nasa.gov/missions/stardust-next" onclick="this.target='_blank'">Stardust-NExT Mission</a>
+<br />Available Data: <a href="/data_sb/missions/stardustnext/index.shtml">Stardust-NExT Data at SBN</a></dd>
+</dl>
+<p>Other Missions</p>
+<ul>
+<li><a href="/data_sb/missions/galileo/index.shtml">Galileo</a> (asteroid flyby data)</li>
+<li><a href="/data_sb/missions/giotto/index.shtml">Giotto</a></li>
+<li><a href="/data_sb/missions/ice/index.shtml">ICE/ISEE</a></li>
+<li><a href="/data_sb/missions/sakigake/index.shtml">Sakigake</a></li>
+<li><a href="/data_sb/missions/suisei/index.shtml">Suisei</a></li>
+<li><a href="/data_sb/missions/ulysses/index.shtml">Ulysses</a></li>
+<li><a href="/data_sb/missions/vega1/index.shtml">Vega 1</a></li>
+<li><a href="/data_sb/missions/vega2/index.shtml">Vega 2</a></li>
+</ul>
+
+<p>SBN data can be also used for the following ROSES programs:</p>
+<ul>
+<li><a href="https://nspires.nasaprs.com/external/solicitations/summary.do?method=init&solId={A9E96B94-7212-B090-806E-EB9E859FB4C6}&path=open" onclick="this.target='_blank'">Emerging Worlds (ROSES, C.2)</a></li>
+<li><a href="https://nspires.nasaprs.com/external/solicitations/summary.do?method=init&solId={AE489E38-6A74-5545-0E38-713A64E43EB3}&path=open" onclick="this.target='_blank'">Solar System Workings (ROSES, C.3)</a></li>
+<li><a href="https://nspires.nasaprs.com/external/solicitations/summary.do?method=init&solId={BBDC40FA-7697-F6C6-A148-75713DB49E80}&path=open" onclick="this.target='_blank'">Habitable Worlds (ROSES, C.4)</a></li>
+<li><a href="https://nspires.nasaprs.com/external/solicitations/summary.do?method=init&solId={01F677D6-CA87-F50E-5514-41AADF9AA2FC}&path=open" onclick="this.target='_blank'">Exobiology (ROSES, C.5)</a></li>
+</ul>
+
+<h3>We also encourage everyone to consider proposing to <a href="https://nspires.nasaprs.com/external/solicitations/summary.do?method=init&solId={608AA4F5-98AF-BA4F-E11B-64D6B4D8A111}&path=open" onclick="this.target='_blank'">Planetary Data Archiving, Restoration, and Tools (ROSES, C.7)</a>!</h3>
+<p>To better understand constituents and structure of the PDS archives and data formats, please consult <a href="https://pds.jpl.nasa.gov/home/proposers/proposing-missions.shtml" onclick="this.target='_blank'">PDS Proposer's Archiving Guide (PAG)</a>.</p>
+
+<!-- ************************************************** End editing! ************************************************** -->
+<!--#include virtual="/css-n-includes/incl_bottom.inc"-->
+<br />Last updated:
+<!--#config timefmt="%A %B %d, %Y"-->
+<!--#echo var="LAST_MODIFIED" -->
+</div>
+<!-- close id whotext -->
+</div>
+<!-- close id footer -->
+</div>
+<!-- end id footwrap -->
+</div>
+<!-- close wrapper -->
+</body>
+
+</html>

@@ -1,0 +1,251 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<title>PDS: Small Bodies Node</title>
+
+<!--
+########################
+ALL of the head, style links, header and menu code is in the include. Edit that file with extreme care!!
+########################
+ -->
+
+<!--#include virtual="/css-n-includes/incl_top.inc"-->
+
+<!-- ################################################ MAIN ################################################## -->
+
+<div id="centeronly">
+
+<a name="mainContent"></a>
+<!-- ************************************************** You may begin editing! ************************************************** -->
+
+<a name="top"></a><h3>Object: C/Shoemaker (1987 H1) [<a href="../objclass.shtml#HYP">HYP</a>]</h3>
+
+<table width="95%" class="datatab">
+	<colgroup>
+		<col width="11%" />
+		<col width="13%" />
+		<col width="8%" />
+		<col width="8%" />
+		<col width="55%" />
+	</colgroup>
+	<thead><tr>
+		<td>Observation ID</td>
+		<td>Start Time</td>
+		<td>Instrument</td>
+		<td>Proposal ID</td>
+		<td>Proposal Title</td>
+	</tr></thead>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U3150201T" onclick="this.target='_blank'">U3150201T</a></td>
+		<td>12/06/95 02:41 PM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=5834&mission=hst" onclick="this.target='_blank'">5834</a></td>
+		<td>DISTANT COMET NUCLEUS SIZES</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U3150202T" onclick="this.target='_blank'">U3150202T</a></td>
+		<td>12/06/95 02:50 PM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=5834&mission=hst" onclick="this.target='_blank'">5834</a></td>
+		<td>DISTANT COMET NUCLEUS SIZES</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U3150203T" onclick="this.target='_blank'">U3150203T</a></td>
+		<td>12/06/95 03:02 PM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=5834&mission=hst" onclick="this.target='_blank'">5834</a></td>
+		<td>DISTANT COMET NUCLEUS SIZES</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U3150204T" onclick="this.target='_blank'">U3150204T</a></td>
+		<td>12/06/95 03:13 PM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=5834&mission=hst" onclick="this.target='_blank'">5834</a></td>
+		<td>DISTANT COMET NUCLEUS SIZES</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U3150205T" onclick="this.target='_blank'">U3150205T</a></td>
+		<td>12/06/95 04:13 PM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=5834&mission=hst" onclick="this.target='_blank'">5834</a></td>
+		<td>DISTANT COMET NUCLEUS SIZES</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U3150206T" onclick="this.target='_blank'">U3150206T</a></td>
+		<td>12/06/95 04:24 PM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=5834&mission=hst" onclick="this.target='_blank'">5834</a></td>
+		<td>DISTANT COMET NUCLEUS SIZES</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U3150207T" onclick="this.target='_blank'">U3150207T</a></td>
+		<td>12/06/95 04:38 PM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=5834&mission=hst" onclick="this.target='_blank'">5834</a></td>
+		<td>DISTANT COMET NUCLEUS SIZES</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U3150208T" onclick="this.target='_blank'">U3150208T</a></td>
+		<td>12/06/95 04:49 PM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=5834&mission=hst" onclick="this.target='_blank'">5834</a></td>
+		<td>DISTANT COMET NUCLEUS SIZES</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U3150209T" onclick="this.target='_blank'">U3150209T</a></td>
+		<td>12/06/95 05:49 PM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=5834&mission=hst" onclick="this.target='_blank'">5834</a></td>
+		<td>DISTANT COMET NUCLEUS SIZES</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U315020AT" onclick="this.target='_blank'">U315020AT</a></td>
+		<td>12/06/95 06:00 PM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=5834&mission=hst" onclick="this.target='_blank'">5834</a></td>
+		<td>DISTANT COMET NUCLEUS SIZES</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U315020BT" onclick="this.target='_blank'">U315020BT</a></td>
+		<td>12/06/95 06:15 PM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=5834&mission=hst" onclick="this.target='_blank'">5834</a></td>
+		<td>DISTANT COMET NUCLEUS SIZES</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U315020CT" onclick="this.target='_blank'">U315020CT</a></td>
+		<td>12/06/95 06:26 PM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=5834&mission=hst" onclick="this.target='_blank'">5834</a></td>
+		<td>DISTANT COMET NUCLEUS SIZES</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U315020DT" onclick="this.target='_blank'">U315020DT</a></td>
+		<td>12/06/95 07:26 PM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=5834&mission=hst" onclick="this.target='_blank'">5834</a></td>
+		<td>DISTANT COMET NUCLEUS SIZES</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U315020ET" onclick="this.target='_blank'">U315020ET</a></td>
+		<td>12/06/95 07:37 PM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=5834&mission=hst" onclick="this.target='_blank'">5834</a></td>
+		<td>DISTANT COMET NUCLEUS SIZES</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U315020FT" onclick="this.target='_blank'">U315020FT</a></td>
+		<td>12/06/95 07:51 PM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=5834&mission=hst" onclick="this.target='_blank'">5834</a></td>
+		<td>DISTANT COMET NUCLEUS SIZES</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U315020GT" onclick="this.target='_blank'">U315020GT</a></td>
+		<td>12/06/95 08:02 PM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=5834&mission=hst" onclick="this.target='_blank'">5834</a></td>
+		<td>DISTANT COMET NUCLEUS SIZES</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U315020HT" onclick="this.target='_blank'">U315020HT</a></td>
+		<td>12/06/95 09:02 PM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=5834&mission=hst" onclick="this.target='_blank'">5834</a></td>
+		<td>DISTANT COMET NUCLEUS SIZES</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U315020IT" onclick="this.target='_blank'">U315020IT</a></td>
+		<td>12/06/95 09:13 PM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=5834&mission=hst" onclick="this.target='_blank'">5834</a></td>
+		<td>DISTANT COMET NUCLEUS SIZES</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U315020JT" onclick="this.target='_blank'">U315020JT</a></td>
+		<td>12/06/95 09:28 PM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=5834&mission=hst" onclick="this.target='_blank'">5834</a></td>
+		<td>DISTANT COMET NUCLEUS SIZES</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U315020KT" onclick="this.target='_blank'">U315020KT</a></td>
+		<td>12/06/95 09:39 PM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=5834&mission=hst" onclick="this.target='_blank'">5834</a></td>
+		<td>DISTANT COMET NUCLEUS SIZES</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U315020LT" onclick="this.target='_blank'">U315020LT</a></td>
+		<td>12/06/95 10:39 PM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=5834&mission=hst" onclick="this.target='_blank'">5834</a></td>
+		<td>DISTANT COMET NUCLEUS SIZES</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U315020MT" onclick="this.target='_blank'">U315020MT</a></td>
+		<td>12/06/95 10:50 PM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=5834&mission=hst" onclick="this.target='_blank'">5834</a></td>
+		<td>DISTANT COMET NUCLEUS SIZES</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U315020NT" onclick="this.target='_blank'">U315020NT</a></td>
+		<td>12/06/95 11:04 PM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=5834&mission=hst" onclick="this.target='_blank'">5834</a></td>
+		<td>DISTANT COMET NUCLEUS SIZES</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U315020OT" onclick="this.target='_blank'">U315020OT</a></td>
+		<td>12/06/95 11:15 PM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=5834&mission=hst" onclick="this.target='_blank'">5834</a></td>
+		<td>DISTANT COMET NUCLEUS SIZES</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U315020PT" onclick="this.target='_blank'">U315020PT</a></td>
+		<td>12/07/95 12:15 AM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=5834&mission=hst" onclick="this.target='_blank'">5834</a></td>
+		<td>DISTANT COMET NUCLEUS SIZES</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U315020QT" onclick="this.target='_blank'">U315020QT</a></td>
+		<td>12/07/95 12:26 AM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=5834&mission=hst" onclick="this.target='_blank'">5834</a></td>
+		<td>DISTANT COMET NUCLEUS SIZES</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U315020RT" onclick="this.target='_blank'">U315020RT</a></td>
+		<td>12/07/95 12:41 AM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=5834&mission=hst" onclick="this.target='_blank'">5834</a></td>
+		<td>DISTANT COMET NUCLEUS SIZES</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U315020ST" onclick="this.target='_blank'">U315020ST</a></td>
+		<td>12/07/95 12:52 AM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=5834&mission=hst" onclick="this.target='_blank'">5834</a></td>
+		<td>DISTANT COMET NUCLEUS SIZES</td>
+	</tr>
+</table>
+<br /><p>[<a href="#top">Back to Top</a>] [<a href="../HST.shtml#01_COMET">Back to Comets</a>]</p>
+
+<a name="bottom"></a>
+
+<!-- ************************************************** End editing! ************************************************** -->
+<!--#include virtual="/css-n-includes/incl_bottom.inc"-->
+<br />Last updated: <!--#config timefmt="%A %B %d, %Y"--><!--#echo var="LAST_MODIFIED" --></div><!-- close id whotext -->
+
+</div><!-- close id footer -->
+</div><!-- end id footwrap -->
+
+</div><!-- close wrapper -->
+
+</body>
+</html>

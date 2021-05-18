@@ -1,0 +1,713 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<title>PDS: Small Bodies Node</title>
+
+<!--
+########################
+ALL of the head, style links, header and menu code is in the include. Edit that file with extreme care!!
+########################
+ -->
+
+<!--#include virtual="/css-n-includes/incl_top.inc"-->
+
+<!-- ################################################ MAIN ################################################## -->
+
+<div id="centeronly">
+
+<a name="mainContent"></a>
+<!-- ************************************************** You may begin editing! ************************************************** -->
+
+<a name="top"></a><h3>Object: 22P/Kopff 1 (1906 Q1) [<a href="../objclass.shtml#JFc">JFc</a>]</h3>
+
+<table width="95%" class="datatab">
+	<colgroup>
+		<col width="11%" />
+		<col width="13%" />
+		<col width="8%" />
+		<col width="8%" />
+		<col width="55%" />
+	</colgroup>
+	<thead><tr>
+		<td>Observation ID</td>
+		<td>Start Time</td>
+		<td>Instrument</td>
+		<td>Proposal ID</td>
+		<td>Proposal Title</td>
+	</tr></thead>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U3A40101T" onclick="this.target='_blank'">U3A40101T</a></td>
+		<td>06/18/96 07:49 AM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6591&mission=hst" onclick="this.target='_blank'">6591</a></td>
+		<td>A CAMPAIGN TO DETERMINE THE CO AND \\COTWO\\ ABUNDANCES IN COMETARY NUCLEI</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U3A40102T" onclick="this.target='_blank'">U3A40102T</a></td>
+		<td>06/18/96 07:51 AM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6591&mission=hst" onclick="this.target='_blank'">6591</a></td>
+		<td>A CAMPAIGN TO DETERMINE THE CO AND \\COTWO\\ ABUNDANCES IN COMETARY NUCLEI</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U3A40103T" onclick="this.target='_blank'">U3A40103T</a></td>
+		<td>06/18/96 07:53 AM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6591&mission=hst" onclick="this.target='_blank'">6591</a></td>
+		<td>A CAMPAIGN TO DETERMINE THE CO AND \\COTWO\\ ABUNDANCES IN COMETARY NUCLEI</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U3A40104T" onclick="this.target='_blank'">U3A40104T</a></td>
+		<td>06/18/96 07:55 AM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6591&mission=hst" onclick="this.target='_blank'">6591</a></td>
+		<td>A CAMPAIGN TO DETERMINE THE CO AND \\COTWO\\ ABUNDANCES IN COMETARY NUCLEI</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U3A40105T" onclick="this.target='_blank'">U3A40105T</a></td>
+		<td>06/18/96 07:57 AM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6591&mission=hst" onclick="this.target='_blank'">6591</a></td>
+		<td>A CAMPAIGN TO DETERMINE THE CO AND \\COTWO\\ ABUNDANCES IN COMETARY NUCLEI</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U3A40106T" onclick="this.target='_blank'">U3A40106T</a></td>
+		<td>06/18/96 08:03 AM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6591&mission=hst" onclick="this.target='_blank'">6591</a></td>
+		<td>A CAMPAIGN TO DETERMINE THE CO AND \\COTWO\\ ABUNDANCES IN COMETARY NUCLEI</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U3A40107T" onclick="this.target='_blank'">U3A40107T</a></td>
+		<td>06/18/96 08:10 AM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6591&mission=hst" onclick="this.target='_blank'">6591</a></td>
+		<td>A CAMPAIGN TO DETERMINE THE CO AND \\COTWO\\ ABUNDANCES IN COMETARY NUCLEI</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U3A40108T" onclick="this.target='_blank'">U3A40108T</a></td>
+		<td>06/18/96 08:23 AM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6591&mission=hst" onclick="this.target='_blank'">6591</a></td>
+		<td>A CAMPAIGN TO DETERMINE THE CO AND \\COTWO\\ ABUNDANCES IN COMETARY NUCLEI</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=Y3A40201T" onclick="this.target='_blank'">Y3A40201T</a></td>
+		<td>06/18/96 03:54 PM</td>
+		<td><a href="../HST_instruments.shtml">FOS </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6591&mission=hst" onclick="this.target='_blank'">6591</a></td>
+		<td>A CAMPAIGN TO DETERMINE THE CO AND \\COTWO\\ ABUNDANCES IN COMETARY NUCLEI</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=Y3A40202T" onclick="this.target='_blank'">Y3A40202T</a></td>
+		<td>06/18/96 04:01 PM</td>
+		<td><a href="../HST_instruments.shtml">FOS </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6591&mission=hst" onclick="this.target='_blank'">6591</a></td>
+		<td>A CAMPAIGN TO DETERMINE THE CO AND \\COTWO\\ ABUNDANCES IN COMETARY NUCLEI</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=Y3A40301T" onclick="this.target='_blank'">Y3A40301T</a></td>
+		<td>06/18/96 11:58 PM</td>
+		<td><a href="../HST_instruments.shtml">FOS </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6591&mission=hst" onclick="this.target='_blank'">6591</a></td>
+		<td>A CAMPAIGN TO DETERMINE THE CO AND \\COTWO\\ ABUNDANCES IN COMETARY NUCLEI</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=Y3A40302T" onclick="this.target='_blank'">Y3A40302T</a></td>
+		<td>06/19/96 12:08 AM</td>
+		<td><a href="../HST_instruments.shtml">FOS </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6591&mission=hst" onclick="this.target='_blank'">6591</a></td>
+		<td>A CAMPAIGN TO DETERMINE THE CO AND \\COTWO\\ ABUNDANCES IN COMETARY NUCLEI</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=Y3A40303T" onclick="this.target='_blank'">Y3A40303T</a></td>
+		<td>06/19/96 01:26 AM</td>
+		<td><a href="../HST_instruments.shtml">FOS </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6591&mission=hst" onclick="this.target='_blank'">6591</a></td>
+		<td>A CAMPAIGN TO DETERMINE THE CO AND \\COTWO\\ ABUNDANCES IN COMETARY NUCLEI</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=Y3A40304T" onclick="this.target='_blank'">Y3A40304T</a></td>
+		<td>06/19/96 01:48 AM</td>
+		<td><a href="../HST_instruments.shtml">FOS </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6591&mission=hst" onclick="this.target='_blank'">6591</a></td>
+		<td>A CAMPAIGN TO DETERMINE THE CO AND \\COTWO\\ ABUNDANCES IN COMETARY NUCLEI</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U3CN0101T" onclick="this.target='_blank'">U3CN0101T</a></td>
+		<td>07/18/96 08:27 AM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6630&mission=hst" onclick="this.target='_blank'">6630</a></td>
+		<td>The nucleus of comet 22P/Kopff and its dust and gas emissions</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U3CN0102T" onclick="this.target='_blank'">U3CN0102T</a></td>
+		<td>07/18/96 08:29 AM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6630&mission=hst" onclick="this.target='_blank'">6630</a></td>
+		<td>The nucleus of comet 22P/Kopff and its dust and gas emissions</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U3CN0103T" onclick="this.target='_blank'">U3CN0103T</a></td>
+		<td>07/18/96 08:35 AM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6630&mission=hst" onclick="this.target='_blank'">6630</a></td>
+		<td>The nucleus of comet 22P/Kopff and its dust and gas emissions</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U3CN0104T" onclick="this.target='_blank'">U3CN0104T</a></td>
+		<td>07/18/96 08:40 AM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6630&mission=hst" onclick="this.target='_blank'">6630</a></td>
+		<td>The nucleus of comet 22P/Kopff and its dust and gas emissions</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U3CN0105T" onclick="this.target='_blank'">U3CN0105T</a></td>
+		<td>07/18/96 08:46 AM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6630&mission=hst" onclick="this.target='_blank'">6630</a></td>
+		<td>The nucleus of comet 22P/Kopff and its dust and gas emissions</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U3CN0106T" onclick="this.target='_blank'">U3CN0106T</a></td>
+		<td>07/18/96 08:50 AM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6630&mission=hst" onclick="this.target='_blank'">6630</a></td>
+		<td>The nucleus of comet 22P/Kopff and its dust and gas emissions</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U3CN0107T" onclick="this.target='_blank'">U3CN0107T</a></td>
+		<td>07/18/96 08:55 AM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6630&mission=hst" onclick="this.target='_blank'">6630</a></td>
+		<td>The nucleus of comet 22P/Kopff and its dust and gas emissions</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U3CN0108T" onclick="this.target='_blank'">U3CN0108T</a></td>
+		<td>07/18/96 08:57 AM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6630&mission=hst" onclick="this.target='_blank'">6630</a></td>
+		<td>The nucleus of comet 22P/Kopff and its dust and gas emissions</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U3CN0109T" onclick="this.target='_blank'">U3CN0109T</a></td>
+		<td>07/18/96 09:00 AM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6630&mission=hst" onclick="this.target='_blank'">6630</a></td>
+		<td>The nucleus of comet 22P/Kopff and its dust and gas emissions</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U3CN010AT" onclick="this.target='_blank'">U3CN010AT</a></td>
+		<td>07/18/96 09:02 AM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6630&mission=hst" onclick="this.target='_blank'">6630</a></td>
+		<td>The nucleus of comet 22P/Kopff and its dust and gas emissions</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U3CN0201T" onclick="this.target='_blank'">U3CN0201T</a></td>
+		<td>07/18/96 10:02 AM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6630&mission=hst" onclick="this.target='_blank'">6630</a></td>
+		<td>The nucleus of comet 22P/Kopff and its dust and gas emissions</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U3CN0202P" onclick="this.target='_blank'">U3CN0202P</a></td>
+		<td>07/18/96 10:04 AM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6630&mission=hst" onclick="this.target='_blank'">6630</a></td>
+		<td>The nucleus of comet 22P/Kopff and its dust and gas emissions</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U3CN0203T" onclick="this.target='_blank'">U3CN0203T</a></td>
+		<td>07/18/96 10:10 AM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6630&mission=hst" onclick="this.target='_blank'">6630</a></td>
+		<td>The nucleus of comet 22P/Kopff and its dust and gas emissions</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U3CN0204T" onclick="this.target='_blank'">U3CN0204T</a></td>
+		<td>07/18/96 10:15 AM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6630&mission=hst" onclick="this.target='_blank'">6630</a></td>
+		<td>The nucleus of comet 22P/Kopff and its dust and gas emissions</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U3CN0205P" onclick="this.target='_blank'">U3CN0205P</a></td>
+		<td>07/18/96 10:21 AM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6630&mission=hst" onclick="this.target='_blank'">6630</a></td>
+		<td>The nucleus of comet 22P/Kopff and its dust and gas emissions</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U3CN0206T" onclick="this.target='_blank'">U3CN0206T</a></td>
+		<td>07/18/96 10:25 AM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6630&mission=hst" onclick="this.target='_blank'">6630</a></td>
+		<td>The nucleus of comet 22P/Kopff and its dust and gas emissions</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U3CN0207T" onclick="this.target='_blank'">U3CN0207T</a></td>
+		<td>07/18/96 10:30 AM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6630&mission=hst" onclick="this.target='_blank'">6630</a></td>
+		<td>The nucleus of comet 22P/Kopff and its dust and gas emissions</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U3CN0208P" onclick="this.target='_blank'">U3CN0208P</a></td>
+		<td>07/18/96 10:32 AM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6630&mission=hst" onclick="this.target='_blank'">6630</a></td>
+		<td>The nucleus of comet 22P/Kopff and its dust and gas emissions</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U3CN0209T" onclick="this.target='_blank'">U3CN0209T</a></td>
+		<td>07/18/96 10:35 AM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6630&mission=hst" onclick="this.target='_blank'">6630</a></td>
+		<td>The nucleus of comet 22P/Kopff and its dust and gas emissions</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U3CN020AT" onclick="this.target='_blank'">U3CN020AT</a></td>
+		<td>07/18/96 10:37 AM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6630&mission=hst" onclick="this.target='_blank'">6630</a></td>
+		<td>The nucleus of comet 22P/Kopff and its dust and gas emissions</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U3CN0301T" onclick="this.target='_blank'">U3CN0301T</a></td>
+		<td>07/18/96 11:39 AM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6630&mission=hst" onclick="this.target='_blank'">6630</a></td>
+		<td>The nucleus of comet 22P/Kopff and its dust and gas emissions</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U3CN0302T" onclick="this.target='_blank'">U3CN0302T</a></td>
+		<td>07/18/96 11:41 AM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6630&mission=hst" onclick="this.target='_blank'">6630</a></td>
+		<td>The nucleus of comet 22P/Kopff and its dust and gas emissions</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U3CN0303T" onclick="this.target='_blank'">U3CN0303T</a></td>
+		<td>07/18/96 11:46 AM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6630&mission=hst" onclick="this.target='_blank'">6630</a></td>
+		<td>The nucleus of comet 22P/Kopff and its dust and gas emissions</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U3CN0304T" onclick="this.target='_blank'">U3CN0304T</a></td>
+		<td>07/18/96 11:52 AM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6630&mission=hst" onclick="this.target='_blank'">6630</a></td>
+		<td>The nucleus of comet 22P/Kopff and its dust and gas emissions</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U3CN0305T" onclick="this.target='_blank'">U3CN0305T</a></td>
+		<td>07/18/96 11:57 AM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6630&mission=hst" onclick="this.target='_blank'">6630</a></td>
+		<td>The nucleus of comet 22P/Kopff and its dust and gas emissions</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U3CN0306T" onclick="this.target='_blank'">U3CN0306T</a></td>
+		<td>07/18/96 12:01 PM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6630&mission=hst" onclick="this.target='_blank'">6630</a></td>
+		<td>The nucleus of comet 22P/Kopff and its dust and gas emissions</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U3CN0307T" onclick="this.target='_blank'">U3CN0307T</a></td>
+		<td>07/18/96 12:06 PM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6630&mission=hst" onclick="this.target='_blank'">6630</a></td>
+		<td>The nucleus of comet 22P/Kopff and its dust and gas emissions</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U3CN0308T" onclick="this.target='_blank'">U3CN0308T</a></td>
+		<td>07/18/96 12:08 PM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6630&mission=hst" onclick="this.target='_blank'">6630</a></td>
+		<td>The nucleus of comet 22P/Kopff and its dust and gas emissions</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U3CN0309T" onclick="this.target='_blank'">U3CN0309T</a></td>
+		<td>07/18/96 12:11 PM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6630&mission=hst" onclick="this.target='_blank'">6630</a></td>
+		<td>The nucleus of comet 22P/Kopff and its dust and gas emissions</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U3CN030AT" onclick="this.target='_blank'">U3CN030AT</a></td>
+		<td>07/18/96 12:13 PM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6630&mission=hst" onclick="this.target='_blank'">6630</a></td>
+		<td>The nucleus of comet 22P/Kopff and its dust and gas emissions</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U3CN0401T" onclick="this.target='_blank'">U3CN0401T</a></td>
+		<td>07/18/96 01:15 PM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6630&mission=hst" onclick="this.target='_blank'">6630</a></td>
+		<td>The nucleus of comet 22P/Kopff and its dust and gas emissions</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U3CN0402T" onclick="this.target='_blank'">U3CN0402T</a></td>
+		<td>07/18/96 01:17 PM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6630&mission=hst" onclick="this.target='_blank'">6630</a></td>
+		<td>The nucleus of comet 22P/Kopff and its dust and gas emissions</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U3CN0403T" onclick="this.target='_blank'">U3CN0403T</a></td>
+		<td>07/18/96 01:23 PM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6630&mission=hst" onclick="this.target='_blank'">6630</a></td>
+		<td>The nucleus of comet 22P/Kopff and its dust and gas emissions</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U3CN0404T" onclick="this.target='_blank'">U3CN0404T</a></td>
+		<td>07/18/96 01:28 PM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6630&mission=hst" onclick="this.target='_blank'">6630</a></td>
+		<td>The nucleus of comet 22P/Kopff and its dust and gas emissions</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U3CN0405T" onclick="this.target='_blank'">U3CN0405T</a></td>
+		<td>07/18/96 01:34 PM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6630&mission=hst" onclick="this.target='_blank'">6630</a></td>
+		<td>The nucleus of comet 22P/Kopff and its dust and gas emissions</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U3CN0406T" onclick="this.target='_blank'">U3CN0406T</a></td>
+		<td>07/18/96 01:38 PM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6630&mission=hst" onclick="this.target='_blank'">6630</a></td>
+		<td>The nucleus of comet 22P/Kopff and its dust and gas emissions</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U3CN0407T" onclick="this.target='_blank'">U3CN0407T</a></td>
+		<td>07/18/96 01:43 PM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6630&mission=hst" onclick="this.target='_blank'">6630</a></td>
+		<td>The nucleus of comet 22P/Kopff and its dust and gas emissions</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U3CN0408T" onclick="this.target='_blank'">U3CN0408T</a></td>
+		<td>07/18/96 01:45 PM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6630&mission=hst" onclick="this.target='_blank'">6630</a></td>
+		<td>The nucleus of comet 22P/Kopff and its dust and gas emissions</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U3CN0409T" onclick="this.target='_blank'">U3CN0409T</a></td>
+		<td>07/18/96 01:48 PM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6630&mission=hst" onclick="this.target='_blank'">6630</a></td>
+		<td>The nucleus of comet 22P/Kopff and its dust and gas emissions</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U3CN040AT" onclick="this.target='_blank'">U3CN040AT</a></td>
+		<td>07/18/96 01:50 PM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6630&mission=hst" onclick="this.target='_blank'">6630</a></td>
+		<td>The nucleus of comet 22P/Kopff and its dust and gas emissions</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U3CN0501T" onclick="this.target='_blank'">U3CN0501T</a></td>
+		<td>07/18/96 02:52 PM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6630&mission=hst" onclick="this.target='_blank'">6630</a></td>
+		<td>The nucleus of comet 22P/Kopff and its dust and gas emissions</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U3CN0502T" onclick="this.target='_blank'">U3CN0502T</a></td>
+		<td>07/18/96 02:54 PM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6630&mission=hst" onclick="this.target='_blank'">6630</a></td>
+		<td>The nucleus of comet 22P/Kopff and its dust and gas emissions</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U3CN0503T" onclick="this.target='_blank'">U3CN0503T</a></td>
+		<td>07/18/96 02:59 PM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6630&mission=hst" onclick="this.target='_blank'">6630</a></td>
+		<td>The nucleus of comet 22P/Kopff and its dust and gas emissions</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U3CN0504T" onclick="this.target='_blank'">U3CN0504T</a></td>
+		<td>07/18/96 03:05 PM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6630&mission=hst" onclick="this.target='_blank'">6630</a></td>
+		<td>The nucleus of comet 22P/Kopff and its dust and gas emissions</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U3CN0505T" onclick="this.target='_blank'">U3CN0505T</a></td>
+		<td>07/18/96 03:10 PM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6630&mission=hst" onclick="this.target='_blank'">6630</a></td>
+		<td>The nucleus of comet 22P/Kopff and its dust and gas emissions</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U3CN0506T" onclick="this.target='_blank'">U3CN0506T</a></td>
+		<td>07/18/96 03:14 PM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6630&mission=hst" onclick="this.target='_blank'">6630</a></td>
+		<td>The nucleus of comet 22P/Kopff and its dust and gas emissions</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U3CN0507T" onclick="this.target='_blank'">U3CN0507T</a></td>
+		<td>07/18/96 03:19 PM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6630&mission=hst" onclick="this.target='_blank'">6630</a></td>
+		<td>The nucleus of comet 22P/Kopff and its dust and gas emissions</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U3CN0508T" onclick="this.target='_blank'">U3CN0508T</a></td>
+		<td>07/18/96 03:21 PM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6630&mission=hst" onclick="this.target='_blank'">6630</a></td>
+		<td>The nucleus of comet 22P/Kopff and its dust and gas emissions</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U3CN0509T" onclick="this.target='_blank'">U3CN0509T</a></td>
+		<td>07/18/96 03:24 PM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6630&mission=hst" onclick="this.target='_blank'">6630</a></td>
+		<td>The nucleus of comet 22P/Kopff and its dust and gas emissions</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U3CN050AT" onclick="this.target='_blank'">U3CN050AT</a></td>
+		<td>07/18/96 03:26 PM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6630&mission=hst" onclick="this.target='_blank'">6630</a></td>
+		<td>The nucleus of comet 22P/Kopff and its dust and gas emissions</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U3CN0601T" onclick="this.target='_blank'">U3CN0601T</a></td>
+		<td>07/18/96 04:28 PM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6630&mission=hst" onclick="this.target='_blank'">6630</a></td>
+		<td>The nucleus of comet 22P/Kopff and its dust and gas emissions</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U3CN0602P" onclick="this.target='_blank'">U3CN0602P</a></td>
+		<td>07/18/96 04:30 PM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6630&mission=hst" onclick="this.target='_blank'">6630</a></td>
+		<td>The nucleus of comet 22P/Kopff and its dust and gas emissions</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U3CN0603T" onclick="this.target='_blank'">U3CN0603T</a></td>
+		<td>07/18/96 04:36 PM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6630&mission=hst" onclick="this.target='_blank'">6630</a></td>
+		<td>The nucleus of comet 22P/Kopff and its dust and gas emissions</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U3CN0604T" onclick="this.target='_blank'">U3CN0604T</a></td>
+		<td>07/18/96 04:41 PM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6630&mission=hst" onclick="this.target='_blank'">6630</a></td>
+		<td>The nucleus of comet 22P/Kopff and its dust and gas emissions</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U3CN0605P" onclick="this.target='_blank'">U3CN0605P</a></td>
+		<td>07/18/96 04:47 PM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6630&mission=hst" onclick="this.target='_blank'">6630</a></td>
+		<td>The nucleus of comet 22P/Kopff and its dust and gas emissions</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U3CN0606T" onclick="this.target='_blank'">U3CN0606T</a></td>
+		<td>07/18/96 04:51 PM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6630&mission=hst" onclick="this.target='_blank'">6630</a></td>
+		<td>The nucleus of comet 22P/Kopff and its dust and gas emissions</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U3CN0607T" onclick="this.target='_blank'">U3CN0607T</a></td>
+		<td>07/18/96 04:56 PM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6630&mission=hst" onclick="this.target='_blank'">6630</a></td>
+		<td>The nucleus of comet 22P/Kopff and its dust and gas emissions</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U3CN0608P" onclick="this.target='_blank'">U3CN0608P</a></td>
+		<td>07/18/96 04:58 PM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6630&mission=hst" onclick="this.target='_blank'">6630</a></td>
+		<td>The nucleus of comet 22P/Kopff and its dust and gas emissions</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U3CN0609T" onclick="this.target='_blank'">U3CN0609T</a></td>
+		<td>07/18/96 05:01 PM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6630&mission=hst" onclick="this.target='_blank'">6630</a></td>
+		<td>The nucleus of comet 22P/Kopff and its dust and gas emissions</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U3CN060AT" onclick="this.target='_blank'">U3CN060AT</a></td>
+		<td>07/18/96 05:03 PM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6630&mission=hst" onclick="this.target='_blank'">6630</a></td>
+		<td>The nucleus of comet 22P/Kopff and its dust and gas emissions</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U3CN0701P" onclick="this.target='_blank'">U3CN0701P</a></td>
+		<td>07/18/96 06:03 PM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6630&mission=hst" onclick="this.target='_blank'">6630</a></td>
+		<td>The nucleus of comet 22P/Kopff and its dust and gas emissions</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U3CN0702T" onclick="this.target='_blank'">U3CN0702T</a></td>
+		<td>07/18/96 06:05 PM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6630&mission=hst" onclick="this.target='_blank'">6630</a></td>
+		<td>The nucleus of comet 22P/Kopff and its dust and gas emissions</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U3CN0703T" onclick="this.target='_blank'">U3CN0703T</a></td>
+		<td>07/18/96 06:11 PM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6630&mission=hst" onclick="this.target='_blank'">6630</a></td>
+		<td>The nucleus of comet 22P/Kopff and its dust and gas emissions</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U3CN0704T" onclick="this.target='_blank'">U3CN0704T</a></td>
+		<td>07/18/96 06:17 PM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6630&mission=hst" onclick="this.target='_blank'">6630</a></td>
+		<td>The nucleus of comet 22P/Kopff and its dust and gas emissions</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U3CN0705T" onclick="this.target='_blank'">U3CN0705T</a></td>
+		<td>07/18/96 06:22 PM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6630&mission=hst" onclick="this.target='_blank'">6630</a></td>
+		<td>The nucleus of comet 22P/Kopff and its dust and gas emissions</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U3CN0706T" onclick="this.target='_blank'">U3CN0706T</a></td>
+		<td>07/18/96 06:26 PM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6630&mission=hst" onclick="this.target='_blank'">6630</a></td>
+		<td>The nucleus of comet 22P/Kopff and its dust and gas emissions</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U3CN0707T" onclick="this.target='_blank'">U3CN0707T</a></td>
+		<td>07/18/96 06:31 PM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6630&mission=hst" onclick="this.target='_blank'">6630</a></td>
+		<td>The nucleus of comet 22P/Kopff and its dust and gas emissions</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U3CN0708T" onclick="this.target='_blank'">U3CN0708T</a></td>
+		<td>07/18/96 06:33 PM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6630&mission=hst" onclick="this.target='_blank'">6630</a></td>
+		<td>The nucleus of comet 22P/Kopff and its dust and gas emissions</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U3CN0709T" onclick="this.target='_blank'">U3CN0709T</a></td>
+		<td>07/18/96 06:36 PM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6630&mission=hst" onclick="this.target='_blank'">6630</a></td>
+		<td>The nucleus of comet 22P/Kopff and its dust and gas emissions</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U3CN070AT" onclick="this.target='_blank'">U3CN070AT</a></td>
+		<td>07/18/96 06:38 PM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6630&mission=hst" onclick="this.target='_blank'">6630</a></td>
+		<td>The nucleus of comet 22P/Kopff and its dust and gas emissions</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U3CN0801T" onclick="this.target='_blank'">U3CN0801T</a></td>
+		<td>07/18/96 07:40 PM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6630&mission=hst" onclick="this.target='_blank'">6630</a></td>
+		<td>The nucleus of comet 22P/Kopff and its dust and gas emissions</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U3CN0802T" onclick="this.target='_blank'">U3CN0802T</a></td>
+		<td>07/18/96 07:42 PM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6630&mission=hst" onclick="this.target='_blank'">6630</a></td>
+		<td>The nucleus of comet 22P/Kopff and its dust and gas emissions</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U3CN0803T" onclick="this.target='_blank'">U3CN0803T</a></td>
+		<td>07/18/96 07:47 PM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6630&mission=hst" onclick="this.target='_blank'">6630</a></td>
+		<td>The nucleus of comet 22P/Kopff and its dust and gas emissions</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U3CN0804T" onclick="this.target='_blank'">U3CN0804T</a></td>
+		<td>07/18/96 07:53 PM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6630&mission=hst" onclick="this.target='_blank'">6630</a></td>
+		<td>The nucleus of comet 22P/Kopff and its dust and gas emissions</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U3CN0805T" onclick="this.target='_blank'">U3CN0805T</a></td>
+		<td>07/18/96 07:59 PM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6630&mission=hst" onclick="this.target='_blank'">6630</a></td>
+		<td>The nucleus of comet 22P/Kopff and its dust and gas emissions</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U3CN0806T" onclick="this.target='_blank'">U3CN0806T</a></td>
+		<td>07/18/96 08:03 PM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6630&mission=hst" onclick="this.target='_blank'">6630</a></td>
+		<td>The nucleus of comet 22P/Kopff and its dust and gas emissions</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U3CN0807T" onclick="this.target='_blank'">U3CN0807T</a></td>
+		<td>07/18/96 08:08 PM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6630&mission=hst" onclick="this.target='_blank'">6630</a></td>
+		<td>The nucleus of comet 22P/Kopff and its dust and gas emissions</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U3CN0808T" onclick="this.target='_blank'">U3CN0808T</a></td>
+		<td>07/18/96 08:10 PM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6630&mission=hst" onclick="this.target='_blank'">6630</a></td>
+		<td>The nucleus of comet 22P/Kopff and its dust and gas emissions</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U3CN0809T" onclick="this.target='_blank'">U3CN0809T</a></td>
+		<td>07/18/96 08:13 PM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6630&mission=hst" onclick="this.target='_blank'">6630</a></td>
+		<td>The nucleus of comet 22P/Kopff and its dust and gas emissions</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U3CN080AT" onclick="this.target='_blank'">U3CN080AT</a></td>
+		<td>07/18/96 08:15 PM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6630&mission=hst" onclick="this.target='_blank'">6630</a></td>
+		<td>The nucleus of comet 22P/Kopff and its dust and gas emissions</td>
+	</tr>
+</table>
+<br /><p>[<a href="#top">Back to Top</a>] [<a href="../HST.shtml#01_COMET">Back to Comets</a>]</p>
+
+<a name="bottom"></a>
+
+<!-- ************************************************** End editing! ************************************************** -->
+<!--#include virtual="/css-n-includes/incl_bottom.inc"-->
+<br />Last updated: <!--#config timefmt="%A %B %d, %Y"--><!--#echo var="LAST_MODIFIED" --></div><!-- close id whotext -->
+
+</div><!-- close id footer -->
+</div><!-- end id footwrap -->
+
+</div><!-- close wrapper -->
+
+</body>
+</html>

@@ -1,0 +1,230 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<title>PDS: Small Bodies Node</title>
+
+<!--
+########################
+ALL of the head, style links, header and menu code is in the include. Edit that file with extreme care!!
+########################
+ -->
+
+<!--#include virtual="/css-n-includes/incl_top.inc"-->
+
+<!-- ################################################ MAIN ################################################## -->
+
+<div id="centeronly">
+
+<a name="mainContent"></a>
+<!-- ************************************************** You may begin editing! ************************************************** -->
+
+<a name="top"></a><h3>Object: C/LINEAR (2002 T7) [<a href="../objclass.shtml#HYP">HYP</a>]</h3>
+
+<table width="95%" class="datatab">
+	<colgroup>
+		<col width="11%" />
+		<col width="13%" />
+		<col width="8%" />
+		<col width="8%" />
+		<col width="55%" />
+	</colgroup>
+	<thead><tr>
+		<td>Observation ID</td>
+		<td>Start Time</td>
+		<td>Instrument</td>
+		<td>Proposal ID</td>
+		<td>Proposal Title</td>
+	</tr></thead>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=O8XY01FAQ" onclick="this.target='_blank'">O8XY01FAQ</a></td>
+		<td>06/04/04 11:19 PM</td>
+		<td><a href="../HST_instruments.shtml">STIS </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=9985&mission=hst" onclick="this.target='_blank'">9985</a></td>
+		<td>Comets: Gas in the Inner Coma</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=O8XY01010" onclick="this.target='_blank'">O8XY01010</a></td>
+		<td>06/04/04 11:28 PM</td>
+		<td><a href="../HST_instruments.shtml">STIS </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=9985&mission=hst" onclick="this.target='_blank'">9985</a></td>
+		<td>Comets: Gas in the Inner Coma</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J8XY02HOQ" onclick="this.target='_blank'">J8XY02HOQ</a></td>
+		<td>06/05/04 04:08 AM</td>
+		<td><a href="../HST_instruments.shtml">ACS </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=9985&mission=hst" onclick="this.target='_blank'">9985</a></td>
+		<td>Comets: Gas in the Inner Coma</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J8XY02011" onclick="this.target='_blank'">J8XY02011</a></td>
+		<td>06/05/04 04:09 AM</td>
+		<td><a href="../HST_instruments.shtml">ACS </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=9985&mission=hst" onclick="this.target='_blank'">9985</a></td>
+		<td>Comets: Gas in the Inner Coma</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J8XY02HRQ" onclick="this.target='_blank'">J8XY02HRQ</a></td>
+		<td>06/05/04 04:23 AM</td>
+		<td><a href="../HST_instruments.shtml">ACS </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=9985&mission=hst" onclick="this.target='_blank'">9985</a></td>
+		<td>Comets: Gas in the Inner Coma</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J8XY02HSQ" onclick="this.target='_blank'">J8XY02HSQ</a></td>
+		<td>06/05/04 04:37 AM</td>
+		<td><a href="../HST_instruments.shtml">ACS </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=9985&mission=hst" onclick="this.target='_blank'">9985</a></td>
+		<td>Comets: Gas in the Inner Coma</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J8XY03HUQ" onclick="this.target='_blank'">J8XY03HUQ</a></td>
+		<td>06/05/04 05:43 AM</td>
+		<td><a href="../HST_instruments.shtml">ACS </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=9985&mission=hst" onclick="this.target='_blank'">9985</a></td>
+		<td>Comets: Gas in the Inner Coma</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J8XY03HVQ" onclick="this.target='_blank'">J8XY03HVQ</a></td>
+		<td>06/05/04 06:05 AM</td>
+		<td><a href="../HST_instruments.shtml">ACS </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=9985&mission=hst" onclick="this.target='_blank'">9985</a></td>
+		<td>Comets: Gas in the Inner Coma</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J8XY04HXQ" onclick="this.target='_blank'">J8XY04HXQ</a></td>
+		<td>06/05/04 08:55 AM</td>
+		<td><a href="../HST_instruments.shtml">ACS </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=9985&mission=hst" onclick="this.target='_blank'">9985</a></td>
+		<td>Comets: Gas in the Inner Coma</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J8XY04HYQ" onclick="this.target='_blank'">J8XY04HYQ</a></td>
+		<td>06/05/04 09:17 AM</td>
+		<td><a href="../HST_instruments.shtml">ACS </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=9985&mission=hst" onclick="this.target='_blank'">9985</a></td>
+		<td>Comets: Gas in the Inner Coma</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=O91P04LUQ" onclick="this.target='_blank'">O91P04LUQ</a></td>
+		<td>06/06/04 02:31 AM</td>
+		<td><a href="../HST_instruments.shtml">STIS </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10341&mission=hst" onclick="this.target='_blank'">10341</a></td>
+		<td>The D/H Ratio in C/2002 T7 {LINEAR}</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=O91P04010" onclick="this.target='_blank'">O91P04010</a></td>
+		<td>06/06/04 02:41 AM</td>
+		<td><a href="../HST_instruments.shtml">STIS </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10341&mission=hst" onclick="this.target='_blank'">10341</a></td>
+		<td>The D/H Ratio in C/2002 T7 {LINEAR}</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=O91P01M6Q" onclick="this.target='_blank'">O91P01M6Q</a></td>
+		<td>06/06/04 04:07 AM</td>
+		<td><a href="../HST_instruments.shtml">STIS </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10341&mission=hst" onclick="this.target='_blank'">10341</a></td>
+		<td>The D/H Ratio in C/2002 T7 {LINEAR}</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=O91P01010" onclick="this.target='_blank'">O91P01010</a></td>
+		<td>06/06/04 04:18 AM</td>
+		<td><a href="../HST_instruments.shtml">STIS </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10341&mission=hst" onclick="this.target='_blank'">10341</a></td>
+		<td>The D/H Ratio in C/2002 T7 {LINEAR}</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=O91P02MBQ" onclick="this.target='_blank'">O91P02MBQ</a></td>
+		<td>06/06/04 05:43 AM</td>
+		<td><a href="../HST_instruments.shtml">STIS </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10341&mission=hst" onclick="this.target='_blank'">10341</a></td>
+		<td>The D/H Ratio in C/2002 T7 {LINEAR}</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=O91P02010" onclick="this.target='_blank'">O91P02010</a></td>
+		<td>06/06/04 05:53 AM</td>
+		<td><a href="../HST_instruments.shtml">STIS </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10341&mission=hst" onclick="this.target='_blank'">10341</a></td>
+		<td>The D/H Ratio in C/2002 T7 {LINEAR}</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=O91P03MGQ" onclick="this.target='_blank'">O91P03MGQ</a></td>
+		<td>06/06/04 07:19 AM</td>
+		<td><a href="../HST_instruments.shtml">STIS </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10341&mission=hst" onclick="this.target='_blank'">10341</a></td>
+		<td>The D/H Ratio in C/2002 T7 {LINEAR}</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=O91P03010" onclick="this.target='_blank'">O91P03010</a></td>
+		<td>06/06/04 07:30 AM</td>
+		<td><a href="../HST_instruments.shtml">STIS </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10341&mission=hst" onclick="this.target='_blank'">10341</a></td>
+		<td>The D/H Ratio in C/2002 T7 {LINEAR}</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=O91P08AGQ" onclick="this.target='_blank'">O91P08AGQ</a></td>
+		<td>06/07/04 02:31 AM</td>
+		<td><a href="../HST_instruments.shtml">STIS </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10341&mission=hst" onclick="this.target='_blank'">10341</a></td>
+		<td>The D/H Ratio in C/2002 T7 {LINEAR}</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=O91P08010" onclick="this.target='_blank'">O91P08010</a></td>
+		<td>06/07/04 02:40 AM</td>
+		<td><a href="../HST_instruments.shtml">STIS </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10341&mission=hst" onclick="this.target='_blank'">10341</a></td>
+		<td>The D/H Ratio in C/2002 T7 {LINEAR}</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=O91P05AQQ" onclick="this.target='_blank'">O91P05AQQ</a></td>
+		<td>06/07/04 04:12 AM</td>
+		<td><a href="../HST_instruments.shtml">STIS </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10341&mission=hst" onclick="this.target='_blank'">10341</a></td>
+		<td>The D/H Ratio in C/2002 T7 {LINEAR}</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=O91P05010" onclick="this.target='_blank'">O91P05010</a></td>
+		<td>06/07/04 04:22 AM</td>
+		<td><a href="../HST_instruments.shtml">STIS </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10341&mission=hst" onclick="this.target='_blank'">10341</a></td>
+		<td>The D/H Ratio in C/2002 T7 {LINEAR}</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=O91P06B2Q" onclick="this.target='_blank'">O91P06B2Q</a></td>
+		<td>06/07/04 05:43 AM</td>
+		<td><a href="../HST_instruments.shtml">STIS </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10341&mission=hst" onclick="this.target='_blank'">10341</a></td>
+		<td>The D/H Ratio in C/2002 T7 {LINEAR}</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=O91P06010" onclick="this.target='_blank'">O91P06010</a></td>
+		<td>06/07/04 05:54 AM</td>
+		<td><a href="../HST_instruments.shtml">STIS </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10341&mission=hst" onclick="this.target='_blank'">10341</a></td>
+		<td>The D/H Ratio in C/2002 T7 {LINEAR}</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=O91P07010" onclick="this.target='_blank'">O91P07010</a></td>
+		<td>06/07/04 07:19 AM</td>
+		<td><a href="../HST_instruments.shtml">STIS </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=10341&mission=hst" onclick="this.target='_blank'">10341</a></td>
+		<td>The D/H Ratio in C/2002 T7 {LINEAR}</td>
+	</tr>
+</table>
+<br /><p>[<a href="#top">Back to Top</a>] [<a href="../HST.shtml#01_COMET">Back to Comets</a>]</p>
+
+<a name="bottom"></a>
+
+<!-- ************************************************** End editing! ************************************************** -->
+<!--#include virtual="/css-n-includes/incl_bottom.inc"-->
+<br />Last updated: <!--#config timefmt="%A %B %d, %Y"--><!--#echo var="LAST_MODIFIED" --></div><!-- close id whotext -->
+
+</div><!-- close id footer -->
+</div><!-- end id footwrap -->
+
+</div><!-- close wrapper -->
+
+</body>
+</html>

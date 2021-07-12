@@ -3,7 +3,7 @@
 
 <head>
 <meta http-equiv="content-type" content="text/html;charset=utf-8" />
-<title>SBN Mission Support: Hayabusa</title>
+<title>SBN Mission Support: Hayabusa 2</title>
 
 <!-- 
 ########################
@@ -35,22 +35,18 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 <!--
 ===========================================================================
 EDIT HISTORY:
-+ 2014-11-20 EMW	updated link to Ferret
-+ 2013-02-19 EMW	cleaned up SPICE links
-+ 2011-08-17 EMW	edited per Neese's comments
-+ 2011-04-15 EMW	converted page to list format
-+ 2011-02-22 EMW	added right sidebar space
-+ 2010-08-18 EMW	converted to xhtml, updated to new look
++ 2021-07-12 EMW	updated with NIRS3 data
++ 2020-03-12 EMW	duplicated page from Hayabusa
+
 ===========================================================================
 -->
 
 <!-- Mission Title ====================================================== -->
-<h1>Hayabusa (formerly Muses-C) Mission</h1>
+<h1>Hayabusa 2  Mission</h1>
 
 <!-- Mission Description ================================================ -->
-<p>Hayabusa (formerly Muses-C) is a joint asteroid sample return mission between the Institute of Space and Astronautical Science of Japan (ISAS) and NASA. The spacecraft was launched from Kagoshima Space Center in Japan on 9 May 2003. Hayabusa arrived at asteroid 25143 Itokawa (1998 SF36) on 12 September 2005 and remained close to the asteroid in a station-keeping heliocentric orbit. </p>
+<p>The Hayabusa2 mission will obtain samples from the C-type asteroid (162173) Ryugu to investigate the origin of water and organic materials on Earth, and bring them back to Earth. It is important to understand the early history and transfer processes of the Solar System.</p>
 
-<p>Hayabusa studied Itokawa from altitudes of 20km to 3km from mid-September through the end of November 2005. An attempt to deploy a tiny hopper named Minerva on 12 November failed when the small vehicle missed the asteroid. On 19 November Hayabusa landed briefly on Itokawa and collected particles near the surface; a second landing and sample capture was performed on 26 November. Problems with the spacecraft delayed the start of the cruise back to Earth until April 2007. On 13 June 2010 Hayabusa successfully delivered the return capsule containing the samples to Earth. In October 2010 the mission team announced the sample canister had collected approximately 100 particles.</p>
 
 <!-- SBN Role =========================================================== -->
 <p>The SBN is the lead node for archiving data from Hayabusa into the PDS.</p>
@@ -60,10 +56,10 @@ EDIT HISTORY:
 <ul>
 <li>Instrument Details (Data from these instruments are archived at SBN.)
 	<ul>
-	<li>Asteroid Multiband Imaging Camera (AMICA)</li>
+	<!-- <li>Asteroid Multiband Imaging Camera (AMICA)</li> -->
 	<li>Near-InfraRed Spectrometer (NIRS)</li>
-	<li>LIght Detection And Ranging (LIDAR)</li>
-	<li>X-Ray fluorescence Spectrometer (XRS)</li>
+	<!-- <li>LIght Detection And Ranging (LIDAR)</li> -->
+	<!-- <li><li>X-Ray fluorescence Spectrometer (XRS)</li> -->
 	</ul></li>
 
 <!-- <li>Other Instruments (Spacecraft has other instruments, data from which are archived at another PDS node.)
@@ -76,18 +72,14 @@ EDIT HISTORY:
 <!-- Mission Data ======================================================= -->
 <h2>Data Sets</h2>
 <ul>
-<li><a href="https://sbn.psi.edu/pds/resource/hayamica.html">Hayabusa AMICA Images - Raw</a></li>
-<li><a href="https://sbn.psi.edu/pds/resource/haylidar.html">Hayabusa LIDAR Data - Raw and Calibrated</a></li>
-<li><a href="https://sbn.psi.edu/pds/resource/nirsraw.html">Hayabusa NIRS Raw Spectra</a></li>
-<li><a href="https://sbn.psi.edu/pds/resource/nirscal.html">Hayabusa NIRS Calibrated Spectra</a></li>
-<li><a href="https://sbn.psi.edu/pds/resource/itokawashape.html">Gaskell Itokawa Shape Model</a></li>
+<li><a href="https://sbn.psi.edu/pds/resource/hayabusa2/nirs3.html">Hayabusa2 NIRS3 Bundle</a></li> <!-- urn:jaxa:darts:hyb2_nirs3::1.0 -->
 </ul>
 
-<p>Some of these data are available in preliminary form on the <a href="http://darts.isas.jaxa.jp/planet/project/hayabusa/">JAXA Hayabusa Archive Site</a>.</p>
+<!-- <p>Some of these data are available in preliminary form on the <a href="http://darts.isas.jaxa.jp/planet/project/hayabusa/">JAXA Hayabusa Archive Site</a>.</p> -->
 
 <h3>Other Mission Data</h3>
 <ul>
-<li><a href="https://naif.jpl.nasa.gov/naif/data_archived.html">Hayabusa Spice Kernels</a> (25143 Itokawa)</li><!-- HAY-A-SPICE-6-V1.0 -->
+<!-- <li><a href="https://naif.jpl.nasa.gov/naif/data_archived.html">Hayabusa Spice Kernels</a> (25143 Itokawa)</li>HAY-A-SPICE-6-V1.0 -->
 </ul>
 
 <h3>Related Datasets</h3>

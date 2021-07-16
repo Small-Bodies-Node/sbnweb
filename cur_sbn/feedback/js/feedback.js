@@ -35,12 +35,8 @@ document.addEventListener("DOMContentLoaded", function(){
 		return;
 	}
 
-	// log proxy function
-	var log = function( msg ) {
-		window.console.log( msg );
-	},
 	// function to remove elements, input as arrays
-	removeElements = function( remove ) {
+	var removeElements = function( remove ) {
 		for (var i = 0, len = remove.length; i < len; i++ ) {
 			var item = Array.prototype.pop.call( remove );
 			if ( item !== undefined ) {
@@ -57,9 +53,6 @@ document.addEventListener("DOMContentLoaded", function(){
 		while (i--) { div.appendChild( document.createElement( "span" )); }
 		return div;
 	},
-	getBounds = function( el ) {
-		return el.getBoundingClientRect();
-	},
 	emptyElements = function( el ) {
 		var item;
 		while( (( item = el.firstChild ) !== null ? el.removeChild( item ) : false) ) {}
@@ -68,33 +61,6 @@ document.addEventListener("DOMContentLoaded", function(){
 		var el = document.createElement( name );
 		el.appendChild( document.createTextNode( text ) );
 		return el;
-	},
-	// script onload function to provide support for IE as well
-	scriptLoader = function( script, func ){
-		if (script.onload === undefined) {
-			// IE lack of support for script onload
-
-			if( script.onreadystatechange !== undefined ) {
-
-				var intervalFunc = function() {
-					if (script.readyState !== "loaded" && script.readyState !== "complete") {
-						window.setTimeout( intervalFunc, 250 );
-					} else {
-						// it is loaded
-						func();
-					}
-				};
-
-				window.setTimeout( intervalFunc, 250 );
-
-			} else {
-				log("ERROR: We can't track when script is loaded");
-			}
-
-		} else {
-			return func;
-		}
-
 	},
 	sendButton,
 	captchaUrl = "/feedback/recaptcha-v3-verify.php",
@@ -162,13 +128,7 @@ document.addEventListener("DOMContentLoaded", function(){
 				sendButton.setAttribute("data-callback", "captchaCallback");
 				sendButton.setAttribute("id", "recaptcha");
 
-				// reCAPTCHA branding
-				rcBrand = document.createElement("p");
-				rcBrand.innerHTML = 'This site is protected by reCAPTCHA and the Google <a href="https://policies.google.com/privacy">Privacy Policy</a> and <a href="https://policies.google.com/terms">Terms of Service</a> apply.';
-				rcBrand.className = "reCaptcha-brand";
-
 				modalFooter.className = "feedback-footer";
-				modalFooter.appendChild( rcBrand );
 				modalFooter.appendChild( sendButton );
 
 				modal.setAttribute("id", "feedback-form");
@@ -183,6 +143,17 @@ document.addEventListener("DOMContentLoaded", function(){
 				window.grecaptcha.render("recaptcha", {sitekey: "6LfLCIgUAAAAAI3xLW5PQijxDyZcaUUlTyPDfYlZ"});
 			},
 
+			setupClose: function() {
+				emptyElements( modalBody );
+				sendButton.disabled = false;
+
+				sendButton.value = "Close";
+
+				sendButton.onclick = function() {
+					returnMethods.close();
+					return false;
+				};
+			},
 
 			// close modal window
 			close: function() {
@@ -214,15 +185,7 @@ document.addEventListener("DOMContentLoaded", function(){
 				// send data to adapter for processing
 				adapter.send( data, function( success ) {
 
-					emptyElements( modalBody );
-					sendButton.disabled = false;
-
-					sendButton.value = "Close";
-
-					sendButton.onclick = function() {
-						returnMethods.close();
-						return false;
-					};
+					returnMethods.setupClose();
 
 					modalBody.setAttribute("class", "feedback-body confirmation");
 					var message = document.createElement("p");
@@ -268,9 +231,14 @@ document.addEventListener("DOMContentLoaded", function(){
 						},
 						error: function (XMLHttpRequest, textStatus, errorThrown) {
 							modalBody.setAttribute("class", "feedback-body captchaError");
+							returnMethods.setupClose();
 							var message = document.createElement("p");
-							message.innerHTML = 'Status: ' + textStatus + '; Error: ' + errorThrown + '<br/>If the problem persists, please email <a href="mailto:pds_operator@jpl.nasa.gov">pds_operator@jpl.nasa.gov</a>.';
+							message.innerHTML = '<b>Status: </b>' + textStatus + '; <b>Error: </b>' + errorThrown + '<br/>If the problem persists, please email <a href="mailto:pds_operator@jpl.nasa.gov">pds_operator@jpl.nasa.gov</a>.';
 							modalBody.insertAdjacentElement("afterbegin", message);
+
+							if ( window.additionalHelp ) {
+								modalBody.appendChild( window.additionalHelp );
+							}
 						}
 					});
 				} else {
@@ -287,6 +255,7 @@ document.addEventListener("DOMContentLoaded", function(){
 		glass.className = "feedback-glass";
 
 		var button = document.createElement("button");
+		button.setAttribute("id", "feedback-tab");
 
 		if ( Modernizr.touchevents && window.screen.width < 1025 ) {
 			var $window = $(window),
@@ -378,12 +347,11 @@ document.addEventListener("DOMContentLoaded", function(){
 								el.style.top = offset + "vh";
 							}
 							if ( side === "right" ) {
-								el.setAttribute("class", "feedbackTab");
 								if ( adjust ) {
 									el.style.right = adjustment + "px";
 								}
 							} else  {
-								el.setAttribute("class", "feedbackTab left");
+								el.setAttribute("class", "left");
 								if ( adjust ) {
 									el.style.left = adjustment + "px";
 								}
@@ -397,9 +365,9 @@ document.addEventListener("DOMContentLoaded", function(){
 								el.style.left = offset + "vw";
 							}
 							if ( side === "top" ) {
-								el.setAttribute("class", "feedbackTab top");
+								el.setAttribute("class", "top");
 							} else {
-								el.setAttribute("class", "feedbackTab bottom");
+								el.setAttribute("class", "bottom");
 							}
 						} else {
 							console.log("Invalid value for SIDE of screen to place the tab. The valid options " +
@@ -432,9 +400,6 @@ document.addEventListener("DOMContentLoaded", function(){
 			}
 		}
 
-		if ( !button.classList.contains("feedbackTab") ) {
-			button.className = "feedbackTab";
-		}
 		button.onclick = returnMethods.open;
 
 		if ( options.appendTo !== null ) {

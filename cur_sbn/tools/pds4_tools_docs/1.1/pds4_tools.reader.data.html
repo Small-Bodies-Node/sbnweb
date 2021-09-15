@@ -1,0 +1,541 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>pds4_tools.reader.data module &#8212; PDS4 Python Tools 1.1 documentation</title>
+    <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="pds4_tools.reader.data_types module" href="pds4_tools.reader.data_types.html" />
+    <link rel="prev" title="pds4_tools.reader.header_objects module" href="pds4_tools.reader.header_objects.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="pds4_tools.reader.data_types.html" title="pds4_tools.reader.data_types module"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="pds4_tools.reader.header_objects.html" title="pds4_tools.reader.header_objects module"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">PDS4 Python Tools 1.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="pds4_tools.reader.html" accesskey="U">pds4_tools.reader package</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">pds4_tools.reader.data module</a><ul>
+<li><a class="reference internal" href="#classes">Classes</a></li>
+<li><a class="reference internal" href="#details">Details</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="pds4_tools.reader.header_objects.html"
+                        title="previous chapter">pds4_tools.reader.header_objects module</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="pds4_tools.reader.data_types.html"
+                        title="next chapter">pds4_tools.reader.data_types module</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/pds4_tools.reader.data.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-pds4_tools.reader.data">
+<span id="pds4-tools-reader-data-module"></span><h1>pds4_tools.reader.data module<a class="headerlink" href="#module-pds4_tools.reader.data" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="classes">
+<h2>Classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#pds4_tools.reader.data.PDS_array" title="pds4_tools.reader.data.PDS_array"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PDS_array</span></code></a></td>
+<td>A factory and helper class to work with PDS_ndarray and PDS_marray.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#pds4_tools.reader.data.PDS_ndarray" title="pds4_tools.reader.data.PDS_ndarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PDS_ndarray</span></code></a></td>
+<td>PDS ndarray, enabling some record array functionality and having a meta_data attribute.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#pds4_tools.reader.data.PDS_marray" title="pds4_tools.reader.data.PDS_marray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PDS_marray</span></code></a></td>
+<td>PDS masked array, enabling some record array functionality and having a meta_data attribute.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="details">
+<h2>Details<a class="headerlink" href="#details" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="pds4_tools.reader.data.PDS_array">
+<em class="property">class </em><code class="descname">PDS_array</code><a class="reference internal" href="_modules/pds4_tools/reader/data.html#PDS_array"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.reader.data.PDS_array" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A factory and helper class to work with PDS_ndarray and PDS_marray.</p>
+<p>Intended such that <a class="reference internal" href="#pds4_tools.reader.data.PDS_ndarray" title="pds4_tools.reader.data.PDS_ndarray"><code class="xref any py py-class docutils literal notranslate"><span class="pre">PDS_ndarray</span></code></a> and <a class="reference internal" href="#pds4_tools.reader.data.PDS_marray" title="pds4_tools.reader.data.PDS_marray"><code class="xref any py py-class docutils literal notranslate"><span class="pre">PDS_marray</span></code></a> never need to be separately imported or called, and
+rather that all initialization and type checking should go through this helper class.</p>
+<dl class="classmethod">
+<dt id="pds4_tools.reader.data.PDS_array.get_array">
+<em class="property">classmethod </em><code class="descname">get_array</code><span class="sig-paren">(</span><em>masked</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/data.html#PDS_array.get_array"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.reader.data.PDS_array.get_array" title="Permalink to this definition">¶</a></dt>
+<dd><p>Obtain a PDS array type.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>masked</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">If True, a PDS array class subclassing <code class="docutils literal notranslate"><span class="pre">np.ma.MaskedArray</span></code> is returned. Otherwise a PDS
+array class subclassing the regular <code class="docutils literal notranslate"><span class="pre">np.ndarray</span></code> is returned.</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>PDS_ndarray or PDS_marray</strong></dt>
+<dd><p class="first last">A PDS array class. See <em>masked</em>.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="pds4_tools.reader.data.PDS_array.get_ndarray">
+<em class="property">static </em><code class="descname">get_ndarray</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/data.html#PDS_array.get_ndarray"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.reader.data.PDS_array.get_ndarray" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>PDS_ndarray</strong></dt>
+<dd><p class="first last">A PDS array class based on <code class="docutils literal notranslate"><span class="pre">np.ndarray</span></code>.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="pds4_tools.reader.data.PDS_array.get_marray">
+<em class="property">static </em><code class="descname">get_marray</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/data.html#PDS_array.get_marray"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.reader.data.PDS_array.get_marray" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>PDS_marray</strong></dt>
+<dd><p class="first last">A PDS array class based on <code class="docutils literal notranslate"><span class="pre">np.ma.MaskedArray</span></code>.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="pds4_tools.reader.data.PDS_array.isinstance">
+<em class="property">classmethod </em><code class="descname">isinstance</code><span class="sig-paren">(</span><em>input</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/data.html#PDS_array.isinstance"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.reader.data.PDS_array.isinstance" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>input</strong> <span class="classifier-delimiter">:</span> <span class="classifier">any</span></dt>
+<dd></dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>bool</strong></dt>
+<dd><p class="first last">True if <em>input</em> is an instance of PDS_ndarray or PDS_marray. False otherwise.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="pds4_tools.reader.data.PDS_ndarray">
+<em class="property">class </em><code class="descname">PDS_ndarray</code><a class="reference internal" href="_modules/pds4_tools/reader/data.html#PDS_ndarray"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.reader.data.PDS_ndarray" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></p>
+<p>PDS ndarray, enabling some record array functionality and having a meta_data attribute.</p>
+<p>Subclasses ndarrays such that we can provide meta data for an individual array or table field.</p>
+<p>Inherits all Attributes from <code class="docutils literal notranslate"><span class="pre">np.ndarray</span></code>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>data</strong> <span class="classifier-delimiter">:</span> <span class="classifier">array_like</span></dt>
+<dd><p class="first last">Data for the array.</p>
+</dd>
+<dt><strong>meta_data</strong> <span class="classifier-delimiter">:</span> <span class="classifier">Meta_ArrayStructure or Meta_Field, optional</span></dt>
+<dd><p class="first last">Meta-data for the array.</p>
+</dd>
+<dt><strong>options</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dict, optional</span></dt>
+<dd><p class="first last">NumPy keywords to pass to the <code class="docutils literal notranslate"><span class="pre">np.ndarray</span></code> initializer.</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Attributes:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>meta_data</strong> <span class="classifier-delimiter">:</span> <span class="classifier">Meta_ArrayStructure, Meta_Field or None</span></dt>
+<dd><p class="first last">Meta-data for the array. Defaults to None if no meta-data was given on initialization
+or has been set.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="pds4_tools.reader.data.PDS_ndarray.copy">
+<code class="descname">copy</code><span class="sig-paren">(</span><em>order=u'C'</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/data.html#PDS_ndarray.copy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.reader.data.PDS_ndarray.copy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Copy the array.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>order</strong> <span class="classifier-delimiter">:</span> <span class="classifier">{‘C’, ‘F’, ‘A’, ‘K’}, optional</span></dt>
+<dd><p class="first last">Controls the memory layout of the copy. ‘C’ means C-order, ‘F’ means F-order, ‘A’ means ‘F’ if
+a is Fortran contiguous, ‘C’ otherwise. ‘K’ means match the layout of a as closely as possible.</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>PDS_ndarray</strong></dt>
+<dd><p class="first last">An array with both the data and meta data copied.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pds4_tools.reader.data.PDS_ndarray.field">
+<code class="descname">field</code><span class="sig-paren">(</span><em>key</em>, <em>val=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/data.html#PDS_ndarray.field"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.reader.data.PDS_ndarray.field" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get or set data for a single field.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>key</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int or str</span></dt>
+<dd><p class="first last">Key to select the field on. Either the name of the field, or its index.</p>
+</dd>
+<dt><strong>val</strong> <span class="classifier-delimiter">:</span> <span class="classifier">any, optional</span></dt>
+<dd><p class="first last">If given, sets the field specified by <em>key</em> to have value of <em>val</em>.</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>any or None</strong></dt>
+<dd><p class="first last">A view of the selected field, if val is None. Otherwise returns None.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pds4_tools.reader.data.PDS_ndarray.set_field">
+<code class="descname">set_field</code><span class="sig-paren">(</span><em>data</em>, <em>meta_data</em>, <em>name=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/data.html#PDS_ndarray.set_field"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.reader.data.PDS_ndarray.set_field" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set data and meta data for a single field.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>data</strong> <span class="classifier-delimiter">:</span> <span class="classifier">any</span></dt>
+<dd><p class="first last">Data to set for the field.</p>
+</dd>
+<dt><strong>meta_data</strong> <span class="classifier-delimiter">:</span> <span class="classifier">Meta_Field</span></dt>
+<dd><p class="first last">Meta data to set for the field. If <em>name</em> is None, then the field name to set <em>data</em> for will
+be pulled from this attribute.</p>
+</dd>
+<dt><strong>name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str, optional</span></dt>
+<dd><p class="first last">The name of the field to set data for.</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>None</strong></dt>
+<dd></dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="pds4_tools.reader.data.PDS_marray">
+<em class="property">class </em><code class="descname">PDS_marray</code><a class="reference internal" href="_modules/pds4_tools/reader/data.html#PDS_marray"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.reader.data.PDS_marray" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">numpy.ma.core.MaskedArray</span></code>, <a class="reference internal" href="#pds4_tools.reader.data.PDS_ndarray" title="pds4_tools.reader.data.PDS_ndarray"><code class="xref py py-class docutils literal notranslate"><span class="pre">pds4_tools.reader.data.PDS_ndarray</span></code></a></p>
+<p>PDS masked array, enabling some record array functionality and having a meta_data attribute.</p>
+<p>Subclasses np.ma.MaskedArray such that we can provide meta data for an individual array or table field.</p>
+<p>Inherits all Attributes from <code class="docutils literal notranslate"><span class="pre">np.ma.MaskedArray</span></code>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>data</strong> <span class="classifier-delimiter">:</span> <span class="classifier">array_like</span></dt>
+<dd><p class="first last">Data for the array.</p>
+</dd>
+<dt><strong>meta_data</strong> <span class="classifier-delimiter">:</span> <span class="classifier">Meta_ArrayStructure or Meta_Field, optional</span></dt>
+<dd><p class="first last">Meta-data for the array.</p>
+</dd>
+<dt><strong>options</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dict, optional</span></dt>
+<dd><p class="first last">NumPy keywords to pass to the <code class="docutils literal notranslate"><span class="pre">np.ndarray</span></code> initializer.</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Attributes:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>meta_data</strong> <span class="classifier-delimiter">:</span> <span class="classifier">Meta_ArrayStructure, Meta_Field or None</span></dt>
+<dd><p class="first last">Meta-data for the array. Defaults to None if no meta-data was given on initialization
+or has been set.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="pds4_tools.reader.data.PDS_marray.view">
+<code class="descname">view</code><span class="sig-paren">(</span><em>dtype=None</em>, <em>type=None</em>, <em>fill_value=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/data.html#PDS_marray.view"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.reader.data.PDS_marray.view" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a view of the PDS_marray data.</p>
+<p>Subclassed to fix a NumPy bug that breaks setting fill_value when subselecting a field from a
+structured array.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pds4_tools.reader.data.PDS_marray.filled">
+<code class="descname">filled</code><span class="sig-paren">(</span><em>fill_value=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/data.html#PDS_marray.filled"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.reader.data.PDS_marray.filled" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a copy of self, with masked values filled with a given value.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>fill_value</strong> <span class="classifier-delimiter">:</span> <span class="classifier">scalar, optional</span></dt>
+<dd><p class="first last">The value to use for invalid entries. If None, the <code class="docutils literal notranslate"><span class="pre">fill_value</span></code> attribute
+of the array is used instead. Defaults to None.</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>PDS_ndarray</strong></dt>
+<dd><p class="first last">A copy of <code class="docutils literal notranslate"><span class="pre">self</span></code> with invalid entries replaced by <em>fill_value</em>.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pds4_tools.reader.data.PDS_marray.compressed">
+<code class="descname">compressed</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/data.html#PDS_marray.compressed"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.reader.data.PDS_marray.compressed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a copy of all the non-masked data as a 1-D array.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>PDS_ndarray</strong></dt>
+<dd><p class="first last">A new array holding the non-masked data is returned.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pds4_tools.reader.data.PDS_marray.copy">
+<code class="descname">copy</code><span class="sig-paren">(</span><em>order=u'C'</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/data.html#PDS_marray.copy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.reader.data.PDS_marray.copy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Copy the array.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>order</strong> <span class="classifier-delimiter">:</span> <span class="classifier">{‘C’, ‘F’, ‘A’, ‘K’}, optional</span></dt>
+<dd><p class="first last">Controls the memory layout of the copy. ‘C’ means C-order, ‘F’ means F-order, ‘A’ means ‘F’ if
+a is Fortran contiguous, ‘C’ otherwise. ‘K’ means match the layout of a as closely as possible.</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>PDS_marray</strong></dt>
+<dd><p class="first last">An array with both the data and meta data copied.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pds4_tools.reader.data.PDS_marray.fill_value">
+<code class="descname">fill_value</code><a class="headerlink" href="#pds4_tools.reader.data.PDS_marray.fill_value" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pds4_tools.reader.data.PDS_marray.set_fill_value">
+<code class="descname">set_fill_value</code><span class="sig-paren">(</span><em>value=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/data.html#PDS_marray.set_fill_value"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.reader.data.PDS_marray.set_fill_value" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the filling value.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>value</strong> <span class="classifier-delimiter">:</span> <span class="classifier">scalar, optional</span></dt>
+<dd><p class="first last">A value used to fill the invalid entries of the masked array.</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>None</strong></dt>
+<dd></dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pds4_tools.reader.data.PDS_marray.set_field">
+<code class="descname">set_field</code><span class="sig-paren">(</span><em>data</em>, <em>meta_data</em>, <em>name=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/data.html#PDS_marray.set_field"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.reader.data.PDS_marray.set_field" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set data and meta data for a single field.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>data</strong> <span class="classifier-delimiter">:</span> <span class="classifier">any</span></dt>
+<dd><p class="first last">Data to set for the field.</p>
+</dd>
+<dt><strong>meta_data</strong> <span class="classifier-delimiter">:</span> <span class="classifier">Meta_Field</span></dt>
+<dd><p class="first last">Meta data to set for the field. If <em>name</em> is None, then the field name to set <em>data</em> for will
+be pulled from this attribute.</p>
+</dd>
+<dt><strong>name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str, optional</span></dt>
+<dd><p class="first last">The name of the field to set data for.</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>None</strong></dt>
+<dd></dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="pds4_tools.reader.data_types.html" title="pds4_tools.reader.data_types module"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="pds4_tools.reader.header_objects.html" title="pds4_tools.reader.header_objects module"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">PDS4 Python Tools 1.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="pds4_tools.reader.html" >pds4_tools.reader package</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2015 - 2019, University of Maryland.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.6.
+    </div>
+  </body>
+</html>

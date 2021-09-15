@@ -1,0 +1,251 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>pds4_tools.reader.read_headers module &#8212; PDS4 Python Tools 0.9 documentation</title>
+    
+    <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.9',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="PDS4 Python Tools 0.9 documentation" href="index.html" />
+    <link rel="up" title="pds4_tools.reader package" href="pds4_tools.reader.html" />
+    <link rel="next" title="pds4_tools.reader.general_objects module" href="pds4_tools.reader.general_objects.html" />
+    <link rel="prev" title="pds4_tools.reader.read_tables module" href="pds4_tools.reader.read_tables.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="pds4_tools.reader.general_objects.html" title="pds4_tools.reader.general_objects module"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="pds4_tools.reader.read_tables.html" title="pds4_tools.reader.read_tables module"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">PDS4 Python Tools 0.9 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="pds4_tools.reader.html" accesskey="U">pds4_tools.reader package</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">pds4_tools.reader.read_headers module</a><ul>
+<li><a class="reference internal" href="#functions">Functions</a></li>
+<li><a class="reference internal" href="#details">Details</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="pds4_tools.reader.read_tables.html"
+                        title="previous chapter">pds4_tools.reader.read_tables module</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="pds4_tools.reader.general_objects.html"
+                        title="next chapter">pds4_tools.reader.general_objects module</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/pds4_tools.reader.read_headers.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-pds4_tools.reader.read_headers">
+<span id="pds4-tools-reader-read-headers-module"></span><h1>pds4_tools.reader.read_headers module<a class="headerlink" href="#module-pds4_tools.reader.read_headers" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="functions">
+<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#pds4_tools.reader.read_headers.read_header" title="pds4_tools.reader.read_headers.read_header"><code class="xref py py-obj docutils literal"><span class="pre">read_header</span></code></a>(full_label,&nbsp;header_label,&nbsp;...[,&nbsp;...])</td>
+<td>Create the <a class="reference internal" href="pds4_tools.reader.header_objects.html#pds4_tools.reader.header_objects.HeaderStructure" title="pds4_tools.reader.header_objects.HeaderStructure"><code class="xref any py py-class docutils literal"><span class="pre">HeaderStructure</span></code></a>, containing label, data and meta data for a Header.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#pds4_tools.reader.read_headers.read_header_data" title="pds4_tools.reader.read_headers.read_header_data"><code class="xref py py-obj docutils literal"><span class="pre">read_header_data</span></code></a>(header_structure)</td>
+<td>Reads the data for a single PDS4 header structure, modifies <em>header_structure</em> to contain said data.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#pds4_tools.reader.read_headers.new_header" title="pds4_tools.reader.read_headers.new_header"><code class="xref py py-obj docutils literal"><span class="pre">new_header</span></code></a>(input,&nbsp;**structure_kwargs)</td>
+<td>Create an header structure from PDS-compliant data.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="details">
+<h2>Details<a class="headerlink" href="#details" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="pds4_tools.reader.read_headers.read_header">
+<code class="descname">read_header</code><span class="sig-paren">(</span><em>full_label</em>, <em>header_label</em>, <em>data_filename</em>, <em>lazy_load=False</em>, <em>decode_strings=False</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/read_headers.html#read_header"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.reader.read_headers.read_header" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create the <a class="reference internal" href="pds4_tools.reader.header_objects.html#pds4_tools.reader.header_objects.HeaderStructure" title="pds4_tools.reader.header_objects.HeaderStructure"><code class="xref any py py-class docutils literal"><span class="pre">HeaderStructure</span></code></a>, containing label, data and meta data for a Header.</p>
+<p>Headers refer to PDS4 header data structures, which typically describe a portion of the data that serves
+as a header for some other data format.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>full_label</strong> : Label</p>
+<blockquote>
+<div><p>The entire label for a PDS4 product, from which <em>header_label</em> originated.</p>
+</div></blockquote>
+<p><strong>header_label</strong> : Label</p>
+<blockquote>
+<div><p>Portion of label that defines the PDS4 header data structure.</p>
+</div></blockquote>
+<p><strong>data_filename</strong> : str or unicode</p>
+<blockquote>
+<div><p>Filename, including the full path, of the data file that contains the data for this header.</p>
+</div></blockquote>
+<p><strong>lazy_load</strong> : bool, optional</p>
+<blockquote>
+<div><p>If True, does not read-in the data of this header until the first attempt to access it.
+Defaults to False.</p>
+</div></blockquote>
+<p><strong>decode_strings</strong> : bool, optional</p>
+<blockquote>
+<div><p>If True, the header data will be decoded to the <code class="docutils literal"><span class="pre">unicode</span></code> type in Python 2, and to the
+<code class="docutils literal"><span class="pre">str</span></code> type in Python 3. If False, leaves said data as a byte string. Defaults to False.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">HeaderStructure</p>
+<blockquote>
+<div><p>An object representing the header; contains its label, data and meta data</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><p class="first"><strong>TypeError</strong></p>
+<blockquote class="last">
+<div><p>Raised if called on a non-header according to <em>header_label</em>.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="pds4_tools.reader.read_headers.read_header_data">
+<code class="descname">read_header_data</code><span class="sig-paren">(</span><em>header_structure</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/read_headers.html#read_header_data"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.reader.read_headers.read_header_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reads the data for a single PDS4 header structure, modifies <em>header_structure</em> to contain said data.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>header_structure</strong> : HeaderStructure</p>
+<blockquote>
+<div><p>The PDS4 Header data structure to which the data should be added.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="pds4_tools.reader.read_headers.new_header">
+<code class="descname">new_header</code><span class="sig-paren">(</span><em>input</em>, <em>**structure_kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/read_headers.html#new_header"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.reader.read_headers.new_header" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create an header structure from PDS-compliant data.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>input</strong> : bytes, str or unicode</p>
+<blockquote>
+<div><p>A string or bytes containing the data for header.</p>
+</div></blockquote>
+<p><strong>structure_kwargs</strong> :  dict, optional</p>
+<blockquote>
+<div><p>Keywords that are passed directly to the <a class="reference internal" href="pds4_tools.reader.header_objects.html#pds4_tools.reader.header_objects.HeaderStructure" title="pds4_tools.reader.header_objects.HeaderStructure"><code class="xref any py py-class docutils literal"><span class="pre">HeaderStructure</span></code></a> constructor.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">HeaderStructure</p>
+<blockquote class="last">
+<div><p>An object representing the PDS4 header structure. The data attribute will contain <em>input</em>.
+Other attributes may be specified via <em>structure_kwargs</em>.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="pds4_tools.reader.general_objects.html" title="pds4_tools.reader.general_objects module"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="pds4_tools.reader.read_tables.html" title="pds4_tools.reader.read_tables module"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">PDS4 Python Tools 0.9 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="pds4_tools.reader.html" >pds4_tools.reader package</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2015 - 2017, University of Maryland.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.6.
+    </div>
+  </body>
+</html>

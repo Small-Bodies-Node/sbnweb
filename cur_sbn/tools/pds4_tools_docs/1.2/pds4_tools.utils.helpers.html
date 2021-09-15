@@ -1,0 +1,304 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>pds4_tools.utils.helpers module &#8212; PDS4 Python Tools 1.2 documentation</title>
+    <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/css/custom.css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="pds4_tools.utils.logging module" href="pds4_tools.utils.logging.html" />
+    <link rel="prev" title="pds4_tools.utils.exceptions module" href="pds4_tools.utils.exceptions.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="pds4_tools.utils.logging.html" title="pds4_tools.utils.logging module"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="pds4_tools.utils.exceptions.html" title="pds4_tools.utils.exceptions module"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">PDS4 Python Tools 1.2 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="pds4_tools.utils.html" accesskey="U">pds4_tools.utils package</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">pds4_tools.utils.helpers module</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="pds4-tools-utils-helpers-module">
+<h1>pds4_tools.utils.helpers module<a class="headerlink" href="#pds4-tools-utils-helpers-module" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="functions">
+<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pds4_tools.utils.helpers.cast_int_float_string" title="pds4_tools.utils.helpers.cast_int_float_string"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cast_int_float_string</span></code></a>(value)</p></td>
+<td><p>Cast given string value, if possible, to an int, float or returns unchanged.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pds4_tools.utils.helpers.is_array_like" title="pds4_tools.utils.helpers.is_array_like"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_array_like</span></code></a>(value)</p></td>
+<td><p>Array-like values are defined as those that implement __len__ (such as <code class="docutils literal notranslate"><span class="pre">list</span></code>, <code class="docutils literal notranslate"><span class="pre">tuple</span></code>, <code class="docutils literal notranslate"><span class="pre">array.array</span></code>, <code class="docutils literal notranslate"><span class="pre">np.ndarray</span></code>, etc) but are not <code class="docutils literal notranslate"><span class="pre">str</span></code>, <code class="docutils literal notranslate"><span class="pre">unicode</span></code> or <code class="docutils literal notranslate"><span class="pre">bytes</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pds4_tools.utils.helpers.finite_min_max" title="pds4_tools.utils.helpers.finite_min_max"><code class="xref py py-obj docutils literal notranslate"><span class="pre">finite_min_max</span></code></a>(array_like)</p></td>
+<td><p>Obtain finite (non-NaN, non-Inf) minimum and maximum of an array.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pds4_tools.utils.helpers.dict_extract" title="pds4_tools.utils.helpers.dict_extract"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dict_extract</span></code></a>(nested_dict, key)</p></td>
+<td><p>Recursively searches nested dictionaries.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pds4_tools.utils.helpers.xml_to_dict" title="pds4_tools.utils.helpers.xml_to_dict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">xml_to_dict</span></code></a>(xml_element[, skip_attributes, …])</p></td>
+<td><p>Transforms XML to an <code class="docutils literal notranslate"><span class="pre">OrderedDict</span></code>.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="module-pds4_tools.utils.helpers">
+<span id="details"></span><h2>Details<a class="headerlink" href="#module-pds4_tools.utils.helpers" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="pds4_tools.utils.helpers.cast_int_float_string">
+<code class="sig-name descname">cast_int_float_string</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/utils/helpers.html#cast_int_float_string"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.utils.helpers.cast_int_float_string" title="Permalink to this definition">¶</a></dt>
+<dd><p>Cast given string value, if possible, to an int, float or returns unchanged.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>value</strong><span class="classifier">str or unicode</span></dt><dd><p>Value to try casting to an int and float.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>int, float, str or unicode</dt><dd><p>Cast <em>value</em>.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pds4_tools.utils.helpers.is_array_like">
+<code class="sig-name descname">is_array_like</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/utils/helpers.html#is_array_like"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.utils.helpers.is_array_like" title="Permalink to this definition">¶</a></dt>
+<dd><p>Array-like values are defined as those that implement __len__ (such as <code class="docutils literal notranslate"><span class="pre">list</span></code>, <code class="docutils literal notranslate"><span class="pre">tuple</span></code>,
+<code class="docutils literal notranslate"><span class="pre">array.array</span></code>, <code class="docutils literal notranslate"><span class="pre">np.ndarray</span></code>, etc) but are not <code class="docutils literal notranslate"><span class="pre">str</span></code>, <code class="docutils literal notranslate"><span class="pre">unicode</span></code> or <code class="docutils literal notranslate"><span class="pre">bytes</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>value</strong></dt><dd><p>Any kind of value.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>bool</dt><dd><p>True if <em>value</em> is array-like, false otherwise.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pds4_tools.utils.helpers.finite_min_max">
+<code class="sig-name descname">finite_min_max</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">array_like</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/utils/helpers.html#finite_min_max"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.utils.helpers.finite_min_max" title="Permalink to this definition">¶</a></dt>
+<dd><p>Obtain finite (non-NaN, non-Inf) minimum and maximum of an array.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>array_like</strong><span class="classifier">array_like</span></dt><dd><p>A numeric array of some kind, possibly containing NaN or Inf values.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>tuple</dt><dd><p>Two-valued tuple containing the finite minimum and maximum of <em>array_like</em>.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pds4_tools.utils.helpers.dict_extract">
+<code class="sig-name descname">dict_extract</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">nested_dict</span></em>, <em class="sig-param"><span class="n">key</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/utils/helpers.html#dict_extract"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.utils.helpers.dict_extract" title="Permalink to this definition">¶</a></dt>
+<dd><p>Recursively searches nested dictionaries.</p>
+<p><em>nested_dict</em> may contain other dictionaries, or other array-like’s that have dictionaries
+inside: all dictionaries anywhere will be searched.</p>
+<p>Adapted from <a class="reference external" href="http://stackoverflow.com/a/29652561">http://stackoverflow.com/a/29652561</a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>nested_dict</strong><span class="classifier">dict or OrderedDict</span></dt><dd><p>A dictionary potentially containing an arbitrary number of other dictionaries.</p>
+</dd>
+<dt><strong>key</strong><span class="classifier">str or unicode</span></dt><dd><p>The key to search for in <em>nested_dict</em>.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>generator</dt><dd><p>Found values for <em>key</em> in any dictionary inside <em>nested_dict</em>.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>This code is generally efficient. However, if you pass it a dictionary that has a huge array
+nested within it, it will not be performant because it will try to search each value in the
+array for a dictionary (this is by design; the intent if non-dict array-like’s are present
+is to search them on the assumption they will be small where using this function makes sense).</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;id&quot;</span> <span class="p">:</span> <span class="s2">&quot;abcde&quot;</span><span class="p">,</span>
+<span class="go">          &quot;key1&quot; : &quot;blah&quot;,</span>
+<span class="go">          &quot;key2&quot; : &quot;blah blah&quot;,</span>
+<span class="go">          &quot;nestedlist&quot; : [</span>
+<span class="go">            &quot;blah blah&quot;,</span>
+<span class="go">            { &quot;id&quot; : &quot;qwerty&quot;,</span>
+<span class="go">            &quot;key1&quot;: &quot;blah&quot;} ]</span>
+<span class="go">        }</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">dict_extract</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="s1">&#39;id&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">result</span><span class="p">))</span>
+<span class="go">[&#39;abcde&#39;, &#39;qwerty&#39;]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pds4_tools.utils.helpers.xml_to_dict">
+<code class="sig-name descname">xml_to_dict</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">xml_element</span></em>, <em class="sig-param"><span class="n">skip_attributes</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">cast_values</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">cast_ignore</span><span class="o">=</span><span class="default_value">()</span></em>, <em class="sig-param"><span class="n">tag_modify</span><span class="o">=</span><span class="default_value">()</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/utils/helpers.html#xml_to_dict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.utils.helpers.xml_to_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Transforms XML to an <code class="docutils literal notranslate"><span class="pre">OrderedDict</span></code>.</p>
+<p>Takes an XML <code class="docutils literal notranslate"><span class="pre">ElementTree</span></code> Element or a <a class="reference internal" href="pds4_tools.reader.label_objects.html#pds4_tools.reader.label_objects.Label" title="pds4_tools.reader.label_objects.Label"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Label</span></code></a> and creates an equivalent <code class="docutils literal notranslate"><span class="pre">OrderedDict</span></code>.
+Keys of the dictionary represent tag names and values represent the text values of the elements.
+In case of a (sub)element having child elements, values will be another <code class="docutils literal notranslate"><span class="pre">OrderedDict</span></code>, inside
+which the text of the element has key ‘_text’. In case of (sub)elements having child elements with
+the same key, the value for the key will be a <code class="docutils literal notranslate"><span class="pre">list</span></code>. In case of (sub)elements with attributes,
+the value will be an <code class="docutils literal notranslate"><span class="pre">OrderedDict</span></code>, inside which the key for each attribute starts with ‘&#64;’ and
+the text of the element has key ‘_text’. For text elements, the text value is not preserved (and
+a ‘_text’ key is not created) if it contains only whitespace (including spaces, tabs and newlines);
+otherwise whitespaces are preserved.</p>
+<p>Preserves order of elements in most cases. The exception is when an element has 2 or more sets
+of children, where each set has the same key names (i.e., there are at least 4 children, and 2 of
+those children have one key, and 2 have another key) and the order of the children with the
+non-matching keys is intertwined, in such a case the order of the intertwined keys will not be preserved.</p>
+<p>Adapted from <a class="reference external" href="http://stackoverflow.com/a/10076823">http://stackoverflow.com/a/10076823</a>.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>xml_element</strong><span class="classifier"><code class="docutils literal notranslate"><span class="pre">ElementTree</span></code> Element or Label</span></dt><dd><p>XML representation which will be turned into a dictionary.</p>
+</dd>
+<dt><strong>skip_attributes</strong><span class="classifier">bool, optional</span></dt><dd><p>If True, skips adding attributes from XML. Defaults to False.</p>
+</dd>
+<dt><strong>cast_values</strong><span class="classifier">bool, optional</span></dt><dd><p>If True, float and int compatible values of element text and attribute values will be cast as such
+in the output dictionary. Defaults to False.</p>
+</dd>
+<dt><strong>cast_ignore</strong><span class="classifier">tuple[str or unicode], optional</span></dt><dd><p>If given, then a tuple of element tags and/or attribute names. If <em>cast_values</em> is True, then
+for elements and attributes matching exactly the values in this tuple, values will not be cast.
+Attribute names must be prepended by an ‘&#64;’. If <em>tag_modify</em> is set, then tags and attribute names
+specified by <em>cast_ignore</em> should be the already tag modified versions. Empty by default.</p>
+</dd>
+<dt><strong>tag_modify</strong><span class="classifier">tuple, optional</span></dt><dd><p>If given, then a 2-valued tuple with str or unicode values, or a tuple of 2-valued tuples. Any match,
+including partial, in element tag names and/or attributes names for each tag_modify[0] is replaced
+with tag_modify[1]. Empty by default.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>OrderedDict</dt><dd><p>Dictionary representation of the XML input.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">pds4_tools.utils.helpers module</a><ul>
+<li><a class="reference internal" href="#functions">Functions</a></li>
+<li><a class="reference internal" href="#module-pds4_tools.utils.helpers">Details</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="pds4_tools.utils.exceptions.html"
+                        title="previous chapter">pds4_tools.utils.exceptions module</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="pds4_tools.utils.logging.html"
+                        title="next chapter">pds4_tools.utils.logging module</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/pds4_tools.utils.helpers.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="pds4_tools.utils.logging.html" title="pds4_tools.utils.logging module"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="pds4_tools.utils.exceptions.html" title="pds4_tools.utils.exceptions module"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">PDS4 Python Tools 1.2 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="pds4_tools.utils.html" >pds4_tools.utils package</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">pds4_tools.utils.helpers module</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2015 - 2020, University of Maryland.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+    </div>
+  </body>
+</html>

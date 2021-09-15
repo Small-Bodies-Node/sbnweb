@@ -1,0 +1,1636 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>pds4_tools.reader.table_objects module &#8212; PDS4 Python Tools 1.2 documentation</title>
+    <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/css/custom.css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="pds4_tools.reader.header_objects module" href="pds4_tools.reader.header_objects.html" />
+    <link rel="prev" title="pds4_tools.reader.array_objects module" href="pds4_tools.reader.array_objects.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="pds4_tools.reader.header_objects.html" title="pds4_tools.reader.header_objects module"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="pds4_tools.reader.array_objects.html" title="pds4_tools.reader.array_objects module"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">PDS4 Python Tools 1.2 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="pds4_tools.reader.html" accesskey="U">pds4_tools.reader package</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">pds4_tools.reader.table_objects module</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="pds4-tools-reader-table-objects-module">
+<h1>pds4_tools.reader.table_objects module<a class="headerlink" href="#pds4-tools-reader-table-objects-module" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="classes">
+<h2>Classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h2>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pds4_tools.reader.table_objects.TableStructure" title="pds4_tools.reader.table_objects.TableStructure"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TableStructure</span></code></a>([structure_data, …])</p></td>
+<td><p>Stores a single PDS4 table data structure.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pds4_tools.reader.table_objects.Meta_TableStructure" title="pds4_tools.reader.table_objects.Meta_TableStructure"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Meta_TableStructure</span></code></a>(*args, **kwds)</p></td>
+<td><p>Meta data about a PDS4 table data structure.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pds4_tools.reader.table_objects.TableManifest" title="pds4_tools.reader.table_objects.TableManifest"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TableManifest</span></code></a>([items, table_type, table_label])</p></td>
+<td><p>Stores a single table’s Meta_Fields and Meta_Groups</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pds4_tools.reader.table_objects.Meta_TableElement" title="pds4_tools.reader.table_objects.Meta_TableElement"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Meta_TableElement</span></code></a>(*args, **kwds)</p></td>
+<td><p>Stores meta data about any table element.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pds4_tools.reader.table_objects.Meta_Field" title="pds4_tools.reader.table_objects.Meta_Field"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Meta_Field</span></code></a>(*args, **kwds)</p></td>
+<td><p>Stores meta data about a single &lt;Field_*&gt;.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pds4_tools.reader.table_objects.Meta_FieldCharacter" title="pds4_tools.reader.table_objects.Meta_FieldCharacter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Meta_FieldCharacter</span></code></a>(*args, **kwds)</p></td>
+<td><p>Stores meta data about a single &lt;Field_Character&gt;.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pds4_tools.reader.table_objects.Meta_FieldBinary" title="pds4_tools.reader.table_objects.Meta_FieldBinary"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Meta_FieldBinary</span></code></a>(*args, **kwds)</p></td>
+<td><p>Stores meta data about a single &lt;Field_Binary&gt;.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pds4_tools.reader.table_objects.Meta_FieldDelimited" title="pds4_tools.reader.table_objects.Meta_FieldDelimited"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Meta_FieldDelimited</span></code></a>(*args, **kwds)</p></td>
+<td><p>Stores meta data about a single &lt;Field_Delimited&gt;.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pds4_tools.reader.table_objects.Meta_FieldUniformlySampled" title="pds4_tools.reader.table_objects.Meta_FieldUniformlySampled"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Meta_FieldUniformlySampled</span></code></a>(*args, **kwds)</p></td>
+<td><p>Stores meta data about a single &lt;Uniformly_Sampled&gt;.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pds4_tools.reader.table_objects.Meta_Group" title="pds4_tools.reader.table_objects.Meta_Group"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Meta_Group</span></code></a>(*args, **kwds)</p></td>
+<td><p>Stores meta data about a single &lt;Group_Field_*&gt;.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="functions">
+<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="pds4_tools.reader.table_objects.TableStructure">
+<em class="property">class </em><code class="sig-name descname">TableStructure</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">structure_data</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">structure_meta_data</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">structure_label</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">full_label</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">parent_filename</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">structure_id</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/table_objects.html#TableStructure"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.reader.table_objects.TableStructure" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="pds4_tools.reader.general_objects.html#pds4_tools.reader.general_objects.Structure" title="pds4_tools.reader.general_objects.Structure"><code class="xref py py-class docutils literal notranslate"><span class="pre">pds4_tools.reader.general_objects.Structure</span></code></a></p>
+<p>Stores a single PDS4 table data structure.</p>
+<p>Contains the table’s data, meta data and label portion. All forms of PDS4 tables
+(e.g. Table_Character, Table_Binary and Table_Delimited) are stored by this class.</p>
+<p>See <a class="reference internal" href="pds4_tools.reader.general_objects.html#pds4_tools.reader.general_objects.Structure" title="pds4_tools.reader.general_objects.Structure"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Structure</span></code></a>’s and <a class="reference internal" href="pds4_tools.reader.core.html#pds4_tools.reader.core.pds4_read" title="pds4_tools.reader.core.pds4_read"><code class="xref any py py-func docutils literal notranslate"><span class="pre">pds4_read</span></code></a>’s docstrings for attributes, properties and usage instructions
+of this object.</p>
+<p>Inherits all Attributes and Parameters from <a class="reference internal" href="pds4_tools.reader.general_objects.html#pds4_tools.reader.general_objects.Structure" title="pds4_tools.reader.general_objects.Structure"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Structure</span></code></a>. Overrides <a class="reference internal" href="#pds4_tools.reader.table_objects.TableStructure.info" title="pds4_tools.reader.table_objects.TableStructure.info"><code class="xref any py py-meth docutils literal notranslate"><span class="pre">info</span></code></a>, <a class="reference internal" href="#pds4_tools.reader.table_objects.TableStructure.data" title="pds4_tools.reader.table_objects.TableStructure.data"><code class="xref any py py-attr docutils literal notranslate"><span class="pre">data</span></code></a> and <a class="reference internal" href="#pds4_tools.reader.table_objects.TableStructure.from_file" title="pds4_tools.reader.table_objects.TableStructure.from_file"><code class="xref any py py-meth docutils literal notranslate"><span class="pre">from_file</span></code></a>
+methods to implement them.</p>
+<dl class="py method">
+<dt id="pds4_tools.reader.table_objects.TableStructure.from_file">
+<em class="property">classmethod </em><code class="sig-name descname">from_file</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data_filename</span></em>, <em class="sig-param"><span class="n">structure_label</span></em>, <em class="sig-param"><span class="n">full_label</span></em>, <em class="sig-param"><span class="n">lazy_load</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">no_scale</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">decode_strings</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/table_objects.html#TableStructure.from_file"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.reader.table_objects.TableStructure.from_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a table structure from relevant labels and file for the data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>data_filename</strong><span class="classifier">str or unicode</span></dt><dd><p>Filename of the data file that contained the data for this table structure.</p>
+</dd>
+<dt><strong>structure_label</strong><span class="classifier">Label</span></dt><dd><p>The segment of the label describing only this table structure.</p>
+</dd>
+<dt><strong>full_label</strong><span class="classifier">Label</span></dt><dd><p>The entire label describing the PDS4 product this structure originated from.</p>
+</dd>
+<dt><strong>no_scale</strong><span class="classifier">bool, optional</span></dt><dd><p>Read-in data will not be adjusted according to the offset and scaling factor. Defaults to False.</p>
+</dd>
+<dt><strong>decode_strings</strong><span class="classifier">bool, optional</span></dt><dd><p>If True, strings data types contained in the returned data will be decoded to
+the <code class="docutils literal notranslate"><span class="pre">unicode</span></code> type in Python 2, and to the <code class="docutils literal notranslate"><span class="pre">str</span></code> type in Python 3. If
+false, leaves string types as byte strings. Defaults to False.</p>
+</dd>
+<dt><strong>lazy_load</strong><span class="classifier">bool, optional</span></dt><dd><p>If True, does not read-in the data of this structure until the first attempt to access it.
+Defaults to False.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>TableStructure</dt><dd><p>An object representing the PDS4 table structure; contains its label, data and meta data.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pds4_tools.reader.table_objects.TableStructure.from_fields">
+<em class="property">classmethod </em><code class="sig-name descname">from_fields</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fields</span></em>, <em class="sig-param"><span class="n">no_scale</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">decode_strings</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">masked</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">structure_kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/table_objects.html#TableStructure.from_fields"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.reader.table_objects.TableStructure.from_fields" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a table structure from PDS-compliant data or meta data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>fields</strong><span class="classifier">list[PDS_ndarray, PDS_marray or Meta_Field]</span></dt><dd><p>A list of either fields with data, where each must contain a valid PDS4 meta_data attribute
+defining the field, or a list of valid Meta_Field’s.</p>
+</dd>
+<dt><strong>no_scale</strong><span class="classifier">bool, optional</span></dt><dd><p>If True, and input is a list of fields with data, then the data will scaled according to the
+scaling_factor and value_offset meta data. If the <em>fields</em> is meta data only, then the output
+data type will be large enough to store the scaled values. If False, no scaling or data type
+conversions will be done. Defaults to False.</p>
+</dd>
+<dt><strong>decode_strings</strong><span class="classifier">bool, optional</span></dt><dd><p>If True, then fields containing character byte data will be converted to a dtype of unicode.
+If False, then for character data the obtained dtype will remain byte strings. Defaults to
+False.</p>
+</dd>
+<dt><strong>masked</strong><span class="classifier">bool or None, optional</span></dt><dd><p>If True, and input is a list of fields with data, then the data will retain any masked values and
+in additional have numeric Special_Constants values masked. If False, any masked values in the
+input fields will be unmasked and data assignments will not preserve masked values. If None,
+masked values in the input will be retained only if any are present. Defaults to None.</p>
+</dd>
+<dt><strong>structure_kwargs</strong><span class="classifier">dict, optional</span></dt><dd><p>Keywords that are passed directly to the <a class="reference internal" href="#pds4_tools.reader.table_objects.TableStructure" title="pds4_tools.reader.table_objects.TableStructure"><code class="xref any py py-class docutils literal notranslate"><span class="pre">TableStructure</span></code></a> constructor.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>TableStructure</dt><dd><p>An object representing the PDS4 table structure. The data will contain a structured array that
+can store values for <em>fields</em> (or does store it, if input is a list of fields with data). Other
+attributes may be specified via <em>structure_kwargs</em>.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pds4_tools.reader.table_objects.TableStructure.info">
+<code class="sig-name descname">info</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">abbreviated</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">output</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/table_objects.html#TableStructure.info"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.reader.table_objects.TableStructure.info" title="Permalink to this definition">¶</a></dt>
+<dd><p>Prints a summary of this data structure.</p>
+<p>Contains the type, number of fields and number of records in the Table.
+If <em>abbreviated</em> is True then also outputs the name and number of elements
+for each field in the table.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>abbreviated</strong><span class="classifier">bool, optional</span></dt><dd><p>If False, output additional detail. Defaults to False.</p>
+</dd>
+<dt><strong>output</strong><span class="classifier">file, bool or None, optional</span></dt><dd><p>A file-like object to write the output to.  If set to False then instead of outputting
+to a file a list representing the summary parameters for the Structure is returned.
+Writes to <code class="docutils literal notranslate"><span class="pre">sys.stdout</span></code> by default.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>None or list</dt><dd><p>If output is False, then returns a list representing the summary parameters for the Structure.
+Otherwise returns None.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pds4_tools.reader.table_objects.TableStructure.__getitem__">
+<code class="sig-name descname">__getitem__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">key</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/table_objects.html#TableStructure.__getitem__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.reader.table_objects.TableStructure.__getitem__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get data for specific field in <a class="reference internal" href="#pds4_tools.reader.table_objects.TableStructure" title="pds4_tools.reader.table_objects.TableStructure"><code class="xref any py py-class docutils literal notranslate"><span class="pre">TableStructure</span></code></a>.</p>
+<p>In the case of GROUP fields, the key can include the full location for disambiguation,
+(e.g. field_name = ‘GROUP_1, GROUP_0, field_name’). See <a class="reference internal" href="#pds4_tools.reader.table_objects.TableStructure.info" title="pds4_tools.reader.table_objects.TableStructure.info"><code class="xref any py py-meth docutils literal notranslate"><span class="pre">info</span></code></a> method for full locations of all
+fields.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>key</strong><span class="classifier">str, unicode, int, slice or tuple</span></dt><dd><p>Selection for desired field. May be a string containing the name of a field to search for,
+similar to <code class="docutils literal notranslate"><span class="pre">dict</span></code> indexing functionality. May be an integer or slice specifying which field(s)’
+data to select,  similar to <code class="docutils literal notranslate"><span class="pre">list</span></code> or <code class="docutils literal notranslate"><span class="pre">tuple</span></code> indexing functionality. May be a two-valued
+tuple, with the first value providing the field name and the second value a zero-based repetition
+selector count if there are multiple fields with the same name.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>PDS_ndarray, PDS_marray or None</dt><dd><p>The data for the matched field, or None if no match found.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>IndexError</dt><dd><p>Raised if <em>key</em> is a larger int than there are fields in the table.</p>
+</dd>
+<dt>ValueError</dt><dd><p>Raised if <em>key</em> contains a name that does not match any field in the table.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">table_struct</span><span class="p">[</span><span class="s1">&#39;First_Field_Name&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">table_struct</span><span class="o">.</span><span class="n">field</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>To access two fields at the same time by name,</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">table_struct</span><span class="p">[[</span><span class="s1">&#39;First_Field&#39;</span><span class="p">,</span> <span class="s1">&#39;Second_Field&#39;</span><span class="p">]]</span>
+</pre></div>
+</div>
+<p>In-case of GROUP fields, we can use the full name (as given by the <a class="reference internal" href="#pds4_tools.reader.table_objects.TableStructure.info" title="pds4_tools.reader.table_objects.TableStructure.info"><code class="xref any py py-meth docutils literal notranslate"><span class="pre">info</span></code></a> method) for disambiguation,</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">table_struct</span><span class="p">[</span><span class="s1">&#39;GROUP_1, GROUP_0, field_name&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>If both of the first two data structures have the name ‘Field_Name’, then to select the second
+we can do,</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">table_structure</span><span class="p">[</span><span class="s1">&#39;Field_Name [1]&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">table_struct</span><span class="o">.</span><span class="n">field</span><span class="p">(</span><span class="s1">&#39;Field_Name&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>We can also record record-wise. To obtain all fields for the first five records,</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">table_struct</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pds4_tools.reader.table_objects.TableStructure.__len__">
+<code class="sig-name descname">__len__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/table_objects.html#TableStructure.__len__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.reader.table_objects.TableStructure.__len__" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>int</dt><dd><p>Number of fields contained in the table.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pds4_tools.reader.table_objects.TableStructure.field">
+<code class="sig-name descname">field</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">key</span></em>, <em class="sig-param"><span class="n">repetition</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">all</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/table_objects.html#TableStructure.field"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.reader.table_objects.TableStructure.field" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get data for specific field in table.</p>
+<p>In the case of GROUP fields, the key can include the full location for disambiguation,
+(e.g. <em>key</em> = ‘GROUP_1, GROUP_0, field_name’). See <a class="reference internal" href="#pds4_tools.reader.table_objects.TableStructure.info" title="pds4_tools.reader.table_objects.TableStructure.info"><code class="xref any py py-meth docutils literal notranslate"><span class="pre">info</span></code></a> method for full locations of all
+fields.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>key</strong><span class="classifier">str, unicode, int or slice</span></dt><dd><p>Selection for desired field. May be an integer or slice specifying which field(s)’ data
+to select,  similar to <code class="docutils literal notranslate"><span class="pre">list</span></code> or <code class="docutils literal notranslate"><span class="pre">tuple</span></code> indexing functionality. May be a string
+containing the name of a field to search for.</p>
+</dd>
+<dt><strong>repetition</strong><span class="classifier">int, optional</span></dt><dd><p>If there are multiple fields with the same name, specifies a zero-based repetition count
+to return. Defaults to 0.</p>
+</dd>
+<dt><strong>all</strong><span class="classifier">bool, optional</span></dt><dd><p>If there are multiple fields with the same name, setting to True indicates that
+all fields should be returned in a <code class="docutils literal notranslate"><span class="pre">list</span></code>. If set, and no match is found
+then an empty list will be returned. Defaults to False.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>PDS_ndarray or PDS_marray</dt><dd><p>The data for the field(s).</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>IndexError</dt><dd><p>Raised if <em>key</em> is a larger integer than there are fields in the table.</p>
+</dd>
+<dt>ValueError</dt><dd><p>Raised if <em>key</em> is a name that does not match any field.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>See <a class="reference internal" href="#pds4_tools.reader.table_objects.TableStructure.__getitem__" title="pds4_tools.reader.table_objects.TableStructure.__getitem__"><code class="xref py py-func docutils literal notranslate"><span class="pre">TableStructure.__getitem__()</span></code></a> method examples.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="pds4_tools.reader.table_objects.TableStructure.data">
+<code class="sig-name descname">data</code><a class="headerlink" href="#pds4_tools.reader.table_objects.TableStructure.data" title="Permalink to this definition">¶</a></dt>
+<dd><p>All data in the PDS4 table data structure.</p>
+<p>This property is implemented as a thread-safe cacheable attribute. Once it is run
+for the first time, it replaces itself with an attribute having the exact
+data that was originally returned.</p>
+<p>Unlike normal properties, this property/attribute is settable without a __set__ method.
+To never run the read-in routine inside this property, you need to manually create the
+the <code class="docutils literal notranslate"><span class="pre">.data</span></code> attribute prior to ever invoking this method (or pass in the data to the
+constructor on object instantiation, which does this for you).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>PDS_ndarray or PDS_marray</dt><dd><p>A structured array (either effectively np.ndarray or np.ma.MaskedArray) representing all the
+fields in this table.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pds4_tools.reader.table_objects.TableStructure.fields">
+<em class="property">property </em><code class="sig-name descname">fields</code><a class="headerlink" href="#pds4_tools.reader.table_objects.TableStructure.fields" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>list[PDS_ndarray or PDS_marray]</dt><dd><p>All the fields in this table.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pds4_tools.reader.table_objects.TableStructure.set_field">
+<code class="sig-name descname">set_field</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="n">meta_data</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/table_objects.html#TableStructure.set_field"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.reader.table_objects.TableStructure.set_field" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set a field in the table.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>data</strong><span class="classifier">array_like</span></dt><dd><p>Data for the field to be added.</p>
+</dd>
+<dt><strong>meta_data</strong><span class="classifier">Meta_Field</span></dt><dd><p>Meta data of the field to be added.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>None</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>Prior to calling this method, <code class="docutils literal notranslate"><span class="pre">self.data</span></code> must be set to a structured <code class="docutils literal notranslate"><span class="pre">ndarray</span></code> that will be
+used to store each field. See <a class="reference internal" href="#pds4_tools.reader.table_objects.TableStructure.from_fields" title="pds4_tools.reader.table_objects.TableStructure.from_fields"><code class="xref any py py-meth docutils literal notranslate"><span class="pre">TableStructure.from_fields</span></code></a>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pds4_tools.reader.table_objects.TableStructure.as_masked">
+<code class="sig-name descname">as_masked</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/table_objects.html#TableStructure.as_masked"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.reader.table_objects.TableStructure.as_masked" title="Permalink to this definition">¶</a></dt>
+<dd><p>Obtain a new TableStructure, where numeric fields with Special_Constants are masked.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>TableStructure</dt><dd><p>A new structure, where numeric fields with Special_Constants are masked. The data, labels and
+meta data are all effectively views, no copies are made.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>The returned Structure may not be easily converted back to unmasked. However, the original
+Structure can continue to be used to access the unmasked data.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pds4_tools.reader.table_objects.TableStructure.data_loaded">
+<em class="property">property </em><code class="sig-name descname">data_loaded</code><a class="headerlink" href="#pds4_tools.reader.table_objects.TableStructure.data_loaded" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>bool</dt><dd><p>True if the <a class="reference internal" href="#pds4_tools.reader.table_objects.TableStructure.data" title="pds4_tools.reader.table_objects.TableStructure.data"><code class="xref any py py-attr docutils literal notranslate"><span class="pre">data</span></code></a> attribute has been set (e.g. data has been read from file or set),
+False otherwise.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pds4_tools.reader.table_objects.TableStructure.id">
+<em class="property">property </em><code class="sig-name descname">id</code><a class="headerlink" href="#pds4_tools.reader.table_objects.TableStructure.id" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>str or unicode</dt><dd><p>The ID (either local identifier if given, or name if given) of this data structure. If
+neither was given, an ID was likely assigned.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pds4_tools.reader.table_objects.TableStructure.is_array">
+<code class="sig-name descname">is_array</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pds4_tools.reader.table_objects.TableStructure.is_array" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>bool</dt><dd><p>True if this <a class="reference internal" href="pds4_tools.reader.general_objects.html#pds4_tools.reader.general_objects.Structure" title="pds4_tools.reader.general_objects.Structure"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Structure</span></code></a> is a form of a PDS4 array, false otherwise.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pds4_tools.reader.table_objects.TableStructure.is_header">
+<code class="sig-name descname">is_header</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pds4_tools.reader.table_objects.TableStructure.is_header" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>bool</dt><dd><p>True if this <a class="reference internal" href="pds4_tools.reader.general_objects.html#pds4_tools.reader.general_objects.Structure" title="pds4_tools.reader.general_objects.Structure"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Structure</span></code></a> is a form of a PDS4 header, false otherwise.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pds4_tools.reader.table_objects.TableStructure.is_table">
+<code class="sig-name descname">is_table</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pds4_tools.reader.table_objects.TableStructure.is_table" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>bool</dt><dd><p>True if this <a class="reference internal" href="pds4_tools.reader.general_objects.html#pds4_tools.reader.general_objects.Structure" title="pds4_tools.reader.general_objects.Structure"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Structure</span></code></a> is a form of a PDS4 table, false otherwise.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pds4_tools.reader.table_objects.TableStructure.type">
+<em class="property">property </em><code class="sig-name descname">type</code><a class="headerlink" href="#pds4_tools.reader.table_objects.TableStructure.type" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>str, unicode or None</dt><dd><p>The official PDS4 data structure type name for this structure.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="pds4_tools.reader.table_objects.Meta_TableStructure">
+<em class="property">class </em><code class="sig-name descname">Meta_TableStructure</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwds</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/table_objects.html#Meta_TableStructure"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.reader.table_objects.Meta_TableStructure" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="pds4_tools.reader.general_objects.html#pds4_tools.reader.general_objects.Meta_Structure" title="pds4_tools.reader.general_objects.Meta_Structure"><code class="xref py py-class docutils literal notranslate"><span class="pre">pds4_tools.reader.general_objects.Meta_Structure</span></code></a></p>
+<p>Meta data about a PDS4 table data structure.</p>
+<p>Meta data stored in this class is accessed in <code class="docutils literal notranslate"><span class="pre">dict</span></code>-like fashion.  Stores meta data about all forms
+of Table (e.g. Table_Character, Table_Binary, and Table_Delimited). Normally this meta data originates
+from the label (e.g., if this is an Table_Character then everything from the opening tag of
+Table_Character to its closing tag will be stored in this object), via the <a class="reference internal" href="#pds4_tools.reader.table_objects.Meta_TableStructure.from_label" title="pds4_tools.reader.table_objects.Meta_TableStructure.from_label"><code class="xref any py py-meth docutils literal notranslate"><span class="pre">from_label</span></code></a> method.</p>
+<p>Inherits all Attributes, Parameters and Properties from <a class="reference internal" href="pds4_tools.reader.general_objects.html#pds4_tools.reader.general_objects.Meta_Structure" title="pds4_tools.reader.general_objects.Meta_Structure"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Meta_Structure</span></code></a>.</p>
+<p class="rubric">Examples</p>
+<p>Supposing the following Table definition from a label:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">Table_Binary</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">local_identifier</span><span class="o">&gt;</span><span class="n">data_Integration</span><span class="o">&lt;/</span><span class="n">local_identifier</span><span class="o">&gt;</span>
+  <span class="o">....</span>
+  <span class="o">&lt;</span><span class="n">Record_Binary</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">fields</span><span class="o">&gt;</span><span class="mi">9</span><span class="o">&lt;/</span><span class="n">fields</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">groups</span><span class="o">&gt;</span><span class="mi">0</span><span class="o">&lt;/</span><span class="n">groups</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">record_length</span> <span class="n">unit</span><span class="o">=</span><span class="s2">&quot;byte&quot;</span><span class="o">&gt;</span><span class="mi">65</span><span class="o">&lt;/</span><span class="n">record_length</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">Field_Binary</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="n">name</span><span class="o">&gt;</span><span class="n">TIMESTAMP</span><span class="o">&lt;/</span><span class="n">name</span><span class="o">&gt;</span>
+      <span class="o">...</span>
+   <span class="o">...</span>
+<span class="o">...</span>
+<span class="o">&lt;/</span><span class="n">Table_Binary</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">meta_table</span> <span class="o">=</span> <span class="n">Meta_TableStructure</span><span class="o">.</span><span class="n">from_label</span><span class="p">(</span><span class="n">structure_xml</span><span class="p">,</span> <span class="n">full_label</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">meta_table</span><span class="p">[</span><span class="s1">&#39;local_identifier&#39;</span><span class="p">])</span>
+<span class="go">data_Integration</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">meta_table</span><span class="p">[</span><span class="s1">&#39;Record_Binary&#39;</span><span class="p">][</span><span class="s1">&#39;record_length&#39;</span><span class="p">]</span>
+<span class="go">65</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>record</strong><span class="classifier">OrderedDict</span></dt><dd><p>Convenience attribute for the Record_* portion of this table’s meta data.</p>
+</dd>
+<dt><strong>type</strong><span class="classifier">str or unicode</span></dt><dd><p>Type of table. One of ‘Character’, ‘Binary’, or ‘Delimited’.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt id="pds4_tools.reader.table_objects.Meta_TableStructure.id">
+<code class="sig-name descname">id</code><a class="headerlink" href="#pds4_tools.reader.table_objects.Meta_TableStructure.id" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>str or unicode</dt><dd><p>The local_identifier of the PDS4 data structure if it exists, otherwise the name if it exists.
+If neither was specified in the label, None is returned.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pds4_tools.reader.table_objects.Meta_TableStructure.from_label">
+<em class="property">classmethod </em><code class="sig-name descname">from_label</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">xml_table</span></em>, <em class="sig-param"><span class="n">full_label</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/table_objects.html#Meta_TableStructure.from_label"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.reader.table_objects.Meta_TableStructure.from_label" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a Meta_TableStructure from the XML portion describing the Table structure.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>xml_table</strong><span class="classifier">Label or ElementTree Element</span></dt><dd><p>Portion of label that defines the Table data structure.</p>
+</dd>
+<dt><strong>full_label</strong><span class="classifier">Label or ElementTree Element, optional</span></dt><dd><p>The entire label from which <em>xml_table</em> originated.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>Meta_TableStructure</dt><dd><p>Instance containing meta data about the table structure, as taken from the XML label.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>PDS4StandardsException</dt><dd><p>Raised if required meta data is absent.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pds4_tools.reader.table_objects.Meta_TableStructure.dimensions">
+<code class="sig-name descname">dimensions</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/table_objects.html#Meta_TableStructure.dimensions"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.reader.table_objects.Meta_TableStructure.dimensions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Obtains the number of fields and records for the table.</p>
+<p>Count does not include Group_Fields, but includes any non-group fields with-in them.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>list</dt><dd><p>Dimensions of the table, i.e., the number of fields and records, respectively.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pds4_tools.reader.table_objects.Meta_TableStructure.is_fixed_width">
+<code class="sig-name descname">is_fixed_width</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/table_objects.html#Meta_TableStructure.is_fixed_width"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.reader.table_objects.Meta_TableStructure.is_fixed_width" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>bool</dt><dd><p>True if the table is fixed-width (Table_Character and Table_Binary), false otherwise.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pds4_tools.reader.table_objects.Meta_TableStructure.is_delimited">
+<code class="sig-name descname">is_delimited</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/table_objects.html#Meta_TableStructure.is_delimited"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.reader.table_objects.Meta_TableStructure.is_delimited" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>bool</dt><dd><p>True if the table is delimited (Table_Delimited), false otherwise.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="pds4_tools.reader.table_objects.TableManifest">
+<em class="property">class </em><code class="sig-name descname">TableManifest</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">items</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">table_type</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">table_label</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/table_objects.html#TableManifest"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.reader.table_objects.TableManifest" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">collections.abc.Sequence</span></code></p>
+<p>Stores a single table’s Meta_Fields and Meta_Groups</p>
+<p>The manifest is a representation the table, with fields and groups in the same order as they physically
+appear in the label, created by adding the appropriate Meta_Field and Meta_Group structures.</p>
+<p>The manifest is normally initialized from the label portion describing the Table, via <a class="reference internal" href="#pds4_tools.reader.table_objects.TableManifest.from_label" title="pds4_tools.reader.table_objects.TableManifest.from_label"><code class="xref any py py-meth docutils literal notranslate"><span class="pre">from_label</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>items</strong><span class="classifier">list[Meta_Field or Meta_Group], optional</span></dt><dd><p>A list of Meta_Fields or Meta_Groups describing the Fields and Groups in this TableManifest.</p>
+</dd>
+<dt><strong>table_type</strong><span class="classifier">str or unicode, optional</span></dt><dd><p>The type of table. One of</p>
+</dd>
+<dt><strong>table_label</strong><span class="classifier">Label or ElementTree Element, optional</span></dt><dd><p>Portion of label that defines the PDS4 table data structure.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="pds4_tools.reader.table_objects.TableManifest.__getitem__">
+<code class="sig-name descname">__getitem__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">key</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/table_objects.html#TableManifest.__getitem__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.reader.table_objects.TableManifest.__getitem__" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>key</strong><span class="classifier">int or slice</span></dt><dd><p>Index of requested field or group.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>Meta_Field or Meta_Group</dt><dd><p>Matched field or group meta data.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pds4_tools.reader.table_objects.TableManifest.__len__">
+<code class="sig-name descname">__len__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/table_objects.html#TableManifest.__len__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.reader.table_objects.TableManifest.__len__" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>int</dt><dd><p>Total number of fields and groups in the table.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pds4_tools.reader.table_objects.TableManifest.from_label">
+<em class="property">classmethod </em><code class="sig-name descname">from_label</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">table_label</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/table_objects.html#TableManifest.from_label"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.reader.table_objects.TableManifest.from_label" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a TableManifest from the XML portion describing the Table structure.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>table_label</strong><span class="classifier">Label or ElementTree Element</span></dt><dd><p>Portion of label that defines the PDS4 table data structure.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>TableManifest</dt><dd><p>Instance containing all appropriate Meta_Field’s and Meta_Group’s.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pds4_tools.reader.table_objects.TableManifest.num_items">
+<em class="property">property </em><code class="sig-name descname">num_items</code><a class="headerlink" href="#pds4_tools.reader.table_objects.TableManifest.num_items" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>int</dt><dd><p>Total number of fields and groups in the table manifest.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pds4_tools.reader.table_objects.TableManifest.num_records">
+<em class="property">property </em><code class="sig-name descname">num_records</code><a class="headerlink" href="#pds4_tools.reader.table_objects.TableManifest.num_records" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pds4_tools.reader.table_objects.TableManifest.fields">
+<code class="sig-name descname">fields</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">skip_uniformly_sampled</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/table_objects.html#TableManifest.fields"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.reader.table_objects.TableManifest.fields" title="Permalink to this definition">¶</a></dt>
+<dd><p>Obtain all fields in the table manifest.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>skip_uniformly_sampled</strong><span class="classifier">bool, optional</span></dt><dd><p>If True, uniformly sampled fields not added to the returned list. Defaults to False.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>list[Meta_Field]</dt><dd><p>All fields in the table manifest.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pds4_tools.reader.table_objects.TableManifest.uniformly_sampled_fields">
+<code class="sig-name descname">uniformly_sampled_fields</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/table_objects.html#TableManifest.uniformly_sampled_fields"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.reader.table_objects.TableManifest.uniformly_sampled_fields" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>list[Meta_FieldUniformlySampled]</dt><dd><p>All Uniformly Sampled fields in the table manifest.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pds4_tools.reader.table_objects.TableManifest.groups">
+<code class="sig-name descname">groups</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/table_objects.html#TableManifest.groups"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.reader.table_objects.TableManifest.groups" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>list[Meta_Group]</dt><dd><p>All groups in the table manifest.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pds4_tools.reader.table_objects.TableManifest.get_field_by_full_name">
+<code class="sig-name descname">get_field_by_full_name</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">field_full_name</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/table_objects.html#TableManifest.get_field_by_full_name"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.reader.table_objects.TableManifest.get_field_by_full_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns field(s) matched by full name.</p>
+<p>In the case of GROUP fields, the full name will include the full location for disambiguation,
+(e.g. field_full_name = ‘GROUP_1, GROUP_0, field_name’). The full location includes the names of
+the groups necessary to reach this field.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>field_full_name</strong><span class="classifier">str or unicode</span></dt><dd><p>The full name of the field(s) to search for.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>list[Meta_Field]</dt><dd><p>List of matched fields.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pds4_tools.reader.table_objects.TableManifest.get_children_by_idx">
+<code class="sig-name descname">get_children_by_idx</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">parent_idx</span></em>, <em class="sig-param"><span class="n">direct_only</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">return_idx</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/table_objects.html#TableManifest.get_children_by_idx"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.reader.table_objects.TableManifest.get_children_by_idx" title="Permalink to this definition">¶</a></dt>
+<dd><p>Obtains the child items (Meta_Fields and Meta_Groups) of the <em>parent_idx</em> item.</p>
+<p>Child items of a Group field are other Fields and Groups inside said Group field,
+and the children of those groups, etc.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>parent_idx</strong><span class="classifier">int</span></dt><dd><p>The index (in this TableManifest) of the Meta_Group whose children to find.
+A value of -1 indicates to find all items in the entire manifest.</p>
+</dd>
+<dt><strong>direct_only</strong><span class="classifier">bool, optional</span></dt><dd><p>If True, only the immediate children of the <em>parent_idx</em> element are returned. Defaults to False.</p>
+</dd>
+<dt><strong>return_idx</strong><span class="classifier">bool, optional</span></dt><dd><p>If True, changes the return type to a <code class="docutils literal notranslate"><span class="pre">list</span></code> containing the indicies (in this TableManifest)
+of the matched children. Defaults to False.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>TableManifest</dt><dd><p>A new table manifest containing only the matched children.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pds4_tools.reader.table_objects.TableManifest.get_parent_by_idx">
+<code class="sig-name descname">get_parent_by_idx</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">child_idx</span></em>, <em class="sig-param"><span class="n">return_idx</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/table_objects.html#TableManifest.get_parent_by_idx"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.reader.table_objects.TableManifest.get_parent_by_idx" title="Permalink to this definition">¶</a></dt>
+<dd><p>Obtains the parent Meta_Group of the child item given by <em>child_idx</em>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>child_idx</strong><span class="classifier">int</span></dt><dd><p>The index (in this TableManifest) of the Meta_Field or Meta_Group whose parent to find.</p>
+</dd>
+<dt><strong>return_idx</strong><span class="classifier">bool, optional</span></dt><dd><p>If True, changes the return type to an <code class="docutils literal notranslate"><span class="pre">int</span></code>, which is the index (in this TableManifest) of the
+parent Meta_Group instead of the group itself. Returns -1 if a parent was not found. Defaults to
+False.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>Meta_Group or None</dt><dd><p>The parent of the specified child, or None if a parent was not found.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pds4_tools.reader.table_objects.TableManifest.get_parents_by_idx">
+<code class="sig-name descname">get_parents_by_idx</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">child_idx</span></em>, <em class="sig-param"><span class="n">return_idx</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/table_objects.html#TableManifest.get_parents_by_idx"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.reader.table_objects.TableManifest.get_parents_by_idx" title="Permalink to this definition">¶</a></dt>
+<dd><p>Obtains all Meta_Group parents of the child item given by <em>child_idx</em>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>child_idx</strong><span class="classifier">int</span></dt><dd><p>The index (in this TableManifest) of the Meta_Field or Meta_Group whose parent to find.</p>
+</dd>
+<dt><strong>return_idx</strong><span class="classifier">bool, optional</span></dt><dd><p>If True, changes the return type to a list of <code class="docutils literal notranslate"><span class="pre">int</span></code>’s, each of which is an index (in this
+TableManifest) of the parent Meta_Group instead of the group itself. A value of -1 will be present
+in the list if no parent is found. Defaults to False.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>list[Meta_Group]</dt><dd><p>The parents of the specified child, or empty list if no parents were not found.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pds4_tools.reader.table_objects.TableManifest.get_field_offset">
+<code class="sig-name descname">get_field_offset</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">field_idx</span></em>, <em class="sig-param"><span class="n">parent_idx</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/table_objects.html#TableManifest.get_field_offset"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.reader.table_objects.TableManifest.get_field_offset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Obtains the number of data values between <em>parent_idx</em> and <em>field_idx</em> in a single record.</p>
+<p>Each value in a record is a single field value, or a single repetition of a field value. If all
+the data values for all fields in a single record were combined into an array, then data_array[offset]
+(with the default <em>parent_idx</em>) would select that field’s value (or the value of its first
+repetition, for fields inside groups).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>field_idx</strong><span class="classifier">int</span></dt><dd><p>The index (in this TableManifest) of the Meta_Field whose offset to find.</p>
+</dd>
+<dt><strong>parent_idx</strong><span class="classifier">int, optional</span></dt><dd><p>The parent index (index of one of the group fields that <em>field_idx</em> is inside of), from which
+to calculate the offset to <em>field_idx</em>. If None, calculates the offset from the beginning of the
+record. Defaults to None.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>int</dt><dd><p>The number of values, where each repetition of any field also counts as a separate value, that
+are between <em>parent_idx</em> and <em>field_idx</em> (inclusive).</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pds4_tools.reader.table_objects.TableManifest.get_field_skip_factors">
+<code class="sig-name descname">get_field_skip_factors</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">field_idx</span></em>, <em class="sig-param"><span class="n">parent_idxs</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/table_objects.html#TableManifest.get_field_skip_factors"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.reader.table_objects.TableManifest.get_field_skip_factors" title="Permalink to this definition">¶</a></dt>
+<dd><p>Obtains the number of data values between each repetition of <em>field_idx</em> for every parent group.</p>
+<p>Each value in a record is a single field value, or a single repetition of a field value. If each
+skip factor were multiplied by the max number of repetitions for that group, and the results were
+added together then that skip value would represent the number of data values between the first
+value in the field and the last value in the field.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>field_idx</strong><span class="classifier">int</span></dt><dd><p>The index (in this TableManifest) of the Meta_Field whose offset to find.</p>
+</dd>
+<dt><strong>parent_idxs</strong><span class="classifier">list[int], optional</span></dt><dd><p>The parent indexes (indexes of group fields that <em>field_idx</em> is inside of) for which to
+calculate the skip factors. If None, selects the parent indexes for all groups that <em>field_idx</em>
+is inside of. Defaults to None.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>list[int]</dt><dd><p>Each item in the list is the number of values, where each repetition of any field also counts
+as a separate value, between each repetition of the field for that group. The values are
+in reverse order from <em>parent_idxs</em>.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="pds4_tools.reader.table_objects.Meta_TableElement">
+<em class="property">class </em><code class="sig-name descname">Meta_TableElement</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwds</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/table_objects.html#Meta_TableElement"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.reader.table_objects.Meta_TableElement" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="pds4_tools.reader.general_objects.html#pds4_tools.reader.general_objects.Meta_Class" title="pds4_tools.reader.general_objects.Meta_Class"><code class="xref py py-class docutils literal notranslate"><span class="pre">pds4_tools.reader.general_objects.Meta_Class</span></code></a></p>
+<p>Stores meta data about any table element.</p>
+<p>Table elements are Fields and Group fields. Subclassed by Meta_Field, Meta_Group and their derivatives.</p>
+<p>Meta data stored in this class is accessed in <code class="docutils literal notranslate"><span class="pre">dict</span></code>-like fashion.  See docstring for <a class="reference internal" href="pds4_tools.reader.general_objects.html#pds4_tools.reader.general_objects.Meta_Class" title="pds4_tools.reader.general_objects.Meta_Class"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Meta_Class</span></code></a>
+for additional documentation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>(same as for `Meta_Class` and ``OrderedDict``)</strong></dt><dd></dd>
+<dt><strong>*args</strong></dt><dd><p>Variable length argument list.</p>
+</dd>
+<dt><strong>**kwargs</strong></dt><dd><p>Arbitrary keyword arguments.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Attributes</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>full_location</strong><span class="classifier">list[dict]</span></dt><dd><p>See docstring for <code class="docutils literal notranslate"><span class="pre">TableManifest._create_full_locations</span></code>.</p>
+</dd>
+<dt><strong>group_level</strong><span class="classifier">int</span></dt><dd><p>The depth the element is nested from the &lt;Record_*&gt;. 0 means direct child.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="pds4_tools.reader.table_objects.Meta_TableElement.from_label">
+<em class="property">abstract </em><code class="sig-name descname">from_label</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">element_xml</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/table_objects.html#Meta_TableElement.from_label"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.reader.table_objects.Meta_TableElement.from_label" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initializes the meta data from an XML description of the element.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>element_xml</strong><span class="classifier">Label or ElementTree Element</span></dt><dd><p>Portion of the label describing this element.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>Meta_TableElement</dt><dd><p>Instance containing meta data from <em>element_xml</em>.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pds4_tools.reader.table_objects.Meta_TableElement.full_name">
+<code class="sig-name descname">full_name</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">separator</span><span class="o">=</span><span class="default_value">', '</span></em>, <em class="sig-param"><span class="n">skip_parents</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/table_objects.html#Meta_TableElement.full_name"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.reader.table_objects.Meta_TableElement.full_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>The full name of the element.</p>
+<p>The full name always includes an overlap disambiguator, to resolve two elements in the same
+location with the same name. Normally it also includes the name of any parent groups necessary
+to reach this element from the beginning of the record description.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>separator</strong><span class="classifier">str or unicode, optional</span></dt><dd><p>Used as the string separating each parent group and the name of the element. Defaults to ‘, ‘.</p>
+</dd>
+<dt><strong>skip_parents</strong><span class="classifier">bool, optional</span></dt><dd><p>If True, parent groups of the element are excluded from the full name. Defaults to False.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>str or unicode</dt><dd><p>The name, including overlap disambiguator and parent groups if enabled, of the element.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Suppose the following Example Label Outline:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Table_Binary</span><span class="p">:</span> <span class="n">Observations</span>
+    <span class="n">Field</span><span class="p">:</span> <span class="n">order</span>
+    <span class="n">Field</span><span class="p">:</span> <span class="n">wavelength</span>           <span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">Group</span><span class="p">:</span> <span class="n">unnamed</span>
+            <span class="n">Field</span><span class="p">:</span> <span class="n">pos_vector</span>   <span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">Group</span><span class="p">:</span> <span class="n">unnamed</span>
+        <span class="n">Group</span><span class="p">:</span> <span class="n">example_group</span>
+            <span class="n">Field</span><span class="p">:</span> <span class="n">pos_vector</span>
+            <span class="n">Field</span><span class="p">:</span> <span class="n">pos_vector</span>   <span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The full name of each element, with the default separator, is:</p>
+<ol class="arabic simple">
+<li><p>wavelength</p></li>
+<li><p>GROUP_0, pos_vector</p></li>
+<li><p>GROUP_1, example_group, pos_vector [1]</p></li>
+</ol>
+<p>Enabling skip_parents for element (3) would result in ‘pos_vector [1]’, which includes the
+overlap disambiguator, but excludes all parent groups.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pds4_tools.reader.table_objects.Meta_TableElement.is_field">
+<code class="sig-name descname">is_field</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/table_objects.html#Meta_TableElement.is_field"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.reader.table_objects.Meta_TableElement.is_field" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>bool</dt><dd><p>True if this element is a Field (i.e. Field_*), false otherwise.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pds4_tools.reader.table_objects.Meta_TableElement.is_group">
+<code class="sig-name descname">is_group</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/table_objects.html#Meta_TableElement.is_group"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.reader.table_objects.Meta_TableElement.is_group" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>bool</dt><dd><p>True if this element is a Group field (i.e. Group_Field_*), false otherwise.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="pds4_tools.reader.table_objects.Meta_Field">
+<em class="property">class </em><code class="sig-name descname">Meta_Field</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwds</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/table_objects.html#Meta_Field"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.reader.table_objects.Meta_Field" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pds4_tools.reader.table_objects.Meta_TableElement" title="pds4_tools.reader.table_objects.Meta_TableElement"><code class="xref py py-class docutils literal notranslate"><span class="pre">pds4_tools.reader.table_objects.Meta_TableElement</span></code></a></p>
+<p>Stores meta data about a single &lt;Field_*&gt;.</p>
+<p>Subclassed by <a class="reference internal" href="#pds4_tools.reader.table_objects.Meta_FieldCharacter" title="pds4_tools.reader.table_objects.Meta_FieldCharacter"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Meta_FieldCharacter</span></code></a>, <a class="reference internal" href="#pds4_tools.reader.table_objects.Meta_FieldBinary" title="pds4_tools.reader.table_objects.Meta_FieldBinary"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Meta_FieldBinary</span></code></a>, <a class="reference internal" href="#pds4_tools.reader.table_objects.Meta_FieldDelimited" title="pds4_tools.reader.table_objects.Meta_FieldDelimited"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Meta_FieldDelimited</span></code></a> and
+<a class="reference internal" href="#pds4_tools.reader.table_objects.Meta_FieldUniformlySampled" title="pds4_tools.reader.table_objects.Meta_FieldUniformlySampled"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Meta_FieldUniformlySampled</span></code></a>.</p>
+<p>Inherits <code class="docutils literal notranslate"><span class="pre">full_location</span></code> and <code class="docutils literal notranslate"><span class="pre">group_level</span></code> attributes from <a class="reference internal" href="#pds4_tools.reader.table_objects.Meta_TableElement" title="pds4_tools.reader.table_objects.Meta_TableElement"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Meta_TableElement</span></code></a>.</p>
+<p class="rubric">Notes</p>
+<p>Keys starting with the ‘field_’ prefix have this prefix removed.
+All other keys preserve their XML names.</p>
+<p class="rubric">Examples</p>
+<p>Supposing the following Field definition from a label:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">Field_Binary</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">name</span><span class="o">&gt;</span><span class="n">UTC</span><span class="o">&lt;/</span><span class="n">name</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">field_location</span> <span class="n">unit</span><span class="o">=</span><span class="s2">&quot;byte&quot;</span><span class="o">&gt;</span><span class="mi">17</span><span class="o">&lt;/</span><span class="n">field_location</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">data_type</span><span class="o">&gt;</span><span class="n">ASCII_String</span><span class="o">&lt;/</span><span class="n">data_type</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">field_length</span> <span class="n">unit</span><span class="o">=</span><span class="s2">&quot;byte&quot;</span><span class="o">&gt;</span><span class="mi">33</span><span class="o">&lt;/</span><span class="n">field_length</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">unit</span><span class="o">&gt;</span><span class="n">UTC</span> <span class="n">date</span> <span class="n">string</span><span class="o">&lt;/</span><span class="n">unit</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">description</span><span class="o">&gt;</span><span class="n">Time</span> <span class="n">that</span> <span class="n">the</span> <span class="n">integration</span> <span class="n">began</span><span class="o">&lt;/</span><span class="n">description</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">Field_Binary</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">field</span> <span class="o">=</span> <span class="n">Meta_Field</span><span class="o">.</span><span class="n">from_label</span><span class="p">(</span><span class="n">field_xml</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">field</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">])</span>
+<span class="go">UTC</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">field</span><span class="p">[</span><span class="s1">&#39;length&#39;</span><span class="p">])</span>
+<span class="go">33</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">field</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+<span class="go">[&#39;name&#39;, &#39;location&#39;, &#39;data_type&#39;, &#39;length&#39;, &#39;unit&#39;, &#39;description&#39;]</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>shape</strong><span class="classifier">tuple[int]</span></dt><dd><p>The dimensions of the field’s data. For fields not inside groups, this will be equivalent to
+the number of records.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="pds4_tools.reader.table_objects.Meta_Field.full_name">
+<code class="sig-name descname">full_name</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">separator</span><span class="o">=</span><span class="default_value">', '</span></em>, <em class="sig-param"><span class="n">skip_parents</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pds4_tools.reader.table_objects.Meta_Field.full_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>The full name of the element.</p>
+<p>The full name always includes an overlap disambiguator, to resolve two elements in the same
+location with the same name. Normally it also includes the name of any parent groups necessary
+to reach this element from the beginning of the record description.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>separator</strong><span class="classifier">str or unicode, optional</span></dt><dd><p>Used as the string separating each parent group and the name of the element. Defaults to ‘, ‘.</p>
+</dd>
+<dt><strong>skip_parents</strong><span class="classifier">bool, optional</span></dt><dd><p>If True, parent groups of the element are excluded from the full name. Defaults to False.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>str or unicode</dt><dd><p>The name, including overlap disambiguator and parent groups if enabled, of the element.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Suppose the following Example Label Outline:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Table_Binary</span><span class="p">:</span> <span class="n">Observations</span>
+    <span class="n">Field</span><span class="p">:</span> <span class="n">order</span>
+    <span class="n">Field</span><span class="p">:</span> <span class="n">wavelength</span>           <span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">Group</span><span class="p">:</span> <span class="n">unnamed</span>
+            <span class="n">Field</span><span class="p">:</span> <span class="n">pos_vector</span>   <span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">Group</span><span class="p">:</span> <span class="n">unnamed</span>
+        <span class="n">Group</span><span class="p">:</span> <span class="n">example_group</span>
+            <span class="n">Field</span><span class="p">:</span> <span class="n">pos_vector</span>
+            <span class="n">Field</span><span class="p">:</span> <span class="n">pos_vector</span>   <span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The full name of each element, with the default separator, is:</p>
+<ol class="arabic simple">
+<li><p>wavelength</p></li>
+<li><p>GROUP_0, pos_vector</p></li>
+<li><p>GROUP_1, example_group, pos_vector [1]</p></li>
+</ol>
+<p>Enabling skip_parents for element (3) would result in ‘pos_vector [1]’, which includes the
+overlap disambiguator, but excludes all parent groups.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pds4_tools.reader.table_objects.Meta_Field.from_label">
+<em class="property">classmethod </em><code class="sig-name descname">from_label</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">field_xml</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/table_objects.html#Meta_Field.from_label"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.reader.table_objects.Meta_Field.from_label" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initializes the meta data from an XML description of the Field.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>field_xml</strong><span class="classifier">Label or ElementTree Element</span></dt><dd><p>Portion of the label describing this Field.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>Meta_Field</dt><dd><p>Contains meta data for the field.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pds4_tools.reader.table_objects.Meta_Field.data_type">
+<code class="sig-name descname">data_type</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/table_objects.html#Meta_Field.data_type"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.reader.table_objects.Meta_Field.data_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Data type of the field.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>PDSdtype</dt><dd><p>A PDS4 data type.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>All fields, except Uniformly Sampled fields, must specify the data type. Uniformly Sampled fields
+default to ASCII_Real with-in this code.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="pds4_tools.reader.table_objects.Meta_FieldCharacter">
+<em class="property">class </em><code class="sig-name descname">Meta_FieldCharacter</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwds</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/table_objects.html#Meta_FieldCharacter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.reader.table_objects.Meta_FieldCharacter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pds4_tools.reader.table_objects.Meta_Field" title="pds4_tools.reader.table_objects.Meta_Field"><code class="xref py py-class docutils literal notranslate"><span class="pre">pds4_tools.reader.table_objects.Meta_Field</span></code></a></p>
+<p>Stores meta data about a single &lt;Field_Character&gt;.</p>
+<p>Inherits <code class="docutils literal notranslate"><span class="pre">shape</span></code> attribute from <a class="reference internal" href="#pds4_tools.reader.table_objects.Meta_Field" title="pds4_tools.reader.table_objects.Meta_Field"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Meta_Field</span></code></a>. Inherits <code class="docutils literal notranslate"><span class="pre">full_location</span></code> and <code class="docutils literal notranslate"><span class="pre">group_level</span></code>
+attributes from <a class="reference internal" href="#pds4_tools.reader.table_objects.Meta_TableElement" title="pds4_tools.reader.table_objects.Meta_TableElement"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Meta_TableElement</span></code></a>.</p>
+<p>See docstring of <a class="reference internal" href="#pds4_tools.reader.table_objects.Meta_Field" title="pds4_tools.reader.table_objects.Meta_Field"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Meta_Field</span></code></a> for usage information.</p>
+<dl class="py method">
+<dt id="pds4_tools.reader.table_objects.Meta_FieldCharacter.full_name">
+<code class="sig-name descname">full_name</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">separator</span><span class="o">=</span><span class="default_value">', '</span></em>, <em class="sig-param"><span class="n">skip_parents</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pds4_tools.reader.table_objects.Meta_FieldCharacter.full_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>The full name of the element.</p>
+<p>The full name always includes an overlap disambiguator, to resolve two elements in the same
+location with the same name. Normally it also includes the name of any parent groups necessary
+to reach this element from the beginning of the record description.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>separator</strong><span class="classifier">str or unicode, optional</span></dt><dd><p>Used as the string separating each parent group and the name of the element. Defaults to ‘, ‘.</p>
+</dd>
+<dt><strong>skip_parents</strong><span class="classifier">bool, optional</span></dt><dd><p>If True, parent groups of the element are excluded from the full name. Defaults to False.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>str or unicode</dt><dd><p>The name, including overlap disambiguator and parent groups if enabled, of the element.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Suppose the following Example Label Outline:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Table_Binary</span><span class="p">:</span> <span class="n">Observations</span>
+    <span class="n">Field</span><span class="p">:</span> <span class="n">order</span>
+    <span class="n">Field</span><span class="p">:</span> <span class="n">wavelength</span>           <span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">Group</span><span class="p">:</span> <span class="n">unnamed</span>
+            <span class="n">Field</span><span class="p">:</span> <span class="n">pos_vector</span>   <span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">Group</span><span class="p">:</span> <span class="n">unnamed</span>
+        <span class="n">Group</span><span class="p">:</span> <span class="n">example_group</span>
+            <span class="n">Field</span><span class="p">:</span> <span class="n">pos_vector</span>
+            <span class="n">Field</span><span class="p">:</span> <span class="n">pos_vector</span>   <span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The full name of each element, with the default separator, is:</p>
+<ol class="arabic simple">
+<li><p>wavelength</p></li>
+<li><p>GROUP_0, pos_vector</p></li>
+<li><p>GROUP_1, example_group, pos_vector [1]</p></li>
+</ol>
+<p>Enabling skip_parents for element (3) would result in ‘pos_vector [1]’, which includes the
+overlap disambiguator, but excludes all parent groups.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pds4_tools.reader.table_objects.Meta_FieldCharacter.from_label">
+<em class="property">classmethod </em><code class="sig-name descname">from_label</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">field_xml</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/table_objects.html#Meta_FieldCharacter.from_label"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.reader.table_objects.Meta_FieldCharacter.from_label" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initializes the meta data from an XML description of the element.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>field_xml</strong><span class="classifier">Label or ElementTree Element</span></dt><dd><p>Portion of the label describing this Field.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>Meta_FieldCharacter</dt><dd><p>Contains meta data for a Field_Character.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="pds4_tools.reader.table_objects.Meta_FieldBinary">
+<em class="property">class </em><code class="sig-name descname">Meta_FieldBinary</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwds</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/table_objects.html#Meta_FieldBinary"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.reader.table_objects.Meta_FieldBinary" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pds4_tools.reader.table_objects.Meta_Field" title="pds4_tools.reader.table_objects.Meta_Field"><code class="xref py py-class docutils literal notranslate"><span class="pre">pds4_tools.reader.table_objects.Meta_Field</span></code></a></p>
+<p>Stores meta data about a single &lt;Field_Binary&gt;.</p>
+<p>Inherits <code class="docutils literal notranslate"><span class="pre">shape</span></code> attribute from <a class="reference internal" href="#pds4_tools.reader.table_objects.Meta_Field" title="pds4_tools.reader.table_objects.Meta_Field"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Meta_Field</span></code></a>. Inherits <code class="docutils literal notranslate"><span class="pre">full_location</span></code> and <code class="docutils literal notranslate"><span class="pre">group_level</span></code>
+attributes from <a class="reference internal" href="#pds4_tools.reader.table_objects.Meta_TableElement" title="pds4_tools.reader.table_objects.Meta_TableElement"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Meta_TableElement</span></code></a>.</p>
+<p>See docstring of <a class="reference internal" href="#pds4_tools.reader.table_objects.Meta_Field" title="pds4_tools.reader.table_objects.Meta_Field"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Meta_Field</span></code></a> for usage information.</p>
+<dl class="py method">
+<dt id="pds4_tools.reader.table_objects.Meta_FieldBinary.full_name">
+<code class="sig-name descname">full_name</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">separator</span><span class="o">=</span><span class="default_value">', '</span></em>, <em class="sig-param"><span class="n">skip_parents</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pds4_tools.reader.table_objects.Meta_FieldBinary.full_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>The full name of the element.</p>
+<p>The full name always includes an overlap disambiguator, to resolve two elements in the same
+location with the same name. Normally it also includes the name of any parent groups necessary
+to reach this element from the beginning of the record description.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>separator</strong><span class="classifier">str or unicode, optional</span></dt><dd><p>Used as the string separating each parent group and the name of the element. Defaults to ‘, ‘.</p>
+</dd>
+<dt><strong>skip_parents</strong><span class="classifier">bool, optional</span></dt><dd><p>If True, parent groups of the element are excluded from the full name. Defaults to False.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>str or unicode</dt><dd><p>The name, including overlap disambiguator and parent groups if enabled, of the element.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Suppose the following Example Label Outline:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Table_Binary</span><span class="p">:</span> <span class="n">Observations</span>
+    <span class="n">Field</span><span class="p">:</span> <span class="n">order</span>
+    <span class="n">Field</span><span class="p">:</span> <span class="n">wavelength</span>           <span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">Group</span><span class="p">:</span> <span class="n">unnamed</span>
+            <span class="n">Field</span><span class="p">:</span> <span class="n">pos_vector</span>   <span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">Group</span><span class="p">:</span> <span class="n">unnamed</span>
+        <span class="n">Group</span><span class="p">:</span> <span class="n">example_group</span>
+            <span class="n">Field</span><span class="p">:</span> <span class="n">pos_vector</span>
+            <span class="n">Field</span><span class="p">:</span> <span class="n">pos_vector</span>   <span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The full name of each element, with the default separator, is:</p>
+<ol class="arabic simple">
+<li><p>wavelength</p></li>
+<li><p>GROUP_0, pos_vector</p></li>
+<li><p>GROUP_1, example_group, pos_vector [1]</p></li>
+</ol>
+<p>Enabling skip_parents for element (3) would result in ‘pos_vector [1]’, which includes the
+overlap disambiguator, but excludes all parent groups.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pds4_tools.reader.table_objects.Meta_FieldBinary.from_label">
+<em class="property">classmethod </em><code class="sig-name descname">from_label</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">field_xml</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/table_objects.html#Meta_FieldBinary.from_label"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.reader.table_objects.Meta_FieldBinary.from_label" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initializes the meta data from an XML description of the Field.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>field_xml</strong><span class="classifier">Label or ElementTree Element</span></dt><dd><p>Portion of the label describing this Field.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>Meta_FieldBinary</dt><dd><p>Contains meta data for a Field_Binary.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="pds4_tools.reader.table_objects.Meta_FieldDelimited">
+<em class="property">class </em><code class="sig-name descname">Meta_FieldDelimited</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwds</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/table_objects.html#Meta_FieldDelimited"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.reader.table_objects.Meta_FieldDelimited" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pds4_tools.reader.table_objects.Meta_Field" title="pds4_tools.reader.table_objects.Meta_Field"><code class="xref py py-class docutils literal notranslate"><span class="pre">pds4_tools.reader.table_objects.Meta_Field</span></code></a></p>
+<p>Stores meta data about a single &lt;Field_Delimited&gt;.</p>
+<p>Inherits <code class="docutils literal notranslate"><span class="pre">shape</span></code> attribute from <a class="reference internal" href="#pds4_tools.reader.table_objects.Meta_Field" title="pds4_tools.reader.table_objects.Meta_Field"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Meta_Field</span></code></a>. Inherits <code class="docutils literal notranslate"><span class="pre">full_location</span></code> and <code class="docutils literal notranslate"><span class="pre">group_level</span></code>
+attributes from <a class="reference internal" href="#pds4_tools.reader.table_objects.Meta_TableElement" title="pds4_tools.reader.table_objects.Meta_TableElement"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Meta_TableElement</span></code></a>.</p>
+<p>See docstring of <a class="reference internal" href="#pds4_tools.reader.table_objects.Meta_Field" title="pds4_tools.reader.table_objects.Meta_Field"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Meta_Field</span></code></a> for usage information.</p>
+<dl class="py method">
+<dt id="pds4_tools.reader.table_objects.Meta_FieldDelimited.full_name">
+<code class="sig-name descname">full_name</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">separator</span><span class="o">=</span><span class="default_value">', '</span></em>, <em class="sig-param"><span class="n">skip_parents</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pds4_tools.reader.table_objects.Meta_FieldDelimited.full_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>The full name of the element.</p>
+<p>The full name always includes an overlap disambiguator, to resolve two elements in the same
+location with the same name. Normally it also includes the name of any parent groups necessary
+to reach this element from the beginning of the record description.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>separator</strong><span class="classifier">str or unicode, optional</span></dt><dd><p>Used as the string separating each parent group and the name of the element. Defaults to ‘, ‘.</p>
+</dd>
+<dt><strong>skip_parents</strong><span class="classifier">bool, optional</span></dt><dd><p>If True, parent groups of the element are excluded from the full name. Defaults to False.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>str or unicode</dt><dd><p>The name, including overlap disambiguator and parent groups if enabled, of the element.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Suppose the following Example Label Outline:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Table_Binary</span><span class="p">:</span> <span class="n">Observations</span>
+    <span class="n">Field</span><span class="p">:</span> <span class="n">order</span>
+    <span class="n">Field</span><span class="p">:</span> <span class="n">wavelength</span>           <span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">Group</span><span class="p">:</span> <span class="n">unnamed</span>
+            <span class="n">Field</span><span class="p">:</span> <span class="n">pos_vector</span>   <span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">Group</span><span class="p">:</span> <span class="n">unnamed</span>
+        <span class="n">Group</span><span class="p">:</span> <span class="n">example_group</span>
+            <span class="n">Field</span><span class="p">:</span> <span class="n">pos_vector</span>
+            <span class="n">Field</span><span class="p">:</span> <span class="n">pos_vector</span>   <span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The full name of each element, with the default separator, is:</p>
+<ol class="arabic simple">
+<li><p>wavelength</p></li>
+<li><p>GROUP_0, pos_vector</p></li>
+<li><p>GROUP_1, example_group, pos_vector [1]</p></li>
+</ol>
+<p>Enabling skip_parents for element (3) would result in ‘pos_vector [1]’, which includes the
+overlap disambiguator, but excludes all parent groups.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pds4_tools.reader.table_objects.Meta_FieldDelimited.from_label">
+<em class="property">classmethod </em><code class="sig-name descname">from_label</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">field_xml</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/table_objects.html#Meta_FieldDelimited.from_label"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.reader.table_objects.Meta_FieldDelimited.from_label" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initializes the meta data from an XML description of the Field.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>field_xml</strong><span class="classifier">Label or ElementTree Element</span></dt><dd><p>Portion of the label describing this Field.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>Meta_FieldDelimited</dt><dd><p>Contains meta data for a Field_Delimited.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="pds4_tools.reader.table_objects.Meta_FieldUniformlySampled">
+<em class="property">class </em><code class="sig-name descname">Meta_FieldUniformlySampled</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwds</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/table_objects.html#Meta_FieldUniformlySampled"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.reader.table_objects.Meta_FieldUniformlySampled" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pds4_tools.reader.table_objects.Meta_Field" title="pds4_tools.reader.table_objects.Meta_Field"><code class="xref py py-class docutils literal notranslate"><span class="pre">pds4_tools.reader.table_objects.Meta_Field</span></code></a></p>
+<p>Stores meta data about a single &lt;Uniformly_Sampled&gt;.</p>
+<p>See docstring of <a class="reference internal" href="#pds4_tools.reader.table_objects.Meta_Field" title="pds4_tools.reader.table_objects.Meta_Field"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Meta_Field</span></code></a> for usage information.</p>
+<dl class="py method">
+<dt id="pds4_tools.reader.table_objects.Meta_FieldUniformlySampled.full_name">
+<code class="sig-name descname">full_name</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">separator</span><span class="o">=</span><span class="default_value">', '</span></em>, <em class="sig-param"><span class="n">skip_parents</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pds4_tools.reader.table_objects.Meta_FieldUniformlySampled.full_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>The full name of the element.</p>
+<p>The full name always includes an overlap disambiguator, to resolve two elements in the same
+location with the same name. Normally it also includes the name of any parent groups necessary
+to reach this element from the beginning of the record description.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>separator</strong><span class="classifier">str or unicode, optional</span></dt><dd><p>Used as the string separating each parent group and the name of the element. Defaults to ‘, ‘.</p>
+</dd>
+<dt><strong>skip_parents</strong><span class="classifier">bool, optional</span></dt><dd><p>If True, parent groups of the element are excluded from the full name. Defaults to False.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>str or unicode</dt><dd><p>The name, including overlap disambiguator and parent groups if enabled, of the element.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Suppose the following Example Label Outline:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Table_Binary</span><span class="p">:</span> <span class="n">Observations</span>
+    <span class="n">Field</span><span class="p">:</span> <span class="n">order</span>
+    <span class="n">Field</span><span class="p">:</span> <span class="n">wavelength</span>           <span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">Group</span><span class="p">:</span> <span class="n">unnamed</span>
+            <span class="n">Field</span><span class="p">:</span> <span class="n">pos_vector</span>   <span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">Group</span><span class="p">:</span> <span class="n">unnamed</span>
+        <span class="n">Group</span><span class="p">:</span> <span class="n">example_group</span>
+            <span class="n">Field</span><span class="p">:</span> <span class="n">pos_vector</span>
+            <span class="n">Field</span><span class="p">:</span> <span class="n">pos_vector</span>   <span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The full name of each element, with the default separator, is:</p>
+<ol class="arabic simple">
+<li><p>wavelength</p></li>
+<li><p>GROUP_0, pos_vector</p></li>
+<li><p>GROUP_1, example_group, pos_vector [1]</p></li>
+</ol>
+<p>Enabling skip_parents for element (3) would result in ‘pos_vector [1]’, which includes the
+overlap disambiguator, but excludes all parent groups.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pds4_tools.reader.table_objects.Meta_FieldUniformlySampled.from_label">
+<em class="property">classmethod </em><code class="sig-name descname">from_label</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">uniformly_sampled_xml</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/table_objects.html#Meta_FieldUniformlySampled.from_label"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.reader.table_objects.Meta_FieldUniformlySampled.from_label" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initializes the meta data from an XML description of the Uniformly_Sampled.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>uniformly_sampled_xml</strong><span class="classifier">Label or ElementTree Element</span></dt><dd><p>Portion of the label describing this Uniformly Sampled field.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>Meta_FieldUniformlySampled</dt><dd><p>Contains meta data for a Uniformly_Sampled field.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="pds4_tools.reader.table_objects.Meta_Group">
+<em class="property">class </em><code class="sig-name descname">Meta_Group</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwds</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/table_objects.html#Meta_Group"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.reader.table_objects.Meta_Group" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pds4_tools.reader.table_objects.Meta_TableElement" title="pds4_tools.reader.table_objects.Meta_TableElement"><code class="xref py py-class docutils literal notranslate"><span class="pre">pds4_tools.reader.table_objects.Meta_TableElement</span></code></a></p>
+<p>Stores meta data about a single &lt;Group_Field_*&gt;.</p>
+<p class="rubric">Notes</p>
+<p>Keys starting with the ‘group_’ prefix have this prefix removed.
+All other keys preserve their XML names.</p>
+<p class="rubric">Examples</p>
+<p>Supposing the following Group field definition from a label:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">Group_Field_Binary</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">repetitions</span><span class="o">&gt;</span><span class="mi">12</span><span class="o">&lt;/</span><span class="n">repetitions</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">fields</span><span class="o">&gt;</span><span class="mi">1</span><span class="o">&lt;/</span><span class="n">fields</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">groups</span><span class="o">&gt;</span><span class="mi">0</span><span class="o">&lt;/</span><span class="n">groups</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">group_location</span> <span class="n">unit</span><span class="o">=</span><span class="s2">&quot;byte&quot;</span><span class="o">&gt;</span><span class="mi">1</span><span class="o">&lt;/</span><span class="n">group_location</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">group_length</span> <span class="n">unit</span><span class="o">=</span><span class="s2">&quot;byte&quot;</span><span class="o">&gt;</span><span class="mi">24</span><span class="o">&lt;/</span><span class="n">group_length</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">Field_Binary</span><span class="o">&gt;</span>
+    <span class="o">...</span>
+  <span class="o">&lt;/</span><span class="n">Field_Binary</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">Group_Field_Binary</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">group</span> <span class="o">=</span> <span class="n">Meta_Group</span><span class="o">.</span><span class="n">from_label</span><span class="p">(</span><span class="n">group_field_xml</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">group</span><span class="p">[</span><span class="s1">&#39;repetitions&#39;</span><span class="p">])</span>
+<span class="go">12</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">group</span><span class="p">[</span><span class="s1">&#39;location&#39;</span><span class="p">])</span>
+<span class="go">1</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">group</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+<span class="go">[&#39;repetitions&#39;, &#39;fields&#39;, &#39;groups&#39;, &#39;location&#39;, &#39;length&#39;, &#39;Field_Binary&#39;]</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt id="pds4_tools.reader.table_objects.Meta_Group.full_name">
+<code class="sig-name descname">full_name</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">separator</span><span class="o">=</span><span class="default_value">', '</span></em>, <em class="sig-param"><span class="n">skip_parents</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pds4_tools.reader.table_objects.Meta_Group.full_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>The full name of the element.</p>
+<p>The full name always includes an overlap disambiguator, to resolve two elements in the same
+location with the same name. Normally it also includes the name of any parent groups necessary
+to reach this element from the beginning of the record description.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>separator</strong><span class="classifier">str or unicode, optional</span></dt><dd><p>Used as the string separating each parent group and the name of the element. Defaults to ‘, ‘.</p>
+</dd>
+<dt><strong>skip_parents</strong><span class="classifier">bool, optional</span></dt><dd><p>If True, parent groups of the element are excluded from the full name. Defaults to False.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>str or unicode</dt><dd><p>The name, including overlap disambiguator and parent groups if enabled, of the element.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Suppose the following Example Label Outline:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Table_Binary</span><span class="p">:</span> <span class="n">Observations</span>
+    <span class="n">Field</span><span class="p">:</span> <span class="n">order</span>
+    <span class="n">Field</span><span class="p">:</span> <span class="n">wavelength</span>           <span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">Group</span><span class="p">:</span> <span class="n">unnamed</span>
+            <span class="n">Field</span><span class="p">:</span> <span class="n">pos_vector</span>   <span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">Group</span><span class="p">:</span> <span class="n">unnamed</span>
+        <span class="n">Group</span><span class="p">:</span> <span class="n">example_group</span>
+            <span class="n">Field</span><span class="p">:</span> <span class="n">pos_vector</span>
+            <span class="n">Field</span><span class="p">:</span> <span class="n">pos_vector</span>   <span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The full name of each element, with the default separator, is:</p>
+<ol class="arabic simple">
+<li><p>wavelength</p></li>
+<li><p>GROUP_0, pos_vector</p></li>
+<li><p>GROUP_1, example_group, pos_vector [1]</p></li>
+</ol>
+<p>Enabling skip_parents for element (3) would result in ‘pos_vector [1]’, which includes the
+overlap disambiguator, but excludes all parent groups.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pds4_tools.reader.table_objects.Meta_Group.from_label">
+<em class="property">classmethod </em><code class="sig-name descname">from_label</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">group_field_xml</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/table_objects.html#Meta_Group.from_label"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.reader.table_objects.Meta_Group.from_label" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initializes the meta data from an XML description of the Group_Field.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>group_field_xml</strong><span class="classifier">Label or ElementTree Element</span></dt><dd><p>Portion of the label describing this group field.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>Meta_Group</dt><dd><p>Contains meta data for Group_Field_* fields.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">pds4_tools.reader.table_objects module</a><ul>
+<li><a class="reference internal" href="#classes">Classes</a></li>
+<li><a class="reference internal" href="#functions">Functions</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="pds4_tools.reader.array_objects.html"
+                        title="previous chapter">pds4_tools.reader.array_objects module</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="pds4_tools.reader.header_objects.html"
+                        title="next chapter">pds4_tools.reader.header_objects module</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/pds4_tools.reader.table_objects.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="pds4_tools.reader.header_objects.html" title="pds4_tools.reader.header_objects module"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="pds4_tools.reader.array_objects.html" title="pds4_tools.reader.array_objects module"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">PDS4 Python Tools 1.2 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="pds4_tools.reader.html" >pds4_tools.reader package</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">pds4_tools.reader.table_objects module</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2015 - 2020, University of Maryland.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+    </div>
+  </body>
+</html>

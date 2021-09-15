@@ -1,0 +1,648 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>pds4_tools.extern.appdirs &#8212; PDS4 Python Tools 1.2 documentation</title>
+    <link rel="stylesheet" href="../../../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css" />
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">PDS4 Python Tools 1.2 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" accesskey="U">Module code</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">pds4_tools.extern.appdirs</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Source code for pds4_tools.extern.appdirs</h1><div class="highlight"><pre>
+<span></span><span class="ch">#!/usr/bin/env python</span>
+<span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="c1"># Copyright (c) 2005-2010 ActiveState Software Inc.</span>
+<span class="c1"># Copyright (c) 2013 Eddy Petrișor</span>
+
+<span class="sd">&quot;&quot;&quot;Utilities for determining application-specific dirs.</span>
+
+<span class="sd">See &lt;http://github.com/ActiveState/appdirs&gt; for details and usage.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="c1"># Dev Notes:</span>
+<span class="c1"># - MSDN on where to store app data files:</span>
+<span class="c1">#   http://support.microsoft.com/default.aspx?scid=kb;en-us;310294#XSLTH3194121123120121120120</span>
+<span class="c1"># - Mac OS X: http://developer.apple.com/documentation/MacOSX/Conceptual/BPFileSystem/index.html</span>
+<span class="c1"># - XDG spec for Un*x: http://standards.freedesktop.org/basedir-spec/basedir-spec-latest.html</span>
+
+<span class="n">__version_info__</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">__version__</span> <span class="o">=</span> <span class="s1">&#39;.&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">__version_info__</span><span class="p">))</span>
+
+
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="n">PY3</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">version_info</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="mi">3</span>
+
+<span class="k">if</span> <span class="n">PY3</span><span class="p">:</span>
+    <span class="n">unicode</span> <span class="o">=</span> <span class="nb">str</span>
+
+<span class="k">if</span> <span class="n">sys</span><span class="o">.</span><span class="n">platform</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;java&#39;</span><span class="p">):</span>
+    <span class="kn">import</span> <span class="nn">platform</span>
+    <span class="n">os_name</span> <span class="o">=</span> <span class="n">platform</span><span class="o">.</span><span class="n">java_ver</span><span class="p">()[</span><span class="mi">3</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">os_name</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;Windows&#39;</span><span class="p">):</span> <span class="c1"># &quot;Windows XP&quot;, &quot;Windows 7&quot;, etc.</span>
+        <span class="n">system</span> <span class="o">=</span> <span class="s1">&#39;win32&#39;</span>
+    <span class="k">elif</span> <span class="n">os_name</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;Mac&#39;</span><span class="p">):</span> <span class="c1"># &quot;Mac OS X&quot;, etc.</span>
+        <span class="n">system</span> <span class="o">=</span> <span class="s1">&#39;darwin&#39;</span>
+    <span class="k">else</span><span class="p">:</span> <span class="c1"># &quot;Linux&quot;, &quot;SunOS&quot;, &quot;FreeBSD&quot;, etc.</span>
+        <span class="c1"># Setting this to &quot;linux2&quot; is not ideal, but only Windows or Mac</span>
+        <span class="c1"># are actually checked for and the rest of the module expects</span>
+        <span class="c1"># *sys.platform* style strings.</span>
+        <span class="n">system</span> <span class="o">=</span> <span class="s1">&#39;linux2&#39;</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">system</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">platform</span>
+
+
+
+<div class="viewcode-block" id="user_data_dir"><a class="viewcode-back" href="../../../pds4_tools.extern.appdirs.html#pds4_tools.extern.appdirs.user_data_dir">[docs]</a><span class="k">def</span> <span class="nf">user_data_dir</span><span class="p">(</span><span class="n">appname</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">appauthor</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">roaming</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="sa">r</span><span class="sd">&quot;&quot;&quot;Return full path to the user-specific data dir for this application.</span>
+
+<span class="sd">        &quot;appname&quot; is the name of application.</span>
+<span class="sd">            If None, just the system directory is returned.</span>
+<span class="sd">        &quot;appauthor&quot; (only used on Windows) is the name of the</span>
+<span class="sd">            appauthor or distributing body for this application. Typically</span>
+<span class="sd">            it is the owning company name. This falls back to appname. You may</span>
+<span class="sd">            pass False to disable it.</span>
+<span class="sd">        &quot;version&quot; is an optional version path element to append to the</span>
+<span class="sd">            path. You might want to use this if you want multiple versions</span>
+<span class="sd">            of your app to be able to run independently. If used, this</span>
+<span class="sd">            would typically be &quot;&lt;major&gt;.&lt;minor&gt;&quot;.</span>
+<span class="sd">            Only applied when appname is present.</span>
+<span class="sd">        &quot;roaming&quot; (boolean, default False) can be set True to use the Windows</span>
+<span class="sd">            roaming appdata directory. That means that for users on a Windows</span>
+<span class="sd">            network setup for roaming profiles, this user data will be</span>
+<span class="sd">            sync&#39;d on login. See</span>
+<span class="sd">            &lt;http://technet.microsoft.com/en-us/library/cc766489(WS.10).aspx&gt;</span>
+<span class="sd">            for a discussion of issues.</span>
+
+<span class="sd">    Typical user data directories are::</span>
+
+<span class="sd">        Mac OS X:               ~/Library/Application Support/&lt;AppName&gt;</span>
+<span class="sd">        Unix:                   ~/.local/share/&lt;AppName&gt;    # or in $XDG_DATA_HOME, if defined</span>
+<span class="sd">        Win XP (not roaming):   C:\Documents and Settings\&lt;username&gt;\Application Data\&lt;AppAuthor&gt;\&lt;AppName&gt;</span>
+<span class="sd">        Win XP (roaming):       C:\Documents and Settings\&lt;username&gt;\Local Settings\Application Data\&lt;AppAuthor&gt;\&lt;AppName&gt;</span>
+<span class="sd">        Win 7  (not roaming):   C:\Users\&lt;username&gt;\AppData\Local\&lt;AppAuthor&gt;\&lt;AppName&gt;</span>
+<span class="sd">        Win 7  (roaming):       C:\Users\&lt;username&gt;\AppData\Roaming\&lt;AppAuthor&gt;\&lt;AppName&gt;</span>
+
+<span class="sd">    For Unix, we follow the XDG spec and support $XDG_DATA_HOME.</span>
+<span class="sd">    That means, by default &quot;~/.local/share/&lt;AppName&gt;&quot;.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">system</span> <span class="o">==</span> <span class="s2">&quot;win32&quot;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">appauthor</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">appauthor</span> <span class="o">=</span> <span class="n">appname</span>
+        <span class="n">const</span> <span class="o">=</span> <span class="n">roaming</span> <span class="ow">and</span> <span class="s2">&quot;CSIDL_APPDATA&quot;</span> <span class="ow">or</span> <span class="s2">&quot;CSIDL_LOCAL_APPDATA&quot;</span>
+        <span class="n">path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">normpath</span><span class="p">(</span><span class="n">_get_win_folder</span><span class="p">(</span><span class="n">const</span><span class="p">))</span>
+        <span class="k">if</span> <span class="n">appname</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">appauthor</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">False</span><span class="p">:</span>
+                <span class="n">path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">appauthor</span><span class="p">,</span> <span class="n">appname</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">appname</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">system</span> <span class="o">==</span> <span class="s1">&#39;darwin&#39;</span><span class="p">:</span>
+        <span class="n">path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">expanduser</span><span class="p">(</span><span class="s1">&#39;~/Library/Application Support/&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">appname</span><span class="p">:</span>
+            <span class="n">path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">appname</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s1">&#39;XDG_DATA_HOME&#39;</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">expanduser</span><span class="p">(</span><span class="s2">&quot;~/.local/share&quot;</span><span class="p">))</span>
+        <span class="k">if</span> <span class="n">appname</span><span class="p">:</span>
+            <span class="n">path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">appname</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">appname</span> <span class="ow">and</span> <span class="n">version</span><span class="p">:</span>
+        <span class="n">path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">version</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">path</span></div>
+
+
+<div class="viewcode-block" id="site_data_dir"><a class="viewcode-back" href="../../../pds4_tools.extern.appdirs.html#pds4_tools.extern.appdirs.site_data_dir">[docs]</a><span class="k">def</span> <span class="nf">site_data_dir</span><span class="p">(</span><span class="n">appname</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">appauthor</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">multipath</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="sa">r</span><span class="sd">&quot;&quot;&quot;Return full path to the user-shared data dir for this application.</span>
+
+<span class="sd">        &quot;appname&quot; is the name of application.</span>
+<span class="sd">            If None, just the system directory is returned.</span>
+<span class="sd">        &quot;appauthor&quot; (only used on Windows) is the name of the</span>
+<span class="sd">            appauthor or distributing body for this application. Typically</span>
+<span class="sd">            it is the owning company name. This falls back to appname. You may</span>
+<span class="sd">            pass False to disable it.</span>
+<span class="sd">        &quot;version&quot; is an optional version path element to append to the</span>
+<span class="sd">            path. You might want to use this if you want multiple versions</span>
+<span class="sd">            of your app to be able to run independently. If used, this</span>
+<span class="sd">            would typically be &quot;&lt;major&gt;.&lt;minor&gt;&quot;.</span>
+<span class="sd">            Only applied when appname is present.</span>
+<span class="sd">        &quot;multipath&quot; is an optional parameter only applicable to \*nix</span>
+<span class="sd">            which indicates that the entire list of data dirs should be</span>
+<span class="sd">            returned. By default, the first item from XDG_DATA_DIRS is</span>
+<span class="sd">            returned, or &#39;/usr/local/share/&lt;AppName&gt;&#39;,</span>
+<span class="sd">            if XDG_DATA_DIRS is not set</span>
+
+<span class="sd">    Typical user data directories are:</span>
+<span class="sd">        Mac OS X:   /Library/Application Support/&lt;AppName&gt;</span>
+<span class="sd">        Unix:       /usr/local/share/&lt;AppName&gt; or /usr/share/&lt;AppName&gt;</span>
+<span class="sd">        Win XP:     C:\Documents and Settings\All Users\Application Data\&lt;AppAuthor&gt;\&lt;AppName&gt;</span>
+<span class="sd">        Vista:      (Fail! &quot;C:\ProgramData&quot; is a hidden *system* directory on Vista.)</span>
+<span class="sd">        Win 7:      C:\ProgramData\&lt;AppAuthor&gt;\&lt;AppName&gt;   # Hidden, but writeable on Win 7.</span>
+
+<span class="sd">    For Unix, this is using the $XDG_DATA_DIRS[0] default.</span>
+
+<span class="sd">    WARNING: Do not use this on Windows. See the Vista-Fail note above for why.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">system</span> <span class="o">==</span> <span class="s2">&quot;win32&quot;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">appauthor</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">appauthor</span> <span class="o">=</span> <span class="n">appname</span>
+        <span class="n">path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">normpath</span><span class="p">(</span><span class="n">_get_win_folder</span><span class="p">(</span><span class="s2">&quot;CSIDL_COMMON_APPDATA&quot;</span><span class="p">))</span>
+        <span class="k">if</span> <span class="n">appname</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">appauthor</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">False</span><span class="p">:</span>
+                <span class="n">path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">appauthor</span><span class="p">,</span> <span class="n">appname</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">appname</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">system</span> <span class="o">==</span> <span class="s1">&#39;darwin&#39;</span><span class="p">:</span>
+        <span class="n">path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">expanduser</span><span class="p">(</span><span class="s1">&#39;/Library/Application Support&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">appname</span><span class="p">:</span>
+            <span class="n">path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">appname</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="c1"># XDG default for $XDG_DATA_DIRS</span>
+        <span class="c1"># only first, if multipath is False</span>
+        <span class="n">path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s1">&#39;XDG_DATA_DIRS&#39;</span><span class="p">,</span>
+                         <span class="n">os</span><span class="o">.</span><span class="n">pathsep</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s1">&#39;/usr/local/share&#39;</span><span class="p">,</span> <span class="s1">&#39;/usr/share&#39;</span><span class="p">]))</span>
+        <span class="n">pathlist</span> <span class="o">=</span> <span class="p">[</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">expanduser</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">rstrip</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">sep</span><span class="p">))</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">path</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">pathsep</span><span class="p">)]</span>
+        <span class="k">if</span> <span class="n">appname</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">version</span><span class="p">:</span>
+                <span class="n">appname</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">appname</span><span class="p">,</span> <span class="n">version</span><span class="p">)</span>
+            <span class="n">pathlist</span> <span class="o">=</span> <span class="p">[</span><span class="n">os</span><span class="o">.</span><span class="n">sep</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">x</span><span class="p">,</span> <span class="n">appname</span><span class="p">])</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">pathlist</span><span class="p">]</span>
+
+        <span class="k">if</span> <span class="n">multipath</span><span class="p">:</span>
+            <span class="n">path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">pathsep</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">pathlist</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">path</span> <span class="o">=</span> <span class="n">pathlist</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">path</span>
+
+    <span class="k">if</span> <span class="n">appname</span> <span class="ow">and</span> <span class="n">version</span><span class="p">:</span>
+        <span class="n">path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">version</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">path</span></div>
+
+
+<div class="viewcode-block" id="user_config_dir"><a class="viewcode-back" href="../../../pds4_tools.extern.appdirs.html#pds4_tools.extern.appdirs.user_config_dir">[docs]</a><span class="k">def</span> <span class="nf">user_config_dir</span><span class="p">(</span><span class="n">appname</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">appauthor</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">roaming</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Return full path to the user-specific config dir for this application.</span>
+
+<span class="sd">        &quot;appname&quot; is the name of application.</span>
+<span class="sd">            If None, just the system directory is returned.</span>
+<span class="sd">        &quot;appauthor&quot; (only used on Windows) is the name of the</span>
+<span class="sd">            appauthor or distributing body for this application. Typically</span>
+<span class="sd">            it is the owning company name. This falls back to appname. You may</span>
+<span class="sd">            pass False to disable it.</span>
+<span class="sd">        &quot;version&quot; is an optional version path element to append to the</span>
+<span class="sd">            path. You might want to use this if you want multiple versions</span>
+<span class="sd">            of your app to be able to run independently. If used, this</span>
+<span class="sd">            would typically be &quot;&lt;major&gt;.&lt;minor&gt;&quot;.</span>
+<span class="sd">            Only applied when appname is present.</span>
+<span class="sd">        &quot;roaming&quot; (boolean, default False) can be set True to use the Windows</span>
+<span class="sd">            roaming appdata directory. That means that for users on a Windows</span>
+<span class="sd">            network setup for roaming profiles, this user data will be</span>
+<span class="sd">            sync&#39;d on login. See</span>
+<span class="sd">            &lt;http://technet.microsoft.com/en-us/library/cc766489(WS.10).aspx&gt;</span>
+<span class="sd">            for a discussion of issues.</span>
+
+<span class="sd">    Typical user data directories are:</span>
+<span class="sd">        Mac OS X:               same as user_data_dir</span>
+<span class="sd">        Unix:                   ~/.config/&lt;AppName&gt;     # or in $XDG_CONFIG_HOME, if defined</span>
+<span class="sd">        Win (all):              same as user_data_dir</span>
+
+<span class="sd">    For Unix, we follow the XDG spec and support $XDG_CONFIG_HOME.</span>
+<span class="sd">    That means, by deafult &quot;~/.config/&lt;AppName&gt;&quot;.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">system</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;win32&quot;</span><span class="p">,</span> <span class="s2">&quot;darwin&quot;</span><span class="p">]:</span>
+        <span class="n">path</span> <span class="o">=</span> <span class="n">user_data_dir</span><span class="p">(</span><span class="n">appname</span><span class="p">,</span> <span class="n">appauthor</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="n">roaming</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s1">&#39;XDG_CONFIG_HOME&#39;</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">expanduser</span><span class="p">(</span><span class="s2">&quot;~/.config&quot;</span><span class="p">))</span>
+        <span class="k">if</span> <span class="n">appname</span><span class="p">:</span>
+            <span class="n">path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">appname</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">appname</span> <span class="ow">and</span> <span class="n">version</span><span class="p">:</span>
+        <span class="n">path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">version</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">path</span></div>
+
+
+<div class="viewcode-block" id="site_config_dir"><a class="viewcode-back" href="../../../pds4_tools.extern.appdirs.html#pds4_tools.extern.appdirs.site_config_dir">[docs]</a><span class="k">def</span> <span class="nf">site_config_dir</span><span class="p">(</span><span class="n">appname</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">appauthor</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">multipath</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="sa">r</span><span class="sd">&quot;&quot;&quot;Return full path to the user-shared data dir for this application.</span>
+
+<span class="sd">        &quot;appname&quot; is the name of application.</span>
+<span class="sd">            If None, just the system directory is returned.</span>
+<span class="sd">        &quot;appauthor&quot; (only used on Windows) is the name of the</span>
+<span class="sd">            appauthor or distributing body for this application. Typically</span>
+<span class="sd">            it is the owning company name. This falls back to appname. You may</span>
+<span class="sd">            pass False to disable it.</span>
+<span class="sd">        &quot;version&quot; is an optional version path element to append to the</span>
+<span class="sd">            path. You might want to use this if you want multiple versions</span>
+<span class="sd">            of your app to be able to run independently. If used, this</span>
+<span class="sd">            would typically be &quot;&lt;major&gt;.&lt;minor&gt;&quot;.</span>
+<span class="sd">            Only applied when appname is present.</span>
+<span class="sd">        &quot;multipath&quot; is an optional parameter only applicable to \*nix</span>
+<span class="sd">            which indicates that the entire list of config dirs should be</span>
+<span class="sd">            returned. By default, the first item from XDG_CONFIG_DIRS is</span>
+<span class="sd">            returned, or &#39;/etc/xdg/&lt;AppName&gt;&#39;, if XDG_CONFIG_DIRS is not set</span>
+
+<span class="sd">    Typical user data directories are::</span>
+
+<span class="sd">        Mac OS X:   same as site_data_dir</span>
+<span class="sd">        Unix:       /etc/xdg/&lt;AppName&gt; or $XDG_CONFIG_DIRS[i]/&lt;AppName&gt; for each value in</span>
+<span class="sd">                    $XDG_CONFIG_DIRS</span>
+<span class="sd">        Win (all):  same as site_data_dir</span>
+<span class="sd">        Vista:      (Fail! &quot;C:\ProgramData&quot; is a hidden *system* directory on Vista.)</span>
+
+<span class="sd">    For Unix, this is using the $XDG_CONFIG_DIRS[0] default, if multipath=False</span>
+
+<span class="sd">    WARNING: Do not use this on Windows. See the Vista-Fail note above for why.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="n">system</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;win32&quot;</span><span class="p">,</span> <span class="s2">&quot;darwin&quot;</span><span class="p">]:</span>
+        <span class="n">path</span> <span class="o">=</span> <span class="n">site_data_dir</span><span class="p">(</span><span class="n">appname</span><span class="p">,</span> <span class="n">appauthor</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">appname</span> <span class="ow">and</span> <span class="n">version</span><span class="p">:</span>
+            <span class="n">path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">version</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="c1"># XDG default for $XDG_CONFIG_DIRS</span>
+        <span class="c1"># only first, if multipath is False</span>
+        <span class="n">path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s1">&#39;XDG_CONFIG_DIRS&#39;</span><span class="p">,</span> <span class="s1">&#39;/etc/xdg&#39;</span><span class="p">)</span>
+        <span class="n">pathlist</span> <span class="o">=</span> <span class="p">[</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">expanduser</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">rstrip</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">sep</span><span class="p">))</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">path</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">pathsep</span><span class="p">)]</span>
+        <span class="k">if</span> <span class="n">appname</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">version</span><span class="p">:</span>
+                <span class="n">appname</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">appname</span><span class="p">,</span> <span class="n">version</span><span class="p">)</span>
+            <span class="n">pathlist</span> <span class="o">=</span> <span class="p">[</span><span class="n">os</span><span class="o">.</span><span class="n">sep</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">x</span><span class="p">,</span> <span class="n">appname</span><span class="p">])</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">pathlist</span><span class="p">]</span>
+
+        <span class="k">if</span> <span class="n">multipath</span><span class="p">:</span>
+            <span class="n">path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">pathsep</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">pathlist</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">path</span> <span class="o">=</span> <span class="n">pathlist</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">path</span></div>
+
+
+<div class="viewcode-block" id="user_cache_dir"><a class="viewcode-back" href="../../../pds4_tools.extern.appdirs.html#pds4_tools.extern.appdirs.user_cache_dir">[docs]</a><span class="k">def</span> <span class="nf">user_cache_dir</span><span class="p">(</span><span class="n">appname</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">appauthor</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">opinion</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+    <span class="sa">r</span><span class="sd">&quot;&quot;&quot;Return full path to the user-specific cache dir for this application.</span>
+
+<span class="sd">        &quot;appname&quot; is the name of application.</span>
+<span class="sd">            If None, just the system directory is returned.</span>
+<span class="sd">        &quot;appauthor&quot; (only used on Windows) is the name of the</span>
+<span class="sd">            appauthor or distributing body for this application. Typically</span>
+<span class="sd">            it is the owning company name. This falls back to appname. You may</span>
+<span class="sd">            pass False to disable it.</span>
+<span class="sd">        &quot;version&quot; is an optional version path element to append to the</span>
+<span class="sd">            path. You might want to use this if you want multiple versions</span>
+<span class="sd">            of your app to be able to run independently. If used, this</span>
+<span class="sd">            would typically be &quot;&lt;major&gt;.&lt;minor&gt;&quot;.</span>
+<span class="sd">            Only applied when appname is present.</span>
+<span class="sd">        &quot;opinion&quot; (boolean) can be False to disable the appending of</span>
+<span class="sd">            &quot;Cache&quot; to the base app data dir for Windows. See</span>
+<span class="sd">            discussion below.</span>
+
+<span class="sd">    Typical user cache directories are::</span>
+
+<span class="sd">        Mac OS X:   ~/Library/Caches/&lt;AppName&gt;</span>
+<span class="sd">        Unix:       ~/.cache/&lt;AppName&gt; (XDG default)</span>
+<span class="sd">        Win XP:     C:\Documents and Settings\&lt;username&gt;\Local Settings\Application Data\&lt;AppAuthor&gt;\&lt;AppName&gt;\Cache</span>
+<span class="sd">        Vista:      C:\Users\&lt;username&gt;\AppData\Local\&lt;AppAuthor&gt;\&lt;AppName&gt;\Cache</span>
+
+<span class="sd">    On Windows the only suggestion in the MSDN docs is that local settings go in</span>
+<span class="sd">    the &#39;CSIDL_LOCAL_APPDATA&#39; directory. This is identical to the non-roaming</span>
+<span class="sd">    app data dir (the default returned by `user_data_dir` above). Apps typically</span>
+<span class="sd">    put cache data somewhere *under* the given dir here. Some examples::</span>
+
+<span class="sd">        ...\Mozilla\Firefox\Profiles\&lt;ProfileName&gt;\Cache</span>
+<span class="sd">        ...\Acme\SuperApp\Cache\1.0</span>
+
+<span class="sd">    OPINION: This function appends &quot;Cache&quot; to the &#39;CSIDL_LOCAL_APPDATA&#39; value.</span>
+<span class="sd">    This can be disabled with the ``opinion=False`` option.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="n">system</span> <span class="o">==</span> <span class="s2">&quot;win32&quot;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">appauthor</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">appauthor</span> <span class="o">=</span> <span class="n">appname</span>
+        <span class="n">path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">normpath</span><span class="p">(</span><span class="n">_get_win_folder</span><span class="p">(</span><span class="s2">&quot;CSIDL_LOCAL_APPDATA&quot;</span><span class="p">))</span>
+        <span class="k">if</span> <span class="n">appname</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">appauthor</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">False</span><span class="p">:</span>
+                <span class="n">path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">appauthor</span><span class="p">,</span> <span class="n">appname</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">appname</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">opinion</span><span class="p">:</span>
+                <span class="n">path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s2">&quot;Cache&quot;</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">system</span> <span class="o">==</span> <span class="s1">&#39;darwin&#39;</span><span class="p">:</span>
+        <span class="n">path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">expanduser</span><span class="p">(</span><span class="s1">&#39;~/Library/Caches&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">appname</span><span class="p">:</span>
+            <span class="n">path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">appname</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s1">&#39;XDG_CACHE_HOME&#39;</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">expanduser</span><span class="p">(</span><span class="s1">&#39;~/.cache&#39;</span><span class="p">))</span>
+        <span class="k">if</span> <span class="n">appname</span><span class="p">:</span>
+            <span class="n">path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">appname</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">appname</span> <span class="ow">and</span> <span class="n">version</span><span class="p">:</span>
+        <span class="n">path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">version</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">path</span></div>
+
+
+<div class="viewcode-block" id="user_log_dir"><a class="viewcode-back" href="../../../pds4_tools.extern.appdirs.html#pds4_tools.extern.appdirs.user_log_dir">[docs]</a><span class="k">def</span> <span class="nf">user_log_dir</span><span class="p">(</span><span class="n">appname</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">appauthor</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">opinion</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+    <span class="sa">r</span><span class="sd">&quot;&quot;&quot;Return full path to the user-specific log dir for this application.</span>
+
+<span class="sd">        &quot;appname&quot; is the name of application.</span>
+<span class="sd">            If None, just the system directory is returned.</span>
+<span class="sd">        &quot;appauthor&quot; (only used on Windows) is the name of the</span>
+<span class="sd">            appauthor or distributing body for this application. Typically</span>
+<span class="sd">            it is the owning company name. This falls back to appname. You may</span>
+<span class="sd">            pass False to disable it.</span>
+<span class="sd">        &quot;version&quot; is an optional version path element to append to the</span>
+<span class="sd">            path. You might want to use this if you want multiple versions</span>
+<span class="sd">            of your app to be able to run independently. If used, this</span>
+<span class="sd">            would typically be &quot;&lt;major&gt;.&lt;minor&gt;&quot;.</span>
+<span class="sd">            Only applied when appname is present.</span>
+<span class="sd">        &quot;opinion&quot; (boolean) can be False to disable the appending of</span>
+<span class="sd">            &quot;Logs&quot; to the base app data dir for Windows, and &quot;log&quot; to the</span>
+<span class="sd">            base cache dir for Unix. See discussion below1.</span>
+
+<span class="sd">    Typical user cache directories are::</span>
+
+<span class="sd">        Mac OS X:   ~/Library/Logs/&lt;AppName&gt;</span>
+<span class="sd">        Unix:       ~/.cache/&lt;AppName&gt;/log  # or under $XDG_CACHE_HOME if defined</span>
+<span class="sd">        Win XP:     C:\Documents and Settings\&lt;username&gt;\Local Settings\Application Data\&lt;AppAuthor&gt;\&lt;AppName&gt;\Logs</span>
+<span class="sd">        Vista:      C:\Users\&lt;username&gt;\AppData\Local\&lt;AppAuthor&gt;\&lt;AppName&gt;\Logs</span>
+
+<span class="sd">    On Windows the only suggestion in the MSDN docs is that local settings</span>
+<span class="sd">    go in the &#39;CSIDL_LOCAL_APPDATA&#39; directory. (Note: I&#39;m interested in</span>
+<span class="sd">    examples of what some windows apps use for a logs dir.)</span>
+
+<span class="sd">    OPINION: This function appends &quot;Logs&quot; to the &#39;CSIDL_LOCAL_APPDATA&#39;</span>
+<span class="sd">    value for Windows and appends &quot;log&quot; to the user cache dir for Unix.</span>
+<span class="sd">    This can be disabled with the ``opinion=False`` option.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="n">system</span> <span class="o">==</span> <span class="s2">&quot;darwin&quot;</span><span class="p">:</span>
+        <span class="n">path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+            <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">expanduser</span><span class="p">(</span><span class="s1">&#39;~/Library/Logs&#39;</span><span class="p">),</span>
+            <span class="n">appname</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">system</span> <span class="o">==</span> <span class="s2">&quot;win32&quot;</span><span class="p">:</span>
+        <span class="n">path</span> <span class="o">=</span> <span class="n">user_data_dir</span><span class="p">(</span><span class="n">appname</span><span class="p">,</span> <span class="n">appauthor</span><span class="p">,</span> <span class="n">version</span><span class="p">)</span>
+        <span class="n">version</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="k">if</span> <span class="n">opinion</span><span class="p">:</span>
+            <span class="n">path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s2">&quot;Logs&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">path</span> <span class="o">=</span> <span class="n">user_cache_dir</span><span class="p">(</span><span class="n">appname</span><span class="p">,</span> <span class="n">appauthor</span><span class="p">,</span> <span class="n">version</span><span class="p">)</span>
+        <span class="n">version</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="k">if</span> <span class="n">opinion</span><span class="p">:</span>
+            <span class="n">path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s2">&quot;log&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">appname</span> <span class="ow">and</span> <span class="n">version</span><span class="p">:</span>
+        <span class="n">path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">version</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">path</span></div>
+
+
+<div class="viewcode-block" id="AppDirs"><a class="viewcode-back" href="../../../pds4_tools.extern.appdirs.html#pds4_tools.extern.appdirs.AppDirs">[docs]</a><span class="k">class</span> <span class="nc">AppDirs</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Convenience wrapper for getting application dirs.&quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">appname</span><span class="p">,</span> <span class="n">appauthor</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">roaming</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                 <span class="n">multipath</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">appname</span> <span class="o">=</span> <span class="n">appname</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">appauthor</span> <span class="o">=</span> <span class="n">appauthor</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">version</span> <span class="o">=</span> <span class="n">version</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">roaming</span> <span class="o">=</span> <span class="n">roaming</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">multipath</span> <span class="o">=</span> <span class="n">multipath</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">user_data_dir</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">user_data_dir</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">appname</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">appauthor</span><span class="p">,</span>
+                             <span class="n">version</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">version</span><span class="p">,</span> <span class="n">roaming</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">roaming</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">site_data_dir</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">site_data_dir</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">appname</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">appauthor</span><span class="p">,</span>
+                             <span class="n">version</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">version</span><span class="p">,</span> <span class="n">multipath</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">multipath</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">user_config_dir</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">user_config_dir</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">appname</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">appauthor</span><span class="p">,</span>
+                               <span class="n">version</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">version</span><span class="p">,</span> <span class="n">roaming</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">roaming</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">site_config_dir</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">site_config_dir</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">appname</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">appauthor</span><span class="p">,</span>
+                             <span class="n">version</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">version</span><span class="p">,</span> <span class="n">multipath</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">multipath</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">user_cache_dir</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">user_cache_dir</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">appname</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">appauthor</span><span class="p">,</span>
+                              <span class="n">version</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">version</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">user_log_dir</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">user_log_dir</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">appname</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">appauthor</span><span class="p">,</span>
+                            <span class="n">version</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">version</span><span class="p">)</span></div>
+
+
+<span class="c1">#---- internal support stuff</span>
+
+<span class="k">def</span> <span class="nf">_get_win_folder_from_registry</span><span class="p">(</span><span class="n">csidl_name</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;This is a fallback technique at best. I&#39;m not sure if using the</span>
+<span class="sd">    registry for this guarantees us the correct answer for all CSIDL_*</span>
+<span class="sd">    names.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">PY3</span><span class="p">:</span>
+      <span class="kn">import</span> <span class="nn">winreg</span> <span class="k">as</span> <span class="nn">_winreg</span>
+    <span class="k">else</span><span class="p">:</span>
+      <span class="kn">import</span> <span class="nn">_winreg</span>
+
+    <span class="n">shell_folder_name</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;CSIDL_APPDATA&quot;</span><span class="p">:</span> <span class="s2">&quot;AppData&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;CSIDL_COMMON_APPDATA&quot;</span><span class="p">:</span> <span class="s2">&quot;Common AppData&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;CSIDL_LOCAL_APPDATA&quot;</span><span class="p">:</span> <span class="s2">&quot;Local AppData&quot;</span><span class="p">,</span>
+    <span class="p">}[</span><span class="n">csidl_name</span><span class="p">]</span>
+
+    <span class="n">key</span> <span class="o">=</span> <span class="n">_winreg</span><span class="o">.</span><span class="n">OpenKey</span><span class="p">(</span>
+        <span class="n">_winreg</span><span class="o">.</span><span class="n">HKEY_CURRENT_USER</span><span class="p">,</span>
+        <span class="sa">r</span><span class="s2">&quot;Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders&quot;</span>
+    <span class="p">)</span>
+    <span class="nb">dir</span><span class="p">,</span> <span class="nb">type</span> <span class="o">=</span> <span class="n">_winreg</span><span class="o">.</span><span class="n">QueryValueEx</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">shell_folder_name</span><span class="p">)</span>
+    <span class="k">return</span> <span class="nb">dir</span>
+
+
+<span class="k">def</span> <span class="nf">_get_win_folder_with_pywin32</span><span class="p">(</span><span class="n">csidl_name</span><span class="p">):</span>
+    <span class="kn">from</span> <span class="nn">win32com.shell</span> <span class="kn">import</span> <span class="n">shellcon</span><span class="p">,</span> <span class="n">shell</span>
+    <span class="nb">dir</span> <span class="o">=</span> <span class="n">shell</span><span class="o">.</span><span class="n">SHGetFolderPath</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">shellcon</span><span class="p">,</span> <span class="n">csidl_name</span><span class="p">),</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="c1"># Try to make this a unicode path because SHGetFolderPath does</span>
+    <span class="c1"># not return unicode strings when there is unicode data in the</span>
+    <span class="c1"># path.</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="nb">dir</span> <span class="o">=</span> <span class="n">unicode</span><span class="p">(</span><span class="nb">dir</span><span class="p">)</span>
+
+        <span class="c1"># Downgrade to short path name if have highbit chars. See</span>
+        <span class="c1"># &lt;http://bugs.activestate.com/show_bug.cgi?id=85099&gt;.</span>
+        <span class="n">has_high_char</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">dir</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">ord</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">255</span><span class="p">:</span>
+                <span class="n">has_high_char</span> <span class="o">=</span> <span class="kc">True</span>
+                <span class="k">break</span>
+        <span class="k">if</span> <span class="n">has_high_char</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="kn">import</span> <span class="nn">win32api</span>
+                <span class="nb">dir</span> <span class="o">=</span> <span class="n">win32api</span><span class="o">.</span><span class="n">GetShortPathName</span><span class="p">(</span><span class="nb">dir</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+                <span class="k">pass</span>
+    <span class="k">except</span> <span class="ne">UnicodeError</span><span class="p">:</span>
+        <span class="k">pass</span>
+    <span class="k">return</span> <span class="nb">dir</span>
+
+
+<span class="k">def</span> <span class="nf">_get_win_folder_with_ctypes</span><span class="p">(</span><span class="n">csidl_name</span><span class="p">):</span>
+    <span class="kn">import</span> <span class="nn">ctypes</span>
+
+    <span class="n">csidl_const</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;CSIDL_APPDATA&quot;</span><span class="p">:</span> <span class="mi">26</span><span class="p">,</span>
+        <span class="s2">&quot;CSIDL_COMMON_APPDATA&quot;</span><span class="p">:</span> <span class="mi">35</span><span class="p">,</span>
+        <span class="s2">&quot;CSIDL_LOCAL_APPDATA&quot;</span><span class="p">:</span> <span class="mi">28</span><span class="p">,</span>
+    <span class="p">}[</span><span class="n">csidl_name</span><span class="p">]</span>
+
+    <span class="n">buf</span> <span class="o">=</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">create_unicode_buffer</span><span class="p">(</span><span class="mi">1024</span><span class="p">)</span>
+    <span class="n">ctypes</span><span class="o">.</span><span class="n">windll</span><span class="o">.</span><span class="n">shell32</span><span class="o">.</span><span class="n">SHGetFolderPathW</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="n">csidl_const</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">buf</span><span class="p">)</span>
+
+    <span class="c1"># Downgrade to short path name if have highbit chars. See</span>
+    <span class="c1"># &lt;http://bugs.activestate.com/show_bug.cgi?id=85099&gt;.</span>
+    <span class="n">has_high_char</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">buf</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">ord</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">255</span><span class="p">:</span>
+            <span class="n">has_high_char</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="k">break</span>
+    <span class="k">if</span> <span class="n">has_high_char</span><span class="p">:</span>
+        <span class="n">buf2</span> <span class="o">=</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">create_unicode_buffer</span><span class="p">(</span><span class="mi">1024</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">windll</span><span class="o">.</span><span class="n">kernel32</span><span class="o">.</span><span class="n">GetShortPathNameW</span><span class="p">(</span><span class="n">buf</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">buf2</span><span class="p">,</span> <span class="mi">1024</span><span class="p">):</span>
+            <span class="n">buf</span> <span class="o">=</span> <span class="n">buf2</span>
+
+    <span class="k">return</span> <span class="n">buf</span><span class="o">.</span><span class="n">value</span>
+
+<span class="k">def</span> <span class="nf">_get_win_folder_with_jna</span><span class="p">(</span><span class="n">csidl_name</span><span class="p">):</span>
+    <span class="kn">import</span> <span class="nn">array</span>
+    <span class="kn">from</span> <span class="nn">com.sun</span> <span class="kn">import</span> <span class="n">jna</span>
+    <span class="kn">from</span> <span class="nn">com.sun.jna.platform</span> <span class="kn">import</span> <span class="n">win32</span>
+
+    <span class="n">buf_size</span> <span class="o">=</span> <span class="n">win32</span><span class="o">.</span><span class="n">WinDef</span><span class="o">.</span><span class="n">MAX_PATH</span> <span class="o">*</span> <span class="mi">2</span>
+    <span class="n">buf</span> <span class="o">=</span> <span class="n">array</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="n">buf_size</span><span class="p">)</span>
+    <span class="n">shell</span> <span class="o">=</span> <span class="n">win32</span><span class="o">.</span><span class="n">Shell32</span><span class="o">.</span><span class="n">INSTANCE</span>
+    <span class="n">shell</span><span class="o">.</span><span class="n">SHGetFolderPath</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">win32</span><span class="o">.</span><span class="n">ShlObj</span><span class="p">,</span> <span class="n">csidl_name</span><span class="p">),</span> <span class="kc">None</span><span class="p">,</span> <span class="n">win32</span><span class="o">.</span><span class="n">ShlObj</span><span class="o">.</span><span class="n">SHGFP_TYPE_CURRENT</span><span class="p">,</span> <span class="n">buf</span><span class="p">)</span>
+    <span class="nb">dir</span> <span class="o">=</span> <span class="n">jna</span><span class="o">.</span><span class="n">Native</span><span class="o">.</span><span class="n">toString</span><span class="p">(</span><span class="n">buf</span><span class="o">.</span><span class="n">tostring</span><span class="p">())</span><span class="o">.</span><span class="n">rstrip</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\0</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Downgrade to short path name if have highbit chars. See</span>
+    <span class="c1"># &lt;http://bugs.activestate.com/show_bug.cgi?id=85099&gt;.</span>
+    <span class="n">has_high_char</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">dir</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">ord</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">255</span><span class="p">:</span>
+            <span class="n">has_high_char</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="k">break</span>
+    <span class="k">if</span> <span class="n">has_high_char</span><span class="p">:</span>
+        <span class="n">buf</span> <span class="o">=</span> <span class="n">array</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="n">buf_size</span><span class="p">)</span>
+        <span class="n">kernel</span> <span class="o">=</span> <span class="n">win32</span><span class="o">.</span><span class="n">Kernel32</span><span class="o">.</span><span class="n">INSTANCE</span>
+        <span class="k">if</span> <span class="n">kernel</span><span class="o">.</span><span class="n">GetShortPathName</span><span class="p">(</span><span class="nb">dir</span><span class="p">,</span> <span class="n">buf</span><span class="p">,</span> <span class="n">buf_size</span><span class="p">):</span>
+            <span class="nb">dir</span> <span class="o">=</span> <span class="n">jna</span><span class="o">.</span><span class="n">Native</span><span class="o">.</span><span class="n">toString</span><span class="p">(</span><span class="n">buf</span><span class="o">.</span><span class="n">tostring</span><span class="p">())</span><span class="o">.</span><span class="n">rstrip</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\0</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="nb">dir</span>
+
+<span class="k">if</span> <span class="n">system</span> <span class="o">==</span> <span class="s2">&quot;win32&quot;</span><span class="p">:</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="kn">import</span> <span class="nn">win32com.shell</span>
+        <span class="n">_get_win_folder</span> <span class="o">=</span> <span class="n">_get_win_folder_with_pywin32</span>
+    <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="kn">from</span> <span class="nn">ctypes</span> <span class="kn">import</span> <span class="n">windll</span>
+            <span class="n">_get_win_folder</span> <span class="o">=</span> <span class="n">_get_win_folder_with_ctypes</span>
+        <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="kn">import</span> <span class="nn">com.sun.jna</span>
+                <span class="n">_get_win_folder</span> <span class="o">=</span> <span class="n">_get_win_folder_with_jna</span>
+            <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+                <span class="n">_get_win_folder</span> <span class="o">=</span> <span class="n">_get_win_folder_from_registry</span>
+
+
+<span class="c1">#---- self test code</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">appname</span> <span class="o">=</span> <span class="s2">&quot;MyApp&quot;</span>
+    <span class="n">appauthor</span> <span class="o">=</span> <span class="s2">&quot;MyCompany&quot;</span>
+
+    <span class="n">props</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;user_data_dir&quot;</span><span class="p">,</span> <span class="s2">&quot;site_data_dir&quot;</span><span class="p">,</span>
+             <span class="s2">&quot;user_config_dir&quot;</span><span class="p">,</span> <span class="s2">&quot;site_config_dir&quot;</span><span class="p">,</span>
+             <span class="s2">&quot;user_cache_dir&quot;</span><span class="p">,</span> <span class="s2">&quot;user_log_dir&quot;</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-- app dirs </span><span class="si">%s</span><span class="s2"> --&quot;</span> <span class="o">%</span> <span class="n">__version__</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-- app dirs (with optional &#39;version&#39;)&quot;</span><span class="p">)</span>
+    <span class="n">dirs</span> <span class="o">=</span> <span class="n">AppDirs</span><span class="p">(</span><span class="n">appname</span><span class="p">,</span> <span class="n">appauthor</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="s2">&quot;1.0&quot;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">prop</span> <span class="ow">in</span> <span class="n">props</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%s</span><span class="s2">: </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">prop</span><span class="p">,</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">dirs</span><span class="p">,</span> <span class="n">prop</span><span class="p">)))</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">-- app dirs (without optional &#39;version&#39;)&quot;</span><span class="p">)</span>
+    <span class="n">dirs</span> <span class="o">=</span> <span class="n">AppDirs</span><span class="p">(</span><span class="n">appname</span><span class="p">,</span> <span class="n">appauthor</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">prop</span> <span class="ow">in</span> <span class="n">props</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%s</span><span class="s2">: </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">prop</span><span class="p">,</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">dirs</span><span class="p">,</span> <span class="n">prop</span><span class="p">)))</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">-- app dirs (without optional &#39;appauthor&#39;)&quot;</span><span class="p">)</span>
+    <span class="n">dirs</span> <span class="o">=</span> <span class="n">AppDirs</span><span class="p">(</span><span class="n">appname</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">prop</span> <span class="ow">in</span> <span class="n">props</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%s</span><span class="s2">: </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">prop</span><span class="p">,</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">dirs</span><span class="p">,</span> <span class="n">prop</span><span class="p">)))</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">-- app dirs (with disabled &#39;appauthor&#39;)&quot;</span><span class="p">)</span>
+    <span class="n">dirs</span> <span class="o">=</span> <span class="n">AppDirs</span><span class="p">(</span><span class="n">appname</span><span class="p">,</span> <span class="n">appauthor</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">prop</span> <span class="ow">in</span> <span class="n">props</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%s</span><span class="s2">: </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">prop</span><span class="p">,</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">dirs</span><span class="p">,</span> <span class="n">prop</span><span class="p">)))</span>
+</pre></div>
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">PDS4 Python Tools 1.2 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">pds4_tools.extern.appdirs</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2015 - 2020, University of Maryland.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,1081 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>pds4_tools.reader.read_tables &#8212; PDS4 Python Tools 1.2 documentation</title>
+    <link rel="stylesheet" href="../../../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css" />
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">PDS4 Python Tools 1.2 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" accesskey="U">Module code</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">pds4_tools.reader.read_tables</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Source code for pds4_tools.reader.read_tables</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">absolute_import</span>
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">division</span>
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">print_function</span>
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">unicode_literals</span>
+
+<span class="kn">import</span> <span class="nn">itertools</span>
+<span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">reduce</span>
+<span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">log10</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="kn">from</span> <span class="nn">.read_arrays</span> <span class="kn">import</span> <span class="n">apply_scaling_and_value_offset</span>
+<span class="kn">from</span> <span class="nn">.table_objects</span> <span class="kn">import</span> <span class="p">(</span><span class="n">TableStructure</span><span class="p">,</span> <span class="n">TableManifest</span><span class="p">,</span> <span class="n">Meta_Field</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">.data</span> <span class="kn">import</span> <span class="n">PDS_array</span>
+<span class="kn">from</span> <span class="nn">.data_types</span> <span class="kn">import</span> <span class="p">(</span><span class="n">data_type_convert_table_ascii</span><span class="p">,</span> <span class="n">data_type_convert_table_binary</span><span class="p">,</span>
+                         <span class="n">decode_bytes_to_unicode</span><span class="p">,</span> <span class="n">pds_to_numpy_type</span><span class="p">,</span> <span class="n">pds_to_numpy_name</span><span class="p">,</span>
+                         <span class="n">mask_special_constants</span><span class="p">,</span> <span class="n">get_min_integer_numpy_type</span><span class="p">)</span>
+
+<span class="kn">from</span> <span class="nn">..utils.constants</span> <span class="kn">import</span> <span class="n">PDS4_TABLE_TYPES</span>
+<span class="kn">from</span> <span class="nn">..utils.logging</span> <span class="kn">import</span> <span class="n">logger_init</span>
+
+<span class="kn">from</span> <span class="nn">..extern</span> <span class="kn">import</span> <span class="n">six</span>
+<span class="kn">from</span> <span class="nn">..extern.six.moves</span> <span class="kn">import</span> <span class="nb">range</span>
+
+<span class="c1"># Initialize the logger</span>
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logger_init</span><span class="p">()</span>
+
+<span class="c1">#################################</span>
+
+
+<span class="k">def</span> <span class="nf">_read_table_byte_data</span><span class="p">(</span><span class="n">table_structure</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Reads the byte data from the data file for a PDS4 Table.</span>
+
+<span class="sd">    Determines, from the structure&#39;s meta data, the relevant start and stop bytes in the data file prior to</span>
+<span class="sd">    reading. For fixed-width tables (Table_Character and Table_Binary), the returned data is exact. For</span>
+<span class="sd">    Table_Delimited, the byte data is likely to go beyond end of its last record.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    table_structure : TableStructure</span>
+<span class="sd">        The PDS4 Table data structure for which the byte data needs to be read. Should have been</span>
+<span class="sd">        initialized via `TableStructure.from_file` method, or contain the required meta data.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    str or bytes</span>
+<span class="sd">        The byte data for the table.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="kn">from</span> <span class="nn">.core</span> <span class="kn">import</span> <span class="n">read_byte_data</span>
+
+    <span class="n">meta_data</span> <span class="o">=</span> <span class="n">table_structure</span><span class="o">.</span><span class="n">meta_data</span>
+    <span class="n">num_records</span> <span class="o">=</span> <span class="n">meta_data</span><span class="p">[</span><span class="s1">&#39;records&#39;</span><span class="p">]</span>
+    <span class="n">start_byte</span> <span class="o">=</span> <span class="n">meta_data</span><span class="p">[</span><span class="s1">&#39;offset&#39;</span><span class="p">]</span>
+
+    <span class="k">if</span> <span class="n">meta_data</span><span class="o">.</span><span class="n">is_fixed_width</span><span class="p">():</span>
+
+        <span class="n">record_length</span> <span class="o">=</span> <span class="n">meta_data</span><span class="o">.</span><span class="n">record</span><span class="p">[</span><span class="s1">&#39;record_length&#39;</span><span class="p">]</span>
+        <span class="n">stop_byte</span> <span class="o">=</span> <span class="n">start_byte</span> <span class="o">+</span> <span class="n">num_records</span> <span class="o">*</span> <span class="n">record_length</span>
+
+    <span class="k">elif</span> <span class="n">meta_data</span><span class="o">.</span><span class="n">is_delimited</span><span class="p">():</span>
+
+        <span class="n">object_length</span> <span class="o">=</span> <span class="n">meta_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;object_length&#39;</span><span class="p">)</span>
+        <span class="n">record_length</span> <span class="o">=</span> <span class="n">meta_data</span><span class="o">.</span><span class="n">record</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;maximum_record_length&#39;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">object_length</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">stop_byte</span> <span class="o">=</span> <span class="n">start_byte</span> <span class="o">+</span> <span class="n">object_length</span>
+
+        <span class="k">elif</span> <span class="n">record_length</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">stop_byte</span> <span class="o">=</span> <span class="n">start_byte</span> <span class="o">+</span> <span class="n">num_records</span> <span class="o">*</span> <span class="n">record_length</span>
+
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">stop_byte</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s1">&#39;Unknown table type: </span><span class="si">{0}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">table_structure</span><span class="o">.</span><span class="n">type</span><span class="p">))</span>
+
+    <span class="k">return</span> <span class="n">read_byte_data</span><span class="p">(</span><span class="n">table_structure</span><span class="o">.</span><span class="n">parent_filename</span><span class="p">,</span> <span class="n">start_byte</span><span class="p">,</span> <span class="n">stop_byte</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">_make_uniformly_sampled_field</span><span class="p">(</span><span class="n">table_structure</span><span class="p">,</span> <span class="n">uni_sampled_field</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Create/obtain data for a Uniformly_Sampled field.</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    Under the vast majority of cases, the data type of the returned data from this method will</span>
+<span class="sd">    be a 64-bit float. It is not quickly and easily possible to determine for a very large uniformly</span>
+<span class="sd">    sampled field whether all the returned data will be integers. While we could use Python&#39;s</span>
+<span class="sd">    built-in numerics and lists, which would then not require knowing ahead of time whether</span>
+<span class="sd">    all the data is integer or float, this would be very memory inefficient due to overhead</span>
+<span class="sd">    for each built-in Python numeric type. Therefore we instead almost assume that the data will</span>
+<span class="sd">    be floats and require 64-bit precision, and leave it to a user to cast the data if desired.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    table_structure : TableStructure</span>
+<span class="sd">        The PDS4 Table data structure which contains the *uni_sampled_field*.</span>
+<span class="sd">    uni_sampled_field : Label</span>
+<span class="sd">        Portion of label that defines a single Uniformly Sampled field.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    np.ndarray</span>
+<span class="sd">        The data created for the Uniformly Sampled field based on the specified label description.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># Extract scale (older PDS4 standards allowed leaving it empty)</span>
+    <span class="k">if</span> <span class="s1">&#39;scale&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">uni_sampled_field</span><span class="p">:</span>
+        <span class="n">scale</span> <span class="o">=</span> <span class="s1">&#39;linear&#39;</span>
+
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">scale</span> <span class="o">=</span> <span class="n">uni_sampled_field</span><span class="p">[</span><span class="s1">&#39;scale&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+
+    <span class="c1"># Extract necessary values to speed up calculation</span>
+    <span class="n">num_records</span> <span class="o">=</span> <span class="n">table_structure</span><span class="o">.</span><span class="n">meta_data</span><span class="p">[</span><span class="s1">&#39;records&#39;</span><span class="p">]</span>
+    <span class="n">first_value</span> <span class="o">=</span> <span class="n">uni_sampled_field</span><span class="p">[</span><span class="s1">&#39;first_value&#39;</span><span class="p">]</span>
+    <span class="n">last_value</span> <span class="o">=</span> <span class="n">uni_sampled_field</span><span class="p">[</span><span class="s1">&#39;last_value&#39;</span><span class="p">]</span>
+    <span class="n">interval</span> <span class="o">=</span> <span class="n">uni_sampled_field</span><span class="p">[</span><span class="s1">&#39;interval&#39;</span><span class="p">]</span>
+
+    <span class="c1"># If the first and last value (one of which should contain the largest possible value) are integers,</span>
+    <span class="c1"># there is a chance that the uniformly sampled field contains integers larger than even double supports</span>
+    <span class="c1"># (without Inf). Therefore we check this, and use &#39;object&#39; dtype in such a case.</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">first_value</span><span class="p">,</span> <span class="n">six</span><span class="o">.</span><span class="n">integer_types</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">last_value</span><span class="p">,</span> <span class="n">six</span><span class="o">.</span><span class="n">integer_types</span><span class="p">):</span>
+        <span class="n">dtype</span> <span class="o">=</span> <span class="n">get_min_integer_numpy_type</span><span class="p">([</span><span class="n">first_value</span><span class="p">,</span> <span class="n">last_value</span><span class="p">])</span>
+
+        <span class="k">if</span> <span class="n">dtype</span> <span class="o">==</span> <span class="s1">&#39;object&#39;</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s1">&#39;Detected numeric data exceeding 8 bytes in Uniformly Sampled field. For integer &#39;</span>
+                           <span class="s1">&#39;data this precision exceeds memory efficient case. For decimal data, the data&#39;</span>
+                           <span class="s1">&#39;will be downcast to 8-byte floats.&#39;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">dtype</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="c1"># Create an array_like to contain the data for this field</span>
+    <span class="n">dtype</span> <span class="o">=</span> <span class="s1">&#39;object&#39;</span> <span class="k">if</span> <span class="n">dtype</span> <span class="o">==</span> <span class="s1">&#39;object&#39;</span> <span class="k">else</span> <span class="s1">&#39;float64&#39;</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">num_records</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">)</span>
+
+    <span class="c1"># Calculate field&#39;s data for Linear sampling</span>
+    <span class="k">if</span> <span class="n">scale</span> <span class="o">==</span> <span class="s1">&#39;linear&#39;</span><span class="p">:</span>
+
+        <span class="n">current_value</span> <span class="o">=</span> <span class="n">first_value</span>
+
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">num_records</span><span class="p">):</span>
+
+            <span class="n">data</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">current_value</span>
+            <span class="n">current_value</span> <span class="o">+=</span> <span class="n">interval</span>
+
+    <span class="c1"># Calculate field&#39;s data for Logarithmic sampling</span>
+    <span class="k">elif</span> <span class="n">scale</span> <span class="o">==</span> <span class="s1">&#39;logarithmic&#39;</span><span class="p">:</span>
+
+        <span class="c1"># Implements xj = x1 * (xn/x1)^[(j-1)/(n-1)] for j = 1 ... n, where xn/x1^(1/(n-1)) is the</span>
+        <span class="c1"># interval and x1 ... xj are the field&#39;s data.</span>
+
+        <span class="n">x1</span> <span class="o">=</span> <span class="n">first_value</span>
+
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">num_records</span><span class="p">):</span>
+
+            <span class="n">current_value</span> <span class="o">=</span> <span class="n">x1</span> <span class="o">*</span> <span class="p">(</span><span class="n">interval</span> <span class="o">**</span> <span class="n">j</span><span class="p">)</span>
+            <span class="n">data</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">current_value</span>
+
+    <span class="c1"># Calculate field&#39;s data for Exponential sampling</span>
+    <span class="k">elif</span> <span class="n">scale</span> <span class="o">==</span> <span class="s1">&#39;exponential&#39;</span><span class="p">:</span>
+
+        <span class="c1"># Implements b^xj = b^x1 + (j-1)*(b^xn - b^x1)/(n-1) for j = 1 ... n, where (b^xn - b^x1)/(n-1)</span>
+        <span class="c1"># is the interval and x1 ... xj are the field&#39;s data.</span>
+
+        <span class="n">base</span> <span class="o">=</span> <span class="n">uni_sampled_field</span><span class="p">[</span><span class="s1">&#39;base&#39;</span><span class="p">]</span>
+
+        <span class="n">log_x1</span> <span class="o">=</span> <span class="n">base</span> <span class="o">**</span> <span class="n">first_value</span>
+        <span class="n">log_base</span> <span class="o">=</span> <span class="n">log10</span><span class="p">(</span><span class="n">base</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">num_records</span><span class="p">):</span>
+
+            <span class="n">current_value</span> <span class="o">=</span> <span class="n">log10</span><span class="p">(</span><span class="n">log_x1</span> <span class="o">+</span> <span class="n">j</span> <span class="o">*</span> <span class="n">interval</span><span class="p">)</span> <span class="o">/</span> <span class="n">log_base</span>
+            <span class="n">data</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">current_value</span>
+
+    <span class="c1"># Function to compare closeness of two floating point numbers, based on PEP-0485 with larger tolerance</span>
+    <span class="k">def</span> <span class="nf">is_close_num</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">rel_tol</span><span class="o">=</span><span class="mf">1e-3</span><span class="p">,</span> <span class="n">abs_tol</span><span class="o">=</span><span class="mf">0.0</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">abs</span><span class="p">(</span><span class="n">a</span><span class="o">-</span><span class="n">b</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="nb">max</span><span class="p">(</span><span class="n">rel_tol</span> <span class="o">*</span> <span class="nb">max</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="nb">abs</span><span class="p">(</span><span class="n">b</span><span class="p">)),</span> <span class="n">abs_tol</span><span class="p">)</span>
+
+    <span class="c1"># Warn if last calculated value for Uniformly Sampled does not match indicated last value in label</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">is_close_num</span><span class="p">(</span><span class="n">last_value</span><span class="p">,</span> <span class="n">data</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]):</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;Last value in Uniformly Sampled field, &#39;</span><span class="si">{0}</span><span class="s2">&#39;, does not match expected &#39;</span><span class="si">{1}</span><span class="s2">&#39;.&quot;</span>
+                       <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">last_value</span><span class="p">))</span>
+
+    <span class="k">return</span> <span class="n">data</span>
+
+
+<span class="k">def</span> <span class="nf">_extract_fixed_width_field_data</span><span class="p">(</span><span class="n">extracted_data</span><span class="p">,</span> <span class="n">table_byte_data</span><span class="p">,</span>
+                                    <span class="n">field_length</span><span class="p">,</span> <span class="n">field_location</span><span class="p">,</span> <span class="n">record_length</span><span class="p">,</span>
+                                    <span class="n">array_shape</span><span class="p">,</span> <span class="n">group_locations</span><span class="o">=</span><span class="p">(),</span> <span class="n">repetition_lengths</span><span class="o">=</span><span class="p">()):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Extracts data for a single field in a fixed-width (Character or Binary) table.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    extracted_data : list[str or bytes]</span>
+<span class="sd">        The extracted byte data for each element the table. Should be an empty list on initial call.</span>
+<span class="sd">        Modified in-place.</span>
+<span class="sd">    table_byte_data : str or bytes</span>
+<span class="sd">        Byte data for the entire table.</span>
+<span class="sd">    field_length : int</span>
+<span class="sd">        Length of each element in the field, in bytes.</span>
+<span class="sd">    field_location : int</span>
+<span class="sd">        Location of the first element in the field, in bytes, from the beginning of the table.</span>
+<span class="sd">    record_length : int</span>
+<span class="sd">        Length of each record in the table, in bytes.</span>
+<span class="sd">    array_shape : array_like[int]</span>
+<span class="sd">        Sequence of dimensions for the field. First element is the number of records, all other</span>
+<span class="sd">        elements are the number of repetitions for each GROUP the field is inside of, if any.</span>
+<span class="sd">    group_locations : array_like[int], optional</span>
+<span class="sd">        If this field is inside at least one group field, the array must contain the location of the</span>
+<span class="sd">        first element of the first repetition (i.e, group_location), in bytes, of each group.</span>
+<span class="sd">    repetition_lengths : array_like[int], optional</span>
+<span class="sd">        If this field is inside at least one group field, the array must contain the group length divided</span>
+<span class="sd">        by the number of repetitions (i.e, group_length/repetitions), in bytes, for each group.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    None</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># Simplified, sped up, case for fields that are not inside group fields</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">array_shape</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+
+        <span class="c1"># Loop over each record, extracting the datum for this field</span>
+        <span class="k">for</span> <span class="n">record_num</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">array_shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
+
+            <span class="n">start_byte</span> <span class="o">=</span> <span class="p">(</span><span class="n">record_num</span> <span class="o">*</span> <span class="n">record_length</span><span class="p">)</span> <span class="o">+</span> <span class="n">field_location</span>
+            <span class="n">stop_byte</span> <span class="o">=</span> <span class="n">start_byte</span> <span class="o">+</span> <span class="n">field_length</span>
+
+            <span class="n">extracted_data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">table_byte_data</span><span class="p">[</span><span class="n">start_byte</span><span class="p">:</span><span class="n">stop_byte</span><span class="p">])</span>
+
+        <span class="k">return</span>
+
+    <span class="c1"># Determine if the data for a field inside group fields is contiguous. If it is, we can significantly</span>
+    <span class="c1"># speed operations up. To determine if contiguous, we check that all group locations (except possibly</span>
+    <span class="c1"># the first) start from the first byte, and that the group_length/group_repetitions of each group is</span>
+    <span class="c1"># equal to the group_length of its child group. Finally, we check that the group_length/group_repetitions</span>
+    <span class="c1"># for the last group is equal to the field length.</span>
+    <span class="n">has_contiguous_locations</span> <span class="o">=</span> <span class="n">group_locations</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span> <span class="o">==</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">group_locations</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">has_contiguous_end_bytes</span> <span class="o">=</span> <span class="n">field_length</span> <span class="o">==</span> <span class="n">repetition_lengths</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">length</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">repetition_lengths</span><span class="p">[</span><span class="mi">1</span><span class="p">:]):</span>
+
+        <span class="k">if</span> <span class="n">length</span> <span class="o">*</span> <span class="n">array_shape</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">2</span><span class="p">]</span> <span class="o">!=</span> <span class="n">repetition_lengths</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+            <span class="n">has_contiguous_end_bytes</span> <span class="o">=</span> <span class="kc">False</span>
+
+    <span class="c1"># Simplified, sped up, case for fields inside group fields that are contiguous. Principle of</span>
+    <span class="c1"># operation is that we can effectively read one element after the other, as we would in an array,</span>
+    <span class="c1"># where the only thing we need to know is the element length. A slight complication is that we</span>
+    <span class="c1"># need to take into account the byte jump between end of the field for one record and start of it</span>
+    <span class="c1"># for the next record.</span>
+    <span class="k">if</span> <span class="n">has_contiguous_locations</span> <span class="ow">and</span> <span class="n">has_contiguous_end_bytes</span><span class="p">:</span>
+
+        <span class="n">group_start_byte</span> <span class="o">=</span> <span class="n">group_locations</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">num_elements</span> <span class="o">=</span> <span class="n">reduce</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span><span class="o">*</span><span class="n">y</span><span class="p">,</span> <span class="n">array_shape</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span>
+
+        <span class="c1"># Loop over each record</span>
+        <span class="k">for</span> <span class="n">record_num</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">array_shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
+
+            <span class="n">record_start_byte</span> <span class="o">=</span> <span class="p">(</span><span class="n">record_num</span> <span class="o">*</span> <span class="n">record_length</span><span class="p">)</span> <span class="o">+</span> <span class="n">group_start_byte</span> <span class="o">+</span> <span class="n">field_location</span>
+
+            <span class="c1"># Loop over each element (multiple due to group field) in the record for this field,</span>
+            <span class="c1"># extracting them</span>
+            <span class="k">for</span> <span class="n">element_num</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">num_elements</span><span class="p">):</span>
+                <span class="n">start_byte</span> <span class="o">=</span> <span class="n">record_start_byte</span> <span class="o">+</span> <span class="n">field_length</span> <span class="o">*</span> <span class="n">element_num</span>
+                <span class="n">stop_byte</span> <span class="o">=</span> <span class="n">start_byte</span> <span class="o">+</span> <span class="n">field_length</span>
+
+                <span class="n">extracted_data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">table_byte_data</span><span class="p">[</span><span class="n">start_byte</span><span class="p">:</span><span class="n">stop_byte</span><span class="p">])</span>
+
+        <span class="k">return</span>
+
+    <span class="c1"># If we&#39;ve reached this point then our field is inside group fields, and those group fields are not</span>
+    <span class="c1"># contiguous. Therefore we will need to calculate each and every position.</span>
+
+    <span class="c1"># Create a list of positions, where each position is one of every possible valid combination of the</span>
+    <span class="c1"># dimension values in *array_shape*. E.g., if the shape of the field (due to a GROUP) is [100, 50], then</span>
+    <span class="c1"># the positions created by itertools.product will have values [0, 0], [0, 1], ... [0, 49], [1, 0], ...</span>
+    <span class="c1"># [1, 49], [2, 0] ... [99, 49]. Each position therefore contains the record number and the group</span>
+    <span class="c1"># repetition numbers for each GROUP the field is in. In case of field that is not inside any groups, this</span>
+    <span class="c1"># simplifies to a single for-loop which loops over each record in the field.</span>
+    <span class="n">product_list</span> <span class="o">=</span> <span class="p">[</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">repetitions</span><span class="p">)</span> <span class="k">for</span> <span class="n">repetitions</span> <span class="ow">in</span> <span class="n">array_shape</span><span class="p">]</span>
+    <span class="n">positions</span> <span class="o">=</span> <span class="n">itertools</span><span class="o">.</span><span class="n">product</span><span class="p">(</span><span class="o">*</span><span class="n">product_list</span><span class="p">)</span>
+
+    <span class="c1"># Extract each element&#39;s byte data if we have its full position in array_shape, via the formula:</span>
+    <span class="c1"># start_byte = record_length * i_current_record_number</span>
+    <span class="c1"># + first_group_location + (first_group_length/first_group_repetitions) * j_current_first_group_repetition</span>
+    <span class="c1"># + (repeat) n_group_location + (n_group_length/n_group_repetitions) * k_current_n_group_repetition</span>
+    <span class="c1"># + field_location</span>
+    <span class="c1"># stop_byte = start_byte + field_length</span>
+    <span class="k">for</span> <span class="n">current_position</span> <span class="ow">in</span> <span class="n">positions</span><span class="p">:</span>
+
+        <span class="n">start_byte</span> <span class="o">=</span> <span class="n">record_length</span> <span class="o">*</span> <span class="n">current_position</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">field_location</span>
+
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">group_locations</span><span class="p">)):</span>
+            <span class="n">start_byte</span> <span class="o">+=</span> <span class="n">group_locations</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">repetition_lengths</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="n">current_position</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span>
+
+        <span class="n">stop_byte</span> <span class="o">=</span> <span class="n">start_byte</span> <span class="o">+</span> <span class="n">field_length</span>
+        <span class="n">extracted_data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">table_byte_data</span><span class="p">[</span><span class="n">start_byte</span><span class="p">:</span><span class="n">stop_byte</span><span class="p">])</span>
+
+
+<span class="k">def</span> <span class="nf">_extract_delimited_field_data</span><span class="p">(</span><span class="n">extracted_data</span><span class="p">,</span> <span class="n">table_byte_data</span><span class="p">,</span> <span class="n">start_bytes</span><span class="p">,</span> <span class="n">current_column</span><span class="p">,</span> <span class="n">array_shape</span><span class="p">,</span>
+                                  <span class="n">skip_factors</span><span class="o">=</span><span class="p">()):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Extracts data for a single field in a delimited table.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    extracted_data : list[str or bytes]</span>
+<span class="sd">        The extracted byte data for each element the table. Should be an empty list on initial call.</span>
+<span class="sd">        Modified in-place.</span>
+<span class="sd">    table_byte_data : array_like[str or bytes]</span>
+<span class="sd">        Byte data for the entire table, split into records.</span>
+<span class="sd">    start_bytes : array_like</span>
+<span class="sd">        The start byte for each element in the table. Two-dimensional, where the first dimension specifies</span>
+<span class="sd">        which column (if the record were split by delimiter) and the second dimension specifies which record.</span>
+<span class="sd">    current_column : int</span>
+<span class="sd">        Specifies which column (if the record were split by delimiter) to extract the data for. For fields</span>
+<span class="sd">        that are inside GROUPs, this represents only the first column (i.e. for the first repetition). For</span>
+<span class="sd">        tables without GROUP fields, this is equivalent to the field number.</span>
+<span class="sd">    array_shape : array_like[int]</span>
+<span class="sd">        Sequence of dimensions for the field. First element is the number of records, all other</span>
+<span class="sd">        elements are the number of repetitions for each GROUP the field is inside of, if any.</span>
+<span class="sd">    skip_factors : array_like[int], optional</span>
+<span class="sd">        If this field is inside at least one group field, the array must contain the number of columns to</span>
+<span class="sd">        skip between each repetition, for each group.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    None</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">num_records</span> <span class="o">=</span> <span class="n">array_shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">group_shape</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">array_shape</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span>
+    <span class="n">num_group_columns</span> <span class="o">=</span> <span class="mi">0</span> <span class="k">if</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">array_shape</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="k">else</span> <span class="n">group_shape</span><span class="o">.</span><span class="n">prod</span><span class="p">()</span>
+
+    <span class="c1"># Extract data from non-GROUP fields. Simplified, sped up, case.</span>
+    <span class="k">if</span> <span class="n">num_group_columns</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+
+        <span class="c1"># Pre-extract necessary variables to speed up computation time</span>
+        <span class="n">field_start_bytes</span> <span class="o">=</span> <span class="n">start_bytes</span><span class="p">[</span><span class="n">current_column</span><span class="p">]</span>
+        <span class="n">next_field_start_bytes</span> <span class="o">=</span> <span class="n">start_bytes</span><span class="p">[</span><span class="n">current_column</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span>
+
+        <span class="c1"># Extract the byte data for this field from byte_data</span>
+        <span class="k">for</span> <span class="n">record_num</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">num_records</span><span class="p">):</span>
+            <span class="n">column</span> <span class="o">=</span> <span class="n">field_start_bytes</span><span class="p">[</span><span class="n">record_num</span><span class="p">]</span>
+            <span class="n">end_idx</span> <span class="o">=</span> <span class="n">next_field_start_bytes</span><span class="p">[</span><span class="n">record_num</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span>
+
+            <span class="n">extracted_data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">table_byte_data</span><span class="p">[</span><span class="n">record_num</span><span class="p">][</span><span class="n">column</span><span class="p">:</span><span class="n">end_idx</span><span class="p">])</span>
+
+        <span class="c1"># Remove start_bytes for no-longer needed columns to save memory</span>
+        <span class="n">start_bytes</span><span class="p">[</span><span class="n">current_column</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="c1"># Extract data from GROUP fields. This process could basically be used for non-GROUP fields also,</span>
+    <span class="c1"># however it would be slower than the optimized code for that specific case above.</span>
+    <span class="k">else</span><span class="p">:</span>
+
+        <span class="c1"># Create a list of positions, where each position is one of every possible valid combination of the</span>
+        <span class="c1"># dimension values in `group_shape`. E.g., if the shape of the field (due to a GROUP) is [100, 50],</span>
+        <span class="c1"># then the positions created by itertools.product will have values [0, 0], [0, 1], ... [0, 49],</span>
+        <span class="c1"># [1, 0], ... [1, 49], [2, 0] ... [99, 49]. Each position therefore is the group repetition numbers</span>
+        <span class="c1"># for each GROUP the field is in. In case of field that is not inside any groups, this is an empty</span>
+        <span class="c1"># list.</span>
+        <span class="n">product_list</span> <span class="o">=</span> <span class="p">[</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">repetitions</span><span class="p">)</span> <span class="k">for</span> <span class="n">repetitions</span> <span class="ow">in</span> <span class="n">array_shape</span><span class="p">[</span><span class="mi">1</span><span class="p">:]]</span>
+        <span class="n">positions</span> <span class="o">=</span> <span class="n">itertools</span><span class="o">.</span><span class="n">product</span><span class="p">(</span><span class="o">*</span><span class="n">product_list</span><span class="p">)</span>
+
+        <span class="c1"># Create an array that will store the indexes of *start_bytes* necessary to extract all the</span>
+        <span class="c1"># repetitions of this field for a single record (see below for details). To save memory, we use</span>
+        <span class="c1"># the smallest data  type that can contain all the needed indexes.</span>
+        <span class="n">start_column</span> <span class="o">=</span> <span class="n">current_column</span>
+        <span class="n">max_column</span> <span class="o">=</span> <span class="n">start_column</span> <span class="o">+</span> <span class="p">(</span><span class="n">num_group_columns</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="p">((</span><span class="n">group_shape</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">skip_factors</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+        <span class="n">array_dtype</span> <span class="o">=</span> <span class="n">get_min_integer_numpy_type</span><span class="p">([</span><span class="n">max_column</span><span class="p">])</span>
+        <span class="n">columns</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">num_group_columns</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">array_dtype</span><span class="p">)</span>
+
+        <span class="c1"># Extract the indexes of *start_bytes* that correspond to the correct columns for this field. This</span>
+        <span class="c1"># is necessary for group fields, for which the column number in *start_bytes* (which are obtained</span>
+        <span class="c1"># by splitting records by the delimiter) will not correspond to the field number, as there is only</span>
+        <span class="c1"># one field number but many repetitions (i.e. columns). Additionally, when multiple fields are</span>
+        <span class="c1"># inside a single group the columns comprising the repetitions of each of those fields are not</span>
+        <span class="c1"># sequential. We use *skip_factors* to determine how many columns to skip inside *start_bytes* for</span>
+        <span class="c1"># each group-level for each field. These indexes are identical for each record (although the actual</span>
+        <span class="c1"># *start_bytes* values will be different), and therefore saved to speed up operations.</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">current_position</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">positions</span><span class="p">):</span>
+
+            <span class="n">column</span> <span class="o">=</span> <span class="n">start_column</span>
+
+            <span class="c1"># Starting from the column number for the first repetition of this field, apply the correct skip</span>
+            <span class="c1"># factors for each repetition of the group the field is inside of to obtain the column number for</span>
+            <span class="c1"># the column that contains the repetition indicated by *current_position*.</span>
+            <span class="k">for</span> <span class="n">j</span><span class="p">,</span> <span class="n">repetition_num</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">current_position</span><span class="p">):</span>
+                <span class="n">column</span> <span class="o">+=</span> <span class="n">skip_factors</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">*</span> <span class="n">repetition_num</span>
+
+            <span class="n">columns</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">column</span>
+            <span class="n">start_column</span> <span class="o">+=</span> <span class="mi">1</span>
+
+        <span class="c1"># Extract the byte data for this field from byte_data</span>
+        <span class="k">for</span> <span class="n">record_num</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">num_records</span><span class="p">):</span>
+
+            <span class="c1"># Loop over each repetition of the field</span>
+            <span class="k">for</span> <span class="n">column</span> <span class="ow">in</span> <span class="n">columns</span><span class="p">:</span>
+
+                <span class="n">field_start_bytes</span> <span class="o">=</span> <span class="n">start_bytes</span><span class="p">[</span><span class="n">column</span><span class="p">][</span><span class="n">record_num</span><span class="p">]</span>
+                <span class="n">next_field_start_bytes</span> <span class="o">=</span> <span class="n">start_bytes</span><span class="p">[</span><span class="n">column</span> <span class="o">+</span> <span class="mi">1</span><span class="p">][</span><span class="n">record_num</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span>
+
+                <span class="n">extracted_data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">table_byte_data</span><span class="p">[</span><span class="n">record_num</span><span class="p">][</span><span class="n">field_start_bytes</span><span class="p">:</span><span class="n">next_field_start_bytes</span><span class="p">])</span>
+
+        <span class="c1"># Remove start_bytes for no-longer needed columns to save memory</span>
+        <span class="k">for</span> <span class="n">column</span> <span class="ow">in</span> <span class="n">columns</span><span class="p">:</span>
+
+            <span class="n">prev_column</span> <span class="o">=</span> <span class="n">column</span><span class="o">-</span><span class="mi">1</span>
+
+            <span class="c1"># We can only erase *start_bytes* that will not be used as end-bytes</span>
+            <span class="c1"># (i.e. start_bytes[column + 1]) above for another field.</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">prev_column</span> <span class="ow">in</span> <span class="n">columns</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">prev_column</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">start_bytes</span><span class="p">[</span><span class="n">prev_column</span><span class="p">]</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">):</span>
+                <span class="n">start_bytes</span><span class="p">[</span><span class="n">column</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+
+
+<span class="k">def</span> <span class="nf">_get_delimited_records_and_start_bytes</span><span class="p">(</span><span class="n">records</span><span class="p">,</span> <span class="n">table_structure</span><span class="p">,</span> <span class="n">table_manifest</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    For a delimited table, we obtain the start byte of each column (and each repetition of column)</span>
+<span class="sd">    for each record, and adjust the records themselves such that any column value starts at its start byte</span>
+<span class="sd">    and ends at the start byte of the next column value.</span>
+
+<span class="sd">    In principle there are a number of ways to read a delimited table. The built-in Python delimited table</span>
+<span class="sd">    reader does not support specifying line-endings as solely those allowed by PDS4. NumPy&#39;s ``genfromtxt``</span>
+<span class="sd">     was found to be much slower than the technique below, though this should be retested periodically.</span>
+<span class="sd">    For manual reading (i.e., without using above tools), one could read a delimited table in row by row:</span>
+<span class="sd">    however when converting each value to a data type, there is CPU overhead in determining what that data</span>
+<span class="sd">    type should be and the conversion itself. If we read a row, and then convert each value for that row one</span>
+<span class="sd">    at a time then we have that overhead each time and that becomes extremely costly for large numbers of</span>
+<span class="sd">    records. If we could read an entire column at a time and convert it then we avoid said overhead. One</span>
+<span class="sd">    easy approach to the latter is to store a 2D array_like[record, column], thus splitting the data first</span>
+<span class="sd">    into records and then each record by delimiter (adjusting to account for double quote where needed).</span>
+<span class="sd">    However in general this approach is often very memory intensive because the strings, especially with</span>
+<span class="sd">    overhead, require more memory to store than once the data is converted to its desired type. Instead, we</span>
+<span class="sd">    take a similar approach where we use a 2D array_like[column, record] to record the start bytes of the data</span>
+<span class="sd">    for each column but do not actually split each record into fields. We use NumPy ndarrays with integer</span>
+<span class="sd">    dtypes of minimal size required to store each start byte; this will nearly always result in</span>
+<span class="sd">    significantly less memory than would be required to actually split each field into a string since the</span>
+<span class="sd">    start bytes will nearly always be 1 or 2 bytes each because records are rarely longer than 65535</span>
+<span class="sd">    characters.</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    The terminology of column and field are not identical as used in this function. Columns are obtained</span>
+<span class="sd">    by splitting each record by the delimiter (accounting for double quotes); for PDS4 fields inside groups</span>
+<span class="sd">    the result is that there are many columns for a single field due to repetitions. The start bytes returned</span>
+<span class="sd">    by this method are for each column (as opposed to field), and the repetitions for a single field are</span>
+<span class="sd">    not necessarily sequential in that result (i.e. if there is more than one field in any group.)</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    records : list[str or bytes]</span>
+<span class="sd">        The data for the delimited table, split into records.</span>
+<span class="sd">    table_structure : TableStructure</span>
+<span class="sd">        The PDS4 Table data structure for the delimited table.</span>
+<span class="sd">    table_manifest : TableManifest</span>
+<span class="sd">        A manifest describing the structure of the PDS4 delimited table.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    list[str or bytes], list[array_like]</span>
+<span class="sd">        A two-valued tuple of: the records for the table, modified to remove quotes; and a 2D list, where</span>
+<span class="sd">        the first dimension is the column and the second dimension is the record, with the value being</span>
+<span class="sd">        the start byte of the data contained in the first tuple value for those parameters. See Notes</span>
+<span class="sd">        above for difference between column as referred to here and PDS4 fields.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># Extract the proper record delimiter (as bytes, for compatibility with Python 3)</span>
+    <span class="n">delimiter_name</span> <span class="o">=</span> <span class="n">table_structure</span><span class="o">.</span><span class="n">meta_data</span><span class="p">[</span><span class="s1">&#39;field_delimiter&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+    <span class="n">field_delimiter</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;comma&#39;</span><span class="p">:</span> <span class="sa">b</span><span class="s1">&#39;,&#39;</span><span class="p">,</span>
+                       <span class="s1">&#39;horizontal tab&#39;</span><span class="p">:</span> <span class="sa">b</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">,</span>
+                       <span class="s1">&#39;semicolon&#39;</span><span class="p">:</span> <span class="sa">b</span><span class="s1">&#39;;&#39;</span><span class="p">,</span>
+                       <span class="s1">&#39;vertical bar&#39;</span><span class="p">:</span> <span class="sa">b</span><span class="s1">&#39;|&#39;</span>
+                      <span class="p">}</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">delimiter_name</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+
+    <span class="c1"># Determine total number of columns (if we split the record by record delimiter) in each record.</span>
+    <span class="c1"># A column is either a field or if there&#39;s a GROUP then it&#39;s one of the repetitions of a field.</span>
+    <span class="c1"># This number, as are other references to this number in the code, are corrected for cases where</span>
+    <span class="c1"># we ignore the record delimiter as its effectively escaped by being between bounding double quotes.</span>
+    <span class="n">num_columns</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="k">for</span> <span class="n">field</span> <span class="ow">in</span> <span class="n">table_manifest</span><span class="o">.</span><span class="n">fields</span><span class="p">():</span>
+
+        <span class="n">repetitions</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">parent_idx</span> <span class="o">=</span> <span class="n">table_manifest</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">field</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">field</span><span class="o">.</span><span class="n">group_level</span><span class="p">):</span>
+            <span class="n">parent_idx</span> <span class="o">=</span> <span class="n">table_manifest</span><span class="o">.</span><span class="n">get_parent_by_idx</span><span class="p">(</span><span class="n">parent_idx</span><span class="p">,</span> <span class="n">return_idx</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="n">repetitions</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">table_manifest</span><span class="p">[</span><span class="n">parent_idx</span><span class="p">][</span><span class="s1">&#39;repetitions&#39;</span><span class="p">])</span>
+
+        <span class="n">num_columns</span> <span class="o">+=</span> <span class="mi">1</span> <span class="k">if</span> <span class="p">(</span><span class="ow">not</span> <span class="n">repetitions</span><span class="p">)</span> <span class="k">else</span> <span class="n">reduce</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span><span class="o">*</span><span class="n">y</span><span class="p">,</span> <span class="n">repetitions</span><span class="p">)</span>
+
+    <span class="c1"># Pre-allocate ``list``, which will store NumPy ndarray&#39;s, containing the start byte of each field</span>
+    <span class="c1"># for each record. Thus `start_bytes` is a two-dimensional array_like, where the first dimension is</span>
+    <span class="c1"># the field and the second dimension is the record, with the value being the start byte of the data</span>
+    <span class="c1"># for those parameters.</span>
+    <span class="n">start_bytes</span> <span class="o">=</span> <span class="p">[</span><span class="kc">None</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">num_columns</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+
+    <span class="n">longest_record</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">records</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="nb">len</span><span class="p">))</span>
+    <span class="n">array_dtype</span> <span class="o">=</span> <span class="n">get_min_integer_numpy_type</span><span class="p">([</span><span class="n">longest_record</span> <span class="o">+</span> <span class="mi">1</span><span class="p">])</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">num_columns</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="n">start_bytes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">records</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">array_dtype</span><span class="p">)</span>
+
+    <span class="c1"># In Python 3, when checking for the first and last character below, we need to convert the value</span>
+    <span class="c1"># to a ``str``, since obtaining first character of a ``bytes`` returns a byte value. In Python 2, no</span>
+    <span class="c1"># action needs to be taken since the value is ``str`` by default.</span>
+    <span class="k">if</span> <span class="n">six</span><span class="o">.</span><span class="n">PY2</span><span class="p">:</span>
+        <span class="n">str_args</span> <span class="o">=</span> <span class="p">()</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">str_args</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">,</span> <span class="p">)</span>
+
+    <span class="c1"># Obtain start bytes for each column in each record, and adjust the record itself such that only the</span>
+    <span class="c1"># start byte is required to obtain the entire value (to save RAM). The latter is needed due to the</span>
+    <span class="c1"># requirement to ignore delimiters found inside enclosing quotes and that such enclosing quotes themselves</span>
+    <span class="c1"># are not part of the value: i.e., a record consisting of &#39;&quot;value1&quot;, value2&#39; would want to use the start</span>
+    <span class="c1"># byte of &#39;value2&#39; as the end byte of &#39;&quot;value1&quot;&#39;, but this would include the extra quote at the end,</span>
+    <span class="c1"># therefore we remove such quotes after recording the proper start byte.</span>
+    <span class="k">for</span> <span class="n">record_idx</span><span class="p">,</span> <span class="n">record</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">records</span><span class="p">):</span>
+
+        <span class="c1"># Split the record by delimiter</span>
+        <span class="n">split_record</span> <span class="o">=</span> <span class="n">record</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">field_delimiter</span><span class="p">)</span>
+        <span class="n">next_start_byte</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="c1"># Look for column values bounded by a double quotes. Inside such values any delimiter found should be</span>
+        <span class="c1"># ignored, but ``split`` above will not ignore it. Therefore we have to join the value back.</span>
+        <span class="k">if</span> <span class="sa">b</span><span class="s1">&#39;&quot;&#39;</span> <span class="ow">in</span> <span class="n">record</span><span class="p">:</span>
+
+            <span class="n">split_record_len</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">split_record</span><span class="p">)</span>
+            <span class="n">column_idx</span> <span class="o">=</span> <span class="mi">0</span>
+
+            <span class="c1"># Loop over each column value (may turn out to only be part of a column)</span>
+            <span class="k">while</span> <span class="n">column_idx</span> <span class="o">&lt;</span> <span class="n">split_record_len</span><span class="p">:</span>
+                <span class="n">value</span> <span class="o">=</span> <span class="n">split_record</span><span class="p">[</span><span class="n">column_idx</span><span class="p">]</span>
+                <span class="n">value_length</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+                <span class="n">first_character</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="o">*</span><span class="n">str_args</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="k">if</span> <span class="n">value_length</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="kc">None</span>
+
+                <span class="c1"># If field value starts with a quote then we need to check if there is a matching closing</span>
+                <span class="c1"># quote somewhere further.</span>
+                <span class="k">if</span> <span class="n">first_character</span> <span class="o">==</span> <span class="s1">&#39;&quot;&#39;</span><span class="p">:</span>
+
+                    <span class="n">next_quote_idx</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+
+                    <span class="c1"># Find the index of the column value containing the next quote in the record</span>
+                    <span class="k">if</span> <span class="sa">b</span><span class="s1">&#39;&quot;&#39;</span> <span class="ow">in</span> <span class="n">value</span><span class="p">[</span><span class="mi">1</span><span class="p">:]:</span>
+                        <span class="n">next_quote_idx</span> <span class="o">=</span> <span class="n">column_idx</span>
+
+                    <span class="k">else</span><span class="p">:</span>
+
+                        <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">next_value</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">split_record</span><span class="p">[</span><span class="n">column_idx</span> <span class="o">+</span> <span class="mi">1</span><span class="p">:]):</span>
+                            <span class="k">if</span> <span class="sa">b</span><span class="s1">&#39;&quot;&#39;</span> <span class="ow">in</span> <span class="n">next_value</span><span class="p">:</span>
+                                <span class="n">next_quote_idx</span> <span class="o">=</span> <span class="n">column_idx</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">k</span>
+                                <span class="k">break</span>
+
+                    <span class="c1"># If a latter or same field value contained a quote, check whether it was the last</span>
+                    <span class="c1"># character in the value (and thus the two quotes enclosed a single value)</span>
+                    <span class="k">if</span> <span class="n">next_quote_idx</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
+                        <span class="n">next_value</span> <span class="o">=</span> <span class="n">split_record</span><span class="p">[</span><span class="n">next_quote_idx</span><span class="p">]</span>
+                        <span class="n">last_character</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">next_value</span><span class="p">,</span> <span class="o">*</span><span class="n">str_args</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">next_value</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="kc">None</span>
+
+                        <span class="k">if</span> <span class="n">last_character</span> <span class="o">==</span> <span class="s1">&#39;&quot;&#39;</span><span class="p">:</span>
+
+                            <span class="c1"># Reconstruct the original value prior to ``split``</span>
+                            <span class="n">original_value</span> <span class="o">=</span> <span class="n">field_delimiter</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">split_record</span><span class="p">[</span><span class="n">column_idx</span><span class="p">:</span><span class="n">next_quote_idx</span><span class="o">+</span><span class="mi">1</span><span class="p">])</span>
+
+                            <span class="c1"># Remove the quote at the start and end of the original value</span>
+                            <span class="n">original_value</span> <span class="o">=</span> <span class="n">original_value</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+                            <span class="c1"># Insert the joined value back into split_record (and remove its split components)</span>
+                            <span class="n">split_record</span> <span class="o">=</span> <span class="n">split_record</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">column_idx</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="n">original_value</span><span class="p">]</span> <span class="o">+</span> \
+                                           <span class="n">split_record</span><span class="p">[</span><span class="n">next_quote_idx</span><span class="o">+</span><span class="mi">1</span><span class="p">:]</span>
+
+                            <span class="c1"># We&#39;ve joined several values into one, therefore split_record_len has shrunk</span>
+                            <span class="n">split_record_len</span> <span class="o">-=</span> <span class="n">next_quote_idx</span> <span class="o">-</span> <span class="n">column_idx</span>
+
+                            <span class="c1"># Record the start byte of this column, and adjust the next start byte to account</span>
+                            <span class="c1"># for the entire length of the joined field</span>
+                            <span class="n">start_bytes</span><span class="p">[</span><span class="n">column_idx</span><span class="p">][</span><span class="n">record_idx</span><span class="p">]</span> <span class="o">=</span> <span class="n">next_start_byte</span>
+                            <span class="n">next_start_byte</span> <span class="o">+=</span> <span class="nb">len</span><span class="p">(</span><span class="n">original_value</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+
+                            <span class="n">column_idx</span> <span class="o">+=</span> <span class="mi">1</span>
+                            <span class="k">continue</span>
+
+                <span class="c1"># If the record had a quote somewhere but not in this column or it was not an enclosing quote</span>
+                <span class="c1"># for the column then we simply record its start byte and set the next start byte as usual</span>
+                <span class="n">start_bytes</span><span class="p">[</span><span class="n">column_idx</span><span class="p">][</span><span class="n">record_idx</span><span class="p">]</span> <span class="o">=</span> <span class="n">next_start_byte</span>
+                <span class="n">next_start_byte</span> <span class="o">+=</span> <span class="n">value_length</span> <span class="o">+</span> <span class="mi">1</span>
+
+                <span class="n">column_idx</span> <span class="o">+=</span> <span class="mi">1</span>
+
+            <span class="c1"># Join (the potentially) adjusted record back into a single string to save ``str`` overhead memory</span>
+            <span class="n">records</span><span class="p">[</span><span class="n">record_idx</span><span class="p">]</span> <span class="o">=</span> <span class="n">field_delimiter</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">split_record</span><span class="p">)</span>
+
+        <span class="c1"># If there were no quotes in the record then we can simply record the start bytes of each value</span>
+        <span class="c1"># (surprisingly splitting the record and doing this via length of each value appears to be the</span>
+        <span class="c1"># fastest way to accomplish this since ``str.split`` is written in C.)</span>
+        <span class="k">else</span><span class="p">:</span>
+
+            <span class="k">for</span> <span class="n">column_idx</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">split_record</span><span class="p">):</span>
+                <span class="n">start_bytes</span><span class="p">[</span><span class="n">column_idx</span><span class="p">][</span><span class="n">record_idx</span><span class="p">]</span> <span class="o">=</span> <span class="n">next_start_byte</span>
+                <span class="n">next_start_byte</span> <span class="o">+=</span> <span class="nb">len</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+
+        <span class="c1"># Add an extra start byte, which actually acts only as the end byte for the last field</span>
+        <span class="n">start_bytes</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">record_idx</span><span class="p">]</span> <span class="o">=</span> <span class="n">next_start_byte</span>
+
+    <span class="k">return</span> <span class="n">records</span><span class="p">,</span> <span class="n">start_bytes</span>
+
+
+<div class="viewcode-block" id="new_table"><a class="viewcode-back" href="../../../pds4_tools.reader.read_tables.html#pds4_tools.reader.read_tables.new_table">[docs]</a><span class="k">def</span> <span class="nf">new_table</span><span class="p">(</span><span class="n">fields</span><span class="p">,</span> <span class="n">no_scale</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">decode_strings</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">masked</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">structure_kwargs</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Create a `TableStructure` from PDS-compliant data or meta data.</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    The data attribute will not be a view of the original *fields* (if they are data arrays), but rather</span>
+<span class="sd">    a new array. However, the *fields* passed into this method may still be modified in-place to save</span>
+<span class="sd">    memory, see *copy*. If *fields* originated from a single structured ndarray, then a method to get</span>
+<span class="sd">    a view of the original data, if conditions are satisfied, is to also pass that single structured</span>
+<span class="sd">    ndarray as a kwarg of the name``structure_data``.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    fields : list[PDS_ndarray, PDS_marray or Meta_Field]</span>
+<span class="sd">        A list of either fields with data, which each must contain a valid PDS4 meta_data attribute</span>
+<span class="sd">        defining the field, or a list of valid Meta_Field&#39;s. If input is data, the base data type will</span>
+<span class="sd">        be taken from its actual dtype, rather than from the meta data it must still contain.</span>
+<span class="sd">    no_scale : bool, optional</span>
+<span class="sd">        If True, and input is a list of fields with data, then the data will scaled according to the</span>
+<span class="sd">        scaling_factor and value_offset meta data. If the *fields* is meta data only, then the output</span>
+<span class="sd">        data type will be large enough to store the scaled values. If False, no scaling or data type</span>
+<span class="sd">        conversions will be done. Defaults to False.</span>
+<span class="sd">    decode_strings : bool, optional</span>
+<span class="sd">        If True, then fields containing character byte data will be converted to a dtype of unicode.</span>
+<span class="sd">        If False, then for character data the obtained dtype will remain byte strings. Defaults to</span>
+<span class="sd">        False.</span>
+<span class="sd">    masked : bool or None, optional</span>
+<span class="sd">        If True, and input is a list of fields with data, then the data will retain any masked values and</span>
+<span class="sd">        in additional have numeric Special_Constants values masked. If False, any masked values in the</span>
+<span class="sd">        input fields will be unmasked and data assignments will not preserve masked values. If None,</span>
+<span class="sd">        masked values in the input will be retained only if any are present. Defaults to None.</span>
+<span class="sd">    copy: bool, optional</span>
+<span class="sd">        If True, a copy of *fields* is made, ensuring that they do not get modified during processing.</span>
+<span class="sd">        If False, then the fields may change if each is an array of data. In either case, the output data</span>
+<span class="sd">        will not be a view. Defaults to True.</span>
+<span class="sd">    structure_kwargs : dict, optional</span>
+<span class="sd">        Keywords that are passed directly to the `TableStructure` constructor.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    TableStructure</span>
+<span class="sd">        An object representing the PDS4 table structure. The data will contain a structured array that</span>
+<span class="sd">        can store values for *fields* (or does store it, if input is a list of fields with data). Other</span>
+<span class="sd">        attributes may be specified via *structure_kwargs*.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># For each field in the record array, create the dtype needed to initialize it. For each said field,</span>
+    <span class="c1"># this will be either a two valued tuple (unique_field_name, numpy_dtype) or a three valued tuple, with</span>
+    <span class="c1"># the third value being the shape when the data for that field is non-flat (e.g. for group fields).</span>
+    <span class="n">dtypes</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">array_shapes</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="c1"># Determine and validate that input is a sequence of all Meta_Field, PDS_ndarray or PDS_marray</span>
+    <span class="n">input_is_fields</span> <span class="o">=</span> <span class="nb">all</span><span class="p">([</span><span class="n">PDS_array</span><span class="o">.</span><span class="n">isinstance</span><span class="p">(</span><span class="n">field</span><span class="p">)</span> <span class="k">for</span> <span class="n">field</span> <span class="ow">in</span> <span class="n">fields</span><span class="p">])</span>
+    <span class="n">input_is_meta_fields</span> <span class="o">=</span> <span class="nb">all</span><span class="p">([</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">field</span><span class="p">,</span> <span class="n">Meta_Field</span><span class="p">)</span> <span class="k">for</span> <span class="n">field</span> <span class="ow">in</span> <span class="n">fields</span><span class="p">])</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="ow">not</span> <span class="n">input_is_fields</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="ow">not</span> <span class="n">input_is_meta_fields</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s1">&#39;Inputs must all be one of Meta_Field, PDS_ndarray or PDS_marray.&#39;</span><span class="p">)</span>
+
+    <span class="c1"># Obtain the name, shape and dtype for each field in the record array that will contain the data.</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">field</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">fields</span><span class="p">):</span>
+
+        <span class="c1"># Obtain the meta data for Meta_Fields</span>
+        <span class="k">if</span> <span class="n">input_is_meta_fields</span><span class="p">:</span>
+
+            <span class="n">meta_field</span> <span class="o">=</span> <span class="n">field</span>
+            <span class="n">data_kwargs</span> <span class="o">=</span> <span class="p">{}</span>
+
+        <span class="c1"># Obtain the meta data for PDS_ndarray or PDS_marray</span>
+        <span class="k">else</span><span class="p">:</span>
+
+            <span class="n">meta_field</span> <span class="o">=</span> <span class="n">field</span><span class="o">.</span><span class="n">meta_data</span>
+            <span class="n">data_kwargs</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;data&#39;</span><span class="p">:</span> <span class="n">field</span><span class="p">}</span>
+
+        <span class="n">scale_kwargs</span> <span class="o">=</span> <span class="p">{}</span> <span class="k">if</span> <span class="n">no_scale</span> <span class="k">else</span> <span class="p">{</span><span class="s1">&#39;scaling_factor&#39;</span><span class="p">:</span> <span class="n">meta_field</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;scaling_factor&#39;</span><span class="p">),</span>
+                                            <span class="s1">&#39;value_offset&#39;</span><span class="p">:</span> <span class="n">meta_field</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;value_offset&#39;</span><span class="p">)}</span>
+
+        <span class="c1"># Obtain dtype (ensuring to scale it for future application of scaling and offset if necessary)</span>
+        <span class="n">dtype</span> <span class="o">=</span> <span class="n">pds_to_numpy_type</span><span class="p">(</span><span class="n">meta_field</span><span class="o">.</span><span class="n">data_type</span><span class="p">(),</span>
+                                  <span class="n">field_length</span><span class="o">=</span><span class="n">meta_field</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;length&#39;</span><span class="p">),</span>
+                                  <span class="n">decode_strings</span><span class="o">=</span><span class="n">decode_strings</span><span class="p">,</span>
+                                  <span class="o">**</span><span class="nb">dict</span><span class="p">(</span><span class="n">data_kwargs</span><span class="p">,</span> <span class="o">**</span><span class="n">scale_kwargs</span><span class="p">))</span>
+
+        <span class="c1"># Obtain the array shape</span>
+        <span class="n">array_shape</span> <span class="o">=</span> <span class="n">meta_field</span><span class="o">.</span><span class="n">shape</span>
+        <span class="n">array_shapes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">array_shape</span><span class="p">)</span>
+
+        <span class="c1"># Obtain the field name. Use full name, to address the case of two fields with the same name,</span>
+        <span class="c1"># which NumPy does not support.</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="n">pds_to_numpy_name</span><span class="p">(</span><span class="n">meta_field</span><span class="o">.</span><span class="n">full_name</span><span class="p">())</span>
+
+        <span class="c1"># Create the dtype initializer for this field, as NumPy requires it</span>
+        <span class="k">if</span> <span class="n">array_shape</span><span class="p">[</span><span class="mi">1</span><span class="p">:]:</span>
+            <span class="n">dtypes</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">name</span><span class="p">,</span> <span class="n">dtype</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">array_shape</span><span class="p">[</span><span class="mi">1</span><span class="p">:])))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">dtypes</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">name</span><span class="p">,</span> <span class="n">dtype</span><span class="p">))</span>
+
+    <span class="c1"># Obtain the number of records</span>
+    <span class="n">num_all_records</span> <span class="o">=</span> <span class="p">[</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">shape</span> <span class="ow">in</span> <span class="n">array_shapes</span><span class="p">]</span>
+    <span class="k">if</span> <span class="nb">min</span><span class="p">(</span><span class="n">num_all_records</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">max</span><span class="p">(</span><span class="n">num_all_records</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s1">&#39;Input fields do not all have the same number of records.&#39;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">num_records</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">num_all_records</span><span class="p">)</span>
+
+    <span class="c1"># Decide what type of data array for the table we will be using (i.e., masked or otherwise)</span>
+    <span class="k">if</span> <span class="n">masked</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">masked</span> <span class="o">=</span> <span class="nb">any</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">ma</span><span class="o">.</span><span class="n">is_masked</span><span class="p">(</span><span class="n">field</span><span class="p">)</span> <span class="k">for</span> <span class="n">field</span> <span class="ow">in</span> <span class="n">fields</span><span class="p">])</span>
+
+    <span class="n">array_type</span> <span class="o">=</span> <span class="n">PDS_array</span><span class="o">.</span><span class="n">get_array</span><span class="p">(</span><span class="n">masked</span><span class="o">=</span><span class="n">masked</span><span class="p">)</span>
+
+    <span class="c1"># Create the TableStructure</span>
+    <span class="n">table_structure</span> <span class="o">=</span> <span class="n">TableStructure</span><span class="p">(</span><span class="o">**</span><span class="n">structure_kwargs</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">table_structure</span><span class="o">.</span><span class="n">data_loaded</span><span class="p">:</span>
+
+        <span class="c1"># Ensure data array is of requested type if it was already supplied</span>
+        <span class="n">table_structure</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">table_structure</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="n">array_type</span><span class="p">)</span>
+
+    <span class="k">else</span><span class="p">:</span>
+
+        <span class="c1"># Create the structured data array, and assign a view of it as a PDS_array type</span>
+        <span class="n">table_structure</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">recarray</span><span class="p">(</span><span class="n">num_records</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtypes</span><span class="p">)</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="n">array_type</span><span class="p">)</span>
+
+    <span class="c1"># For cases where input is PDS_array, we transfer their data into the new table</span>
+    <span class="k">if</span> <span class="n">input_is_fields</span><span class="p">:</span>
+
+        <span class="c1"># Create final versions of the fields and set them inside the table</span>
+        <span class="c1"># (e.g. apply scaling, convert strings to unicode if requested, etc)</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">field</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">fields</span><span class="p">):</span>
+
+            <span class="n">array_shape</span> <span class="o">=</span> <span class="n">array_shapes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+            <span class="n">extracted_data</span> <span class="o">=</span> <span class="n">field</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span> <span class="k">if</span> <span class="n">copy</span> <span class="k">else</span> <span class="n">field</span>
+            <span class="n">meta_field</span> <span class="o">=</span> <span class="n">field</span><span class="o">.</span><span class="n">meta_data</span>
+            <span class="n">special_constants</span> <span class="o">=</span> <span class="n">meta_field</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;Special_Constants&#39;</span><span class="p">)</span>
+            <span class="n">is_bitstring_data</span> <span class="o">=</span> <span class="n">meta_field</span><span class="o">.</span><span class="n">data_type</span><span class="p">()</span><span class="o">.</span><span class="n">issubtype</span><span class="p">(</span><span class="s1">&#39;BitString&#39;</span><span class="p">)</span>
+
+            <span class="c1"># Adjust data to decode strings if requested</span>
+            <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">issubdtype</span><span class="p">(</span><span class="n">extracted_data</span><span class="o">.</span><span class="n">dtype</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">character</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="ow">not</span> <span class="n">is_bitstring_data</span><span class="p">)</span> <span class="ow">and</span> <span class="n">decode_strings</span><span class="p">:</span>
+                <span class="n">extracted_data</span> <span class="o">=</span> <span class="n">decode_bytes_to_unicode</span><span class="p">(</span><span class="n">extracted_data</span><span class="p">)</span>
+
+            <span class="c1"># Adjust data values to account for &#39;scaling_factor&#39; and &#39;value_offset&#39; (in-place if possible)</span>
+            <span class="c1"># (Note that this may change the data type to prevent overflow and thus increase memory usage)</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">no_scale</span><span class="p">:</span>
+                <span class="n">extracted_data</span> <span class="o">=</span> <span class="n">apply_scaling_and_value_offset</span><span class="p">(</span><span class="n">extracted_data</span><span class="p">,</span>
+                                                                <span class="n">meta_field</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;scaling_factor&#39;</span><span class="p">),</span>
+                                                                <span class="n">meta_field</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;value_offset&#39;</span><span class="p">),</span>
+                                                                <span class="n">special_constants</span><span class="o">=</span><span class="n">special_constants</span><span class="p">)</span>
+
+            <span class="c1"># Mask Special_Constants in output if requested</span>
+            <span class="k">if</span> <span class="n">masked</span><span class="p">:</span>
+                <span class="n">extracted_data</span> <span class="o">=</span> <span class="n">mask_special_constants</span><span class="p">(</span><span class="n">extracted_data</span><span class="p">,</span> <span class="n">special_constants</span><span class="o">=</span><span class="n">special_constants</span><span class="p">)</span>
+
+            <span class="c1"># For fields inside groups, we reshape them into the proper shape</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">array_shape</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="n">extracted_data</span> <span class="o">=</span> <span class="n">extracted_data</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">array_shape</span><span class="p">)</span>
+
+            <span class="c1"># Set read-in field in the TableStructure</span>
+            <span class="n">table_structure</span><span class="o">.</span><span class="n">set_field</span><span class="p">(</span><span class="n">extracted_data</span><span class="p">,</span> <span class="n">meta_field</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">table_structure</span></div>
+
+
+<div class="viewcode-block" id="table_data_size_check"><a class="viewcode-back" href="../../../pds4_tools.reader.read_tables.html#pds4_tools.reader.read_tables.table_data_size_check">[docs]</a><span class="k">def</span> <span class="nf">table_data_size_check</span><span class="p">(</span><span class="n">table_structure</span><span class="p">,</span> <span class="n">quiet</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Checks, and warns, if table is estimated to have a large amount of data.</span>
+
+<span class="sd">    This estimate is done from the meta-data only and excludes nested fields (fields inside groups fields)</span>
+<span class="sd">    and repetitions. A more accurate meta-data only estimate could be obtained via `TableManifest`.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    table_structure : Structure</span>
+<span class="sd">        The table structure whose data to check for size.</span>
+<span class="sd">    quiet : bool, optional</span>
+<span class="sd">        If True, does not output warning if table contains a large amount of data. Defaults to False.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    bool</span>
+<span class="sd">        True if the table structure exceeds pre-defined parameters for size of its data, False otherwise.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">meta_data</span> <span class="o">=</span> <span class="n">table_structure</span><span class="o">.</span><span class="n">meta_data</span>
+    <span class="n">dimensions</span> <span class="o">=</span> <span class="n">meta_data</span><span class="o">.</span><span class="n">dimensions</span><span class="p">()</span>
+
+    <span class="c1"># Estimate of the number of elements in the table</span>
+    <span class="n">num_elements</span> <span class="o">=</span> <span class="n">dimensions</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">dimensions</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+
+    <span class="c1"># Limit at which the data is considered large</span>
+    <span class="k">if</span> <span class="n">meta_data</span><span class="o">.</span><span class="n">is_delimited</span><span class="p">():</span>
+
+        <span class="c1"># Loading delimited tables is slower than fixed-width tables due to additional required processing</span>
+        <span class="n">num_elements_warn</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="mi">10</span><span class="o">**</span><span class="mi">7</span>
+
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">num_elements_warn</span> <span class="o">=</span> <span class="mi">4</span> <span class="o">*</span> <span class="mi">10</span><span class="o">**</span><span class="mi">7</span>
+
+    <span class="k">if</span> <span class="n">num_elements</span> <span class="o">&gt;</span> <span class="n">num_elements_warn</span><span class="p">:</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">quiet</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{0}</span><span class="s2"> contains a large amount of data. Loading data may take a while...&quot;</span>
+                        <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">table_structure</span><span class="o">.</span><span class="n">id</span><span class="p">))</span>
+
+        <span class="k">return</span> <span class="kc">True</span>
+
+    <span class="k">return</span> <span class="kc">False</span></div>
+
+
+<div class="viewcode-block" id="read_table_data"><a class="viewcode-back" href="../../../pds4_tools.reader.read_tables.html#pds4_tools.reader.read_tables.read_table_data">[docs]</a><span class="k">def</span> <span class="nf">read_table_data</span><span class="p">(</span><span class="n">table_structure</span><span class="p">,</span> <span class="n">no_scale</span><span class="p">,</span> <span class="n">decode_strings</span><span class="p">,</span> <span class="n">masked</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Reads and properly formats the data for a single PDS4 table structure, modifies *table_structure* to</span>
+<span class="sd">    contain all extracted fields for said table.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    table_structure : TableStructure</span>
+<span class="sd">        The PDS4 Table data structure to which the table&#39;s data fields should be added.  Should have been</span>
+<span class="sd">        initialized via `TableStructure.from_file` method.</span>
+<span class="sd">    no_scale : bool</span>
+<span class="sd">        Returned data will not be adjusted according to the offset and scaling factor.</span>
+<span class="sd">    masked : bool</span>
+<span class="sd">        Returned data will have numeric Special_Constants masked.</span>
+<span class="sd">    decode_strings : bool</span>
+<span class="sd">        If True, character data types contained in the returned data will be decoded to the ``unicode`` type</span>
+<span class="sd">        in Python 2, and to the ``str`` type in Python 3. If False, leaves character types as byte strings.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    None</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># Provide a warning to the user if the data is large and may take a while to read</span>
+    <span class="n">table_data_size_check</span><span class="p">(</span><span class="n">table_structure</span><span class="p">)</span>
+
+    <span class="c1"># Obtain the byte data of the table</span>
+    <span class="n">table_byte_data</span> <span class="o">=</span> <span class="n">_read_table_byte_data</span><span class="p">(</span><span class="n">table_structure</span><span class="p">)</span>
+
+    <span class="c1"># Obtain a manifest for the table, which describes the table structure (the fields and groups)</span>
+    <span class="n">table_manifest</span> <span class="o">=</span> <span class="n">TableManifest</span><span class="o">.</span><span class="n">from_label</span><span class="p">(</span><span class="n">table_structure</span><span class="o">.</span><span class="n">label</span><span class="p">)</span>
+
+    <span class="c1"># Extract the number of records</span>
+    <span class="n">num_records</span> <span class="o">=</span> <span class="n">table_structure</span><span class="o">.</span><span class="n">meta_data</span><span class="p">[</span><span class="s1">&#39;records&#39;</span><span class="p">]</span>
+
+    <span class="c1"># Stores the initial non-post-processed version of fields</span>
+    <span class="n">extracted_fields</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="c1"># Special processing for delimited tables</span>
+    <span class="k">if</span> <span class="n">table_structure</span><span class="o">.</span><span class="n">meta_data</span><span class="o">.</span><span class="n">is_delimited</span><span class="p">():</span>
+
+        <span class="c1"># Split the byte data into records</span>
+        <span class="n">table_byte_data</span> <span class="o">=</span> <span class="n">table_byte_data</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="sa">b</span><span class="s1">&#39;</span><span class="se">\r\n</span><span class="s1">&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">:</span><span class="n">num_records</span><span class="p">]</span>
+
+        <span class="c1"># Obtain adjusted records (to remove quotes) and start bytes (2D array_like, with first dimension</span>
+        <span class="c1"># the field number and the second dimension the record number, and the value set to the start byte</span>
+        <span class="c1"># of the data for those parameters).</span>
+        <span class="n">table_byte_data</span><span class="p">,</span> <span class="n">start_bytes</span> <span class="o">=</span> <span class="n">_get_delimited_records_and_start_bytes</span><span class="p">(</span><span class="n">table_byte_data</span><span class="p">,</span>
+                                                                              <span class="n">table_structure</span><span class="p">,</span> <span class="n">table_manifest</span><span class="p">)</span>
+
+    <span class="c1"># Create data for the Uniformly Sampled fields</span>
+    <span class="k">for</span> <span class="n">field</span> <span class="ow">in</span> <span class="n">table_manifest</span><span class="o">.</span><span class="n">uniformly_sampled_fields</span><span class="p">():</span>
+
+        <span class="n">created_data</span> <span class="o">=</span> <span class="n">_make_uniformly_sampled_field</span><span class="p">(</span><span class="n">table_structure</span><span class="p">,</span> <span class="n">field</span><span class="p">)</span>
+        <span class="n">extracted_fields</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">PDS_array</span><span class="p">(</span><span class="n">created_data</span><span class="p">,</span> <span class="n">field</span><span class="p">))</span>
+
+    <span class="c1"># For each regular field, do initial read-in from byte data and conversion to its actual data type. No</span>
+    <span class="c1"># post-processing is done in this loop (for example, no scaling and no conversion to unicode).</span>
+    <span class="k">for</span> <span class="n">field</span> <span class="ow">in</span> <span class="n">table_manifest</span><span class="o">.</span><span class="n">fields</span><span class="p">(</span><span class="n">skip_uniformly_sampled</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+
+        <span class="c1"># Field index in the manifest</span>
+        <span class="n">field_idx</span> <span class="o">=</span> <span class="n">table_manifest</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">field</span><span class="p">)</span>
+
+        <span class="c1"># Stores the shape that that the data for this field will take-on</span>
+        <span class="n">array_shape</span> <span class="o">=</span> <span class="n">field</span><span class="o">.</span><span class="n">shape</span>
+
+        <span class="c1"># Create flat list that will contain the (flat) data for this Field</span>
+        <span class="n">extracted_data</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="c1"># Extract the byte data for the field (delimited tables)</span>
+        <span class="k">if</span> <span class="n">table_structure</span><span class="o">.</span><span class="n">meta_data</span><span class="o">.</span><span class="n">is_delimited</span><span class="p">():</span>
+
+            <span class="c1"># The current column represents which column of `start_bytes` has the data for the field being</span>
+            <span class="c1"># looped over. For fields inside groups, this is the column with the first repetition only.</span>
+            <span class="n">current_column</span> <span class="o">=</span> <span class="n">table_manifest</span><span class="o">.</span><span class="n">get_field_offset</span><span class="p">(</span><span class="n">field_idx</span><span class="p">)</span>
+
+            <span class="c1"># Obtain the skip factors for this field, necessary to determine the columns containing</span>
+            <span class="c1"># field repetitions (only relevant for fields inside groups)</span>
+            <span class="n">skip_factors</span> <span class="o">=</span> <span class="n">table_manifest</span><span class="o">.</span><span class="n">get_field_skip_factors</span><span class="p">(</span><span class="n">field_idx</span><span class="p">)</span>
+
+            <span class="c1"># Extract data for the current field</span>
+            <span class="n">_extract_delimited_field_data</span><span class="p">(</span><span class="n">extracted_data</span><span class="p">,</span> <span class="n">table_byte_data</span><span class="p">,</span>
+                                          <span class="n">start_bytes</span><span class="p">,</span> <span class="n">current_column</span><span class="p">,</span> <span class="n">array_shape</span><span class="p">,</span> <span class="n">skip_factors</span><span class="p">)</span>
+
+        <span class="c1"># Extract the byte data for the field (fixed-width tables)</span>
+        <span class="k">else</span><span class="p">:</span>
+
+            <span class="c1"># Store the group_location and the group_length divided by the number of repetitions for each</span>
+            <span class="c1"># group the field is inside of (added in for loop below)</span>
+            <span class="n">group_locations</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="n">repetition_lengths</span> <span class="o">=</span> <span class="p">[]</span>
+
+            <span class="n">parent_idx</span> <span class="o">=</span> <span class="n">field_idx</span>
+            <span class="k">for</span> <span class="n">parent_group</span> <span class="ow">in</span> <span class="n">table_manifest</span><span class="o">.</span><span class="n">get_parents_by_idx</span><span class="p">(</span><span class="n">parent_idx</span><span class="p">):</span>
+                <span class="n">group_locations</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">parent_group</span><span class="p">[</span><span class="s1">&#39;location&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+                <span class="n">repetition_lengths</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">parent_group</span><span class="p">[</span><span class="s1">&#39;length&#39;</span><span class="p">]</span> <span class="o">//</span> <span class="n">parent_group</span><span class="p">[</span><span class="s1">&#39;repetitions&#39;</span><span class="p">])</span>
+
+            <span class="n">record_length</span> <span class="o">=</span> <span class="n">table_structure</span><span class="o">.</span><span class="n">meta_data</span><span class="o">.</span><span class="n">record</span><span class="p">[</span><span class="s1">&#39;record_length&#39;</span><span class="p">]</span>
+
+            <span class="c1"># Extract data for the current field</span>
+            <span class="n">_extract_fixed_width_field_data</span><span class="p">(</span><span class="n">extracted_data</span><span class="p">,</span> <span class="n">table_byte_data</span><span class="p">,</span> <span class="n">field</span><span class="p">[</span><span class="s1">&#39;length&#39;</span><span class="p">],</span>
+                                            <span class="n">field</span><span class="p">[</span><span class="s1">&#39;location&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">record_length</span><span class="p">,</span>
+                                            <span class="n">array_shape</span><span class="p">,</span> <span class="n">group_locations</span><span class="p">,</span> <span class="n">repetition_lengths</span><span class="p">)</span>
+
+        <span class="c1"># Cast the byte data for this field into the appropriate data type</span>
+        <span class="k">try</span><span class="p">:</span>
+
+            <span class="n">args</span> <span class="o">=</span> <span class="p">[</span><span class="n">field</span><span class="o">.</span><span class="n">data_type</span><span class="p">(),</span> <span class="n">extracted_data</span><span class="p">]</span>
+            <span class="n">kwargs</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;decode_strings&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">}</span>
+
+            <span class="k">if</span> <span class="n">table_structure</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="s1">&#39;Table_Character&#39;</span><span class="p">:</span>
+                <span class="n">extracted_data</span> <span class="o">=</span> <span class="n">data_type_convert_table_ascii</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+            <span class="k">elif</span> <span class="n">table_structure</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="s1">&#39;Table_Binary&#39;</span><span class="p">:</span>
+                <span class="n">extracted_data</span> <span class="o">=</span> <span class="n">data_type_convert_table_binary</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+            <span class="k">elif</span> <span class="n">table_structure</span><span class="o">.</span><span class="n">meta_data</span><span class="o">.</span><span class="n">is_delimited</span><span class="p">():</span>
+                <span class="n">extracted_data</span> <span class="o">=</span> <span class="n">data_type_convert_table_ascii</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="n">mask_numeric_nulls</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s1">&#39;Unknown table type: </span><span class="si">{0}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">table_structure</span><span class="o">.</span><span class="n">type</span><span class="p">))</span>
+
+        <span class="k">except</span> <span class="ne">ValueError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="n">six</span><span class="o">.</span><span class="n">raise_from</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Unable to convert field &#39;</span><span class="si">{0}</span><span class="s2">&#39; to data_type &#39;</span><span class="si">{1}</span><span class="s2">&#39;: </span><span class="si">{2}</span><span class="s2">&quot;</span>
+                                      <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">field</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">],</span> <span class="n">field</span><span class="o">.</span><span class="n">data_type</span><span class="p">(),</span> <span class="nb">repr</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]))),</span> <span class="kc">None</span><span class="p">)</span>
+
+        <span class="c1"># Save a preliminary version of each field</span>
+        <span class="c1"># (cast to its initial data type but without any scaling or other adjustments)</span>
+        <span class="n">extracted_fields</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">PDS_array</span><span class="p">(</span><span class="n">extracted_data</span><span class="p">,</span> <span class="n">field</span><span class="p">))</span>
+
+    <span class="c1"># Delete table byte data to save RAM now that it is no longer needed (all fields have been extracted)</span>
+    <span class="k">del</span> <span class="n">table_byte_data</span>
+
+    <span class="c1"># Finish processing (scale and decoding), create the table&#39;s structured data array and set fields</span>
+    <span class="n">table_structure</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">new_table</span><span class="p">(</span><span class="n">extracted_fields</span><span class="p">,</span> <span class="n">no_scale</span><span class="o">=</span><span class="n">no_scale</span><span class="p">,</span> <span class="n">decode_strings</span><span class="o">=</span><span class="n">decode_strings</span><span class="p">,</span>
+                                     <span class="n">masked</span><span class="o">=</span><span class="n">masked</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">data</span></div>
+
+
+<div class="viewcode-block" id="read_table"><a class="viewcode-back" href="../../../pds4_tools.reader.read_tables.html#pds4_tools.reader.read_tables.read_table">[docs]</a><span class="k">def</span> <span class="nf">read_table</span><span class="p">(</span><span class="n">full_label</span><span class="p">,</span> <span class="n">table_label</span><span class="p">,</span> <span class="n">data_filename</span><span class="p">,</span>
+               <span class="n">lazy_load</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">no_scale</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">decode_strings</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Create the `TableStructure`, containing label, data and meta data for a PDS4 Table from a file.</span>
+
+<span class="sd">    Used for all forms of PDS4 Tables (i.e., Table_Character, Table_Binary and Table_Delimited).</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    full_label : Label</span>
+<span class="sd">        The entire label for a PDS4 product, from which *table_label* originated.</span>
+<span class="sd">    table_label : Label</span>
+<span class="sd">        Portion of label that defines the PDS4 table data structure.</span>
+<span class="sd">    data_filename : str or unicode</span>
+<span class="sd">        Filename, including the full path, of the data file that contains the data for this table.</span>
+<span class="sd">    lazy_load : bool, optional</span>
+<span class="sd">        If True, does not read-in the data of this table until the first attempt to access it.</span>
+<span class="sd">        Defaults to False.</span>
+<span class="sd">    no_scale : bool, optional</span>
+<span class="sd">        If True, returned data will not be adjusted according to the offset and scaling factor.</span>
+<span class="sd">        Defaults to False.</span>
+<span class="sd">    decode_strings : bool, optional</span>
+<span class="sd">        If True, strings data types contained in the returned data will be decoded to</span>
+<span class="sd">        the ``unicode`` type in Python 2, and to the ``str`` type in Python 3. If False,</span>
+<span class="sd">        leaves string types as byte strings. Defaults to False.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    TableStructure</span>
+<span class="sd">        An object representing the table; contains its label, data and meta data.</span>
+
+<span class="sd">    Raises</span>
+<span class="sd">    ------</span>
+<span class="sd">    TypeError</span>
+<span class="sd">        Raised if called on a non-table according to *table_label*.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># Skip over data structure if its not actually a supported Table</span>
+    <span class="k">if</span> <span class="n">table_label</span><span class="o">.</span><span class="n">tag</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">PDS4_TABLE_TYPES</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s1">&#39;Attempted to read_table() on a non-table: &#39;</span> <span class="o">+</span> <span class="n">table_label</span><span class="o">.</span><span class="n">tag</span><span class="p">)</span>
+
+    <span class="c1"># Create the data structure for this table</span>
+    <span class="n">table_structure</span> <span class="o">=</span> <span class="n">TableStructure</span><span class="o">.</span><span class="n">from_file</span><span class="p">(</span><span class="n">data_filename</span><span class="p">,</span> <span class="n">table_label</span><span class="p">,</span> <span class="n">full_label</span><span class="p">,</span>
+                                               <span class="n">lazy_load</span><span class="o">=</span><span class="n">lazy_load</span><span class="p">,</span> <span class="n">no_scale</span><span class="o">=</span><span class="n">no_scale</span><span class="p">,</span>
+                                               <span class="n">decode_strings</span><span class="o">=</span><span class="n">decode_strings</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">table_structure</span></div>
+</pre></div>
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">PDS4 Python Tools 1.2 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">pds4_tools.reader.read_tables</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2015 - 2020, University of Maryland.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,663 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>pds4_tools.reader.data_types module &#8212; PDS4 Python Tools 1.0 documentation</title>
+    <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="pds4_tools.utils package" href="pds4_tools.utils.html" />
+    <link rel="prev" title="pds4_tools.reader.data module" href="pds4_tools.reader.data.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="pds4_tools.utils.html" title="pds4_tools.utils package"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="pds4_tools.reader.data.html" title="pds4_tools.reader.data module"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">PDS4 Python Tools 1.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="pds4_tools.reader.html" accesskey="U">pds4_tools.reader package</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">pds4_tools.reader.data_types module</a><ul>
+<li><a class="reference internal" href="#functions">Functions</a></li>
+<li><a class="reference internal" href="#details">Details</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="pds4_tools.reader.data.html"
+                        title="previous chapter">pds4_tools.reader.data module</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="pds4_tools.utils.html"
+                        title="next chapter">pds4_tools.utils package</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/pds4_tools.reader.data_types.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="pds4-tools-reader-data-types-module">
+<h1>pds4_tools.reader.data_types module<a class="headerlink" href="#pds4-tools-reader-data-types-module" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="functions">
+<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#pds4_tools.reader.data_types.data_type_convert_array" title="pds4_tools.reader.data_types.data_type_convert_array"><code class="xref py py-obj docutils literal notranslate"><span class="pre">data_type_convert_array</span></code></a>(data_type,&nbsp;byte_string)</td>
+<td>Cast binary data in the form of a byte_string to a flat array having proper dtype for <em>data_type</em>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#pds4_tools.reader.data_types.data_type_convert_table_ascii" title="pds4_tools.reader.data_types.data_type_convert_table_ascii"><code class="xref py py-obj docutils literal notranslate"><span class="pre">data_type_convert_table_ascii</span></code></a>(data_type,&nbsp;data)</td>
+<td>Cast data originating from a PDS4 Table_Character or Table_Delimited data structure in the form of an array_like[byte_string] to an array with the proper dtype for <em>data_type</em>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#pds4_tools.reader.data_types.data_type_convert_table_binary" title="pds4_tools.reader.data_types.data_type_convert_table_binary"><code class="xref py py-obj docutils literal notranslate"><span class="pre">data_type_convert_table_binary</span></code></a>(data_type,&nbsp;data)</td>
+<td>Cast data originating from a PDS4 Table_Binary data structure in the form of an array_like[byte_string] to an array with the proper dtype for <em>data_type</em>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#pds4_tools.reader.data_types.pds_to_numpy_type" title="pds4_tools.reader.data_types.pds_to_numpy_type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pds_to_numpy_type</span></code></a>([data_type,&nbsp;data,&nbsp;…])</td>
+<td>Obtain a NumPy dtype for PDS4 data.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#pds4_tools.reader.data_types.pds_to_builtin_type" title="pds4_tools.reader.data_types.pds_to_builtin_type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pds_to_builtin_type</span></code></a>([data_type,&nbsp;data,&nbsp;…])</td>
+<td>Obtain a Python __builtin__ data type for PDS4 data.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#pds4_tools.reader.data_types.pds_to_numpy_name" title="pds4_tools.reader.data_types.pds_to_numpy_name"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pds_to_numpy_name</span></code></a>(name)</td>
+<td>Create a NumPy field name from a PDS4 field name.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#pds4_tools.reader.data_types.apply_scaling_and_value_offset" title="pds4_tools.reader.data_types.apply_scaling_and_value_offset"><code class="xref py py-obj docutils literal notranslate"><span class="pre">apply_scaling_and_value_offset</span></code></a>(data[,&nbsp;…])</td>
+<td>Applies scaling factor and value offset to <em>data</em>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#pds4_tools.reader.data_types.adjust_array_data_type" title="pds4_tools.reader.data_types.adjust_array_data_type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">adjust_array_data_type</span></code></a>(array[,&nbsp;…])</td>
+<td>Converts the input <em>array</em> into a new large enough data type if adjusting said array as-is by <em>scaling_factor</em> or <em>value_offset</em> would result in an overflow.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#pds4_tools.reader.data_types.get_scaled_numpy_type" title="pds4_tools.reader.data_types.get_scaled_numpy_type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_scaled_numpy_type</span></code></a>([data_type,&nbsp;data,&nbsp;…])</td>
+<td>Obtain the NumPy dtype that would be necessary to store PDS4 data once that data has been scaled.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#pds4_tools.reader.data_types.decode_bytes_to_unicode" title="pds4_tools.reader.data_types.decode_bytes_to_unicode"><code class="xref py py-obj docutils literal notranslate"><span class="pre">decode_bytes_to_unicode</span></code></a>(array)</td>
+<td>Decodes each byte string in the array into unicode.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#pds4_tools.reader.data_types.mask_special_constants" title="pds4_tools.reader.data_types.mask_special_constants"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mask_special_constants</span></code></a>(data,&nbsp;special_constants)</td>
+<td>Mask out special constants in an array.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#pds4_tools.reader.data_types.get_min_integer_numpy_type" title="pds4_tools.reader.data_types.get_min_integer_numpy_type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_min_integer_numpy_type</span></code></a>(data)</td>
+<td>Obtain smallest integer NumPy dtype that can store every value in the input array.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#pds4_tools.reader.data_types.is_pds_integer_data" title="pds4_tools.reader.data_types.is_pds_integer_data"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_pds_integer_data</span></code></a>([data,&nbsp;pds_data_type])</td>
+<td>Determine, from a data array or from a PDS4 data type, whether such data is an integer.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="details">
+<h2>Details<a class="headerlink" href="#details" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="pds4_tools.reader.data_types.data_type_convert_array">
+<code class="descname">data_type_convert_array</code><span class="sig-paren">(</span><em>data_type</em>, <em>byte_string</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/data_types.html#data_type_convert_array"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.reader.data_types.data_type_convert_array" title="Permalink to this definition">¶</a></dt>
+<dd><p>Cast binary data in the form of a byte_string to a flat array having proper dtype for <em>data_type</em>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>data_type</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str or unicode</span></dt>
+<dd><p class="first last">The PDS4 data type that the data should be cast to.</p>
+</dd>
+<dt><strong>byte_string</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str, bytes or buffer</span></dt>
+<dd><p class="first last">PDS4 byte string data for an array data structure or a table binary field.</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>np.ndarray</strong></dt>
+<dd><p class="first last">Array-like view of the data cast from a byte string into values having the indicated data type.
+Will be read-only if underlying <em>byte_string</em> is immutable.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="pds4_tools.reader.data_types.data_type_convert_table_ascii">
+<code class="descname">data_type_convert_table_ascii</code><span class="sig-paren">(</span><em>data_type</em>, <em>data</em>, <em>mask_numeric_nulls=False</em>, <em>decode_strings=False</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/data_types.html#data_type_convert_table_ascii"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.reader.data_types.data_type_convert_table_ascii" title="Permalink to this definition">¶</a></dt>
+<dd><p>Cast data originating from a PDS4 Table_Character or Table_Delimited data structure in the form
+of an array_like[byte_string] to an array with the proper dtype for <em>data_type</em>. Most
+likely this data is a single Field, or a single repetition of a Field, since different Fields have
+different data types.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>data_type</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str or unicode</span></dt>
+<dd><p class="first last">The PDS4 data type that the data should be cast to.</p>
+</dd>
+<dt><strong>data</strong> <span class="classifier-delimiter">:</span> <span class="classifier">array_like[str or bytes]</span></dt>
+<dd><p class="first last">Flat array of PDS4 byte strings from a Table_Character data structure.</p>
+</dd>
+<dt><strong>mask_numeric_nulls</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">If True, then <em>data</em> may contain empty values for a numeric <em>data_type</em>. If such nulls are found,
+they will be masked out and a masked array will be returned. Defaults to False, in which case
+an exception will be raised should an empty value be found in a numeric field.</p>
+</dd>
+<dt><strong>decode_strings</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool, optional</span></dt>
+<dd><p class="first last">If True, and the returned dtype is a form of character, then the obtained dtype will be a form of
+unicode. If False, then for character data the obtained dtype will remain byte strings. Defaults to
+False.</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>np.ndarray</strong></dt>
+<dd><p class="first last">Data cast from a byte string array into a values array having the right data type.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="pds4_tools.reader.data_types.data_type_convert_table_binary">
+<code class="descname">data_type_convert_table_binary</code><span class="sig-paren">(</span><em>data_type</em>, <em>data</em>, <em>decode_strings=False</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/data_types.html#data_type_convert_table_binary"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.reader.data_types.data_type_convert_table_binary" title="Permalink to this definition">¶</a></dt>
+<dd><p>Cast data originating from a PDS4 Table_Binary data structure in the form of an
+array_like[byte_string] to an array with the proper dtype for <em>data_type</em>. Most likely
+this data is a single Field, or a single repetition of a Field, since different Fields have different
+data types.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>data_type</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str or unicode</span></dt>
+<dd><p class="first last">The PDS4 data type that the data should be cast to.</p>
+</dd>
+<dt><strong>data</strong> <span class="classifier-delimiter">:</span> <span class="classifier">array_like[str or bytes]</span></dt>
+<dd><p class="first last">Flat array of PDS4 byte strings from a Table_Binary data structure.</p>
+</dd>
+<dt><strong>decode_strings</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool, optional</span></dt>
+<dd><p class="first last">If True, and the returned dtype is a form of character, then the obtained dtype will be a form of
+unicode. If False, then for character data the obtained dtype will remain byte strings. Defaults to
+False.</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>np.ndarray</strong></dt>
+<dd><p class="first last">Data cast from a byte string array into a values array having the right data type.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="pds4_tools.reader.data_types.pds_to_numpy_type">
+<code class="descname">pds_to_numpy_type</code><span class="sig-paren">(</span><em>data_type=None</em>, <em>data=None</em>, <em>field_length=None</em>, <em>decode_strings=False</em>, <em>scaling_factor=None</em>, <em>value_offset=None</em>, <em>include_endian=True</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/data_types.html#pds_to_numpy_type"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.reader.data_types.pds_to_numpy_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Obtain a NumPy dtype for PDS4 data.</p>
+<p>Either <em>data</em> or <em>data_type</em> must be provided.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>data_type</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str or unicode, optional</span></dt>
+<dd><p class="first last">A PDS4 data type. If <em>data</em> is omitted, the obtained NumPy data type is based on this value
+(see notes).</p>
+</dd>
+<dt><strong>data</strong> <span class="classifier-delimiter">:</span> <span class="classifier">array_like, optional</span></dt>
+<dd><p class="first last">A data array. If <em>data_type</em> is omitted, the obtained NumPy data type is based on this value
+(see notes).</p>
+</dd>
+<dt><strong>field_length</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int, optional</span></dt>
+<dd><p class="first last">If given, and the returned dtype is a form of character, then it will include the number of
+characters. Takes priority over length of <em>data</em> when given.</p>
+</dd>
+<dt><strong>decode_strings</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool, optional</span></dt>
+<dd><p class="first last">If True, and the returned dtype is a form of character, then the obtained dtype will be a form of
+unicode. If False, then for character data the obtained dtype will remain byte strings. If <em>data</em> is
+given and is unicode, then this setting will be ignored and unicode dtype will be returned. If
+<em>data_type</em> is given and refers to bit-strings, then this setting will be ignored and a byte string
+dtype will be returned. Defaults to False.</p>
+</dd>
+<dt><strong>scaling_factor</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int, float or None, optional</span></dt>
+<dd><p class="first last">PDS4 scaling factor. If given, the returned dtype will be large enough to contain data scaled by
+this number. Defaults to None, indicating a value of 1.</p>
+</dd>
+<dt><strong>value_offset</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int, float or None, optional</span></dt>
+<dd><p class="first last">PDS4 value offset. If given, the returned dtype will be large enough to contain data offset by this
+number. Defaults to None, indicating a value of 0.</p>
+</dd>
+<dt><strong>include_endian</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool, optional</span></dt>
+<dd><p class="first last">If True, the returned dtype will contain an explicit endianness as specified by the PDS4 data type.
+If False, the dtype will not specifically indicate the endianness, typically implying same endianness
+as the current machine. Defaults to True.</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>np.dtype</strong></dt>
+<dd><p class="first last">A NumPy dtype that can store the data described by the input parameters.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<p>For certain data (such as ASCII_Integer), there are a number of NumPy dtypes (e.g. int8, int32, int64)
+that could be used. If only the PDS4 data type is given, the returned dtype will be large enough to store
+any possible valid value according to the PDS4 Standard. However, if the <em>data</em> parameter is specified,
+then the obtained dtype will not be any larger than needed to store exactly that data (plus any
+scaling/offset specified).</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pds4_tools.reader.data_types.pds_to_builtin_type">
+<code class="descname">pds_to_builtin_type</code><span class="sig-paren">(</span><em>data_type=None</em>, <em>data=None</em>, <em>decode_strings=False</em>, <em>scaling_factor=None</em>, <em>value_offset=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/data_types.html#pds_to_builtin_type"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.reader.data_types.pds_to_builtin_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Obtain a Python __builtin__ data type for PDS4 data.</p>
+<p>Either <em>data</em> or <em>data_type</em> must be provided.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>data_type</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str or unicode, optional</span></dt>
+<dd><p class="first last">A PDS4 data type. If <em>data</em> is omitted, the obtained builtin data type is based on this value.</p>
+</dd>
+<dt><strong>data</strong> <span class="classifier-delimiter">:</span> <span class="classifier">array_like, optional</span></dt>
+<dd><p class="first last">A data array. If <em>data_type</em> is omitted, the obtained builtin data type is based on this value.</p>
+</dd>
+<dt><strong>decode_strings</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool, optional</span></dt>
+<dd><p class="first last">If True, and the returned data type is a form of character, then the obtained data type will be
+either <code class="docutils literal notranslate"><span class="pre">str</span></code> (Python 3) or <code class="docutils literal notranslate"><span class="pre">unicode</span></code> (Python 2). If False, then for character data
+the obtained data type will remain byte strings. If <em>data</em> is given and is unicode, then this
+setting will be ignored and unicode data type will be returned. If <em>data_type</em> is given and
+refers to bit-strings, then this setting will be ignored and a byte string data type will be returned.
+Defaults to False.</p>
+</dd>
+<dt><strong>scaling_factor</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int, float or None, optional</span></dt>
+<dd><p class="first last">PDS4 scaling factor. If given, the returned data type will be large enough to contain data scaled by
+this number. Defaults to None, indicating a value of 1.</p>
+</dd>
+<dt><strong>value_offset</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int, float or None, optional</span></dt>
+<dd><p class="first last">PDS4 value offset. If given, the returned data type will will be large enough to contain data offset
+by this number. Defaults to None, indicating a value of 0.</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>str, unicode, bytes, int, float, bool, complex</strong></dt>
+<dd><p class="first last">A builtin data type that can store the data described by the input parameters.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="pds4_tools.reader.data_types.pds_to_numpy_name">
+<code class="descname">pds_to_numpy_name</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/data_types.html#pds_to_numpy_name"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.reader.data_types.pds_to_numpy_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a NumPy field name from a PDS4 field name.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str or unicode</span></dt>
+<dd><p class="first last">A PDS4 field name.</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>str</strong></dt>
+<dd><p class="first last">A NumPy-compliant field name.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="pds4_tools.reader.data_types.apply_scaling_and_value_offset">
+<code class="descname">apply_scaling_and_value_offset</code><span class="sig-paren">(</span><em>data</em>, <em>scaling_factor=None</em>, <em>value_offset=None</em>, <em>special_constants=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/data_types.html#apply_scaling_and_value_offset"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.reader.data_types.apply_scaling_and_value_offset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Applies scaling factor and value offset to <em>data</em>.</p>
+<p>Data is modified in-place, if possible. Data type may change to prevent numerical overflow
+if applying scaling factor and value offset would cause one.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>data</strong> <span class="classifier-delimiter">:</span> <span class="classifier">array_like</span></dt>
+<dd><p class="first last">Any numeric PDS4 data.</p>
+</dd>
+<dt><strong>scaling_factor</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int, float or None, optional</span></dt>
+<dd><p class="first last">PDS4 scaling factor to apply to the array. Defaults to None, indicating a value of 1.</p>
+</dd>
+<dt><strong>value_offset</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int, float or None, optional</span></dt>
+<dd><p class="first last">PDS4 value offset to apply to the array. Defaults to None, indicating a value of 0.</p>
+</dd>
+<dt><strong>special_constants</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dict, optional</span></dt>
+<dd><p class="first last">If provided, the keys correspond to names and values correspond to numeric values for
+special constants. Those particular values will not be scaled or offset.</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>np.ndarray or subclass</strong></dt>
+<dd><p class="first last"><em>data</em> with <em>scaling_factor</em> and <em>value_offset</em> applied, potentially with a new dtype if necessary
+to fit new values.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="pds4_tools.reader.data_types.adjust_array_data_type">
+<code class="descname">adjust_array_data_type</code><span class="sig-paren">(</span><em>array</em>, <em>scaling_factor=None</em>, <em>value_offset=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/data_types.html#adjust_array_data_type"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.reader.data_types.adjust_array_data_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts the input <em>array</em> into a new large enough data type if adjusting said array as-is by
+<em>scaling_factor</em> or <em>value_offset</em> would result in an overflow. This can be necessary both
+if the array is data from a PDS4 Array or a PDS4 Table, so long as it has a scaling factor or value
+offset associated with it.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>array</strong> <span class="classifier-delimiter">:</span> <span class="classifier">array_like</span></dt>
+<dd><p class="first last">Any PDS4 numeric data.</p>
+</dd>
+<dt><strong>scaling_factor</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int, float or None, optional</span></dt>
+<dd><p class="first last">PDS4 scaling factor to apply to the array. Defaults to None, indicating a value of 1.</p>
+</dd>
+<dt><strong>value_offset</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int, float or None, optional</span></dt>
+<dd><p class="first last">PDS4 value offset to apply to the array. Defaults to None, indicating a value of 0.</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>np.ndarray or subclass</strong></dt>
+<dd><p class="first last">Original <em>array</em> modified to have a new data type if necessary or unchanged if otherwise.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="pds4_tools.reader.data_types.get_scaled_numpy_type">
+<code class="descname">get_scaled_numpy_type</code><span class="sig-paren">(</span><em>data_type=None</em>, <em>data=None</em>, <em>scaling_factor=None</em>, <em>value_offset=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/data_types.html#get_scaled_numpy_type"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.reader.data_types.get_scaled_numpy_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Obtain the NumPy dtype that would be necessary to store PDS4 data once that data has been scaled.</p>
+<p>When scaling data, the final data type is likely going to be different from the original data type
+it has. (E.g. if you multiply integers by a float, then the final data type will be float.) This method
+determines what that final data type will have to be when given the initial data type and the scaling
+and offset values.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>data_type</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str or unicode, optional</span></dt>
+<dd><p class="first last">If given, specifies the initial PDS4 data type that the unscaled data has or would have.</p>
+</dd>
+<dt><strong>data</strong> <span class="classifier-delimiter">:</span> <span class="classifier">array_like or None, optional</span></dt>
+<dd><p class="first last">If given, an array of data. When given, the initial data type for the unscaled data will be taken
+from this array and <em>data_type</em> ignored. For some ASCII data types in PDS4, the exact necessary data
+type (scaled or unscaled) can only be obtained when the data is already known. If data is not given,
+a data type sufficient (but possibly larger than necessary) to store the data will be returned.
+Defaults to None.</p>
+</dd>
+<dt><strong>scaling_factor</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int, float, or None</span></dt>
+<dd><p class="first last">PDS4 scaling factor that will later be applied to the data. Defaults to None, indicating a value of 1.</p>
+</dd>
+<dt><strong>value_offset</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int, float, or None</span></dt>
+<dd><p class="first last">PDS4 value offset that will later be applied to the data. Defaults to None, indicating a value of 0.</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>np.dtype</strong></dt>
+<dd><p class="first last">A NumPy dtype large enough to store the data if it has had <em>scaling_factor</em> and <em>value_offset</em>.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<p>For masked data, the output type will be large enough to store the masked data values as if they had
+been scaled/offset. This is because NumPy documentation notes that masked data are not guaranteed
+to be unaffected by arithmetic operations, only that every attempt will be made to do so.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pds4_tools.reader.data_types.decode_bytes_to_unicode">
+<code class="descname">decode_bytes_to_unicode</code><span class="sig-paren">(</span><em>array</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/data_types.html#decode_bytes_to_unicode"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.reader.data_types.decode_bytes_to_unicode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Decodes each byte string in the array into unicode.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>array</strong> <span class="classifier-delimiter">:</span> <span class="classifier">array_like</span></dt>
+<dd><p class="first last">An array containing only byte strings (<code class="docutils literal notranslate"><span class="pre">str</span></code> in Python 2, <code class="docutils literal notranslate"><span class="pre">bytes</span></code> in Python 3).</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>np.ndarray or subclass</strong></dt>
+<dd><p class="first last">An array in which each element of input <em>array</em> has been decoded to unicode.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="pds4_tools.reader.data_types.mask_special_constants">
+<code class="descname">mask_special_constants</code><span class="sig-paren">(</span><em>data</em>, <em>special_constants</em>, <em>mask_strings=False</em>, <em>copy=False</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/data_types.html#mask_special_constants"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.reader.data_types.mask_special_constants" title="Permalink to this definition">¶</a></dt>
+<dd><p>Mask out special constants in an array.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>data</strong> <span class="classifier-delimiter">:</span> <span class="classifier">array_like</span></dt>
+<dd><p class="first last">An array of data in which to mask out special constants.</p>
+</dd>
+<dt><strong>special_constants</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dict</span></dt>
+<dd><p class="first last">A dictionary, where keys are the names of the special constants, and the values will be masked
+out.</p>
+</dd>
+<dt><strong>mask_strings</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool, optional</span></dt>
+<dd><p class="first last">If True, character data will also be masked out if it has special constants. If False, only
+numeric data will be masked out. Defaults to False.</p>
+</dd>
+<dt><strong>copy</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool, optional</span></dt>
+<dd><p class="first last">If True, the returned masked data is a copy. If False, a view is returned instead. Defaults to False.</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>np.ma.MaskedArray, np.ndarray or subclass</strong></dt>
+<dd><p class="first last">If data to be masked is found, an <code class="docutils literal notranslate"><span class="pre">np.ma.MaskedArray</span></code> or subclass view (preserving input class
+if it was already a subclass of masked arrays). Otherwise the input <em>data</em> will be returned.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<p>The match between special constant value and data value (to mask it out) in this method is simplistic
+and based on the NumPy implementation of equality. Currently the PDS4 Standard does not provide enough
+clarity on how this match should be done.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pds4_tools.reader.data_types.get_min_integer_numpy_type">
+<code class="descname">get_min_integer_numpy_type</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/data_types.html#get_min_integer_numpy_type"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.reader.data_types.get_min_integer_numpy_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Obtain smallest integer NumPy dtype that can store every value in the input array.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>data</strong> <span class="classifier-delimiter">:</span> <span class="classifier">array_like</span></dt>
+<dd><p class="first last">PDS4 integer data.</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>np.dtype</strong></dt>
+<dd><p class="first last">The NumPy dtype that can store all integers in data.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="pds4_tools.reader.data_types.is_pds_integer_data">
+<code class="descname">is_pds_integer_data</code><span class="sig-paren">(</span><em>data=None</em>, <em>pds_data_type=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/data_types.html#is_pds_integer_data"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.reader.data_types.is_pds_integer_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Determine, from a data array or from a PDS4 data type, whether such data is an integer.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>data</strong> <span class="classifier-delimiter">:</span> <span class="classifier">array_like, optional</span></dt>
+<dd><p class="first last">If given, checks whether this data is integer data.</p>
+</dd>
+<dt><strong>pds_data_type</strong></dt>
+<dd><p class="first last">If given, checks whether this PDS data type corresponds to integer data.</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>bool</strong></dt>
+<dd><p class="first last">True if <em>data</em> and/or <em>pds_data_type</em> contain or correspond to PDS4 integer data, False otherwise.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<p>This is necessary, as opposed to simply checking for dtype, because some PDS4 data is integer but may
+have the ‘object’ dtype because it may overflow 64-bit integers (e.g. ASCII_Numeric_Base data, which
+is not limited to 64-bit sizes by the PDS4 standard).</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="pds4_tools.utils.html" title="pds4_tools.utils package"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="pds4_tools.reader.data.html" title="pds4_tools.reader.data module"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">PDS4 Python Tools 1.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="pds4_tools.reader.html" >pds4_tools.reader package</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2015 - 2018, University of Maryland.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.6.
+    </div>
+  </body>
+</html>

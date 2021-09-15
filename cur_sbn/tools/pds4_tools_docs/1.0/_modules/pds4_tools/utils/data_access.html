@@ -1,0 +1,448 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>pds4_tools.utils.data_access &#8212; PDS4 Python Tools 1.0 documentation</title>
+    <link rel="stylesheet" href="../../../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/css/custom.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">PDS4 Python Tools 1.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" accesskey="U">Module code</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Source code for pds4_tools.utils.data_access</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="k">import</span> <span class="n">absolute_import</span>
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="k">import</span> <span class="n">division</span>
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="k">import</span> <span class="n">print_function</span>
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="k">import</span> <span class="n">unicode_literals</span>
+
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">atexit</span>
+<span class="kn">import</span> <span class="nn">tempfile</span>
+
+<span class="kn">from</span> <span class="nn">..utils.logging</span> <span class="k">import</span> <span class="n">logger_init</span>
+
+<span class="kn">from</span> <span class="nn">..extern</span> <span class="k">import</span> <span class="n">six</span>
+<span class="kn">from</span> <span class="nn">..extern.six.moves</span> <span class="k">import</span> <span class="n">urllib</span>
+
+<span class="c1"># Initialize the logger</span>
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logger_init</span><span class="p">()</span>
+
+<span class="c1">#################################</span>
+
+
+<span class="c1"># Used to store URL (keys)and path (values) as temporary cache, then delete</span>
+<span class="c1"># the downloaded files on Python interpreter exit.</span>
+<span class="n">_temp_files</span> <span class="o">=</span> <span class="p">{}</span>
+
+
+<div class="viewcode-block" id="is_supported_url"><a class="viewcode-back" href="../../../pds4_tools.utils.data_access.html#pds4_tools.utils.data_access.is_supported_url">[docs]</a><span class="k">def</span> <span class="nf">is_supported_url</span><span class="p">(</span><span class="n">string</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Check if a string is a supported URL.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    string : str or unicode</span>
+<span class="sd">        The string to test.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    bool</span>
+<span class="sd">        True if URL scheme is supported for download (HTTP, HTTPS, FTP); False otherwise.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">url</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">parse</span><span class="o">.</span><span class="n">urlparse</span><span class="p">(</span><span class="n">string</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">url</span><span class="o">.</span><span class="n">scheme</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;http&#39;</span><span class="p">,</span> <span class="s1">&#39;https&#39;</span><span class="p">,</span> <span class="s1">&#39;ftp&#39;</span><span class="p">,</span> <span class="s1">&#39;file&#39;</span><span class="p">]</span></div>
+
+
+<div class="viewcode-block" id="download_file"><a class="viewcode-back" href="../../../pds4_tools.utils.data_access.html#pds4_tools.utils.data_access.download_file">[docs]</a><span class="k">def</span> <span class="nf">download_file</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">force</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">block_size</span><span class="o">=</span><span class="mi">65536</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Download a remote file from a URL.</span>
+
+<span class="sd">    Files are downloaded into a local cache location, and deleted upon Python interpreter exit.</span>
+<span class="sd">    Uses `is_supported_url` to determine supported URL schemes.</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    The cache location can be customized via the ``PDS4TOOLSCACHEDIR`` environment variable.</span>
+<span class="sd">    Partially adapted from ``astropy.utils.data.download_file``.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    url : str or unicode</span>
+<span class="sd">        A supported remote URL to download.</span>
+<span class="sd">    force : bool, optional</span>
+<span class="sd">        Re-download file even if the URL is already cached. Defaults to None.</span>
+<span class="sd">    block_size : int, optional</span>
+<span class="sd">        The block-size of each remote read command, in bytes. Defaults to 64 KB.</span>
+<span class="sd">    timeout : int, optional</span>
+<span class="sd">        A timeout in seconds for blocking operations like the connection attempt. Defaults to 10 seconds.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    str or unicode</span>
+<span class="sd">        Path to the local (cache) location of the downloaded file.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># Keep a copy of the original URL prior to encoding/decoding</span>
+    <span class="n">url_original</span> <span class="o">=</span> <span class="n">url</span>
+
+    <span class="c1"># Obtain URL to pass to ``urlopen``; ultimately same location as *url* but may-be encoded/decoded as needed</span>
+    <span class="c1"># to avoid ``urlopen`` raising exceptions.</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="n">_process_url</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+
+    <span class="c1"># Download the URL when not cached</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">url</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">_temp_files</span><span class="p">)</span> <span class="ow">or</span> <span class="n">force</span><span class="p">:</span>
+
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;Downloading URL: </span><span class="si">{0}</span><span class="s1"> ... &#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">url_original</span><span class="p">),</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+
+        <span class="c1"># Open the connection to remote URL (should not download content)</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">remote</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
+
+        <span class="k">except</span> <span class="n">urllib</span><span class="o">.</span><span class="n">error</span><span class="o">.</span><span class="n">URLError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">e</span><span class="o">.</span><span class="n">msg</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">{0}</span><span class="s1"> for URL: </span><span class="si">{1}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">msg</span><span class="p">,</span> <span class="n">url</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="n">e</span><span class="o">.</span><span class="n">reason</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">{0}</span><span class="s1"> for URL: </span><span class="si">{1}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">reason</span><span class="p">,</span> <span class="n">url</span><span class="p">)</span>
+                <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+                    <span class="k">pass</span>
+
+            <span class="k">raise</span> <span class="n">e</span>
+
+        <span class="c1"># Obtain size of file to download</span>
+        <span class="n">info</span> <span class="o">=</span> <span class="n">remote</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+        <span class="k">if</span> <span class="s1">&#39;Content-Length&#39;</span> <span class="ow">in</span> <span class="n">info</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">size</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">info</span><span class="p">[</span><span class="s1">&#39;Content-Length&#39;</span><span class="p">])</span>
+            <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+                <span class="n">size</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">size</span> <span class="o">=</span> <span class="kc">None</span>
+
+        <span class="n">size_MB</span> <span class="o">=</span> <span class="kc">None</span> <span class="k">if</span> <span class="p">(</span><span class="n">size</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">)</span> <span class="k">else</span> <span class="n">size</span> <span class="o">/</span> <span class="mf">1e6</span>
+
+        <span class="c1"># Determine whether to show a progress bar</span>
+        <span class="n">show_progress_bar</span> <span class="o">=</span> <span class="p">(</span><span class="n">size_MB</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">size_MB</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">)</span>
+
+        <span class="c1"># Open a temporary file, get its path</span>
+        <span class="n">file_handler</span> <span class="o">=</span> <span class="n">tempfile</span><span class="o">.</span><span class="n">NamedTemporaryFile</span><span class="p">(</span><span class="n">prefix</span><span class="o">=</span><span class="s1">&#39;temp_&#39;</span><span class="p">,</span> <span class="nb">dir</span><span class="o">=</span><span class="n">_get_cache_dir</span><span class="p">(),</span> <span class="n">delete</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="n">filename</span> <span class="o">=</span> <span class="n">file_handler</span><span class="o">.</span><span class="n">name</span>
+
+        <span class="c1"># Download the remote URL into a temporary file</span>
+        <span class="k">with</span> <span class="n">_ProgressBar</span><span class="p">(</span><span class="n">size_MB</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s1">&#39;MB&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">progress_bar</span><span class="p">:</span>
+
+            <span class="k">try</span><span class="p">:</span>
+
+                <span class="n">block</span> <span class="o">=</span> <span class="n">remote</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">block_size</span><span class="p">)</span>
+                <span class="n">bytes_read</span> <span class="o">=</span> <span class="n">block_size</span>
+
+                <span class="k">while</span> <span class="n">block</span><span class="p">:</span>
+
+                    <span class="n">file_handler</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">block</span><span class="p">)</span>
+                    <span class="n">block</span> <span class="o">=</span> <span class="n">remote</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">block_size</span><span class="p">)</span>
+                    <span class="n">bytes_read</span> <span class="o">+=</span> <span class="n">block_size</span>
+
+                    <span class="k">if</span> <span class="n">show_progress_bar</span><span class="p">:</span>
+
+                        <span class="n">line_start</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span> <span class="k">if</span> <span class="p">(</span><span class="n">progress_bar</span><span class="o">.</span><span class="n">percent_done</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="k">else</span> <span class="s1">&#39;</span><span class="se">\r</span><span class="s1">&#39;</span>
+                        <span class="n">msg</span> <span class="o">=</span> <span class="n">progress_bar</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">block_size</span> <span class="o">/</span> <span class="mf">1e6</span><span class="p">)</span>
+                        <span class="n">line_end</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span> <span class="k">if</span> <span class="p">(</span><span class="n">progress_bar</span><span class="o">.</span><span class="n">percent_done</span> <span class="o">==</span> <span class="mi">100</span><span class="p">)</span> <span class="k">else</span> <span class="s1">&#39;&#39;</span>
+
+                        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{0}{1}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">line_start</span><span class="p">,</span> <span class="n">msg</span><span class="p">),</span> <span class="n">end</span><span class="o">=</span><span class="n">line_end</span><span class="p">)</span>
+
+                <span class="n">file_handler</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+                <span class="k">if</span> <span class="ow">not</span> <span class="n">show_progress_bar</span><span class="p">:</span>
+                    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;done&#39;</span><span class="p">)</span>
+
+            <span class="k">except</span> <span class="ne">BaseException</span><span class="p">:</span>
+
+                <span class="n">file_handler</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+                <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+                    <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+
+                <span class="k">raise</span>
+
+        <span class="n">_temp_files</span><span class="p">[</span><span class="n">url</span><span class="p">]</span> <span class="o">=</span> <span class="n">filename</span>
+
+    <span class="c1"># URL is cached, obtain physical location of file on disk</span>
+    <span class="k">else</span><span class="p">:</span>
+
+        <span class="n">filename</span> <span class="o">=</span> <span class="n">_temp_files</span><span class="p">[</span><span class="n">url</span><span class="p">]</span>
+
+    <span class="k">return</span> <span class="n">filename</span></div>
+
+
+<div class="viewcode-block" id="clear_download_cache"><a class="viewcode-back" href="../../../pds4_tools.utils.data_access.html#pds4_tools.utils.data_access.clear_download_cache">[docs]</a><span class="k">def</span> <span class="nf">clear_download_cache</span><span class="p">(</span><span class="n">urls</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Clears the data file cache by deleting the local file(s).</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    urls : list[str or unicode], optional</span>
+<span class="sd">        If given, a list of URLs to delete from the cache. Defaults to None,</span>
+<span class="sd">        which deletes all files/URLs from the cache.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    None</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="n">urls</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">urls</span> <span class="o">=</span> <span class="p">[</span><span class="n">_process_url</span><span class="p">(</span><span class="n">url</span><span class="p">)</span> <span class="k">for</span> <span class="n">url</span> <span class="ow">in</span> <span class="n">urls</span><span class="p">]</span>
+
+    <span class="k">if</span> <span class="n">_temp_files</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+
+        <span class="k">for</span> <span class="n">url</span><span class="p">,</span> <span class="n">filename</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">_temp_files</span><span class="o">.</span><span class="n">items</span><span class="p">()):</span>
+
+            <span class="k">if</span> <span class="p">(</span><span class="n">urls</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">url</span> <span class="ow">in</span> <span class="n">urls</span><span class="p">):</span>
+
+                <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+                    <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+
+                <span class="k">del</span> <span class="n">_temp_files</span><span class="p">[</span><span class="n">url</span><span class="p">]</span></div>
+
+
+<span class="k">def</span> <span class="nf">_get_cache_dir</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot; Obtain location to store downloaded files for temporary caching.</span>
+
+<span class="sd">    Uses `tempfile.gettempdir` by default. The environment variable</span>
+<span class="sd">    ``PDS4TOOLSCACHEDIR`` may be used to specify an alternate directory.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    str or unicode</span>
+<span class="sd">        Path to directory used to store a temporary cache of downloaded files.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">environ_cache_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;PDS4TOOLSCACHEDIR&#39;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">environ_cache_dir</span><span class="p">:</span>
+        <span class="n">cache_dir</span> <span class="o">=</span> <span class="n">environ_cache_dir</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">cache_dir</span> <span class="o">=</span> <span class="n">tempfile</span><span class="o">.</span><span class="n">gettempdir</span><span class="p">()</span>
+
+    <span class="k">return</span> <span class="n">cache_dir</span>
+
+
+<span class="k">def</span> <span class="nf">_process_url</span><span class="p">(</span><span class="n">url</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Processes URL to one suitable for use with `urlib`.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    url : str or unicode</span>
+<span class="sd">        A supported remote URL.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    str or unicode</span>
+<span class="sd">        A URL that points to the same address as *url*, but where the actual string is potentially adjusted</span>
+<span class="sd">        such that it does not cause errors with `urllib`.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># URL decode, e.g. in case user is pasting UTF8 URLs from a browser URL bar, which for most</span>
+    <span class="c1"># popular browsers will encode first</span>
+    <span class="k">if</span> <span class="n">six</span><span class="o">.</span><span class="n">PY2</span><span class="p">:</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">parse</span><span class="o">.</span><span class="n">unquote</span><span class="p">(</span><span class="n">url</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">))</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">parse</span><span class="o">.</span><span class="n">unquote</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+
+    <span class="c1"># URL encode, necessary for URLs with non-ASCII characters or urllib will raise an Exception.</span>
+    <span class="c1"># The above combination of decode first (which does nothing if not already encoded) then encode allows us to</span>
+    <span class="c1"># handle both URLs coming in as decoded and encoded.</span>
+    <span class="c1"># Note: the underscore methods of `urlsplit` are not private, but rather used for disambiguation; see Python docs.</span>
+    <span class="n">url_parsed</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">parse</span><span class="o">.</span><span class="n">urlparse</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">attrib</span> <span class="ow">in</span> <span class="n">url_parsed</span><span class="o">.</span><span class="n">_fields</span><span class="p">:</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">attrib</span> <span class="o">==</span> <span class="s1">&#39;netloc&#39;</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">url_parsed</span><span class="o">.</span><span class="n">port</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">):</span>
+            <span class="n">replace_dict</span> <span class="o">=</span> <span class="p">{</span><span class="n">attrib</span><span class="p">:</span> <span class="s1">&#39;</span><span class="si">{0}</span><span class="s1">:</span><span class="si">{1}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                                                    <span class="n">urllib</span><span class="o">.</span><span class="n">parse</span><span class="o">.</span><span class="n">quote</span><span class="p">(</span><span class="n">url_parsed</span><span class="o">.</span><span class="n">hostname</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)),</span>
+                                                    <span class="n">url_parsed</span><span class="o">.</span><span class="n">port</span><span class="p">)}</span>
+
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">attrib_value</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">url_parsed</span><span class="p">,</span> <span class="n">attrib</span><span class="p">)</span>
+            <span class="n">replace_dict</span> <span class="o">=</span> <span class="p">{</span><span class="n">attrib</span><span class="p">:</span> <span class="n">urllib</span><span class="o">.</span><span class="n">parse</span><span class="o">.</span><span class="n">quote</span><span class="p">(</span><span class="n">attrib_value</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">))}</span>
+
+        <span class="n">url_parsed</span> <span class="o">=</span> <span class="n">url_parsed</span><span class="o">.</span><span class="n">_replace</span><span class="p">(</span><span class="o">**</span><span class="n">replace_dict</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">urllib</span><span class="o">.</span><span class="n">parse</span><span class="o">.</span><span class="n">urlunparse</span><span class="p">(</span><span class="n">url_parsed</span><span class="p">)</span>
+
+
+<span class="nd">@atexit</span><span class="o">.</span><span class="n">register</span>
+<span class="k">def</span> <span class="nf">_delete_temp_files</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Deletes files downloaded on Python interpreter exit.</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    This will not work if the process is killed, thus leaving temporary files around.</span>
+<span class="sd">    Not great, but hopefully a rare occurrence.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    None</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">clear_download_cache</span><span class="p">()</span>
+
+
+<span class="k">class</span> <span class="nc">_ProgressBar</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; A class to display a progress bar in a console/terminal.</span>
+
+<span class="sd">    Adapted from ``astropy.utils.console.ProgressBar``.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    total : int or float</span>
+<span class="sd">        The maximum number of what the progress bar is tracking, i.e. the value when the bar is 100% filled.</span>
+<span class="sd">    unit : str or unicode, optional</span>
+<span class="sd">        The unit of what the progress bar is tracking. Defaults to no units, i.e. an empty string.</span>
+<span class="sd">    output_func : any_function, optional</span>
+<span class="sd">        A function that takes a str or unicode as input. This function is called to output the current progress</span>
+<span class="sd">        bar on each update. Defaults to None, which means no output.</span>
+<span class="sd">    bar_length : int</span>
+<span class="sd">        The length of the progress bar, in characters. Defaults to 50.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">total</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">output_func</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">bar_length</span><span class="o">=</span><span class="mi">50</span><span class="p">):</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_total</span> <span class="o">=</span> <span class="n">total</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_current_value</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_output_func</span> <span class="o">=</span> <span class="n">output_func</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_unit</span> <span class="o">=</span> <span class="n">unit</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_bar_length</span> <span class="o">=</span> <span class="n">bar_length</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">percent_done</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        float</span>
+<span class="sd">            The percentage of the progress bar currently filled.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_current_value</span> <span class="o">&gt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_total</span><span class="p">:</span>
+            <span class="n">percent_done</span> <span class="o">=</span> <span class="mf">100.0</span>
+
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">percent_done</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_current_value</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">_total</span> <span class="o">*</span> <span class="mf">100.0</span>
+
+        <span class="k">return</span> <span class="n">percent_done</span>
+
+    <span class="k">def</span> <span class="nf">__enter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span>
+
+    <span class="k">def</span> <span class="nf">__exit__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">exc_type</span><span class="p">,</span> <span class="n">exc_value</span><span class="p">,</span> <span class="n">traceback</span><span class="p">):</span>
+        <span class="k">return</span>
+
+    <span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">set_value</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Update the progress bar in console/terminal.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        value : int or float, optional</span>
+<span class="sd">            The value to update the current progress, out of total, by. Defaults to 1.</span>
+<span class="sd">        set_value : bool, optional</span>
+<span class="sd">            If True, the current value, out of total, is set to *value*. If False, the current value is incremented</span>
+<span class="sd">            by *value*. Defaults to False.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        str or unicode</span>
+<span class="sd">            The current progress bar string.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">if</span> <span class="n">set_value</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_current_value</span> <span class="o">=</span> <span class="n">value</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_current_value</span> <span class="o">+=</span> <span class="n">value</span>
+
+        <span class="n">done_char_len</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">percent_done</span> <span class="o">/</span> <span class="mi">100</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">_bar_length</span><span class="p">)</span>
+        <span class="n">remain_char_len</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_bar_length</span> <span class="o">-</span> <span class="n">done_char_len</span>
+        <span class="n">done</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_total</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">percent_done</span> <span class="o">==</span> <span class="mi">100</span> <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">_current_value</span>
+        <span class="n">units</span> <span class="o">=</span> <span class="s1">&#39; </span><span class="si">{0}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_unit</span><span class="p">)</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_unit</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="s1">&#39;&#39;</span>
+
+        <span class="n">msg</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">{percent:3.0f}</span><span class="s1">% [</span><span class="si">{done_char}{remain_char}</span><span class="s1">] &#39;</span> \
+              <span class="s1">&#39;(</span><span class="si">{done:.2f}</span><span class="s1"> / </span><span class="si">{total:.2f}{unit}</span><span class="s1">)&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">percent</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">percent_done</span><span class="p">,</span>
+                                                        <span class="n">done_char</span><span class="o">=</span><span class="s1">&#39;=&#39;</span> <span class="o">*</span> <span class="n">done_char_len</span><span class="p">,</span>
+                                                        <span class="n">remain_char</span><span class="o">=</span><span class="s1">&#39; &#39;</span> <span class="o">*</span> <span class="n">remain_char_len</span><span class="p">,</span>
+                                                        <span class="n">done</span><span class="o">=</span><span class="n">done</span><span class="p">,</span>
+                                                        <span class="n">total</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_total</span><span class="p">,</span>
+                                                        <span class="n">unit</span><span class="o">=</span><span class="n">units</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_output_func</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_output_func</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">msg</span>
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">PDS4 Python Tools 1.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2015 - 2018, University of Maryland.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.6.
+    </div>
+  </body>
+</html>

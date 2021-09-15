@@ -1,0 +1,234 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>pds4_tools.utils.data_access module &#8212; PDS4 Python Tools 1.1 documentation</title>
+    <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="pds4_tools.utils.exceptions module" href="pds4_tools.utils.exceptions.html" />
+    <link rel="prev" title="pds4_tools.utils.constants module" href="pds4_tools.utils.constants.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="pds4_tools.utils.exceptions.html" title="pds4_tools.utils.exceptions module"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="pds4_tools.utils.constants.html" title="pds4_tools.utils.constants module"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">PDS4 Python Tools 1.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="pds4_tools.utils.html" accesskey="U">pds4_tools.utils package</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">pds4_tools.utils.data_access module</a><ul>
+<li><a class="reference internal" href="#functions">Functions</a></li>
+<li><a class="reference internal" href="#details">Details</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="pds4_tools.utils.constants.html"
+                        title="previous chapter">pds4_tools.utils.constants module</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="pds4_tools.utils.exceptions.html"
+                        title="next chapter">pds4_tools.utils.exceptions module</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/pds4_tools.utils.data_access.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="pds4-tools-utils-data-access-module">
+<h1>pds4_tools.utils.data_access module<a class="headerlink" href="#pds4-tools-utils-data-access-module" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="functions">
+<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#pds4_tools.utils.data_access.download_file" title="pds4_tools.utils.data_access.download_file"><code class="xref py py-obj docutils literal notranslate"><span class="pre">download_file</span></code></a>(url[,&nbsp;force,&nbsp;block_size,&nbsp;timeout])</td>
+<td>Download a remote file from a URL.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#pds4_tools.utils.data_access.is_supported_url" title="pds4_tools.utils.data_access.is_supported_url"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_supported_url</span></code></a>(string)</td>
+<td>Check if a string is a supported URL.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#pds4_tools.utils.data_access.clear_download_cache" title="pds4_tools.utils.data_access.clear_download_cache"><code class="xref py py-obj docutils literal notranslate"><span class="pre">clear_download_cache</span></code></a>([urls])</td>
+<td>Clears the data file cache by deleting the local file(s).</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="details">
+<h2>Details<a class="headerlink" href="#details" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="pds4_tools.utils.data_access.download_file">
+<code class="descname">download_file</code><span class="sig-paren">(</span><em>url</em>, <em>force=False</em>, <em>block_size=65536</em>, <em>timeout=10</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/utils/data_access.html#download_file"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.utils.data_access.download_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Download a remote file from a URL.</p>
+<p>Files are downloaded into a local cache location, and deleted upon Python interpreter exit.
+Uses <a class="reference internal" href="#pds4_tools.utils.data_access.is_supported_url" title="pds4_tools.utils.data_access.is_supported_url"><code class="xref any py py-func docutils literal notranslate"><span class="pre">is_supported_url</span></code></a> to determine supported URL schemes.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>url</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str or unicode</span></dt>
+<dd><p class="first last">A supported remote URL to download.</p>
+</dd>
+<dt><strong>force</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool, optional</span></dt>
+<dd><p class="first last">Re-download file even if the URL is already cached. Defaults to None.</p>
+</dd>
+<dt><strong>block_size</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int, optional</span></dt>
+<dd><p class="first last">The block-size of each remote read command, in bytes. Defaults to 64 KB.</p>
+</dd>
+<dt><strong>timeout</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int, optional</span></dt>
+<dd><p class="first last">A timeout in seconds for blocking operations like the connection attempt. Defaults to 10 seconds.</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>str or unicode</strong></dt>
+<dd><p class="first last">Path to the local (cache) location of the downloaded file.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<p>The cache location can be customized via the <code class="docutils literal notranslate"><span class="pre">PDS4TOOLSCACHEDIR</span></code> environment variable.
+Partially adapted from <code class="docutils literal notranslate"><span class="pre">astropy.utils.data.download_file</span></code>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pds4_tools.utils.data_access.is_supported_url">
+<code class="descname">is_supported_url</code><span class="sig-paren">(</span><em>string</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/utils/data_access.html#is_supported_url"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.utils.data_access.is_supported_url" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if a string is a supported URL.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>string</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str or unicode</span></dt>
+<dd><p class="first last">The string to test.</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>bool</strong></dt>
+<dd><p class="first last">True if URL scheme is supported for download (HTTP, HTTPS, FTP); False otherwise.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="pds4_tools.utils.data_access.clear_download_cache">
+<code class="descname">clear_download_cache</code><span class="sig-paren">(</span><em>urls=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/utils/data_access.html#clear_download_cache"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.utils.data_access.clear_download_cache" title="Permalink to this definition">¶</a></dt>
+<dd><p>Clears the data file cache by deleting the local file(s).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>urls</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list[str or unicode], optional</span></dt>
+<dd><p class="first last">If given, a list of URLs to delete from the cache. Defaults to None,
+which deletes all files/URLs from the cache.</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>None</strong></dt>
+<dd></dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="pds4_tools.utils.exceptions.html" title="pds4_tools.utils.exceptions module"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="pds4_tools.utils.constants.html" title="pds4_tools.utils.constants module"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">PDS4 Python Tools 1.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="pds4_tools.utils.html" >pds4_tools.utils package</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2015 - 2019, University of Maryland.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.6.
+    </div>
+  </body>
+</html>

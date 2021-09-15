@@ -1,0 +1,371 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>pds4_tools.extern.appdirs module &#8212; PDS4 Python Tools 1.0 documentation</title>
+    <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="pds4_tools.extern.argparse module" href="pds4_tools.extern.argparse.html" />
+    <link rel="prev" title="pds4_tools.extern package" href="pds4_tools.extern.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="pds4_tools.extern.argparse.html" title="pds4_tools.extern.argparse module"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="pds4_tools.extern.html" title="pds4_tools.extern package"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">PDS4 Python Tools 1.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="pds4_tools.extern.html" accesskey="U">pds4_tools.extern package</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="pds4_tools.extern.html"
+                        title="previous chapter">pds4_tools.extern package</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="pds4_tools.extern.argparse.html"
+                        title="next chapter">pds4_tools.extern.argparse module</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/pds4_tools.extern.appdirs.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-pds4_tools.extern.appdirs">
+<span id="pds4-tools-extern-appdirs-module"></span><h1>pds4_tools.extern.appdirs module<a class="headerlink" href="#module-pds4_tools.extern.appdirs" title="Permalink to this headline">¶</a></h1>
+<p>Utilities for determining application-specific dirs.</p>
+<p>See &lt;<a class="reference external" href="http://github.com/ActiveState/appdirs">http://github.com/ActiveState/appdirs</a>&gt; for details and usage.</p>
+<dl class="function">
+<dt id="pds4_tools.extern.appdirs.user_data_dir">
+<code class="descname">user_data_dir</code><span class="sig-paren">(</span><em>appname=None</em>, <em>appauthor=None</em>, <em>version=None</em>, <em>roaming=False</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/extern/appdirs.html#user_data_dir"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.extern.appdirs.user_data_dir" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return full path to the user-specific data dir for this application.</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>“appname” is the name of application.</dt>
+<dd>If None, just the system directory is returned.</dd>
+<dt>“appauthor” (only used on Windows) is the name of the</dt>
+<dd>appauthor or distributing body for this application. Typically
+it is the owning company name. This falls back to appname. You may
+pass False to disable it.</dd>
+<dt>“version” is an optional version path element to append to the</dt>
+<dd>path. You might want to use this if you want multiple versions
+of your app to be able to run independently. If used, this
+would typically be “&lt;major&gt;.&lt;minor&gt;”.
+Only applied when appname is present.</dd>
+<dt>“roaming” (boolean, default False) can be set True to use the Windows</dt>
+<dd>roaming appdata directory. That means that for users on a Windows
+network setup for roaming profiles, this user data will be
+sync’d on login. See
+&lt;<a class="reference external" href="http://technet.microsoft.com/en-us/library/cc766489(WS.10).aspx">http://technet.microsoft.com/en-us/library/cc766489(WS.10).aspx</a>&gt;
+for a discussion of issues.</dd>
+</dl>
+</div></blockquote>
+<p>Typical user data directories are:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Mac</span> <span class="n">OS</span> <span class="n">X</span><span class="p">:</span>               <span class="o">~/</span><span class="n">Library</span><span class="o">/</span><span class="n">Application</span> <span class="n">Support</span><span class="o">/&lt;</span><span class="n">AppName</span><span class="o">&gt;</span>
+<span class="n">Unix</span><span class="p">:</span>                   <span class="o">~/.</span><span class="n">local</span><span class="o">/</span><span class="n">share</span><span class="o">/&lt;</span><span class="n">AppName</span><span class="o">&gt;</span>    <span class="c1"># or in $XDG_DATA_HOME, if defined</span>
+<span class="n">Win</span> <span class="n">XP</span> <span class="p">(</span><span class="ow">not</span> <span class="n">roaming</span><span class="p">):</span>   <span class="n">C</span><span class="p">:</span>\<span class="n">Documents</span> <span class="ow">and</span> <span class="n">Settings</span>\<span class="o">&lt;</span><span class="n">username</span><span class="o">&gt;</span>\<span class="n">Application</span> <span class="n">Data</span>\<span class="o">&lt;</span><span class="n">AppAuthor</span><span class="o">&gt;</span>\<span class="o">&lt;</span><span class="n">AppName</span><span class="o">&gt;</span>
+<span class="n">Win</span> <span class="n">XP</span> <span class="p">(</span><span class="n">roaming</span><span class="p">):</span>       <span class="n">C</span><span class="p">:</span>\<span class="n">Documents</span> <span class="ow">and</span> <span class="n">Settings</span>\<span class="o">&lt;</span><span class="n">username</span><span class="o">&gt;</span>\<span class="n">Local</span> <span class="n">Settings</span>\<span class="n">Application</span> <span class="n">Data</span>\<span class="o">&lt;</span><span class="n">AppAuthor</span><span class="o">&gt;</span>\<span class="o">&lt;</span><span class="n">AppName</span><span class="o">&gt;</span>
+<span class="n">Win</span> <span class="mi">7</span>  <span class="p">(</span><span class="ow">not</span> <span class="n">roaming</span><span class="p">):</span>   <span class="n">C</span><span class="p">:</span>\<span class="n">Users</span>\<span class="o">&lt;</span><span class="n">username</span><span class="o">&gt;</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="o">&lt;</span><span class="n">AppAuthor</span><span class="o">&gt;</span>\<span class="o">&lt;</span><span class="n">AppName</span><span class="o">&gt;</span>
+<span class="n">Win</span> <span class="mi">7</span>  <span class="p">(</span><span class="n">roaming</span><span class="p">):</span>       <span class="n">C</span><span class="p">:</span>\<span class="n">Users</span>\<span class="o">&lt;</span><span class="n">username</span><span class="o">&gt;</span>\<span class="n">AppData</span>\<span class="n">Roaming</span>\<span class="o">&lt;</span><span class="n">AppAuthor</span><span class="o">&gt;</span>\<span class="o">&lt;</span><span class="n">AppName</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>For Unix, we follow the XDG spec and support $XDG_DATA_HOME.
+That means, by default “~/.local/share/&lt;AppName&gt;”.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pds4_tools.extern.appdirs.site_data_dir">
+<code class="descname">site_data_dir</code><span class="sig-paren">(</span><em>appname=None</em>, <em>appauthor=None</em>, <em>version=None</em>, <em>multipath=False</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/extern/appdirs.html#site_data_dir"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.extern.appdirs.site_data_dir" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return full path to the user-shared data dir for this application.</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>“appname” is the name of application.</dt>
+<dd>If None, just the system directory is returned.</dd>
+<dt>“appauthor” (only used on Windows) is the name of the</dt>
+<dd>appauthor or distributing body for this application. Typically
+it is the owning company name. This falls back to appname. You may
+pass False to disable it.</dd>
+<dt>“version” is an optional version path element to append to the</dt>
+<dd>path. You might want to use this if you want multiple versions
+of your app to be able to run independently. If used, this
+would typically be “&lt;major&gt;.&lt;minor&gt;”.
+Only applied when appname is present.</dd>
+<dt>“multipath” is an optional parameter only applicable to *nix</dt>
+<dd>which indicates that the entire list of data dirs should be
+returned. By default, the first item from XDG_DATA_DIRS is
+returned, or ‘/usr/local/share/&lt;AppName&gt;’,
+if XDG_DATA_DIRS is not set</dd>
+</dl>
+</div></blockquote>
+<dl class="docutils">
+<dt>Typical user data directories are:</dt>
+<dd>Mac OS X:   /Library/Application Support/&lt;AppName&gt;
+Unix:       /usr/local/share/&lt;AppName&gt; or /usr/share/&lt;AppName&gt;
+Win XP:     C:Documents and SettingsAll UsersApplication Data&lt;AppAuthor&gt;&lt;AppName&gt;
+Vista:      (Fail! “C:ProgramData” is a hidden <em>system</em> directory on Vista.)
+Win 7:      C:ProgramData&lt;AppAuthor&gt;&lt;AppName&gt;   # Hidden, but writeable on Win 7.</dd>
+</dl>
+<p>For Unix, this is using the $XDG_DATA_DIRS[0] default.</p>
+<p>WARNING: Do not use this on Windows. See the Vista-Fail note above for why.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pds4_tools.extern.appdirs.user_config_dir">
+<code class="descname">user_config_dir</code><span class="sig-paren">(</span><em>appname=None</em>, <em>appauthor=None</em>, <em>version=None</em>, <em>roaming=False</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/extern/appdirs.html#user_config_dir"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.extern.appdirs.user_config_dir" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return full path to the user-specific config dir for this application.</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>“appname” is the name of application.</dt>
+<dd>If None, just the system directory is returned.</dd>
+<dt>“appauthor” (only used on Windows) is the name of the</dt>
+<dd>appauthor or distributing body for this application. Typically
+it is the owning company name. This falls back to appname. You may
+pass False to disable it.</dd>
+<dt>“version” is an optional version path element to append to the</dt>
+<dd>path. You might want to use this if you want multiple versions
+of your app to be able to run independently. If used, this
+would typically be “&lt;major&gt;.&lt;minor&gt;”.
+Only applied when appname is present.</dd>
+<dt>“roaming” (boolean, default False) can be set True to use the Windows</dt>
+<dd>roaming appdata directory. That means that for users on a Windows
+network setup for roaming profiles, this user data will be
+sync’d on login. See
+&lt;<a class="reference external" href="http://technet.microsoft.com/en-us/library/cc766489(WS.10).aspx">http://technet.microsoft.com/en-us/library/cc766489(WS.10).aspx</a>&gt;
+for a discussion of issues.</dd>
+</dl>
+</div></blockquote>
+<dl class="docutils">
+<dt>Typical user data directories are:</dt>
+<dd>Mac OS X:               same as user_data_dir
+Unix:                   ~/.config/&lt;AppName&gt;     # or in $XDG_CONFIG_HOME, if defined
+Win (all):              same as user_data_dir</dd>
+</dl>
+<p>For Unix, we follow the XDG spec and support $XDG_CONFIG_HOME.
+That means, by deafult “~/.config/&lt;AppName&gt;”.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pds4_tools.extern.appdirs.site_config_dir">
+<code class="descname">site_config_dir</code><span class="sig-paren">(</span><em>appname=None</em>, <em>appauthor=None</em>, <em>version=None</em>, <em>multipath=False</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/extern/appdirs.html#site_config_dir"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.extern.appdirs.site_config_dir" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return full path to the user-shared data dir for this application.</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>“appname” is the name of application.</dt>
+<dd>If None, just the system directory is returned.</dd>
+<dt>“appauthor” (only used on Windows) is the name of the</dt>
+<dd>appauthor or distributing body for this application. Typically
+it is the owning company name. This falls back to appname. You may
+pass False to disable it.</dd>
+<dt>“version” is an optional version path element to append to the</dt>
+<dd>path. You might want to use this if you want multiple versions
+of your app to be able to run independently. If used, this
+would typically be “&lt;major&gt;.&lt;minor&gt;”.
+Only applied when appname is present.</dd>
+<dt>“multipath” is an optional parameter only applicable to *nix</dt>
+<dd>which indicates that the entire list of config dirs should be
+returned. By default, the first item from XDG_CONFIG_DIRS is
+returned, or ‘/etc/xdg/&lt;AppName&gt;’, if XDG_CONFIG_DIRS is not set</dd>
+</dl>
+</div></blockquote>
+<p>Typical user data directories are:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Mac OS X:   same as site_data_dir
+Unix:       /etc/xdg/&lt;AppName&gt; or $XDG_CONFIG_DIRS[i]/&lt;AppName&gt; for each value in
+            $XDG_CONFIG_DIRS
+Win (all):  same as site_data_dir
+Vista:      (Fail! &quot;C:\ProgramData&quot; is a hidden *system* directory on Vista.)
+</pre></div>
+</div>
+<p>For Unix, this is using the $XDG_CONFIG_DIRS[0] default, if multipath=False</p>
+<p>WARNING: Do not use this on Windows. See the Vista-Fail note above for why.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pds4_tools.extern.appdirs.user_cache_dir">
+<code class="descname">user_cache_dir</code><span class="sig-paren">(</span><em>appname=None</em>, <em>appauthor=None</em>, <em>version=None</em>, <em>opinion=True</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/extern/appdirs.html#user_cache_dir"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.extern.appdirs.user_cache_dir" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return full path to the user-specific cache dir for this application.</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>“appname” is the name of application.</dt>
+<dd>If None, just the system directory is returned.</dd>
+<dt>“appauthor” (only used on Windows) is the name of the</dt>
+<dd>appauthor or distributing body for this application. Typically
+it is the owning company name. This falls back to appname. You may
+pass False to disable it.</dd>
+<dt>“version” is an optional version path element to append to the</dt>
+<dd>path. You might want to use this if you want multiple versions
+of your app to be able to run independently. If used, this
+would typically be “&lt;major&gt;.&lt;minor&gt;”.
+Only applied when appname is present.</dd>
+<dt>“opinion” (boolean) can be False to disable the appending of</dt>
+<dd>“Cache” to the base app data dir for Windows. See
+discussion below.</dd>
+</dl>
+</div></blockquote>
+<p>Typical user cache directories are:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Mac</span> <span class="n">OS</span> <span class="n">X</span><span class="p">:</span>   <span class="o">~/</span><span class="n">Library</span><span class="o">/</span><span class="n">Caches</span><span class="o">/&lt;</span><span class="n">AppName</span><span class="o">&gt;</span>
+<span class="n">Unix</span><span class="p">:</span>       <span class="o">~/.</span><span class="n">cache</span><span class="o">/&lt;</span><span class="n">AppName</span><span class="o">&gt;</span> <span class="p">(</span><span class="n">XDG</span> <span class="n">default</span><span class="p">)</span>
+<span class="n">Win</span> <span class="n">XP</span><span class="p">:</span>     <span class="n">C</span><span class="p">:</span>\<span class="n">Documents</span> <span class="ow">and</span> <span class="n">Settings</span>\<span class="o">&lt;</span><span class="n">username</span><span class="o">&gt;</span>\<span class="n">Local</span> <span class="n">Settings</span>\<span class="n">Application</span> <span class="n">Data</span>\<span class="o">&lt;</span><span class="n">AppAuthor</span><span class="o">&gt;</span>\<span class="o">&lt;</span><span class="n">AppName</span><span class="o">&gt;</span>\<span class="n">Cache</span>
+<span class="n">Vista</span><span class="p">:</span>      <span class="n">C</span><span class="p">:</span>\<span class="n">Users</span>\<span class="o">&lt;</span><span class="n">username</span><span class="o">&gt;</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="o">&lt;</span><span class="n">AppAuthor</span><span class="o">&gt;</span>\<span class="o">&lt;</span><span class="n">AppName</span><span class="o">&gt;</span>\<span class="n">Cache</span>
+</pre></div>
+</div>
+<p>On Windows the only suggestion in the MSDN docs is that local settings go in
+the ‘CSIDL_LOCAL_APPDATA’ directory. This is identical to the non-roaming
+app data dir (the default returned by <a class="reference internal" href="#pds4_tools.extern.appdirs.user_data_dir" title="pds4_tools.extern.appdirs.user_data_dir"><code class="xref any py py-func docutils literal notranslate"><span class="pre">user_data_dir</span></code></a> above). Apps typically
+put cache data somewhere <em>under</em> the given dir here. Some examples:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">...</span>\<span class="n">Mozilla</span>\<span class="n">Firefox</span>\<span class="n">Profiles</span>\<span class="o">&lt;</span><span class="n">ProfileName</span><span class="o">&gt;</span>\<span class="n">Cache</span>
+<span class="o">...</span>\<span class="n">Acme</span>\<span class="n">SuperApp</span>\<span class="n">Cache</span>\<span class="mf">1.0</span>
+</pre></div>
+</div>
+<p>OPINION: This function appends “Cache” to the ‘CSIDL_LOCAL_APPDATA’ value.
+This can be disabled with the <code class="docutils literal notranslate"><span class="pre">opinion=False</span></code> option.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pds4_tools.extern.appdirs.user_log_dir">
+<code class="descname">user_log_dir</code><span class="sig-paren">(</span><em>appname=None</em>, <em>appauthor=None</em>, <em>version=None</em>, <em>opinion=True</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/extern/appdirs.html#user_log_dir"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.extern.appdirs.user_log_dir" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return full path to the user-specific log dir for this application.</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>“appname” is the name of application.</dt>
+<dd>If None, just the system directory is returned.</dd>
+<dt>“appauthor” (only used on Windows) is the name of the</dt>
+<dd>appauthor or distributing body for this application. Typically
+it is the owning company name. This falls back to appname. You may
+pass False to disable it.</dd>
+<dt>“version” is an optional version path element to append to the</dt>
+<dd>path. You might want to use this if you want multiple versions
+of your app to be able to run independently. If used, this
+would typically be “&lt;major&gt;.&lt;minor&gt;”.
+Only applied when appname is present.</dd>
+<dt>“opinion” (boolean) can be False to disable the appending of</dt>
+<dd>“Logs” to the base app data dir for Windows, and “log” to the
+base cache dir for Unix. See discussion below1.</dd>
+</dl>
+</div></blockquote>
+<p>Typical user cache directories are:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Mac</span> <span class="n">OS</span> <span class="n">X</span><span class="p">:</span>   <span class="o">~/</span><span class="n">Library</span><span class="o">/</span><span class="n">Logs</span><span class="o">/&lt;</span><span class="n">AppName</span><span class="o">&gt;</span>
+<span class="n">Unix</span><span class="p">:</span>       <span class="o">~/.</span><span class="n">cache</span><span class="o">/&lt;</span><span class="n">AppName</span><span class="o">&gt;/</span><span class="n">log</span>  <span class="c1"># or under $XDG_CACHE_HOME if defined</span>
+<span class="n">Win</span> <span class="n">XP</span><span class="p">:</span>     <span class="n">C</span><span class="p">:</span>\<span class="n">Documents</span> <span class="ow">and</span> <span class="n">Settings</span>\<span class="o">&lt;</span><span class="n">username</span><span class="o">&gt;</span>\<span class="n">Local</span> <span class="n">Settings</span>\<span class="n">Application</span> <span class="n">Data</span>\<span class="o">&lt;</span><span class="n">AppAuthor</span><span class="o">&gt;</span>\<span class="o">&lt;</span><span class="n">AppName</span><span class="o">&gt;</span>\<span class="n">Logs</span>
+<span class="n">Vista</span><span class="p">:</span>      <span class="n">C</span><span class="p">:</span>\<span class="n">Users</span>\<span class="o">&lt;</span><span class="n">username</span><span class="o">&gt;</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="o">&lt;</span><span class="n">AppAuthor</span><span class="o">&gt;</span>\<span class="o">&lt;</span><span class="n">AppName</span><span class="o">&gt;</span>\<span class="n">Logs</span>
+</pre></div>
+</div>
+<p>On Windows the only suggestion in the MSDN docs is that local settings
+go in the ‘CSIDL_LOCAL_APPDATA’ directory. (Note: I’m interested in
+examples of what some windows apps use for a logs dir.)</p>
+<p>OPINION: This function appends “Logs” to the ‘CSIDL_LOCAL_APPDATA’
+value for Windows and appends “log” to the user cache dir for Unix.
+This can be disabled with the <code class="docutils literal notranslate"><span class="pre">opinion=False</span></code> option.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="pds4_tools.extern.appdirs.AppDirs">
+<em class="property">class </em><code class="descname">AppDirs</code><span class="sig-paren">(</span><em>appname</em>, <em>appauthor=None</em>, <em>version=None</em>, <em>roaming=False</em>, <em>multipath=False</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/extern/appdirs.html#AppDirs"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.extern.appdirs.AppDirs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Convenience wrapper for getting application dirs.</p>
+<dl class="attribute">
+<dt id="pds4_tools.extern.appdirs.AppDirs.user_data_dir">
+<code class="descname">user_data_dir</code><a class="headerlink" href="#pds4_tools.extern.appdirs.AppDirs.user_data_dir" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="pds4_tools.extern.appdirs.AppDirs.site_data_dir">
+<code class="descname">site_data_dir</code><a class="headerlink" href="#pds4_tools.extern.appdirs.AppDirs.site_data_dir" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="pds4_tools.extern.appdirs.AppDirs.user_config_dir">
+<code class="descname">user_config_dir</code><a class="headerlink" href="#pds4_tools.extern.appdirs.AppDirs.user_config_dir" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="pds4_tools.extern.appdirs.AppDirs.site_config_dir">
+<code class="descname">site_config_dir</code><a class="headerlink" href="#pds4_tools.extern.appdirs.AppDirs.site_config_dir" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="pds4_tools.extern.appdirs.AppDirs.user_cache_dir">
+<code class="descname">user_cache_dir</code><a class="headerlink" href="#pds4_tools.extern.appdirs.AppDirs.user_cache_dir" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="pds4_tools.extern.appdirs.AppDirs.user_log_dir">
+<code class="descname">user_log_dir</code><a class="headerlink" href="#pds4_tools.extern.appdirs.AppDirs.user_log_dir" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="pds4_tools.extern.argparse.html" title="pds4_tools.extern.argparse module"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="pds4_tools.extern.html" title="pds4_tools.extern package"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">PDS4 Python Tools 1.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="pds4_tools.extern.html" >pds4_tools.extern package</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2015 - 2018, University of Maryland.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.6.
+    </div>
+  </body>
+</html>

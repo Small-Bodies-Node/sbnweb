@@ -1,0 +1,195 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>pds4_tools.reader.read_label module &#8212; PDS4 Python Tools 0.9 documentation</title>
+    
+    <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.9',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="PDS4 Python Tools 0.9 documentation" href="index.html" />
+    <link rel="up" title="pds4_tools.reader package" href="pds4_tools.reader.html" />
+    <link rel="next" title="pds4_tools.reader.read_arrays module" href="pds4_tools.reader.read_arrays.html" />
+    <link rel="prev" title="pds4_tools.reader.core module" href="pds4_tools.reader.core.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="pds4_tools.reader.read_arrays.html" title="pds4_tools.reader.read_arrays module"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="pds4_tools.reader.core.html" title="pds4_tools.reader.core module"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">PDS4 Python Tools 0.9 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="pds4_tools.reader.html" accesskey="U">pds4_tools.reader package</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">pds4_tools.reader.read_label module</a><ul>
+<li><a class="reference internal" href="#functions">Functions</a></li>
+<li><a class="reference internal" href="#module-pds4_tools.reader.read_label">Details</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="pds4_tools.reader.core.html"
+                        title="previous chapter">pds4_tools.reader.core module</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="pds4_tools.reader.read_arrays.html"
+                        title="next chapter">pds4_tools.reader.read_arrays module</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/pds4_tools.reader.read_label.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-pds4_tools.reader.read_label">
+<span id="pds4-tools-reader-read-label-module"></span><h1>pds4_tools.reader.read_label module<a class="headerlink" href="#module-pds4_tools.reader.read_label" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="functions">
+<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#pds4_tools.reader.read_label.read_label" title="pds4_tools.reader.read_label.read_label"><code class="xref py py-obj docutils literal"><span class="pre">read_label</span></code></a>(filename[,&nbsp;...])</td>
+<td>Reads a PDS4 XML Label into an <code class="docutils literal"><span class="pre">ElementTree</span></code> Element object.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="module-pds4_tools.reader.read_label">
+<span id="details"></span><h2>Details<a class="headerlink" href="#module-pds4_tools.reader.read_label" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="pds4_tools.reader.read_label.read_label">
+<code class="descname">read_label</code><span class="sig-paren">(</span><em>filename</em>, <em>strip_extra_whitespace=True</em>, <em>enforce_default_prefixes=False</em>, <em>include_namespace_map=False</em>, <em>decode_py2=False</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/read_label.html#read_label"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.reader.read_label.read_label" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reads a PDS4 XML Label into an <code class="docutils literal"><span class="pre">ElementTree</span></code> Element object.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>filename</strong> : str or unicode</p>
+<blockquote>
+<div><p>The filename, including the path, of the XML label.</p>
+</div></blockquote>
+<p><strong>strip_extra_whitespace</strong> : bool, optional</p>
+<blockquote>
+<div><p>If True, then for element text and attribute values, it collapses
+contiguous whitespaces (including space, tab and newlines) into a
+single space, and removes leading and trailing whitespace altogether.
+However, this only done if the value has a single line with
+non-whitespace characters. Defaults to False.</p>
+</div></blockquote>
+<p><strong>enforce_default_prefixes</strong> : bool, optional</p>
+<blockquote>
+<div><p>If True, strips the default namespace, and ensures that
+default PDS4 prefixes are used for known namespaces (PDS4_NAMESPACES).
+Defaults to False.</p>
+</div></blockquote>
+<p><strong>include_namespace_map</strong> : bool, optional</p>
+<blockquote>
+<div><p>If True, changes method return to a tuple, where the first
+value is the label ElementTree object as usual and the second
+is a <code class="docutils literal"><span class="pre">dict</span></code> with keys being the namespace URIs and values being
+the namespace prefixes in this label. Defaults to False.</p>
+</div></blockquote>
+<p><strong>decode_py2</strong> : bool, optional</p>
+<blockquote>
+<div><p>If True, decodes UTF-8 byte strings (<code class="docutils literal"><span class="pre">str</span></code>) into <code class="docutils literal"><span class="pre">unicode</span></code>
+strings in Python 2. Option is ignored in Python 3. Defaults to False.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><code class="docutils literal"><span class="pre">ElementTree</span></code> Element</p>
+<blockquote class="last">
+<div><p>Root element for the read-in PDS4 label</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="pds4_tools.reader.read_arrays.html" title="pds4_tools.reader.read_arrays module"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="pds4_tools.reader.core.html" title="pds4_tools.reader.core module"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">PDS4 Python Tools 0.9 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="pds4_tools.reader.html" >pds4_tools.reader package</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2015 - 2017, University of Maryland.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.6.
+    </div>
+  </body>
+</html>

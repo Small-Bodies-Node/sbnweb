@@ -1,0 +1,698 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>pds4_tools.utils.logging module &#8212; PDS4 Python Tools 1.1 documentation</title>
+    <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="pds4_tools.extern package" href="pds4_tools.extern.html" />
+    <link rel="prev" title="pds4_tools.utils.helpers module" href="pds4_tools.utils.helpers.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="pds4_tools.extern.html" title="pds4_tools.extern package"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="pds4_tools.utils.helpers.html" title="pds4_tools.utils.helpers module"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">PDS4 Python Tools 1.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="pds4_tools.utils.html" accesskey="U">pds4_tools.utils package</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">pds4_tools.utils.logging module</a><ul>
+<li><a class="reference internal" href="#classes">Classes</a></li>
+<li><a class="reference internal" href="#functions">Functions</a></li>
+<li><a class="reference internal" href="#details">Details</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="pds4_tools.utils.helpers.html"
+                        title="previous chapter">pds4_tools.utils.helpers module</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="pds4_tools.extern.html"
+                        title="next chapter">pds4_tools.extern package</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/pds4_tools.utils.logging.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-pds4_tools.utils.logging">
+<span id="pds4-tools-utils-logging-module"></span><h1>pds4_tools.utils.logging module<a class="headerlink" href="#module-pds4_tools.utils.logging" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="classes">
+<h2>Classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#pds4_tools.utils.logging.PDS4Logger" title="pds4_tools.utils.logging.PDS4Logger"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PDS4Logger</span></code></a>(*args,&nbsp;**kwargs)</td>
+<td>Custom PDS4 Logger, for its internal log use.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#pds4_tools.utils.logging.PDS4StreamHandler" title="pds4_tools.utils.logging.PDS4StreamHandler"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PDS4StreamHandler</span></code></a>(name[,&nbsp;level])</td>
+<td>Custom StreamHandler that has a <em>name</em> and a <em>is_quiet</em> attributes.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#pds4_tools.utils.logging.PDS4SilentHandler" title="pds4_tools.utils.logging.PDS4SilentHandler"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PDS4SilentHandler</span></code></a>(name)</td>
+<td>Custom StreamHandler that saves emitted records to <em>records</em> attribute.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#pds4_tools.utils.logging.PDS4Formatter" title="pds4_tools.utils.logging.PDS4Formatter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PDS4Formatter</span></code></a>([fmt,&nbsp;datefmt])</td>
+<td>Custom formatter that varies format according to log level.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="functions">
+<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#pds4_tools.utils.logging.logger_init" title="pds4_tools.utils.logging.logger_init"><code class="xref py py-obj docutils literal notranslate"><span class="pre">logger_init</span></code></a>()</td>
+<td>Initializes or obtains the logger and its handlers.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="details">
+<h2>Details<a class="headerlink" href="#details" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="pds4_tools.utils.logging.PDS4Logger">
+<em class="property">class </em><code class="descname">PDS4Logger</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/utils/logging.html#PDS4Logger"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.utils.logging.PDS4Logger" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">logging.Logger</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Custom PDS4 Logger, for its internal log use.</p>
+<dl class="docutils">
+<dt>Additional features over standard logger:</dt>
+<dd><ul class="first last simple">
+<li>Get handlers by name</li>
+<li>Has <a class="reference internal" href="#pds4_tools.utils.logging.PDS4Logger.quiet" title="pds4_tools.utils.logging.PDS4Logger.quiet"><code class="xref any py py-meth docutils literal notranslate"><span class="pre">quiet</span></code></a> or <a class="reference internal" href="#pds4_tools.utils.logging.PDS4Logger.loud" title="pds4_tools.utils.logging.PDS4Logger.loud"><code class="xref any py py-meth docutils literal notranslate"><span class="pre">loud</span></code></a> methods</li>
+<li>Set maximum number of repetitions for a logging message via e.g. <code class="docutils literal notranslate"><span class="pre">.log(...</span> <span class="pre">max_repeats=n)</span></code></li>
+<li>Set custom line terminator on per message basis for all stream handlers via e.g. <code class="docutils literal notranslate"><span class="pre">.log(...,</span> <span class="pre">end='str')</span></code></li>
+</ul>
+</dd>
+</dl>
+<dl class="attribute">
+<dt id="pds4_tools.utils.logging.PDS4Logger.stream_handlers">
+<code class="descname">stream_handlers</code><a class="headerlink" href="#pds4_tools.utils.logging.PDS4Logger.stream_handlers" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>logging.StreamHandler or subclasses</strong></dt>
+<dd><p class="first last">Stream handlers bound to this logger.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pds4_tools.utils.logging.PDS4Logger.get_handler">
+<code class="descname">get_handler</code><span class="sig-paren">(</span><em>handler_name</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/utils/logging.html#PDS4Logger.get_handler"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.utils.logging.PDS4Logger.get_handler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Obtain handler by name.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>handler_name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str or unicode</span></dt>
+<dd><p class="first last">The name of the handler.</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>PDS4StreamHandler or PDS4SilentHandler</strong></dt>
+<dd><p class="first last">Handler for this logger, matching the <em>handler_name</em>.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pds4_tools.utils.logging.PDS4Logger.quiet">
+<code class="descname">quiet</code><span class="sig-paren">(</span><em>handler_name=u'stdout_handler'</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/utils/logging.html#PDS4Logger.quiet"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.utils.logging.PDS4Logger.quiet" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets a handler to log only errors.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>handler_name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str or unicode, optional</span></dt>
+<dd><p class="first last">Handler name to select. Defaults to stdout handler.</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>None</strong></dt>
+<dd></dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pds4_tools.utils.logging.PDS4Logger.loud">
+<code class="descname">loud</code><span class="sig-paren">(</span><em>handler_name=u'stdout_handler'</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/utils/logging.html#PDS4Logger.loud"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.utils.logging.PDS4Logger.loud" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets a handler to log warnings and above.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>handler_name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str or unicode, optional</span></dt>
+<dd><p class="first last">Handler name to select.  Defaults to stdout handler.</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>None</strong></dt>
+<dd></dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pds4_tools.utils.logging.PDS4Logger.is_quiet">
+<code class="descname">is_quiet</code><span class="sig-paren">(</span><em>handler_name=u'stdout_handler'</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/utils/logging.html#PDS4Logger.is_quiet"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.utils.logging.PDS4Logger.is_quiet" title="Permalink to this definition">¶</a></dt>
+<dd><p>Obtains whether a handler is quiet.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>handler_name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str or unicode, optional</span></dt>
+<dd><p class="first last">Handler name to select.  Defaults to stdout handler.</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>bool</strong></dt>
+<dd><p class="first last">True if the logger is quiet, i.e. logs only errors; false otherwise.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pds4_tools.utils.logging.PDS4Logger.set_terminators">
+<code class="descname">set_terminators</code><span class="sig-paren">(</span><em>ends=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/utils/logging.html#PDS4Logger.set_terminators"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.utils.logging.PDS4Logger.set_terminators" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets line terminator for all stream handlers.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>ends</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str, unicode or list[str or unicode]</span></dt>
+<dd><p class="first last">The line terminator (same for all stream handlers) or sequence of terminators.
+Sequence order must be same as order of stream handlers in <a class="reference internal" href="#pds4_tools.utils.logging.PDS4Logger.stream_handlers" title="pds4_tools.utils.logging.PDS4Logger.stream_handlers"><code class="xref any py py-attr docutils literal notranslate"><span class="pre">stream_handlers</span></code></a>
+attribute.</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>None</strong></dt>
+<dd></dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="pds4_tools.utils.logging.PDS4StreamHandler">
+<em class="property">class </em><code class="descname">PDS4StreamHandler</code><span class="sig-paren">(</span><em>name</em>, <em>level=10</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/utils/logging.html#PDS4StreamHandler"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.utils.logging.PDS4StreamHandler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">logging.StreamHandler</span></code></p>
+<p>Custom StreamHandler that has a <em>name</em> and a <em>is_quiet</em> attributes.</p>
+<dl class="method">
+<dt id="pds4_tools.utils.logging.PDS4StreamHandler.emit">
+<code class="descname">emit</code><span class="sig-paren">(</span><em>record</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/utils/logging.html#PDS4StreamHandler.emit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.utils.logging.PDS4StreamHandler.emit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Emit a record.</p>
+<p>Subclassed to allow <code class="docutils literal notranslate"><span class="pre">handler.terminator</span></code> to be used as the line terminator rather than hardcode the
+newline character on any supported Python version. This is a standard feature on Python &gt;= 3.2, but
+not available earlier.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pds4_tools.utils.logging.PDS4StreamHandler.name">
+<code class="descname">name</code><a class="headerlink" href="#pds4_tools.utils.logging.PDS4StreamHandler.name" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>str or unicode</strong></dt>
+<dd><p class="first last">Name of the handler.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pds4_tools.utils.logging.PDS4StreamHandler.is_quiet">
+<code class="descname">is_quiet</code><a class="headerlink" href="#pds4_tools.utils.logging.PDS4StreamHandler.is_quiet" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>bool</strong></dt>
+<dd><p class="first last">True if handler is quiet, False otherwise.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pds4_tools.utils.logging.PDS4StreamHandler.set_level">
+<code class="descname">set_level</code><span class="sig-paren">(</span><em>level</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/utils/logging.html#PDS4StreamHandler.set_level"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.utils.logging.PDS4StreamHandler.set_level" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set handler log level.</p>
+<p>Convenience method for setLevel.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>level</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Level to set for handler. See Python documentation on logger levels for details.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pds4_tools.utils.logging.PDS4StreamHandler.get_level">
+<code class="descname">get_level</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/utils/logging.html#PDS4StreamHandler.get_level"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.utils.logging.PDS4StreamHandler.get_level" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get handler log level.</p>
+<p>Convenience method for the <em>level</em> attribute.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>int</strong></dt>
+<dd><p class="first last">Level for handler. See Python do cumentation on logger levels for details.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pds4_tools.utils.logging.PDS4StreamHandler.setLevel">
+<code class="descname">setLevel</code><span class="sig-paren">(</span><em>level</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/utils/logging.html#PDS4StreamHandler.setLevel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.utils.logging.PDS4StreamHandler.setLevel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set handler log level.</p>
+<p>Overloads <code class="docutils literal notranslate"><span class="pre">logging.StreamHandler.setLevel</span></code> to automatically set whether logger is quiet or loud.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>level</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Level to set for handler. See Python documentation on logger levels for details.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="pds4_tools.utils.logging.PDS4SilentHandler">
+<em class="property">class </em><code class="descname">PDS4SilentHandler</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/utils/logging.html#PDS4SilentHandler"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.utils.logging.PDS4SilentHandler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pds4_tools.utils.logging.PDS4StreamHandler" title="pds4_tools.utils.logging.PDS4StreamHandler"><code class="xref py py-class docutils literal notranslate"><span class="pre">pds4_tools.utils.logging.PDS4StreamHandler</span></code></a></p>
+<p>Custom StreamHandler that saves emitted records to <em>records</em> attribute.</p>
+<p>Able to print out previously emitted records via <a class="reference internal" href="#pds4_tools.utils.logging.PDS4SilentHandler.to_string" title="pds4_tools.utils.logging.PDS4SilentHandler.to_string"><code class="xref any py py-meth docutils literal notranslate"><span class="pre">to_string</span></code></a>.</p>
+<dl class="attribute">
+<dt id="pds4_tools.utils.logging.PDS4SilentHandler.name">
+<code class="descname">name</code><a class="headerlink" href="#pds4_tools.utils.logging.PDS4SilentHandler.name" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>str or unicode</strong></dt>
+<dd><p class="first last">Name of the handler.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pds4_tools.utils.logging.PDS4SilentHandler.is_quiet">
+<code class="descname">is_quiet</code><a class="headerlink" href="#pds4_tools.utils.logging.PDS4SilentHandler.is_quiet" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>bool</strong></dt>
+<dd><p class="first last">True if handler is quiet, False otherwise.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pds4_tools.utils.logging.PDS4SilentHandler.get_level">
+<code class="descname">get_level</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pds4_tools.utils.logging.PDS4SilentHandler.get_level" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get handler log level.</p>
+<p>Convenience method for the <em>level</em> attribute.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>int</strong></dt>
+<dd><p class="first last">Level for handler. See Python do cumentation on logger levels for details.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pds4_tools.utils.logging.PDS4SilentHandler.set_level">
+<code class="descname">set_level</code><span class="sig-paren">(</span><em>level</em><span class="sig-paren">)</span><a class="headerlink" href="#pds4_tools.utils.logging.PDS4SilentHandler.set_level" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set handler log level.</p>
+<p>Convenience method for setLevel.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>level</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Level to set for handler. See Python documentation on logger levels for details.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pds4_tools.utils.logging.PDS4SilentHandler.setLevel">
+<code class="descname">setLevel</code><span class="sig-paren">(</span><em>level</em><span class="sig-paren">)</span><a class="headerlink" href="#pds4_tools.utils.logging.PDS4SilentHandler.setLevel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set handler log level.</p>
+<p>Overloads <code class="docutils literal notranslate"><span class="pre">logging.StreamHandler.setLevel</span></code> to automatically set whether logger is quiet or loud.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>level</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Level to set for handler. See Python documentation on logger levels for details.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pds4_tools.utils.logging.PDS4SilentHandler.emit">
+<code class="descname">emit</code><span class="sig-paren">(</span><em>record</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/utils/logging.html#PDS4SilentHandler.emit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.utils.logging.PDS4SilentHandler.emit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Saves emitted record.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>record</strong> <span class="classifier-delimiter">:</span> <span class="classifier">logger.LogRecord</span></dt>
+<dd><p class="first last">Record to emit.</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>None</strong></dt>
+<dd></dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pds4_tools.utils.logging.PDS4SilentHandler.begin_recording">
+<code class="descname">begin_recording</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/utils/logging.html#PDS4SilentHandler.begin_recording"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.utils.logging.PDS4SilentHandler.begin_recording" title="Permalink to this definition">¶</a></dt>
+<dd><p>Used in conjunction with <a class="reference internal" href="#pds4_tools.utils.logging.PDS4SilentHandler.get_recording" title="pds4_tools.utils.logging.PDS4SilentHandler.get_recording"><code class="xref any py py-meth docutils literal notranslate"><span class="pre">get_recording</span></code></a>. Records emitted after this method is called will be
+returned by <a class="reference internal" href="#pds4_tools.utils.logging.PDS4SilentHandler.get_recording" title="pds4_tools.utils.logging.PDS4SilentHandler.get_recording"><code class="xref any py py-meth docutils literal notranslate"><span class="pre">get_recording</span></code></a>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>None</strong></dt>
+<dd></dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pds4_tools.utils.logging.PDS4SilentHandler.get_recording">
+<code class="descname">get_recording</code><span class="sig-paren">(</span><em>reset=True</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/utils/logging.html#PDS4SilentHandler.get_recording"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.utils.logging.PDS4SilentHandler.get_recording" title="Permalink to this definition">¶</a></dt>
+<dd><p>Obtains records since <a class="reference internal" href="#pds4_tools.utils.logging.PDS4SilentHandler.begin_recording" title="pds4_tools.utils.logging.PDS4SilentHandler.begin_recording"><code class="xref any py py-meth docutils literal notranslate"><span class="pre">begin_recording</span></code></a> was called as a joined string.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>reset</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool, optional</span></dt>
+<dd><p class="first last">If True, begins a new recording from now on. If False, recording from previous point
+continues. Defaults to True.</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>str or unicode</strong></dt>
+<dd><p class="first last">A string containing the messages that were emitted since <a class="reference internal" href="#pds4_tools.utils.logging.PDS4SilentHandler.begin_recording" title="pds4_tools.utils.logging.PDS4SilentHandler.begin_recording"><code class="xref any py py-meth docutils literal notranslate"><span class="pre">begin_recording</span></code></a> was called.</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>RuntimeError</strong></dt>
+<dd><p class="first last">Raised if <a class="reference internal" href="#pds4_tools.utils.logging.PDS4SilentHandler.begin_recording" title="pds4_tools.utils.logging.PDS4SilentHandler.begin_recording"><code class="xref any py py-meth docutils literal notranslate"><span class="pre">begin_recording</span></code></a> was not called prior to calling this method.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pds4_tools.utils.logging.PDS4SilentHandler.to_string">
+<code class="descname">to_string</code><span class="sig-paren">(</span><em>start_i=0</em>, <em>end_i=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/utils/logging.html#PDS4SilentHandler.to_string"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.utils.logging.PDS4SilentHandler.to_string" title="Permalink to this definition">¶</a></dt>
+<dd><p>Output emitted records as a joined string.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>start_i</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int, optional</span></dt>
+<dd><p class="first last">Index of first record to include. Defaults to 0 (include records from the beginning).</p>
+</dd>
+<dt><strong>end_i</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int, optional</span></dt>
+<dd><p class="first last">Index of last record to include. Defaults to None (include records until the end).</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>str or unicode</strong></dt>
+<dd><p class="first last">A string containing the messages in the records that were previously emitted.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="pds4_tools.utils.logging.PDS4Formatter">
+<em class="property">class </em><code class="descname">PDS4Formatter</code><span class="sig-paren">(</span><em>fmt=None</em>, <em>datefmt=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/utils/logging.html#PDS4Formatter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.utils.logging.PDS4Formatter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">logging.Formatter</span></code></p>
+<p>Custom formatter that varies format according to log level.</p>
+<dl class="method">
+<dt id="pds4_tools.utils.logging.PDS4Formatter.format">
+<code class="descname">format</code><span class="sig-paren">(</span><em>record</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/utils/logging.html#PDS4Formatter.format"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.utils.logging.PDS4Formatter.format" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>record</strong> <span class="classifier-delimiter">:</span> <span class="classifier">logger.LogRecord</span></dt>
+<dd><p class="first last">The record to format.</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>str or unicode</strong></dt>
+<dd><p class="first last">The formatted record string.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="pds4_tools.utils.logging.logger_init">
+<code class="descname">logger_init</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/utils/logging.html#logger_init"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.utils.logging.logger_init" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initializes or obtains the logger and its handlers.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>PDS4Logger</strong></dt>
+<dd><p class="first last">The global logger for all pds4 tools.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="pds4_tools.extern.html" title="pds4_tools.extern package"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="pds4_tools.utils.helpers.html" title="pds4_tools.utils.helpers module"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">PDS4 Python Tools 1.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="pds4_tools.utils.html" >pds4_tools.utils package</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2015 - 2019, University of Maryland.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.6.
+    </div>
+  </body>
+</html>

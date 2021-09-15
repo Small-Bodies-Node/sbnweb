@@ -1,0 +1,661 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>pds4_tools.reader.general_objects module &#8212; PDS4 Python Tools 1.1 documentation</title>
+    <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="pds4_tools.reader.label_objects module" href="pds4_tools.reader.label_objects.html" />
+    <link rel="prev" title="pds4_tools.reader.read_headers module" href="pds4_tools.reader.read_headers.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="pds4_tools.reader.label_objects.html" title="pds4_tools.reader.label_objects module"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="pds4_tools.reader.read_headers.html" title="pds4_tools.reader.read_headers module"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">PDS4 Python Tools 1.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="pds4_tools.reader.html" accesskey="U">pds4_tools.reader package</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">pds4_tools.reader.general_objects module</a><ul>
+<li><a class="reference internal" href="#classes">Classes</a></li>
+<li><a class="reference internal" href="#details">Details</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="pds4_tools.reader.read_headers.html"
+                        title="previous chapter">pds4_tools.reader.read_headers module</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="pds4_tools.reader.label_objects.html"
+                        title="next chapter">pds4_tools.reader.label_objects module</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/pds4_tools.reader.general_objects.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="pds4-tools-reader-general-objects-module">
+<h1>pds4_tools.reader.general_objects module<a class="headerlink" href="#pds4-tools-reader-general-objects-module" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="classes">
+<h2>Classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#pds4_tools.reader.general_objects.StructureList" title="pds4_tools.reader.general_objects.StructureList"><code class="xref py py-obj docutils literal notranslate"><span class="pre">StructureList</span></code></a>(structures,&nbsp;label,&nbsp;read_in_log)</td>
+<td>Stores the label and all supported data structures of a PDS4 product.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#pds4_tools.reader.general_objects.Structure" title="pds4_tools.reader.general_objects.Structure"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Structure</span></code></a>([structure_data,&nbsp;…])</td>
+<td>Stores a single PDS4 data structure.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#pds4_tools.reader.general_objects.Meta_Class" title="pds4_tools.reader.general_objects.Meta_Class"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Meta_Class</span></code></a>(**kwds)</td>
+<td>Contains meta data about any type of data.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#pds4_tools.reader.general_objects.Meta_Structure" title="pds4_tools.reader.general_objects.Meta_Structure"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Meta_Structure</span></code></a>(**kwds)</td>
+<td>Meta data about a PDS4 Data Structure.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="details">
+<h2>Details<a class="headerlink" href="#details" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="pds4_tools.reader.general_objects.StructureList">
+<em class="property">class </em><code class="descname">StructureList</code><span class="sig-paren">(</span><em>structures</em>, <em>label</em>, <em>read_in_log</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/general_objects.html#StructureList"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.reader.general_objects.StructureList" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">_abcoll.Sequence</span></code></p>
+<p>Stores the label and all supported data structures of a PDS4 product.</p>
+<p>An object of this type is returned by <a class="reference internal" href="pds4_tools.reader.core.html#pds4_tools.reader.core.pds4_read" title="pds4_tools.reader.core.pds4_read"><code class="xref any py py-func docutils literal notranslate"><span class="pre">pds4_read</span></code></a>. PDS4 supported data structures are forms of Arrays,
+Tables and Headers. This class allows both <code class="docutils literal notranslate"><span class="pre">dict</span></code>-like and <code class="docutils literal notranslate"><span class="pre">list</span></code>-like access to each individual
+PDS4 data structure inside.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>structures</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list[Structure]</span></dt>
+<dd><p class="first last">Each data <a class="reference internal" href="#pds4_tools.reader.general_objects.Structure" title="pds4_tools.reader.general_objects.Structure"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Structure</span></code></a>, including the data and the structure’s label portion,
+in the PDS4 product.</p>
+</dd>
+<dt><strong>label</strong> <span class="classifier-delimiter">:</span> <span class="classifier">Label</span></dt>
+<dd><p class="first last">The entire label describing the PDS4 product.</p>
+</dd>
+<dt><strong>read_in_log</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str or unicode</span></dt>
+<dd><p class="first last">Output of the log during read-in of the entire PDS4 product.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<p>Supposing the label described two objects, an Array_2D_Image (named ‘Obs’) and a Table_Binary
+(unnamed) in the same order as described here, they can be accessed as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">image_array</span> <span class="o">=</span> <span class="n">struct_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span>           <span class="ow">or</span> <span class="n">struct_list</span><span class="p">[</span><span class="s1">&#39;Obs&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">obs_table</span> <span class="o">=</span> <span class="n">struct_list</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span>         <span class="ow">or</span> <span class="n">struct_list</span><span class="p">[</span><span class="s1">&#39;TABLE_0&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>See <a class="reference internal" href="pds4_tools.reader.core.html#pds4_tools.reader.core.pds4_read" title="pds4_tools.reader.core.pds4_read"><code class="xref any py py-func docutils literal notranslate"><span class="pre">pds4_read</span></code></a> and <a class="reference internal" href="#pds4_tools.reader.general_objects.StructureList.__getitem__" title="pds4_tools.reader.general_objects.StructureList.__getitem__"><code class="xref any py py-meth docutils literal notranslate"><span class="pre">__getitem__</span></code></a> docstrings for more examples.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Attributes:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>structures</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list[Structure]</span></dt>
+<dd><p class="first last">Each data <a class="reference internal" href="#pds4_tools.reader.general_objects.Structure" title="pds4_tools.reader.general_objects.Structure"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Structure</span></code></a>, including the data and the structure’s label portion,
+in the PDS4 product.</p>
+</dd>
+<dt><strong>label</strong> <span class="classifier-delimiter">:</span> <span class="classifier">Label</span></dt>
+<dd><p class="first last">The entire label describing the PDS4 product.</p>
+</dd>
+<dt><strong>read_in_log</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str or unicode</span></dt>
+<dd><p class="first last">Output of the log during read-in of the entire PDS4 product.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="pds4_tools.reader.general_objects.StructureList.__getitem__">
+<code class="descname">__getitem__</code><span class="sig-paren">(</span><em>key</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/general_objects.html#StructureList.__getitem__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.reader.general_objects.StructureList.__getitem__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Searches <a class="reference internal" href="#pds4_tools.reader.general_objects.StructureList" title="pds4_tools.reader.general_objects.StructureList"><code class="xref any py py-class docutils literal notranslate"><span class="pre">StructureList</span></code></a> for a specific data structure.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>key</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str, unicode, int, slice or tuple</span></dt>
+<dd><p class="first last">Selection for desired <a class="reference internal" href="#pds4_tools.reader.general_objects.Structure" title="pds4_tools.reader.general_objects.Structure"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Structure</span></code></a>. May be a string containing the name or local identifier of a
+single Structure, similar to <code class="docutils literal notranslate"><span class="pre">dict</span></code> indexing functionality.  May be an integer or slice
+specifying which Structure(s) to select, similar to <code class="docutils literal notranslate"><span class="pre">list</span></code> or <code class="docutils literal notranslate"><span class="pre">tuple</span></code> indexing functionality.
+May be a two-valued tuple, with the first value providing the name or local identifier and the
+second value a zero-based count, providing which repetition of Structure by that name to select.</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>Structure or list[Structure]</strong></dt>
+<dd><p class="first last">Matched PDS4 data structure(s).</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>IndexError</strong></dt>
+<dd><p class="first last">Raised if <em>key</em> is a larger integer than the number of Structures.</p>
+</dd>
+<dt><strong>KeyError</strong></dt>
+<dd><p class="first last">Raised if <em>key</em> is a name or local identifier and does not match any Structure.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">struct_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">struct_list</span><span class="p">[</span><span class="s1">&#39;Observations&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>If both of the first two data structures have the name ‘Observations’, then to select the second
+we can do,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">struct_list</span><span class="p">[</span><span class="s1">&#39;Observations&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>We can select both of the first two data structures via,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">struct_list</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pds4_tools.reader.general_objects.StructureList.__len__">
+<code class="descname">__len__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/general_objects.html#StructureList.__len__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.reader.general_objects.StructureList.__len__" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>int</strong></dt>
+<dd><p class="first last">Number of data structures contained.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pds4_tools.reader.general_objects.StructureList.type">
+<code class="descname">type</code><a class="headerlink" href="#pds4_tools.reader.general_objects.StructureList.type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Examples of types include Product_Observational, Product_Ancillary, Product_Document, etc.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>str or unicode</strong></dt>
+<dd><p class="first last">Root tag of a PDS4 label.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pds4_tools.reader.general_objects.StructureList.info">
+<code class="descname">info</code><span class="sig-paren">(</span><em>abbreviated=True</em>, <em>output=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/general_objects.html#StructureList.info"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.reader.general_objects.StructureList.info" title="Permalink to this definition">¶</a></dt>
+<dd><p>Prints to stdout a summary of the contained data structures.</p>
+<p>For Arrays the summary contains the type and dimensions of the Array,
+and for Tables it contains the type and number of fields. Set <em>abbreviated</em>
+parameter to False to output additional detail.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>abbreviated</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool, optional</span></dt>
+<dd><p class="first last">If False, output additional detail. Defaults to True.</p>
+</dd>
+<dt><strong>output</strong> <span class="classifier-delimiter">:</span> <span class="classifier">file, bool or None, optional</span></dt>
+<dd><p class="first last">A file-like object to write the output to.  If set to False, does not output to a file
+and instead returns a list of lists representing info for each Structure. Writes
+to <code class="docutils literal notranslate"><span class="pre">sys.stdout</span></code> by default.</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>None</strong></dt>
+<dd></dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="pds4_tools.reader.general_objects.Structure">
+<em class="property">class </em><code class="descname">Structure</code><span class="sig-paren">(</span><em>structure_data=None</em>, <em>structure_meta_data=None</em>, <em>structure_label=None</em>, <em>full_label=None</em>, <em>parent_filename=None</em>, <em>structure_id=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/general_objects.html#Structure"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.reader.general_objects.Structure" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Stores a single PDS4 data structure.</p>
+<p>Subclassed by <a class="reference internal" href="pds4_tools.reader.table_objects.html#pds4_tools.reader.table_objects.TableStructure" title="pds4_tools.reader.table_objects.TableStructure"><code class="xref any py py-class docutils literal notranslate"><span class="pre">TableStructure</span></code></a> and <a class="reference internal" href="pds4_tools.reader.array_objects.html#pds4_tools.reader.array_objects.ArrayStructure" title="pds4_tools.reader.array_objects.ArrayStructure"><code class="xref any py py-class docutils literal notranslate"><span class="pre">ArrayStructure</span></code></a>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>structure_data</strong> <span class="classifier-delimiter">:</span> <span class="classifier">any, optional</span></dt>
+<dd><p class="first last">The data in this PDS4 data structure. If not given and never set, data can be read-in
+via <a class="reference internal" href="#pds4_tools.reader.general_objects.Structure.from_file" title="pds4_tools.reader.general_objects.Structure.from_file"><code class="xref any py py-meth docutils literal notranslate"><span class="pre">from_file</span></code></a>.</p>
+</dd>
+<dt><strong>structure_meta_data</strong> <span class="classifier-delimiter">:</span> <span class="classifier">Meta_Structure, optional</span></dt>
+<dd><p class="first last">Meta data describing this object (originating from the label).</p>
+</dd>
+<dt><strong>full_label</strong> <span class="classifier-delimiter">:</span> <span class="classifier">Label, optional</span></dt>
+<dd><p class="first last">The entire label describing the PDS4 product this structure originated from.</p>
+</dd>
+<dt><strong>structure_label</strong> <span class="classifier-delimiter">:</span> <span class="classifier">Label, optional</span></dt>
+<dd><p class="first last">The segment of the label describing only this data structure.</p>
+</dd>
+<dt><strong>parent_filename</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str or unicode, optional</span></dt>
+<dd><p class="first last">Filename, including full path, of the data file that contained the data for this structure.</p>
+</dd>
+<dt><strong>structure_id</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str or unicode, optional</span></dt>
+<dd><p class="first last">If given, sets an ID for the structure. If not given, an attempt to obtain ID will be made from
+the meta data.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<p>See <a class="reference internal" href="pds4_tools.reader.core.html#pds4_tools.reader.core.pds4_read" title="pds4_tools.reader.core.pds4_read"><code class="xref any py py-func docutils literal notranslate"><span class="pre">pds4_read</span></code></a> docstring for examples.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Attributes:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>parent_filename</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str or unicode</span></dt>
+<dd><p class="first last">Filename of the data file that contained the data for this structure.</p>
+</dd>
+<dt><strong>full_label</strong> <span class="classifier-delimiter">:</span> <span class="classifier">Label</span></dt>
+<dd><p class="first last">The entire label describing the PDS4 product this structure originated from.</p>
+</dd>
+<dt><strong>label</strong> <span class="classifier-delimiter">:</span> <span class="classifier">Label</span></dt>
+<dd><p class="first last">The segment of the label describing only this data structure.</p>
+</dd>
+<dt><strong>meta_data</strong> <span class="classifier-delimiter">:</span> <span class="classifier">Meta_Structure</span></dt>
+<dd><p class="first last">Meta data describing this object (originating from the label).</p>
+</dd>
+<dt><a class="reference internal" href="#pds4_tools.reader.general_objects.Structure.data" title="pds4_tools.reader.general_objects.Structure.data"><code class="xref py py-obj docutils literal notranslate"><span class="pre">data</span></code></a> <span class="classifier-delimiter">:</span> <span class="classifier">any</span></dt>
+<dd><p class="first last">The data of this PDS4 structure.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="pds4_tools.reader.general_objects.Structure.id">
+<code class="descname">id</code><a class="headerlink" href="#pds4_tools.reader.general_objects.Structure.id" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>str or unicode</strong></dt>
+<dd><p class="first last">The ID (either local identifier if given, or name if given) of this data structure. If
+neither was given, an ID was likely assigned.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pds4_tools.reader.general_objects.Structure.type">
+<code class="descname">type</code><a class="headerlink" href="#pds4_tools.reader.general_objects.Structure.type" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>str, unicode or None</strong></dt>
+<dd><p class="first last">The official PDS4 data structure type name for this structure.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pds4_tools.reader.general_objects.Structure.data_loaded">
+<code class="descname">data_loaded</code><a class="headerlink" href="#pds4_tools.reader.general_objects.Structure.data_loaded" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>bool</strong></dt>
+<dd><p class="first last">True if the <a class="reference internal" href="#pds4_tools.reader.general_objects.Structure.data" title="pds4_tools.reader.general_objects.Structure.data"><code class="xref any py py-meth docutils literal notranslate"><span class="pre">data</span></code></a> attribute has been set (e.g. data has been read from file or set),
+False otherwise.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pds4_tools.reader.general_objects.Structure.from_file">
+<code class="descname">from_file</code><span class="sig-paren">(</span><em>data_filename</em>, <em>structure_label</em>, <em>full_label</em>, <em>lazy_load=False</em>, <em>no_scale=False</em>, <em>decode_strings=False</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/general_objects.html#Structure.from_file"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.reader.general_objects.Structure.from_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create structure from relevant labels and file for the data.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>data_filename</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str or unicode</span></dt>
+<dd><p class="first last">Filename of the data file that contained the data for this structure.</p>
+</dd>
+<dt><strong>structure_label</strong> <span class="classifier-delimiter">:</span> <span class="classifier">Label</span></dt>
+<dd><p class="first last">The segment of the label describing only this data structure.</p>
+</dd>
+<dt><strong>full_label</strong> <span class="classifier-delimiter">:</span> <span class="classifier">Label</span></dt>
+<dd><p class="first last">The entire label describing the PDS4 product this structure originated from.</p>
+</dd>
+<dt><strong>lazy_load</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool, optional</span></dt>
+<dd><p class="first last">If True, does not read-in the data of this structure until the first attempt to access it.
+Defaults to False.</p>
+</dd>
+<dt><strong>no_scale</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool, optional</span></dt>
+<dd><p class="first last">If True, read-in data will be adjusted according to the offset and scaling factor.
+Defaults to False.</p>
+</dd>
+<dt><strong>decode_strings</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool, optional</span></dt>
+<dd><p class="first last">If True, strings data types contained in the returned data will be decoded to the <code class="docutils literal notranslate"><span class="pre">unicode</span></code>
+type in Python 2, and to the <code class="docutils literal notranslate"><span class="pre">str</span></code> type in Python 3. If False, leaves string types as byte
+strings. Defaults to False.</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>Structure</strong></dt>
+<dd><p class="first last">An object representing the PDS4 structure; contains its label, data and meta data.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pds4_tools.reader.general_objects.Structure.info">
+<code class="descname">info</code><span class="sig-paren">(</span><em>abbreviated=False</em>, <em>output=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/general_objects.html#Structure.info"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.reader.general_objects.Structure.info" title="Permalink to this definition">¶</a></dt>
+<dd><p>Prints a summary of this data structure.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>abbreviated</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool, optional</span></dt>
+<dd><p class="first last">If False, output additional detail. Defaults to False.</p>
+</dd>
+<dt><strong>output</strong> <span class="classifier-delimiter">:</span> <span class="classifier">file, bool or None, optional</span></dt>
+<dd><p class="first last">A file-like object to write the output to.  If set to False then instead of outputting
+to a file a list representing the summary parameters for the Structure is returned.
+Writes to <code class="docutils literal notranslate"><span class="pre">sys.stdout</span></code> by default.</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>None or list</strong></dt>
+<dd><p class="first last">If output is False, then returns a list representing the summary parameters for the Structure.
+Otherwise returns None.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pds4_tools.reader.general_objects.Structure.data">
+<code class="descname">data</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/general_objects.html#Structure.data"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.reader.general_objects.Structure.data" title="Permalink to this definition">¶</a></dt>
+<dd><p>The data of this PDS4 structure.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>Data for the structure; details are defined by the subclass.</strong></dt>
+<dd></dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pds4_tools.reader.general_objects.Structure.is_array">
+<code class="descname">is_array</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/general_objects.html#Structure.is_array"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.reader.general_objects.Structure.is_array" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>bool</strong></dt>
+<dd><p class="first last">True if this <a class="reference internal" href="#pds4_tools.reader.general_objects.Structure" title="pds4_tools.reader.general_objects.Structure"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Structure</span></code></a> is a form of a PDS4 array, false otherwise.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pds4_tools.reader.general_objects.Structure.is_table">
+<code class="descname">is_table</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/general_objects.html#Structure.is_table"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.reader.general_objects.Structure.is_table" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>bool</strong></dt>
+<dd><p class="first last">True if this <a class="reference internal" href="#pds4_tools.reader.general_objects.Structure" title="pds4_tools.reader.general_objects.Structure"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Structure</span></code></a> is a form of a PDS4 table, false otherwise.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pds4_tools.reader.general_objects.Structure.is_header">
+<code class="descname">is_header</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/general_objects.html#Structure.is_header"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.reader.general_objects.Structure.is_header" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>bool</strong></dt>
+<dd><p class="first last">True if this <a class="reference internal" href="#pds4_tools.reader.general_objects.Structure" title="pds4_tools.reader.general_objects.Structure"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Structure</span></code></a> is a form of a PDS4 header, false otherwise.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="pds4_tools.reader.general_objects.Meta_Class">
+<em class="property">class </em><code class="descname">Meta_Class</code><span class="sig-paren">(</span><em>**kwds</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/general_objects.html#Meta_Class"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.reader.general_objects.Meta_Class" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">collections.OrderedDict</span></code></p>
+<p>Contains meta data about any type of data.</p>
+<p>Subclassed by all other Meta_* classes, subclasses <code class="docutils literal notranslate"><span class="pre">OrderedDict</span></code>. Most PDS4 meta data originates
+from the label, therefore we need a consistent interface to pull this meta data from a <a class="reference internal" href="pds4_tools.reader.label_objects.html#pds4_tools.reader.label_objects.Label" title="pds4_tools.reader.label_objects.Label"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Label</span></code></a> or
+<code class="docutils literal notranslate"><span class="pre">ElementTree</span></code> Element into an <code class="docutils literal notranslate"><span class="pre">OrderedDict</span></code>, which any <a class="reference internal" href="#pds4_tools.reader.general_objects.Meta_Class" title="pds4_tools.reader.general_objects.Meta_Class"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Meta_Class</span></code></a> ultimately subclasses.</p>
+<p>Most often we do not use the actual <code class="docutils literal notranslate"><span class="pre">OrderedDict</span></code> constructor to populate the meta data, but
+instead use methods provided by this class to load the dictionary with keys directly from the XML.</p>
+<p>Meta data stored in this class is accessed in <code class="docutils literal notranslate"><span class="pre">dict</span></code>-like fashion.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>(same as for ``OrderedDict``)</strong></dt>
+<dd></dd>
+<dt><strong>*args</strong></dt>
+<dd><p class="first last">Variable length argument list.</p>
+</dd>
+<dt><strong>**kwargs</strong></dt>
+<dd><p class="first last">Arbitrary keyword arguments.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="pds4_tools.reader.general_objects.Meta_Structure">
+<em class="property">class </em><code class="descname">Meta_Structure</code><span class="sig-paren">(</span><em>**kwds</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/general_objects.html#Meta_Structure"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.reader.general_objects.Meta_Structure" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pds4_tools.reader.general_objects.Meta_Class" title="pds4_tools.reader.general_objects.Meta_Class"><code class="xref py py-class docutils literal notranslate"><span class="pre">pds4_tools.reader.general_objects.Meta_Class</span></code></a></p>
+<p>Meta data about a PDS4 Data Structure.</p>
+<p>Meta data stored in this class is accessed in dict-like fashion. Normally this meta data
+originates from the label.</p>
+<p>Subclassed by a meta class for each data structure type.</p>
+<dl class="attribute">
+<dt id="pds4_tools.reader.general_objects.Meta_Structure.id">
+<code class="descname">id</code><a class="headerlink" href="#pds4_tools.reader.general_objects.Meta_Structure.id" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>str or unicode</strong></dt>
+<dd><p class="first last">The local_identifier of the PDS4 data structure if it exists, otherwise the name if it exists.
+If neither was specified in the label, None is returned.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="pds4_tools.reader.label_objects.html" title="pds4_tools.reader.label_objects module"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="pds4_tools.reader.read_headers.html" title="pds4_tools.reader.read_headers module"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">PDS4 Python Tools 1.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="pds4_tools.reader.html" >pds4_tools.reader package</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2015 - 2019, University of Maryland.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.6.
+    </div>
+  </body>
+</html>

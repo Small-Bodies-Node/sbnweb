@@ -1,0 +1,201 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>pds4_tools.reader.read_headers &#8212; PDS4 Python Tools 1.1 documentation</title>
+    <link rel="stylesheet" href="../../../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/css/custom.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">PDS4 Python Tools 1.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" accesskey="U">Module code</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Source code for pds4_tools.reader.read_headers</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="k">import</span> <span class="n">absolute_import</span>
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="k">import</span> <span class="n">division</span>
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="k">import</span> <span class="n">print_function</span>
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="k">import</span> <span class="n">unicode_literals</span>
+
+<span class="kn">from</span> <span class="nn">.header_objects</span> <span class="k">import</span> <span class="n">HeaderStructure</span>
+
+
+<span class="k">def</span> <span class="nf">_read_header_byte_data</span><span class="p">(</span><span class="n">header_structure</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Reads the byte data from the data file for a PDS4 Header.</span>
+
+<span class="sd">    Determines, from the structure&#39;s meta data, the relevant start and stop bytes in the data file prior to</span>
+<span class="sd">    reading.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    header_structure : HeaderStructure</span>
+<span class="sd">        The PDS4 Header data structure for which the byte data needs to be read. Should have been</span>
+<span class="sd">        initialized via `HeaderStructure.from_file` method, or contain the required meta data.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    str or bytes</span>
+<span class="sd">        The exact byte data for the header.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="kn">from</span> <span class="nn">.core</span> <span class="k">import</span> <span class="n">read_byte_data</span>
+
+    <span class="n">meta_data</span> <span class="o">=</span> <span class="n">header_structure</span><span class="o">.</span><span class="n">meta_data</span>
+
+    <span class="n">start_byte</span> <span class="o">=</span> <span class="n">meta_data</span><span class="p">[</span><span class="s1">&#39;offset&#39;</span><span class="p">]</span>
+    <span class="n">stop_byte</span> <span class="o">=</span> <span class="n">start_byte</span> <span class="o">+</span> <span class="n">meta_data</span><span class="p">[</span><span class="s1">&#39;object_length&#39;</span><span class="p">]</span>
+
+    <span class="k">return</span> <span class="n">read_byte_data</span><span class="p">(</span><span class="n">header_structure</span><span class="o">.</span><span class="n">parent_filename</span><span class="p">,</span> <span class="n">start_byte</span><span class="p">,</span> <span class="n">stop_byte</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="new_header"><a class="viewcode-back" href="../../../pds4_tools.reader.read_headers.html#pds4_tools.reader.read_headers.new_header">[docs]</a><span class="k">def</span> <span class="nf">new_header</span><span class="p">(</span><span class="nb">input</span><span class="p">,</span> <span class="o">**</span><span class="n">structure_kwargs</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Create an header structure from PDS-compliant data.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    input : bytes, str or unicode</span>
+<span class="sd">        A string or bytes containing the data for header.</span>
+<span class="sd">    structure_kwargs :  dict, optional</span>
+<span class="sd">        Keywords that are passed directly to the `HeaderStructure` constructor.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    HeaderStructure</span>
+<span class="sd">        An object representing the PDS4 header structure. The data attribute will contain *input*.</span>
+<span class="sd">        Other attributes may be specified via *structure_kwargs*.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># Create the HeaderStructure</span>
+    <span class="n">header_structure</span> <span class="o">=</span> <span class="n">HeaderStructure</span><span class="p">(</span><span class="o">**</span><span class="n">structure_kwargs</span><span class="p">)</span>
+    <span class="n">header_structure</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="nb">input</span>
+
+    <span class="k">return</span> <span class="n">header_structure</span></div>
+
+
+<div class="viewcode-block" id="read_header_data"><a class="viewcode-back" href="../../../pds4_tools.reader.read_headers.html#pds4_tools.reader.read_headers.read_header_data">[docs]</a><span class="k">def</span> <span class="nf">read_header_data</span><span class="p">(</span><span class="n">header_structure</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Reads the data for a single PDS4 header structure, modifies *header_structure* to contain said data.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    header_structure : HeaderStructure</span>
+<span class="sd">        The PDS4 Header data structure to which the data should be added.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    None</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">header_byte_data</span> <span class="o">=</span> <span class="n">_read_header_byte_data</span><span class="p">(</span><span class="n">header_structure</span><span class="p">)</span>
+
+    <span class="n">header_structure</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">new_header</span><span class="p">(</span><span class="n">header_byte_data</span><span class="p">)</span><span class="o">.</span><span class="n">data</span></div>
+
+
+<div class="viewcode-block" id="read_header"><a class="viewcode-back" href="../../../pds4_tools.reader.read_headers.html#pds4_tools.reader.read_headers.read_header">[docs]</a><span class="k">def</span> <span class="nf">read_header</span><span class="p">(</span><span class="n">full_label</span><span class="p">,</span> <span class="n">header_label</span><span class="p">,</span> <span class="n">data_filename</span><span class="p">,</span> <span class="n">lazy_load</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">decode_strings</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Create the `HeaderStructure`, containing label, data and meta data for a PDS4 Header from a file.</span>
+
+<span class="sd">    Headers refer to PDS4 header data structures, which typically describe a portion of the data that serves</span>
+<span class="sd">    as a header for some other data format.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    full_label : Label</span>
+<span class="sd">        The entire label for a PDS4 product, from which *header_label* originated.</span>
+<span class="sd">    header_label : Label</span>
+<span class="sd">        Portion of label that defines the PDS4 header data structure.</span>
+<span class="sd">    data_filename : str or unicode</span>
+<span class="sd">        Filename, including the full path, of the data file that contains the data for this header.</span>
+<span class="sd">    lazy_load : bool, optional</span>
+<span class="sd">        If True, does not read-in the data of this header until the first attempt to access it.</span>
+<span class="sd">        Defaults to False.</span>
+<span class="sd">    decode_strings : bool, optional</span>
+<span class="sd">        If True, the header data will be decoded to the ``unicode`` type in Python 2, and to the</span>
+<span class="sd">        ``str`` type in Python 3. If False, leaves said data as a byte string. Defaults to False.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    HeaderStructure</span>
+<span class="sd">        An object representing the header; contains its label, data and meta data</span>
+
+<span class="sd">    Raises</span>
+<span class="sd">    ------</span>
+<span class="sd">    TypeError</span>
+<span class="sd">        Raised if called on a non-header according to *header_label*.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># Skip over data structure if its not actually an Array</span>
+    <span class="k">if</span> <span class="s1">&#39;Header&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">header_label</span><span class="o">.</span><span class="n">tag</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s1">&#39;Attempted to read_header() on a non-header: &#39;</span> <span class="o">+</span> <span class="n">header_label</span><span class="o">.</span><span class="n">tag</span><span class="p">)</span>
+
+    <span class="c1"># Create the data structure for this array</span>
+    <span class="n">header_structure</span> <span class="o">=</span> <span class="n">HeaderStructure</span><span class="o">.</span><span class="n">from_file</span><span class="p">(</span><span class="n">data_filename</span><span class="p">,</span> <span class="n">header_label</span><span class="p">,</span> <span class="n">full_label</span><span class="p">,</span>
+                                                 <span class="n">lazy_load</span><span class="o">=</span><span class="n">lazy_load</span><span class="p">,</span> <span class="n">decode_strings</span><span class="o">=</span><span class="n">decode_strings</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">header_structure</span></div>
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">PDS4 Python Tools 1.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2015 - 2019, University of Maryland.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.6.
+    </div>
+  </body>
+</html>

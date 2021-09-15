@@ -1,0 +1,144 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>pds4_tools.extern.zscale module &#8212; PDS4 Python Tools 1.2 documentation</title>
+    <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/css/custom.css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="pds4_tools.extern.six module" href="pds4_tools.extern.six.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="pds4_tools.extern.six.html" title="pds4_tools.extern.six module"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">PDS4 Python Tools 1.2 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="pds4_tools.extern.html" accesskey="U">pds4_tools.extern package</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">pds4_tools.extern.zscale module</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-pds4_tools.extern.zscale">
+<span id="pds4-tools-extern-zscale-module"></span><h1>pds4_tools.extern.zscale module<a class="headerlink" href="#module-pds4_tools.extern.zscale" title="Permalink to this headline">¶</a></h1>
+<dl class="py function">
+<dt id="pds4_tools.extern.zscale.zscale">
+<code class="sig-name descname">zscale</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">image</span></em>, <em class="sig-param"><span class="n">nsamples</span><span class="o">=</span><span class="default_value">1000</span></em>, <em class="sig-param"><span class="n">contrast</span><span class="o">=</span><span class="default_value">0.25</span></em>, <em class="sig-param"><span class="n">bpmask</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">zmask</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/extern/zscale.html#zscale"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.extern.zscale.zscale" title="Permalink to this definition">¶</a></dt>
+<dd><p>Implement IRAF zscale algorithm</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>image</strong><span class="classifier">arr</span></dt><dd><p>2-d numpy array</p>
+</dd>
+<dt><strong>nsamples</strong><span class="classifier">int (Default: 1000)</span></dt><dd><p>Number of points in array to sample for determining scaling factors</p>
+</dd>
+<dt><strong>contrast</strong><span class="classifier">float (Default: 0.25)</span></dt><dd><p>Scaling factor for determining min and max. Larger values increase the
+difference between min and max values used for display.</p>
+</dd>
+<dt><strong>bpmask</strong><span class="classifier">None</span></dt><dd><p>Not used at this time</p>
+</dd>
+<dt><strong>zmask</strong><span class="classifier">None</span></dt><dd><p>Not used at this time</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>(z1, z2)</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pds4_tools.extern.zscale.zsc_sample">
+<code class="sig-name descname">zsc_sample</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">image</span></em>, <em class="sig-param"><span class="n">maxpix</span></em>, <em class="sig-param"><span class="n">bpmask</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">zmask</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/extern/zscale.html#zsc_sample"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.extern.zscale.zsc_sample" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="pds4_tools.extern.zscale.zsc_fit_line">
+<code class="sig-name descname">zsc_fit_line</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">samples</span></em>, <em class="sig-param"><span class="n">npix</span></em>, <em class="sig-param"><span class="n">krej</span></em>, <em class="sig-param"><span class="n">ngrow</span></em>, <em class="sig-param"><span class="n">maxiter</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/extern/zscale.html#zsc_fit_line"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.extern.zscale.zsc_fit_line" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="pds4_tools.extern.zscale.zsc_compute_sigma">
+<code class="sig-name descname">zsc_compute_sigma</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">flat</span></em>, <em class="sig-param"><span class="n">badpix</span></em>, <em class="sig-param"><span class="n">npix</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/extern/zscale.html#zsc_compute_sigma"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.extern.zscale.zsc_compute_sigma" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="pds4_tools.extern.six.html"
+                        title="previous chapter">pds4_tools.extern.six module</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/pds4_tools.extern.zscale.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="pds4_tools.extern.six.html" title="pds4_tools.extern.six module"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">PDS4 Python Tools 1.2 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="pds4_tools.extern.html" >pds4_tools.extern package</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">pds4_tools.extern.zscale module</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2015 - 2020, University of Maryland.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+    </div>
+  </body>
+</html>

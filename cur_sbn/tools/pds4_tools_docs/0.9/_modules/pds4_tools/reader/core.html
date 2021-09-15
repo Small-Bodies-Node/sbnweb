@@ -1,0 +1,456 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>pds4_tools.reader.core &#8212; PDS4 Python Tools 0.9 documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/css/custom.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '0.9',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="top" title="PDS4 Python Tools 0.9 documentation" href="../../../index.html" />
+    <link rel="up" title="Module code" href="../../index.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">PDS4 Python Tools 0.9 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" accesskey="U">Module code</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Source code for pds4_tools.reader.core</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="k">import</span> <span class="n">absolute_import</span>
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="k">import</span> <span class="n">division</span>
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="k">import</span> <span class="n">print_function</span>
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="k">import</span> <span class="n">unicode_literals</span>
+
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="kn">from</span> <span class="nn">.label_objects</span> <span class="k">import</span> <span class="n">Label</span>
+<span class="kn">from</span> <span class="nn">.read_headers</span> <span class="k">import</span> <span class="n">read_header</span>
+<span class="kn">from</span> <span class="nn">.read_arrays</span> <span class="k">import</span> <span class="n">read_array</span>
+<span class="kn">from</span> <span class="nn">.read_tables</span> <span class="k">import</span> <span class="n">read_table</span>
+<span class="kn">from</span> <span class="nn">.general_objects</span> <span class="k">import</span> <span class="n">StructureList</span>
+
+<span class="kn">from</span> <span class="nn">..utils.constants</span> <span class="k">import</span> <span class="n">PDS4_DATA_ROOT_ELEMENTS</span><span class="p">,</span> <span class="n">PDS4_DATA_FILE_AREAS</span><span class="p">,</span> <span class="n">PDS4_TABLE_TYPES</span>
+<span class="kn">from</span> <span class="nn">..utils.logging</span> <span class="k">import</span> <span class="n">logger_init</span>
+
+<span class="kn">from</span> <span class="nn">..extern</span> <span class="k">import</span> <span class="n">six</span>
+
+<span class="c1"># Initialize the logger</span>
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logger_init</span><span class="p">()</span>
+
+<span class="c1">#################################</span>
+
+
+<div class="viewcode-block" id="pds4_read"><a class="viewcode-back" href="../../../pds4_tools.reader.core.html#pds4_tools.reader.core.pds4_read">[docs]</a><span class="k">def</span> <span class="nf">pds4_read</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">quiet</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">lazy_load</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">no_scale</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">decode_strings</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Reads PDS4 compliant data into a `StructureList`.</span>
+
+<span class="sd">        Given a PDS4 label, reads the PDS4 data described in the label and</span>
+<span class="sd">        associated label meta data into a `StructureList`, with each PDS4 data</span>
+<span class="sd">        structure (e.g. Array_2D, Table_Binary, etc) as its own `Structure`. By</span>
+<span class="sd">        default all data structures described in the label are immediately</span>
+<span class="sd">        read into memory.</span>
+
+<span class="sd">        Notes</span>
+<span class="sd">        -----</span>
+<span class="sd">        Python 2 v. Python 3: Non-data strings (label, meta data, etc)  in</span>
+<span class="sd">        Python 2 will be decoded to ``unicode`` and in Python 3 they will</span>
+<span class="sd">        be decoded to ``str``. The return type of all data strings is</span>
+<span class="sd">        controlled by *decode_strings*.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        filename : str or unicode</span>
+<span class="sd">            The filename, including full or relative path if necessary, of</span>
+<span class="sd">            the PDS4 label describing the data.</span>
+<span class="sd">        quiet : bool, optional</span>
+<span class="sd">            Suppresses all info/warnings from being output.</span>
+<span class="sd">        lazy_load : bool, optional</span>
+<span class="sd">            If True, then the data of each PDS4 data structure will not be</span>
+<span class="sd">            read-in to memory until the first attempt to access it. Defaults</span>
+<span class="sd">            to False.</span>
+<span class="sd">        no_scale : bool, optional</span>
+<span class="sd">            If True, returned data will be exactly as written in the data file,</span>
+<span class="sd">            ignoring offset or scaling values. Defaults to False.</span>
+<span class="sd">        decode_strings : bool, optional</span>
+<span class="sd">            If True, strings data types contained in the returned data will be</span>
+<span class="sd">            decoded to the a unicode in Python 2, and to the str type in</span>
+<span class="sd">            Python 3. If False, leaves string types as byte strings.</span>
+<span class="sd">            Defaults to True.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        StructureList</span>
+<span class="sd">            Contains PDS4 data `Structure`&#39;s, each of which contains the data,</span>
+<span class="sd">            the meta data and the label portion describing that data structure.</span>
+<span class="sd">            `StructureList` can be treated/accessed/used like a ``dict`` or</span>
+<span class="sd">            ``list``.</span>
+
+<span class="sd">        Examples</span>
+<span class="sd">        --------</span>
+
+<span class="sd">        Below we document how to read data described by an example label</span>
+<span class="sd">        which has two data structures, an Array_2D_Image and a Table_Binary.</span>
+<span class="sd">        An outline of the label, including the array and a table with 3</span>
+<span class="sd">        fields, is given.</span>
+
+<span class="sd">        &gt;&gt;&gt; struct_list = pds4_read(&#39;/path/to/Example_Label.xml&#39;)</span>
+
+<span class="sd">        Example Label Outline::</span>
+
+<span class="sd">           Array_2D_Image: unnamed</span>
+<span class="sd">           Table_Binary: Observations</span>
+<span class="sd">               Field: order</span>
+<span class="sd">               Field: wavelength</span>
+<span class="sd">               Group: unnamed</span>
+<span class="sd">                   Field: pos_vector</span>
+
+<span class="sd">        All below documentation assumes that the above outlined label,</span>
+<span class="sd">        containing an array that does not have a name indicated in the label,</span>
+<span class="sd">        and a table that has the name &#39;Observations&#39; with 3 fields as shown,</span>
+<span class="sd">        has been read-in.</span>
+
+<span class="sd">        Accessing Example Structures:</span>
+
+<span class="sd">            To access the data structures in `StructureList`, which is returned</span>
+<span class="sd">            by `pds4_read()`, you may use any combination of ``dict``-like or</span>
+<span class="sd">            ``list``-like access.</span>
+
+<span class="sd">            &gt;&gt;&gt; unnamed_array = struct_list[0]</span>
+<span class="sd">            &gt;&gt;&gt;              or struct_list[&#39;ARRAY_0&#39;]</span>
+
+<span class="sd">            &gt;&gt;&gt; obs_table = struct_list[1]</span>
+<span class="sd">            &gt;&gt;&gt;          or struct_list[&#39;Observations&#39;]</span>
+
+<span class="sd">        Label or Structure Overview:</span>
+
+<span class="sd">            To see a summary of the data structures, which for Arrays shows the</span>
+<span class="sd">            type and dimensions of the array, and for Tables shows the type</span>
+<span class="sd">            and number of fields, you may use the `StructureList.info()` method.</span>
+<span class="sd">            Calling `Structure.info()` on a specific ``Structure`` instead will</span>
+<span class="sd">            provide a more detailed summary, including all Fields for a table.</span>
+
+<span class="sd">            &gt;&gt;&gt; struct_list.info()</span>
+<span class="sd">            &gt;&gt;&gt; unnamed_array.info()</span>
+<span class="sd">            &gt;&gt;&gt; obs_table.info()</span>
+
+<span class="sd">        Accessing Example Label data:</span>
+
+<span class="sd">            To access the read-in data, as an array-like (subclass of ``ndarray``),</span>
+<span class="sd">            you can use the data attribute for a PDS4 Array data structure, or</span>
+<span class="sd">            list-like and the field() method to access a field for a table.</span>
+
+<span class="sd">            PDS4 Arrays</span>
+<span class="sd">            &gt;&gt;&gt; unnamed_array.data</span>
+
+<span class="sd">            PDS4 Table fields</span>
+<span class="sd">            &gt;&gt;&gt; obs_table[&#39;wavelength&#39;]</span>
+<span class="sd">            &gt;&gt;&gt; obs_table.field(&#39;wavelength&#39;)</span>
+
+<span class="sd">            PDS4 Table records</span>
+<span class="sd">            &gt;&gt;&gt; obs_table[0:1000]</span>
+
+<span class="sd">        Accessing Example Label meta data:</span>
+
+<span class="sd">            You can access all meta data in the label for a given PDS4 data</span>
+<span class="sd">            structure or field via the ``OrderedDict`` meta_data attribute. The</span>
+<span class="sd">            below examples use the &#39;description&#39; element.</span>
+
+<span class="sd">            &gt;&gt;&gt; unnamed_array.meta_data[&#39;description&#39;]</span>
+
+<span class="sd">            &gt;&gt;&gt; obs_table.field(&#39;wavelength&#39;).meta_data[&#39;description&#39;]</span>
+<span class="sd">            &gt;&gt;&gt; obs_table.field(&#39;pos_vector&#39;).meta_data[&#39;description&#39;]</span>
+
+<span class="sd">        Accessing Example Label:</span>
+
+<span class="sd">            The XML for a label is also accessible via the label attribute,</span>
+<span class="sd">            either the entire label or for each PDS4 data structure.</span>
+
+<span class="sd">            Entire label:</span>
+<span class="sd">                &gt;&gt;&gt; struct_list.label</span>
+
+<span class="sd">            Part of label describing Observations table:</span>
+<span class="sd">                &gt;&gt;&gt; struct_list[&#39;Observations&#39;].label</span>
+<span class="sd">                &gt;&gt;&gt; struct_list[1].label</span>
+
+<span class="sd">            The returned object is similar to an ElementTree instance. It is</span>
+<span class="sd">            searchable via `Label.find()` and `Label.findall()` methods and XPATH.</span>
+<span class="sd">            Consult ``ElementTree`` manual for more details. For example,</span>
+
+<span class="sd">            &gt;&gt;&gt; struct_list.label.findall(&#39;.//disp:Display_Settings&#39;)</span>
+
+<span class="sd">            Will find all elements in the entire label named &#39;Display_Settings&#39;</span>
+<span class="sd">            which are in the &#39;disp&#39; prefix&#39;s namespace. You can additionally use the</span>
+<span class="sd">            `Label.to_dict()` and `Label.to_string()` methods.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># Set logger to only emit error messages if requested</span>
+    <span class="k">if</span> <span class="n">quiet</span><span class="p">:</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">quiet</span><span class="p">()</span>
+
+    <span class="c1"># Set exception hook, which automatically calls logger on every uncaught exception</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">excepthook</span> <span class="o">=</span> <span class="n">_handle_exception</span>
+
+    <span class="c1"># Initialize the log recording</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">get_handler</span><span class="p">(</span><span class="s1">&#39;log_handler&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">begin_recording</span><span class="p">()</span>
+
+    <span class="c1"># Read-in the PDS4 label</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;Processing label: &#39;</span> <span class="o">+</span> <span class="n">filename</span><span class="p">)</span>
+    <span class="n">label</span> <span class="o">=</span> <span class="n">Label</span><span class="o">.</span><span class="n">from_file</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+
+    <span class="c1"># Read and extract all the PDS4 data structures specified in this label</span>
+    <span class="n">structures</span> <span class="o">=</span> <span class="n">read_structures</span><span class="p">(</span><span class="n">label</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> <span class="n">lazy_load</span><span class="o">=</span><span class="n">lazy_load</span><span class="p">,</span> <span class="n">no_scale</span><span class="o">=</span><span class="n">no_scale</span><span class="p">,</span>
+                                 <span class="n">decode_strings</span><span class="o">=</span><span class="n">decode_strings</span><span class="p">)</span>
+
+    <span class="c1"># Save the log recording</span>
+    <span class="n">log</span> <span class="o">=</span> <span class="n">logger</span><span class="o">.</span><span class="n">get_handler</span><span class="p">(</span><span class="s1">&#39;log_handler&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">get_recording</span><span class="p">(</span><span class="n">reset</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+    <span class="c1"># Create the structure list (which stores all the read-in structures,</span>
+    <span class="c1"># the label and the log created while reading structures)</span>
+    <span class="n">structure_list</span> <span class="o">=</span> <span class="n">StructureList</span><span class="p">(</span><span class="n">structures</span><span class="p">,</span> <span class="n">label</span><span class="p">,</span> <span class="n">log</span><span class="p">)</span>
+
+    <span class="c1"># Check if XML does not appear to describe a PDS4 label</span>
+    <span class="k">if</span> <span class="s1">&#39;Product&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">structure_list</span><span class="o">.</span><span class="n">type</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;No viable/supported PDS4 label found.&#39;</span><span class="p">)</span>
+
+    <span class="c1"># Warn if potentially expected but did not find a supported PDS4 data structure</span>
+    <span class="k">elif</span> <span class="p">(</span><span class="n">structure_list</span><span class="o">.</span><span class="n">type</span> <span class="ow">in</span> <span class="n">PDS4_DATA_ROOT_ELEMENTS</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">structure_list</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">):</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s1">&#39;No viable/supported PDS4 data structures found.&#39;</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">structure_list</span></div>
+
+
+<div class="viewcode-block" id="read_structures"><a class="viewcode-back" href="../../../pds4_tools.reader.core.html#pds4_tools.reader.core.read_structures">[docs]</a><span class="k">def</span> <span class="nf">read_structures</span><span class="p">(</span><span class="n">label</span><span class="p">,</span> <span class="n">label_filename</span><span class="p">,</span> <span class="n">lazy_load</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">no_scale</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">decode_strings</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Reads PDS4 data structures described in label into a ``list`` of `Structure`&#39;s.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    label : Label</span>
+<span class="sd">        Entire label of a PDS4 product.</span>
+<span class="sd">    label_filename : str or unicode</span>
+<span class="sd">        The filename, including full or relative path, of the label.</span>
+<span class="sd">    lazy_load : bool, optional</span>
+<span class="sd">        If True, does not read-in data of each data structure until the first attempt</span>
+<span class="sd">        to access it. Defaults to False.</span>
+<span class="sd">    no_scale : bool, optional</span>
+<span class="sd">        If True, returned data will not be adjusted according to the offset and scaling</span>
+<span class="sd">        factor. Defaults to False.</span>
+<span class="sd">    decode_strings : bool, optional</span>
+<span class="sd">        If True, strings data types contained in the returned data will be decoded to</span>
+<span class="sd">        the ``unicode`` type in Python 2, and to the ``str`` type in Python 3. If</span>
+<span class="sd">        false, leaves string types as byte strings. Defaults to False.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    list[Structure]</span>
+<span class="sd">        The PDS4 data `Structure`&#39;s described in the label.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">structures</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="c1"># Storage for number of structures types added</span>
+    <span class="n">num_structures</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;header&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;array&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;table&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">}</span>
+
+    <span class="c1"># The path of the data file is relative to the path of the label according to the PDS4 Standard</span>
+    <span class="n">data_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">label_filename</span><span class="p">)</span>
+
+    <span class="c1"># Find all File Areas that can contain supported data structures (e.g. File_Area_Observation)</span>
+    <span class="n">file_areas</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">for</span> <span class="n">file_area_name</span> <span class="ow">in</span> <span class="n">PDS4_DATA_FILE_AREAS</span><span class="p">:</span>
+        <span class="n">file_areas</span> <span class="o">+=</span> <span class="n">label</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">file_area_name</span><span class="p">)</span>
+
+    <span class="c1"># Loop over each File Area</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">file_label</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">file_areas</span><span class="p">):</span>
+
+        <span class="n">data_filename</span> <span class="o">=</span> <span class="n">file_label</span><span class="o">.</span><span class="n">findtext</span><span class="p">(</span><span class="s1">&#39;.//file_name&#39;</span><span class="p">)</span>
+        <span class="n">data_filepath</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">data_path</span><span class="p">,</span> <span class="n">data_filename</span><span class="p">)</span>
+
+        <span class="c1"># Loop over each data structure inside the File Area</span>
+        <span class="k">for</span> <span class="n">j</span><span class="p">,</span> <span class="n">structure_label</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">file_label</span><span class="p">):</span>
+
+            <span class="n">structures_xml</span> <span class="o">=</span> <span class="n">structure_label</span><span class="o">.</span><span class="n">getroot</span><span class="p">()</span>
+
+            <span class="c1"># Determine structure is a table or an array</span>
+            <span class="k">if</span> <span class="s1">&#39;Header&#39;</span> <span class="ow">in</span> <span class="n">structures_xml</span><span class="o">.</span><span class="n">tag</span><span class="p">:</span>
+                <span class="n">structure_type</span> <span class="o">=</span> <span class="s1">&#39;header&#39;</span>
+            <span class="k">elif</span> <span class="s1">&#39;Array&#39;</span> <span class="ow">in</span> <span class="n">structures_xml</span><span class="o">.</span><span class="n">tag</span><span class="p">:</span>
+                <span class="n">structure_type</span> <span class="o">=</span> <span class="s1">&#39;array&#39;</span>
+            <span class="k">elif</span> <span class="n">structures_xml</span><span class="o">.</span><span class="n">tag</span> <span class="ow">in</span> <span class="n">PDS4_TABLE_TYPES</span><span class="p">:</span>
+                <span class="n">structure_type</span> <span class="o">=</span> <span class="s1">&#39;table&#39;</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="c1"># Skip over structure if its not actually a supported data structure</span>
+                <span class="k">continue</span>
+
+            <span class="c1"># Increment structure type counter</span>
+            <span class="n">num_structures</span><span class="p">[</span><span class="n">structure_type</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+
+            <span class="c1"># Create the structure</span>
+            <span class="n">args</span> <span class="o">=</span> <span class="p">[</span><span class="n">label</span><span class="p">,</span> <span class="n">structure_label</span><span class="p">,</span> <span class="n">data_filepath</span><span class="p">]</span>
+
+            <span class="k">if</span> <span class="n">structure_type</span> <span class="o">==</span> <span class="s1">&#39;header&#39;</span><span class="p">:</span>
+                <span class="n">structure</span> <span class="o">=</span> <span class="n">read_header</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="n">lazy_load</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">decode_strings</span><span class="o">=</span><span class="n">decode_strings</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">structure_type</span> <span class="o">==</span> <span class="s1">&#39;array&#39;</span><span class="p">:</span>
+                <span class="n">structure</span> <span class="o">=</span> <span class="n">read_array</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="n">lazy_load</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">no_scale</span><span class="o">=</span><span class="n">no_scale</span><span class="p">)</span>
+
+            <span class="k">elif</span> <span class="n">structure_type</span> <span class="o">==</span> <span class="s1">&#39;table&#39;</span><span class="p">:</span>
+                <span class="n">structure</span> <span class="o">=</span> <span class="n">read_table</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="n">lazy_load</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">no_scale</span><span class="o">=</span><span class="n">no_scale</span><span class="p">,</span> <span class="n">decode_strings</span><span class="o">=</span><span class="n">decode_strings</span><span class="p">)</span>
+
+            <span class="c1"># Set an ID for the structure if it has neither a local identifier or name in the label</span>
+            <span class="k">if</span> <span class="n">structure</span><span class="o">.</span><span class="n">id</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">structure</span><span class="o">.</span><span class="n">id</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">{0}</span><span class="s1">_</span><span class="si">{1}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">structure_type</span><span class="o">.</span><span class="n">upper</span><span class="p">(),</span> <span class="n">num_structures</span><span class="p">[</span><span class="n">structure_type</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+
+            <span class="c1"># Output that structure has been found</span>
+            <span class="k">if</span> <span class="n">lazy_load</span><span class="p">:</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;Found a </span><span class="si">{0}</span><span class="s1"> structure: </span><span class="si">{1}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">structure</span><span class="o">.</span><span class="n">type</span><span class="p">,</span> <span class="n">structure</span><span class="o">.</span><span class="n">id</span><span class="p">))</span>
+
+            <span class="c1"># Attempt to access the data property such that the data gets read-in (if not on lazy-load)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;Now processing a </span><span class="si">{0}</span><span class="s1"> structure: </span><span class="si">{1}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">structure</span><span class="o">.</span><span class="n">type</span><span class="p">,</span> <span class="n">structure</span><span class="o">.</span><span class="n">id</span><span class="p">))</span>
+                <span class="n">structure</span><span class="o">.</span><span class="n">data</span>
+
+            <span class="n">structures</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">structure</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">structures</span></div>
+
+
+<div class="viewcode-block" id="read_byte_data"><a class="viewcode-back" href="../../../pds4_tools.reader.core.html#pds4_tools.reader.core.read_byte_data">[docs]</a><span class="k">def</span> <span class="nf">read_byte_data</span><span class="p">(</span><span class="n">data_filename</span><span class="p">,</span> <span class="n">start_byte</span><span class="p">,</span> <span class="n">stop_byte</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Reads byte data from specified start byte to specified end byte.</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    This function will attempt to read until *stop_byte*, but if that is past the end-of-file it will</span>
+<span class="sd">    silently read until end-of-file only.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    data_filename : str or unicode</span>
+<span class="sd">        Filename, including the full path, of the data file that contains the data for this structure.</span>
+<span class="sd">    start_byte : int</span>
+<span class="sd">        The start byte from which to begin reading.</span>
+<span class="sd">    stop_byte : int</span>
+<span class="sd">        The start byte at which to stop reading. May be -1, to specify read until EOF.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    str or bytes</span>
+<span class="sd">        The read-in byte data.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># Read in the data in binary form into byte_data</span>
+    <span class="k">try</span><span class="p">:</span>
+
+        <span class="c1"># We use open() instead of io.open() because in Python 2.6, io.open() is subtly broken</span>
+        <span class="c1"># under some circumstances. E.g., at least on Windows, it can take significant time to</span>
+        <span class="c1"># read even small binary files</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">data_filename</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file_handler</span><span class="p">:</span>
+
+            <span class="n">file_handler</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="n">start_byte</span><span class="p">)</span>
+
+            <span class="c1"># Read until stop byte</span>
+            <span class="k">if</span> <span class="n">stop_byte</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">read_size</span> <span class="o">=</span> <span class="n">stop_byte</span> <span class="o">-</span> <span class="n">start_byte</span>
+                <span class="n">byte_data</span> <span class="o">=</span> <span class="n">file_handler</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">read_size</span><span class="p">)</span>
+
+            <span class="c1"># Read until EOF</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">byte_data</span> <span class="o">=</span> <span class="n">file_handler</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+
+        <span class="k">return</span> <span class="n">byte_data</span>
+
+    <span class="k">except</span> <span class="ne">IOError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">six</span><span class="o">.</span><span class="n">raise_from</span><span class="p">(</span><span class="ne">IOError</span><span class="p">(</span><span class="s2">&quot;Unable to read data from file &#39;&quot;</span> <span class="o">+</span> <span class="n">data_filename</span> <span class="o">+</span>
+                                     <span class="s2">&quot;&#39; found in label - </span><span class="si">{0}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">e</span><span class="p">)),</span> <span class="kc">None</span><span class="p">)</span></div>
+
+
+<span class="k">def</span> <span class="nf">_handle_exception</span><span class="p">(</span><span class="n">exc_type</span><span class="p">,</span> <span class="n">exc_value</span><span class="p">,</span> <span class="n">exc_traceback</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Passed to sys.excepthook. This function logs all uncaught exceptions while reading the data</span>
+<span class="sd">    (the exceptions will still be thrown).</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    exc_type</span>
+<span class="sd">        The exception class</span>
+<span class="sd">    exc_value</span>
+<span class="sd">        The exception instance</span>
+<span class="sd">    exc_traceback</span>
+<span class="sd">        The exception traceback</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    None</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="n">exc_value</span><span class="p">,</span> <span class="n">exc_info</span><span class="o">=</span><span class="p">(</span><span class="n">exc_type</span><span class="p">,</span> <span class="n">exc_value</span><span class="p">,</span> <span class="n">exc_traceback</span><span class="p">))</span>
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">PDS4 Python Tools 0.9 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2015 - 2017, University of Maryland.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.6.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,215 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>pds4_tools.extern.ordered_dict module &#8212; PDS4 Python Tools 0.9 documentation</title>
+    
+    <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.9',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="PDS4 Python Tools 0.9 documentation" href="index.html" />
+    <link rel="up" title="pds4_tools.extern package" href="pds4_tools.extern.html" />
+    <link rel="next" title="pds4_tools.extern.six module" href="pds4_tools.extern.six.html" />
+    <link rel="prev" title="pds4_tools.extern.cached_property module" href="pds4_tools.extern.cached_property.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="pds4_tools.extern.six.html" title="pds4_tools.extern.six module"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="pds4_tools.extern.cached_property.html" title="pds4_tools.extern.cached_property module"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">PDS4 Python Tools 0.9 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="pds4_tools.extern.html" accesskey="U">pds4_tools.extern package</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="pds4_tools.extern.cached_property.html"
+                        title="previous chapter">pds4_tools.extern.cached_property module</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="pds4_tools.extern.six.html"
+                        title="next chapter">pds4_tools.extern.six module</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/pds4_tools.extern.ordered_dict.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-pds4_tools.extern.ordered_dict">
+<span id="pds4-tools-extern-ordered-dict-module"></span><h1>pds4_tools.extern.ordered_dict module<a class="headerlink" href="#module-pds4_tools.extern.ordered_dict" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="pds4_tools.extern.ordered_dict.OrderedDict">
+<em class="property">class </em><code class="descname">OrderedDict</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwds</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/extern/ordered_dict.html#OrderedDict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.extern.ordered_dict.OrderedDict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">dict</span></code></p>
+<p>Dictionary that remembers insertion order, for Python 2.6 and below</p>
+<p>Code from: <a class="reference external" href="http://code.activestate.com/recipes/576693/">http://code.activestate.com/recipes/576693/</a>
+An inherited dict maps keys to values.
+The inherited dict provides __getitem__, __len__, __contains__, and get.
+The remaining methods are order-aware.
+Big-O running times for all methods are the same as for regular dictionaries.</p>
+<p>The internal self.__map dictionary maps keys to links in a doubly linked list.
+The circular doubly linked list starts and ends with a sentinel element.
+The sentinel element never gets deleted (this simplifies the algorithm).
+Each link is stored as a list of length three:  [PREV, NEXT, KEY].</p>
+<dl class="method">
+<dt id="pds4_tools.extern.ordered_dict.OrderedDict.clear">
+<code class="descname">clear</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/extern/ordered_dict.html#OrderedDict.clear"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.extern.ordered_dict.OrderedDict.clear" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pds4_tools.extern.ordered_dict.OrderedDict.popitem">
+<code class="descname">popitem</code><span class="sig-paren">(</span><em>last=True</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/extern/ordered_dict.html#OrderedDict.popitem"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.extern.ordered_dict.OrderedDict.popitem" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pds4_tools.extern.ordered_dict.OrderedDict.keys">
+<code class="descname">keys</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/extern/ordered_dict.html#OrderedDict.keys"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.extern.ordered_dict.OrderedDict.keys" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pds4_tools.extern.ordered_dict.OrderedDict.values">
+<code class="descname">values</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/extern/ordered_dict.html#OrderedDict.values"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.extern.ordered_dict.OrderedDict.values" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pds4_tools.extern.ordered_dict.OrderedDict.items">
+<code class="descname">items</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/extern/ordered_dict.html#OrderedDict.items"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.extern.ordered_dict.OrderedDict.items" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pds4_tools.extern.ordered_dict.OrderedDict.iterkeys">
+<code class="descname">iterkeys</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/extern/ordered_dict.html#OrderedDict.iterkeys"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.extern.ordered_dict.OrderedDict.iterkeys" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pds4_tools.extern.ordered_dict.OrderedDict.itervalues">
+<code class="descname">itervalues</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/extern/ordered_dict.html#OrderedDict.itervalues"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.extern.ordered_dict.OrderedDict.itervalues" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pds4_tools.extern.ordered_dict.OrderedDict.iteritems">
+<code class="descname">iteritems</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/extern/ordered_dict.html#OrderedDict.iteritems"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.extern.ordered_dict.OrderedDict.iteritems" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pds4_tools.extern.ordered_dict.OrderedDict.update">
+<code class="descname">update</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwds</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/extern/ordered_dict.html#OrderedDict.update"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.extern.ordered_dict.OrderedDict.update" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pds4_tools.extern.ordered_dict.OrderedDict.pop">
+<code class="descname">pop</code><span class="sig-paren">(</span><em>key</em>, <em>default=&lt;object object at 0x000000000402C720&gt;</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/extern/ordered_dict.html#OrderedDict.pop"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.extern.ordered_dict.OrderedDict.pop" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pds4_tools.extern.ordered_dict.OrderedDict.setdefault">
+<code class="descname">setdefault</code><span class="sig-paren">(</span><em>key</em>, <em>default=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/extern/ordered_dict.html#OrderedDict.setdefault"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.extern.ordered_dict.OrderedDict.setdefault" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pds4_tools.extern.ordered_dict.OrderedDict.copy">
+<code class="descname">copy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/extern/ordered_dict.html#OrderedDict.copy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.extern.ordered_dict.OrderedDict.copy" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="classmethod">
+<dt id="pds4_tools.extern.ordered_dict.OrderedDict.fromkeys">
+<em class="property">classmethod </em><code class="descname">fromkeys</code><span class="sig-paren">(</span><em>iterable</em>, <em>value=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/extern/ordered_dict.html#OrderedDict.fromkeys"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.extern.ordered_dict.OrderedDict.fromkeys" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pds4_tools.extern.ordered_dict.OrderedDict.viewkeys">
+<code class="descname">viewkeys</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/extern/ordered_dict.html#OrderedDict.viewkeys"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.extern.ordered_dict.OrderedDict.viewkeys" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pds4_tools.extern.ordered_dict.OrderedDict.viewvalues">
+<code class="descname">viewvalues</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/extern/ordered_dict.html#OrderedDict.viewvalues"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.extern.ordered_dict.OrderedDict.viewvalues" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pds4_tools.extern.ordered_dict.OrderedDict.viewitems">
+<code class="descname">viewitems</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/extern/ordered_dict.html#OrderedDict.viewitems"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.extern.ordered_dict.OrderedDict.viewitems" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="pds4_tools.extern.six.html" title="pds4_tools.extern.six module"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="pds4_tools.extern.cached_property.html" title="pds4_tools.extern.cached_property module"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">PDS4 Python Tools 0.9 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="pds4_tools.extern.html" >pds4_tools.extern package</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2015 - 2017, University of Maryland.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.6.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,1417 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>pds4_tools.reader.label_objects &#8212; PDS4 Python Tools 1.1 documentation</title>
+    <link rel="stylesheet" href="../../../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/css/custom.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">PDS4 Python Tools 1.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" accesskey="U">Module code</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Source code for pds4_tools.reader.label_objects</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="k">import</span> <span class="n">absolute_import</span>
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="k">import</span> <span class="n">division</span>
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="k">import</span> <span class="n">print_function</span>
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="k">import</span> <span class="n">unicode_literals</span>
+
+<span class="kn">import</span> <span class="nn">re</span>
+<span class="kn">from</span> <span class="nn">itertools</span> <span class="k">import</span> <span class="n">chain</span>
+<span class="kn">from</span> <span class="nn">xml.etree</span> <span class="k">import</span> <span class="n">ElementTree</span> <span class="k">as</span> <span class="n">ET</span>
+
+<span class="kn">from</span> <span class="nn">.read_label</span> <span class="k">import</span> <span class="n">read_label</span>
+<span class="kn">from</span> <span class="nn">.general_objects</span> <span class="k">import</span> <span class="n">Meta_Class</span>
+
+<span class="kn">from</span> <span class="nn">..utils</span> <span class="k">import</span> <span class="n">compat</span>
+<span class="kn">from</span> <span class="nn">..utils.constants</span> <span class="k">import</span> <span class="n">PDS4_NAMESPACES</span><span class="p">,</span> <span class="n">PDS4_DATA_FILE_AREAS</span>
+<span class="kn">from</span> <span class="nn">..utils.helpers</span> <span class="k">import</span> <span class="n">xml_to_dict</span>
+<span class="kn">from</span> <span class="nn">..utils.logging</span> <span class="k">import</span> <span class="n">logger_init</span>
+<span class="kn">from</span> <span class="nn">..utils.exceptions</span> <span class="k">import</span> <span class="n">PDS4StandardsException</span>
+
+<span class="kn">from</span> <span class="nn">..extern</span> <span class="k">import</span> <span class="n">six</span>
+
+<span class="c1"># Initialize the logger</span>
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logger_init</span><span class="p">()</span>
+
+<span class="c1">#################################</span>
+
+
+<div class="viewcode-block" id="Label"><a class="viewcode-back" href="../../../pds4_tools.reader.label_objects.html#pds4_tools.reader.label_objects.Label">[docs]</a><span class="k">class</span> <span class="nc">Label</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Stores a PDS4 label or a portion of a PDS4 label.</span>
+
+<span class="sd">        This class is similar to an ``ElementTree`` Element; most of the basic attributes and methods</span>
+<span class="sd">        for Element will also work here. Some additional convenience methods and features are provided</span>
+<span class="sd">        to make it easier to work with PDS4 labels.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        (in general `from_file` should be used instead of using __init__)</span>
+
+<span class="sd">        convenient_root : ``ElementTree`` Element</span>
+<span class="sd">            Root element of the PDS4 label or label portion, modified to normalize whitespace</span>
+<span class="sd">            in all element and attribute values containing a single non-whitespace line, to</span>
+<span class="sd">            strip the default namespace, and to use the default PDS4 prefixes for known namespaces.</span>
+<span class="sd">        unmodified_root : ``ElementTree`` Element</span>
+<span class="sd">            Root element of the PDS4 label or label portion.</span>
+<span class="sd">        convenient_namespace_map : dict, optional</span>
+<span class="sd">            Keys are the namespace URIs and values are the prefixes for the convenient root of this label.</span>
+<span class="sd">        unmodified_namespace_map : dict, optional</span>
+<span class="sd">            Keys are the namespace URIs and values are the prefixes for the unmodified root of this label.</span>
+<span class="sd">        default_root : str or unicode, optional</span>
+<span class="sd">            Specifies whether the root element used by default when calling methods and attributes</span>
+<span class="sd">            in this object will be the convenient_root or unmodified_root. Must be one of</span>
+<span class="sd">            &#39;convenient&#39; or &#39;unmodified&#39;. Defaults to convenient.</span>
+
+<span class="sd">        Examples</span>
+<span class="sd">        --------</span>
+
+<span class="sd">        To load a label from file,</span>
+
+<span class="sd">        &gt;&gt;&gt; lbl = Label.from_file(&#39;/path/to/label.xml&#39;)</span>
+
+<span class="sd">        To search the entire label for logical_identifier (of which only one is allowed),</span>
+
+<span class="sd">        &gt;&gt;&gt; lbl.find(&#39;.//logical_identifier&#39;)</span>
+
+<span class="sd">        To search the entire label for Display Settings in the &#39;disp&#39; namespace</span>
+<span class="sd">        (of which there could be multiple),</span>
+
+<span class="sd">        &gt;&gt;&gt; display_settings = lbl.findall(&#39;.//disp:Display_Settings&#39;)</span>
+
+<span class="sd">        To search the Display Settings for the top-level element, Display_Direction,</span>
+
+<span class="sd">        &gt;&gt;&gt; display_settings.find(&#39;disp:Display_Direction&#39;)</span>
+
+<span class="sd">        See method descriptions for more info.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">convenient_root</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">unmodified_root</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                 <span class="n">convenient_namespace_map</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">unmodified_namespace_map</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">default_root</span><span class="o">=</span><span class="s1">&#39;convenient&#39;</span><span class="p">):</span>
+
+        <span class="c1"># ElementTree root containing read-in XML which was modified before storage</span>
+        <span class="c1"># (see options set in from_file() below)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_convenient_root</span> <span class="o">=</span> <span class="n">convenient_root</span>
+
+        <span class="c1"># ElementTree root containing the unmodified XML</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_unmodified_root</span> <span class="o">=</span> <span class="n">unmodified_root</span>
+
+        <span class="c1"># Dictionaries with keys being the namespace URIs and values being the namespace prefixes</span>
+        <span class="c1"># for namespaces used this label</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_convenient_namespace_map</span> <span class="o">=</span> <span class="n">convenient_namespace_map</span> <span class="k">if</span> <span class="n">convenient_namespace_map</span> <span class="k">else</span> <span class="p">{}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_unmodified_namespace_map</span> <span class="o">=</span> <span class="n">unmodified_namespace_map</span> <span class="k">if</span> <span class="n">unmodified_namespace_map</span> <span class="k">else</span> <span class="p">{}</span>
+
+        <span class="c1"># Set default root (running it through setter)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_default_root</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">default_root</span> <span class="o">=</span> <span class="n">default_root</span>
+
+<div class="viewcode-block" id="Label.__getitem__"><a class="viewcode-back" href="../../../pds4_tools.reader.label_objects.html#pds4_tools.reader.label_objects.Label.__getitem__">[docs]</a>    <span class="k">def</span> <span class="nf">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Obtain subelement.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        key : int or slice</span>
+<span class="sd">            Specifies which subelement to select.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        Label</span>
+<span class="sd">            Subelement of label.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">return</span> <span class="n">Label</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_convenient_root</span><span class="p">[</span><span class="n">key</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">_unmodified_root</span><span class="p">[</span><span class="n">key</span><span class="p">],</span>
+                     <span class="bp">self</span><span class="o">.</span><span class="n">_convenient_namespace_map</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_unmodified_namespace_map</span><span class="p">,</span>
+                     <span class="n">default_root</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">default_root</span><span class="p">)</span></div>
+
+    <span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        str</span>
+<span class="sd">            A repr string identifying the tag element in a similar way to ``ElementTree`` Element.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_convenient_root</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="nb">super</span><span class="p">(</span><span class="n">Label</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__repr__</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="s1">&#39;&lt;</span><span class="si">{0}</span><span class="s1"> Element </span><span class="si">{1}</span><span class="s1"> at </span><span class="si">{2}</span><span class="s1">&gt;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="p">,</span> <span class="nb">repr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_convenient_root</span><span class="o">.</span><span class="n">tag</span><span class="p">),</span> <span class="nb">hex</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="bp">self</span><span class="p">)))</span>
+
+<div class="viewcode-block" id="Label.__len__"><a class="viewcode-back" href="../../../pds4_tools.reader.label_objects.html#pds4_tools.reader.label_objects.Label.__len__">[docs]</a>    <span class="k">def</span> <span class="nf">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        int</span>
+<span class="sd">            Number of (direct) subelements this label has.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">getroot</span><span class="p">())</span></div>
+
+<div class="viewcode-block" id="Label.from_file"><a class="viewcode-back" href="../../../pds4_tools.reader.label_objects.html#pds4_tools.reader.label_objects.Label.from_file">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">from_file</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> <span class="n">default_root</span><span class="o">=</span><span class="s1">&#39;convenient&#39;</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Create Label from a PDS4 XML label file.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        filename : str or unicode</span>
+<span class="sd">            Filename, including path, to XML label.</span>
+<span class="sd">        default_root : str or unicode, optional</span>
+<span class="sd">            Specifies whether the root element used by default when calling methods and attributes in</span>
+<span class="sd">            this object will be the convenient_root or unmodified_root. Must be one of convenient|unmodified.</span>
+<span class="sd">            Defaults to convenient.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        Label</span>
+<span class="sd">            Instance, with the contents being taken from *filename*.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">convenient_root</span><span class="p">,</span> <span class="n">convenient_namespace_map</span> <span class="o">=</span> <span class="n">read_label</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span>
+                                            <span class="n">strip_extra_whitespace</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">enforce_default_prefixes</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                                            <span class="n">include_namespace_map</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">decode_py2</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+        <span class="n">unmodified_root</span><span class="p">,</span> <span class="n">unmodified_namespace_map</span> <span class="o">=</span> <span class="n">read_label</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span>
+                                            <span class="n">strip_extra_whitespace</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">enforce_default_prefixes</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                                            <span class="n">include_namespace_map</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">decode_py2</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+        <span class="n">obj</span> <span class="o">=</span> <span class="bp">cls</span><span class="p">(</span><span class="n">convenient_root</span><span class="o">=</span><span class="n">convenient_root</span><span class="p">,</span>
+                  <span class="n">unmodified_root</span><span class="o">=</span><span class="n">unmodified_root</span><span class="p">,</span>
+                  <span class="n">convenient_namespace_map</span><span class="o">=</span><span class="n">convenient_namespace_map</span><span class="p">,</span>
+                  <span class="n">unmodified_namespace_map</span><span class="o">=</span><span class="n">unmodified_namespace_map</span><span class="p">,</span>
+                  <span class="n">default_root</span><span class="o">=</span><span class="n">default_root</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">obj</span></div>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">text</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">            Text of element.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">getroot</span><span class="p">()</span><span class="o">.</span><span class="n">text</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">tail</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">            Tail of element.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">getroot</span><span class="p">()</span><span class="o">.</span><span class="n">tail</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">tag</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">            Tag of element.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">getroot</span><span class="p">()</span><span class="o">.</span><span class="n">tag</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">attrib</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">            Attributes of element.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="c1"># Make a copy so that assignment of individual values with-in the dictionary cannot make the two</span>
+        <span class="c1"># roots out of sync</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">getroot</span><span class="p">()</span><span class="o">.</span><span class="n">attrib</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">default_root</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        str or unicode</span>
+<span class="sd">            Either &#39;convenient&#39; or &#39;unmodified&#39;. Specifies whether the root element used by default when</span>
+<span class="sd">            calling methods and attributes in this object will be the convenient_root or unmodified_root.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_default_root</span>
+
+    <span class="nd">@text</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">text</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">getroot</span><span class="p">(</span><span class="n">unmodified</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">value</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">getroot</span><span class="p">(</span><span class="n">unmodified</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">value</span>
+
+    <span class="nd">@tail</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">tail</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">getroot</span><span class="p">(</span><span class="n">unmodified</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">tail</span> <span class="o">=</span> <span class="n">value</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">getroot</span><span class="p">(</span><span class="n">unmodified</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">tail</span> <span class="o">=</span> <span class="n">value</span>
+
+    <span class="nd">@tag</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">tag</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">getroot</span><span class="p">(</span><span class="n">unmodified</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">tag</span> <span class="o">=</span> <span class="n">value</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">getroot</span><span class="p">(</span><span class="n">unmodified</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">tag</span> <span class="o">=</span> <span class="n">value</span>
+
+    <span class="nd">@attrib</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">attrib</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">getroot</span><span class="p">(</span><span class="n">unmodified</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">attrib</span> <span class="o">=</span> <span class="n">value</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">getroot</span><span class="p">(</span><span class="n">unmodified</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">attrib</span> <span class="o">=</span> <span class="n">value</span>
+
+    <span class="nd">@default_root</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">default_root</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+
+        <span class="k">if</span> <span class="n">value</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;convenient&#39;</span><span class="p">,</span> <span class="s1">&#39;unmodified&#39;</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Unknown default root for Label: </span><span class="si">{0}</span><span class="s1">.&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">value</span><span class="p">))</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_default_root</span> <span class="o">=</span> <span class="n">value</span>
+
+<div class="viewcode-block" id="Label.get"><a class="viewcode-back" href="../../../pds4_tools.reader.label_objects.html#pds4_tools.reader.label_objects.Label.get">[docs]</a>    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">unmodified</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Gets the element attribute named *key*.</span>
+
+<span class="sd">        Uses the same format as ``ElementTree.get``.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        key : str or unicode</span>
+<span class="sd">            Attribute name to select.</span>
+<span class="sd">        default : optional</span>
+<span class="sd">            Value to return if no attribute matching *key* is found. Defaults to None.</span>
+<span class="sd">        unmodified : bool or None</span>
+<span class="sd">            Looks for key in unmodified ``ElementTree`` root if True, or the convenient one if False.</span>
+<span class="sd">            Defaults to None, which uses `Label.default_root` to decide.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">            Value of the attribute named *key* if it exists, or *default* otherwise.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">getroot</span><span class="p">(</span><span class="n">unmodified</span><span class="o">=</span><span class="n">unmodified</span><span class="p">)</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">default</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Label.getroot"><a class="viewcode-back" href="../../../pds4_tools.reader.label_objects.html#pds4_tools.reader.label_objects.Label.getroot">[docs]</a>    <span class="k">def</span> <span class="nf">getroot</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">unmodified</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Obtains ``ElementTree`` root Element instance underlying this object.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        unmodified : bool or None or None, optional</span>
+<span class="sd">            If True, returns the unmodified (see `Label` docstring for meaning) ``ElementTree`` Element.</span>
+<span class="sd">            If False, returns convenient root. Defaults to None, which uses `Label.default_root` to</span>
+<span class="sd">            decide.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        Element instance</span>
+<span class="sd">            The ``ElementTree`` root element backing this Label.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">root</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_convenient_root</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_resolve_unmodified</span><span class="p">(</span><span class="n">unmodified</span><span class="p">):</span>
+            <span class="n">root</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_unmodified_root</span>
+
+        <span class="k">return</span> <span class="n">root</span></div>
+
+<div class="viewcode-block" id="Label.find"><a class="viewcode-back" href="../../../pds4_tools.reader.label_objects.html#pds4_tools.reader.label_objects.Label.find">[docs]</a>    <span class="k">def</span> <span class="nf">find</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">match</span><span class="p">,</span> <span class="n">namespaces</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">unmodified</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">return_ET</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Search for the first matching subelement.</span>
+
+<span class="sd">        Uses the same format as ``ElementTree.find``. See `Label` docstring or ``ElementTree.find``</span>
+<span class="sd">        documentation for examples and supported XPATH description.</span>
+
+<span class="sd">        The namespaces found in the label, and those contained in the PDS4_NAMESPACES constant are registered</span>
+<span class="sd">        automatically. If match contains other namespace prefixes then you must pass in *namespaces*</span>
+<span class="sd">        parameter specifying the URI for each prefix. In case of duplicate prefixes for the same URI, prefixes</span>
+<span class="sd">        in the label overwrite those in PDS4_NAMESPACES, and prefixes in *namespaces* overwrite both.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        match : str or unicode</span>
+<span class="sd">            XPATH search string.</span>
+<span class="sd">        namespaces : dict, optional</span>
+<span class="sd">            Dictionary with keys corresponding to prefix and values corresponding to URI for namespaces.</span>
+<span class="sd">        unmodified : bool or None, optional</span>
+<span class="sd">            Searches unmodified ``ElementTree`` root if True, or the convenient one if False.</span>
+<span class="sd">            Defaults to None, which uses `Label.default_root` to decide.</span>
+<span class="sd">        return_ET : bool, optional</span>
+<span class="sd">            Returns an ``ElementTree`` Element instead of a Label if True. Defaults to False.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        Label, ElementTree Element or None</span>
+<span class="sd">            Matched subelement, or None if there is no match.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="c1"># Select the proper XML root to look in</span>
+        <span class="n">root</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">getroot</span><span class="p">(</span><span class="n">unmodified</span><span class="p">)</span>
+
+        <span class="c1"># Append known namespaces if search contains them</span>
+        <span class="n">namespaces</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_append_known_namespaces</span><span class="p">(</span><span class="n">match</span><span class="p">,</span> <span class="n">namespaces</span><span class="p">,</span>  <span class="n">unmodified</span><span class="p">)</span>
+
+        <span class="c1"># Find the matching element</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">found_element</span> <span class="o">=</span> <span class="n">root</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">match</span><span class="p">,</span> <span class="n">namespaces</span><span class="o">=</span><span class="n">namespaces</span><span class="p">)</span>
+
+        <span class="c1"># Implement namespaces support and unicode searching for Python 2.6</span>
+        <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
+
+            <span class="k">if</span> <span class="n">namespaces</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">match</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_add_namespaces_to_match</span><span class="p">(</span><span class="n">match</span><span class="p">,</span> <span class="n">namespaces</span><span class="p">)</span>
+
+            <span class="n">match</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_unicode_match_to_str</span><span class="p">(</span><span class="n">match</span><span class="p">)</span>
+
+            <span class="n">found_element</span> <span class="o">=</span> <span class="n">root</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">match</span><span class="p">)</span>
+
+        <span class="c1"># If return_ET is not used, find the other matching element</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">return_ET</span> <span class="ow">and</span> <span class="n">found_element</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+
+            <span class="n">unmodified</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_resolve_unmodified</span><span class="p">(</span><span class="n">unmodified</span><span class="p">)</span>
+
+            <span class="n">other_element</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_find_other_element</span><span class="p">(</span><span class="n">found_element</span><span class="p">,</span> <span class="n">unmodified</span><span class="p">)</span>
+            <span class="n">args</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_convenient_namespace_map</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_unmodified_namespace_map</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_default_root</span><span class="p">]</span>
+
+            <span class="k">if</span> <span class="n">unmodified</span><span class="p">:</span>
+                <span class="n">label</span> <span class="o">=</span> <span class="n">Label</span><span class="p">(</span><span class="n">other_element</span><span class="p">,</span> <span class="n">found_element</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">label</span> <span class="o">=</span> <span class="n">Label</span><span class="p">(</span><span class="n">found_element</span><span class="p">,</span> <span class="n">other_element</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">)</span>
+
+            <span class="n">found_element</span> <span class="o">=</span> <span class="n">label</span>
+
+        <span class="k">return</span> <span class="n">found_element</span></div>
+
+<div class="viewcode-block" id="Label.findall"><a class="viewcode-back" href="../../../pds4_tools.reader.label_objects.html#pds4_tools.reader.label_objects.Label.findall">[docs]</a>    <span class="k">def</span> <span class="nf">findall</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">match</span><span class="p">,</span> <span class="n">namespaces</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">unmodified</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">return_ET</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Search for all matching subelements.</span>
+
+<span class="sd">        Uses the same format as ``ElementTree.findall``. See `Label` docstring or ``ElementTree.findall``</span>
+<span class="sd">        documentation for examples and supported XPATH description.</span>
+
+<span class="sd">        The namespaces found in the label, and those contained in the PDS4_NAMESPACES constant are registered</span>
+<span class="sd">        automatically. If match contains other namespace prefixes then you must pass in *namespaces*</span>
+<span class="sd">        parameter specifying the URI for each prefix. In case of duplicate prefixes for the same URI, prefixes</span>
+<span class="sd">        in the label overwrite those in PDS4_NAMESPACES, and prefixes in *namespaces* overwrite both.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        match : str or unicode</span>
+<span class="sd">            XPATH search string</span>
+<span class="sd">        namespaces : dict, optional</span>
+<span class="sd">            Dictionary with keys corresponding to prefix and values corresponding to URI for namespaces.</span>
+<span class="sd">        unmodified : bool or None, optional</span>
+<span class="sd">            Searches unmodified ``ElementTree`` root if True, or the convenient one if False.</span>
+<span class="sd">            Defaults to None, which uses `Label.default_root` to decide.</span>
+<span class="sd">        return_ET : bool, optional</span>
+<span class="sd">            Returned list contains ``ElementTree`` Elements instead of Labels if True. Defaults to False.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        List[Label or ElementTree Element]</span>
+<span class="sd">            Matched subelements, or [] if there are no matches.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="c1"># Select the proper XML root to look in</span>
+        <span class="n">root</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">getroot</span><span class="p">(</span><span class="n">unmodified</span><span class="p">)</span>
+
+        <span class="c1"># Append known namespaces if search contains them</span>
+        <span class="n">namespaces</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_append_known_namespaces</span><span class="p">(</span><span class="n">match</span><span class="p">,</span> <span class="n">namespaces</span><span class="p">,</span> <span class="n">unmodified</span><span class="p">)</span>
+
+        <span class="c1"># Find the matching elements</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">found_elements</span> <span class="o">=</span> <span class="n">root</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">match</span><span class="p">,</span> <span class="n">namespaces</span><span class="o">=</span><span class="n">namespaces</span><span class="p">)</span>
+
+        <span class="c1"># Implement namespaces support and unicode searching for Python 2.6</span>
+        <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
+
+            <span class="k">if</span> <span class="n">namespaces</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">match</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_add_namespaces_to_match</span><span class="p">(</span><span class="n">match</span><span class="p">,</span> <span class="n">namespaces</span><span class="p">)</span>
+
+            <span class="n">match</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_unicode_match_to_str</span><span class="p">(</span><span class="n">match</span><span class="p">)</span>
+
+            <span class="n">found_elements</span> <span class="o">=</span> <span class="n">root</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">match</span><span class="p">)</span>
+
+        <span class="c1"># If return_ET is not used, find the other matching elements</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">return_ET</span> <span class="ow">and</span> <span class="n">found_elements</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+
+            <span class="n">labels</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="n">unmodified</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_resolve_unmodified</span><span class="p">(</span><span class="n">unmodified</span><span class="p">)</span>
+
+            <span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">found_elements</span><span class="p">:</span>
+
+                <span class="n">other_element</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_find_other_element</span><span class="p">(</span><span class="n">element</span><span class="p">,</span> <span class="n">unmodified</span><span class="p">)</span>
+                <span class="n">args</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_convenient_namespace_map</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_unmodified_namespace_map</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_default_root</span><span class="p">]</span>
+
+                <span class="k">if</span> <span class="n">unmodified</span><span class="p">:</span>
+                    <span class="n">label</span> <span class="o">=</span> <span class="n">Label</span><span class="p">(</span><span class="n">other_element</span><span class="p">,</span> <span class="n">element</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">label</span> <span class="o">=</span> <span class="n">Label</span><span class="p">(</span><span class="n">element</span><span class="p">,</span> <span class="n">other_element</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">)</span>
+
+                <span class="n">labels</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">label</span><span class="p">)</span>
+
+            <span class="n">found_elements</span> <span class="o">=</span> <span class="n">labels</span>
+
+        <span class="k">return</span> <span class="n">found_elements</span></div>
+
+<div class="viewcode-block" id="Label.findtext"><a class="viewcode-back" href="../../../pds4_tools.reader.label_objects.html#pds4_tools.reader.label_objects.Label.findtext">[docs]</a>    <span class="k">def</span> <span class="nf">findtext</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">match</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">namespaces</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">unmodified</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Finds text for the first subelement matching match.</span>
+
+<span class="sd">        Uses the same format as ``ElementTree.findtext``. See `Label` docstring or ``ElementTree.findtext``</span>
+<span class="sd">        documentation for examples and supported XPATH description.</span>
+
+<span class="sd">        The namespaces found in the label, and those contained in the PDS4_NAMESPACES constant are registered</span>
+<span class="sd">        automatically. If match contains other namespace prefixes then you must pass in *namespaces*</span>
+<span class="sd">        parameter specifying the URI for each prefix. In case of duplicate prefixes for the same URI, prefixes</span>
+<span class="sd">        in the label overwrite those in PDS4_NAMESPACES, and prefixes in *namespaces* overwrite both.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        match : str or unicode</span>
+<span class="sd">            XPATH search string.</span>
+<span class="sd">        default : optional</span>
+<span class="sd">            Value to return if no match is found. Defaults to None.</span>
+<span class="sd">        namespaces : dict, optional</span>
+<span class="sd">            Dictionary with keys corresponding to prefixes and values corresponding to URIs for namespace.</span>
+<span class="sd">        unmodified : bool or None, optional</span>
+<span class="sd">            Searches unmodified ``ElementTree`` root if True, or the convenient one if False.</span>
+<span class="sd">            Defaults to None, which uses `Label.default_root` to decide.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">            Text of the first matched element, or *default* otherwise.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">found_element</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">match</span><span class="p">,</span> <span class="n">namespaces</span><span class="o">=</span><span class="n">namespaces</span><span class="p">,</span> <span class="n">unmodified</span><span class="o">=</span><span class="n">unmodified</span><span class="p">,</span> <span class="n">return_ET</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">found_element</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">default</span>
+
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">found_element</span><span class="o">.</span><span class="n">text</span></div>
+
+<div class="viewcode-block" id="Label.to_string"><a class="viewcode-back" href="../../../pds4_tools.reader.label_objects.html#pds4_tools.reader.label_objects.Label.to_string">[docs]</a>    <span class="k">def</span> <span class="nf">to_string</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">unmodified</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">pretty_print</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Generate a string representation of XML label.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        unmodified : bool or None, optional</span>
+<span class="sd">            Generates representation of unmodified ``ElementTree`` root if True, or the convenient one if</span>
+<span class="sd">            False. None uses `Label.default_root` to decide. Defaults to True.</span>
+<span class="sd">        pretty_print : bool, optional</span>
+<span class="sd">            String representation is pretty-printed if True. Defaults to False.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        unicode or str</span>
+<span class="sd">            String representation of `Label`.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="c1"># Obtain root element, while also deepcopying it such that any modifications made</span>
+        <span class="c1"># inside this method (e.g. during pretty printing) do not affect the original copy.</span>
+        <span class="n">root</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">unmodified</span><span class="o">=</span><span class="n">unmodified</span><span class="p">,</span> <span class="n">return_ET</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+        <span class="c1"># Adapted from effbot.org/zone/element-lib.htm#prettyprint, modified to properly dedent multi-line</span>
+        <span class="c1"># values with different indents than used by this method (e.g., each line is indented by 4 spaces</span>
+        <span class="c1"># but this method uses 2), and to preserve a single extra newline anywhere one or more are present.</span>
+        <span class="k">def</span> <span class="nf">pretty_format_xml</span><span class="p">(</span><span class="n">elem</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+
+            <span class="n">i</span> <span class="o">=</span> <span class="n">level</span> <span class="o">*</span> <span class="s1">&#39;  &#39;</span>
+
+            <span class="c1"># Preserve single extra newline at the end of text (e.g. &lt;Field&gt;\n\n&lt;offset&gt;var&lt;/offset&gt;...)</span>
+            <span class="n">i_text</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span> <span class="o">+</span> <span class="n">i</span>
+            <span class="k">if</span> <span class="n">elem</span><span class="o">.</span><span class="n">text</span><span class="p">:</span>
+
+                <span class="k">if</span> <span class="n">elem</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+                    <span class="n">i_text</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="n">i</span>
+
+            <span class="c1"># Preserve single extra newline at the end of an element (e.g. &lt;Field&gt;var&lt;/Field&gt;\n\n&lt;offset&gt;...)</span>
+            <span class="n">i_tail</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span> <span class="o">+</span> <span class="n">i</span>
+            <span class="k">if</span> <span class="n">elem</span><span class="o">.</span><span class="n">tail</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">elem</span><span class="o">.</span><span class="n">tail</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+                    <span class="n">i_tail</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="n">i</span>
+
+            <span class="c1"># Remove extra space on each newline in multi-line text values</span>
+            <span class="k">if</span> <span class="n">elem</span><span class="o">.</span><span class="n">text</span> <span class="ow">and</span> <span class="n">elem</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="ow">and</span> <span class="p">(</span><span class="n">elem</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">elem</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\r</span><span class="s1">&#39;</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">):</span>
+                <span class="n">lines</span> <span class="o">=</span> <span class="n">elem</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">splitlines</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+
+                <span class="c1"># If each line beginning contains extra space (e.g., it used 4 spaces to align but we use 2)</span>
+                <span class="c1"># then remove that extra space</span>
+                <span class="k">for</span> <span class="n">j</span><span class="p">,</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">lines</span><span class="p">):</span>
+                    <span class="k">if</span> <span class="n">line</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="nb">len</span><span class="p">(</span><span class="n">i</span><span class="p">)]</span> <span class="o">==</span> <span class="n">i</span><span class="p">:</span>
+                        <span class="n">lines</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">line</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">:]</span>
+
+                <span class="n">elem</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span>
+
+                <span class="c1"># On last line of multi-line string, if it ends in a newline and spaces, remove them</span>
+                <span class="c1"># and replace with a newline and spaces such that the closing tag is on the same level</span>
+                <span class="c1"># as the opening tag</span>
+                <span class="k">if</span> <span class="n">elem</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">rstrip</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)</span> <span class="o">!=</span> <span class="n">elem</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">rstrip</span><span class="p">():</span>
+                    <span class="n">elem</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">elem</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">rstrip</span><span class="p">()</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span> <span class="o">+</span> <span class="n">i</span>
+
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">elem</span><span class="p">):</span>
+
+                <span class="k">if</span> <span class="ow">not</span> <span class="n">elem</span><span class="o">.</span><span class="n">text</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">elem</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">():</span>
+                    <span class="n">elem</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">i_text</span> <span class="o">+</span> <span class="s1">&#39;  &#39;</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="n">elem</span><span class="o">.</span><span class="n">tail</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">elem</span><span class="o">.</span><span class="n">tail</span><span class="o">.</span><span class="n">strip</span><span class="p">():</span>
+                    <span class="n">elem</span><span class="o">.</span><span class="n">tail</span> <span class="o">=</span> <span class="n">i_tail</span>
+                <span class="k">for</span> <span class="n">elem</span> <span class="ow">in</span> <span class="n">elem</span><span class="p">:</span>
+                    <span class="n">pretty_format_xml</span><span class="p">(</span><span class="n">elem</span><span class="p">,</span> <span class="n">level</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="n">elem</span><span class="o">.</span><span class="n">tail</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">elem</span><span class="o">.</span><span class="n">tail</span><span class="o">.</span><span class="n">strip</span><span class="p">():</span>
+                    <span class="n">elem</span><span class="o">.</span><span class="n">tail</span> <span class="o">=</span> <span class="n">i_text</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">level</span> <span class="ow">and</span> <span class="p">(</span><span class="ow">not</span> <span class="n">elem</span><span class="o">.</span><span class="n">tail</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">elem</span><span class="o">.</span><span class="n">tail</span><span class="o">.</span><span class="n">strip</span><span class="p">()):</span>
+                    <span class="n">elem</span><span class="o">.</span><span class="n">tail</span> <span class="o">=</span> <span class="n">i_tail</span>
+
+        <span class="c1"># Pretty-format root node</span>
+        <span class="k">if</span> <span class="n">pretty_print</span><span class="p">:</span>
+            <span class="n">pretty_format_xml</span><span class="p">(</span><span class="n">root</span><span class="p">)</span>
+
+        <span class="c1"># Remove newline characters from tail of the root element</span>
+        <span class="k">if</span> <span class="n">root</span><span class="o">.</span><span class="n">tail</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">root</span><span class="o">.</span><span class="n">tail</span> <span class="o">=</span> <span class="n">root</span><span class="o">.</span><span class="n">tail</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n\r</span><span class="s1">&#39;</span><span class="p">)</span>
+
+        <span class="c1"># Obtain string representation, taking care to register_namespaces()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_register_namespaces</span><span class="p">(</span><span class="s1">&#39;register&#39;</span><span class="p">,</span> <span class="n">unmodified</span><span class="p">)</span>
+        <span class="n">string</span> <span class="o">=</span> <span class="n">ET</span><span class="o">.</span><span class="n">tostring</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">))</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_register_namespaces</span><span class="p">(</span><span class="s1">&#39;unregister&#39;</span><span class="p">,</span> <span class="n">unmodified</span><span class="p">)</span>
+
+        <span class="c1"># Adjust to fix issue that in Python 2.6 it is not possible to specify a null prefix correctly</span>
+        <span class="k">if</span> <span class="s1">&#39;xmlns:=&#39;</span> <span class="ow">in</span> <span class="n">string</span><span class="p">:</span>
+            <span class="n">string</span> <span class="o">=</span> <span class="n">string</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;xmlns:=&#39;</span><span class="p">,</span> <span class="s1">&#39;xmlns=&#39;</span><span class="p">)</span>
+            <span class="n">string</span> <span class="o">=</span> <span class="n">string</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;&lt;:&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;&#39;</span><span class="p">)</span>
+            <span class="n">string</span> <span class="o">=</span> <span class="n">string</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;&lt;/:&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;/&#39;</span><span class="p">)</span>
+
+        <span class="c1"># Remove UTF-8 processing instruction from first line on Python 2</span>
+        <span class="k">if</span> <span class="s1">&#39;&lt;?xml&#39;</span> <span class="o">==</span> <span class="n">string</span><span class="o">.</span><span class="n">lstrip</span><span class="p">()[</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">]:</span>
+            <span class="n">string_list</span> <span class="o">=</span> <span class="n">string</span><span class="o">.</span><span class="n">splitlines</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+            <span class="n">string</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">string_list</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span>
+
+        <span class="c1"># If label is not pretty printed, then we fix a potential issue with indented labels and ET</span>
+        <span class="c1"># (The indent for an element is in the .tail attribute of the previous element, but for the</span>
+        <span class="c1"># root element there is no element above it with a tail. We check what is the indent for the</span>
+        <span class="c1"># closing tag of the root element and manually insert it for the opening tag.)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">pretty_print</span><span class="p">:</span>
+            <span class="n">last_tail</span> <span class="o">=</span> <span class="n">root</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">tail</span>
+
+            <span class="k">if</span> <span class="n">last_tail</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">num_leading_spaces</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">last_tail</span><span class="p">)</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">last_tail</span><span class="o">.</span><span class="n">rstrip</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">))</span>
+                <span class="n">num_leading_tabs</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">last_tail</span><span class="p">)</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">last_tail</span><span class="o">.</span><span class="n">rstrip</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">))</span>
+                <span class="n">string</span> <span class="o">=</span> <span class="s1">&#39; &#39;</span> <span class="o">*</span> <span class="n">num_leading_spaces</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span> <span class="o">*</span> <span class="n">num_leading_tabs</span> <span class="o">+</span> <span class="n">string</span>
+
+        <span class="k">return</span> <span class="n">string</span></div>
+
+<div class="viewcode-block" id="Label.to_dict"><a class="viewcode-back" href="../../../pds4_tools.reader.label_objects.html#pds4_tools.reader.label_objects.Label.to_dict">[docs]</a>    <span class="k">def</span> <span class="nf">to_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">unmodified</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">skip_attributes</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cast_values</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">cast_ignore</span><span class="o">=</span><span class="p">()):</span>
+        <span class="sd">&quot;&quot;&quot; Generate an `OrderedDict` representation of XML label.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        unmodified : bool or None, optional</span>
+<span class="sd">            Generates representation of unmodified ``ElementTree`` root if True, or the convenient one if</span>
+<span class="sd">            False. Defaults to None, which uses `Label.default_root` to decide.</span>
+<span class="sd">        skip_attributes : bool, optional</span>
+<span class="sd">            If True, skips adding attributes from XML. Defaults to False.</span>
+<span class="sd">        cast_values : bool, optional</span>
+<span class="sd">            If True, float and int compatible values of element text and attribute values will be cast as such</span>
+<span class="sd">            in the output dictionary. Defaults to False.</span>
+<span class="sd">        cast_ignore : tuple[str or unicode], optional</span>
+<span class="sd">            If given, then a tuple of element tags and/or attribute names. If *cast_values* is True, then</span>
+<span class="sd">            for elements and attributes matching exactly the values in this tuple, values will not be cast.</span>
+<span class="sd">            Attribute names must be prepended by an &#39;@&#39;. Empty by default.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        OrderedDict</span>
+<span class="sd">            A dictionary representation of `Label`.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">root</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">getroot</span><span class="p">(</span><span class="n">unmodified</span><span class="p">)</span>
+        <span class="n">namespace_map</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_namespace_map</span><span class="p">(</span><span class="n">unmodified</span><span class="p">)</span>
+
+        <span class="c1"># Achieve equivalent of register_namespaces() via tag_modify</span>
+        <span class="n">tag_modify</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">uri</span><span class="p">,</span> <span class="n">prefix</span> <span class="ow">in</span> <span class="n">namespace_map</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">prefix</span><span class="o">.</span><span class="n">strip</span><span class="p">():</span>
+                <span class="n">tag_modify</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="s1">&#39;{{</span><span class="si">{0}</span><span class="s1">}}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">uri</span><span class="p">),</span> <span class="s1">&#39;</span><span class="si">{0}</span><span class="s1">:&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">prefix</span><span class="p">)))</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">tag_modify</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="s1">&#39;{{</span><span class="si">{0}</span><span class="s1">}}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">uri</span><span class="p">),</span> <span class="s1">&#39;&#39;</span><span class="p">))</span>
+
+        <span class="k">return</span> <span class="n">xml_to_dict</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">skip_attributes</span><span class="o">=</span><span class="n">skip_attributes</span><span class="p">,</span> <span class="n">cast_values</span><span class="o">=</span><span class="n">cast_values</span><span class="p">,</span>
+                           <span class="n">cast_ignore</span><span class="o">=</span><span class="n">cast_ignore</span><span class="p">,</span> <span class="n">tag_modify</span><span class="o">=</span><span class="nb">tuple</span><span class="p">(</span><span class="n">tag_modify</span><span class="p">))</span></div>
+
+<div class="viewcode-block" id="Label.get_namespace_map"><a class="viewcode-back" href="../../../pds4_tools.reader.label_objects.html#pds4_tools.reader.label_objects.Label.get_namespace_map">[docs]</a>    <span class="k">def</span> <span class="nf">get_namespace_map</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">unmodified</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Obtain namespace map.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        unmodified : bool or None, optional</span>
+<span class="sd">            If True, returns the namespace map for the unmodified (see `Label` docstring) label. If False,</span>
+<span class="sd">            it uses the convenient label. Defaults to None, which uses `Label.default_root` to decide.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        dict</span>
+<span class="sd">            A dict with keys being the namespace URIs and values being the namespace prefixes for this</span>
+<span class="sd">            label.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">namespace_map</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_convenient_namespace_map</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_resolve_unmodified</span><span class="p">(</span><span class="n">unmodified</span><span class="p">):</span>
+            <span class="n">namespace_map</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_unmodified_namespace_map</span>
+
+        <span class="k">return</span> <span class="n">namespace_map</span></div>
+
+<div class="viewcode-block" id="Label.copy"><a class="viewcode-back" href="../../../pds4_tools.reader.label_objects.html#pds4_tools.reader.label_objects.Label.copy">[docs]</a>    <span class="k">def</span> <span class="nf">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">unmodified</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">return_ET</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Obtain a deepcopy of this Label.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        unmodified : bool, optional</span>
+<span class="sd">            If *return_ET* is True, then setting this to True will return a copy of the unmodified</span>
+<span class="sd">            ``ElementTree`` root, or the convenient one if False. Defaults to None, which uses</span>
+<span class="sd">            `Label.default_root` to decide.</span>
+<span class="sd">        return_ET : bool, optional</span>
+<span class="sd">            Returned value is a ``ElementTree`` Element instead of Label if True. Defaults to False.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        Label or ElementTree Element</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="c1"># This appears somewhat faster than copy.deepcopy and seems to have no ill effect</span>
+        <span class="k">def</span> <span class="nf">copy_tree</span><span class="p">(</span><span class="n">tree</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">ET</span><span class="o">.</span><span class="n">fromstring</span><span class="p">(</span><span class="n">ET</span><span class="o">.</span><span class="n">tostring</span><span class="p">(</span><span class="n">tree</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)))</span>
+
+        <span class="k">if</span> <span class="n">return_ET</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">copy_tree</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">getroot</span><span class="p">(</span><span class="n">unmodified</span><span class="o">=</span><span class="n">unmodified</span><span class="p">))</span>
+
+        <span class="k">else</span><span class="p">:</span>
+
+            <span class="n">convenient_root</span> <span class="o">=</span> <span class="n">copy_tree</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">getroot</span><span class="p">(</span><span class="n">unmodified</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
+            <span class="n">convenient_map</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_namespace_map</span><span class="p">(</span><span class="n">unmodified</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+            <span class="n">unmodified_root</span> <span class="o">=</span> <span class="n">copy_tree</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">getroot</span><span class="p">(</span><span class="n">unmodified</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+            <span class="n">unmodified_map</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_namespace_map</span><span class="p">(</span><span class="n">unmodified</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+            <span class="n">copied_label</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">(</span><span class="n">convenient_root</span><span class="o">=</span><span class="n">convenient_root</span><span class="p">,</span>
+                                          <span class="n">unmodified_root</span><span class="o">=</span><span class="n">unmodified_root</span><span class="p">,</span>
+                                          <span class="n">convenient_namespace_map</span><span class="o">=</span><span class="n">convenient_map</span><span class="p">,</span>
+                                          <span class="n">unmodified_namespace_map</span><span class="o">=</span><span class="n">unmodified_map</span><span class="p">,</span>
+                                          <span class="n">default_root</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">default_root</span><span class="p">)</span>
+
+            <span class="k">return</span> <span class="n">copied_label</span></div>
+
+    <span class="k">def</span> <span class="nf">_resolve_unmodified</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">unmodified</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Resolves *unmodified* to either True, or False.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        unmodified : bool or None</span>
+<span class="sd">            Variable to resolve.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        bool</span>
+<span class="sd">            If *unmodified* is bool, returns unchanged. If None, uses `Label.default_root` to decide</span>
+<span class="sd">            whether to return True (if &#39;unmodified&#39;) or False (if &#39;convenient&#39;).</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">unmodified</span><span class="p">,</span> <span class="nb">bool</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">unmodified</span>
+
+        <span class="k">elif</span> <span class="n">unmodified</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_default_root</span> <span class="o">==</span> <span class="s1">&#39;unmodified&#39;</span>
+
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s1">&#39;Unknown unmodified variable: </span><span class="si">{0}</span><span class="s1">.&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">unmodified</span><span class="p">))</span>
+
+    <span class="k">def</span> <span class="nf">_find_other_element</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">element</span><span class="p">,</span> <span class="n">was_unmodified</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        When using `find` or `findall`, we initially search one of the two ``ElementTree`` representations</span>
+<span class="sd">        (`_convenient_root` or `_unmodified_root`). The purpose of this method is to find the Element</span>
+<span class="sd">        in the other representation.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        element : Label or ElementTree Element</span>
+<span class="sd">            Element to find</span>
+<span class="sd">        was_unmodified : bool</span>
+<span class="sd">            True if *element* was taken from `_unmodified_root`, False otherwise.</span>
+
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        ``ElementTree`` Element</span>
+<span class="sd">            Matched element.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">other_element</span> <span class="o">=</span> <span class="kc">None</span>
+
+        <span class="k">if</span> <span class="n">was_unmodified</span><span class="p">:</span>
+            <span class="n">root</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">getroot</span><span class="p">(</span><span class="n">unmodified</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="n">other_root</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">getroot</span><span class="p">(</span><span class="n">unmodified</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">root</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">getroot</span><span class="p">(</span><span class="n">unmodified</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+            <span class="n">other_root</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">getroot</span><span class="p">(</span><span class="n">unmodified</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+        <span class="c1"># Loop over all elements in root of element to find its number</span>
+        <span class="n">node_number</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">child_elem</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">compat</span><span class="o">.</span><span class="n">ET_Element_iter</span><span class="p">(</span><span class="n">root</span><span class="p">)):</span>
+
+            <span class="k">if</span> <span class="n">element</span> <span class="o">==</span> <span class="n">child_elem</span><span class="p">:</span>
+                <span class="n">node_number</span> <span class="o">=</span> <span class="n">i</span>
+                <span class="k">break</span>
+
+        <span class="c1"># Loop over all elements of other_root to find the matching node_number</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">child_elem</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">compat</span><span class="o">.</span><span class="n">ET_Element_iter</span><span class="p">(</span><span class="n">other_root</span><span class="p">)):</span>
+
+            <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="n">node_number</span><span class="p">:</span>
+                <span class="n">other_element</span> <span class="o">=</span> <span class="n">child_elem</span>
+                <span class="k">break</span>
+
+        <span class="k">return</span> <span class="n">other_element</span>
+
+    <span class="k">def</span> <span class="nf">_register_namespaces</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">action</span><span class="p">,</span> <span class="n">unmodified</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Registers or unregisters namespace prefixes via ET&#39;s ``register_namespace``. The unregister</span>
+<span class="sd">        functionality is provided because register_namespace is global, affecting any other ET usage.</span>
+<span class="sd">        Register and unregister allow anything in-between them to effectively have a local namespace register.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        action : str or unicode</span>
+<span class="sd">            Either &#39;register&#39; or &#39;unregister&#39;, specifying what action to take. Defaults to &#39;register&#39;.</span>
+<span class="sd">        unmodified : bool or None</span>
+<span class="sd">            If True, uses prefixes taken from the unmodified root, instead of the convenient root,</span>
+<span class="sd">            to register or unregister namespaces.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        None</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">prefixes</span> <span class="o">=</span> <span class="n">ET</span><span class="o">.</span><span class="n">_namespace_map</span><span class="o">.</span><span class="n">values</span><span class="p">()</span>
+        <span class="n">uris</span> <span class="o">=</span> <span class="n">ET</span><span class="o">.</span><span class="n">_namespace_map</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+
+        <span class="n">namespace_map</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_namespace_map</span><span class="p">(</span><span class="n">unmodified</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">uri</span><span class="p">,</span> <span class="n">prefix</span> <span class="ow">in</span> <span class="n">namespace_map</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+
+            <span class="c1"># Register namespaces</span>
+            <span class="k">if</span> <span class="n">action</span> <span class="o">==</span> <span class="s1">&#39;register&#39;</span><span class="p">:</span>
+
+                <span class="c1"># Check if namespace prefix or URI already exists, then do not register the namespace if so.</span>
+                <span class="c1"># This allows local namespaces that have the same prefix as a global prefix but a</span>
+                <span class="c1"># different URI, which is valid in XML, to stay unique)</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">prefix</span> <span class="ow">in</span> <span class="n">prefixes</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">uri</span> <span class="ow">in</span> <span class="n">uris</span><span class="p">):</span>
+                    <span class="k">continue</span>
+
+                <span class="c1"># Register the namespace</span>
+                <span class="n">ET</span><span class="o">.</span><span class="n">_namespace_map</span><span class="p">[</span><span class="n">uri</span><span class="p">]</span> <span class="o">=</span> <span class="n">prefix</span>
+
+            <span class="c1"># Unregister the namespaces</span>
+            <span class="k">else</span><span class="p">:</span>
+
+                <span class="k">if</span> <span class="p">(</span><span class="n">prefix</span> <span class="ow">in</span> <span class="n">prefixes</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">uri</span> <span class="ow">in</span> <span class="n">ET</span><span class="o">.</span><span class="n">_namespace_map</span><span class="o">.</span><span class="n">keys</span><span class="p">()):</span>
+                    <span class="k">del</span> <span class="n">ET</span><span class="o">.</span><span class="n">_namespace_map</span><span class="p">[</span><span class="n">uri</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="nf">_append_known_namespaces</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">match</span><span class="p">,</span> <span class="n">namespaces</span><span class="p">,</span> <span class="n">unmodified</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Appends known namespaces (i.e., those in the namespace map for this label, and those in the</span>
+<span class="sd">        constant PDS4_NAMESPACES) to *namespaces* if *match* contains prefixes (signified by the colon).</span>
+<span class="sd">        In case of duplicate prefixes for the same URI, prefixes in the label overwrite those in</span>
+<span class="sd">        PDS4_NAMESPACES, and prefixes in *namespaces* overwrite both.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        match : str or unicode</span>
+<span class="sd">            XPATH search string.</span>
+<span class="sd">        namespaces : dict</span>
+<span class="sd">            Dictionary with keys corresponding to prefix and values corresponding to URI for namespaces.</span>
+<span class="sd">        unmodified : bool or None</span>
+<span class="sd">            If True, uses namespace map created from the unmodified root, instead of the convenient root,</span>
+<span class="sd">             as part of the known namespaces. If None, uses `Label.default_root` to decide.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        dict</span>
+<span class="sd">            New namespaces dictionary containing previous *namespaces* as well as PDS4_NAMESPACES,</span>
+<span class="sd">            and those in the namespace map for this label.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="c1"># Merge PDS4_NAMESPACES and namespaces from this label into a single ``dict``. In case of conflict,</span>
+        <span class="c1"># the latter take precedence. Additionally, if namespaces in this label have a case where a</span>
+        <span class="c1"># single prefix refers to multiple URIs (via local prefixes), only one will be kept.</span>
+        <span class="n">namespace_map</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_namespace_map</span><span class="p">(</span><span class="n">unmodified</span><span class="p">)</span>
+        <span class="n">known_namespaces</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">chain</span><span class="p">(</span>
+                                <span class="n">six</span><span class="o">.</span><span class="n">iteritems</span><span class="p">(</span><span class="n">PDS4_NAMESPACES</span><span class="p">),</span>
+                                <span class="n">six</span><span class="o">.</span><span class="n">iteritems</span><span class="p">(</span><span class="nb">dict</span><span class="p">((</span><span class="n">v</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">six</span><span class="o">.</span><span class="n">iteritems</span><span class="p">(</span><span class="n">namespace_map</span><span class="p">)))))</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="s1">&#39;:&#39;</span> <span class="ow">in</span> <span class="n">match</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">namespaces</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">):</span>
+            <span class="n">namespaces</span> <span class="o">=</span> <span class="n">known_namespaces</span>
+
+        <span class="k">elif</span> <span class="s1">&#39;:&#39;</span> <span class="ow">in</span> <span class="n">match</span><span class="p">:</span>
+            <span class="n">namespaces</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">chain</span><span class="p">(</span><span class="n">six</span><span class="o">.</span><span class="n">iteritems</span><span class="p">(</span><span class="n">known_namespaces</span><span class="p">),</span> <span class="n">six</span><span class="o">.</span><span class="n">iteritems</span><span class="p">(</span><span class="n">namespaces</span><span class="p">)))</span>
+
+        <span class="k">return</span> <span class="n">namespaces</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">_add_namespaces_to_match</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">match</span><span class="p">,</span> <span class="n">namespaces</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Python 2.6 does not support the namespaces parameter for ``ElementTree``&#39;s `find`, `findall`,</span>
+<span class="sd">        which are used in the implementation of `Label`&#39;s `find`, `findall` and `findtext`. To add this</span>
+<span class="sd">        support, in *match* we replace the prefix with the URI for that prefix contained in brackets.</span>
+<span class="sd">        This is also how ``ElementPath`` works in Python 2.7 and above, from which this code is adapted.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        match : str or unicode</span>
+<span class="sd">            XPATH search string.</span>
+<span class="sd">        namespaces : dict</span>
+<span class="sd">            Dictionary with keys corresponding to prefix and values corresponding to URI for namespaces.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        str or unicode</span>
+<span class="sd">            A new XPATH search string, with prefix replaced by {URI}.</span>
+
+<span class="sd">        Examples</span>
+<span class="sd">        --------</span>
+<span class="sd">        &gt;&gt;&gt; match = &#39;.//disp:Display_Settings&#39;</span>
+<span class="sd">        &gt;&gt;&gt; namespaces = {&#39;disp&#39;: &#39;http://pds.nasa.gov/pds4/disp/v1&#39;, &#39;sp&#39;: &#39;http://pds.nasa.gov/pds4/sp/v1&#39;}</span>
+
+<span class="sd">        &gt;&gt;&gt; match = self._add_namespaces_to_match(match, namespaces)</span>
+<span class="sd">        &gt;&gt;&gt; print match</span>
+<span class="sd">        .//{http://pds.nasa.gov/pds4/disp/v1}Display_Settings</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">xpath_tokenizer_re</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;(&quot;</span>
+                                        <span class="sa">r</span><span class="s2">&quot;&#39;[^&#39;]*&#39;|</span><span class="se">\&quot;</span><span class="s2">[^</span><span class="se">\&quot;</span><span class="s2">]*</span><span class="se">\&quot;</span><span class="s2">|&quot;</span>
+                                        <span class="sa">r</span><span class="s2">&quot;::|&quot;</span>
+                                        <span class="sa">r</span><span class="s2">&quot;//?|&quot;</span>
+                                        <span class="sa">r</span><span class="s2">&quot;\.\.|&quot;</span>
+                                        <span class="sa">r</span><span class="s2">&quot;\(\)|&quot;</span>
+                                        <span class="sa">r</span><span class="s2">&quot;[/.*:\[\]\(\)@=])|&quot;</span>
+                                        <span class="sa">r</span><span class="s2">&quot;((?:\{[^}]+\})?[^/\[\]\(\)@=\s]+)|&quot;</span>
+                                        <span class="sa">r</span><span class="s2">&quot;\s+&quot;</span><span class="p">)</span>
+        <span class="n">modified_match</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+
+        <span class="k">for</span> <span class="n">token</span> <span class="ow">in</span> <span class="n">xpath_tokenizer_re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">match</span><span class="p">):</span>
+            <span class="n">tag</span> <span class="o">=</span> <span class="n">token</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+
+            <span class="k">if</span> <span class="n">tag</span> <span class="ow">and</span> <span class="n">tag</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39;{&#39;</span> <span class="ow">and</span> <span class="s1">&#39;:&#39;</span> <span class="ow">in</span> <span class="n">tag</span><span class="p">:</span>
+
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="n">prefix</span><span class="p">,</span> <span class="n">uri</span> <span class="o">=</span> <span class="n">tag</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;:&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+                    <span class="k">if</span> <span class="ow">not</span> <span class="n">namespaces</span><span class="p">:</span>
+                        <span class="k">raise</span> <span class="ne">KeyError</span>
+
+                    <span class="n">modified_match</span> <span class="o">+=</span> <span class="s1">&#39;</span><span class="si">{0}</span><span class="s1">{{</span><span class="si">{1}</span><span class="s1">}}</span><span class="si">{2}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">token</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">namespaces</span><span class="p">[</span><span class="n">prefix</span><span class="p">],</span> <span class="n">uri</span><span class="p">)</span>
+                <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+                    <span class="k">raise</span> <span class="ne">SyntaxError</span><span class="p">(</span><span class="s1">&#39;prefix </span><span class="si">{0}</span><span class="s1"> not found in prefix map&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">prefix</span><span class="p">))</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">modified_match</span> <span class="o">+=</span> <span class="s1">&#39;</span><span class="si">{0}{1}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">*</span><span class="n">token</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">modified_match</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">_unicode_match_to_str</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">match</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Python 2.6 has a bug in ``ElementTree``&#39;s `find`, `findall` and `findtext` that affects searching</span>
+<span class="sd">        for unicode match strings. Specifically, when searching for at least the immediate descendents,</span>
+<span class="sd">        ``ElementPath`` checks that type(&quot;&quot;) [which is ``str``] is equivalent to the tag, otherwise it sets</span>
+<span class="sd">        the tag to none. This breaks certain searches, for example element.findall(&#39;.//Unicode_Tag&#39;) would</span>
+<span class="sd">        not find a match if the Unicode_Tag element is a direct descendant of element. However just</span>
+<span class="sd">        &#39;./Unicode_Tag&#39; would work there.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        match : str or unicode</span>
+<span class="sd">            A search string for `find`, `findall` or `findtext`.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        str or unicode</span>
+<span class="sd">            The same search string as *match*, typecast to ``str`` type if *match* was ASCII-compatible.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">match</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">match</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;ascii&#39;</span><span class="p">))</span>
+
+        <span class="k">except</span> <span class="ne">UnicodeError</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s1">&#39;Python 2.6 find, findall and findtext results may exclude valid matches when &#39;</span>
+                           <span class="s1">&#39;the search string contains unicode characters. Detected unicode search: </span><span class="si">{0}</span><span class="s1">&#39;</span>
+                           <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">match</span><span class="p">))</span>
+
+        <span class="k">return</span> <span class="n">match</span></div>
+
+
+<div class="viewcode-block" id="Meta_DisplaySettings"><a class="viewcode-back" href="../../../pds4_tools.reader.label_objects.html#pds4_tools.reader.label_objects.Meta_DisplaySettings">[docs]</a><span class="k">class</span> <span class="nc">Meta_DisplaySettings</span><span class="p">(</span><span class="n">Meta_Class</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Stores PDS4 Display Settings meta data for a single PDS4 data structure.</span>
+
+<span class="sd">    Meta data stored in this class is accessed in ``dict``-like fashion. Normally this meta data originates</span>
+<span class="sd">    from the label (from the beginning of the Display_Settings tag, to its closing tag), via the `from_label`</span>
+<span class="sd">    or `from_full_label` methods.</span>
+
+<span class="sd">    Attributes</span>
+<span class="sd">    ----------</span>
+<span class="sd">    valid : bool</span>
+<span class="sd">        True if Display Settings conform to supported PDS4 Standards, False otherwise.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">Meta_DisplaySettings</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
+
+        <span class="c1"># Set to True if Display Dictionary has all necessary keys and is otherwise valid/supported</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">valid</span> <span class="o">=</span> <span class="kc">None</span>
+
+<div class="viewcode-block" id="Meta_DisplaySettings.from_label"><a class="viewcode-back" href="../../../pds4_tools.reader.label_objects.html#pds4_tools.reader.label_objects.Meta_DisplaySettings.from_label">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">from_label</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">xml_display_settings</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Create a Meta_DisplaySettings from the XML portion describing it.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        xml_display_settings : Label or ElementTree Element</span>
+<span class="sd">            The portion of the label describing the Display_Settings.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        Meta_SpectralCharacteristics</span>
+<span class="sd">            Instance containing display settings meta data.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">obj</span> <span class="o">=</span> <span class="bp">cls</span><span class="p">()</span>
+
+        <span class="n">tag_modify</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;{{</span><span class="si">{0}</span><span class="s1">}}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">PDS4_NAMESPACES</span><span class="p">[</span><span class="s1">&#39;disp&#39;</span><span class="p">]),</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+        <span class="n">obj</span><span class="o">.</span><span class="n">_load_keys_from_xml</span><span class="p">(</span><span class="n">xml_display_settings</span><span class="p">,</span> <span class="n">tag_modify</span><span class="o">=</span><span class="n">tag_modify</span><span class="p">)</span>
+
+        <span class="n">obj</span><span class="o">.</span><span class="n">valid</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="n">is_valid</span><span class="p">()</span>
+
+        <span class="k">return</span> <span class="n">obj</span></div>
+
+<div class="viewcode-block" id="Meta_DisplaySettings.from_full_label"><a class="viewcode-back" href="../../../pds4_tools.reader.label_objects.html#pds4_tools.reader.label_objects.Meta_DisplaySettings.from_full_label">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">from_full_label</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">label</span><span class="p">,</span> <span class="n">structure_lid</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Loads meta data into self from XML.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        label : Label or ElementTree Element</span>
+<span class="sd">            The entire label for the PDS4 product containing the Display Settings.</span>
+<span class="sd">        structure_lid : str or unicode</span>
+<span class="sd">            The local_identifier for the Array data structure which uses the Display Settings.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        Meta_DisplaySettings</span>
+<span class="sd">            Instance containing display settings meta data for a particular data structure.</span>
+
+<span class="sd">        Raises</span>
+<span class="sd">        ------</span>
+<span class="sd">        KeyError</span>
+<span class="sd">            Raised if Display Settings do not exist for the specified *structure_lid*.</span>
+<span class="sd">        PDS4StandardsException</span>
+<span class="sd">            Raised if a data structure having the local_identifier *structure_lid* was not found.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">display_settings</span> <span class="o">=</span> <span class="n">get_display_settings_for_lid</span><span class="p">(</span><span class="n">structure_lid</span><span class="p">,</span> <span class="n">label</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">display_settings</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="s2">&quot;No Display_Settings exist in label for local identifier &#39;</span><span class="si">{0}</span><span class="s2">&#39;&quot;</span><span class="o">.</span>
+                           <span class="nb">format</span><span class="p">(</span><span class="n">structure_lid</span><span class="p">))</span>
+
+        <span class="c1"># Find all structures in the label</span>
+        <span class="n">found_structures</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="k">for</span> <span class="n">file_area_name</span> <span class="ow">in</span> <span class="n">PDS4_DATA_FILE_AREAS</span><span class="p">:</span>
+            <span class="n">found_structures</span> <span class="o">+=</span> <span class="n">label</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">&#39;.//</span><span class="si">{0}</span><span class="s1">/*&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">file_area_name</span><span class="p">))</span>
+
+        <span class="c1"># Find structure being referenced by structure_lid</span>
+        <span class="n">xml_structure</span> <span class="o">=</span> <span class="kc">None</span>
+
+        <span class="k">for</span> <span class="n">found_structure</span> <span class="ow">in</span> <span class="n">found_structures</span><span class="p">:</span>
+
+            <span class="n">found_lid</span> <span class="o">=</span> <span class="n">found_structure</span><span class="o">.</span><span class="n">findtext</span><span class="p">(</span><span class="s1">&#39;local_identifier&#39;</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="p">(</span><span class="n">found_lid</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">found_lid</span> <span class="o">==</span> <span class="n">structure_lid</span><span class="p">):</span>
+                <span class="n">xml_structure</span> <span class="o">=</span> <span class="n">found_structure</span>
+
+        <span class="k">if</span> <span class="n">xml_structure</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">PDS4StandardsException</span><span class="p">(</span><span class="s2">&quot;A Data Structure having the LID &#39;</span><span class="si">{0}</span><span class="s2">&#39;, specified in &quot;</span>
+                                         <span class="s2">&quot;Display_Settings, was not found&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">structure_lid</span><span class="p">))</span>
+
+        <span class="n">obj</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">from_label</span><span class="p">(</span><span class="n">display_settings</span><span class="p">)</span>
+        <span class="n">obj</span><span class="o">.</span><span class="n">valid</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="n">is_valid</span><span class="p">(</span><span class="n">xml_structure</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">obj</span></div>
+
+<div class="viewcode-block" id="Meta_DisplaySettings.is_valid"><a class="viewcode-back" href="../../../pds4_tools.reader.label_objects.html#pds4_tools.reader.label_objects.Meta_DisplaySettings.is_valid">[docs]</a>    <span class="k">def</span> <span class="nf">is_valid</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">xml_structure</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">raise_on_error</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Checks if the the Display Settings to conform to supported PDS4 Standards.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        xml_structure : Label or ElementTree Element, optional</span>
+<span class="sd">            Portion of label describing the Array data structure which uses the Display Settings. If</span>
+<span class="sd">            given, will validate that the Array data structure has the axes referred to by the Display</span>
+<span class="sd">            Settings.</span>
+<span class="sd">        raise_on_error: bool, optional</span>
+<span class="sd">            If True, raised if Display Settings found are invalid or unsupported. Defaults to False.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        bool</span>
+<span class="sd">            True if Display Settings are both valid and supported, False otherwise.</span>
+
+<span class="sd">        Raises</span>
+<span class="sd">        ------</span>
+<span class="sd">        PDS4StandardsException</span>
+<span class="sd">            Raised if *raise_on_error* is True and if the Display Settings are invalid or unsupported.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">try</span><span class="p">:</span>
+
+            <span class="c1"># Ensure required keys for Display_Settings exist</span>
+            <span class="n">keys_must_exist</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Local_Internal_Reference&#39;</span><span class="p">,</span> <span class="s1">&#39;Display_Direction&#39;</span><span class="p">]</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_check_keys_exist</span><span class="p">(</span><span class="n">keys_must_exist</span><span class="p">)</span>
+
+            <span class="c1"># Ensure required keys for Local_Internal_Reference exist</span>
+            <span class="n">reference_keys_must_exist</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;local_identifier_reference&#39;</span><span class="p">,</span> <span class="s1">&#39;local_reference_type&#39;</span><span class="p">]</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_check_keys_exist</span><span class="p">(</span><span class="n">reference_keys_must_exist</span><span class="p">,</span> <span class="n">sub_element</span><span class="o">=</span><span class="s1">&#39;Local_Internal_Reference&#39;</span><span class="p">)</span>
+
+            <span class="c1"># Ensure required keys for Display_Direction exist</span>
+            <span class="n">display_keys_must_exist</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;horizontal_display_axis&#39;</span><span class="p">,</span> <span class="s1">&#39;horizontal_display_direction&#39;</span><span class="p">,</span>
+                                       <span class="s1">&#39;vertical_display_axis&#39;</span><span class="p">,</span> <span class="s1">&#39;vertical_display_direction&#39;</span><span class="p">]</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_check_keys_exist</span><span class="p">(</span><span class="n">display_keys_must_exist</span><span class="p">,</span> <span class="n">sub_element</span><span class="o">=</span><span class="s1">&#39;Display_Direction&#39;</span><span class="p">)</span>
+
+            <span class="c1"># Ensure required keys for Color_Display_Settings exists, if the class exists</span>
+            <span class="k">if</span> <span class="s1">&#39;Color_Display_Settings&#39;</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">:</span>
+
+                <span class="n">color_keys_must_exist</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;color_display_axis&#39;</span><span class="p">,</span> <span class="s1">&#39;red_channel_band&#39;</span><span class="p">,</span> <span class="s1">&#39;green_channel_band&#39;</span><span class="p">,</span>
+                                         <span class="s1">&#39;blue_channel_band&#39;</span><span class="p">]</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_check_keys_exist</span><span class="p">(</span><span class="n">color_keys_must_exist</span><span class="p">,</span> <span class="n">sub_element</span><span class="o">=</span><span class="s1">&#39;Color_Display_Settings&#39;</span><span class="p">)</span>
+
+            <span class="c1"># Ensure required key for Movie_Display_Settings exists, if the class exists</span>
+            <span class="k">if</span> <span class="s1">&#39;Movie_Display_Settings&#39;</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_check_keys_exist</span><span class="p">([</span><span class="s1">&#39;time_display_axis&#39;</span><span class="p">],</span> <span class="n">sub_element</span><span class="o">=</span><span class="s1">&#39;Movie_Display_Settings&#39;</span><span class="p">)</span>
+
+            <span class="c1"># Ensure required axes referenced by the Display Dictionary actually exist in the structure</span>
+            <span class="k">if</span> <span class="n">xml_structure</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+
+                <span class="n">axes_arrays</span> <span class="o">=</span> <span class="n">xml_structure</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">&#39;Axis_Array&#39;</span><span class="p">)</span>
+                <span class="n">display_direction</span> <span class="o">=</span> <span class="bp">self</span><span class="p">[</span><span class="s1">&#39;Display_Direction&#39;</span><span class="p">]</span>
+                <span class="n">color_settings</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;Color_Display_Settings&#39;</span><span class="p">)</span>
+                <span class="n">movie_settings</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;Movie_Display_Settings&#39;</span><span class="p">)</span>
+
+                <span class="n">horizontal_axis_exists</span> <span class="o">=</span> <span class="kc">False</span>
+                <span class="n">vertical_axis_exists</span> <span class="o">=</span> <span class="kc">False</span>
+                <span class="n">color_axis_exists</span> <span class="o">=</span> <span class="kc">False</span>
+                <span class="n">movie_axis_exists</span> <span class="o">=</span> <span class="kc">False</span>
+
+                <span class="k">for</span> <span class="n">axis</span> <span class="ow">in</span> <span class="n">axes_arrays</span><span class="p">:</span>
+
+                    <span class="n">axis_name</span> <span class="o">=</span> <span class="n">axis</span><span class="o">.</span><span class="n">findtext</span><span class="p">(</span><span class="s1">&#39;axis_name&#39;</span><span class="p">)</span>
+
+                    <span class="k">if</span> <span class="n">axis_name</span> <span class="o">==</span> <span class="n">display_direction</span><span class="p">[</span><span class="s1">&#39;horizontal_display_axis&#39;</span><span class="p">]:</span>
+                        <span class="n">horizontal_axis_exists</span> <span class="o">=</span> <span class="kc">True</span>
+
+                    <span class="k">if</span> <span class="n">axis_name</span> <span class="o">==</span> <span class="n">display_direction</span><span class="p">[</span><span class="s1">&#39;vertical_display_axis&#39;</span><span class="p">]:</span>
+                        <span class="n">vertical_axis_exists</span> <span class="o">=</span> <span class="kc">True</span>
+
+                    <span class="k">if</span> <span class="p">(</span><span class="n">color_settings</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">axis_name</span> <span class="o">==</span> <span class="n">color_settings</span><span class="p">[</span><span class="s1">&#39;color_display_axis&#39;</span><span class="p">]):</span>
+                        <span class="n">color_axis_exists</span> <span class="o">=</span> <span class="kc">True</span>
+
+                    <span class="k">if</span> <span class="p">(</span><span class="n">movie_settings</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">axis_name</span> <span class="o">==</span> <span class="n">movie_settings</span><span class="p">[</span><span class="s1">&#39;time_display_axis&#39;</span><span class="p">]):</span>
+                        <span class="n">movie_axis_exists</span> <span class="o">=</span> <span class="kc">True</span>
+
+                <span class="n">display_axes_error</span> <span class="o">=</span> <span class="p">(</span><span class="ow">not</span> <span class="n">horizontal_axis_exists</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="ow">not</span> <span class="n">vertical_axis_exists</span><span class="p">)</span>
+                <span class="n">color_axis_error</span> <span class="o">=</span> <span class="p">(</span><span class="n">color_settings</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="ow">not</span> <span class="n">color_axis_exists</span><span class="p">)</span>
+                <span class="n">movie_axis_error</span> <span class="o">=</span> <span class="p">(</span><span class="n">movie_settings</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="ow">not</span> <span class="n">movie_axis_exists</span><span class="p">)</span>
+
+                <span class="k">if</span> <span class="n">display_axes_error</span> <span class="ow">or</span> <span class="n">color_axis_error</span> <span class="ow">or</span> <span class="n">movie_axis_error</span><span class="p">:</span>
+                    <span class="n">structure_lid</span> <span class="o">=</span> <span class="n">xml_structure</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;local_identifier&#39;</span><span class="p">)</span>
+                    <span class="k">raise</span> <span class="n">PDS4StandardsException</span><span class="p">(</span><span class="s2">&quot;An axis_name, specified in the Display Dictionary &quot;</span>
+                                                 <span class="s2">&quot;for LID &#39;</span><span class="si">{0}</span><span class="s2">&#39;, was not found&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">structure_lid</span><span class="p">))</span>
+
+        <span class="k">except</span> <span class="n">PDS4StandardsException</span><span class="p">:</span>
+
+            <span class="k">if</span> <span class="n">raise_on_error</span><span class="p">:</span>
+                <span class="k">raise</span>
+
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">return</span> <span class="kc">False</span>
+
+        <span class="k">return</span> <span class="kc">True</span></div></div>
+
+
+<div class="viewcode-block" id="Meta_SpectralCharacteristics"><a class="viewcode-back" href="../../../pds4_tools.reader.label_objects.html#pds4_tools.reader.label_objects.Meta_SpectralCharacteristics">[docs]</a><span class="k">class</span> <span class="nc">Meta_SpectralCharacteristics</span><span class="p">(</span><span class="n">Meta_Class</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Stores PDS4 Spectral Characteristics meta data for a single PDS4 data structure.</span>
+
+<span class="sd">    Meta data stored in this class is accessed in ``dict``-like fashion. Normally this meta data originates</span>
+<span class="sd">    from the label (from the beginning of the Spectral_Characteristics tag, to its closing tag), via</span>
+<span class="sd">    the `from_label` or `from_full_label` methods.</span>
+
+<span class="sd">    Attributes</span>
+<span class="sd">    ----------</span>
+<span class="sd">    valid : bool</span>
+<span class="sd">        True if the Spectral Characteristics conform to supported PDS4 Standards, False otherwise.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">Meta_SpectralCharacteristics</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
+
+        <span class="c1"># Set to True if Spectral Characteristics are valid/supported</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">valid</span> <span class="o">=</span> <span class="kc">None</span>
+
+<div class="viewcode-block" id="Meta_SpectralCharacteristics.from_label"><a class="viewcode-back" href="../../../pds4_tools.reader.label_objects.html#pds4_tools.reader.label_objects.Meta_SpectralCharacteristics.from_label">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">from_label</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">xml_spectral_chars</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Create a Meta_SpectralCharacteristics from the XML portion describing it.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        xml_spectral_chars : Label or ElementTree Element</span>
+<span class="sd">            The portion of the label describing the Spectral_Characteristics.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        Meta_SpectralCharacteristics</span>
+<span class="sd">            Instance containing spectral characteristics meta data.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">obj</span> <span class="o">=</span> <span class="bp">cls</span><span class="p">()</span>
+
+        <span class="n">tag_modify</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;{{</span><span class="si">{0}</span><span class="s1">}}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">PDS4_NAMESPACES</span><span class="p">[</span><span class="s1">&#39;sp&#39;</span><span class="p">]),</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+        <span class="n">obj</span><span class="o">.</span><span class="n">_load_keys_from_xml</span><span class="p">(</span><span class="n">xml_spectral_chars</span><span class="p">,</span> <span class="n">tag_modify</span><span class="o">=</span><span class="n">tag_modify</span><span class="p">)</span>
+
+        <span class="n">obj</span><span class="o">.</span><span class="n">valid</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="n">is_valid</span><span class="p">()</span>
+
+        <span class="k">return</span> <span class="n">obj</span></div>
+
+<div class="viewcode-block" id="Meta_SpectralCharacteristics.from_full_label"><a class="viewcode-back" href="../../../pds4_tools.reader.label_objects.html#pds4_tools.reader.label_objects.Meta_SpectralCharacteristics.from_full_label">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">from_full_label</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">label</span><span class="p">,</span> <span class="n">structure_lid</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Loads meta data into self from XML.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        label : Label or ElementTree Element</span>
+<span class="sd">            The entire label for the PDS4 product containing the Spectral Characteristics.</span>
+<span class="sd">        structure_lid : str or unicode</span>
+<span class="sd">            The local_identifier for the Array data structure which uses the Spectral Characteristics.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        Meta_SpectralCharacteristics</span>
+<span class="sd">            Instance containing spectral characteristics meta data for a particular data structure.</span>
+
+<span class="sd">        Raises</span>
+<span class="sd">        ------</span>
+<span class="sd">        KeyError</span>
+<span class="sd">            Raised if Spectral Characteristics do not exist for the specified *structure_lid*</span>
+<span class="sd">        PDS4StandardsException</span>
+<span class="sd">            Raised if a data structure having the local_identifier *structure_lid* was not found</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">spectral_chars</span> <span class="o">=</span> <span class="n">get_spectral_characteristics_for_lid</span><span class="p">(</span><span class="n">structure_lid</span><span class="p">,</span> <span class="n">label</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">spectral_chars</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="s2">&quot;No Spectral_Characteristics exist in label for local identifier &#39;</span><span class="si">{0}</span><span class="s2">&#39;.&quot;</span><span class="o">.</span>
+                           <span class="nb">format</span><span class="p">(</span><span class="n">structure_lid</span><span class="p">))</span>
+
+        <span class="c1"># Find all structures in the label</span>
+        <span class="n">found_structures</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="k">for</span> <span class="n">file_area_name</span> <span class="ow">in</span> <span class="n">PDS4_DATA_FILE_AREAS</span><span class="p">:</span>
+            <span class="n">found_structures</span> <span class="o">+=</span> <span class="n">label</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">&#39;.//</span><span class="si">{0}</span><span class="s1">/*&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">file_area_name</span><span class="p">))</span>
+
+        <span class="c1"># Find structure being referenced by structure_lid</span>
+        <span class="n">xml_structure</span> <span class="o">=</span> <span class="kc">None</span>
+
+        <span class="k">for</span> <span class="n">found_structure</span> <span class="ow">in</span> <span class="n">found_structures</span><span class="p">:</span>
+
+            <span class="n">found_lid</span> <span class="o">=</span> <span class="n">found_structure</span><span class="o">.</span><span class="n">findtext</span><span class="p">(</span><span class="s1">&#39;local_identifier&#39;</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="p">(</span><span class="n">found_lid</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">found_lid</span> <span class="o">==</span> <span class="n">structure_lid</span><span class="p">):</span>
+                <span class="n">xml_structure</span> <span class="o">=</span> <span class="n">found_structure</span>
+
+        <span class="k">if</span> <span class="n">xml_structure</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">PDS4StandardsException</span><span class="p">(</span><span class="s2">&quot;A Data Structure having the LID &#39;</span><span class="si">{0}</span><span class="s2">&#39;, specified in &quot;</span>
+                                         <span class="s2">&quot;Spectral_Characteristics, was not found&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">structure_lid</span><span class="p">))</span>
+
+        <span class="n">obj</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">from_label</span><span class="p">(</span><span class="n">spectral_chars</span><span class="p">)</span>
+        <span class="n">obj</span><span class="o">.</span><span class="n">valid</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="n">is_valid</span><span class="p">(</span><span class="n">xml_structure</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">obj</span></div>
+
+<div class="viewcode-block" id="Meta_SpectralCharacteristics.is_valid"><a class="viewcode-back" href="../../../pds4_tools.reader.label_objects.html#pds4_tools.reader.label_objects.Meta_SpectralCharacteristics.is_valid">[docs]</a>    <span class="k">def</span> <span class="nf">is_valid</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">xml_structure</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">raise_on_error</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+
+        <span class="c1"># We do not currently validate Spectral Characteristics since nothing is ever done with them</span>
+        <span class="c1"># except display as label</span>
+        <span class="k">return</span> <span class="kc">None</span></div></div>
+
+
+<div class="viewcode-block" id="get_display_settings_for_lid"><a class="viewcode-back" href="../../../pds4_tools.reader.label_objects.html#pds4_tools.reader.label_objects.get_display_settings_for_lid">[docs]</a><span class="k">def</span> <span class="nf">get_display_settings_for_lid</span><span class="p">(</span><span class="n">local_identifier</span><span class="p">,</span> <span class="n">label</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Search a PDS4 label for Display_Settings of a data structure with local_identifier.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    local_identifier : str or unicode</span>
+<span class="sd">        The local identifier of the data structure to which the display settings belong.</span>
+<span class="sd">    label : Label or ElementTree Element</span>
+<span class="sd">        Label for a PDS4 product with-in which to look for the display settings.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    Label, ElementTree Element or None</span>
+<span class="sd">        Found Display_Settings section with same return type as *label*, or None if not found.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">matching_display</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="c1"># Find all the Display Settings classes in the label</span>
+    <span class="n">displays</span> <span class="o">=</span> <span class="n">label</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">&#39;.//disp:Display_Settings&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">displays</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span>
+
+    <span class="c1"># Find the particular Display Settings for this LID</span>
+    <span class="k">for</span> <span class="n">display</span> <span class="ow">in</span> <span class="n">displays</span><span class="p">:</span>
+
+        <span class="c1"># Look in both PDS and DISP namespace due to standards changes in the display dictionary</span>
+        <span class="n">lid_disp</span> <span class="o">=</span> <span class="n">display</span><span class="o">.</span><span class="n">findtext</span><span class="p">(</span><span class="s1">&#39;.//disp:local_identifier_reference&#39;</span><span class="p">)</span>
+        <span class="n">lid_pds</span> <span class="o">=</span> <span class="n">display</span><span class="o">.</span><span class="n">findtext</span><span class="p">(</span><span class="s1">&#39;.//local_identifier_reference&#39;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">local_identifier</span> <span class="ow">in</span> <span class="p">(</span><span class="n">lid_disp</span><span class="p">,</span> <span class="n">lid_pds</span><span class="p">):</span>
+            <span class="n">matching_display</span> <span class="o">=</span> <span class="n">display</span>
+            <span class="k">break</span>
+
+    <span class="k">return</span> <span class="n">matching_display</span></div>
+
+
+<div class="viewcode-block" id="get_spectral_characteristics_for_lid"><a class="viewcode-back" href="../../../pds4_tools.reader.label_objects.html#pds4_tools.reader.label_objects.get_spectral_characteristics_for_lid">[docs]</a><span class="k">def</span> <span class="nf">get_spectral_characteristics_for_lid</span><span class="p">(</span><span class="n">local_identifier</span><span class="p">,</span> <span class="n">label</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Search a PDS4 label for Spectral_Characteristics of a data structure with local_identifier.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    local_identifier : str or unicode</span>
+<span class="sd">        The local identifier of the data structure to which the spectral characteristics belong.</span>
+<span class="sd">    label : Label or ElementTree Element</span>
+<span class="sd">        Label for a PDS4 product with-in which to look for the spectral characteristics.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    Label,  ElementTree Element or None</span>
+<span class="sd">        Found Spectral_Characteristics section with same return type as *label*, or None if not found.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">matching_spectral</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="c1"># Find all the Spectral Characteristics classes in the label</span>
+    <span class="n">spectra</span> <span class="o">=</span> <span class="n">label</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">&#39;.//sp:Spectral_Characteristics&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">spectra</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span>
+
+    <span class="c1"># Find the particular Spectral Characteristics for this LID</span>
+    <span class="k">for</span> <span class="n">spectral</span> <span class="ow">in</span> <span class="n">spectra</span><span class="p">:</span>
+
+        <span class="c1"># There may be multiple local internal references for each spectral data object sharing these</span>
+        <span class="c1"># characteristics. Also look in both PDS and SP namespace due to standards changes in the spectral</span>
+        <span class="c1"># dictionary</span>
+        <span class="n">references</span> <span class="o">=</span> <span class="n">spectral</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">&#39;sp:Local_Internal_Reference&#39;</span><span class="p">)</span> <span class="o">+</span> \
+                     <span class="n">spectral</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">&#39;Local_Internal_Reference&#39;</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">reference</span> <span class="ow">in</span> <span class="n">references</span><span class="p">:</span>
+
+            <span class="c1"># Look in both PDS and DISP namespace due to standards changes in the display dictionary</span>
+            <span class="n">lid_sp</span> <span class="o">=</span> <span class="n">reference</span><span class="o">.</span><span class="n">findtext</span><span class="p">(</span><span class="s1">&#39;sp:local_identifier_reference&#39;</span><span class="p">)</span>
+            <span class="n">lid_pds</span> <span class="o">=</span> <span class="n">reference</span><span class="o">.</span><span class="n">findtext</span><span class="p">(</span><span class="s1">&#39;local_identifier_reference&#39;</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">local_identifier</span> <span class="ow">in</span> <span class="p">(</span><span class="n">lid_sp</span><span class="p">,</span> <span class="n">lid_pds</span><span class="p">):</span>
+                <span class="n">matching_spectral</span> <span class="o">=</span> <span class="n">spectral</span>
+                <span class="k">break</span>
+
+    <span class="k">return</span> <span class="n">matching_spectral</span></div>
+
+
+<div class="viewcode-block" id="get_mission_area"><a class="viewcode-back" href="../../../pds4_tools.reader.label_objects.html#pds4_tools.reader.label_objects.get_mission_area">[docs]</a><span class="k">def</span> <span class="nf">get_mission_area</span><span class="p">(</span><span class="n">label</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Search a PDS4 label for a Mission_Area.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    label : Label or ElementTree Element</span>
+<span class="sd">        Label for a PDS4 product with-in which to look for a mission area.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    Label, ElementTree Element or None</span>
+<span class="sd">        Found Mission_Area section with same return type as *label*, or None if not found.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">return</span> <span class="n">label</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;.//Mission_Area&#39;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="get_discipline_area"><a class="viewcode-back" href="../../../pds4_tools.reader.label_objects.html#pds4_tools.reader.label_objects.get_discipline_area">[docs]</a><span class="k">def</span> <span class="nf">get_discipline_area</span><span class="p">(</span><span class="n">label</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Search a PDS4 label for a Discipline_Area.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    label : Label or ElementTree Element</span>
+<span class="sd">        Label for a PDS4 product with-in which to look for a discipline area.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    Label, ElementTree Element or None</span>
+<span class="sd">        Found Discipline_Area section with same return type as *label*, or None if not found.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">label</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;.//Discipline_Area&#39;</span><span class="p">)</span></div>
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">PDS4 Python Tools 1.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2015 - 2019, University of Maryland.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.6.
+    </div>
+  </body>
+</html>

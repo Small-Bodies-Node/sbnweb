@@ -1,0 +1,475 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>pds4_tools.extern.argparse module &#8212; PDS4 Python Tools 1.1 documentation</title>
+    <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="pds4_tools.extern.cached_property module" href="pds4_tools.extern.cached_property.html" />
+    <link rel="prev" title="pds4_tools.extern.appdirs module" href="pds4_tools.extern.appdirs.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="pds4_tools.extern.cached_property.html" title="pds4_tools.extern.cached_property module"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="pds4_tools.extern.appdirs.html" title="pds4_tools.extern.appdirs module"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">PDS4 Python Tools 1.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="pds4_tools.extern.html" accesskey="U">pds4_tools.extern package</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="pds4_tools.extern.appdirs.html"
+                        title="previous chapter">pds4_tools.extern.appdirs module</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="pds4_tools.extern.cached_property.html"
+                        title="next chapter">pds4_tools.extern.cached_property module</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/pds4_tools.extern.argparse.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-pds4_tools.extern.argparse">
+<span id="pds4-tools-extern-argparse-module"></span><h1>pds4_tools.extern.argparse module<a class="headerlink" href="#module-pds4_tools.extern.argparse" title="Permalink to this headline">¶</a></h1>
+<p>Command-line parsing library. Implements argparse for Python 2.6 and below.</p>
+<p>This module is an optparse-inspired command-line parsing library that:</p>
+<blockquote>
+<div><ul class="simple">
+<li>handles both optional and positional arguments</li>
+<li>produces highly informative usage messages</li>
+<li>supports parsers that dispatch to sub-parsers</li>
+</ul>
+</div></blockquote>
+<p>The following is a simple usage example that sums integers from the
+command-line and writes the result to a file:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span>
+    <span class="n">description</span><span class="o">=</span><span class="s1">&#39;sum the integers at the command line&#39;</span><span class="p">)</span>
+<span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
+    <span class="s1">&#39;integers&#39;</span><span class="p">,</span> <span class="n">metavar</span><span class="o">=</span><span class="s1">&#39;int&#39;</span><span class="p">,</span> <span class="n">nargs</span><span class="o">=</span><span class="s1">&#39;+&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span>
+    <span class="n">help</span><span class="o">=</span><span class="s1">&#39;an integer to be summed&#39;</span><span class="p">)</span>
+<span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
+    <span class="s1">&#39;--log&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="n">argparse</span><span class="o">.</span><span class="n">FileType</span><span class="p">(</span><span class="s1">&#39;w&#39;</span><span class="p">),</span>
+    <span class="n">help</span><span class="o">=</span><span class="s1">&#39;the file where the sum should be written&#39;</span><span class="p">)</span>
+<span class="n">args</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
+<span class="n">args</span><span class="o">.</span><span class="n">log</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="nb">sum</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">integers</span><span class="p">))</span>
+<span class="n">args</span><span class="o">.</span><span class="n">log</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>The module contains the following public classes:</p>
+<blockquote>
+<div><ul class="simple">
+<li><dl class="first docutils">
+<dt>ArgumentParser – The main entry point for command-line parsing. As the</dt>
+<dd>example above shows, the add_argument() method is used to populate
+the parser with actions for optional and positional arguments. Then
+the parse_args() method is invoked to convert the args at the
+command-line into an object with attributes.</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>ArgumentError – The exception raised by ArgumentParser structures when</dt>
+<dd>there are errors with the parser’s actions. Errors raised while
+parsing the command-line are caught by ArgumentParser and emitted
+as command-line messages.</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>FileType – A factory for defining types of files to be created. As the</dt>
+<dd>example above shows, instances of FileType are typically passed as
+the type= argument of add_argument() calls.</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Action – The base class for parser actions. Typically actions are</dt>
+<dd>selected by passing strings like ‘store_true’ or ‘append_const’ to
+the action= argument of add_argument(). However, for greater
+customization of ArgumentParser actions, subclasses of Action may
+be defined and passed as the action= argument.</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>HelpFormatter, RawDescriptionHelpFormatter, RawTextHelpFormatter,</dt>
+<dd>ArgumentDefaultsHelpFormatter – Formatter classes which
+may be passed as the formatter_class= argument to the
+ArgumentParser constructor. HelpFormatter is the default,
+RawDescriptionHelpFormatter and RawTextHelpFormatter tell the parser
+not to change the formatting for help text, and
+ArgumentDefaultsHelpFormatter adds information about argument defaults
+to the help.</dd>
+</dl>
+</li>
+</ul>
+</div></blockquote>
+<p>All other classes in this module are considered implementation details.
+(Also note that HelpFormatter and RawDescriptionHelpFormatter are only
+considered public as object names – the API of the formatter structures is
+still considered an implementation detail.)</p>
+<dl class="class">
+<dt id="pds4_tools.extern.argparse.HelpFormatter">
+<em class="property">class </em><code class="descname">HelpFormatter</code><span class="sig-paren">(</span><em>prog</em>, <em>indent_increment=2</em>, <em>max_help_position=24</em>, <em>width=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/extern/argparse.html#HelpFormatter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.extern.argparse.HelpFormatter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Formatter for generating usage messages and argument help strings.</p>
+<p>Only the name of this class is considered a public API. All the methods
+provided by the class are considered an implementation detail.</p>
+<dl class="method">
+<dt id="pds4_tools.extern.argparse.HelpFormatter.start_section">
+<code class="descname">start_section</code><span class="sig-paren">(</span><em>heading</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/extern/argparse.html#HelpFormatter.start_section"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.extern.argparse.HelpFormatter.start_section" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pds4_tools.extern.argparse.HelpFormatter.end_section">
+<code class="descname">end_section</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/extern/argparse.html#HelpFormatter.end_section"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.extern.argparse.HelpFormatter.end_section" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pds4_tools.extern.argparse.HelpFormatter.add_text">
+<code class="descname">add_text</code><span class="sig-paren">(</span><em>text</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/extern/argparse.html#HelpFormatter.add_text"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.extern.argparse.HelpFormatter.add_text" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pds4_tools.extern.argparse.HelpFormatter.add_usage">
+<code class="descname">add_usage</code><span class="sig-paren">(</span><em>usage</em>, <em>actions</em>, <em>groups</em>, <em>prefix=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/extern/argparse.html#HelpFormatter.add_usage"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.extern.argparse.HelpFormatter.add_usage" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pds4_tools.extern.argparse.HelpFormatter.add_argument">
+<code class="descname">add_argument</code><span class="sig-paren">(</span><em>action</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/extern/argparse.html#HelpFormatter.add_argument"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.extern.argparse.HelpFormatter.add_argument" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pds4_tools.extern.argparse.HelpFormatter.add_arguments">
+<code class="descname">add_arguments</code><span class="sig-paren">(</span><em>actions</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/extern/argparse.html#HelpFormatter.add_arguments"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.extern.argparse.HelpFormatter.add_arguments" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pds4_tools.extern.argparse.HelpFormatter.format_help">
+<code class="descname">format_help</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/extern/argparse.html#HelpFormatter.format_help"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.extern.argparse.HelpFormatter.format_help" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="pds4_tools.extern.argparse.RawDescriptionHelpFormatter">
+<em class="property">class </em><code class="descname">RawDescriptionHelpFormatter</code><span class="sig-paren">(</span><em>prog</em>, <em>indent_increment=2</em>, <em>max_help_position=24</em>, <em>width=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/extern/argparse.html#RawDescriptionHelpFormatter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.extern.argparse.RawDescriptionHelpFormatter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pds4_tools.extern.argparse.HelpFormatter" title="pds4_tools.extern.argparse.HelpFormatter"><code class="xref py py-class docutils literal notranslate"><span class="pre">pds4_tools.extern.argparse.HelpFormatter</span></code></a></p>
+<p>Help message formatter which retains any formatting in descriptions.</p>
+<p>Only the name of this class is considered a public API. All the methods
+provided by the class are considered an implementation detail.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="pds4_tools.extern.argparse.RawTextHelpFormatter">
+<em class="property">class </em><code class="descname">RawTextHelpFormatter</code><span class="sig-paren">(</span><em>prog</em>, <em>indent_increment=2</em>, <em>max_help_position=24</em>, <em>width=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/extern/argparse.html#RawTextHelpFormatter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.extern.argparse.RawTextHelpFormatter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pds4_tools.extern.argparse.RawDescriptionHelpFormatter" title="pds4_tools.extern.argparse.RawDescriptionHelpFormatter"><code class="xref py py-class docutils literal notranslate"><span class="pre">pds4_tools.extern.argparse.RawDescriptionHelpFormatter</span></code></a></p>
+<p>Help message formatter which retains formatting of all help text.</p>
+<p>Only the name of this class is considered a public API. All the methods
+provided by the class are considered an implementation detail.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="pds4_tools.extern.argparse.ArgumentDefaultsHelpFormatter">
+<em class="property">class </em><code class="descname">ArgumentDefaultsHelpFormatter</code><span class="sig-paren">(</span><em>prog</em>, <em>indent_increment=2</em>, <em>max_help_position=24</em>, <em>width=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/extern/argparse.html#ArgumentDefaultsHelpFormatter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.extern.argparse.ArgumentDefaultsHelpFormatter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pds4_tools.extern.argparse.HelpFormatter" title="pds4_tools.extern.argparse.HelpFormatter"><code class="xref py py-class docutils literal notranslate"><span class="pre">pds4_tools.extern.argparse.HelpFormatter</span></code></a></p>
+<p>Help message formatter which adds default values to argument help.</p>
+<p>Only the name of this class is considered a public API. All the methods
+provided by the class are considered an implementation detail.</p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="pds4_tools.extern.argparse.ArgumentError">
+<em class="property">exception </em><code class="descname">ArgumentError</code><span class="sig-paren">(</span><em>argument</em>, <em>message</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/extern/argparse.html#ArgumentError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.extern.argparse.ArgumentError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">exceptions.Exception</span></code></p>
+<p>An error from creating or using an argument (optional or positional).</p>
+<p>The string value of this exception is the message, augmented with
+information about the argument that caused it.</p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="pds4_tools.extern.argparse.ArgumentTypeError">
+<em class="property">exception </em><code class="descname">ArgumentTypeError</code><a class="reference internal" href="_modules/pds4_tools/extern/argparse.html#ArgumentTypeError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.extern.argparse.ArgumentTypeError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">exceptions.Exception</span></code></p>
+<p>An error from trying to convert a command line string to a type.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="pds4_tools.extern.argparse.Action">
+<em class="property">class </em><code class="descname">Action</code><span class="sig-paren">(</span><em>option_strings</em>, <em>dest</em>, <em>nargs=None</em>, <em>const=None</em>, <em>default=None</em>, <em>type=None</em>, <em>choices=None</em>, <em>required=False</em>, <em>help=None</em>, <em>metavar=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/extern/argparse.html#Action"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.extern.argparse.Action" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pds4_tools.extern.argparse._AttributeHolder</span></code></p>
+<p>Information about how to convert command line strings to Python structures.</p>
+<p>Action structures are used by an ArgumentParser to represent the information
+needed to parse a single argument from one or more strings from the
+command line. The keyword arguments to the Action constructor are also
+all attributes of Action instances.</p>
+<p>Keyword Arguments:</p>
+<blockquote>
+<div><ul>
+<li><dl class="first docutils">
+<dt>option_strings – A list of command-line option strings which</dt>
+<dd><p class="first last">should be associated with this action.</p>
+</dd>
+</dl>
+</li>
+<li><p class="first">dest – The name of the attribute to hold the created object(s)</p>
+</li>
+<li><dl class="first docutils">
+<dt>nargs – The number of command-line arguments that should be</dt>
+<dd><p class="first">consumed. By default, one argument will be consumed and a single
+value will be produced.  Other values include:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span> <span class="n">N</span> <span class="p">(</span><span class="n">an</span> <span class="n">integer</span><span class="p">)</span> <span class="n">consumes</span> <span class="n">N</span> <span class="n">arguments</span> <span class="p">(</span><span class="ow">and</span> <span class="n">produces</span> <span class="n">a</span> <span class="nb">list</span><span class="p">)</span>
+<span class="o">-</span> <span class="s1">&#39;?&#39;</span> <span class="n">consumes</span> <span class="n">zero</span> <span class="ow">or</span> <span class="n">one</span> <span class="n">arguments</span>
+<span class="o">-</span> <span class="s1">&#39;*&#39;</span> <span class="n">consumes</span> <span class="n">zero</span> <span class="ow">or</span> <span class="n">more</span> <span class="n">arguments</span> <span class="p">(</span><span class="ow">and</span> <span class="n">produces</span> <span class="n">a</span> <span class="nb">list</span><span class="p">)</span>
+<span class="o">-</span> <span class="s1">&#39;+&#39;</span> <span class="n">consumes</span> <span class="n">one</span> <span class="ow">or</span> <span class="n">more</span> <span class="n">arguments</span> <span class="p">(</span><span class="ow">and</span> <span class="n">produces</span> <span class="n">a</span> <span class="nb">list</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="last">Note that the difference between the default and nargs=1 is that
+with the default, a single value will be produced, while with
+nargs=1, a list containing a single value will be produced.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>const – The value to be produced if the option is specified and the</dt>
+<dd><p class="first last">option uses an action that takes no values.</p>
+</dd>
+</dl>
+</li>
+<li><p class="first">default – The value to be produced if the option is not specified.</p>
+</li>
+<li><dl class="first docutils">
+<dt>type – The type which the command-line arguments should be converted</dt>
+<dd><p class="first last">to, should be one of ‘string’, ‘int’, ‘float’, ‘complex’ or a
+callable object that accepts a single string argument. If None,
+‘string’ is assumed.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>choices – A container of values that should be allowed. If not None,</dt>
+<dd><p class="first last">after a command-line argument has been converted to the appropriate
+type, an exception will be raised if it is not a member of this
+collection.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>required – True if the action must always be specified at the</dt>
+<dd><p class="first last">command line. This is only meaningful for optional command-line
+arguments.</p>
+</dd>
+</dl>
+</li>
+<li><p class="first">help – The help string describing the argument.</p>
+</li>
+<li><dl class="first docutils">
+<dt>metavar – The name to be used for the option’s argument with the</dt>
+<dd><p class="first last">help string. If None, the ‘dest’ value will be used as the name.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</div></blockquote>
+</dd></dl>
+
+<dl class="class">
+<dt id="pds4_tools.extern.argparse.FileType">
+<em class="property">class </em><code class="descname">FileType</code><span class="sig-paren">(</span><em>mode='r'</em>, <em>bufsize=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/extern/argparse.html#FileType"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.extern.argparse.FileType" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Factory for creating file object types</p>
+<p>Instances of FileType are typically passed as type= arguments to the
+ArgumentParser add_argument() method.</p>
+<dl class="docutils">
+<dt>Keyword Arguments:</dt>
+<dd><ul class="first last simple">
+<li><dl class="first docutils">
+<dt>mode – A string indicating how the file is to be opened. Accepts the</dt>
+<dd>same values as the builtin open() function.</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>bufsize – The file’s desired buffer size. Accepts the same values as</dt>
+<dd>the builtin open() function.</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="class">
+<dt id="pds4_tools.extern.argparse.Namespace">
+<em class="property">class </em><code class="descname">Namespace</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/extern/argparse.html#Namespace"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.extern.argparse.Namespace" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pds4_tools.extern.argparse._AttributeHolder</span></code></p>
+<p>Simple object for storing attributes.</p>
+<p>Implements equality by attribute names and values, and provides a simple
+string representation.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="pds4_tools.extern.argparse.ArgumentParser">
+<em class="property">class </em><code class="descname">ArgumentParser</code><span class="sig-paren">(</span><em>prog=None</em>, <em>usage=None</em>, <em>description=None</em>, <em>epilog=None</em>, <em>version=None</em>, <em>parents=[]</em>, <em>formatter_class=&lt;class 'pds4_tools.extern.argparse.HelpFormatter'&gt;</em>, <em>prefix_chars='-'</em>, <em>fromfile_prefix_chars=None</em>, <em>argument_default=None</em>, <em>conflict_handler='error'</em>, <em>add_help=True</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/extern/argparse.html#ArgumentParser"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.extern.argparse.ArgumentParser" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pds4_tools.extern.argparse._AttributeHolder</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">pds4_tools.extern.argparse._ActionsContainer</span></code></p>
+<p>Object for parsing command line strings into Python structures.</p>
+<dl class="docutils">
+<dt>Keyword Arguments:</dt>
+<dd><ul class="first last simple">
+<li>prog – The name of the program (default: sys.argv[0])</li>
+<li>usage – A usage message (default: auto-generated from arguments)</li>
+<li>description – A description of what the program does</li>
+<li>epilog – Text following the argument descriptions</li>
+<li>parents – Parsers whose arguments should be copied into this one</li>
+<li>formatter_class – HelpFormatter class for printing help messages</li>
+<li>prefix_chars – Characters that prefix optional arguments</li>
+<li><dl class="first docutils">
+<dt>fromfile_prefix_chars – Characters that prefix files containing</dt>
+<dd>additional arguments</dd>
+</dl>
+</li>
+<li>argument_default – The default value for all arguments</li>
+<li>conflict_handler – String indicating how to handle conflicts</li>
+<li>add_help – Add a -h/-help option</li>
+</ul>
+</dd>
+</dl>
+<dl class="method">
+<dt id="pds4_tools.extern.argparse.ArgumentParser.add_subparsers">
+<code class="descname">add_subparsers</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/extern/argparse.html#ArgumentParser.add_subparsers"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.extern.argparse.ArgumentParser.add_subparsers" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pds4_tools.extern.argparse.ArgumentParser.parse_args">
+<code class="descname">parse_args</code><span class="sig-paren">(</span><em>args=None</em>, <em>namespace=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/extern/argparse.html#ArgumentParser.parse_args"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.extern.argparse.ArgumentParser.parse_args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pds4_tools.extern.argparse.ArgumentParser.parse_known_args">
+<code class="descname">parse_known_args</code><span class="sig-paren">(</span><em>args=None</em>, <em>namespace=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/extern/argparse.html#ArgumentParser.parse_known_args"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.extern.argparse.ArgumentParser.parse_known_args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pds4_tools.extern.argparse.ArgumentParser.convert_arg_line_to_args">
+<code class="descname">convert_arg_line_to_args</code><span class="sig-paren">(</span><em>arg_line</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/extern/argparse.html#ArgumentParser.convert_arg_line_to_args"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.extern.argparse.ArgumentParser.convert_arg_line_to_args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pds4_tools.extern.argparse.ArgumentParser.format_usage">
+<code class="descname">format_usage</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/extern/argparse.html#ArgumentParser.format_usage"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.extern.argparse.ArgumentParser.format_usage" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pds4_tools.extern.argparse.ArgumentParser.format_help">
+<code class="descname">format_help</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/extern/argparse.html#ArgumentParser.format_help"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.extern.argparse.ArgumentParser.format_help" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pds4_tools.extern.argparse.ArgumentParser.format_version">
+<code class="descname">format_version</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/extern/argparse.html#ArgumentParser.format_version"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.extern.argparse.ArgumentParser.format_version" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pds4_tools.extern.argparse.ArgumentParser.print_usage">
+<code class="descname">print_usage</code><span class="sig-paren">(</span><em>file=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/extern/argparse.html#ArgumentParser.print_usage"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.extern.argparse.ArgumentParser.print_usage" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pds4_tools.extern.argparse.ArgumentParser.print_help">
+<code class="descname">print_help</code><span class="sig-paren">(</span><em>file=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/extern/argparse.html#ArgumentParser.print_help"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.extern.argparse.ArgumentParser.print_help" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pds4_tools.extern.argparse.ArgumentParser.print_version">
+<code class="descname">print_version</code><span class="sig-paren">(</span><em>file=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/extern/argparse.html#ArgumentParser.print_version"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.extern.argparse.ArgumentParser.print_version" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pds4_tools.extern.argparse.ArgumentParser.exit">
+<code class="descname">exit</code><span class="sig-paren">(</span><em>status=0</em>, <em>message=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/extern/argparse.html#ArgumentParser.exit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.extern.argparse.ArgumentParser.exit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pds4_tools.extern.argparse.ArgumentParser.error">
+<code class="descname">error</code><span class="sig-paren">(</span><em>message: string</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/extern/argparse.html#ArgumentParser.error"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.extern.argparse.ArgumentParser.error" title="Permalink to this definition">¶</a></dt>
+<dd><p>Prints a usage message incorporating the message to stderr and
+exits.</p>
+<p>If you override this in a subclass, it should not return – it
+should either exit or raise an exception.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="pds4_tools.extern.cached_property.html" title="pds4_tools.extern.cached_property module"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="pds4_tools.extern.appdirs.html" title="pds4_tools.extern.appdirs module"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">PDS4 Python Tools 1.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="pds4_tools.extern.html" >pds4_tools.extern package</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2015 - 2019, University of Maryland.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.6.
+    </div>
+  </body>
+</html>

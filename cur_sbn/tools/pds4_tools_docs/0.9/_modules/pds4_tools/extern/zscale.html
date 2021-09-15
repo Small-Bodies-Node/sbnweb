@@ -1,0 +1,307 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>pds4_tools.extern.zscale &#8212; PDS4 Python Tools 0.9 documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/css/custom.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '0.9',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="top" title="PDS4 Python Tools 0.9 documentation" href="../../../index.html" />
+    <link rel="up" title="Module code" href="../../index.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">PDS4 Python Tools 0.9 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" accesskey="U">Module code</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Source code for pds4_tools.extern.zscale</h1><div class="highlight"><pre>
+<span></span><span class="c1"># This file is part of the NumDisplay tool available at the following URL:</span>
+<span class="c1"># http://stsdas.stsci.edu/numdisplay/</span>
+<span class="c1">#</span>
+<span class="c1"># Copyright (C) 2005 Association of Universities for Research in Astronomy (AURA)</span>
+<span class="c1">#</span>
+<span class="c1"># Redistribution and use in source and binary forms, with or without</span>
+<span class="c1"># modification, are permitted provided that the following conditions are met:</span>
+<span class="c1">#</span>
+<span class="c1">#     1. Redistributions of source code must retain the above copyright</span>
+<span class="c1">#       notice, this list of conditions and the following disclaimer.</span>
+<span class="c1">#</span>
+<span class="c1">#     2. Redistributions in binary form must reproduce the above</span>
+<span class="c1">#       copyright notice, this list of conditions and the following</span>
+<span class="c1">#       disclaimer in the documentation and/or other materials provided</span>
+<span class="c1">#       with the distribution.</span>
+<span class="c1">#</span>
+<span class="c1">#     3. The name of AURA and its representatives may not be used to</span>
+<span class="c1">#       endorse or promote products derived from this software without</span>
+<span class="c1">#       specific prior written permission.</span>
+<span class="c1">#</span>
+<span class="c1"># THIS SOFTWARE IS PROVIDED BY AURA ``AS IS&#39;&#39; AND ANY EXPRESS OR IMPLIED</span>
+<span class="c1"># WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF</span>
+<span class="c1"># MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE</span>
+<span class="c1"># DISCLAIMED. IN NO EVENT SHALL AURA BE LIABLE FOR ANY DIRECT, INDIRECT,</span>
+<span class="c1"># INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,</span>
+<span class="c1"># BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS</span>
+<span class="c1"># OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND</span>
+<span class="c1"># ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR</span>
+<span class="c1"># TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE</span>
+<span class="c1"># USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH</span>
+<span class="c1"># DAMAGE.</span>
+
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="k">import</span> <span class="n">division</span> <span class="c1"># confidence high</span>
+
+<span class="kn">import</span> <span class="nn">math</span>
+<span class="kn">import</span> <span class="nn">numpy</span>
+
+<span class="n">MAX_REJECT</span> <span class="o">=</span> <span class="mf">0.5</span>
+<span class="n">MIN_NPIXELS</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">GOOD_PIXEL</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">BAD_PIXEL</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">KREJ</span> <span class="o">=</span> <span class="mf">2.5</span>
+<span class="n">MAX_ITERATIONS</span> <span class="o">=</span> <span class="mi">5</span>
+
+<div class="viewcode-block" id="zscale"><a class="viewcode-back" href="../../../pds4_tools.extern.zscale.html#pds4_tools.extern.zscale.zscale">[docs]</a><span class="k">def</span> <span class="nf">zscale</span> <span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">nsamples</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">contrast</span><span class="o">=</span><span class="mf">0.25</span><span class="p">,</span> <span class="n">bpmask</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">zmask</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Implement IRAF zscale algorithm</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    image : arr</span>
+<span class="sd">        2-d numpy array</span>
+
+<span class="sd">    nsamples : int (Default: 1000)</span>
+<span class="sd">        Number of points in array to sample for determining scaling factors</span>
+
+<span class="sd">    contrast : float (Default: 0.25)</span>
+<span class="sd">        Scaling factor for determining min and max. Larger values increase the</span>
+<span class="sd">        difference between min and max values used for display.</span>
+
+<span class="sd">    bpmask : None</span>
+<span class="sd">        Not used at this time</span>
+
+<span class="sd">    zmask : None</span>
+<span class="sd">        Not used at this time</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    (z1, z2)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># Sample the image</span>
+    <span class="n">samples</span> <span class="o">=</span> <span class="n">zsc_sample</span> <span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">nsamples</span><span class="p">,</span> <span class="n">bpmask</span><span class="p">,</span> <span class="n">zmask</span><span class="p">)</span>
+    <span class="n">npix</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">samples</span><span class="p">)</span>
+    <span class="n">samples</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+    <span class="n">zmin</span> <span class="o">=</span> <span class="n">samples</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">zmax</span> <span class="o">=</span> <span class="n">samples</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="c1"># For a zero-indexed array</span>
+    <span class="n">center_pixel</span> <span class="o">=</span> <span class="p">(</span><span class="n">npix</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
+    <span class="k">if</span> <span class="n">npix</span><span class="o">%</span><span class="mi">2</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">median</span> <span class="o">=</span> <span class="n">samples</span><span class="p">[</span><span class="n">center_pixel</span><span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">median</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">samples</span><span class="p">[</span><span class="n">center_pixel</span><span class="p">]</span> <span class="o">+</span> <span class="n">samples</span><span class="p">[</span><span class="n">center_pixel</span> <span class="o">+</span> <span class="mi">1</span><span class="p">])</span>
+
+    <span class="c1">#</span>
+    <span class="c1"># Fit a line to the sorted array of samples</span>
+    <span class="n">minpix</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">MIN_NPIXELS</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">npix</span> <span class="o">*</span> <span class="n">MAX_REJECT</span><span class="p">))</span>
+    <span class="n">ngrow</span> <span class="o">=</span> <span class="nb">max</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">int</span> <span class="p">(</span><span class="n">npix</span> <span class="o">*</span> <span class="mf">0.01</span><span class="p">))</span>
+    <span class="n">ngoodpix</span><span class="p">,</span> <span class="n">zstart</span><span class="p">,</span> <span class="n">zslope</span> <span class="o">=</span> <span class="n">zsc_fit_line</span> <span class="p">(</span><span class="n">samples</span><span class="p">,</span> <span class="n">npix</span><span class="p">,</span> <span class="n">KREJ</span><span class="p">,</span> <span class="n">ngrow</span><span class="p">,</span>
+                                             <span class="n">MAX_ITERATIONS</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">ngoodpix</span> <span class="o">&lt;</span> <span class="n">minpix</span><span class="p">:</span>
+        <span class="n">z1</span> <span class="o">=</span> <span class="n">zmin</span>
+        <span class="n">z2</span> <span class="o">=</span> <span class="n">zmax</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">contrast</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span> <span class="n">zslope</span> <span class="o">=</span> <span class="n">zslope</span> <span class="o">/</span> <span class="n">contrast</span>
+        <span class="n">z1</span> <span class="o">=</span> <span class="nb">max</span> <span class="p">(</span><span class="n">zmin</span><span class="p">,</span> <span class="n">median</span> <span class="o">-</span> <span class="p">(</span><span class="n">center_pixel</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">zslope</span><span class="p">)</span>
+        <span class="n">z2</span> <span class="o">=</span> <span class="nb">min</span> <span class="p">(</span><span class="n">zmax</span><span class="p">,</span> <span class="n">median</span> <span class="o">+</span> <span class="p">(</span><span class="n">npix</span> <span class="o">-</span> <span class="n">center_pixel</span><span class="p">)</span> <span class="o">*</span> <span class="n">zslope</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">z1</span><span class="p">,</span> <span class="n">z2</span></div>
+
+
+<div class="viewcode-block" id="zsc_sample"><a class="viewcode-back" href="../../../pds4_tools.extern.zscale.html#pds4_tools.extern.zscale.zsc_sample">[docs]</a><span class="k">def</span> <span class="nf">zsc_sample</span> <span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">maxpix</span><span class="p">,</span> <span class="n">bpmask</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">zmask</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+
+    <span class="c1"># Figure out which pixels to use for the zscale algorithm</span>
+    <span class="c1"># Returns the 1-d array samples</span>
+    <span class="c1"># Don&#39;t worry about the bad pixel mask or zmask for the moment</span>
+    <span class="c1"># Sample in a square grid, and return the first maxpix in the sample</span>
+    <span class="n">nc</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">nl</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">stride</span> <span class="o">=</span> <span class="nb">max</span> <span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">nc</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">nl</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="nb">float</span><span class="p">(</span><span class="n">maxpix</span><span class="p">)))</span>
+    <span class="n">stride</span> <span class="o">=</span> <span class="nb">int</span> <span class="p">(</span><span class="n">stride</span><span class="p">)</span>
+    <span class="n">samples</span> <span class="o">=</span> <span class="n">image</span><span class="p">[::</span><span class="n">stride</span><span class="p">,::</span><span class="n">stride</span><span class="p">]</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+
+    <span class="c1"># Remove invalid values for masked arrays</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">samples</span><span class="p">,</span> <span class="n">numpy</span><span class="o">.</span><span class="n">ma</span><span class="o">.</span><span class="n">MaskedArray</span><span class="p">):</span>
+        <span class="n">samples</span> <span class="o">=</span> <span class="n">samples</span><span class="o">.</span><span class="n">compressed</span><span class="p">()</span>
+
+    <span class="c1"># Remove invalid values from ndarrays</span>
+    <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">samples</span><span class="p">,</span> <span class="n">numpy</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
+        <span class="n">samples</span> <span class="o">=</span> <span class="n">samples</span><span class="p">[</span><span class="n">numpy</span><span class="o">.</span><span class="n">isfinite</span><span class="p">(</span><span class="n">samples</span><span class="p">)]</span>
+
+    <span class="k">return</span> <span class="n">samples</span><span class="p">[:</span><span class="n">maxpix</span><span class="p">]</span></div>
+
+
+<div class="viewcode-block" id="zsc_fit_line"><a class="viewcode-back" href="../../../pds4_tools.extern.zscale.html#pds4_tools.extern.zscale.zsc_fit_line">[docs]</a><span class="k">def</span> <span class="nf">zsc_fit_line</span> <span class="p">(</span><span class="n">samples</span><span class="p">,</span> <span class="n">npix</span><span class="p">,</span> <span class="n">krej</span><span class="p">,</span> <span class="n">ngrow</span><span class="p">,</span> <span class="n">maxiter</span><span class="p">):</span>
+
+    <span class="c1">#</span>
+    <span class="c1"># First re-map indices from -1.0 to 1.0</span>
+    <span class="n">xscale</span> <span class="o">=</span> <span class="mf">2.0</span> <span class="o">/</span> <span class="p">(</span><span class="n">npix</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">xnorm</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">npix</span><span class="p">)</span>
+    <span class="n">xnorm</span> <span class="o">=</span> <span class="n">xnorm</span> <span class="o">*</span> <span class="n">xscale</span> <span class="o">-</span> <span class="mf">1.0</span>
+
+    <span class="n">ngoodpix</span> <span class="o">=</span> <span class="n">npix</span>
+    <span class="n">minpix</span> <span class="o">=</span> <span class="nb">max</span> <span class="p">(</span><span class="n">MIN_NPIXELS</span><span class="p">,</span> <span class="nb">int</span> <span class="p">(</span><span class="n">npix</span><span class="o">*</span><span class="n">MAX_REJECT</span><span class="p">))</span>
+    <span class="n">last_ngoodpix</span> <span class="o">=</span> <span class="n">npix</span> <span class="o">+</span> <span class="mi">1</span>
+
+    <span class="c1"># This is the mask used in k-sigma clipping.  0 is good, 1 is bad</span>
+    <span class="n">badpix</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">npix</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s2">&quot;int32&quot;</span><span class="p">)</span>
+
+    <span class="c1">#</span>
+    <span class="c1">#  Iterate</span>
+
+    <span class="k">for</span> <span class="n">niter</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">maxiter</span><span class="p">):</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">ngoodpix</span> <span class="o">&gt;=</span> <span class="n">last_ngoodpix</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">ngoodpix</span> <span class="o">&lt;</span> <span class="n">minpix</span><span class="p">):</span>
+            <span class="k">break</span>
+
+        <span class="c1"># Accumulate sums to calculate straight line fit</span>
+        <span class="n">goodpixels</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">badpix</span> <span class="o">==</span> <span class="n">GOOD_PIXEL</span><span class="p">)</span>
+        <span class="n">sumx</span> <span class="o">=</span> <span class="n">xnorm</span><span class="p">[</span><span class="n">goodpixels</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+        <span class="n">sumxx</span> <span class="o">=</span> <span class="p">(</span><span class="n">xnorm</span><span class="p">[</span><span class="n">goodpixels</span><span class="p">]</span><span class="o">*</span><span class="n">xnorm</span><span class="p">[</span><span class="n">goodpixels</span><span class="p">])</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+        <span class="n">sumxy</span> <span class="o">=</span> <span class="p">(</span><span class="n">xnorm</span><span class="p">[</span><span class="n">goodpixels</span><span class="p">]</span><span class="o">*</span><span class="n">samples</span><span class="p">[</span><span class="n">goodpixels</span><span class="p">])</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+        <span class="n">sumy</span> <span class="o">=</span> <span class="n">samples</span><span class="p">[</span><span class="n">goodpixels</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+        <span class="nb">sum</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">goodpixels</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+        <span class="n">delta</span> <span class="o">=</span> <span class="nb">sum</span> <span class="o">*</span> <span class="n">sumxx</span> <span class="o">-</span> <span class="n">sumx</span> <span class="o">*</span> <span class="n">sumx</span>
+        <span class="c1"># Slope and intercept</span>
+        <span class="n">intercept</span> <span class="o">=</span> <span class="p">(</span><span class="n">sumxx</span> <span class="o">*</span> <span class="n">sumy</span> <span class="o">-</span> <span class="n">sumx</span> <span class="o">*</span> <span class="n">sumxy</span><span class="p">)</span> <span class="o">/</span> <span class="n">delta</span>
+        <span class="n">slope</span> <span class="o">=</span> <span class="p">(</span><span class="nb">sum</span> <span class="o">*</span> <span class="n">sumxy</span> <span class="o">-</span> <span class="n">sumx</span> <span class="o">*</span> <span class="n">sumy</span><span class="p">)</span> <span class="o">/</span> <span class="n">delta</span>
+
+        <span class="c1"># Subtract fitted line from the data array</span>
+        <span class="n">fitted</span> <span class="o">=</span> <span class="n">xnorm</span><span class="o">*</span><span class="n">slope</span> <span class="o">+</span> <span class="n">intercept</span>
+        <span class="n">flat</span> <span class="o">=</span> <span class="n">samples</span> <span class="o">-</span> <span class="n">fitted</span>
+
+        <span class="c1"># Compute the k-sigma rejection threshold</span>
+        <span class="n">ngoodpix</span><span class="p">,</span> <span class="n">mean</span><span class="p">,</span> <span class="n">sigma</span> <span class="o">=</span> <span class="n">zsc_compute_sigma</span> <span class="p">(</span><span class="n">flat</span><span class="p">,</span> <span class="n">badpix</span><span class="p">,</span> <span class="n">npix</span><span class="p">)</span>
+
+        <span class="n">threshold</span> <span class="o">=</span> <span class="n">sigma</span> <span class="o">*</span> <span class="n">krej</span>
+
+        <span class="c1"># Detect and reject pixels further than k*sigma from the fitted line</span>
+        <span class="n">lcut</span> <span class="o">=</span> <span class="o">-</span><span class="n">threshold</span>
+        <span class="n">hcut</span> <span class="o">=</span> <span class="n">threshold</span>
+        <span class="n">below</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">flat</span> <span class="o">&lt;</span> <span class="n">lcut</span><span class="p">)</span>
+        <span class="n">above</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">flat</span> <span class="o">&gt;</span> <span class="n">hcut</span><span class="p">)</span>
+
+        <span class="n">badpix</span><span class="p">[</span><span class="n">below</span><span class="p">]</span> <span class="o">=</span> <span class="n">BAD_PIXEL</span>
+        <span class="n">badpix</span><span class="p">[</span><span class="n">above</span><span class="p">]</span> <span class="o">=</span> <span class="n">BAD_PIXEL</span>
+
+        <span class="c1"># Convolve with a kernel of length ngrow</span>
+        <span class="n">kernel</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">ngrow</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="s2">&quot;int32&quot;</span><span class="p">)</span>
+        <span class="n">badpix</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">convolve</span><span class="p">(</span><span class="n">badpix</span><span class="p">,</span> <span class="n">kernel</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;same&#39;</span><span class="p">)</span>
+
+        <span class="n">ngoodpix</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">badpix</span> <span class="o">==</span> <span class="n">GOOD_PIXEL</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
+
+        <span class="n">niter</span> <span class="o">+=</span> <span class="mi">1</span>
+
+    <span class="c1"># Transform the line coefficients back to the X range [0:npix-1]</span>
+    <span class="n">zstart</span> <span class="o">=</span> <span class="n">intercept</span> <span class="o">-</span> <span class="n">slope</span>
+    <span class="n">zslope</span> <span class="o">=</span> <span class="n">slope</span> <span class="o">*</span> <span class="n">xscale</span>
+
+    <span class="k">return</span> <span class="n">ngoodpix</span><span class="p">,</span> <span class="n">zstart</span><span class="p">,</span> <span class="n">zslope</span></div>
+
+
+<div class="viewcode-block" id="zsc_compute_sigma"><a class="viewcode-back" href="../../../pds4_tools.extern.zscale.html#pds4_tools.extern.zscale.zsc_compute_sigma">[docs]</a><span class="k">def</span> <span class="nf">zsc_compute_sigma</span> <span class="p">(</span><span class="n">flat</span><span class="p">,</span> <span class="n">badpix</span><span class="p">,</span> <span class="n">npix</span><span class="p">):</span>
+
+    <span class="c1"># Compute the rms deviation from the mean of a flattened array.</span>
+    <span class="c1"># Ignore rejected pixels</span>
+
+    <span class="c1"># Accumulate sum and sum of squares</span>
+    <span class="n">goodpixels</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">badpix</span> <span class="o">==</span> <span class="n">GOOD_PIXEL</span><span class="p">)</span>
+    <span class="n">sumz</span> <span class="o">=</span> <span class="n">flat</span><span class="p">[</span><span class="n">goodpixels</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+    <span class="n">sumsq</span> <span class="o">=</span> <span class="p">(</span><span class="n">flat</span><span class="p">[</span><span class="n">goodpixels</span><span class="p">]</span><span class="o">*</span><span class="n">flat</span><span class="p">[</span><span class="n">goodpixels</span><span class="p">])</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+    <span class="n">ngoodpix</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">goodpixels</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="k">if</span> <span class="n">ngoodpix</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">mean</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="n">sigma</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="k">elif</span> <span class="n">ngoodpix</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">mean</span> <span class="o">=</span> <span class="n">sumz</span>
+        <span class="n">sigma</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">mean</span> <span class="o">=</span> <span class="n">sumz</span> <span class="o">/</span> <span class="n">ngoodpix</span>
+        <span class="n">temp</span> <span class="o">=</span> <span class="n">sumsq</span> <span class="o">/</span> <span class="p">(</span><span class="n">ngoodpix</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="n">sumz</span><span class="o">*</span><span class="n">sumz</span> <span class="o">/</span> <span class="p">(</span><span class="n">ngoodpix</span> <span class="o">*</span> <span class="p">(</span><span class="n">ngoodpix</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span>
+        <span class="k">if</span> <span class="n">temp</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">sigma</span> <span class="o">=</span> <span class="mf">0.0</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">sigma</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span> <span class="p">(</span><span class="n">temp</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">ngoodpix</span><span class="p">,</span> <span class="n">mean</span><span class="p">,</span> <span class="n">sigma</span></div>
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">PDS4 Python Tools 0.9 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2015 - 2017, University of Maryland.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.6.
+    </div>
+  </body>
+</html>

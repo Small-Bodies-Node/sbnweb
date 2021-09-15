@@ -1,0 +1,146 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>pds4_tools.utils.exceptions module &#8212; PDS4 Python Tools 1.2 documentation</title>
+    <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/css/custom.css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="pds4_tools.utils.helpers module" href="pds4_tools.utils.helpers.html" />
+    <link rel="prev" title="pds4_tools.utils.data_access module" href="pds4_tools.utils.data_access.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="pds4_tools.utils.helpers.html" title="pds4_tools.utils.helpers module"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="pds4_tools.utils.data_access.html" title="pds4_tools.utils.data_access module"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">PDS4 Python Tools 1.2 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="pds4_tools.utils.html" accesskey="U">pds4_tools.utils package</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">pds4_tools.utils.exceptions module</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-pds4_tools.utils.exceptions">
+<span id="pds4-tools-utils-exceptions-module"></span><h1>pds4_tools.utils.exceptions module<a class="headerlink" href="#module-pds4_tools.utils.exceptions" title="Permalink to this headline">¶</a></h1>
+<dl class="py exception">
+<dt id="pds4_tools.utils.exceptions.PDS4StandardsException">
+<em class="property">exception </em><code class="sig-name descname">PDS4StandardsException</code><a class="reference internal" href="_modules/pds4_tools/utils/exceptions.html#PDS4StandardsException"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.utils.exceptions.PDS4StandardsException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+<p>Custom exception thrown when PDS4 Standards are violated.</p>
+</dd></dl>
+
+<dl class="py exception">
+<dt id="pds4_tools.utils.exceptions.PDS4ToolsDeprecationWarning">
+<em class="property">exception </em><code class="sig-name descname">PDS4ToolsDeprecationWarning</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">message</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">obj_type</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">since</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">removal</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">addendum</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/utils/exceptions.html#PDS4ToolsDeprecationWarning"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.utils.exceptions.PDS4ToolsDeprecationWarning" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">UserWarning</span></code></p>
+<p>Custom depreciation warning issued when a deprecated PDS4 tools feature is used.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>message</strong><span class="classifier">str, optional</span></dt><dd><p>Message to show to user. When given, all other options are ignored.</p>
+</dd>
+<dt><strong>name</strong><span class="classifier">str, optional</span></dt><dd><p>Name of feature that is deprecated. Required when <em>message</em> is absent.</p>
+</dd>
+<dt><strong>obj_type</strong><span class="classifier">str, optional</span></dt><dd><p>Type of feature that is deprecated; e.g., function or class.  Required when <em>message</em> is absent.</p>
+</dd>
+<dt><strong>since</strong><span class="classifier">str, optional</span></dt><dd><p>Version from which feature is deprecated.  Required when <em>message</em> is absent.</p>
+</dd>
+<dt><strong>removal</strong><span class="classifier">str, optional</span></dt><dd><p>Version from which feature may be removed.</p>
+</dd>
+<dt><strong>addendum</strong><span class="classifier">str, optional</span></dt><dd><p>An addendum following the main deprecation message.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>Inherits from UserWarning rather than DeprecationWarning because the latter is not
+necessarily shown to user by default.</p>
+</dd></dl>
+
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="pds4_tools.utils.data_access.html"
+                        title="previous chapter">pds4_tools.utils.data_access module</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="pds4_tools.utils.helpers.html"
+                        title="next chapter">pds4_tools.utils.helpers module</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/pds4_tools.utils.exceptions.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="pds4_tools.utils.helpers.html" title="pds4_tools.utils.helpers module"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="pds4_tools.utils.data_access.html" title="pds4_tools.utils.data_access module"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">PDS4 Python Tools 1.2 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="pds4_tools.utils.html" >pds4_tools.utils package</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">pds4_tools.utils.exceptions module</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2015 - 2020, University of Maryland.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+    </div>
+  </body>
+</html>

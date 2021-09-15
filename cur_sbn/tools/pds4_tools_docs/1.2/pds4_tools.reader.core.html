@@ -1,0 +1,359 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>pds4_tools.reader.core module &#8212; PDS4 Python Tools 1.2 documentation</title>
+    <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/css/custom.css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="pds4_tools.reader.read_label module" href="pds4_tools.reader.read_label.html" />
+    <link rel="prev" title="pds4_tools.reader package" href="pds4_tools.reader.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="pds4_tools.reader.read_label.html" title="pds4_tools.reader.read_label module"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="pds4_tools.reader.html" title="pds4_tools.reader package"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">PDS4 Python Tools 1.2 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="pds4_tools.reader.html" accesskey="U">pds4_tools.reader package</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">pds4_tools.reader.core module</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="pds4-tools-reader-core-module">
+<h1>pds4_tools.reader.core module<a class="headerlink" href="#pds4-tools-reader-core-module" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="functions">
+<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pds4_tools.reader.core.pds4_read" title="pds4_tools.reader.core.pds4_read"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pds4_read</span></code></a>(filename[, quiet, lazy_load, …])</p></td>
+<td><p>Reads PDS4 compliant data into a <a class="reference internal" href="pds4_tools.reader.general_objects.html#pds4_tools.reader.general_objects.StructureList" title="pds4_tools.reader.general_objects.StructureList"><code class="xref any py py-class docutils literal notranslate"><span class="pre">StructureList</span></code></a>.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pds4_tools.reader.core.read_structures" title="pds4_tools.reader.core.read_structures"><code class="xref py py-obj docutils literal notranslate"><span class="pre">read_structures</span></code></a>(label, label_filename[, …])</p></td>
+<td><p>Reads PDS4 data structures described in label into a <code class="docutils literal notranslate"><span class="pre">list</span></code> of <a class="reference internal" href="pds4_tools.reader.general_objects.html#pds4_tools.reader.general_objects.Structure" title="pds4_tools.reader.general_objects.Structure"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Structure</span></code></a>’s.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pds4_tools.reader.core.read_byte_data" title="pds4_tools.reader.core.read_byte_data"><code class="xref py py-obj docutils literal notranslate"><span class="pre">read_byte_data</span></code></a>(data_filename, start_byte, …)</p></td>
+<td><p>Reads byte data from specified start byte to specified end byte.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="details">
+<h2>Details<a class="headerlink" href="#details" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="pds4_tools.reader.core.pds4_tools.read">
+<code class="sig-prename descclassname">pds4_tools.</code><code class="sig-name descname">read</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pds4_tools.reader.core.pds4_tools.read" title="Permalink to this definition">¶</a></dt>
+<dd><p>An alias of <a class="reference internal" href="#pds4_tools.reader.core.pds4_read" title="pds4_tools.reader.core.pds4_read"><code class="xref any py py-func docutils literal notranslate"><span class="pre">pds4_read</span></code></a>.</p>
+</dd></dl>
+
+<span class="target" id="module-pds4_tools.reader.core"></span><dl class="py function">
+<dt id="pds4_tools.reader.core.pds4_read">
+<code class="sig-name descname">pds4_read</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filename</span></em>, <em class="sig-param"><span class="n">quiet</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">lazy_load</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">no_scale</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">decode_strings</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/core.html#pds4_read"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.reader.core.pds4_read" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reads PDS4 compliant data into a <a class="reference internal" href="pds4_tools.reader.general_objects.html#pds4_tools.reader.general_objects.StructureList" title="pds4_tools.reader.general_objects.StructureList"><code class="xref any py py-class docutils literal notranslate"><span class="pre">StructureList</span></code></a>.</p>
+<p>Given a PDS4 label, reads the PDS4 data described in the label and
+associated label meta data into a <a class="reference internal" href="pds4_tools.reader.general_objects.html#pds4_tools.reader.general_objects.StructureList" title="pds4_tools.reader.general_objects.StructureList"><code class="xref any py py-class docutils literal notranslate"><span class="pre">StructureList</span></code></a>, with each PDS4 data
+structure (e.g. Array_2D, Table_Binary, etc) as its own <a class="reference internal" href="pds4_tools.reader.general_objects.html#pds4_tools.reader.general_objects.Structure" title="pds4_tools.reader.general_objects.Structure"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Structure</span></code></a>. By
+default all data structures described in the label are immediately
+read into memory.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>filename</strong><span class="classifier">str or unicode</span></dt><dd><p>The filename, including full or relative path, or a remote
+URL to the PDS4 label describing the data.</p>
+</dd>
+<dt><strong>quiet</strong><span class="classifier">bool, optional</span></dt><dd><p>Suppresses all info/warnings from being output.</p>
+</dd>
+<dt><strong>lazy_load</strong><span class="classifier">bool, optional</span></dt><dd><p>If True, then the data of each PDS4 data structure will not be
+read-in to memory until the first attempt to access it. Additionally,
+for remote URLs, the data is not downloaded until first access.
+Defaults to False.</p>
+</dd>
+<dt><strong>no_scale</strong><span class="classifier">bool, optional</span></dt><dd><p>If True, returned data will be exactly as written in the data file,
+ignoring offset or scaling values. Defaults to False.</p>
+</dd>
+<dt><strong>decode_strings</strong><span class="classifier">bool, optional</span></dt><dd><p>If True, strings data types contained in the returned data will be
+decoded to the a unicode in Python 2, and to the str type in
+Python 3. If False, leaves string types as byte strings.
+Defaults to True.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>StructureList</dt><dd><p>Contains PDS4 data <a class="reference internal" href="pds4_tools.reader.general_objects.html#pds4_tools.reader.general_objects.Structure" title="pds4_tools.reader.general_objects.Structure"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Structure</span></code></a>’s, each of which contains the data,
+the meta data and the label portion describing that data structure.
+<a class="reference internal" href="pds4_tools.reader.general_objects.html#pds4_tools.reader.general_objects.StructureList" title="pds4_tools.reader.general_objects.StructureList"><code class="xref any py py-class docutils literal notranslate"><span class="pre">StructureList</span></code></a> can be treated/accessed/used like a <code class="docutils literal notranslate"><span class="pre">dict</span></code> or
+<code class="docutils literal notranslate"><span class="pre">list</span></code>.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>Python 2 v. Python 3: Non-data strings (label, meta data, etc)  in
+Python 2 will be decoded to <code class="docutils literal notranslate"><span class="pre">unicode</span></code> and in Python 3 they will
+be decoded to <code class="docutils literal notranslate"><span class="pre">str</span></code>. The return type of all data strings is
+controlled by <em>decode_strings</em>.</p>
+<p>Remote URLs are downloaded into an on-disk cache which is cleared on
+Python interpreter exit.</p>
+<p class="rubric">Examples</p>
+<p>Below we document how to read data described by an example label
+which has two data structures, an Array_2D_Image and a Table_Binary.
+An outline of the label, including the array and a table with 3
+fields, is given.</p>
+<p># Local file
+&gt;&gt;&gt; struct_list = pds4_tools.read(‘/path/to/Example_Label.xml’)</p>
+<p># Remote URL
+&gt;&gt;&gt; struct_list = pds4_tools.read(‘<a class="reference external" href="http://url.com/Example_Label.xml">http://url.com/Example_Label.xml</a>’)</p>
+<p>Example Label Outline:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Array_2D_Image</span><span class="p">:</span> <span class="n">unnamed</span>
+<span class="n">Table_Binary</span><span class="p">:</span> <span class="n">Observations</span>
+    <span class="n">Field</span><span class="p">:</span> <span class="n">order</span>
+    <span class="n">Field</span><span class="p">:</span> <span class="n">wavelength</span>
+    <span class="n">Group</span><span class="p">:</span> <span class="n">unnamed</span>
+        <span class="n">Field</span><span class="p">:</span> <span class="n">pos_vector</span>
+</pre></div>
+</div>
+<p>All below documentation assumes that the above outlined label,
+containing an array that does not have a name indicated in the label,
+and a table that has the name ‘Observations’ with 3 fields as shown,
+has been read-in.</p>
+<p>Accessing Example Structures:</p>
+<blockquote>
+<div><p>To access the data structures in <a class="reference internal" href="pds4_tools.reader.general_objects.html#pds4_tools.reader.general_objects.StructureList" title="pds4_tools.reader.general_objects.StructureList"><code class="xref any py py-class docutils literal notranslate"><span class="pre">StructureList</span></code></a>, which is returned
+by <a class="reference internal" href="#pds4_tools.reader.core.pds4_read" title="pds4_tools.reader.core.pds4_read"><code class="xref any py py-func docutils literal notranslate"><span class="pre">pds4_read()</span></code></a>, you may use any combination of <code class="docutils literal notranslate"><span class="pre">dict</span></code>-like or
+<code class="docutils literal notranslate"><span class="pre">list</span></code>-like access.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">unnamed_array</span> <span class="o">=</span> <span class="n">struct_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span>             <span class="ow">or</span> <span class="n">struct_list</span><span class="p">[</span><span class="s1">&#39;ARRAY_0&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">obs_table</span> <span class="o">=</span> <span class="n">struct_list</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span>         <span class="ow">or</span> <span class="n">struct_list</span><span class="p">[</span><span class="s1">&#39;Observations&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>Label or Structure Overview:</p>
+<blockquote>
+<div><p>To see a summary of the data structures, which for Arrays shows the
+type and dimensions of the array, and for Tables shows the type
+and number of fields, you may use the <a class="reference internal" href="pds4_tools.reader.general_objects.html#pds4_tools.reader.general_objects.StructureList.info" title="pds4_tools.reader.general_objects.StructureList.info"><code class="xref any py py-meth docutils literal notranslate"><span class="pre">StructureList.info()</span></code></a> method.
+Calling <a class="reference internal" href="pds4_tools.reader.general_objects.html#pds4_tools.reader.general_objects.Structure.info" title="pds4_tools.reader.general_objects.Structure.info"><code class="xref any py py-meth docutils literal notranslate"><span class="pre">Structure.info()</span></code></a> on a specific <code class="docutils literal notranslate"><span class="pre">Structure</span></code> instead will
+provide a more detailed summary, including all Fields for a table.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">struct_list</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">unnamed_array</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">obs_table</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>Accessing Example Label data:</p>
+<blockquote>
+<div><p>To access the read-in data, as an array-like (subclass of <code class="docutils literal notranslate"><span class="pre">ndarray</span></code>),
+you can use the data attribute for a PDS4 Array data structure, or
+list-like and the field() method to access a field for a table.</p>
+<p>PDS4 Arrays:
+&gt;&gt;&gt; unnamed_array.data</p>
+<p>PDS4 Table fields:
+&gt;&gt;&gt; obs_table[‘wavelength’]
+&gt;&gt;&gt; obs_table.field(‘wavelength’)</p>
+<p>PDS4 Table records:
+&gt;&gt;&gt; obs_table[0:1000]</p>
+</div></blockquote>
+<p>Accessing Example Label meta data:</p>
+<blockquote>
+<div><p>You can access all meta data in the label for a given PDS4 data
+structure or field via the <code class="docutils literal notranslate"><span class="pre">OrderedDict</span></code> meta_data attribute. The
+below examples use the ‘description’ element.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">unnamed_array</span><span class="o">.</span><span class="n">meta_data</span><span class="p">[</span><span class="s1">&#39;description&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">obs_table</span><span class="o">.</span><span class="n">field</span><span class="p">(</span><span class="s1">&#39;wavelength&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">meta_data</span><span class="p">[</span><span class="s1">&#39;description&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">obs_table</span><span class="o">.</span><span class="n">field</span><span class="p">(</span><span class="s1">&#39;pos_vector&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">meta_data</span><span class="p">[</span><span class="s1">&#39;description&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>Accessing Example Label:</p>
+<blockquote>
+<div><p>The XML for a label is also accessible via the label attribute,
+either the entire label or for each PDS4 data structure.</p>
+<dl>
+<dt>Entire label:</dt><dd><div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">struct_list</span><span class="o">.</span><span class="n">label</span>
+</pre></div>
+</div>
+</dd>
+<dt>Part of label describing Observations table:</dt><dd><div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">struct_list</span><span class="p">[</span><span class="s1">&#39;Observations&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">label</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">struct_list</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">label</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+<p>The returned object is similar to an ElementTree instance. It is
+searchable via <a class="reference internal" href="pds4_tools.reader.label_objects.html#pds4_tools.reader.label_objects.Label.find" title="pds4_tools.reader.label_objects.Label.find"><code class="xref any py py-meth docutils literal notranslate"><span class="pre">Label.find()</span></code></a> and <a class="reference internal" href="pds4_tools.reader.label_objects.html#pds4_tools.reader.label_objects.Label.findall" title="pds4_tools.reader.label_objects.Label.findall"><code class="xref any py py-meth docutils literal notranslate"><span class="pre">Label.findall()</span></code></a> methods and XPATH.
+Consult <code class="docutils literal notranslate"><span class="pre">ElementTree</span></code> manual for more details. For example,</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">struct_list</span><span class="o">.</span><span class="n">label</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">&#39;.//disp:Display_Settings&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Will find all elements in the entire label named ‘Display_Settings’
+which are in the ‘disp’ prefix’s namespace. You can additionally use the
+<a class="reference internal" href="pds4_tools.reader.label_objects.html#pds4_tools.reader.label_objects.Label.to_dict" title="pds4_tools.reader.label_objects.Label.to_dict"><code class="xref any py py-meth docutils literal notranslate"><span class="pre">Label.to_dict()</span></code></a> and <a class="reference internal" href="pds4_tools.reader.label_objects.html#pds4_tools.reader.label_objects.Label.to_string" title="pds4_tools.reader.label_objects.Label.to_string"><code class="xref any py py-meth docutils literal notranslate"><span class="pre">Label.to_string()</span></code></a> methods.</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pds4_tools.reader.core.read_structures">
+<code class="sig-name descname">read_structures</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">label</span></em>, <em class="sig-param"><span class="n">label_filename</span></em>, <em class="sig-param"><span class="n">lazy_load</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">no_scale</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">decode_strings</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/core.html#read_structures"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.reader.core.read_structures" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reads PDS4 data structures described in label into a <code class="docutils literal notranslate"><span class="pre">list</span></code> of <a class="reference internal" href="pds4_tools.reader.general_objects.html#pds4_tools.reader.general_objects.Structure" title="pds4_tools.reader.general_objects.Structure"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Structure</span></code></a>’s.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>label</strong><span class="classifier">Label</span></dt><dd><p>Entire label of a PDS4 product.</p>
+</dd>
+<dt><strong>label_filename</strong><span class="classifier">str or unicode</span></dt><dd><p>The filename, including full or relative path, of the label.</p>
+</dd>
+<dt><strong>lazy_load</strong><span class="classifier">bool, optional</span></dt><dd><p>If True, does not read-in data of each data structure until the first attempt
+to access it. Defaults to False.</p>
+</dd>
+<dt><strong>no_scale</strong><span class="classifier">bool, optional</span></dt><dd><p>If True, returned data will not be adjusted according to the offset and scaling
+factor. Defaults to False.</p>
+</dd>
+<dt><strong>decode_strings</strong><span class="classifier">bool, optional</span></dt><dd><p>If True, strings data types contained in the returned data will be decoded to
+the <code class="docutils literal notranslate"><span class="pre">unicode</span></code> type in Python 2, and to the <code class="docutils literal notranslate"><span class="pre">str</span></code> type in Python 3. If
+false, leaves string types as byte strings. Defaults to False.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>list[Structure]</dt><dd><p>The PDS4 data <a class="reference internal" href="pds4_tools.reader.general_objects.html#pds4_tools.reader.general_objects.Structure" title="pds4_tools.reader.general_objects.Structure"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Structure</span></code></a>’s described in the label.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pds4_tools.reader.core.read_byte_data">
+<code class="sig-name descname">read_byte_data</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data_filename</span></em>, <em class="sig-param"><span class="n">start_byte</span></em>, <em class="sig-param"><span class="n">stop_byte</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/core.html#read_byte_data"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pds4_tools.reader.core.read_byte_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reads byte data from specified start byte to specified end byte.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>data_filename</strong><span class="classifier">str or unicode</span></dt><dd><p>Filename, including the full path, of the data file that contains the data for this structure.</p>
+</dd>
+<dt><strong>start_byte</strong><span class="classifier">int</span></dt><dd><p>The start byte from which to begin reading.</p>
+</dd>
+<dt><strong>stop_byte</strong><span class="classifier">int</span></dt><dd><p>The start byte at which to stop reading. May be -1, to specify read until EOF.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>str or bytes</dt><dd><p>The read-in byte data.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>This function will attempt to read until <em>stop_byte</em>, but if that is past the end-of-file it will
+silently read until end-of-file only.</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">pds4_tools.reader.core module</a><ul>
+<li><a class="reference internal" href="#functions">Functions</a></li>
+<li><a class="reference internal" href="#details">Details</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="pds4_tools.reader.html"
+                        title="previous chapter">pds4_tools.reader package</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="pds4_tools.reader.read_label.html"
+                        title="next chapter">pds4_tools.reader.read_label module</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/pds4_tools.reader.core.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="pds4_tools.reader.read_label.html" title="pds4_tools.reader.read_label module"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="pds4_tools.reader.html" title="pds4_tools.reader package"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">PDS4 Python Tools 1.2 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="pds4_tools.reader.html" >pds4_tools.reader package</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">pds4_tools.reader.core module</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2015 - 2020, University of Maryland.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+    </div>
+  </body>
+</html>

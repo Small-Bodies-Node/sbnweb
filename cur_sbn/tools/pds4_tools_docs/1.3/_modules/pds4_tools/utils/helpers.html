@@ -1,0 +1,349 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>pds4_tools.utils.helpers &#8212; PDS4 Python Tools 1.3 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinxdoc.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css" />
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">PDS4 Python Tools 1.3 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" accesskey="U">Module code</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">pds4_tools.utils.helpers</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Source code for pds4_tools.utils.helpers</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">absolute_import</span>
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">print_function</span>
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">division</span>
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">unicode_literals</span>
+
+<span class="kn">import</span> <span class="nn">functools</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="kn">from</span> <span class="nn">..utils.compat</span> <span class="kn">import</span> <span class="n">OrderedDict</span>
+<span class="kn">from</span> <span class="nn">..extern</span> <span class="kn">import</span> <span class="n">six</span>
+
+<span class="c1">#################################</span>
+
+
+<div class="viewcode-block" id="cast_int_float_string"><a class="viewcode-back" href="../../../pds4_tools.utils.helpers.html#pds4_tools.utils.helpers.cast_int_float_string">[docs]</a><span class="k">def</span> <span class="nf">cast_int_float_string</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Cast given string value, if possible, to an int, float or returns unchanged.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    value : str or unicode</span>
+<span class="sd">        Value to try casting to an int and float.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    int, float, str or unicode</span>
+<span class="sd">        Cast *value*.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+
+    <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+
+        <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">value</span></div>
+
+
+<div class="viewcode-block" id="is_array_like"><a class="viewcode-back" href="../../../pds4_tools.utils.helpers.html#pds4_tools.utils.helpers.is_array_like">[docs]</a><span class="k">def</span> <span class="nf">is_array_like</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Array-like values are defined as those that implement __len__ (such as ``list``, ``tuple``,</span>
+<span class="sd">    ``array.array``, ``np.ndarray``, etc) but are not ``str``, ``unicode`` or ``bytes``.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    value</span>
+<span class="sd">        Any kind of value.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    bool</span>
+<span class="sd">        True if *value* is array-like, false otherwise.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># Checks if value implements __len__, and ensures its not a string (six is used because</span>
+    <span class="c1"># str, unicode, and bytes can all represent strings, depending on the Python version)</span>
+    <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="s1">&#39;__len__&#39;</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="p">(</span><span class="n">six</span><span class="o">.</span><span class="n">binary_type</span><span class="p">,</span> <span class="n">six</span><span class="o">.</span><span class="n">text_type</span><span class="p">,</span>
+                                                             <span class="n">np</span><span class="o">.</span><span class="n">ma</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">MaskedConstant</span><span class="p">))):</span>
+        <span class="k">return</span> <span class="kc">True</span>
+
+    <span class="k">return</span> <span class="kc">False</span></div>
+
+
+<div class="viewcode-block" id="finite_min_max"><a class="viewcode-back" href="../../../pds4_tools.utils.helpers.html#pds4_tools.utils.helpers.finite_min_max">[docs]</a><span class="k">def</span> <span class="nf">finite_min_max</span><span class="p">(</span><span class="n">array_like</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Obtain finite (non-NaN, non-Inf) minimum and maximum of an array.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    array_like : array_like</span>
+<span class="sd">        A numeric array of some kind, possibly containing NaN or Inf values.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    tuple</span>
+<span class="sd">        Two-valued tuple containing the finite minimum and maximum of *array_like*.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">array_like</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asanyarray</span><span class="p">(</span><span class="n">array_like</span><span class="p">)</span>
+    <span class="n">finite_values</span> <span class="o">=</span> <span class="n">array_like</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">isfinite</span><span class="p">(</span><span class="n">array_like</span><span class="p">)]</span>
+
+    <span class="k">return</span> <span class="n">finite_values</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">finite_values</span><span class="o">.</span><span class="n">max</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="dict_extract"><a class="viewcode-back" href="../../../pds4_tools.utils.helpers.html#pds4_tools.utils.helpers.dict_extract">[docs]</a><span class="k">def</span> <span class="nf">dict_extract</span><span class="p">(</span><span class="n">nested_dict</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Recursively searches nested dictionaries.</span>
+
+<span class="sd">    *nested_dict* may contain other dictionaries, or other array-like&#39;s that have dictionaries</span>
+<span class="sd">    inside: all dictionaries anywhere will be searched.</span>
+
+<span class="sd">    Adapted from http://stackoverflow.com/a/29652561.</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    This code is generally efficient. However, if you pass it a dictionary that has a huge array</span>
+<span class="sd">    nested within it, it will not be performant because it will try to search each value in the</span>
+<span class="sd">    array for a dictionary (this is by design; the intent if non-dict array-like&#39;s are present</span>
+<span class="sd">    is to search them on the assumption they will be small where using this function makes sense).</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    nested_dict : dict or OrderedDict</span>
+<span class="sd">        A dictionary potentially containing an arbitrary number of other dictionaries.</span>
+<span class="sd">    key : str or unicode</span>
+<span class="sd">        The key to search for in *nested_dict*.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    generator</span>
+<span class="sd">        Found values for *key* in any dictionary inside *nested_dict*.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+
+<span class="sd">    &gt;&gt;&gt; d = { &quot;id&quot; : &quot;abcde&quot;,</span>
+<span class="sd">              &quot;key1&quot; : &quot;blah&quot;,</span>
+<span class="sd">              &quot;key2&quot; : &quot;blah blah&quot;,</span>
+<span class="sd">              &quot;nestedlist&quot; : [</span>
+<span class="sd">                &quot;blah blah&quot;,</span>
+<span class="sd">                { &quot;id&quot; : &quot;qwerty&quot;,</span>
+<span class="sd">                &quot;key1&quot;: &quot;blah&quot;} ]</span>
+<span class="sd">            }</span>
+<span class="sd">    &gt;&gt;&gt; result = dict_extract(d, &#39;id&#39;)</span>
+
+<span class="sd">    &gt;&gt;&gt; print(list(result))</span>
+<span class="sd">    [&#39;abcde&#39;, &#39;qwerty&#39;]</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">nested_dict</span><span class="p">,</span> <span class="s1">&#39;items&#39;</span><span class="p">):</span>
+
+        <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">nested_dict</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">k</span> <span class="o">==</span> <span class="n">key</span><span class="p">:</span>
+                <span class="k">yield</span> <span class="n">v</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+                <span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">dict_extract</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+                    <span class="k">yield</span> <span class="n">result</span>
+            <span class="k">elif</span> <span class="n">is_array_like</span><span class="p">(</span><span class="n">v</span><span class="p">):</span>
+                <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">v</span><span class="p">:</span>
+                    <span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">dict_extract</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+                        <span class="k">yield</span> <span class="n">result</span></div>
+
+
+<div class="viewcode-block" id="xml_to_dict"><a class="viewcode-back" href="../../../pds4_tools.utils.helpers.html#pds4_tools.utils.helpers.xml_to_dict">[docs]</a><span class="k">def</span> <span class="nf">xml_to_dict</span><span class="p">(</span><span class="n">xml_element</span><span class="p">,</span> <span class="n">skip_attributes</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">cast_values</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">cast_ignore</span><span class="o">=</span><span class="p">(),</span> <span class="n">tag_modify</span><span class="o">=</span><span class="p">()):</span>
+    <span class="sd">&quot;&quot;&quot; Transforms XML to an ``OrderedDict``.</span>
+
+<span class="sd">    Takes an XML ``ElementTree`` Element or a `Label` and creates an equivalent ``OrderedDict``.</span>
+<span class="sd">    Keys of the dictionary represent tag names and values represent the text values of the elements.</span>
+<span class="sd">    In case of a (sub)element having child elements, values will be another ``OrderedDict``, inside</span>
+<span class="sd">    which the text of the element has key &#39;_text&#39;. In case of (sub)elements having child elements with</span>
+<span class="sd">    the same key, the value for the key will be a ``list``. In case of (sub)elements with attributes,</span>
+<span class="sd">    the value will be an ``OrderedDict``, inside which the key for each attribute starts with &#39;@&#39; and</span>
+<span class="sd">    the text of the element has key &#39;_text&#39;. For text elements, the text value is not preserved (and</span>
+<span class="sd">    a &#39;_text&#39; key is not created) if it contains only whitespace (including spaces, tabs and newlines);</span>
+<span class="sd">    otherwise whitespaces are preserved.</span>
+
+<span class="sd">    Preserves order of elements in most cases. The exception is when an element has 2 or more sets</span>
+<span class="sd">    of children, where each set has the same key names (i.e., there are at least 4 children, and 2 of</span>
+<span class="sd">    those children have one key, and 2 have another key) and the order of the children with the</span>
+<span class="sd">    non-matching keys is intertwined, in such a case the order of the intertwined keys will not be preserved.</span>
+
+<span class="sd">    Adapted from http://stackoverflow.com/a/10076823.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    xml_element : ``ElementTree`` Element or Label</span>
+<span class="sd">        XML representation which will be turned into a dictionary.</span>
+<span class="sd">    skip_attributes : bool, optional</span>
+<span class="sd">        If True, skips adding attributes from XML. Defaults to False.</span>
+<span class="sd">    cast_values : bool, optional</span>
+<span class="sd">        If True, float and int compatible values of element text and attribute values will be cast as such</span>
+<span class="sd">        in the output dictionary. Defaults to False.</span>
+<span class="sd">    cast_ignore : tuple[str or unicode], optional</span>
+<span class="sd">        If given, then a tuple of element tags and/or attribute names. If *cast_values* is True, then</span>
+<span class="sd">        for elements and attributes matching exactly the values in this tuple, values will not be cast.</span>
+<span class="sd">        Attribute names must be prepended by an &#39;@&#39;. If *tag_modify* is set, then tags and attribute names</span>
+<span class="sd">        specified by *cast_ignore* should be the already tag modified versions. Empty by default.</span>
+<span class="sd">    tag_modify : tuple, optional</span>
+<span class="sd">        If given, then a 2-valued tuple with str or unicode values, or a tuple of 2-valued tuples. Any match,</span>
+<span class="sd">        including partial, in element tag names and/or attributes names for each tag_modify[0] is replaced</span>
+<span class="sd">        with tag_modify[1]. Empty by default.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    OrderedDict</span>
+<span class="sd">        Dictionary representation of the XML input.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># Modify tags if requested</span>
+    <span class="n">element_tag</span> <span class="o">=</span> <span class="n">xml_element</span><span class="o">.</span><span class="n">tag</span>
+
+    <span class="k">if</span> <span class="n">tag_modify</span><span class="p">:</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">is_array_like</span><span class="p">(</span><span class="n">tag_modify</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
+            <span class="n">tag_modify</span> <span class="o">=</span> <span class="p">(</span><span class="n">tag_modify</span><span class="p">,</span> <span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">tag</span> <span class="ow">in</span> <span class="n">tag_modify</span><span class="p">:</span>
+            <span class="n">element_tag</span> <span class="o">=</span> <span class="n">element_tag</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">tag</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">tag</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+
+    <span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="n">element_tag</span><span class="p">:</span> <span class="n">OrderedDict</span><span class="p">()</span> <span class="k">if</span> <span class="n">xml_element</span><span class="o">.</span><span class="n">attrib</span> <span class="k">else</span> <span class="kc">None</span><span class="p">}</span>
+    <span class="n">children</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">xml_element</span><span class="p">)</span>
+
+    <span class="c1"># Add children</span>
+    <span class="k">if</span> <span class="n">children</span><span class="p">:</span>
+
+        <span class="n">dd</span> <span class="o">=</span> <span class="n">OrderedDict</span><span class="p">()</span>
+
+        <span class="n">xml_to_dict_func</span> <span class="o">=</span> <span class="n">functools</span><span class="o">.</span><span class="n">partial</span><span class="p">(</span><span class="n">xml_to_dict</span><span class="p">,</span>
+                                             <span class="n">skip_attributes</span><span class="o">=</span><span class="n">skip_attributes</span><span class="p">,</span> <span class="n">cast_values</span><span class="o">=</span><span class="n">cast_values</span><span class="p">,</span>
+                                             <span class="n">cast_ignore</span><span class="o">=</span><span class="n">cast_ignore</span><span class="p">,</span> <span class="n">tag_modify</span><span class="o">=</span><span class="n">tag_modify</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">dc</span> <span class="ow">in</span> <span class="nb">map</span><span class="p">(</span><span class="n">xml_to_dict_func</span><span class="p">,</span> <span class="n">children</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">six</span><span class="o">.</span><span class="n">iteritems</span><span class="p">(</span><span class="n">dc</span><span class="p">):</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="n">dd</span><span class="p">[</span><span class="n">k</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+                <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+                    <span class="n">dd</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">v</span><span class="p">]</span>
+
+        <span class="n">ddd</span> <span class="o">=</span> <span class="n">OrderedDict</span><span class="p">()</span>
+
+        <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">six</span><span class="o">.</span><span class="n">iteritems</span><span class="p">(</span><span class="n">dd</span><span class="p">):</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="n">ddd</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">ddd</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span>
+
+        <span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="n">element_tag</span><span class="p">:</span> <span class="n">ddd</span><span class="p">}</span>
+
+    <span class="n">has_attribs</span> <span class="o">=</span> <span class="n">xml_element</span><span class="o">.</span><span class="n">attrib</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">skip_attributes</span>
+
+    <span class="c1"># Add attributes</span>
+    <span class="k">if</span> <span class="n">has_attribs</span><span class="p">:</span>
+
+        <span class="n">attrib</span> <span class="o">=</span> <span class="n">OrderedDict</span><span class="p">()</span>
+
+        <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">six</span><span class="o">.</span><span class="n">iteritems</span><span class="p">(</span><span class="n">xml_element</span><span class="o">.</span><span class="n">attrib</span><span class="p">):</span>
+
+            <span class="c1"># Tag modify for attribute names</span>
+            <span class="n">new_k</span> <span class="o">=</span> <span class="s1">&#39;@&#39;</span> <span class="o">+</span> <span class="n">k</span>
+            <span class="k">if</span> <span class="n">tag_modify</span><span class="p">:</span>
+
+                <span class="k">for</span> <span class="n">tag</span> <span class="ow">in</span> <span class="n">tag_modify</span><span class="p">:</span>
+                    <span class="n">new_k</span> <span class="o">=</span> <span class="n">new_k</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">tag</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">tag</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+
+            <span class="c1"># Cast value for attribute values</span>
+            <span class="n">new_v</span> <span class="o">=</span> <span class="n">v</span>
+            <span class="k">if</span> <span class="n">cast_values</span> <span class="ow">and</span> <span class="p">(</span><span class="n">new_k</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">cast_ignore</span><span class="p">):</span>
+                <span class="n">new_v</span> <span class="o">=</span> <span class="n">cast_int_float_string</span><span class="p">(</span><span class="n">new_v</span><span class="p">)</span>
+
+            <span class="n">attrib</span><span class="p">[</span><span class="n">new_k</span><span class="p">]</span> <span class="o">=</span> <span class="n">new_v</span>
+
+        <span class="n">d</span><span class="p">[</span><span class="n">element_tag</span><span class="p">]</span><span class="o">.</span><span class="n">update</span><span class="p">((</span><span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">six</span><span class="o">.</span><span class="n">iteritems</span><span class="p">(</span><span class="n">attrib</span><span class="p">))</span>
+
+    <span class="c1"># Add text elements</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="n">xml_element</span><span class="o">.</span><span class="n">text</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">text</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()):</span>
+
+        <span class="k">if</span> <span class="n">cast_values</span> <span class="ow">and</span> <span class="p">(</span><span class="n">element_tag</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">cast_ignore</span><span class="p">):</span>
+            <span class="n">text</span> <span class="o">=</span> <span class="n">cast_int_float_string</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">children</span> <span class="ow">or</span> <span class="n">has_attribs</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">text</span><span class="p">:</span>
+                <span class="n">d</span><span class="p">[</span><span class="n">element_tag</span><span class="p">][</span><span class="s1">&#39;_text&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">text</span>
+
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">d</span><span class="p">[</span><span class="n">element_tag</span><span class="p">]</span> <span class="o">=</span> <span class="n">text</span>
+
+    <span class="k">return</span> <span class="n">d</span></div>
+</pre></div>
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">PDS4 Python Tools 1.3 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">pds4_tools.utils.helpers</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2015 - 2021, University of Maryland.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.2.0.
+    </div>
+  </body>
+</html>

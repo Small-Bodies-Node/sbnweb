@@ -1,0 +1,834 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>pds4_tools.reader.label_objects module &#8212; PDS4 Python Tools 1.3 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinxdoc.css" />
+    <link rel="stylesheet" type="text/css" href="_static/css/custom.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="pds4_tools.reader.array_objects module" href="pds4_tools.reader.array_objects.html" />
+    <link rel="prev" title="pds4_tools.reader.general_objects module" href="pds4_tools.reader.general_objects.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="pds4_tools.reader.array_objects.html" title="pds4_tools.reader.array_objects module"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="pds4_tools.reader.general_objects.html" title="pds4_tools.reader.general_objects module"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">PDS4 Python Tools 1.3 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="pds4_tools.reader.html" accesskey="U">pds4_tools.reader package</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">pds4_tools.reader.label_objects module</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="pds4-tools-reader-label-objects-module">
+<h1>pds4_tools.reader.label_objects module<a class="headerlink" href="#pds4-tools-reader-label-objects-module" title="Permalink to this headline">¶</a></h1>
+<section id="classes">
+<h2>Classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h2>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pds4_tools.reader.label_objects.Label" title="pds4_tools.reader.label_objects.Label"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Label</span></code></a>([convenient_root, unmodified_root, ...])</p></td>
+<td><p>Stores a PDS4 label or a portion of a PDS4 label.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pds4_tools.reader.label_objects.Meta_DisplaySettings" title="pds4_tools.reader.label_objects.Meta_DisplaySettings"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Meta_DisplaySettings</span></code></a>(*args, **kwds)</p></td>
+<td><p>Stores PDS4 Display Settings meta data for a single PDS4 data structure.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pds4_tools.reader.label_objects.Meta_SpectralCharacteristics" title="pds4_tools.reader.label_objects.Meta_SpectralCharacteristics"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Meta_SpectralCharacteristics</span></code></a>(*args, **kwds)</p></td>
+<td><p>Stores PDS4 Spectral Characteristics meta data for a single PDS4 data structure.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="functions">
+<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pds4_tools.reader.label_objects.get_mission_area" title="pds4_tools.reader.label_objects.get_mission_area"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_mission_area</span></code></a>(label)</p></td>
+<td><p>Search a PDS4 label for a Mission_Area.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pds4_tools.reader.label_objects.get_discipline_area" title="pds4_tools.reader.label_objects.get_discipline_area"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_discipline_area</span></code></a>(label)</p></td>
+<td><p>Search a PDS4 label for a Discipline_Area.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pds4_tools.reader.label_objects.get_display_settings_for_lid" title="pds4_tools.reader.label_objects.get_display_settings_for_lid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_display_settings_for_lid</span></code></a>(...)</p></td>
+<td><p>Search a PDS4 label for Display_Settings of a data structure with local_identifier.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pds4_tools.reader.label_objects.get_spectral_characteristics_for_lid" title="pds4_tools.reader.label_objects.get_spectral_characteristics_for_lid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_spectral_characteristics_for_lid</span></code></a>(...)</p></td>
+<td><p>Search a PDS4 label for Spectral_Characteristics of a data structure with local_identifier.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="details">
+<h2>Details<a class="headerlink" href="#details" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="pds4_tools.reader.label_objects.Label">
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">Label</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">convenient_root</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unmodified_root</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">convenient_namespace_map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unmodified_namespace_map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default_root</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'convenient'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/label_objects.html#Label"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pds4_tools.reader.label_objects.Label" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Stores a PDS4 label or a portion of a PDS4 label.</p>
+<p>This class is similar to an <code class="docutils literal notranslate"><span class="pre">ElementTree</span></code> Element; most of the basic attributes and methods
+for Element will also work here. Some additional convenience methods and features are provided
+to make it easier to work with PDS4 labels.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>(in general `from_file` should be used instead of using __init__)</strong></dt><dd></dd>
+<dt><strong>convenient_root</strong><span class="classifier"><code class="docutils literal notranslate"><span class="pre">ElementTree</span></code> Element</span></dt><dd><p>Root element of the PDS4 label or label portion, modified to normalize whitespace
+in all element and attribute values containing a single non-whitespace line, to
+strip the default namespace, and to use the default PDS4 prefixes for known namespaces.</p>
+</dd>
+<dt><strong>unmodified_root</strong><span class="classifier"><code class="docutils literal notranslate"><span class="pre">ElementTree</span></code> Element</span></dt><dd><p>Root element of the PDS4 label or label portion.</p>
+</dd>
+<dt><strong>convenient_namespace_map</strong><span class="classifier">dict, optional</span></dt><dd><p>Keys are the namespace URIs and values are the prefixes for the convenient root of this label.</p>
+</dd>
+<dt><strong>unmodified_namespace_map</strong><span class="classifier">dict, optional</span></dt><dd><p>Keys are the namespace URIs and values are the prefixes for the unmodified root of this label.</p>
+</dd>
+<dt><strong>default_root</strong><span class="classifier">str or unicode, optional</span></dt><dd><p>Specifies whether the root element used by default when calling methods and attributes
+in this object will be the convenient_root or unmodified_root. Must be one of
+‘convenient’ or ‘unmodified’. Defaults to convenient.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>To load a label from file,</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">lbl</span> <span class="o">=</span> <span class="n">Label</span><span class="o">.</span><span class="n">from_file</span><span class="p">(</span><span class="s1">&#39;/path/to/label.xml&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>To search the entire label for logical_identifier (of which only one is allowed),</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">lbl</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;.//logical_identifier&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>To search the entire label for Display Settings in the ‘disp’ namespace
+(of which there could be multiple),</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">display_settings</span> <span class="o">=</span> <span class="n">lbl</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">&#39;.//disp:Display_Settings&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>To search the Display Settings for the top-level element, Display_Direction,</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">display_settings</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;disp:Display_Direction&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>See method descriptions for more info.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pds4_tools.reader.label_objects.Label.__getitem__">
+<span class="sig-name descname"><span class="pre">__getitem__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/label_objects.html#Label.__getitem__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pds4_tools.reader.label_objects.Label.__getitem__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Obtain subelement.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>key</strong><span class="classifier">int or slice</span></dt><dd><p>Specifies which subelement to select.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>Label</dt><dd><p>Subelement of label.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pds4_tools.reader.label_objects.Label.__len__">
+<span class="sig-name descname"><span class="pre">__len__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/label_objects.html#Label.__len__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pds4_tools.reader.label_objects.Label.__len__" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>int</dt><dd><p>Number of (direct) subelements this label has.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pds4_tools.reader.label_objects.Label.from_file">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">from_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default_root</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'convenient'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/label_objects.html#Label.from_file"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pds4_tools.reader.label_objects.Label.from_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create Label from a PDS4 XML label file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>filename</strong><span class="classifier">str or unicode</span></dt><dd><p>Filename, including path, to XML label.</p>
+</dd>
+<dt><strong>default_root</strong><span class="classifier">str or unicode, optional</span></dt><dd><p>Specifies whether the root element used by default when calling methods and attributes in
+this object will be the convenient_root or unmodified_root. Must be one of convenient|unmodified.
+Defaults to convenient.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>Label</dt><dd><p>Instance, with the contents being taken from <em>filename</em>.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pds4_tools.reader.label_objects.Label.text">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">text</span></span><a class="headerlink" href="#pds4_tools.reader.label_objects.Label.text" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>Text of element.</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pds4_tools.reader.label_objects.Label.tail">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">tail</span></span><a class="headerlink" href="#pds4_tools.reader.label_objects.Label.tail" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>Tail of element.</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pds4_tools.reader.label_objects.Label.tag">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">tag</span></span><a class="headerlink" href="#pds4_tools.reader.label_objects.Label.tag" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>Tag of element.</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pds4_tools.reader.label_objects.Label.attrib">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">attrib</span></span><a class="headerlink" href="#pds4_tools.reader.label_objects.Label.attrib" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>Attributes of element.</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pds4_tools.reader.label_objects.Label.default_root">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">default_root</span></span><a class="headerlink" href="#pds4_tools.reader.label_objects.Label.default_root" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>str or unicode</dt><dd><p>Either ‘convenient’ or ‘unmodified’. Specifies whether the root element used by default when
+calling methods and attributes in this object will be the convenient_root or unmodified_root.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pds4_tools.reader.label_objects.Label.get">
+<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unmodified</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/label_objects.html#Label.get"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pds4_tools.reader.label_objects.Label.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the element attribute named <em>key</em>.</p>
+<p>Uses the same format as <code class="docutils literal notranslate"><span class="pre">ElementTree.get</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>key</strong><span class="classifier">str or unicode</span></dt><dd><p>Attribute name to select.</p>
+</dd>
+<dt><strong>default</strong><span class="classifier">optional</span></dt><dd><p>Value to return if no attribute matching <em>key</em> is found. Defaults to None.</p>
+</dd>
+<dt><strong>unmodified</strong><span class="classifier">bool or None</span></dt><dd><p>Looks for key in unmodified <code class="docutils literal notranslate"><span class="pre">ElementTree</span></code> root if True, or the convenient one if False.
+Defaults to None, which uses <a class="reference internal" href="#pds4_tools.reader.label_objects.Label.default_root" title="pds4_tools.reader.label_objects.Label.default_root"><code class="xref any py py-attr docutils literal notranslate"><span class="pre">Label.default_root</span></code></a> to decide.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>Value of the attribute named <em>key</em> if it exists, or <em>default</em> otherwise.</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pds4_tools.reader.label_objects.Label.getroot">
+<span class="sig-name descname"><span class="pre">getroot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">unmodified</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/label_objects.html#Label.getroot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pds4_tools.reader.label_objects.Label.getroot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Obtains <code class="docutils literal notranslate"><span class="pre">ElementTree</span></code> root Element instance underlying this object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>unmodified</strong><span class="classifier">bool or None or None, optional</span></dt><dd><p>If True, returns the unmodified (see <a class="reference internal" href="#pds4_tools.reader.label_objects.Label" title="pds4_tools.reader.label_objects.Label"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Label</span></code></a> docstring for meaning) <code class="docutils literal notranslate"><span class="pre">ElementTree</span></code> Element.
+If False, returns convenient root. Defaults to None, which uses <a class="reference internal" href="#pds4_tools.reader.label_objects.Label.default_root" title="pds4_tools.reader.label_objects.Label.default_root"><code class="xref any py py-attr docutils literal notranslate"><span class="pre">Label.default_root</span></code></a> to
+decide.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>Element instance</dt><dd><p>The <code class="docutils literal notranslate"><span class="pre">ElementTree</span></code> root element backing this Label.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pds4_tools.reader.label_objects.Label.find">
+<span class="sig-name descname"><span class="pre">find</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">match</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">namespaces</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unmodified</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_ET</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/label_objects.html#Label.find"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pds4_tools.reader.label_objects.Label.find" title="Permalink to this definition">¶</a></dt>
+<dd><p>Search for the first matching subelement.</p>
+<p>Uses the same format as <code class="docutils literal notranslate"><span class="pre">ElementTree.find</span></code>. See <a class="reference internal" href="#pds4_tools.reader.label_objects.Label" title="pds4_tools.reader.label_objects.Label"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Label</span></code></a> docstring or <code class="docutils literal notranslate"><span class="pre">ElementTree.find</span></code>
+documentation for examples and supported XPATH description.</p>
+<p>The namespaces found in the label, and those contained in the PDS4_NAMESPACES constant are registered
+automatically. If match contains other namespace prefixes then you must pass in <em>namespaces</em>
+parameter specifying the URI for each prefix. In case of duplicate prefixes for the same URI, prefixes
+in the label overwrite those in PDS4_NAMESPACES, and prefixes in <em>namespaces</em> overwrite both.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>match</strong><span class="classifier">str or unicode</span></dt><dd><p>XPATH search string.</p>
+</dd>
+<dt><strong>namespaces</strong><span class="classifier">dict, optional</span></dt><dd><p>Dictionary with keys corresponding to prefix and values corresponding to URI for namespaces.</p>
+</dd>
+<dt><strong>unmodified</strong><span class="classifier">bool or None, optional</span></dt><dd><p>Searches unmodified <code class="docutils literal notranslate"><span class="pre">ElementTree</span></code> root if True, or the convenient one if False.
+Defaults to None, which uses <a class="reference internal" href="#pds4_tools.reader.label_objects.Label.default_root" title="pds4_tools.reader.label_objects.Label.default_root"><code class="xref any py py-attr docutils literal notranslate"><span class="pre">Label.default_root</span></code></a> to decide.</p>
+</dd>
+<dt><strong>return_ET</strong><span class="classifier">bool, optional</span></dt><dd><p>Returns an <code class="docutils literal notranslate"><span class="pre">ElementTree</span></code> Element instead of a Label if True. Defaults to False.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>Label, ElementTree Element or None</dt><dd><p>Matched subelement, or None if there is no match.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pds4_tools.reader.label_objects.Label.findall">
+<span class="sig-name descname"><span class="pre">findall</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">match</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">namespaces</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unmodified</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_ET</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/label_objects.html#Label.findall"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pds4_tools.reader.label_objects.Label.findall" title="Permalink to this definition">¶</a></dt>
+<dd><p>Search for all matching subelements.</p>
+<p>Uses the same format as <code class="docutils literal notranslate"><span class="pre">ElementTree.findall</span></code>. See <a class="reference internal" href="#pds4_tools.reader.label_objects.Label" title="pds4_tools.reader.label_objects.Label"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Label</span></code></a> docstring or <code class="docutils literal notranslate"><span class="pre">ElementTree.findall</span></code>
+documentation for examples and supported XPATH description.</p>
+<p>The namespaces found in the label, and those contained in the PDS4_NAMESPACES constant are registered
+automatically. If match contains other namespace prefixes then you must pass in <em>namespaces</em>
+parameter specifying the URI for each prefix. In case of duplicate prefixes for the same URI, prefixes
+in the label overwrite those in PDS4_NAMESPACES, and prefixes in <em>namespaces</em> overwrite both.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>match</strong><span class="classifier">str or unicode</span></dt><dd><p>XPATH search string</p>
+</dd>
+<dt><strong>namespaces</strong><span class="classifier">dict, optional</span></dt><dd><p>Dictionary with keys corresponding to prefix and values corresponding to URI for namespaces.</p>
+</dd>
+<dt><strong>unmodified</strong><span class="classifier">bool or None, optional</span></dt><dd><p>Searches unmodified <code class="docutils literal notranslate"><span class="pre">ElementTree</span></code> root if True, or the convenient one if False.
+Defaults to None, which uses <a class="reference internal" href="#pds4_tools.reader.label_objects.Label.default_root" title="pds4_tools.reader.label_objects.Label.default_root"><code class="xref any py py-attr docutils literal notranslate"><span class="pre">Label.default_root</span></code></a> to decide.</p>
+</dd>
+<dt><strong>return_ET</strong><span class="classifier">bool, optional</span></dt><dd><p>Returned list contains <code class="docutils literal notranslate"><span class="pre">ElementTree</span></code> Elements instead of Labels if True. Defaults to False.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>List[Label or ElementTree Element]</dt><dd><p>Matched subelements, or [] if there are no matches.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pds4_tools.reader.label_objects.Label.findtext">
+<span class="sig-name descname"><span class="pre">findtext</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">match</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">namespaces</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unmodified</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/label_objects.html#Label.findtext"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pds4_tools.reader.label_objects.Label.findtext" title="Permalink to this definition">¶</a></dt>
+<dd><p>Finds text for the first subelement matching match.</p>
+<p>Uses the same format as <code class="docutils literal notranslate"><span class="pre">ElementTree.findtext</span></code>. See <a class="reference internal" href="#pds4_tools.reader.label_objects.Label" title="pds4_tools.reader.label_objects.Label"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Label</span></code></a> docstring or <code class="docutils literal notranslate"><span class="pre">ElementTree.findtext</span></code>
+documentation for examples and supported XPATH description.</p>
+<p>The namespaces found in the label, and those contained in the PDS4_NAMESPACES constant are registered
+automatically. If match contains other namespace prefixes then you must pass in <em>namespaces</em>
+parameter specifying the URI for each prefix. In case of duplicate prefixes for the same URI, prefixes
+in the label overwrite those in PDS4_NAMESPACES, and prefixes in <em>namespaces</em> overwrite both.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>match</strong><span class="classifier">str or unicode</span></dt><dd><p>XPATH search string.</p>
+</dd>
+<dt><strong>default</strong><span class="classifier">optional</span></dt><dd><p>Value to return if no match is found. Defaults to None.</p>
+</dd>
+<dt><strong>namespaces</strong><span class="classifier">dict, optional</span></dt><dd><p>Dictionary with keys corresponding to prefixes and values corresponding to URIs for namespace.</p>
+</dd>
+<dt><strong>unmodified</strong><span class="classifier">bool or None, optional</span></dt><dd><p>Searches unmodified <code class="docutils literal notranslate"><span class="pre">ElementTree</span></code> root if True, or the convenient one if False.
+Defaults to None, which uses <a class="reference internal" href="#pds4_tools.reader.label_objects.Label.default_root" title="pds4_tools.reader.label_objects.Label.default_root"><code class="xref any py py-attr docutils literal notranslate"><span class="pre">Label.default_root</span></code></a> to decide.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>Text of the first matched element, or <em>default</em> otherwise.</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pds4_tools.reader.label_objects.Label.to_string">
+<span class="sig-name descname"><span class="pre">to_string</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">unmodified</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pretty_print</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/label_objects.html#Label.to_string"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pds4_tools.reader.label_objects.Label.to_string" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate a string representation of XML label.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>unmodified</strong><span class="classifier">bool or None, optional</span></dt><dd><p>Generates representation of unmodified <code class="docutils literal notranslate"><span class="pre">ElementTree</span></code> root if True, or the convenient one if
+False. None uses <a class="reference internal" href="#pds4_tools.reader.label_objects.Label.default_root" title="pds4_tools.reader.label_objects.Label.default_root"><code class="xref any py py-attr docutils literal notranslate"><span class="pre">Label.default_root</span></code></a> to decide. Defaults to True.</p>
+</dd>
+<dt><strong>pretty_print</strong><span class="classifier">bool, optional</span></dt><dd><p>String representation is pretty-printed if True. Defaults to False.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>unicode or str</dt><dd><p>String representation of <a class="reference internal" href="#pds4_tools.reader.label_objects.Label" title="pds4_tools.reader.label_objects.Label"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Label</span></code></a>.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pds4_tools.reader.label_objects.Label.to_dict">
+<span class="sig-name descname"><span class="pre">to_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">unmodified</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">skip_attributes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cast_values</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cast_ignore</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">()</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/label_objects.html#Label.to_dict"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pds4_tools.reader.label_objects.Label.to_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate an <code class="docutils literal notranslate"><span class="pre">OrderedDict</span></code> representation of XML label.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>unmodified</strong><span class="classifier">bool or None, optional</span></dt><dd><p>Generates representation of unmodified <code class="docutils literal notranslate"><span class="pre">ElementTree</span></code> root if True, or the convenient one if
+False. Defaults to None, which uses <a class="reference internal" href="#pds4_tools.reader.label_objects.Label.default_root" title="pds4_tools.reader.label_objects.Label.default_root"><code class="xref any py py-attr docutils literal notranslate"><span class="pre">Label.default_root</span></code></a> to decide.</p>
+</dd>
+<dt><strong>skip_attributes</strong><span class="classifier">bool, optional</span></dt><dd><p>If True, skips adding attributes from XML. Defaults to False.</p>
+</dd>
+<dt><strong>cast_values</strong><span class="classifier">bool, optional</span></dt><dd><p>If True, float and int compatible values of element text and attribute values will be cast as such
+in the output dictionary. Defaults to False.</p>
+</dd>
+<dt><strong>cast_ignore</strong><span class="classifier">tuple[str or unicode], optional</span></dt><dd><p>If given, then a tuple of element tags and/or attribute names. If <em>cast_values</em> is True, then
+for elements and attributes matching exactly the values in this tuple, values will not be cast.
+Attribute names must be prepended by an ‘&#64;’. Empty by default.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>OrderedDict</dt><dd><p>A dictionary representation of <a class="reference internal" href="#pds4_tools.reader.label_objects.Label" title="pds4_tools.reader.label_objects.Label"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Label</span></code></a>.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pds4_tools.reader.label_objects.Label.get_namespace_map">
+<span class="sig-name descname"><span class="pre">get_namespace_map</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">unmodified</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/label_objects.html#Label.get_namespace_map"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pds4_tools.reader.label_objects.Label.get_namespace_map" title="Permalink to this definition">¶</a></dt>
+<dd><p>Obtain namespace map.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>unmodified</strong><span class="classifier">bool or None, optional</span></dt><dd><p>If True, returns the namespace map for the unmodified (see <a class="reference internal" href="#pds4_tools.reader.label_objects.Label" title="pds4_tools.reader.label_objects.Label"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Label</span></code></a> docstring) label. If False,
+it uses the convenient label. Defaults to None, which uses <a class="reference internal" href="#pds4_tools.reader.label_objects.Label.default_root" title="pds4_tools.reader.label_objects.Label.default_root"><code class="xref any py py-attr docutils literal notranslate"><span class="pre">Label.default_root</span></code></a> to decide.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>dict</dt><dd><p>A dict with keys being the namespace URIs and values being the namespace prefixes for this
+label.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pds4_tools.reader.label_objects.Label.copy">
+<span class="sig-name descname"><span class="pre">copy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">unmodified</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_ET</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/label_objects.html#Label.copy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pds4_tools.reader.label_objects.Label.copy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Obtain a deepcopy of this Label.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>unmodified</strong><span class="classifier">bool, optional</span></dt><dd><p>If <em>return_ET</em> is True, then setting this to True will return a copy of the unmodified
+<code class="docutils literal notranslate"><span class="pre">ElementTree</span></code> root, or the convenient one if False. Defaults to None, which uses
+<a class="reference internal" href="#pds4_tools.reader.label_objects.Label.default_root" title="pds4_tools.reader.label_objects.Label.default_root"><code class="xref any py py-attr docutils literal notranslate"><span class="pre">Label.default_root</span></code></a> to decide.</p>
+</dd>
+<dt><strong>return_ET</strong><span class="classifier">bool, optional</span></dt><dd><p>Returned value is a <code class="docutils literal notranslate"><span class="pre">ElementTree</span></code> Element instead of Label if True. Defaults to False.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>Label or ElementTree Element</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pds4_tools.reader.label_objects.Meta_DisplaySettings">
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">Meta_DisplaySettings</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwds</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/label_objects.html#Meta_DisplaySettings"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pds4_tools.reader.label_objects.Meta_DisplaySettings" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="pds4_tools.reader.general_objects.html#pds4_tools.reader.general_objects.Meta_Class" title="pds4_tools.reader.general_objects.Meta_Class"><code class="xref py py-class docutils literal notranslate"><span class="pre">pds4_tools.reader.general_objects.Meta_Class</span></code></a></p>
+<p>Stores PDS4 Display Settings meta data for a single PDS4 data structure.</p>
+<p>Meta data stored in this class is accessed in <code class="docutils literal notranslate"><span class="pre">dict</span></code>-like fashion. Normally this meta data originates
+from the label (from the beginning of the Display_Settings tag, to its closing tag), via the <a class="reference internal" href="#pds4_tools.reader.label_objects.Meta_DisplaySettings.from_label" title="pds4_tools.reader.label_objects.Meta_DisplaySettings.from_label"><code class="xref any py py-meth docutils literal notranslate"><span class="pre">from_label</span></code></a>
+or <a class="reference internal" href="#pds4_tools.reader.label_objects.Meta_DisplaySettings.from_full_label" title="pds4_tools.reader.label_objects.Meta_DisplaySettings.from_full_label"><code class="xref any py py-meth docutils literal notranslate"><span class="pre">from_full_label</span></code></a> methods.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>valid</strong><span class="classifier">bool</span></dt><dd><p>True if Display Settings conform to supported PDS4 Standards, False otherwise.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pds4_tools.reader.label_objects.Meta_DisplaySettings.from_label">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">from_label</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xml_display_settings</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/label_objects.html#Meta_DisplaySettings.from_label"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pds4_tools.reader.label_objects.Meta_DisplaySettings.from_label" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a Meta_DisplaySettings from the XML portion describing it.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>xml_display_settings</strong><span class="classifier">Label or ElementTree Element</span></dt><dd><p>The portion of the label describing the Display_Settings.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>Meta_SpectralCharacteristics</dt><dd><p>Instance containing display settings meta data.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pds4_tools.reader.label_objects.Meta_DisplaySettings.from_full_label">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">from_full_label</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">label</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">structure_lid</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/label_objects.html#Meta_DisplaySettings.from_full_label"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pds4_tools.reader.label_objects.Meta_DisplaySettings.from_full_label" title="Permalink to this definition">¶</a></dt>
+<dd><p>Loads meta data into self from XML.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>label</strong><span class="classifier">Label or ElementTree Element</span></dt><dd><p>The entire label for the PDS4 product containing the Display Settings.</p>
+</dd>
+<dt><strong>structure_lid</strong><span class="classifier">str or unicode</span></dt><dd><p>The local_identifier for the Array data structure which uses the Display Settings.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>Meta_DisplaySettings</dt><dd><p>Instance containing display settings meta data for a particular data structure.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>KeyError</dt><dd><p>Raised if Display Settings do not exist for the specified <em>structure_lid</em>.</p>
+</dd>
+<dt>PDS4StandardsException</dt><dd><p>Raised if a data structure having the local_identifier <em>structure_lid</em> was not found.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pds4_tools.reader.label_objects.Meta_DisplaySettings.is_valid">
+<span class="sig-name descname"><span class="pre">is_valid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xml_structure</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">raise_on_error</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/label_objects.html#Meta_DisplaySettings.is_valid"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pds4_tools.reader.label_objects.Meta_DisplaySettings.is_valid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks if the the Display Settings to conform to supported PDS4 Standards.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>xml_structure</strong><span class="classifier">Label or ElementTree Element, optional</span></dt><dd><p>Portion of label describing the Array data structure which uses the Display Settings. If
+given, will validate that the Array data structure has the axes referred to by the Display
+Settings.</p>
+</dd>
+<dt><strong>raise_on_error: bool, optional</strong></dt><dd><p>If True, raised if Display Settings found are invalid or unsupported. Defaults to False.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>bool</dt><dd><p>True if Display Settings are both valid and supported, False otherwise.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>PDS4StandardsException</dt><dd><p>Raised if <em>raise_on_error</em> is True and if the Display Settings are invalid or unsupported.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pds4_tools.reader.label_objects.Meta_SpectralCharacteristics">
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">Meta_SpectralCharacteristics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwds</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/label_objects.html#Meta_SpectralCharacteristics"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pds4_tools.reader.label_objects.Meta_SpectralCharacteristics" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="pds4_tools.reader.general_objects.html#pds4_tools.reader.general_objects.Meta_Class" title="pds4_tools.reader.general_objects.Meta_Class"><code class="xref py py-class docutils literal notranslate"><span class="pre">pds4_tools.reader.general_objects.Meta_Class</span></code></a></p>
+<p>Stores PDS4 Spectral Characteristics meta data for a single PDS4 data structure.</p>
+<p>Meta data stored in this class is accessed in <code class="docutils literal notranslate"><span class="pre">dict</span></code>-like fashion. Normally this meta data originates
+from the label (from the beginning of the Spectral_Characteristics tag, to its closing tag), via
+the <a class="reference internal" href="#pds4_tools.reader.label_objects.Meta_SpectralCharacteristics.from_label" title="pds4_tools.reader.label_objects.Meta_SpectralCharacteristics.from_label"><code class="xref any py py-meth docutils literal notranslate"><span class="pre">from_label</span></code></a> or <a class="reference internal" href="#pds4_tools.reader.label_objects.Meta_SpectralCharacteristics.from_full_label" title="pds4_tools.reader.label_objects.Meta_SpectralCharacteristics.from_full_label"><code class="xref any py py-meth docutils literal notranslate"><span class="pre">from_full_label</span></code></a> methods.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>valid</strong><span class="classifier">bool</span></dt><dd><p>True if the Spectral Characteristics conform to supported PDS4 Standards, False otherwise.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pds4_tools.reader.label_objects.Meta_SpectralCharacteristics.from_label">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">from_label</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xml_spectral_chars</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/label_objects.html#Meta_SpectralCharacteristics.from_label"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pds4_tools.reader.label_objects.Meta_SpectralCharacteristics.from_label" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a Meta_SpectralCharacteristics from the XML portion describing it.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>xml_spectral_chars</strong><span class="classifier">Label or ElementTree Element</span></dt><dd><p>The portion of the label describing the Spectral_Characteristics.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>Meta_SpectralCharacteristics</dt><dd><p>Instance containing spectral characteristics meta data.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pds4_tools.reader.label_objects.Meta_SpectralCharacteristics.from_full_label">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">from_full_label</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">label</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">structure_lid</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/label_objects.html#Meta_SpectralCharacteristics.from_full_label"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pds4_tools.reader.label_objects.Meta_SpectralCharacteristics.from_full_label" title="Permalink to this definition">¶</a></dt>
+<dd><p>Loads meta data into self from XML.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>label</strong><span class="classifier">Label or ElementTree Element</span></dt><dd><p>The entire label for the PDS4 product containing the Spectral Characteristics.</p>
+</dd>
+<dt><strong>structure_lid</strong><span class="classifier">str or unicode</span></dt><dd><p>The local_identifier for the Array data structure which uses the Spectral Characteristics.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>Meta_SpectralCharacteristics</dt><dd><p>Instance containing spectral characteristics meta data for a particular data structure.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>KeyError</dt><dd><p>Raised if Spectral Characteristics do not exist for the specified <em>structure_lid</em></p>
+</dd>
+<dt>PDS4StandardsException</dt><dd><p>Raised if a data structure having the local_identifier <em>structure_lid</em> was not found</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pds4_tools.reader.label_objects.Meta_SpectralCharacteristics.is_valid">
+<span class="sig-name descname"><span class="pre">is_valid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xml_structure</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">raise_on_error</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/label_objects.html#Meta_SpectralCharacteristics.is_valid"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pds4_tools.reader.label_objects.Meta_SpectralCharacteristics.is_valid" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pds4_tools.reader.label_objects.get_mission_area">
+<span class="sig-name descname"><span class="pre">get_mission_area</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">label</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/label_objects.html#get_mission_area"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pds4_tools.reader.label_objects.get_mission_area" title="Permalink to this definition">¶</a></dt>
+<dd><p>Search a PDS4 label for a Mission_Area.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>label</strong><span class="classifier">Label or ElementTree Element</span></dt><dd><p>Full label for a PDS4 product with-in which to look for a mission area.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>Label, ElementTree Element or None</dt><dd><p>Found Mission_Area section with same return type as <em>label</em>, or None if not found.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pds4_tools.reader.label_objects.get_discipline_area">
+<span class="sig-name descname"><span class="pre">get_discipline_area</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">label</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/label_objects.html#get_discipline_area"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pds4_tools.reader.label_objects.get_discipline_area" title="Permalink to this definition">¶</a></dt>
+<dd><p>Search a PDS4 label for a Discipline_Area.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>label</strong><span class="classifier">Label or ElementTree Element</span></dt><dd><p>Full label for a PDS4 product with-in which to look for a discipline area.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>Label, ElementTree Element or None</dt><dd><p>Found Discipline_Area section with same return type as <em>label</em>, or None if not found.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pds4_tools.reader.label_objects.get_display_settings_for_lid">
+<span class="sig-name descname"><span class="pre">get_display_settings_for_lid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">local_identifier</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/label_objects.html#get_display_settings_for_lid"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pds4_tools.reader.label_objects.get_display_settings_for_lid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Search a PDS4 label for Display_Settings of a data structure with local_identifier.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>local_identifier</strong><span class="classifier">str or unicode</span></dt><dd><p>The local identifier of the data structure to which the display settings belong.</p>
+</dd>
+<dt><strong>label</strong><span class="classifier">Label or ElementTree Element</span></dt><dd><p>Label for a PDS4 product with-in which to look for the display settings.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>Label, ElementTree Element or None</dt><dd><p>Found Display_Settings section with same return type as <em>label</em>, or None if not found.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pds4_tools.reader.label_objects.get_spectral_characteristics_for_lid">
+<span class="sig-name descname"><span class="pre">get_spectral_characteristics_for_lid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">local_identifier</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/label_objects.html#get_spectral_characteristics_for_lid"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pds4_tools.reader.label_objects.get_spectral_characteristics_for_lid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Search a PDS4 label for Spectral_Characteristics of a data structure with local_identifier.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>local_identifier</strong><span class="classifier">str or unicode</span></dt><dd><p>The local identifier of the data structure to which the spectral characteristics belong.</p>
+</dd>
+<dt><strong>label</strong><span class="classifier">Label or ElementTree Element</span></dt><dd><p>Label for a PDS4 product with-in which to look for the spectral characteristics.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>Label,  ElementTree Element or None</dt><dd><p>Found Spectral_Characteristics section with same return type as <em>label</em>, or None if not found.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">pds4_tools.reader.label_objects module</a><ul>
+<li><a class="reference internal" href="#classes">Classes</a></li>
+<li><a class="reference internal" href="#functions">Functions</a></li>
+<li><a class="reference internal" href="#details">Details</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="pds4_tools.reader.general_objects.html"
+                        title="previous chapter">pds4_tools.reader.general_objects module</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="pds4_tools.reader.array_objects.html"
+                        title="next chapter">pds4_tools.reader.array_objects module</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/pds4_tools.reader.label_objects.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="pds4_tools.reader.array_objects.html" title="pds4_tools.reader.array_objects module"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="pds4_tools.reader.general_objects.html" title="pds4_tools.reader.general_objects module"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">PDS4 Python Tools 1.3 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="pds4_tools.reader.html" >pds4_tools.reader package</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">pds4_tools.reader.label_objects module</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2015 - 2021, University of Maryland.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.2.0.
+    </div>
+  </body>
+</html>

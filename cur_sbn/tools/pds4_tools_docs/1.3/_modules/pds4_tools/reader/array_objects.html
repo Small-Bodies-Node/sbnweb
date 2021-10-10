@@ -1,0 +1,591 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>pds4_tools.reader.array_objects &#8212; PDS4 Python Tools 1.3 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinxdoc.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css" />
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">PDS4 Python Tools 1.3 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" accesskey="U">Module code</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">pds4_tools.reader.array_objects</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Source code for pds4_tools.reader.array_objects</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">absolute_import</span>
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">division</span>
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">print_function</span>
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">unicode_literals</span>
+
+<span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="kn">from</span> <span class="nn">.general_objects</span> <span class="kn">import</span> <span class="n">Structure</span><span class="p">,</span> <span class="n">Meta_Structure</span>
+<span class="kn">from</span> <span class="nn">.label_objects</span> <span class="kn">import</span> <span class="n">Meta_DisplaySettings</span><span class="p">,</span> <span class="n">Meta_SpectralCharacteristics</span>
+<span class="kn">from</span> <span class="nn">.data_types</span> <span class="kn">import</span> <span class="n">apply_scaling_and_value_offset</span><span class="p">,</span> <span class="n">PDSdtype</span>
+
+<span class="kn">from</span> <span class="nn">..utils.exceptions</span> <span class="kn">import</span> <span class="n">PDS4StandardsException</span>
+
+<span class="kn">from</span> <span class="nn">..extern</span> <span class="kn">import</span> <span class="n">six</span>
+<span class="kn">from</span> <span class="nn">..extern.cached_property</span> <span class="kn">import</span> <span class="n">threaded_cached_property</span>
+
+
+<div class="viewcode-block" id="ArrayStructure"><a class="viewcode-back" href="../../../pds4_tools.reader.array_objects.html#pds4_tools.reader.array_objects.ArrayStructure">[docs]</a><span class="k">class</span> <span class="nc">ArrayStructure</span><span class="p">(</span><span class="n">Structure</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Stores a single PDS4 array data structure.</span>
+
+<span class="sd">    Contains the array&#39;s data, meta data and label portion. All forms of Array</span>
+<span class="sd">    (e.g. Array, Array_2D, Array_3D_Image, etc) are stored by this class.</span>
+
+<span class="sd">    See `Structure`&#39;s and `pds4_read`&#39;s docstrings for attributes, properties and usage instructions</span>
+<span class="sd">    of this object.</span>
+
+<span class="sd">    Inherits all Attributes, Parameters and Properties from `Structure`. Overrides `info`, `data`</span>
+<span class="sd">    and `from_file` methods to implement them.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="ArrayStructure.from_file"><a class="viewcode-back" href="../../../pds4_tools.reader.array_objects.html#pds4_tools.reader.array_objects.ArrayStructure.from_file">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">from_file</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">data_filename</span><span class="p">,</span> <span class="n">structure_label</span><span class="p">,</span> <span class="n">full_label</span><span class="p">,</span>
+                  <span class="n">lazy_load</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">no_scale</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">decode_strings</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Create an array structure from relevant labels and file for the data.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        data_filename : str or unicode</span>
+<span class="sd">            Filename of the data file that contained the data for this array structure.</span>
+<span class="sd">        structure_label : Label</span>
+<span class="sd">            The segment of the label describing only this array structure.</span>
+<span class="sd">        full_label : Label</span>
+<span class="sd">            The entire label describing the PDS4 product this structure originated from.</span>
+<span class="sd">        lazy_load : bool, optional</span>
+<span class="sd">            If True, does not read-in the data of this structure until the first attempt to access it.</span>
+<span class="sd">            Defaults to False.</span>
+<span class="sd">        no_scale : bool, optional</span>
+<span class="sd">            If True, read-in data will not be adjusted according to the offset and scaling factor.</span>
+<span class="sd">            Defaults to False.</span>
+<span class="sd">        decode_strings : None, optional</span>
+<span class="sd">            Has no effect because Arrays may not contain string data. Defaults to None.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        ArrayStructure</span>
+<span class="sd">            An object representing the PDS4 array structure; contains its label, data and meta data.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="c1"># Create the meta data structure for this array</span>
+        <span class="n">meta_array_structure</span> <span class="o">=</span> <span class="n">Meta_ArrayStructure</span><span class="o">.</span><span class="n">from_label</span><span class="p">(</span><span class="n">structure_label</span><span class="p">,</span> <span class="n">full_label</span><span class="p">)</span>
+
+        <span class="c1"># Create the data structure for this array</span>
+        <span class="n">array_structure</span> <span class="o">=</span> <span class="bp">cls</span><span class="p">(</span><span class="n">structure_data</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">structure_meta_data</span><span class="o">=</span><span class="n">meta_array_structure</span><span class="p">,</span>
+                              <span class="n">structure_label</span><span class="o">=</span><span class="n">structure_label</span><span class="p">,</span> <span class="n">full_label</span><span class="o">=</span><span class="n">full_label</span><span class="p">,</span>
+                              <span class="n">parent_filename</span><span class="o">=</span><span class="n">data_filename</span><span class="p">)</span>
+        <span class="n">array_structure</span><span class="o">.</span><span class="n">_no_scale</span> <span class="o">=</span> <span class="n">no_scale</span>
+
+        <span class="c1"># Attempt to access the data property such that the data gets read-in (if not on lazy-load)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">lazy_load</span><span class="p">:</span>
+            <span class="n">array_structure</span><span class="o">.</span><span class="n">data</span>
+
+        <span class="k">return</span> <span class="n">array_structure</span></div>
+
+<div class="viewcode-block" id="ArrayStructure.from_array"><a class="viewcode-back" href="../../../pds4_tools.reader.array_objects.html#pds4_tools.reader.array_objects.ArrayStructure.from_array">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">from_array</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="nb">input</span><span class="p">,</span> <span class="n">no_scale</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">no_bitmask</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">masked</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">structure_kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Create an array structure from PDS-compliant data or meta data.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        input : PDS_ndarray, PDS_marray or Meta_ArrayStructure</span>
+<span class="sd">            Either an array containing the data, which must also have a valid PDS4 meta_data attribute</span>
+<span class="sd">            describing itself, or an instance of valid Meta_ArrayStructure.</span>
+<span class="sd">        no_scale : bool, optional</span>
+<span class="sd">            If False, and input is an array of data, then the data will scaled according to the scaling_factor</span>
+<span class="sd">            and value_offset meta data. If the *input* is meta data only, then the output data type will be</span>
+<span class="sd">            large enough to store the scaled values. If True, no scaling or data type conversions will be</span>
+<span class="sd">            done. Defaults to False.</span>
+<span class="sd">        no_bitmask : bool, optional</span>
+<span class="sd">            If False, and input is an array of data, then the bitmask indicated in the meta data will be</span>
+<span class="sd">            applied. If True, the bitmask will not be used. Defaults to False.</span>
+<span class="sd">        masked : bool or None, optional</span>
+<span class="sd">            If True, and input is an array of data, then the data will retain any masked values and in</span>
+<span class="sd">            additional have numeric Special_Constants values masked. If False, any masked values in the input</span>
+<span class="sd">            array will be unmasked and data assignments will not preserve masked values. If None, masked</span>
+<span class="sd">            values in the input will be retained only if any are present. Defaults to None.</span>
+<span class="sd">        structure_kwargs :  dict, optional</span>
+<span class="sd">            Keywords that are passed directly to the `ArrayStructure` constructor.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        ArrayStructure</span>
+<span class="sd">            An object representing the PDS4 array structure. The data attribute will contain an array that</span>
+<span class="sd">            can store *input* values (or does store it, if input is an array of data). Other attributes may</span>
+<span class="sd">            be specified via *structure_kwargs*.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="kn">from</span> <span class="nn">.read_arrays</span> <span class="kn">import</span> <span class="n">new_array</span>
+
+        <span class="k">return</span> <span class="n">new_array</span><span class="p">(</span><span class="nb">input</span><span class="p">,</span> <span class="n">no_scale</span><span class="o">=</span><span class="n">no_scale</span><span class="p">,</span> <span class="n">no_bitmask</span><span class="o">=</span><span class="n">no_bitmask</span><span class="p">,</span> <span class="n">masked</span><span class="o">=</span><span class="n">masked</span><span class="p">,</span> <span class="o">**</span><span class="n">structure_kwargs</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="ArrayStructure.info"><a class="viewcode-back" href="../../../pds4_tools.reader.array_objects.html#pds4_tools.reader.array_objects.ArrayStructure.info">[docs]</a>    <span class="k">def</span> <span class="nf">info</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">abbreviated</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">output</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Prints a summary of this data structure.</span>
+
+<span class="sd">        Contains the type and dimensions of the Array, and if *abbreviated* is False then</span>
+<span class="sd">        also outputs the name and number of elements of each axis in the array.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        abbreviated : bool, optional</span>
+<span class="sd">            If False, output additional detail. Defaults to False.</span>
+<span class="sd">        output : file, bool or None, optional</span>
+<span class="sd">            A file-like object to write the output to.  If set to False then instead of outputting</span>
+<span class="sd">            to a file a list representing the summary parameters for the Structure is returned.</span>
+<span class="sd">            Writes to ``sys.stdout`` by default.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        None or list</span>
+<span class="sd">            If output is False, then returns a list representing the summary parameters for the Structure.</span>
+<span class="sd">            Otherwise returns None.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="c1"># Set default output to write to command line</span>
+        <span class="k">if</span> <span class="n">output</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">output</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span>
+
+        <span class="c1"># Obtain abbreviated version of summary</span>
+        <span class="n">dimensions</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">meta_data</span><span class="o">.</span><span class="n">dimensions</span><span class="p">()</span>
+        <span class="nb">id</span> <span class="o">=</span> <span class="s2">&quot;&#39;</span><span class="si">{0}</span><span class="s2">&#39;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+        <span class="n">axes_info</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">{0}</span><span class="s1"> axes, </span><span class="si">{1}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">dimensions</span><span class="p">),</span> <span class="s1">&#39; x &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">six</span><span class="o">.</span><span class="n">text_type</span><span class="p">(</span><span class="n">dim</span><span class="p">)</span> <span class="k">for</span> <span class="n">dim</span> <span class="ow">in</span> <span class="n">dimensions</span><span class="p">))</span>
+
+        <span class="n">summary_args</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">,</span> <span class="nb">id</span><span class="p">,</span> <span class="n">axes_info</span><span class="p">]</span>
+        <span class="n">abbreviated_info</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{0}</span><span class="s2"> </span><span class="si">{1}</span><span class="s2"> (</span><span class="si">{2}</span><span class="s2">)&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">*</span><span class="n">summary_args</span><span class="p">)</span>
+
+        <span class="c1"># If output is false, return list representing the various parameters of the summary</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">output</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">summary_args</span>
+
+        <span class="c1"># Otherwise write out summary to output</span>
+        <span class="k">if</span> <span class="n">abbreviated</span><span class="p">:</span>
+            <span class="n">output</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">abbreviated_info</span><span class="p">)</span>
+            <span class="n">output</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+            <span class="n">output</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span>
+
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">output</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;Axes for </span><span class="si">{0}</span><span class="s1">: </span><span class="se">\n\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">abbreviated_info</span><span class="p">))</span>
+
+            <span class="k">for</span> <span class="n">axis</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">meta_data</span><span class="o">.</span><span class="n">get_axis_arrays</span><span class="p">():</span>
+                <span class="n">output</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{0}</span><span class="s1"> (</span><span class="si">{1}</span><span class="s1"> elements)</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">axis</span><span class="p">[</span><span class="s1">&#39;axis_name&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="p">[</span><span class="s1">&#39;elements&#39;</span><span class="p">]))</span>
+
+            <span class="n">output</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span></div>
+
+    <span class="nd">@threaded_cached_property</span>
+    <span class="k">def</span> <span class="nf">data</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; All data in the PDS4 array data structure.</span>
+
+<span class="sd">        This property is implemented as a thread-safe cacheable attribute. Once it is run</span>
+<span class="sd">        for the first time, it replaces itself with an attribute having the exact</span>
+<span class="sd">        data that was originally returned.</span>
+
+<span class="sd">        Unlike normal properties, this property/attribute is settable without a __set__ method.</span>
+<span class="sd">        To never run the read-in routine inside this property, you need to manually create the</span>
+<span class="sd">        the ``.data`` attribute prior to ever invoking this method (or pass in the data to the</span>
+<span class="sd">        constructor on object instantiation, which does this for you).</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        PDS_ndarray or PDS_marray</span>
+<span class="sd">            An array (either effectively np.ndarray or np.ma.MaskedArray) representing all the data in</span>
+<span class="sd">            this array structure.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="nb">super</span><span class="p">(</span><span class="n">ArrayStructure</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">data</span><span class="p">()</span>
+
+        <span class="kn">from</span> <span class="nn">.read_arrays</span> <span class="kn">import</span> <span class="n">read_array_data</span>
+        <span class="n">read_array_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">no_scale</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_no_scale</span><span class="p">,</span> <span class="n">masked</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_masked</span><span class="p">,</span> <span class="n">memmap</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span>
+
+    <span class="nd">@threaded_cached_property</span>
+    <span class="k">def</span> <span class="nf">section</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; A section of the data in the PDS4 array data structure.</span>
+
+<span class="sd">        This property is implemented as a thread-safe cacheable attribute. See docstring of ``.data``</span>
+<span class="sd">        for more info.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        ArraySection</span>
+<span class="sd">            An object that allows access to sections of the array without reading the entire array</span>
+<span class="sd">            into memory.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="kn">from</span> <span class="nn">.read_arrays</span> <span class="kn">import</span> <span class="n">read_array_data</span>
+
+        <span class="c1"># Read-in data unscaled with memory mapping (scaled data is not guaranteed to be memory mapped)</span>
+        <span class="n">structure</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">(</span><span class="n">structure_meta_data</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">meta_data</span><span class="p">,</span> <span class="n">structure_label</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">label</span><span class="p">,</span>
+                                   <span class="n">full_label</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">full_label</span><span class="p">,</span> <span class="n">parent_filename</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">parent_filename</span><span class="p">)</span>
+
+        <span class="n">read_array_data</span><span class="p">(</span><span class="n">structure</span><span class="p">,</span> <span class="n">no_scale</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">masked</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_masked</span><span class="p">,</span> <span class="n">memmap</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+        <span class="c1"># Return an ArraySection, which will scale the requested portion of the data as needed on access</span>
+        <span class="k">return</span> <span class="n">ArraySection</span><span class="p">(</span><span class="n">structure</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_no_scale</span><span class="p">)</span>
+
+<div class="viewcode-block" id="ArrayStructure.as_masked"><a class="viewcode-back" href="../../../pds4_tools.reader.array_objects.html#pds4_tools.reader.array_objects.ArrayStructure.as_masked">[docs]</a>    <span class="k">def</span> <span class="nf">as_masked</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Obtain a view of this ArrayStructure, with numeric Special_Constants masked.</span>
+
+<span class="sd">        Notes</span>
+<span class="sd">        -----</span>
+<span class="sd">        The returned Structure may not be easily converted back to unmasked. However, the original</span>
+<span class="sd">        Structure can continue to be used to access the unmasked data.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        ArrayStructure</span>
+<span class="sd">            A view of this structure, where the data is masked for numeric Special_Constants. The data,</span>
+<span class="sd">            labels and meta data are all effectively views, no copies are made.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">kwargs</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;structure_meta_data&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">meta_data</span><span class="p">,</span>
+                  <span class="s1">&#39;structure_label&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">label</span><span class="p">,</span> <span class="s1">&#39;full_label&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">full_label</span><span class="p">,</span>
+                  <span class="s1">&#39;parent_filename&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">parent_filename</span><span class="p">,</span> <span class="s1">&#39;structure_id&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">}</span>
+
+        <span class="c1"># If data is already loaded, create a view of the ArrayStructure where the data is masked</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">data_loaded</span><span class="p">:</span>
+
+            <span class="n">array_structure</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">from_array</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">no_scale</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">no_bitmask</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">masked</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                                              <span class="n">copy</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">structure_data</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+        <span class="c1"># If the data has not been loaded, create a view of ArrayStructure that indicates to mask data</span>
+        <span class="c1"># when the attempt to access it is made later</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">array_structure</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+            <span class="n">array_structure</span><span class="o">.</span><span class="n">_no_scale</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_no_scale</span>
+            <span class="n">array_structure</span><span class="o">.</span><span class="n">_masked</span> <span class="o">=</span> <span class="kc">True</span>
+
+        <span class="k">return</span> <span class="n">array_structure</span></div></div>
+
+
+<div class="viewcode-block" id="ArraySection"><a class="viewcode-back" href="../../../pds4_tools.reader.array_objects.html#pds4_tools.reader.array_objects.ArraySection">[docs]</a><span class="k">class</span> <span class="nc">ArraySection</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Stores and allows retrieval of a section of an array.</span>
+
+<span class="sd">    Used to extract and scale (if necessary) a portion of a PDS4 array. Usually this would be used for</span>
+<span class="sd">    an array that is too large to hold entirely in memory.</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    We use this instead of memory mapping to access extremely large arrays because the latter does not work</span>
+<span class="sd">    for scaled arrays in which the scaled data type is different from the data type on disk.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    array_structure : ArrayStructure</span>
+<span class="sd">        A PDS4 array structure. The data attribute in this structure should be memory-mapped.</span>
+<span class="sd">    no_scale : bool, optional</span>
+<span class="sd">        If True, returned data will not be adjusted according to the offset and scaling factor.</span>
+<span class="sd">        Defaults to False.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">array_structure</span><span class="p">,</span> <span class="n">no_scale</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_structure</span> <span class="o">=</span> <span class="n">array_structure</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_no_scale</span> <span class="o">=</span> <span class="n">no_scale</span>
+
+    <span class="k">def</span> <span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">idx</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Obtain a portion of the array.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        idx : str, slice, array_like</span>
+<span class="sd">            Standard ``np.ndarray`` indexes, including field name, list of field names, record number or</span>
+<span class="sd">            slice, or an array-like of record numbers.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        PDS_ndarray, PDS_marray, np.void, np.mvoid, np.record, any np.dtype</span>
+<span class="sd">            The selected portion of the array.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="c1"># Obtain data for the key (``.data`` should be memory mapped for this structure), and</span>
+        <span class="c1"># then copy it so that it can be scaled below</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_structure</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+        <span class="c1"># Adjust data values to account for &#39;scaling_factor&#39; and &#39;value_offset&#39; as necessary</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_no_scale</span><span class="p">:</span>
+            <span class="n">element_array</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_structure</span><span class="o">.</span><span class="n">meta_data</span><span class="p">[</span><span class="s1">&#39;Element_Array&#39;</span><span class="p">]</span>
+            <span class="n">special_constants</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_structure</span><span class="o">.</span><span class="n">meta_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;Special_Constants&#39;</span><span class="p">)</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="n">apply_scaling_and_value_offset</span><span class="p">(</span><span class="n">data</span><span class="p">,</span>
+                                                  <span class="n">element_array</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;scaling_factor&#39;</span><span class="p">),</span>
+                                                  <span class="n">element_array</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;value_offset&#39;</span><span class="p">),</span>
+                                                  <span class="n">special_constants</span><span class="o">=</span><span class="n">special_constants</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">data</span></div>
+
+
+<div class="viewcode-block" id="Meta_ArrayStructure"><a class="viewcode-back" href="../../../pds4_tools.reader.array_objects.html#pds4_tools.reader.array_objects.Meta_ArrayStructure">[docs]</a><span class="k">class</span> <span class="nc">Meta_ArrayStructure</span><span class="p">(</span><span class="n">Meta_Structure</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Meta data about a PDS4 array data structure.</span>
+
+<span class="sd">    Meta data stored in this class is accessed in ``dict``-like fashion.  Stores meta data about all forms</span>
+<span class="sd">    of Array (e.g. Array, Array_2D, Array_3D_Image, etc). Normally this meta data originates from the</span>
+<span class="sd">    label (e.g., if this is an Array_2D then everything from the opening tag of Array_2D to its closing</span>
+<span class="sd">    tag will be stored in this object), via the `from_label` method.</span>
+
+<span class="sd">    Attributes</span>
+<span class="sd">    ----------</span>
+<span class="sd">    display_settings : Meta_DisplaySettings</span>
+<span class="sd">        Meta data about the Display Settings for this array data structure.</span>
+<span class="sd">    spectral_characteristics : Meta_SpectralCharacteristics</span>
+<span class="sd">        Meta data about the Spectral Characteristics for this array data structure.</span>
+
+<span class="sd">    Inherits all Attributes, Parameters and Properties from `Meta_Structure`.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+
+<span class="sd">    Supposing the following Array definition from a label::</span>
+
+<span class="sd">        &lt;Array_3D_Spectrum&gt;</span>
+<span class="sd">          &lt;local_identifier&gt;data_Primary&lt;/local_identifier&gt;</span>
+<span class="sd">          ...</span>
+<span class="sd">          &lt;Axis_Array&gt;</span>
+<span class="sd">            &lt;axis_name&gt;Time&lt;/axis_name&gt;</span>
+<span class="sd">            &lt;elements&gt;21&lt;/elements&gt;</span>
+<span class="sd">            &lt;sequence_number&gt;1&lt;/sequence_number&gt;</span>
+<span class="sd">          &lt;/Axis_Array&gt;</span>
+<span class="sd">          ...</span>
+<span class="sd">        &lt;/Array_3D_Spectrum&gt;</span>
+
+<span class="sd">    &gt;&gt;&gt; meta_array = Meta_ArrayStructure.from_label(structure_xml, full_label)</span>
+
+<span class="sd">    &gt;&gt;&gt; print(meta_array[&#39;local_identifier&#39;])</span>
+<span class="sd">    data_Primary</span>
+
+<span class="sd">    &gt;&gt;&gt; print(meta_array[&#39;Axis_Array&#39;][&#39;elements&#39;]</span>
+<span class="sd">    21</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">Meta_ArrayStructure</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
+
+        <span class="c1"># Contains the Meta_DisplaySettings and Meta_SpectralCharacteristics for this Array structure,</span>
+        <span class="c1"># if they exist in the label</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">display_settings</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">spectral_characteristics</span> <span class="o">=</span> <span class="kc">None</span>
+
+<div class="viewcode-block" id="Meta_ArrayStructure.from_label"><a class="viewcode-back" href="../../../pds4_tools.reader.array_objects.html#pds4_tools.reader.array_objects.Meta_ArrayStructure.from_label">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">from_label</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">xml_array</span><span class="p">,</span> <span class="n">full_label</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Create a Meta_ArrayStructure from XML originating from a label.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        xml_array : Label or ElementTree Element</span>
+<span class="sd">            Portion of label that defines the Array data structure.</span>
+<span class="sd">        full_label : Label or ElementTree Element, optional</span>
+<span class="sd">            The entire label from which *xml_array* originated.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        Meta_ArrayStructure</span>
+<span class="sd">            Instance containing meta data about the array structure, as taken from the XML label.</span>
+
+<span class="sd">        Raises</span>
+<span class="sd">        ------</span>
+<span class="sd">        PDS4StandardsException</span>
+<span class="sd">            Raised if required meta data is absent.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">obj</span> <span class="o">=</span> <span class="bp">cls</span><span class="p">()</span>
+        <span class="n">obj</span><span class="o">.</span><span class="n">_load_keys_from_xml</span><span class="p">(</span><span class="n">xml_array</span><span class="p">)</span>
+
+        <span class="c1"># Ensure required keys for Array_* exist</span>
+        <span class="n">keys_must_exist</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;offset&#39;</span><span class="p">,</span> <span class="s1">&#39;axes&#39;</span><span class="p">,</span> <span class="s1">&#39;Axis_Array&#39;</span><span class="p">,</span> <span class="s1">&#39;Element_Array&#39;</span><span class="p">]</span>
+        <span class="n">obj</span><span class="o">.</span><span class="n">_check_keys_exist</span><span class="p">(</span><span class="n">keys_must_exist</span><span class="p">)</span>
+
+        <span class="c1"># Ensure required keys for Axis_Array(s) exist</span>
+        <span class="n">axis_keys_must_exist</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;axis_name&#39;</span><span class="p">,</span> <span class="s1">&#39;elements&#39;</span><span class="p">,</span> <span class="s1">&#39;sequence_number&#39;</span><span class="p">]</span>
+        <span class="n">multiple_axes</span> <span class="o">=</span> <span class="kc">True</span> <span class="k">if</span> <span class="n">obj</span><span class="o">.</span><span class="n">num_axes</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="k">else</span> <span class="kc">False</span>
+        <span class="n">obj</span><span class="o">.</span><span class="n">_check_keys_exist</span><span class="p">(</span><span class="n">axis_keys_must_exist</span><span class="p">,</span> <span class="n">sub_element</span><span class="o">=</span><span class="s1">&#39;Axis_Array&#39;</span><span class="p">,</span> <span class="n">is_sequence</span><span class="o">=</span><span class="n">multiple_axes</span><span class="p">)</span>
+
+        <span class="c1"># Ensure required keys for Element_Array exist</span>
+        <span class="n">obj</span><span class="o">.</span><span class="n">_check_keys_exist</span><span class="p">([</span><span class="s1">&#39;data_type&#39;</span><span class="p">],</span> <span class="n">sub_element</span><span class="o">=</span><span class="s1">&#39;Element_Array&#39;</span><span class="p">)</span>
+
+        <span class="c1"># Add the Meta_DisplaySettings and Meta_SpectralCharacteristics if they exist in the label</span>
+        <span class="k">if</span> <span class="p">(</span><span class="s1">&#39;local_identifier&#39;</span> <span class="ow">in</span> <span class="n">obj</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">full_label</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">):</span>
+
+            <span class="n">local_identifier</span> <span class="o">=</span> <span class="n">six</span><span class="o">.</span><span class="n">text_type</span><span class="p">(</span><span class="n">obj</span><span class="p">[</span><span class="s1">&#39;local_identifier&#39;</span><span class="p">])</span>
+
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">obj</span><span class="o">.</span><span class="n">display_settings</span> <span class="o">=</span> <span class="n">Meta_DisplaySettings</span><span class="o">.</span><span class="n">from_full_label</span><span class="p">(</span><span class="n">full_label</span><span class="p">,</span> <span class="n">local_identifier</span><span class="p">)</span>
+            <span class="k">except</span> <span class="p">(</span><span class="ne">KeyError</span><span class="p">,</span> <span class="n">PDS4StandardsException</span><span class="p">):</span>
+                <span class="k">pass</span>
+
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">obj</span><span class="o">.</span><span class="n">spectral_characteristics</span> <span class="o">=</span> <span class="n">Meta_SpectralCharacteristics</span><span class="o">.</span><span class="n">from_full_label</span><span class="p">(</span><span class="n">full_label</span><span class="p">,</span> <span class="n">local_identifier</span><span class="p">)</span>
+            <span class="k">except</span> <span class="p">(</span><span class="ne">KeyError</span><span class="p">,</span> <span class="n">PDS4StandardsException</span><span class="p">):</span>
+                <span class="k">pass</span>
+
+        <span class="k">return</span> <span class="n">obj</span></div>
+
+<div class="viewcode-block" id="Meta_ArrayStructure.data_type"><a class="viewcode-back" href="../../../pds4_tools.reader.array_objects.html#pds4_tools.reader.array_objects.Meta_ArrayStructure.data_type">[docs]</a>    <span class="k">def</span> <span class="nf">data_type</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Data type of the array elements.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        PDSdtype</span>
+<span class="sd">            A PDS4 data type.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">return</span> <span class="n">PDSdtype</span><span class="p">(</span><span class="bp">self</span><span class="p">[</span><span class="s1">&#39;Element_Array&#39;</span><span class="p">][</span><span class="s1">&#39;data_type&#39;</span><span class="p">])</span></div>
+
+<div class="viewcode-block" id="Meta_ArrayStructure.dimensions"><a class="viewcode-back" href="../../../pds4_tools.reader.array_objects.html#pds4_tools.reader.array_objects.Meta_ArrayStructure.dimensions">[docs]</a>    <span class="k">def</span> <span class="nf">dimensions</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        list</span>
+<span class="sd">            Dimensions of the array.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">dimensions</span> <span class="o">=</span> <span class="p">[</span><span class="n">axis_array</span><span class="p">[</span><span class="s1">&#39;elements&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">axis_array</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_axis_arrays</span><span class="p">(</span><span class="n">sort</span><span class="o">=</span><span class="kc">True</span><span class="p">)]</span>
+
+        <span class="k">return</span> <span class="n">dimensions</span></div>
+
+<div class="viewcode-block" id="Meta_ArrayStructure.num_axes"><a class="viewcode-back" href="../../../pds4_tools.reader.array_objects.html#pds4_tools.reader.array_objects.Meta_ArrayStructure.num_axes">[docs]</a>    <span class="k">def</span> <span class="nf">num_axes</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        int</span>
+<span class="sd">            Number of axes/dimensions in the array.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">get_axis_arrays</span><span class="p">())</span></div>
+
+<div class="viewcode-block" id="Meta_ArrayStructure.get_axis_arrays"><a class="viewcode-back" href="../../../pds4_tools.reader.array_objects.html#pds4_tools.reader.array_objects.Meta_ArrayStructure.get_axis_arrays">[docs]</a>    <span class="k">def</span> <span class="nf">get_axis_arrays</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sort</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Convenience method to always obtain Axis_Arrays as a ``list``.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        sort : bool, optional</span>
+<span class="sd">            Sorts returned Axis Arrays by sequence_number if True. Defaults to True.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        list</span>
+<span class="sd">            List of ``OrderedDict``&#39;s containing meta data about each Axis_Array.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">axis_arrays</span> <span class="o">=</span> <span class="bp">self</span><span class="p">[</span><span class="s1">&#39;Axis_Array&#39;</span><span class="p">]</span>
+
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">axis_arrays</span><span class="p">,</span> <span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)):</span>
+            <span class="n">axis_arrays</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">axis_arrays</span><span class="p">)</span>
+
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">axis_arrays</span> <span class="o">=</span> <span class="p">[</span><span class="n">axis_arrays</span><span class="p">]</span>
+
+        <span class="k">if</span> <span class="n">sort</span><span class="p">:</span>
+            <span class="n">axis_arrays</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">axis_arrays</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;sequence_number&#39;</span><span class="p">])</span>
+
+        <span class="k">return</span> <span class="n">axis_arrays</span></div>
+
+<div class="viewcode-block" id="Meta_ArrayStructure.get_axis_array"><a class="viewcode-back" href="../../../pds4_tools.reader.array_objects.html#pds4_tools.reader.array_objects.Meta_ArrayStructure.get_axis_array">[docs]</a>    <span class="k">def</span> <span class="nf">get_axis_array</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">axis_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">sequence_number</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Searches for a specific Axis_Array.</span>
+
+<span class="sd">        Either *axis_name*, *sequence_number* or both must be specified.</span>
+<span class="sd">        When both are given, then the result must match both values.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        axis_name : str or unicode, optional</span>
+<span class="sd">            Searches for an Axis_Array with this name.</span>
+<span class="sd">        sequence_number : int, optional</span>
+<span class="sd">            Searches for an Axis_Array with this sequence number.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        OrderedDict or None</span>
+<span class="sd">            The matched Axis_Array, or None if no match was found.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">axis_arrays</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_axis_arrays</span><span class="p">()</span>
+
+        <span class="n">retrieved_axis</span> <span class="o">=</span> <span class="kc">None</span>
+
+        <span class="k">for</span> <span class="n">axis</span> <span class="ow">in</span> <span class="n">axis_arrays</span><span class="p">:</span>
+
+            <span class="c1"># Find by both axis_name and sequence_number</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">axis_name</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">sequence_number</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">):</span>
+
+                <span class="k">if</span> <span class="p">(</span><span class="n">six</span><span class="o">.</span><span class="n">text_type</span><span class="p">(</span><span class="n">axis</span><span class="p">[</span><span class="s1">&#39;axis_name&#39;</span><span class="p">])</span> <span class="o">==</span> <span class="n">axis_name</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">axis</span><span class="p">[</span><span class="s1">&#39;sequence_number&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">sequence_number</span><span class="p">):</span>
+                    <span class="n">retrieved_axis</span> <span class="o">=</span> <span class="n">axis</span>
+
+            <span class="c1"># Find by axis_name</span>
+            <span class="k">elif</span> <span class="p">(</span><span class="n">axis_name</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">six</span><span class="o">.</span><span class="n">text_type</span><span class="p">(</span><span class="n">axis</span><span class="p">[</span><span class="s1">&#39;axis_name&#39;</span><span class="p">])</span> <span class="o">==</span> <span class="n">axis_name</span><span class="p">):</span>
+                <span class="n">retrieved_axis</span> <span class="o">=</span> <span class="n">axis</span>
+
+            <span class="c1"># Find by sequence_number</span>
+            <span class="k">elif</span> <span class="p">(</span><span class="n">sequence_number</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">axis</span><span class="p">[</span><span class="s1">&#39;sequence_number&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">sequence_number</span><span class="p">):</span>
+                <span class="n">retrieved_axis</span> <span class="o">=</span> <span class="n">axis</span>
+
+        <span class="k">return</span> <span class="n">retrieved_axis</span></div></div>
+</pre></div>
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">PDS4 Python Tools 1.3 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">pds4_tools.reader.array_objects</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2015 - 2021, University of Maryland.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.2.0.
+    </div>
+  </body>
+</html>

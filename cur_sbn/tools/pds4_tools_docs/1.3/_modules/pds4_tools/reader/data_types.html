@@ -1,0 +1,1397 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>pds4_tools.reader.data_types &#8212; PDS4 Python Tools 1.3 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinxdoc.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css" />
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">PDS4 Python Tools 1.3 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" accesskey="U">Module code</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">pds4_tools.reader.data_types</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Source code for pds4_tools.reader.data_types</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">absolute_import</span>
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">division</span>
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">print_function</span>
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">unicode_literals</span>
+
+<span class="kn">import</span> <span class="nn">datetime</span> <span class="k">as</span> <span class="nn">dt</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="kn">from</span> <span class="nn">..utils.deprecation</span> <span class="kn">import</span> <span class="n">rename_parameter</span>
+<span class="kn">from</span> <span class="nn">..utils.logging</span> <span class="kn">import</span> <span class="n">logger_init</span>
+
+<span class="kn">from</span> <span class="nn">..extern</span> <span class="kn">import</span> <span class="n">six</span>
+<span class="kn">from</span> <span class="nn">..extern.six.moves</span> <span class="kn">import</span> <span class="n">builtins</span>
+
+<span class="c1"># Initialize the logger</span>
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logger_init</span><span class="p">()</span>
+
+<span class="c1">#################################</span>
+
+<span class="n">PDS_NUMERIC_TYPES</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;IEEE754MSBSingle&#39;</span><span class="p">:</span> <span class="p">(</span><span class="s1">&#39;big&#39;</span><span class="p">,</span> <span class="s1">&#39;float32&#39;</span><span class="p">,</span>    <span class="s1">&#39;float&#39;</span><span class="p">),</span>
+    <span class="s1">&#39;IEEE754MSBDouble&#39;</span><span class="p">:</span> <span class="p">(</span><span class="s1">&#39;big&#39;</span><span class="p">,</span> <span class="s1">&#39;float64&#39;</span><span class="p">,</span>    <span class="s1">&#39;float&#39;</span><span class="p">),</span>
+    <span class="s1">&#39;SignedMSB2&#39;</span><span class="p">:</span>       <span class="p">(</span><span class="s1">&#39;big&#39;</span><span class="p">,</span> <span class="s1">&#39;int16&#39;</span><span class="p">,</span>      <span class="s1">&#39;int&#39;</span><span class="p">),</span>
+    <span class="s1">&#39;SignedMSB4&#39;</span><span class="p">:</span>       <span class="p">(</span><span class="s1">&#39;big&#39;</span><span class="p">,</span> <span class="s1">&#39;int32&#39;</span><span class="p">,</span>      <span class="s1">&#39;int&#39;</span><span class="p">),</span>
+    <span class="s1">&#39;SignedMSB8&#39;</span><span class="p">:</span>       <span class="p">(</span><span class="s1">&#39;big&#39;</span><span class="p">,</span> <span class="s1">&#39;int64&#39;</span><span class="p">,</span>      <span class="s1">&#39;int&#39;</span><span class="p">),</span>
+    <span class="s1">&#39;UnsignedMSB2&#39;</span><span class="p">:</span>     <span class="p">(</span><span class="s1">&#39;big&#39;</span><span class="p">,</span> <span class="s1">&#39;uint16&#39;</span><span class="p">,</span>     <span class="s1">&#39;int&#39;</span><span class="p">),</span>
+    <span class="s1">&#39;UnsignedMSB4&#39;</span><span class="p">:</span>     <span class="p">(</span><span class="s1">&#39;big&#39;</span><span class="p">,</span> <span class="s1">&#39;uint32&#39;</span><span class="p">,</span>     <span class="s1">&#39;int&#39;</span><span class="p">),</span>
+    <span class="s1">&#39;UnsignedMSB8&#39;</span><span class="p">:</span>     <span class="p">(</span><span class="s1">&#39;big&#39;</span><span class="p">,</span> <span class="s1">&#39;uint64&#39;</span><span class="p">,</span>     <span class="s1">&#39;int&#39;</span><span class="p">),</span>
+    <span class="s1">&#39;ComplexMSB8&#39;</span><span class="p">:</span>      <span class="p">(</span><span class="s1">&#39;big&#39;</span><span class="p">,</span> <span class="s1">&#39;complex64&#39;</span><span class="p">,</span>  <span class="s1">&#39;complex&#39;</span><span class="p">),</span>
+    <span class="s1">&#39;ComplexMSB16&#39;</span><span class="p">:</span>     <span class="p">(</span><span class="s1">&#39;big&#39;</span><span class="p">,</span> <span class="s1">&#39;complex128&#39;</span><span class="p">,</span> <span class="s1">&#39;complex&#39;</span><span class="p">),</span>
+
+    <span class="s1">&#39;IEEE754LSBSingle&#39;</span><span class="p">:</span> <span class="p">(</span><span class="s1">&#39;little&#39;</span><span class="p">,</span> <span class="s1">&#39;float32&#39;</span><span class="p">,</span>    <span class="s1">&#39;float&#39;</span><span class="p">),</span>
+    <span class="s1">&#39;IEEE754LSBDouble&#39;</span><span class="p">:</span> <span class="p">(</span><span class="s1">&#39;little&#39;</span><span class="p">,</span> <span class="s1">&#39;float64&#39;</span><span class="p">,</span>    <span class="s1">&#39;float&#39;</span><span class="p">),</span>
+    <span class="s1">&#39;SignedLSB2&#39;</span><span class="p">:</span>       <span class="p">(</span><span class="s1">&#39;little&#39;</span><span class="p">,</span> <span class="s1">&#39;int16&#39;</span><span class="p">,</span>      <span class="s1">&#39;int&#39;</span><span class="p">),</span>
+    <span class="s1">&#39;SignedLSB4&#39;</span><span class="p">:</span>       <span class="p">(</span><span class="s1">&#39;little&#39;</span><span class="p">,</span> <span class="s1">&#39;int32&#39;</span><span class="p">,</span>      <span class="s1">&#39;int&#39;</span><span class="p">),</span>
+    <span class="s1">&#39;SignedLSB8&#39;</span><span class="p">:</span>       <span class="p">(</span><span class="s1">&#39;little&#39;</span><span class="p">,</span> <span class="s1">&#39;int64&#39;</span><span class="p">,</span>      <span class="s1">&#39;int&#39;</span><span class="p">),</span>
+    <span class="s1">&#39;UnsignedLSB2&#39;</span><span class="p">:</span>     <span class="p">(</span><span class="s1">&#39;little&#39;</span><span class="p">,</span> <span class="s1">&#39;uint16&#39;</span><span class="p">,</span>     <span class="s1">&#39;int&#39;</span><span class="p">),</span>
+    <span class="s1">&#39;UnsignedLSB4&#39;</span><span class="p">:</span>     <span class="p">(</span><span class="s1">&#39;little&#39;</span><span class="p">,</span> <span class="s1">&#39;uint32&#39;</span><span class="p">,</span>     <span class="s1">&#39;int&#39;</span><span class="p">),</span>
+    <span class="s1">&#39;UnsignedLSB8&#39;</span><span class="p">:</span>     <span class="p">(</span><span class="s1">&#39;little&#39;</span><span class="p">,</span> <span class="s1">&#39;uint64&#39;</span><span class="p">,</span>     <span class="s1">&#39;int&#39;</span><span class="p">),</span>
+    <span class="s1">&#39;ComplexLSB8&#39;</span><span class="p">:</span>      <span class="p">(</span><span class="s1">&#39;little&#39;</span><span class="p">,</span> <span class="s1">&#39;complex64&#39;</span><span class="p">,</span>  <span class="s1">&#39;complex&#39;</span><span class="p">),</span>
+    <span class="s1">&#39;ComplexLSB16&#39;</span><span class="p">:</span>     <span class="p">(</span><span class="s1">&#39;little&#39;</span><span class="p">,</span> <span class="s1">&#39;complex128&#39;</span><span class="p">,</span> <span class="s1">&#39;complex&#39;</span><span class="p">),</span>
+
+    <span class="s1">&#39;SignedByte&#39;</span><span class="p">:</span>       <span class="p">(</span><span class="s1">&#39;little&#39;</span><span class="p">,</span> <span class="s1">&#39;int8&#39;</span><span class="p">,</span>  <span class="s1">&#39;int&#39;</span><span class="p">),</span>
+    <span class="s1">&#39;UnsignedByte&#39;</span><span class="p">:</span>     <span class="p">(</span><span class="s1">&#39;little&#39;</span><span class="p">,</span> <span class="s1">&#39;uint8&#39;</span><span class="p">,</span> <span class="s1">&#39;int&#39;</span><span class="p">),</span>
+
+    <span class="s1">&#39;ASCII_Real&#39;</span><span class="p">:</span>                <span class="p">(</span><span class="s1">&#39;native&#39;</span><span class="p">,</span> <span class="s1">&#39;float64&#39;</span><span class="p">,</span> <span class="s1">&#39;float&#39;</span><span class="p">),</span>
+    <span class="s1">&#39;ASCII_Integer&#39;</span><span class="p">:</span>             <span class="p">(</span><span class="s1">&#39;native&#39;</span><span class="p">,</span> <span class="s1">&#39;int64&#39;</span><span class="p">,</span>   <span class="s1">&#39;int&#39;</span><span class="p">),</span>
+    <span class="s1">&#39;ASCII_NonNegative_Integer&#39;</span><span class="p">:</span> <span class="p">(</span><span class="s1">&#39;native&#39;</span><span class="p">,</span> <span class="s1">&#39;uint64&#39;</span><span class="p">,</span>  <span class="s1">&#39;int&#39;</span><span class="p">),</span>
+    <span class="s1">&#39;ASCII_Numeric_Base2&#39;</span><span class="p">:</span>       <span class="p">(</span><span class="s1">&#39;native&#39;</span><span class="p">,</span> <span class="s1">&#39;object&#39;</span><span class="p">,</span>  <span class="s1">&#39;int&#39;</span><span class="p">),</span>
+    <span class="s1">&#39;ASCII_Numeric_Base8&#39;</span><span class="p">:</span>       <span class="p">(</span><span class="s1">&#39;native&#39;</span><span class="p">,</span> <span class="s1">&#39;object&#39;</span><span class="p">,</span>  <span class="s1">&#39;int&#39;</span><span class="p">),</span>
+    <span class="s1">&#39;ASCII_Numeric_Base16&#39;</span><span class="p">:</span>      <span class="p">(</span><span class="s1">&#39;native&#39;</span><span class="p">,</span> <span class="s1">&#39;object&#39;</span><span class="p">,</span>  <span class="s1">&#39;int&#39;</span><span class="p">),</span>
+    <span class="s1">&#39;ASCII_Boolean&#39;</span><span class="p">:</span>             <span class="p">(</span><span class="s1">&#39;native&#39;</span><span class="p">,</span> <span class="s1">&#39;bool_&#39;</span><span class="p">,</span>   <span class="s1">&#39;bool&#39;</span><span class="p">),</span>
+<span class="p">}</span>
+
+<span class="n">PDS4_DATE_TYPES</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;ASCII_Date_DOY&#39;</span><span class="p">:</span>          <span class="p">(</span><span class="s1">&#39;native&#39;</span><span class="p">,</span> <span class="s1">&#39;datetime64[D]&#39;</span><span class="p">,</span>  <span class="s1">&#39;date&#39;</span><span class="p">,</span>     <span class="s1">&#39;%Y-%j&#39;</span><span class="p">),</span>
+    <span class="s1">&#39;ASCII_Date_YMD&#39;</span><span class="p">:</span>          <span class="p">(</span><span class="s1">&#39;native&#39;</span><span class="p">,</span> <span class="s1">&#39;datetime64[D]&#39;</span><span class="p">,</span>  <span class="s1">&#39;date&#39;</span><span class="p">,</span>     <span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">),</span>
+    <span class="s1">&#39;ASCII_Date_Time_DOY&#39;</span><span class="p">:</span>     <span class="p">(</span><span class="s1">&#39;native&#39;</span><span class="p">,</span> <span class="s1">&#39;datetime64[us]&#39;</span><span class="p">,</span> <span class="s1">&#39;datetime&#39;</span><span class="p">,</span> <span class="s1">&#39;%Y-%jT%H:%M:%S.</span><span class="si">%f</span><span class="s1">&#39;</span><span class="p">),</span>
+    <span class="s1">&#39;ASCII_Date_Time_YMD&#39;</span><span class="p">:</span>     <span class="p">(</span><span class="s1">&#39;native&#39;</span><span class="p">,</span> <span class="s1">&#39;datetime64[us]&#39;</span><span class="p">,</span> <span class="s1">&#39;datetime&#39;</span><span class="p">,</span> <span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1">T%H:%M:%S.</span><span class="si">%f</span><span class="s1">&#39;</span><span class="p">),</span>
+    <span class="s1">&#39;ASCII_Date_Time_DOY_UTC&#39;</span><span class="p">:</span> <span class="p">(</span><span class="s1">&#39;native&#39;</span><span class="p">,</span> <span class="s1">&#39;datetime64[us]&#39;</span><span class="p">,</span> <span class="s1">&#39;datetime&#39;</span><span class="p">,</span> <span class="s1">&#39;%Y-%jT%H:%M:%S.</span><span class="si">%f</span><span class="s1">&#39;</span><span class="p">),</span>
+    <span class="s1">&#39;ASCII_Date_Time_YMD_UTC&#39;</span><span class="p">:</span> <span class="p">(</span><span class="s1">&#39;native&#39;</span><span class="p">,</span> <span class="s1">&#39;datetime64[us]&#39;</span><span class="p">,</span> <span class="s1">&#39;datetime&#39;</span><span class="p">,</span> <span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1">T%H:%M:%S.</span><span class="si">%f</span><span class="s1">&#39;</span><span class="p">),</span>
+    <span class="s1">&#39;ASCII_Time&#39;</span><span class="p">:</span>              <span class="p">(</span><span class="s1">&#39;native&#39;</span><span class="p">,</span> <span class="s1">&#39;datetime64[us]&#39;</span><span class="p">,</span> <span class="s1">&#39;time&#39;</span><span class="p">,</span>     <span class="s1">&#39;%H:%M:%S.</span><span class="si">%f</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="p">}</span>
+
+
+<div class="viewcode-block" id="pds_to_numpy_type"><a class="viewcode-back" href="../../../pds4_tools.reader.data_types.html#pds4_tools.reader.data_types.pds_to_numpy_type">[docs]</a><span class="k">def</span> <span class="nf">pds_to_numpy_type</span><span class="p">(</span><span class="n">data_type</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">field_length</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">decode_strings</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">decode_dates</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                      <span class="n">scaling_factor</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">value_offset</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">include_endian</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Obtain a NumPy dtype for PDS4 data.</span>
+
+<span class="sd">    Either *data* or *data_type* must be provided.</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    For certain data (such as ASCII_Integer), there are a number of NumPy dtypes (e.g. int8, int32, int64)</span>
+<span class="sd">    that could be used. If only the PDS4 data type is given, the returned dtype will be large enough to store</span>
+<span class="sd">    any possible valid value according to the PDS4 Standard. However, if the *data* parameter is specified,</span>
+<span class="sd">    then the obtained dtype will not be any larger than needed to store exactly that data (plus any</span>
+<span class="sd">    scaling/offset specified).</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    data_type : str, unicode or PDSdtype, optional</span>
+<span class="sd">        A PDS4 data type. If *data* is omitted, the obtained NumPy data type is based on this value</span>
+<span class="sd">        (see notes).</span>
+<span class="sd">    data : array_like, optional</span>
+<span class="sd">        A data array. If *data_type* is omitted, the obtained NumPy data type is based on this value</span>
+<span class="sd">        (see notes).</span>
+<span class="sd">    field_length : int, optional</span>
+<span class="sd">        If given, and the returned dtype is a form of character, then it will include the number of</span>
+<span class="sd">        characters. Takes priority over length of *data* when given.</span>
+<span class="sd">    decode_strings : bool, optional</span>
+<span class="sd">        If True, and the returned dtype is a form of character, then the obtained dtype will be a form of</span>
+<span class="sd">        unicode. If False, then for character data the obtained dtype will remain byte strings. If *data* is</span>
+<span class="sd">        given and is unicode, then this setting will be ignored and unicode dtype will be returned. If</span>
+<span class="sd">        *data_type* is given and refers to bit-strings, then this setting will be ignored and a byte string</span>
+<span class="sd">        dtype will be returned. Defaults to False.</span>
+<span class="sd">    decode_dates: bool, optional</span>
+<span class="sd">        If True, then the returned dtype will be a datetime64 when *data_type* is both given and is a form of</span>
+<span class="sd">        date and/or time. If False, then the returned dtype will be a form of character according to *decode_strings*.</span>
+<span class="sd">        If *data* is given, then this setting will be ignored. Defaults to False.</span>
+<span class="sd">    scaling_factor : int, float or None, optional</span>
+<span class="sd">        PDS4 scaling factor. If given, the returned dtype will be large enough to contain data scaled by</span>
+<span class="sd">        this number. Defaults to None, indicating a value of 1.</span>
+<span class="sd">    value_offset : int, float or None, optional</span>
+<span class="sd">        PDS4 value offset. If given, the returned dtype will be large enough to contain data offset by this</span>
+<span class="sd">        number. Defaults to None, indicating a value of 0.</span>
+<span class="sd">    include_endian : bool, optional</span>
+<span class="sd">        If True, the returned dtype will contain an explicit endianness as specified by the PDS4 data type.</span>
+<span class="sd">        If False, the dtype will not specifically indicate the endianness, typically implying same endianness</span>
+<span class="sd">        as the current machine. Defaults to True.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    np.dtype</span>
+<span class="sd">        A NumPy dtype that can store the data described by the input parameters.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">data</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">data_type</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Either data or a data_type must be provided.&#39;</span><span class="p">)</span>
+
+    <span class="c1"># Ensure *data_type* is a PDSdtype when given</span>
+    <span class="k">if</span> <span class="n">data_type</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">data_type</span> <span class="o">=</span> <span class="n">PDSdtype</span><span class="p">(</span><span class="n">data_type</span><span class="p">)</span>
+
+    <span class="c1"># Detect if dealing with bit strings</span>
+    <span class="n">is_bitstring_data</span> <span class="o">=</span> <span class="p">(</span><span class="n">data_type</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">and</span> <span class="n">data_type</span><span class="o">.</span><span class="n">issubtype</span><span class="p">(</span><span class="s1">&#39;BitString&#39;</span><span class="p">)</span>
+
+    <span class="c1"># Get either a character or the initial unscaled numeric data type from data</span>
+    <span class="k">if</span> <span class="n">data</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asanyarray</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+        <span class="n">is_character_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">issubdtype</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">dtype</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">character</span><span class="p">)</span>
+        <span class="n">is_datetime_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">issubdtype</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">dtype</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">datetime64</span><span class="p">)</span>
+
+        <span class="c1"># Get dtype for character data (from data)</span>
+        <span class="k">if</span> <span class="n">is_character_data</span><span class="p">:</span>
+            <span class="n">unicode_requested</span> <span class="o">=</span> <span class="n">decode_strings</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">is_bitstring_data</span>
+            <span class="n">dtype</span> <span class="o">=</span> <span class="s1">&#39;U&#39;</span> <span class="k">if</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">issubdtype</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">dtype</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">unicode_</span><span class="p">)</span> <span class="ow">or</span> <span class="n">unicode_requested</span><span class="p">)</span> <span class="k">else</span> <span class="s1">&#39;S&#39;</span>
+
+            <span class="k">if</span> <span class="n">field_length</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">dtype</span> <span class="o">+=</span> <span class="nb">str</span><span class="p">(</span><span class="n">field_length</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">field_length</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">dtype</span><span class="o">.</span><span class="n">itemsize</span>
+                <span class="n">dtype</span> <span class="o">+=</span> <span class="nb">str</span><span class="p">(</span><span class="n">field_length</span><span class="p">)</span>
+
+        <span class="c1"># Get dtype for numeric data (from data)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">dtype</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">dtype</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">include_endian</span><span class="p">:</span>
+                <span class="n">dtype</span> <span class="o">=</span> <span class="n">dtype</span><span class="o">.</span><span class="n">newbyteorder</span><span class="p">(</span><span class="s1">&#39;native&#39;</span><span class="p">)</span>
+
+    <span class="c1"># Get either a character or the initial unscaled numeric data type from meta data</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">numeric_types</span> <span class="o">=</span> <span class="n">PDS_NUMERIC_TYPES</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">data_type</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="n">datetime_types</span> <span class="o">=</span> <span class="n">PDS4_DATE_TYPES</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">data_type</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="n">is_datetime_data</span> <span class="o">=</span> <span class="p">(</span><span class="n">datetime_types</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">and</span> <span class="n">decode_dates</span>
+        <span class="n">is_character_data</span> <span class="o">=</span> <span class="p">(</span><span class="n">numeric_types</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="ow">not</span> <span class="n">is_datetime_data</span><span class="p">)</span>
+
+        <span class="c1"># Get dtype for character data (from meta data)</span>
+        <span class="k">if</span> <span class="n">is_character_data</span><span class="p">:</span>
+            <span class="n">dtype</span> <span class="o">=</span> <span class="s1">&#39;U&#39;</span> <span class="k">if</span> <span class="p">(</span><span class="n">decode_strings</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">is_bitstring_data</span><span class="p">)</span> <span class="k">else</span> <span class="s1">&#39;S&#39;</span>
+
+            <span class="k">if</span> <span class="n">field_length</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">dtype</span> <span class="o">+=</span> <span class="nb">str</span><span class="p">(</span><span class="n">field_length</span><span class="p">)</span>
+
+        <span class="c1"># Get dtype for numeric and datetime data (from meta data)</span>
+        <span class="k">else</span><span class="p">:</span>
+
+            <span class="n">types</span> <span class="o">=</span> <span class="n">datetime_types</span> <span class="k">if</span> <span class="n">is_datetime_data</span> <span class="k">else</span> <span class="n">numeric_types</span>
+            <span class="n">dtype</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">(</span><span class="n">types</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+            <span class="k">if</span> <span class="n">include_endian</span><span class="p">:</span>
+                <span class="n">dtype</span> <span class="o">=</span> <span class="n">dtype</span><span class="o">.</span><span class="n">newbyteorder</span><span class="p">(</span><span class="n">types</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+    <span class="c1"># Get scaled data type for numeric data (if necessary)</span>
+    <span class="k">if</span> <span class="p">(</span><span class="ow">not</span> <span class="n">is_character_data</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="ow">not</span> <span class="n">is_datetime_data</span><span class="p">):</span>
+
+        <span class="n">kwargs</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;scaling_factor&#39;</span><span class="p">:</span> <span class="n">scaling_factor</span><span class="p">,</span> <span class="s1">&#39;value_offset&#39;</span><span class="p">:</span> <span class="n">value_offset</span><span class="p">}</span>
+        <span class="n">has_scaling</span> <span class="o">=</span> <span class="p">(</span><span class="n">scaling_factor</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">value_offset</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">data</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+
+            <span class="c1"># Find the minimum possible dtype for ASCII integers</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">data_type</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">and</span> <span class="n">data_type</span><span class="o">.</span><span class="n">issubtype</span><span class="p">(</span><span class="s1">&#39;ASCII&#39;</span><span class="p">)</span> <span class="ow">and</span> <span class="n">is_pds_integer_data</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">):</span>
+                <span class="n">dtype</span> <span class="o">=</span> <span class="n">get_min_integer_numpy_type</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+            <span class="c1"># Scale dtype if requested</span>
+            <span class="k">if</span> <span class="n">has_scaling</span><span class="p">:</span>
+                <span class="n">dtype</span> <span class="o">=</span> <span class="n">get_scaled_numpy_type</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+        <span class="c1"># Scale dtype if requested</span>
+        <span class="k">elif</span> <span class="n">has_scaling</span><span class="p">:</span>
+            <span class="n">dtype</span> <span class="o">=</span> <span class="n">get_scaled_numpy_type</span><span class="p">(</span><span class="n">data_type</span><span class="o">=</span><span class="n">data_type</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">(</span><span class="n">dtype</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="pds_to_builtin_type"><a class="viewcode-back" href="../../../pds4_tools.reader.data_types.html#pds4_tools.reader.data_types.pds_to_builtin_type">[docs]</a><span class="k">def</span> <span class="nf">pds_to_builtin_type</span><span class="p">(</span><span class="n">data_type</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">decode_strings</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">decode_dates</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                        <span class="n">scaling_factor</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">value_offset</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Obtain a Python __builtin__ data type for PDS4 data.</span>
+
+<span class="sd">    Either *data* or *data_type* must be provided.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    data_type : str, unicode or PDSdtype, optional</span>
+<span class="sd">        A PDS4 data type. If *data* is omitted, the obtained builtin data type is based on this value.</span>
+<span class="sd">    data : array_like, optional</span>
+<span class="sd">        A data array. If *data_type* is omitted, the obtained builtin data type is based on this value.</span>
+<span class="sd">    decode_strings : bool, optional</span>
+<span class="sd">        If True, and the returned data type is a form of character, then the obtained data type will be</span>
+<span class="sd">        either ``str`` (Python 3) or ``unicode`` (Python 2). If False, then for character data</span>
+<span class="sd">        the obtained data type will remain byte strings. If *data* is given and is unicode, then this</span>
+<span class="sd">        setting will be ignored and unicode data type will be returned. If *data_type* is given and</span>
+<span class="sd">        refers to bit-strings, then this setting will be ignored and a byte string data type will be returned.</span>
+<span class="sd">        Defaults to False.</span>
+<span class="sd">    decode_dates: bool, optional</span>
+<span class="sd">        If True, then the returned data type will be a form of date/time when *data_type* is both given and</span>
+<span class="sd">        is a form of date and/or time. If False, then the returned data type will be a form of character</span>
+<span class="sd">        according to *decode_strings*. If *data* is given, then this setting will be ignored. Defaults to False.</span>
+<span class="sd">    scaling_factor : int, float or None, optional</span>
+<span class="sd">        PDS4 scaling factor. If given, the returned data type will be large enough to contain data scaled by</span>
+<span class="sd">        this number. Defaults to None, indicating a value of 1.</span>
+<span class="sd">    value_offset : int, float or None, optional</span>
+<span class="sd">        PDS4 value offset. If given, the returned data type will will be large enough to contain data offset</span>
+<span class="sd">        by this number. Defaults to None, indicating a value of 0.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    str, unicode, bytes, int, float, bool, complex</span>
+<span class="sd">        A builtin data type that can store the data described by the input parameters.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">data</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">data_type</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Either data or a data_type must be provided.&#39;</span><span class="p">)</span>
+
+    <span class="c1"># Ensure *data_type* is a PDSdtype when given</span>
+    <span class="k">if</span> <span class="n">data_type</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">data_type</span> <span class="o">=</span> <span class="n">PDSdtype</span><span class="p">(</span><span class="n">data_type</span><span class="p">)</span>
+
+    <span class="c1"># Detect if dealing with bit strings</span>
+    <span class="n">is_bitstring_data</span> <span class="o">=</span> <span class="p">(</span><span class="n">data_type</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">and</span> <span class="n">data_type</span><span class="o">.</span><span class="n">issubtype</span><span class="p">(</span><span class="s1">&#39;BitString&#39;</span><span class="p">)</span>
+
+    <span class="c1"># Get unscaled type from data</span>
+    <span class="k">if</span> <span class="n">data</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asanyarray</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+        <span class="n">is_character_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">issubdtype</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">dtype</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">character</span><span class="p">)</span>
+        <span class="n">is_datetime_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">issubdtype</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">dtype</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">datetime64</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">is_character_data</span><span class="p">:</span>
+            <span class="n">unicode_requested</span> <span class="o">=</span> <span class="n">decode_strings</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">is_bitstring_data</span>
+            <span class="n">_type</span> <span class="o">=</span> <span class="n">six</span><span class="o">.</span><span class="n">text_type</span> <span class="k">if</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">issubdtype</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">dtype</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">unicode_</span><span class="p">)</span> <span class="ow">or</span> <span class="n">unicode_requested</span>
+                                      <span class="p">)</span> <span class="k">else</span> <span class="n">six</span><span class="o">.</span><span class="n">binary_type</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">_type</span> <span class="o">=</span> <span class="nb">type</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">asscalar</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+
+    <span class="c1"># Get unscaled type from meta data</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">numeric_types</span> <span class="o">=</span> <span class="n">PDS_NUMERIC_TYPES</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">data_type</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="n">datetime_types</span> <span class="o">=</span> <span class="n">PDS4_DATE_TYPES</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">data_type</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="n">is_datetime_data</span> <span class="o">=</span> <span class="p">(</span><span class="n">datetime_types</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">and</span> <span class="n">decode_dates</span>
+        <span class="n">is_character_data</span> <span class="o">=</span> <span class="p">(</span><span class="n">numeric_types</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="ow">not</span> <span class="n">is_datetime_data</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">is_character_data</span><span class="p">:</span>
+            <span class="n">_type</span> <span class="o">=</span> <span class="n">six</span><span class="o">.</span><span class="n">text_type</span> <span class="k">if</span> <span class="p">(</span><span class="n">decode_strings</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">is_bitstring_data</span><span class="p">)</span> <span class="k">else</span> <span class="n">six</span><span class="o">.</span><span class="n">binary_type</span>
+
+        <span class="k">elif</span> <span class="n">is_datetime_data</span><span class="p">:</span>
+            <span class="n">_type</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">dt</span><span class="p">,</span> <span class="n">datetime_types</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">_type</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">builtins</span><span class="p">,</span> <span class="n">numeric_types</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+
+    <span class="c1"># Get scaled data type for numeric data (if necessary)</span>
+    <span class="k">if</span> <span class="p">(</span><span class="ow">not</span> <span class="n">is_character_data</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="ow">not</span> <span class="n">is_datetime_data</span><span class="p">):</span>
+
+        <span class="n">has_scaling</span> <span class="o">=</span> <span class="p">(</span><span class="n">scaling_factor</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">value_offset</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="n">kwargs</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;scaling_factor&#39;</span><span class="p">:</span> <span class="n">scaling_factor</span><span class="p">,</span> <span class="s1">&#39;value_offset&#39;</span><span class="p">:</span> <span class="n">value_offset</span><span class="p">}</span>
+
+        <span class="k">if</span> <span class="n">has_scaling</span><span class="p">:</span>
+
+            <span class="k">if</span> <span class="n">data</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">dtype</span> <span class="o">=</span> <span class="n">get_scaled_numpy_type</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">dtype</span> <span class="o">=</span> <span class="n">get_scaled_numpy_type</span><span class="p">(</span><span class="n">data_type</span><span class="o">=</span><span class="n">data_type</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+            <span class="n">_type</span> <span class="o">=</span> <span class="nb">type</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">asscalar</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">dtype</span><span class="p">)))</span>
+
+    <span class="k">return</span> <span class="n">_type</span></div>
+
+
+<span class="k">def</span> <span class="nf">numpy_to_pds_type</span><span class="p">(</span><span class="n">dtype</span><span class="p">,</span> <span class="n">ascii_numerics</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Obtain a PDS4 data type from a NumPy dtype.</span>
+
+<span class="sd">    This method only provides a plausible match. For any data type which is string-like, it will always</span>
+<span class="sd">    return that the PDS4 data type is a string when in fact this have been any type interpreted by this</span>
+<span class="sd">    application as strings (e.g. LIDs, dates, times, etc). Even for numeric data, the match is not exact</span>
+<span class="sd">    because the same NumPy dtype is used for multiple PDS4 data types (for example ASCII_Numeric_Base</span>
+<span class="sd">    and ASCII_Integer both have integer NumPy dtypes).</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    dtype : np.dtype</span>
+<span class="sd">        A NumPy data type.</span>
+<span class="sd">    ascii_numerics</span>
+<span class="sd">        If True, the returned PDS4 data type will be an ASCII numeric type if the input dtype is numeric</span>
+<span class="sd">        or boolean. If False, the returned PDS4 data type will be a binary type. Defaults to False.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    PDSdtype</span>
+<span class="sd">        A PDS4 data type that could plausibly (see description above) correspond to the input dtype.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># For string dtypes</span>
+    <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">issubdtype</span><span class="p">(</span><span class="n">dtype</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">unicode_</span><span class="p">):</span>
+        <span class="n">data_type</span> <span class="o">=</span> <span class="s1">&#39;UTF8_String&#39;</span>
+
+    <span class="k">elif</span> <span class="n">np</span><span class="o">.</span><span class="n">issubdtype</span><span class="p">(</span><span class="n">dtype</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">string_</span><span class="p">):</span>
+        <span class="n">data_type</span> <span class="o">=</span> <span class="s1">&#39;ASCII_String&#39;</span>
+
+    <span class="c1"># For datetime dtypes</span>
+    <span class="k">elif</span> <span class="n">np</span><span class="o">.</span><span class="n">issubdtype</span><span class="p">(</span><span class="n">dtype</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">datetime64</span><span class="p">):</span>
+        <span class="n">data_type</span> <span class="o">=</span> <span class="s1">&#39;ASCII_Date_Time_YMD&#39;</span>
+
+    <span class="c1"># For numeric dtypes</span>
+    <span class="k">else</span><span class="p">:</span>
+
+        <span class="c1"># Get numeric ASCII types. We obtain these from builtin portion because if we attempt to match</span>
+        <span class="c1"># e.g. &#39;int16&#39; to &#39;int64&#39; it would fail but for ASCII types this should succeed.</span>
+        <span class="n">ascii_types</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">((</span><span class="n">value</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">key</span><span class="p">)</span>
+                           <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">six</span><span class="o">.</span><span class="n">iteritems</span><span class="p">(</span><span class="n">PDS_NUMERIC_TYPES</span><span class="p">)</span>
+                           <span class="k">if</span> <span class="p">(</span><span class="s1">&#39;ASCII&#39;</span> <span class="ow">in</span> <span class="n">key</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="s1">&#39;Numeric_Base&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">key</span><span class="p">))</span>
+
+        <span class="c1"># Get numeric non-ASCII types, including the correct endianness.</span>
+        <span class="n">non_ascii_types</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">(</span><span class="n">value</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="o">.</span><span class="n">newbyteorder</span><span class="p">(</span><span class="n">value</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="n">key</span><span class="p">)</span>
+                               <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">six</span><span class="o">.</span><span class="n">iteritems</span><span class="p">(</span><span class="n">PDS_NUMERIC_TYPES</span><span class="p">)</span>
+                               <span class="k">if</span> <span class="p">(</span><span class="s1">&#39;ASCII&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">key</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="s1">&#39;Numeric_Base&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">key</span><span class="p">))</span>
+
+        <span class="k">if</span> <span class="n">ascii_numerics</span><span class="p">:</span>
+
+            <span class="n">builtin_type</span> <span class="o">=</span> <span class="nb">type</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">asscalar</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">)))</span><span class="o">.</span><span class="vm">__name__</span>
+            <span class="n">data_type</span> <span class="o">=</span> <span class="n">ascii_types</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">builtin_type</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">data_type</span> <span class="o">=</span> <span class="n">non_ascii_types</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">dtype</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+
+    <span class="c1"># Raise error if we were unable to find a match</span>
+    <span class="k">if</span> <span class="n">data_type</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Unable to convert NumPy data type, &#39;</span><span class="si">{0}</span><span class="s2">&#39;, to a PDS4 </span><span class="si">{1}</span><span class="s2"> data type.&quot;</span><span class="o">.</span>
+                         <span class="nb">format</span><span class="p">(</span><span class="n">dtype</span><span class="p">,</span> <span class="s1">&#39;ASCII&#39;</span> <span class="k">if</span> <span class="n">ascii_numerics</span> <span class="k">else</span> <span class="s1">&#39;binary&#39;</span><span class="p">))</span>
+
+    <span class="k">return</span> <span class="n">PDSdtype</span><span class="p">(</span><span class="n">data_type</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="pds_to_numpy_name"><a class="viewcode-back" href="../../../pds4_tools.reader.data_types.html#pds4_tools.reader.data_types.pds_to_numpy_name">[docs]</a><span class="k">def</span> <span class="nf">pds_to_numpy_name</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Create a NumPy field name from a PDS4 field name.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    name : str or unicode</span>
+<span class="sd">        A PDS4 field name.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    str</span>
+<span class="sd">        A NumPy-compliant field name.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># We encode to UTF-8 because under Python 2 NumPy does not accept unicode. We replace</span>
+    <span class="c1"># the colon by an underscore because under Python 3 this seems to cause an error when using</span>
+    <span class="c1"># ``recarray.__new__`` with the ``buf`` keyword.</span>
+
+    <span class="n">name</span> <span class="o">=</span> <span class="n">name</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;:&#39;</span><span class="p">,</span> <span class="s1">&#39;_&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">six</span><span class="o">.</span><span class="n">PY2</span><span class="p">:</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">name</span></div>
+
+
+<div class="viewcode-block" id="data_type_convert_array"><a class="viewcode-back" href="../../../pds4_tools.reader.data_types.html#pds4_tools.reader.data_types.data_type_convert_array">[docs]</a><span class="k">def</span> <span class="nf">data_type_convert_array</span><span class="p">(</span><span class="n">data_type</span><span class="p">,</span> <span class="n">byte_string</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Cast binary data in the form of a byte_string to a flat array having proper dtype for *data_type*.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    data_type : str, unicode or PDSdtype</span>
+<span class="sd">        The PDS4 data type that the data should be cast to.</span>
+<span class="sd">    byte_string : str, bytes or buffer</span>
+<span class="sd">        PDS4 byte string data for an array data structure or a table binary field.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    np.ndarray</span>
+<span class="sd">        Array-like view of the data cast from a byte string into values having the indicated data type.</span>
+<span class="sd">        Will be read-only if underlying *byte_string* is immutable.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># Determine data type needed for this binary field</span>
+    <span class="n">dtype</span> <span class="o">=</span> <span class="n">pds_to_numpy_type</span><span class="p">(</span><span class="n">data_type</span><span class="p">)</span>
+
+    <span class="c1"># Convert from the byte string into the actual data type</span>
+    <span class="n">byte_string</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">frombuffer</span><span class="p">(</span><span class="n">byte_string</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">byte_string</span></div>
+
+
+<div class="viewcode-block" id="data_type_convert_table_ascii"><a class="viewcode-back" href="../../../pds4_tools.reader.data_types.html#pds4_tools.reader.data_types.data_type_convert_table_ascii">[docs]</a><span class="nd">@rename_parameter</span><span class="p">(</span><span class="s1">&#39;1.3&#39;</span><span class="p">,</span> <span class="s1">&#39;mask_numeric_nulls&#39;</span><span class="p">,</span> <span class="s1">&#39;mask_nulls&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">data_type_convert_table_ascii</span><span class="p">(</span><span class="n">data_type</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">mask_nulls</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">decode_strings</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Cast data originating from a PDS4 Table_Character or Table_Delimited data structure in the form</span>
+<span class="sd">    of an array_like[byte_string] to an array with the proper dtype for *data_type*. Most likely this</span>
+<span class="sd">    data is a single Field, or a single repetition of a Field, since different Fields have different</span>
+<span class="sd">    data types.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    data_type : str, unicode or PDSdtype</span>
+<span class="sd">        The PDS4 data type that the data should be cast to.</span>
+<span class="sd">    data : array_like[str or bytes]</span>
+<span class="sd">        Flat array of PDS4 byte strings from a Table_Character data structure.</span>
+<span class="sd">    mask_nulls : bool</span>
+<span class="sd">        If True, then *data* may contain empty values for a numeric and boolean *data_type*&#39;s. If such</span>
+<span class="sd">        nulls are found, they will be masked out and a masked array will be returned. Defaults to False,</span>
+<span class="sd">        in which case an exception will be raised should an empty value be found in such a field.</span>
+<span class="sd">    decode_strings : bool, optional</span>
+<span class="sd">        If True, and the returned dtype is a form of character, then the obtained dtype will be a form of</span>
+<span class="sd">        unicode. If False, then for character data the obtained dtype will remain byte strings. Defaults</span>
+<span class="sd">        to False.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    np.ndarray</span>
+<span class="sd">        Data cast from a byte string array into a values array having the right data type.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># Ensure *data_type* is a PDSdtype</span>
+    <span class="n">data_type</span> <span class="o">=</span> <span class="n">PDSdtype</span><span class="p">(</span><span class="n">data_type</span><span class="p">)</span>
+
+    <span class="c1"># Obtain dtype that these data will take</span>
+    <span class="n">dtype</span> <span class="o">=</span> <span class="n">pds_to_numpy_type</span><span class="p">(</span><span class="n">data_type</span><span class="p">,</span> <span class="n">decode_strings</span><span class="o">=</span><span class="n">decode_strings</span><span class="p">)</span>
+
+    <span class="c1"># Stores mask and fill value used when *mask_nulls* is enabled</span>
+    <span class="c1"># (a fill value of None uses NumPy&#39;s default for the data type)</span>
+    <span class="n">mask_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">fill_value</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="c1"># Fill any empty numeric or bool values with a 0, if requested</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">np</span><span class="o">.</span><span class="n">issubdtype</span><span class="p">(</span><span class="n">dtype</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">character</span><span class="p">)</span> <span class="ow">and</span> <span class="n">mask_nulls</span><span class="p">:</span>
+
+        <span class="n">mask_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;bool&#39;</span><span class="p">)</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;object&#39;</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+        <span class="c1"># Assign mask to True where necessary (so that we remember which values need to be masked),</span>
+        <span class="c1"># then set value in data array to 0 (this value will be masked). The syntax here is used</span>
+        <span class="c1"># to speed up operations.</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">datum</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">datum</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="o">==</span> <span class="sa">b</span><span class="s1">&#39;&#39;</span><span class="p">:</span>
+                <span class="n">mask_array</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+
+        <span class="n">data</span><span class="p">[</span><span class="n">mask_array</span><span class="p">]</span> <span class="o">=</span> <span class="n">six</span><span class="o">.</span><span class="n">ensure_binary</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">fill_value</span><span class="p">))</span>
+
+    <span class="c1"># Special handling for boolean due to e.g. bool(&#39;false&#39;) = True</span>
+    <span class="k">if</span> <span class="n">data_type</span> <span class="o">==</span> <span class="s1">&#39;ASCII_Boolean&#39;</span><span class="p">:</span>
+
+        <span class="c1"># Replace &#39;true&#39; and &#39;false&#39; with 1 and 0</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="sa">b</span><span class="s1">&#39;@&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="sa">b</span><span class="s1">&#39;true&#39;</span><span class="p">,</span> <span class="sa">b</span><span class="s1">&#39;1&#39;</span><span class="p">)</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="sa">b</span><span class="s1">&#39;false&#39;</span><span class="p">,</span> <span class="sa">b</span><span class="s1">&#39;0&#39;</span><span class="p">)</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="sa">b</span><span class="s1">&#39;@&#39;</span><span class="p">)</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">dtype</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">dtype</span><span class="p">)</span>
+
+    <span class="c1"># Convert ASCII numerics into their proper data type</span>
+    <span class="k">elif</span> <span class="ow">not</span> <span class="n">np</span><span class="o">.</span><span class="n">issubdtype</span><span class="p">(</span><span class="n">dtype</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">character</span><span class="p">):</span>
+
+        <span class="c1"># We convert binary, octal and hex integers to base 10 integers on the assumption that</span>
+        <span class="c1"># it is more likely a user will want to do math with them so we cannot store them as strings</span>
+        <span class="c1"># and to base 10 in order to be consistent on the numerical meaning of all values</span>
+        <span class="n">numeric_base</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;ASCII_Numeric_Base2&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+                        <span class="s1">&#39;ASCII_Numeric_Base8&#39;</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span>
+                        <span class="s1">&#39;ASCII_Numeric_Base16&#39;</span><span class="p">:</span> <span class="mi">16</span><span class="p">,</span>
+                        <span class="p">}</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">data_type</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+
+        <span class="c1"># We can use NumPy to convert floats to a numeric type, but not integers. The latter is</span>
+        <span class="c1"># because in case an integer does not fit into a NumPy C-type (since some ascii integer types</span>
+        <span class="c1"># are unbounded in PDS4), there appears to be no method to tell NumPy to convert each string</span>
+        <span class="c1"># to be a numeric Python object. Therefore we use pure Python to convert to numeric Python</span>
+        <span class="c1"># objects (i.e, int), and then later convert the list into a NumPy array of numeric Python</span>
+        <span class="c1"># objects.</span>
+        <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">issubdtype</span><span class="p">(</span><span class="n">dtype</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">floating</span><span class="p">):</span>
+
+            <span class="c1"># Convert ASCII_Reals to numeric type</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">)</span>
+
+        <span class="k">else</span><span class="p">:</span>
+
+            <span class="c1"># Make a copy such that original data is unmodified (if we did not already make a copy above)</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">mask_nulls</span><span class="p">:</span>
+                <span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;object&#39;</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+            <span class="c1"># Convert ASCII_Integers to numeric type. The syntax here is used to speed up operations,</span>
+            <span class="c1"># especially for delimited tables with many empty values, by explicitly looping over and</span>
+            <span class="c1"># casting only non-zero values.</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">nditer</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">data</span> <span class="o">!=</span> <span class="s1">&#39;0&#39;</span><span class="p">),</span> <span class="n">flags</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;zerosize_ok&#39;</span><span class="p">]):</span>
+                <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">numeric_base</span><span class="p">)</span>
+
+            <span class="n">data</span><span class="p">[</span><span class="n">data</span> <span class="o">==</span> <span class="s1">&#39;0&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+
+            <span class="c1"># Cast down numeric base integers if possible</span>
+            <span class="k">if</span> <span class="n">numeric_base</span> <span class="o">!=</span> <span class="mi">10</span><span class="p">:</span>
+                <span class="n">dtype</span> <span class="o">=</span> <span class="n">get_min_integer_numpy_type</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+    <span class="c1"># Decode PDS4 ASCII and UTF-8 strings into unicode/str</span>
+    <span class="k">elif</span> <span class="n">decode_strings</span><span class="p">:</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">decode_bytes_to_unicode</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+    <span class="c1"># Convert to numpy array (anything that was not already converted above)</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asanyarray</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">)</span>
+
+    <span class="c1"># Assign mask and full_value to numeric/bool data with nulls as needed</span>
+    <span class="k">if</span> <span class="n">mask_nulls</span> <span class="ow">and</span> <span class="n">mask_array</span><span class="o">.</span><span class="n">any</span><span class="p">():</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ma</span><span class="o">.</span><span class="n">masked_array</span><span class="p">)</span>
+        <span class="n">data</span><span class="o">.</span><span class="n">mask</span> <span class="o">=</span> <span class="n">mask_array</span>
+        <span class="n">data</span><span class="o">.</span><span class="n">set_fill_value</span><span class="p">(</span><span class="n">fill_value</span><span class="p">)</span>
+
+    <span class="c1"># Emit memory efficiency warning if necessary</span>
+    <span class="k">if</span> <span class="n">dtype</span> <span class="o">==</span> <span class="s1">&#39;object&#39;</span><span class="p">:</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s1">&#39;Detected integer Field with precision exceeding memory efficient case.&#39;</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">data</span></div>
+
+
+<div class="viewcode-block" id="data_type_convert_table_binary"><a class="viewcode-back" href="../../../pds4_tools.reader.data_types.html#pds4_tools.reader.data_types.data_type_convert_table_binary">[docs]</a><span class="k">def</span> <span class="nf">data_type_convert_table_binary</span><span class="p">(</span><span class="n">data_type</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">decode_strings</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Cast data originating from a PDS4 Table_Binary data structure in the form of an array_like[byte_string]</span>
+<span class="sd">    to an array with the proper dtype for *data_type*. Most likely this data is a single Field, or a</span>
+<span class="sd">    single repetition of a Field, since different Fields have different data types.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    data_type : str, unicode or PDSdtype</span>
+<span class="sd">        The PDS4 data type that the data should be cast to.</span>
+<span class="sd">    data : array_like[str or bytes]</span>
+<span class="sd">        Flat array of PDS4 byte strings from a Table_Binary data structure.</span>
+<span class="sd">    decode_strings : bool, optional</span>
+<span class="sd">        If True, and the returned dtype is a form of character, then the obtained dtype will be a form of</span>
+<span class="sd">        unicode. If False, then for character data the obtained dtype will remain byte strings. Defaults</span>
+<span class="sd">        to False.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    np.ndarray</span>
+<span class="sd">        Data cast from a byte string array into a values array having the right data type.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># Ensure *data_type* is a PDSdtype</span>
+    <span class="n">data_type</span> <span class="o">=</span> <span class="n">PDSdtype</span><span class="p">(</span><span class="n">data_type</span><span class="p">)</span>
+
+    <span class="c1"># Convert binary data types</span>
+    <span class="k">if</span> <span class="n">data_type</span><span class="o">.</span><span class="n">issubtype</span><span class="p">(</span><span class="s1">&#39;binary&#39;</span><span class="p">):</span>
+
+        <span class="c1"># Join data array-like back into a byte_string, then cast to bytearray to ensure mutability</span>
+        <span class="n">byte_string</span> <span class="o">=</span> <span class="nb">bytearray</span><span class="p">(</span><span class="sa">b</span><span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
+
+        <span class="n">data</span> <span class="o">=</span> <span class="n">data_type_convert_array</span><span class="p">(</span><span class="n">data_type</span><span class="p">,</span> <span class="n">byte_string</span><span class="p">)</span>
+
+    <span class="c1"># Convert character table data types</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">data_type_convert_table_ascii</span><span class="p">(</span><span class="n">data_type</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">decode_strings</span><span class="o">=</span><span class="n">decode_strings</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">data</span></div>
+
+
+<div class="viewcode-block" id="data_type_convert_dates"><a class="viewcode-back" href="../../../pds4_tools.reader.data_types.html#pds4_tools.reader.data_types.data_type_convert_dates">[docs]</a><span class="k">def</span> <span class="nf">data_type_convert_dates</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">data_type</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">mask_nulls</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Cast an array of datetime strings originating from a PDS4 Table data structure to an array having</span>
+<span class="sd">    NumPy datetime64 dtype.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    data : array_like[str or bytes]</span>
+<span class="sd">        Flat array of datetime strings in a PDS4-compatible form.</span>
+<span class="sd">    data_type : str, unicode or PDSdtype, optional</span>
+<span class="sd">        The PDS4 data type for the *data*. If omitted, will be obtained from the meta_data of *data*.</span>
+<span class="sd">    mask_nulls : bool, optional</span>
+<span class="sd">        If True, then *data* may contain empty values. If such nulls are found, they will be masked out and</span>
+<span class="sd">        a masked array will be returned. Defaults to False, in which case an exception will be raised should</span>
+<span class="sd">        an empty value be found.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    np.ndarray, np.ma.MaskedArray or subclass</span>
+<span class="sd">        Data cast from a string-like array to a datetime array. If null values are found, an</span>
+<span class="sd">        ``np.ma.MaskedArray`` or subclass view will be returned. When the input is an instance of PDS_array,</span>
+<span class="sd">        the output will be as well.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="kn">from</span> <span class="nn">.data</span> <span class="kn">import</span> <span class="n">PDS_array</span>
+
+    <span class="c1"># Ensure data is a NumPy array</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asanyarray</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+    <span class="c1"># Determine the PDS4 data type of our data</span>
+    <span class="n">meta_data</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="s1">&#39;meta_data&#39;</span><span class="p">,</span> <span class="p">{})</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">data_type</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="ow">not</span> <span class="n">meta_data</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Input must either contain meta_data, or *data_type* must be given.&#39;</span><span class="p">)</span>
+
+    <span class="n">data_type</span> <span class="o">=</span> <span class="n">PDSdtype</span><span class="p">(</span><span class="n">meta_data</span><span class="o">.</span><span class="n">data_type</span><span class="p">()</span> <span class="k">if</span> <span class="p">(</span><span class="n">data_type</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">)</span> <span class="k">else</span> <span class="n">data_type</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">data_type</span><span class="o">.</span><span class="n">issubtype</span><span class="p">(</span><span class="s1">&#39;datetime&#39;</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s1">&#39;Unknown PDS4 Date type: </span><span class="si">{0}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">data_type</span><span class="p">))</span>
+
+    <span class="c1"># Determine all possible date formats allowed by the PDS4 data type</span>
+    <span class="c1"># (The PDS4 standard allows truncating the format string of each date format until only a year remains.)</span>
+    <span class="n">dtype</span> <span class="o">=</span> <span class="n">pds_to_numpy_type</span><span class="p">(</span><span class="n">data_type</span><span class="p">,</span> <span class="n">decode_dates</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="nb">format</span> <span class="o">=</span> <span class="n">PDS4_DATE_TYPES</span><span class="p">[</span><span class="n">data_type</span><span class="o">.</span><span class="n">name</span><span class="p">][</span><span class="mi">3</span><span class="p">]</span>
+    <span class="n">formats</span> <span class="o">=</span> <span class="p">[</span><span class="nb">format</span><span class="p">]</span>
+    <span class="n">chars</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="s1">&#39;:&#39;</span><span class="p">,</span> <span class="s1">&#39;T&#39;</span><span class="p">,</span> <span class="s1">&#39;-&#39;</span><span class="p">]</span>
+    <span class="n">idx</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="k">while</span> <span class="n">idx</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">chars</span><span class="p">):</span>
+
+        <span class="n">char</span> <span class="o">=</span> <span class="n">chars</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
+        <span class="n">prev_format</span> <span class="o">=</span> <span class="n">formats</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">new_format</span> <span class="o">=</span> <span class="p">(</span><span class="n">prev_format</span><span class="o">.</span><span class="n">rsplit</span><span class="p">(</span><span class="n">char</span><span class="p">,</span> <span class="mi">1</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span>
+
+        <span class="k">if</span> <span class="n">new_format</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">formats</span><span class="p">:</span>
+            <span class="n">formats</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">new_format</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">new_format</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="n">char</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">idx</span> <span class="o">+=</span> <span class="mi">1</span>
+
+    <span class="c1"># Build a dict where each key corresponds to the length of a datetime for that format, and each value</span>
+    <span class="c1"># corresponds to the format. I.e., allow translation between datetime length and its format.</span>
+    <span class="n">symbol_lengths</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;%Y&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;%j&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;%m&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;</span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;%H&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;%M&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;%S&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;.</span><span class="si">%f</span><span class="s1">&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">}</span>
+    <span class="n">format_lengths</span> <span class="o">=</span> <span class="p">{}</span>
+
+    <span class="k">for</span> <span class="n">_format</span> <span class="ow">in</span> <span class="n">formats</span><span class="p">:</span>
+
+        <span class="n">_edited_format</span> <span class="o">=</span> <span class="n">_format</span>
+        <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">six</span><span class="o">.</span><span class="n">iteritems</span><span class="p">(</span><span class="n">symbol_lengths</span><span class="p">):</span>
+
+            <span class="k">if</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">_edited_format</span><span class="p">:</span>
+                <span class="n">_edited_format</span> <span class="o">=</span> <span class="n">_edited_format</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">k</span><span class="p">,</span>  <span class="s1">&#39; &#39;</span> <span class="o">*</span> <span class="n">v</span><span class="p">)</span>
+
+        <span class="n">format_lengths</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">_edited_format</span><span class="p">)]</span> <span class="o">=</span> <span class="n">_format</span>
+
+    <span class="c1"># Adjust above format length dict to account for the variable number of fraction seconds (up to 6 allowed)</span>
+    <span class="k">if</span> <span class="s1">&#39;</span><span class="si">%f</span><span class="s1">&#39;</span> <span class="ow">in</span> <span class="nb">format</span><span class="p">:</span>
+
+        <span class="n">fraction_length</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">format_lengths</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span> <span class="o">+</span> <span class="mi">2</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">):</span>
+            <span class="n">format_lengths</span><span class="p">[</span><span class="n">fraction_length</span><span class="o">+</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nb">format</span>
+
+    <span class="c1"># Decode input from bytes into strings, when necessary</span>
+    <span class="k">if</span> <span class="p">(</span><span class="ow">not</span> <span class="n">six</span><span class="o">.</span><span class="n">PY2</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">dtype</span><span class="o">.</span><span class="n">char</span> <span class="o">==</span> <span class="s1">&#39;S&#39;</span><span class="p">):</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">decode_bytes_to_unicode</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+    <span class="c1"># Determine the format of the first data point</span>
+    <span class="c1"># (We strip any leading/trailing spaces and UTC indicator. The latter would double our search space.)</span>
+    <span class="n">first_datum</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s1">&#39; Z&#39;</span><span class="p">)</span>
+    <span class="n">format_guess</span> <span class="o">=</span> <span class="n">format_lengths</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">first_datum</span><span class="p">),</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+
+    <span class="c1"># Try assuming that all dates have the same format and no special constants</span>
+    <span class="c1"># (speeding up the conversion, if true)</span>
+    <span class="k">try</span><span class="p">:</span>
+
+        <span class="n">dates</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">datum</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+            <span class="n">datum</span> <span class="o">=</span> <span class="n">datum</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s1">&#39; Z&#39;</span><span class="p">)</span>
+            <span class="n">dates</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">dt</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">datum</span><span class="p">,</span> <span class="n">format_guess</span><span class="p">)</span>
+
+    <span class="c1"># If dates do not all have same format or have Special_Constants</span>
+    <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+
+        <span class="c1"># Search for and mask any Special_Constants</span>
+        <span class="n">special_constants</span> <span class="o">=</span> <span class="n">meta_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;Special_Constants&#39;</span><span class="p">,</span> <span class="p">{})</span>
+
+        <span class="k">if</span> <span class="n">mask_nulls</span><span class="p">:</span>
+            <span class="n">special_constants</span><span class="p">[</span><span class="s1">&#39;null_constant&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+
+        <span class="n">data</span> <span class="o">=</span> <span class="n">mask_special_constants</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">special_constants</span><span class="o">=</span><span class="n">special_constants</span><span class="p">,</span> <span class="n">mask_strings</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+        <span class="k">try</span><span class="p">:</span>
+
+            <span class="n">dates</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">)</span>
+
+            <span class="c1"># If there are Special_Constants. Dates may also different formats, length is used for each</span>
+            <span class="c1"># datetime string to determine possible format.</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ma</span><span class="o">.</span><span class="n">MaskedArray</span><span class="p">)</span> <span class="ow">and</span> <span class="n">data</span><span class="o">.</span><span class="n">mask</span><span class="o">.</span><span class="n">any</span><span class="p">():</span>
+
+                <span class="n">dates</span> <span class="o">=</span> <span class="n">dates</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ma</span><span class="o">.</span><span class="n">MaskedArray</span><span class="p">)</span>
+                <span class="n">dates</span><span class="o">.</span><span class="n">mask</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">mask</span>
+
+                <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">datum</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+
+                    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">datum</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ma</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">MaskedConstant</span><span class="p">):</span>
+                        <span class="n">datum_strip</span> <span class="o">=</span> <span class="n">datum</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s1">&#39; Z&#39;</span><span class="p">)</span>
+                        <span class="n">date</span> <span class="o">=</span> <span class="n">dt</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">datum_strip</span><span class="p">,</span> <span class="n">format_lengths</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">datum_strip</span><span class="p">)])</span>
+
+                        <span class="n">dates</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">datetime64</span><span class="p">(</span><span class="n">date</span><span class="p">)</span>
+
+            <span class="c1"># If there are no Special_Constants, but dates have different formats then use length of each</span>
+            <span class="c1"># datetime string to determine possible format. (This is mostly an optimized-case, which runs</span>
+            <span class="c1"># more than 2x speed.)</span>
+            <span class="k">else</span><span class="p">:</span>
+
+                <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">datum</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+                    <span class="n">datum_strip</span> <span class="o">=</span> <span class="n">datum</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s1">&#39; Z&#39;</span><span class="p">)</span>
+                    <span class="n">date</span> <span class="o">=</span> <span class="n">dt</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">datum_strip</span><span class="p">,</span> <span class="n">format_lengths</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">datum_strip</span><span class="p">)])</span>
+
+                    <span class="n">dates</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">datetime64</span><span class="p">(</span><span class="n">date</span><span class="p">)</span>
+
+        <span class="k">except</span> <span class="p">(</span><span class="ne">ValueError</span><span class="p">,</span> <span class="ne">KeyError</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Unable to format date value, &#39;</span><span class="si">{0}</span><span class="s2">&#39;, according to PDS4 </span><span class="si">{1}</span><span class="s2"> data type.&quot;</span><span class="o">.</span>
+                             <span class="nb">format</span><span class="p">(</span><span class="n">datum</span><span class="o">.</span><span class="n">strip</span><span class="p">(),</span> <span class="n">data_type</span><span class="p">))</span>
+
+    <span class="c1"># Convert output back to PDS_array as necessary</span>
+    <span class="k">if</span> <span class="n">meta_data</span><span class="p">:</span>
+        <span class="n">dates</span> <span class="o">=</span> <span class="n">PDS_array</span><span class="p">(</span><span class="n">dates</span><span class="p">,</span> <span class="n">meta_data</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">dates</span></div>
+
+
+<div class="viewcode-block" id="apply_scaling_and_value_offset"><a class="viewcode-back" href="../../../pds4_tools.reader.data_types.html#pds4_tools.reader.data_types.apply_scaling_and_value_offset">[docs]</a><span class="k">def</span> <span class="nf">apply_scaling_and_value_offset</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">scaling_factor</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">value_offset</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">special_constants</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Applies scaling factor and value offset to *data*.</span>
+
+<span class="sd">    Data is modified in-place, if possible. Data type may change to prevent numerical overflow</span>
+<span class="sd">    if applying scaling factor and value offset would cause one.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    data : array_like</span>
+<span class="sd">        Any numeric PDS4 data.</span>
+<span class="sd">    scaling_factor : int, float or None, optional</span>
+<span class="sd">        PDS4 scaling factor to apply to the array. Defaults to None, indicating a value of 1.</span>
+<span class="sd">    value_offset : int, float or None, optional</span>
+<span class="sd">        PDS4 value offset to apply to the array. Defaults to None, indicating a value of 0.</span>
+<span class="sd">    special_constants : dict, optional</span>
+<span class="sd">        If provided, the keys correspond to names and values correspond to numeric values for</span>
+<span class="sd">        special constants. Those particular values will not be scaled or offset.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    np.ndarray or subclass</span>
+<span class="sd">        *data* with *scaling_factor* and *value_offset* applied, potentially with a new dtype if necessary</span>
+<span class="sd">        to fit new values.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">no_scaling</span> <span class="o">=</span> <span class="p">(</span><span class="n">scaling_factor</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">scaling_factor</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">no_offset</span> <span class="o">=</span> <span class="p">(</span><span class="n">value_offset</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">value_offset</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+
+    <span class="c1"># Ensure data is a NumPy array</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asanyarray</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+    <span class="c1"># Skip taking computationally intensive action if no adjustment is necessary</span>
+    <span class="k">if</span> <span class="n">no_scaling</span> <span class="ow">and</span> <span class="n">no_offset</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">data</span>
+
+    <span class="c1"># Mask Special_Constants values so that scaling/offset does not affect them</span>
+    <span class="k">if</span> <span class="n">special_constants</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">mask</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ma</span><span class="o">.</span><span class="n">getmask</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">ma</span><span class="o">.</span><span class="n">is_masked</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="k">else</span> <span class="kc">None</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">mask_special_constants</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">special_constants</span><span class="o">=</span><span class="n">special_constants</span><span class="p">)</span>
+
+    <span class="c1"># Adjust data type to prevent overflow on application of scaling factor and value offset, if necessary</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">adjust_array_data_type</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">scaling_factor</span><span class="p">,</span> <span class="n">value_offset</span><span class="p">)</span>
+
+    <span class="c1"># Apply scaling factor and value offset</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">no_scaling</span><span class="p">:</span>
+        <span class="n">data</span> <span class="o">*=</span> <span class="n">scaling_factor</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">no_offset</span><span class="p">:</span>
+        <span class="n">data</span> <span class="o">+=</span> <span class="n">value_offset</span>
+
+    <span class="c1"># Restore the original mask if necessary, removing any additional mask applied above for Special_Constants</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">special_constants</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">mask</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">):</span>
+        <span class="n">data</span><span class="o">.</span><span class="n">mask</span> <span class="o">=</span> <span class="n">mask</span>
+
+    <span class="k">return</span> <span class="n">data</span></div>
+
+
+<div class="viewcode-block" id="adjust_array_data_type"><a class="viewcode-back" href="../../../pds4_tools.reader.data_types.html#pds4_tools.reader.data_types.adjust_array_data_type">[docs]</a><span class="k">def</span> <span class="nf">adjust_array_data_type</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="n">scaling_factor</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">value_offset</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Converts the input *array* into a new large enough data type if adjusting said array as-is by</span>
+<span class="sd">    *scaling_factor* or *value_offset* would result in an overflow. This can be necessary both</span>
+<span class="sd">    if the array is data from a PDS4 Array or a PDS4 Table, so long as it has a scaling factor or value</span>
+<span class="sd">    offset associated with it.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    array : array_like</span>
+<span class="sd">        Any PDS4 numeric data.</span>
+<span class="sd">    scaling_factor : int, float or None, optional</span>
+<span class="sd">        PDS4 scaling factor to apply to the array. Defaults to None, indicating a value of 1.</span>
+<span class="sd">    value_offset : int, float or None, optional</span>
+<span class="sd">        PDS4 value offset to apply to the array. Defaults to None, indicating a value of 0.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    np.ndarray or subclass</span>
+<span class="sd">        Original *array* modified to have a new data type if necessary or unchanged if otherwise.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">new_dtype</span> <span class="o">=</span> <span class="n">get_scaled_numpy_type</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">array</span><span class="p">,</span> <span class="n">scaling_factor</span><span class="o">=</span><span class="n">scaling_factor</span><span class="p">,</span> <span class="n">value_offset</span><span class="o">=</span><span class="n">value_offset</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">new_dtype</span> <span class="o">==</span> <span class="s1">&#39;object&#39;</span><span class="p">:</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s1">&#39;Detected integer Field with precision exceeding memory efficient case.&#39;</span><span class="p">)</span>
+
+    <span class="c1"># Only adjust if the data types are not the same, and if the adjustment would not result in loss of</span>
+    <span class="c1"># precision. The latter also prevents us from adjusting data that becomes smaller on application of</span>
+    <span class="c1"># scaling, because adjusting it now (while it is larger) would result in an error.</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">array</span><span class="o">.</span><span class="n">dtype</span><span class="o">.</span><span class="n">name</span> <span class="o">!=</span> <span class="n">new_dtype</span><span class="o">.</span><span class="n">name</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">array</span><span class="o">.</span><span class="n">dtype</span> <span class="o">!=</span> <span class="s1">&#39;object&#39;</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span>
+                <span class="ow">not</span> <span class="n">np</span><span class="o">.</span><span class="n">issubdtype</span><span class="p">(</span><span class="n">new_dtype</span><span class="p">,</span> <span class="n">array</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span> <span class="ow">or</span> <span class="n">array</span><span class="o">.</span><span class="n">dtype</span><span class="o">.</span><span class="n">itemsize</span> <span class="o">&lt;</span> <span class="n">new_dtype</span><span class="o">.</span><span class="n">itemsize</span><span class="p">):</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">array</span> <span class="o">=</span> <span class="n">array</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">new_dtype</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
+            <span class="n">array</span> <span class="o">=</span> <span class="n">array</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">new_dtype</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">array</span></div>
+
+
+<div class="viewcode-block" id="get_scaled_numpy_type"><a class="viewcode-back" href="../../../pds4_tools.reader.data_types.html#pds4_tools.reader.data_types.get_scaled_numpy_type">[docs]</a><span class="k">def</span> <span class="nf">get_scaled_numpy_type</span><span class="p">(</span><span class="n">data_type</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">scaling_factor</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">value_offset</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Obtain the NumPy dtype that would be necessary to store PDS4 data once that data has been scaled.</span>
+
+<span class="sd">    When scaling data, the final data type is likely going to be different from the original data type</span>
+<span class="sd">    it has. (E.g. if you multiply integers by a float, then the final data type will be float.) This method</span>
+<span class="sd">    determines what that final data type will have to be when given the initial data type and the scaling</span>
+<span class="sd">    and offset values.</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    For masked data, the output type will be large enough to store the masked data values as if they had</span>
+<span class="sd">    been scaled/offset. This is because NumPy documentation notes that masked data are not guaranteed</span>
+<span class="sd">    to be unaffected by arithmetic operations, only that every attempt will be made to do so.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    data_type : str, unicode or PDSdtype, optional</span>
+<span class="sd">        If given, specifies the initial PDS4 data type that the unscaled data has or would have.</span>
+<span class="sd">    data : array_like or None, optional</span>
+<span class="sd">        If given, an array of data. When given, the initial data type for the unscaled data will be taken</span>
+<span class="sd">        from this array and *data_type* ignored. For some ASCII data types in PDS4, the exact necessary data</span>
+<span class="sd">        type (scaled or unscaled) can only be obtained when the data is already known. If data is not given,</span>
+<span class="sd">        a data type sufficient (but possibly larger than necessary) to store the data will be returned.</span>
+<span class="sd">        Defaults to None.</span>
+<span class="sd">    scaling_factor : int, float, or None</span>
+<span class="sd">        PDS4 scaling factor that will later be applied to the data. Defaults to None, indicating a value of 1.</span>
+<span class="sd">    value_offset : int, float, or None</span>
+<span class="sd">        PDS4 value offset that will later be applied to the data. Defaults to None, indicating a value of 0.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    np.dtype</span>
+<span class="sd">        A NumPy dtype large enough to store the data if it has had *scaling_factor* and *value_offset*.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">data</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">data_type</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Either data or a data_type must be provided.&#39;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">data</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">data_dtype</span> <span class="o">=</span> <span class="n">pds_to_numpy_type</span><span class="p">(</span><span class="n">data_type</span><span class="p">)</span>
+
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asanyarray</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+        <span class="n">data_dtype</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">dtype</span>
+
+    <span class="n">data_is_float</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">issubdtype</span><span class="p">(</span><span class="n">data_dtype</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">floating</span><span class="p">)</span>
+    <span class="n">scaling_is_float</span> <span class="o">=</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">scaling_factor</span><span class="p">,</span> <span class="nb">float</span><span class="p">)</span>
+    <span class="n">offset_is_float</span> <span class="o">=</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value_offset</span><span class="p">,</span> <span class="nb">float</span><span class="p">)</span>
+
+    <span class="n">no_scaling</span> <span class="o">=</span> <span class="p">(</span><span class="n">scaling_factor</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">scaling_factor</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">no_offset</span> <span class="o">=</span> <span class="p">(</span><span class="n">value_offset</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">value_offset</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+
+    <span class="c1"># For values that have no value_offset or scaling_factor we can return the original data type</span>
+    <span class="k">if</span> <span class="n">no_scaling</span> <span class="ow">and</span> <span class="n">no_offset</span><span class="p">:</span>
+        <span class="n">new_dtype</span> <span class="o">=</span> <span class="n">data_dtype</span>
+
+    <span class="c1"># Data should be double precision</span>
+    <span class="k">elif</span> <span class="n">data_is_float</span> <span class="ow">or</span> <span class="n">scaling_is_float</span> <span class="ow">or</span> <span class="n">offset_is_float</span><span class="p">:</span>
+        <span class="n">new_dtype</span> <span class="o">=</span> <span class="s1">&#39;float64&#39;</span>
+
+    <span class="c1"># Data should be integer</span>
+    <span class="k">elif</span> <span class="n">is_pds_integer_data</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="n">pds_data_type</span><span class="o">=</span><span class="n">data_type</span><span class="p">):</span>
+
+        <span class="c1"># Integers should be fixed-precision, because we do not necessarily know they can be 8-bytes</span>
+        <span class="c1"># (see e.g. ASCII_Numeric_Base*)</span>
+        <span class="k">if</span> <span class="n">data</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">new_dtype</span> <span class="o">=</span> <span class="s1">&#39;object&#39;</span>
+
+        <span class="c1"># Determine number of bytes needed for integers from *data*</span>
+        <span class="k">else</span><span class="p">:</span>
+
+            <span class="c1"># For ints, we find minimum size necessary for data not to overflow</span>
+            <span class="k">if</span> <span class="n">scaling_factor</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">scaling_factor</span> <span class="o">=</span> <span class="mi">1</span>
+
+            <span class="k">if</span> <span class="n">value_offset</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">value_offset</span> <span class="o">=</span> <span class="mi">0</span>
+
+            <span class="c1"># Find min and max data (so we do not have to multiply all data, which is slower)</span>
+            <span class="c1"># Note: cast to int must stay, otherwise NumPy integers may overflow</span>
+            <span class="n">min_data</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span><span class="o">.</span><span class="n">min</span><span class="p">())</span> <span class="o">*</span> <span class="n">scaling_factor</span> <span class="o">+</span> <span class="n">value_offset</span>
+            <span class="n">max_data</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span><span class="o">.</span><span class="n">max</span><span class="p">())</span> <span class="o">*</span> <span class="n">scaling_factor</span> <span class="o">+</span> <span class="n">value_offset</span>
+
+            <span class="c1"># Obtain type necessary to store all integers</span>
+            <span class="n">new_dtype</span> <span class="o">=</span> <span class="n">get_min_integer_numpy_type</span><span class="p">([</span><span class="n">min_data</span><span class="p">,</span> <span class="n">max_data</span><span class="p">])</span>
+
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Attempted to scale data which does not appear scalable.&#39;</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">(</span><span class="n">new_dtype</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="decode_bytes_to_unicode"><a class="viewcode-back" href="../../../pds4_tools.reader.data_types.html#pds4_tools.reader.data_types.decode_bytes_to_unicode">[docs]</a><span class="k">def</span> <span class="nf">decode_bytes_to_unicode</span><span class="p">(</span><span class="n">array</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Decodes each byte string in the array into unicode.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    array : array_like</span>
+<span class="sd">        An array containing only byte strings (``str`` in Python 2, ``bytes`` in Python 3).</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    np.ndarray or subclass</span>
+<span class="sd">        An array in which each element of input *array* has been decoded to unicode.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">char</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="s1">&#39;utf-8&#39;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="mask_special_constants"><a class="viewcode-back" href="../../../pds4_tools.reader.data_types.html#pds4_tools.reader.data_types.mask_special_constants">[docs]</a><span class="k">def</span> <span class="nf">mask_special_constants</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">special_constants</span><span class="p">,</span> <span class="n">mask_strings</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Mask out special constants in an array.</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    The match between special constant value and data value (to mask it out) in this method is simplistic.</span>
+<span class="sd">    For numeric values, it is based on the NumPy implementation of equality. For string values, the match is</span>
+<span class="sd">    done by trimming leading/trailing whitespaces in both data value and special constant, then comparing for</span>
+<span class="sd">    exact equality. Currently the PDS4 Standard does not provide enough clarity on how Special_Constant</span>
+<span class="sd">    matching should truly be done.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    data : array_like</span>
+<span class="sd">        An array of data in which to mask out special constants.</span>
+<span class="sd">    special_constants : dict</span>
+<span class="sd">        A dictionary, where keys are the names of the special constants, and the values will be masked</span>
+<span class="sd">        out.</span>
+<span class="sd">    mask_strings : bool, optional</span>
+<span class="sd">        If True, character data will also be masked out if it has special constants. If False, only</span>
+<span class="sd">        numeric data will be masked out. Defaults to False.</span>
+<span class="sd">    copy : bool, optional</span>
+<span class="sd">        If True, the returned masked data is a copy. If False, a view is returned instead. Defaults to False.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    np.ma.MaskedArray, np.ndarray or subclass</span>
+<span class="sd">        If data to be masked is found, an ``np.ma.MaskedArray`` or subclass view (preserving input class</span>
+<span class="sd">        if it was already a subclass of masked arrays). Otherwise the input *data* will be returned.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asanyarray</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+    <span class="c1"># Skip taking any action if there are no special constants to apply</span>
+    <span class="k">if</span> <span class="n">special_constants</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">data</span>
+
+    <span class="c1"># Skip taking any action if the data is of character type and masking strings is not requested</span>
+    <span class="k">if</span> <span class="p">(</span><span class="ow">not</span> <span class="n">mask_strings</span><span class="p">)</span> <span class="ow">and</span> <span class="n">np</span><span class="o">.</span><span class="n">issubdtype</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">dtype</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">character</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">data</span>
+
+    <span class="c1"># Mask string values</span>
+    <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">issubdtype</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">dtype</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">character</span><span class="p">):</span>
+
+        <span class="c1"># Match string-like Special_Constants after trimming leading/trailing spaces</span>
+        <span class="c1"># (however the returned data will preserve whitespace)</span>
+        <span class="n">data_trimmed</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">char</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+        <span class="n">mask_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">six</span><span class="o">.</span><span class="n">iteritems</span><span class="p">(</span><span class="n">special_constants</span><span class="p">):</span>
+
+            <span class="c1"># Find which values should be masked, ignoring valid_* constants (which are actually valid data)</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">key</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;valid_&#39;</span><span class="p">):</span>
+                <span class="n">mask_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ma</span><span class="o">.</span><span class="n">masked_where</span><span class="p">(</span><span class="n">data_trimmed</span> <span class="o">==</span> <span class="n">value</span><span class="o">.</span><span class="n">strip</span><span class="p">(),</span> <span class="n">data</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">mask</span>
+
+            <span class="c1"># Mask as needed</span>
+            <span class="k">if</span> <span class="n">mask_array</span><span class="o">.</span><span class="n">any</span><span class="p">():</span>
+                <span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ma</span><span class="o">.</span><span class="n">masked_where</span><span class="p">(</span><span class="n">mask_array</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="n">copy</span><span class="p">)</span>
+                <span class="n">data</span><span class="o">.</span><span class="n">set_fill_value</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+
+    <span class="c1"># Mask numeric values</span>
+    <span class="k">else</span><span class="p">:</span>
+
+        <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">six</span><span class="o">.</span><span class="n">iteritems</span><span class="p">(</span><span class="n">special_constants</span><span class="p">):</span>
+
+            <span class="c1"># The data == value equality check below only works on similar data types, otherwise it will raise</span>
+            <span class="c1"># warnings/errors. Thus we circumvent this by assuming equality is False when this is guaranteed.</span>
+            <span class="n">compatible_dtypes</span> <span class="o">=</span> <span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">dtype</span><span class="o">.</span><span class="n">kind</span> <span class="o">==</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">value</span><span class="p">)</span><span class="o">.</span><span class="n">dtype</span><span class="o">.</span><span class="n">kind</span><span class="p">)</span> <span class="ow">or</span> \
+                                <span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">dtype</span><span class="o">.</span><span class="n">kind</span> <span class="ow">in</span> <span class="s1">&#39;fui&#39;</span> <span class="ow">and</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">value</span><span class="p">)</span><span class="o">.</span><span class="n">dtype</span><span class="o">.</span><span class="n">kind</span> <span class="ow">in</span> <span class="s1">&#39;ui&#39;</span><span class="p">)</span> <span class="ow">or</span> \
+                                <span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">dtype</span> <span class="o">==</span> <span class="n">np</span><span class="o">.</span><span class="n">object_</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">value</span><span class="p">)</span><span class="o">.</span><span class="n">dtype</span> <span class="o">==</span> <span class="n">np</span><span class="o">.</span><span class="n">object_</span><span class="p">)</span>
+
+            <span class="c1"># Mask the Special_Constants, except for valid_* constants (which are actually valid data)</span>
+            <span class="k">if</span> <span class="p">(</span><span class="ow">not</span> <span class="n">key</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;valid_&#39;</span><span class="p">))</span> <span class="ow">and</span> <span class="n">compatible_dtypes</span><span class="p">:</span>
+                <span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ma</span><span class="o">.</span><span class="n">masked_where</span><span class="p">(</span><span class="n">data</span> <span class="o">==</span> <span class="n">value</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="n">copy</span><span class="p">)</span>
+                <span class="n">data</span><span class="o">.</span><span class="n">set_fill_value</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">data</span></div>
+
+
+<div class="viewcode-block" id="get_min_integer_numpy_type"><a class="viewcode-back" href="../../../pds4_tools.reader.data_types.html#pds4_tools.reader.data_types.get_min_integer_numpy_type">[docs]</a><span class="k">def</span> <span class="nf">get_min_integer_numpy_type</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Obtain smallest integer NumPy dtype that can store every value in the input array.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    data : array_like</span>
+<span class="sd">        PDS4 integer data.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    np.dtype</span>
+<span class="sd">        The NumPy dtype that can store all integers in data.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># Find min, max (although built-in min() and max() work for NumPy arrays,</span>
+    <span class="c1"># NumPy&#39;s implementation is much faster for large numpy arrays. We cast</span>
+    <span class="c1"># to ``np.ndarray`` to go around bug in NumPy in min and max for masked object</span>
+    <span class="c1"># arrays.)</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
+        <span class="n">data_min</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+        <span class="n">data_max</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">data_min</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+        <span class="n">data_max</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+    <span class="n">abs_max</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">data_min</span><span class="p">),</span> <span class="nb">abs</span><span class="p">(</span><span class="n">data_max</span><span class="p">))</span>
+
+    <span class="k">if</span> <span class="n">abs_max</span> <span class="o">&lt;=</span> <span class="mi">127</span><span class="p">:</span>
+        <span class="n">dtype</span> <span class="o">=</span> <span class="s1">&#39;int8&#39;</span>
+
+    <span class="k">elif</span> <span class="n">abs_max</span> <span class="o">&lt;=</span> <span class="mi">255</span><span class="p">:</span>
+
+        <span class="k">if</span> <span class="n">data_min</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">dtype</span> <span class="o">=</span> <span class="s1">&#39;uint8&#39;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">dtype</span> <span class="o">=</span> <span class="s1">&#39;int16&#39;</span>
+
+    <span class="k">elif</span> <span class="n">abs_max</span> <span class="o">&lt;=</span> <span class="mi">32767</span><span class="p">:</span>
+        <span class="n">dtype</span> <span class="o">=</span> <span class="s1">&#39;int16&#39;</span>
+
+    <span class="k">elif</span> <span class="n">abs_max</span> <span class="o">&lt;=</span> <span class="mi">65535</span><span class="p">:</span>
+
+        <span class="k">if</span> <span class="n">data_min</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">dtype</span> <span class="o">=</span> <span class="s1">&#39;uint16&#39;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">dtype</span> <span class="o">=</span> <span class="s1">&#39;int32&#39;</span>
+
+    <span class="k">elif</span> <span class="n">abs_max</span> <span class="o">&lt;=</span> <span class="mi">2147483647</span><span class="p">:</span>
+        <span class="n">dtype</span> <span class="o">=</span> <span class="s1">&#39;int32&#39;</span>
+
+    <span class="k">elif</span> <span class="n">abs_max</span> <span class="o">&lt;=</span> <span class="mi">4294967295</span><span class="p">:</span>
+
+        <span class="k">if</span> <span class="n">data_min</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">dtype</span> <span class="o">=</span> <span class="s1">&#39;uint32&#39;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">dtype</span> <span class="o">=</span> <span class="s1">&#39;int64&#39;</span>
+
+    <span class="k">elif</span> <span class="n">abs_max</span> <span class="o">&lt;=</span> <span class="mi">9223372036854775807</span><span class="p">:</span>
+        <span class="n">dtype</span> <span class="o">=</span> <span class="s1">&#39;int64&#39;</span>
+
+    <span class="k">elif</span> <span class="p">(</span><span class="n">abs_max</span> <span class="o">&lt;=</span> <span class="mi">18446744073709551615</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">data_min</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">):</span>
+        <span class="n">dtype</span> <span class="o">=</span> <span class="s1">&#39;uint64&#39;</span>
+
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">dtype</span> <span class="o">=</span> <span class="s1">&#39;object&#39;</span>
+
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">(</span><span class="n">dtype</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="is_pds_integer_data"><a class="viewcode-back" href="../../../pds4_tools.reader.data_types.html#pds4_tools.reader.data_types.is_pds_integer_data">[docs]</a><span class="k">def</span> <span class="nf">is_pds_integer_data</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">pds_data_type</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Determine, from a data array or from a PDS4 data type, whether such data is an integer.</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    This is necessary, as opposed to simply checking for dtype, because some PDS4 data is integer but may</span>
+<span class="sd">    have the &#39;object&#39; dtype because it may overflow 64-bit integers (e.g. ASCII_Numeric_Base data, which</span>
+<span class="sd">    is not limited to 64-bit sizes by the PDS4 standard).</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    data : array_like, optional</span>
+<span class="sd">        If given, checks whether this data is integer data.</span>
+<span class="sd">    pds_data_type : str, unicode or PDSdtype, optional</span>
+<span class="sd">        If given, checks whether this PDS data type corresponds to integer data.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    bool</span>
+<span class="sd">        True if *data* and/or *pds_data_type* contain or correspond to PDS4 integer data, False otherwise.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">data</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">pds_data_type</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Must provide either an data or a PDS4 data type.&#39;</span><span class="p">)</span>
+
+    <span class="n">need_both</span> <span class="o">=</span> <span class="p">(</span><span class="n">data</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">pds_data_type</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">)</span>
+    <span class="n">array_is_integer</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">pds_type_is_integer</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="c1"># Check if data has a PDS4 integer data type</span>
+    <span class="k">if</span> <span class="n">data</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+
+        <span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asanyarray</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+        <span class="c1"># Check for integer dtype</span>
+        <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">issubdtype</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">dtype</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">integer</span><span class="p">):</span>
+            <span class="n">array_is_integer</span> <span class="o">=</span> <span class="kc">True</span>
+
+        <span class="c1"># Check if first instance of non-masked data is an integer (this is not thorough,</span>
+        <span class="c1"># however checking all values is prohibitively expensive)</span>
+        <span class="k">elif</span> <span class="n">data</span><span class="o">.</span><span class="n">dtype</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">np</span><span class="o">.</span><span class="n">object_</span><span class="p">:</span>
+
+            <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">ma</span><span class="o">.</span><span class="n">is_masked</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+                <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">compressed</span><span class="p">()</span>
+
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">six</span><span class="o">.</span><span class="n">integer_types</span><span class="p">):</span>
+                <span class="n">array_is_integer</span> <span class="o">=</span> <span class="kc">True</span>
+
+    <span class="c1"># Check if data type is a PDS4 integer type</span>
+    <span class="k">if</span> <span class="n">pds_data_type</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+
+        <span class="k">if</span> <span class="n">pds_to_builtin_type</span><span class="p">(</span><span class="n">pds_data_type</span><span class="p">)</span> <span class="o">==</span> <span class="nb">int</span><span class="p">:</span>
+            <span class="n">pds_type_is_integer</span> <span class="o">=</span> <span class="kc">True</span>
+
+    <span class="c1"># If both data and data type are given, return True only if both are not integers</span>
+    <span class="k">if</span> <span class="n">need_both</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">array_is_integer</span> <span class="ow">and</span> <span class="n">pds_type_is_integer</span>
+
+    <span class="k">return</span> <span class="n">array_is_integer</span> <span class="ow">or</span> <span class="n">pds_type_is_integer</span></div>
+
+
+<div class="viewcode-block" id="PDSdtype"><a class="viewcode-back" href="../../../pds4_tools.reader.data_types.html#pds4_tools.reader.data_types.PDSdtype">[docs]</a><span class="nd">@six</span><span class="o">.</span><span class="n">python_2_unicode_compatible</span>
+<span class="k">class</span> <span class="nc">PDSdtype</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; A PDS4 data type object.</span>
+
+<span class="sd">    Each PDS4 array and table field contains homogeneous values described by a PDSdtype</span>
+<span class="sd">    object. This class is a wrapper around the named PDS4 data types, to make comparison</span>
+<span class="sd">    of types easier.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">_name</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="k">def</span> <span class="fm">__new__</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Convert input into a PDS4 data type object.</span>
+
+<span class="sd">        Notes</span>
+<span class="sd">        -----</span>
+<span class="sd">        No checking is currently done that the input is a valid PDS4 data type.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        name : str, unicode or PDSdtype</span>
+<span class="sd">            A PDS4 data type.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        PDSdtype</span>
+<span class="sd">            A PDS4 data type object.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="bp">cls</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">name</span>
+
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">six</span><span class="o">.</span><span class="n">string_types</span><span class="p">):</span>
+            <span class="n">obj</span> <span class="o">=</span> <span class="nb">super</span><span class="p">(</span><span class="n">PDSdtype</span><span class="p">,</span> <span class="bp">cls</span><span class="p">)</span><span class="o">.</span><span class="fm">__new__</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span>
+            <span class="n">obj</span><span class="o">.</span><span class="n">_name</span> <span class="o">=</span> <span class="n">name</span>
+
+            <span class="k">return</span> <span class="n">obj</span>
+
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Unknown data_type; must be a string or PDSdtype.&#39;</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        str or unicode</span>
+<span class="sd">            The PDS4 data type name.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_name</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        str or unicode</span>
+<span class="sd">            A str representation of the object.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">six</span><span class="o">.</span><span class="n">text_type</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        str</span>
+<span class="sd">            A repr representation of the object.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="s2">&quot;</span><span class="si">{0}</span><span class="s2">(</span><span class="si">{1}</span><span class="s2">)&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="p">,</span> <span class="nb">repr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">))</span>
+
+<div class="viewcode-block" id="PDSdtype.__eq__"><a class="viewcode-back" href="../../../pds4_tools.reader.data_types.html#pds4_tools.reader.data_types.PDSdtype.__eq__">[docs]</a>    <span class="k">def</span> <span class="fm">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Compare if two data types are equal.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        other : str, unicode or PDSdtype</span>
+<span class="sd">            A PDS4 data type.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        bool</span>
+<span class="sd">            True if the data types are equal. PDSdtype objects are equal when their ``name`` attributes</span>
+<span class="sd">            are identical, or if *other* is str-like then when it is equal to the object&#39;s ``name`` attribute.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">PDSdtype</span><span class="p">):</span>
+            <span class="n">is_equal</span> <span class="o">=</span> <span class="n">other</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">is_equal</span> <span class="o">=</span> <span class="n">other</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span>
+
+        <span class="k">return</span> <span class="n">is_equal</span></div>
+
+    <span class="k">def</span> <span class="fm">__ne__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Compare if two data types are not equal.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        other : str, unicode or PDSdtype</span>
+<span class="sd">            A PDS4 data type.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        bool</span>
+<span class="sd">            True if the data types are not equal. For equality comparison rules, see ``__eq__``.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">return</span> <span class="ow">not</span> <span class="p">(</span><span class="bp">self</span> <span class="o">==</span> <span class="n">other</span><span class="p">)</span>
+
+<div class="viewcode-block" id="PDSdtype.__contains__"><a class="viewcode-back" href="../../../pds4_tools.reader.data_types.html#pds4_tools.reader.data_types.PDSdtype.__contains__">[docs]</a>    <span class="k">def</span> <span class="fm">__contains__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Check if a data type contains another.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        other : str, unicode or PDSdtype</span>
+<span class="sd">            A PDS4 data type.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        bool</span>
+<span class="sd">            True if ``name`` contains at least a portion of *other*.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">PDSdtype</span><span class="p">):</span>
+            <span class="n">contains</span> <span class="o">=</span> <span class="n">other</span><span class="o">.</span><span class="n">name</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">contains</span> <span class="o">=</span> <span class="n">other</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span>
+
+        <span class="k">return</span> <span class="n">contains</span></div>
+
+<div class="viewcode-block" id="PDSdtype.issubtype"><a class="viewcode-back" href="../../../pds4_tools.reader.data_types.html#pds4_tools.reader.data_types.PDSdtype.issubtype">[docs]</a>    <span class="k">def</span> <span class="nf">issubtype</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">subtype</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Check if data type is a sub-type.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        subtype : str or unicode</span>
+<span class="sd">            Valid subtypes are int|integer|float|bool|datetime|bitstring|ascii|binary.</span>
+<span class="sd">            Case-insensitive.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        bool</span>
+<span class="sd">            True if ``name`` is a sub-type of *subtype*. False otherwise.</span>
+
+<span class="sd">        Raises</span>
+<span class="sd">        ------</span>
+<span class="sd">        ValueError</span>
+<span class="sd">            Raised if an unknown subtype is specified.</span>
+<span class="sd">        TypeError</span>
+<span class="sd">            Raised if a non-string-like subtype is specified.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">subtype</span><span class="p">,</span> <span class="n">six</span><span class="o">.</span><span class="n">string_types</span><span class="p">):</span>
+
+            <span class="n">subtype</span> <span class="o">=</span> <span class="n">subtype</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+
+            <span class="k">if</span> <span class="n">subtype</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;int&#39;</span><span class="p">,</span> <span class="s1">&#39;integer&#39;</span><span class="p">):</span>
+                <span class="k">return</span> <span class="n">pds_to_builtin_type</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_name</span><span class="p">)</span> <span class="o">==</span> <span class="n">builtins</span><span class="o">.</span><span class="n">int</span>
+
+            <span class="k">elif</span> <span class="n">subtype</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;float&#39;</span><span class="p">,</span> <span class="s1">&#39;bool&#39;</span><span class="p">):</span>
+                <span class="k">return</span> <span class="n">pds_to_builtin_type</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_name</span><span class="p">)</span> <span class="o">==</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">builtins</span><span class="p">,</span> <span class="n">subtype</span><span class="p">)</span>
+
+            <span class="k">elif</span> <span class="n">subtype</span> <span class="o">==</span> <span class="s1">&#39;datetime&#39;</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">pds_to_builtin_type</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_name</span><span class="p">,</span> <span class="n">decode_dates</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="ow">in</span> <span class="p">(</span><span class="n">dt</span><span class="o">.</span><span class="n">datetime</span><span class="p">,</span> <span class="n">dt</span><span class="o">.</span><span class="n">date</span><span class="p">,</span> <span class="n">dt</span><span class="o">.</span><span class="n">time</span><span class="p">)</span>
+
+            <span class="k">elif</span> <span class="n">subtype</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;bitstring&#39;</span><span class="p">,</span> <span class="s1">&#39;ascii&#39;</span><span class="p">):</span>
+                <span class="k">return</span> <span class="n">subtype</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_name</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+
+            <span class="k">elif</span> <span class="n">subtype</span> <span class="o">==</span> <span class="s1">&#39;binary&#39;</span><span class="p">:</span>
+                <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_name</span> <span class="ow">in</span> <span class="n">PDS_NUMERIC_TYPES</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="s1">&#39;ascii&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_name</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span>
+
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Unknown subtype specified: </span><span class="si">{0}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">subtype</span><span class="p">))</span>
+
+        <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s1">&#39;Subtype must be string-like.&#39;</span><span class="p">)</span></div></div>
+</pre></div>
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">PDS4 Python Tools 1.3 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">pds4_tools.reader.data_types</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2015 - 2021, University of Maryland.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.2.0.
+    </div>
+  </body>
+</html>

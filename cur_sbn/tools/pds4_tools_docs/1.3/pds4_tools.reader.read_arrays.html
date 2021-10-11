@@ -1,0 +1,255 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>pds4_tools.reader.read_arrays module &#8212; PDS4 Python Tools 1.3 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinxdoc.css" />
+    <link rel="stylesheet" type="text/css" href="_static/css/custom.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="pds4_tools.reader.read_tables module" href="pds4_tools.reader.read_tables.html" />
+    <link rel="prev" title="pds4_tools.reader.read_label module" href="pds4_tools.reader.read_label.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="pds4_tools.reader.read_tables.html" title="pds4_tools.reader.read_tables module"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="pds4_tools.reader.read_label.html" title="pds4_tools.reader.read_label module"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">PDS4 Python Tools 1.3 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="pds4_tools.reader.html" accesskey="U">pds4_tools.reader package</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">pds4_tools.reader.read_arrays module</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="pds4-tools-reader-read-arrays-module">
+<h1>pds4_tools.reader.read_arrays module<a class="headerlink" href="#pds4-tools-reader-read-arrays-module" title="Permalink to this headline">¶</a></h1>
+<section id="functions">
+<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pds4_tools.reader.read_arrays.read_array" title="pds4_tools.reader.read_arrays.read_array"><code class="xref py py-obj docutils literal notranslate"><span class="pre">read_array</span></code></a>(full_label, array_label, ...[, ...])</p></td>
+<td><p>Create the <a class="reference internal" href="pds4_tools.reader.array_objects.html#pds4_tools.reader.array_objects.ArrayStructure" title="pds4_tools.reader.array_objects.ArrayStructure"><code class="xref any py py-class docutils literal notranslate"><span class="pre">ArrayStructure</span></code></a>, containing label, data and meta data for a PDS4 Array from a file.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pds4_tools.reader.read_arrays.read_array_data" title="pds4_tools.reader.read_arrays.read_array_data"><code class="xref py py-obj docutils literal notranslate"><span class="pre">read_array_data</span></code></a>(array_structure, no_scale, ...)</p></td>
+<td><p>Reads and properly formats the data for a single PDS4 array structure, modifies <em>array_structure</em> to contain all extracted fields for said table.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pds4_tools.reader.read_arrays.new_array" title="pds4_tools.reader.read_arrays.new_array"><code class="xref py py-obj docutils literal notranslate"><span class="pre">new_array</span></code></a>(input[, no_scale, no_bitmask, ...])</p></td>
+<td><p>Create an <a class="reference internal" href="pds4_tools.reader.array_objects.html#pds4_tools.reader.array_objects.ArrayStructure" title="pds4_tools.reader.array_objects.ArrayStructure"><code class="xref any py py-class docutils literal notranslate"><span class="pre">ArrayStructure</span></code></a> from PDS-compliant data or meta data.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="details">
+<h2>Details<a class="headerlink" href="#details" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="pds4_tools.reader.read_arrays.read_array">
+<span class="sig-name descname"><span class="pre">read_array</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">full_label</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">array_label</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lazy_load</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">no_scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/read_arrays.html#read_array"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pds4_tools.reader.read_arrays.read_array" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create the <a class="reference internal" href="pds4_tools.reader.array_objects.html#pds4_tools.reader.array_objects.ArrayStructure" title="pds4_tools.reader.array_objects.ArrayStructure"><code class="xref any py py-class docutils literal notranslate"><span class="pre">ArrayStructure</span></code></a>, containing label, data and meta data for a PDS4 Array from a file.</p>
+<p>Used for all forms of PDS4 Arrays (e.g., Array, Array_2D_Image, Array_3D_Spectrum, etc).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>full_label</strong><span class="classifier">Label</span></dt><dd><p>The entire label for a PDS4 product, from which <em>array_label</em> originated.</p>
+</dd>
+<dt><strong>array_label</strong><span class="classifier">Label</span></dt><dd><p>Portion of label that defines the PDS4 array data structure.</p>
+</dd>
+<dt><strong>data_filename</strong><span class="classifier">str or unicode</span></dt><dd><p>Filename, including the full path, of the data file that contains the data for this array.</p>
+</dd>
+<dt><strong>lazy_load</strong><span class="classifier">bool, optional</span></dt><dd><p>If True, does not read-in the data of this array until the first attempt to access it.
+Defaults to False.</p>
+</dd>
+<dt><strong>no_scale</strong><span class="classifier">bool, optional</span></dt><dd><p>If True, returned data will not be adjusted according to the offset and scaling factor.
+Defaults to False.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>ArrayStructure</dt><dd><p>An object representing the array; contains its label, data and meta data</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>TypeError</dt><dd><p>Raised if called on a non-array according to <em>array_label</em>.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pds4_tools.reader.read_arrays.read_array_data">
+<span class="sig-name descname"><span class="pre">read_array_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">array_structure</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">no_scale</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">masked</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">memmap</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/read_arrays.html#read_array_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pds4_tools.reader.read_arrays.read_array_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reads and properly formats the data for a single PDS4 array structure, modifies <em>array_structure</em> to
+contain all extracted fields for said table.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>array_structure</strong><span class="classifier">ArrayStructure</span></dt><dd><p>The PDS4 Array data structure to which the data should be added.</p>
+</dd>
+<dt><strong>no_scale</strong><span class="classifier">bool</span></dt><dd><p>Returned data will not be adjusted according to the offset and scaling factor.</p>
+</dd>
+<dt><strong>masked</strong><span class="classifier">bool</span></dt><dd><p>Returned data will have numeric Special_Constants masked.</p>
+</dd>
+<dt><strong>memmap</strong><span class="classifier">bool, optional</span></dt><dd><p>If True, extracted data is memory mapped. Only guaranteed for unscaled data or for <em>no_scale</em>;
+otherwise returned data maybe a copy. Defaults to False.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>None</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pds4_tools.reader.read_arrays.new_array">
+<span class="sig-name descname"><span class="pre">new_array</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">no_scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">no_bitmask</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">masked</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">copy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">structure_kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/read_arrays.html#new_array"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pds4_tools.reader.read_arrays.new_array" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create an <a class="reference internal" href="pds4_tools.reader.array_objects.html#pds4_tools.reader.array_objects.ArrayStructure" title="pds4_tools.reader.array_objects.ArrayStructure"><code class="xref any py py-class docutils literal notranslate"><span class="pre">ArrayStructure</span></code></a> from PDS-compliant data or meta data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>input</strong><span class="classifier">PDS_ndarray, PDS_marray or Meta_ArrayStructure</span></dt><dd><p>Either an array containing the data, which must also have a valid PDS4 meta_data attribute
+describing itself, or an instance of valid Meta_ArrayStructure. If input is data, the base data type
+will be taken from its actual dtype, rather than from the meta data it must still contain.</p>
+</dd>
+<dt><strong>no_scale</strong><span class="classifier">bool, optional</span></dt><dd><p>If False, and input is an array of data, then the data will scaled according to the scaling_factor
+and value_offset meta data. If the <em>input</em> is meta data only, then the output data type will be
+large enough to store the scaled values. If False, no scaling or data type conversions will be
+done.</p>
+</dd>
+<dt><strong>no_bitmask</strong><span class="classifier">bool, optional</span></dt><dd><p>If False, and input is an array of data, then the bitmask indicated in the meta data will be
+applied. If True, the bitmask will not be used. Defaults to False.</p>
+</dd>
+<dt><strong>masked</strong><span class="classifier">bool or None, optional</span></dt><dd><p>If True, and input is an array of data, then the data will retain any masked values and in
+additional have numeric Special_Constants values masked. If False, any masked values in the input
+array will be unmasked and data assignments will not preserve masked values. If None, masked
+values in the input will be retained only if any are present.</p>
+</dd>
+<dt><strong>copy: bool, optional</strong></dt><dd><p>If True, a copy of <em>input</em> is made, ensuring that it does not get modified during processing.
+If False, then the input may change if it is an array of data. In either case, the output data
+will not be a view. Defaults to True.</p>
+</dd>
+<dt><strong>structure_kwargs</strong><span class="classifier">dict, optional</span></dt><dd><p>Keywords that are passed directly to the <a class="reference internal" href="pds4_tools.reader.array_objects.html#pds4_tools.reader.array_objects.ArrayStructure" title="pds4_tools.reader.array_objects.ArrayStructure"><code class="xref any py py-class docutils literal notranslate"><span class="pre">ArrayStructure</span></code></a> constructor.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>ArrayStructure</dt><dd><p>An object representing the PDS4 array structure. The data attribute will contain an array that
+can store <em>input</em> values (or does store it, if input is an array of data). Other attributes may
+be specified via <em>structure_kwargs</em>.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>The data attribute will not be a view of the original <em>input</em> (if it is a data array), but rather a new
+array. However, the <em>input</em> passed into this method may still be modified in-place to save memory, see
+<em>copy</em>. A method to get a view of the original data, if conditions are satisfied, is to also pass <em>input</em>
+as a kwarg of the name <code class="docutils literal notranslate"><span class="pre">structure_data</span></code>.</p>
+</dd></dl>
+
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">pds4_tools.reader.read_arrays module</a><ul>
+<li><a class="reference internal" href="#functions">Functions</a></li>
+<li><a class="reference internal" href="#details">Details</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="pds4_tools.reader.read_label.html"
+                        title="previous chapter">pds4_tools.reader.read_label module</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="pds4_tools.reader.read_tables.html"
+                        title="next chapter">pds4_tools.reader.read_tables module</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/pds4_tools.reader.read_arrays.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="pds4_tools.reader.read_tables.html" title="pds4_tools.reader.read_tables module"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="pds4_tools.reader.read_label.html" title="pds4_tools.reader.read_label module"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">PDS4 Python Tools 1.3 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="pds4_tools.reader.html" >pds4_tools.reader package</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">pds4_tools.reader.read_arrays module</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2015 - 2021, University of Maryland.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.2.0.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,464 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>pds4_tools.extern.argparse module &#8212; PDS4 Python Tools 1.3 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinxdoc.css" />
+    <link rel="stylesheet" type="text/css" href="_static/css/custom.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="pds4_tools.extern.cached_property module" href="pds4_tools.extern.cached_property.html" />
+    <link rel="prev" title="pds4_tools.extern.appdirs module" href="pds4_tools.extern.appdirs.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="pds4_tools.extern.cached_property.html" title="pds4_tools.extern.cached_property module"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="pds4_tools.extern.appdirs.html" title="pds4_tools.extern.appdirs module"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">PDS4 Python Tools 1.3 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="pds4_tools.extern.html" accesskey="U">pds4_tools.extern package</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">pds4_tools.extern.argparse module</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="module-pds4_tools.extern.argparse">
+<span id="pds4-tools-extern-argparse-module"></span><h1>pds4_tools.extern.argparse module<a class="headerlink" href="#module-pds4_tools.extern.argparse" title="Permalink to this headline">¶</a></h1>
+<p>Command-line parsing library. Implements argparse for Python 2.6 and below.</p>
+<p>This module is an optparse-inspired command-line parsing library that:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>handles both optional and positional arguments</p></li>
+<li><p>produces highly informative usage messages</p></li>
+<li><p>supports parsers that dispatch to sub-parsers</p></li>
+</ul>
+</div></blockquote>
+<p>The following is a simple usage example that sums integers from the
+command-line and writes the result to a file:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span>
+    <span class="n">description</span><span class="o">=</span><span class="s1">&#39;sum the integers at the command line&#39;</span><span class="p">)</span>
+<span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
+    <span class="s1">&#39;integers&#39;</span><span class="p">,</span> <span class="n">metavar</span><span class="o">=</span><span class="s1">&#39;int&#39;</span><span class="p">,</span> <span class="n">nargs</span><span class="o">=</span><span class="s1">&#39;+&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span>
+    <span class="n">help</span><span class="o">=</span><span class="s1">&#39;an integer to be summed&#39;</span><span class="p">)</span>
+<span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
+    <span class="s1">&#39;--log&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="n">argparse</span><span class="o">.</span><span class="n">FileType</span><span class="p">(</span><span class="s1">&#39;w&#39;</span><span class="p">),</span>
+    <span class="n">help</span><span class="o">=</span><span class="s1">&#39;the file where the sum should be written&#39;</span><span class="p">)</span>
+<span class="n">args</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
+<span class="n">args</span><span class="o">.</span><span class="n">log</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="nb">sum</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">integers</span><span class="p">))</span>
+<span class="n">args</span><span class="o">.</span><span class="n">log</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>The module contains the following public classes:</p>
+<blockquote>
+<div><ul class="simple">
+<li><dl class="simple">
+<dt>ArgumentParser – The main entry point for command-line parsing. As the</dt><dd><p>example above shows, the add_argument() method is used to populate
+the parser with actions for optional and positional arguments. Then
+the parse_args() method is invoked to convert the args at the
+command-line into an object with attributes.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>ArgumentError – The exception raised by ArgumentParser structures when</dt><dd><p>there are errors with the parser’s actions. Errors raised while
+parsing the command-line are caught by ArgumentParser and emitted
+as command-line messages.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>FileType – A factory for defining types of files to be created. As the</dt><dd><p>example above shows, instances of FileType are typically passed as
+the type= argument of add_argument() calls.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Action – The base class for parser actions. Typically actions are</dt><dd><p>selected by passing strings like ‘store_true’ or ‘append_const’ to
+the action= argument of add_argument(). However, for greater
+customization of ArgumentParser actions, subclasses of Action may
+be defined and passed as the action= argument.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>HelpFormatter, RawDescriptionHelpFormatter, RawTextHelpFormatter,</dt><dd><p>ArgumentDefaultsHelpFormatter – Formatter classes which
+may be passed as the formatter_class= argument to the
+ArgumentParser constructor. HelpFormatter is the default,
+RawDescriptionHelpFormatter and RawTextHelpFormatter tell the parser
+not to change the formatting for help text, and
+ArgumentDefaultsHelpFormatter adds information about argument defaults
+to the help.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</div></blockquote>
+<p>All other classes in this module are considered implementation details.
+(Also note that HelpFormatter and RawDescriptionHelpFormatter are only
+considered public as object names – the API of the formatter structures is
+still considered an implementation detail.)</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="pds4_tools.extern.argparse.ArgumentParser">
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">ArgumentParser</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">prog=None</span></em>, <em class="sig-param"><span class="pre">usage=None</span></em>, <em class="sig-param"><span class="pre">description=None</span></em>, <em class="sig-param"><span class="pre">epilog=None</span></em>, <em class="sig-param"><span class="pre">version=None</span></em>, <em class="sig-param"><span class="pre">parents=[]</span></em>, <em class="sig-param"><span class="pre">formatter_class=&lt;class</span> <span class="pre">'pds4_tools.extern.argparse.HelpFormatter'&gt;</span></em>, <em class="sig-param"><span class="pre">prefix_chars='-'</span></em>, <em class="sig-param"><span class="pre">fromfile_prefix_chars=None</span></em>, <em class="sig-param"><span class="pre">argument_default=None</span></em>, <em class="sig-param"><span class="pre">conflict_handler='error'</span></em>, <em class="sig-param"><span class="pre">add_help=True</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/extern/argparse.html#ArgumentParser"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pds4_tools.extern.argparse.ArgumentParser" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pds4_tools.extern.argparse._AttributeHolder</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">pds4_tools.extern.argparse._ActionsContainer</span></code></p>
+<p>Object for parsing command line strings into Python structures.</p>
+<dl class="simple">
+<dt>Keyword Arguments:</dt><dd><ul class="simple">
+<li><p>prog – The name of the program (default: sys.argv[0])</p></li>
+<li><p>usage – A usage message (default: auto-generated from arguments)</p></li>
+<li><p>description – A description of what the program does</p></li>
+<li><p>epilog – Text following the argument descriptions</p></li>
+<li><p>parents – Parsers whose arguments should be copied into this one</p></li>
+<li><p>formatter_class – HelpFormatter class for printing help messages</p></li>
+<li><p>prefix_chars – Characters that prefix optional arguments</p></li>
+<li><dl class="simple">
+<dt>fromfile_prefix_chars – Characters that prefix files containing</dt><dd><p>additional arguments</p>
+</dd>
+</dl>
+</li>
+<li><p>argument_default – The default value for all arguments</p></li>
+<li><p>conflict_handler – String indicating how to handle conflicts</p></li>
+<li><p>add_help – Add a -h/-help option</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pds4_tools.extern.argparse.ArgumentParser.add_subparsers">
+<span class="sig-name descname"><span class="pre">add_subparsers</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/extern/argparse.html#ArgumentParser.add_subparsers"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pds4_tools.extern.argparse.ArgumentParser.add_subparsers" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pds4_tools.extern.argparse.ArgumentParser.parse_args">
+<span class="sig-name descname"><span class="pre">parse_args</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">namespace</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/extern/argparse.html#ArgumentParser.parse_args"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pds4_tools.extern.argparse.ArgumentParser.parse_args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pds4_tools.extern.argparse.ArgumentParser.parse_known_args">
+<span class="sig-name descname"><span class="pre">parse_known_args</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">namespace</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/extern/argparse.html#ArgumentParser.parse_known_args"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pds4_tools.extern.argparse.ArgumentParser.parse_known_args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pds4_tools.extern.argparse.ArgumentParser.convert_arg_line_to_args">
+<span class="sig-name descname"><span class="pre">convert_arg_line_to_args</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg_line</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/extern/argparse.html#ArgumentParser.convert_arg_line_to_args"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pds4_tools.extern.argparse.ArgumentParser.convert_arg_line_to_args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pds4_tools.extern.argparse.ArgumentParser.format_usage">
+<span class="sig-name descname"><span class="pre">format_usage</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/extern/argparse.html#ArgumentParser.format_usage"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pds4_tools.extern.argparse.ArgumentParser.format_usage" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pds4_tools.extern.argparse.ArgumentParser.format_help">
+<span class="sig-name descname"><span class="pre">format_help</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/extern/argparse.html#ArgumentParser.format_help"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pds4_tools.extern.argparse.ArgumentParser.format_help" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pds4_tools.extern.argparse.ArgumentParser.format_version">
+<span class="sig-name descname"><span class="pre">format_version</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/extern/argparse.html#ArgumentParser.format_version"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pds4_tools.extern.argparse.ArgumentParser.format_version" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pds4_tools.extern.argparse.ArgumentParser.print_usage">
+<span class="sig-name descname"><span class="pre">print_usage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/extern/argparse.html#ArgumentParser.print_usage"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pds4_tools.extern.argparse.ArgumentParser.print_usage" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pds4_tools.extern.argparse.ArgumentParser.print_help">
+<span class="sig-name descname"><span class="pre">print_help</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/extern/argparse.html#ArgumentParser.print_help"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pds4_tools.extern.argparse.ArgumentParser.print_help" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pds4_tools.extern.argparse.ArgumentParser.print_version">
+<span class="sig-name descname"><span class="pre">print_version</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/extern/argparse.html#ArgumentParser.print_version"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pds4_tools.extern.argparse.ArgumentParser.print_version" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pds4_tools.extern.argparse.ArgumentParser.exit">
+<span class="sig-name descname"><span class="pre">exit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">status</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/extern/argparse.html#ArgumentParser.exit"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pds4_tools.extern.argparse.ArgumentParser.exit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pds4_tools.extern.argparse.ArgumentParser.error">
+<span class="sig-name descname"><span class="pre">error</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">string</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/extern/argparse.html#ArgumentParser.error"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pds4_tools.extern.argparse.ArgumentParser.error" title="Permalink to this definition">¶</a></dt>
+<dd><p>Prints a usage message incorporating the message to stderr and
+exits.</p>
+<p>If you override this in a subclass, it should not return – it
+should either exit or raise an exception.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="pds4_tools.extern.argparse.ArgumentError">
+<em class="property"><span class="pre">exception</span> </em><span class="sig-name descname"><span class="pre">ArgumentError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">argument</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">message</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/extern/argparse.html#ArgumentError"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pds4_tools.extern.argparse.ArgumentError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+<p>An error from creating or using an argument (optional or positional).</p>
+<p>The string value of this exception is the message, augmented with
+information about the argument that caused it.</p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="pds4_tools.extern.argparse.ArgumentTypeError">
+<em class="property"><span class="pre">exception</span> </em><span class="sig-name descname"><span class="pre">ArgumentTypeError</span></span><a class="reference internal" href="_modules/pds4_tools/extern/argparse.html#ArgumentTypeError"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pds4_tools.extern.argparse.ArgumentTypeError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+<p>An error from trying to convert a command line string to a type.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pds4_tools.extern.argparse.FileType">
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">FileType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'r'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bufsize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/extern/argparse.html#FileType"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pds4_tools.extern.argparse.FileType" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Factory for creating file object types</p>
+<p>Instances of FileType are typically passed as type= arguments to the
+ArgumentParser add_argument() method.</p>
+<dl class="simple">
+<dt>Keyword Arguments:</dt><dd><ul class="simple">
+<li><dl class="simple">
+<dt>mode – A string indicating how the file is to be opened. Accepts the</dt><dd><p>same values as the builtin open() function.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>bufsize – The file’s desired buffer size. Accepts the same values as</dt><dd><p>the builtin open() function.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pds4_tools.extern.argparse.HelpFormatter">
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">HelpFormatter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prog</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indent_increment</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_help_position</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">24</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">width</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/extern/argparse.html#HelpFormatter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pds4_tools.extern.argparse.HelpFormatter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Formatter for generating usage messages and argument help strings.</p>
+<p>Only the name of this class is considered a public API. All the methods
+provided by the class are considered an implementation detail.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pds4_tools.extern.argparse.HelpFormatter.start_section">
+<span class="sig-name descname"><span class="pre">start_section</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">heading</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/extern/argparse.html#HelpFormatter.start_section"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pds4_tools.extern.argparse.HelpFormatter.start_section" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pds4_tools.extern.argparse.HelpFormatter.end_section">
+<span class="sig-name descname"><span class="pre">end_section</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/extern/argparse.html#HelpFormatter.end_section"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pds4_tools.extern.argparse.HelpFormatter.end_section" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pds4_tools.extern.argparse.HelpFormatter.add_text">
+<span class="sig-name descname"><span class="pre">add_text</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/extern/argparse.html#HelpFormatter.add_text"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pds4_tools.extern.argparse.HelpFormatter.add_text" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pds4_tools.extern.argparse.HelpFormatter.add_usage">
+<span class="sig-name descname"><span class="pre">add_usage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">usage</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">actions</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">groups</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prefix</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/extern/argparse.html#HelpFormatter.add_usage"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pds4_tools.extern.argparse.HelpFormatter.add_usage" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pds4_tools.extern.argparse.HelpFormatter.add_argument">
+<span class="sig-name descname"><span class="pre">add_argument</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">action</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/extern/argparse.html#HelpFormatter.add_argument"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pds4_tools.extern.argparse.HelpFormatter.add_argument" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pds4_tools.extern.argparse.HelpFormatter.add_arguments">
+<span class="sig-name descname"><span class="pre">add_arguments</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">actions</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/extern/argparse.html#HelpFormatter.add_arguments"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pds4_tools.extern.argparse.HelpFormatter.add_arguments" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pds4_tools.extern.argparse.HelpFormatter.format_help">
+<span class="sig-name descname"><span class="pre">format_help</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/extern/argparse.html#HelpFormatter.format_help"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pds4_tools.extern.argparse.HelpFormatter.format_help" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pds4_tools.extern.argparse.ArgumentDefaultsHelpFormatter">
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">ArgumentDefaultsHelpFormatter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prog</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indent_increment</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_help_position</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">24</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">width</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/extern/argparse.html#ArgumentDefaultsHelpFormatter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pds4_tools.extern.argparse.ArgumentDefaultsHelpFormatter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pds4_tools.extern.argparse.HelpFormatter" title="pds4_tools.extern.argparse.HelpFormatter"><code class="xref py py-class docutils literal notranslate"><span class="pre">pds4_tools.extern.argparse.HelpFormatter</span></code></a></p>
+<p>Help message formatter which adds default values to argument help.</p>
+<p>Only the name of this class is considered a public API. All the methods
+provided by the class are considered an implementation detail.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pds4_tools.extern.argparse.RawDescriptionHelpFormatter">
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">RawDescriptionHelpFormatter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prog</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indent_increment</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_help_position</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">24</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">width</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/extern/argparse.html#RawDescriptionHelpFormatter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pds4_tools.extern.argparse.RawDescriptionHelpFormatter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pds4_tools.extern.argparse.HelpFormatter" title="pds4_tools.extern.argparse.HelpFormatter"><code class="xref py py-class docutils literal notranslate"><span class="pre">pds4_tools.extern.argparse.HelpFormatter</span></code></a></p>
+<p>Help message formatter which retains any formatting in descriptions.</p>
+<p>Only the name of this class is considered a public API. All the methods
+provided by the class are considered an implementation detail.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pds4_tools.extern.argparse.RawTextHelpFormatter">
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">RawTextHelpFormatter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prog</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indent_increment</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_help_position</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">24</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">width</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/extern/argparse.html#RawTextHelpFormatter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pds4_tools.extern.argparse.RawTextHelpFormatter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pds4_tools.extern.argparse.RawDescriptionHelpFormatter" title="pds4_tools.extern.argparse.RawDescriptionHelpFormatter"><code class="xref py py-class docutils literal notranslate"><span class="pre">pds4_tools.extern.argparse.RawDescriptionHelpFormatter</span></code></a></p>
+<p>Help message formatter which retains formatting of all help text.</p>
+<p>Only the name of this class is considered a public API. All the methods
+provided by the class are considered an implementation detail.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pds4_tools.extern.argparse.Namespace">
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">Namespace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/extern/argparse.html#Namespace"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pds4_tools.extern.argparse.Namespace" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pds4_tools.extern.argparse._AttributeHolder</span></code></p>
+<p>Simple object for storing attributes.</p>
+<p>Implements equality by attribute names and values, and provides a simple
+string representation.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pds4_tools.extern.argparse.Action">
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">Action</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">option_strings</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dest</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nargs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">const</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">choices</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">required</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">help</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metavar</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/extern/argparse.html#Action"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pds4_tools.extern.argparse.Action" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pds4_tools.extern.argparse._AttributeHolder</span></code></p>
+<p>Information about how to convert command line strings to Python structures.</p>
+<p>Action structures are used by an ArgumentParser to represent the information
+needed to parse a single argument from one or more strings from the
+command line. The keyword arguments to the Action constructor are also
+all attributes of Action instances.</p>
+<p>Keyword Arguments:</p>
+<blockquote>
+<div><ul>
+<li><dl class="simple">
+<dt>option_strings – A list of command-line option strings which</dt><dd><p>should be associated with this action.</p>
+</dd>
+</dl>
+</li>
+<li><p>dest – The name of the attribute to hold the created object(s)</p></li>
+<li><dl>
+<dt>nargs – The number of command-line arguments that should be</dt><dd><p>consumed. By default, one argument will be consumed and a single
+value will be produced.  Other values include:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span> <span class="n">N</span> <span class="p">(</span><span class="n">an</span> <span class="n">integer</span><span class="p">)</span> <span class="n">consumes</span> <span class="n">N</span> <span class="n">arguments</span> <span class="p">(</span><span class="ow">and</span> <span class="n">produces</span> <span class="n">a</span> <span class="nb">list</span><span class="p">)</span>
+<span class="o">-</span> <span class="s1">&#39;?&#39;</span> <span class="n">consumes</span> <span class="n">zero</span> <span class="ow">or</span> <span class="n">one</span> <span class="n">arguments</span>
+<span class="o">-</span> <span class="s1">&#39;*&#39;</span> <span class="n">consumes</span> <span class="n">zero</span> <span class="ow">or</span> <span class="n">more</span> <span class="n">arguments</span> <span class="p">(</span><span class="ow">and</span> <span class="n">produces</span> <span class="n">a</span> <span class="nb">list</span><span class="p">)</span>
+<span class="o">-</span> <span class="s1">&#39;+&#39;</span> <span class="n">consumes</span> <span class="n">one</span> <span class="ow">or</span> <span class="n">more</span> <span class="n">arguments</span> <span class="p">(</span><span class="ow">and</span> <span class="n">produces</span> <span class="n">a</span> <span class="nb">list</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Note that the difference between the default and nargs=1 is that
+with the default, a single value will be produced, while with
+nargs=1, a list containing a single value will be produced.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>const – The value to be produced if the option is specified and the</dt><dd><p>option uses an action that takes no values.</p>
+</dd>
+</dl>
+</li>
+<li><p>default – The value to be produced if the option is not specified.</p></li>
+<li><dl class="simple">
+<dt>type – The type which the command-line arguments should be converted</dt><dd><p>to, should be one of ‘string’, ‘int’, ‘float’, ‘complex’ or a
+callable object that accepts a single string argument. If None,
+‘string’ is assumed.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>choices – A container of values that should be allowed. If not None,</dt><dd><p>after a command-line argument has been converted to the appropriate
+type, an exception will be raised if it is not a member of this
+collection.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>required – True if the action must always be specified at the</dt><dd><p>command line. This is only meaningful for optional command-line
+arguments.</p>
+</dd>
+</dl>
+</li>
+<li><p>help – The help string describing the argument.</p></li>
+<li><dl class="simple">
+<dt>metavar – The name to be used for the option’s argument with the</dt><dd><p>help string. If None, the ‘dest’ value will be used as the name.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</div></blockquote>
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="pds4_tools.extern.appdirs.html"
+                        title="previous chapter">pds4_tools.extern.appdirs module</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="pds4_tools.extern.cached_property.html"
+                        title="next chapter">pds4_tools.extern.cached_property module</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/pds4_tools.extern.argparse.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="pds4_tools.extern.cached_property.html" title="pds4_tools.extern.cached_property module"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="pds4_tools.extern.appdirs.html" title="pds4_tools.extern.appdirs module"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">PDS4 Python Tools 1.3 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="pds4_tools.extern.html" >pds4_tools.extern package</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">pds4_tools.extern.argparse module</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2015 - 2021, University of Maryland.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.2.0.
+    </div>
+  </body>
+</html>

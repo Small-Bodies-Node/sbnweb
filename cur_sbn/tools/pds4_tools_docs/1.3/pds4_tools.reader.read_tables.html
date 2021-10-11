@@ -1,0 +1,289 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>pds4_tools.reader.read_tables module &#8212; PDS4 Python Tools 1.3 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinxdoc.css" />
+    <link rel="stylesheet" type="text/css" href="_static/css/custom.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="pds4_tools.reader.read_headers module" href="pds4_tools.reader.read_headers.html" />
+    <link rel="prev" title="pds4_tools.reader.read_arrays module" href="pds4_tools.reader.read_arrays.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="pds4_tools.reader.read_headers.html" title="pds4_tools.reader.read_headers module"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="pds4_tools.reader.read_arrays.html" title="pds4_tools.reader.read_arrays module"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">PDS4 Python Tools 1.3 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="pds4_tools.reader.html" accesskey="U">pds4_tools.reader package</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">pds4_tools.reader.read_tables module</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="pds4-tools-reader-read-tables-module">
+<h1>pds4_tools.reader.read_tables module<a class="headerlink" href="#pds4-tools-reader-read-tables-module" title="Permalink to this headline">¶</a></h1>
+<section id="functions">
+<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pds4_tools.reader.read_tables.read_table" title="pds4_tools.reader.read_tables.read_table"><code class="xref py py-obj docutils literal notranslate"><span class="pre">read_table</span></code></a>(full_label, table_label, ...[, ...])</p></td>
+<td><p>Create the <a class="reference internal" href="pds4_tools.reader.table_objects.html#pds4_tools.reader.table_objects.TableStructure" title="pds4_tools.reader.table_objects.TableStructure"><code class="xref any py py-class docutils literal notranslate"><span class="pre">TableStructure</span></code></a>, containing label, data and meta data for a PDS4 Table from a file.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pds4_tools.reader.read_tables.read_table_data" title="pds4_tools.reader.read_tables.read_table_data"><code class="xref py py-obj docutils literal notranslate"><span class="pre">read_table_data</span></code></a>(table_structure, no_scale, ...)</p></td>
+<td><p>Reads and properly formats the data for a single PDS4 table structure, modifies <em>table_structure</em> to contain all extracted fields for said table.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pds4_tools.reader.read_tables.new_table" title="pds4_tools.reader.read_tables.new_table"><code class="xref py py-obj docutils literal notranslate"><span class="pre">new_table</span></code></a>(fields[, no_scale, ...])</p></td>
+<td><p>Create a <a class="reference internal" href="pds4_tools.reader.table_objects.html#pds4_tools.reader.table_objects.TableStructure" title="pds4_tools.reader.table_objects.TableStructure"><code class="xref any py py-class docutils literal notranslate"><span class="pre">TableStructure</span></code></a> from PDS-compliant data or meta data.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pds4_tools.reader.read_tables.table_data_size_check" title="pds4_tools.reader.read_tables.table_data_size_check"><code class="xref py py-obj docutils literal notranslate"><span class="pre">table_data_size_check</span></code></a>(table_structure[, quiet])</p></td>
+<td><p>Checks, and warns, if table is estimated to have a large amount of data.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="details">
+<h2>Details<a class="headerlink" href="#details" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="pds4_tools.reader.read_tables.read_table">
+<span class="sig-name descname"><span class="pre">read_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">full_label</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">table_label</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lazy_load</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">no_scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">decode_strings</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/read_tables.html#read_table"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pds4_tools.reader.read_tables.read_table" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create the <a class="reference internal" href="pds4_tools.reader.table_objects.html#pds4_tools.reader.table_objects.TableStructure" title="pds4_tools.reader.table_objects.TableStructure"><code class="xref any py py-class docutils literal notranslate"><span class="pre">TableStructure</span></code></a>, containing label, data and meta data for a PDS4 Table from a file.</p>
+<p>Used for all forms of PDS4 Tables (i.e., Table_Character, Table_Binary and Table_Delimited).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>full_label</strong><span class="classifier">Label</span></dt><dd><p>The entire label for a PDS4 product, from which <em>table_label</em> originated.</p>
+</dd>
+<dt><strong>table_label</strong><span class="classifier">Label</span></dt><dd><p>Portion of label that defines the PDS4 table data structure.</p>
+</dd>
+<dt><strong>data_filename</strong><span class="classifier">str or unicode</span></dt><dd><p>Filename, including the full path, of the data file that contains the data for this table.</p>
+</dd>
+<dt><strong>lazy_load</strong><span class="classifier">bool, optional</span></dt><dd><p>If True, does not read-in the data of this table until the first attempt to access it.
+Defaults to False.</p>
+</dd>
+<dt><strong>no_scale</strong><span class="classifier">bool, optional</span></dt><dd><p>If True, returned data will not be adjusted according to the offset and scaling factor.
+Defaults to False.</p>
+</dd>
+<dt><strong>decode_strings</strong><span class="classifier">bool, optional</span></dt><dd><p>If True, strings data types contained in the returned data will be decoded to
+the <code class="docutils literal notranslate"><span class="pre">unicode</span></code> type in Python 2, and to the <code class="docutils literal notranslate"><span class="pre">str</span></code> type in Python 3. If False,
+leaves string types as byte strings. Defaults to False.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>TableStructure</dt><dd><p>An object representing the table; contains its label, data and meta data.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>TypeError</dt><dd><p>Raised if called on a non-table according to <em>table_label</em>.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pds4_tools.reader.read_tables.read_table_data">
+<span class="sig-name descname"><span class="pre">read_table_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">table_structure</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">no_scale</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">decode_strings</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">masked</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/read_tables.html#read_table_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pds4_tools.reader.read_tables.read_table_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reads and properly formats the data for a single PDS4 table structure, modifies <em>table_structure</em> to
+contain all extracted fields for said table.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>table_structure</strong><span class="classifier">TableStructure</span></dt><dd><p>The PDS4 Table data structure to which the table’s data fields should be added.  Should have been
+initialized via <a class="reference internal" href="pds4_tools.reader.table_objects.html#pds4_tools.reader.table_objects.TableStructure.from_file" title="pds4_tools.reader.table_objects.TableStructure.from_file"><code class="xref any py py-meth docutils literal notranslate"><span class="pre">TableStructure.from_file</span></code></a> method.</p>
+</dd>
+<dt><strong>no_scale</strong><span class="classifier">bool</span></dt><dd><p>Returned data will not be adjusted according to the offset and scaling factor.</p>
+</dd>
+<dt><strong>masked</strong><span class="classifier">bool</span></dt><dd><p>Returned data will have numeric Special_Constants masked.</p>
+</dd>
+<dt><strong>decode_strings</strong><span class="classifier">bool</span></dt><dd><p>If True, character data types contained in the returned data will be decoded to the <code class="docutils literal notranslate"><span class="pre">unicode</span></code> type
+in Python 2, and to the <code class="docutils literal notranslate"><span class="pre">str</span></code> type in Python 3. If False, leaves character types as byte strings.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>None</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pds4_tools.reader.read_tables.new_table">
+<span class="sig-name descname"><span class="pre">new_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fields</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">no_scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">decode_strings</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">masked</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">copy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">structure_kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/read_tables.html#new_table"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pds4_tools.reader.read_tables.new_table" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a <a class="reference internal" href="pds4_tools.reader.table_objects.html#pds4_tools.reader.table_objects.TableStructure" title="pds4_tools.reader.table_objects.TableStructure"><code class="xref any py py-class docutils literal notranslate"><span class="pre">TableStructure</span></code></a> from PDS-compliant data or meta data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>fields</strong><span class="classifier">list[PDS_ndarray, PDS_marray or Meta_Field]</span></dt><dd><p>A list of either fields with data, which each must contain a valid PDS4 meta_data attribute
+defining the field, or a list of valid Meta_Field’s. If input is data, the base data type will
+be taken from its actual dtype, rather than from the meta data it must still contain.</p>
+</dd>
+<dt><strong>no_scale</strong><span class="classifier">bool, optional</span></dt><dd><p>If True, and input is a list of fields with data, then the data will scaled according to the
+scaling_factor and value_offset meta data. If the <em>fields</em> is meta data only, then the output
+data type will be large enough to store the scaled values. If False, no scaling or data type
+conversions will be done. Defaults to False.</p>
+</dd>
+<dt><strong>decode_strings</strong><span class="classifier">bool, optional</span></dt><dd><p>If True, then fields containing character byte data will be converted to a dtype of unicode.
+If False, then for character data the obtained dtype will remain byte strings. Defaults to
+False.</p>
+</dd>
+<dt><strong>masked</strong><span class="classifier">bool or None, optional</span></dt><dd><p>If True, and input is a list of fields with data, then the data will retain any masked values and
+in additional have numeric Special_Constants values masked. If False, any masked values in the
+input fields will be unmasked and data assignments will not preserve masked values. If None,
+masked values in the input will be retained only if any are present. Defaults to None.</p>
+</dd>
+<dt><strong>copy: bool, optional</strong></dt><dd><p>If True, a copy of <em>fields</em> is made, ensuring that they do not get modified during processing.
+If False, then the fields may change if each is an array of data. In either case, the output data
+will not be a view. Defaults to True.</p>
+</dd>
+<dt><strong>structure_kwargs</strong><span class="classifier">dict, optional</span></dt><dd><p>Keywords that are passed directly to the <a class="reference internal" href="pds4_tools.reader.table_objects.html#pds4_tools.reader.table_objects.TableStructure" title="pds4_tools.reader.table_objects.TableStructure"><code class="xref any py py-class docutils literal notranslate"><span class="pre">TableStructure</span></code></a> constructor.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>TableStructure</dt><dd><p>An object representing the PDS4 table structure. The data will contain a structured array that
+can store values for <em>fields</em> (or does store it, if input is a list of fields with data). Other
+attributes may be specified via <em>structure_kwargs</em>.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>The data attribute will not be a view of the original <em>fields</em> (if they are data arrays), but rather
+a new array. However, the <em>fields</em> passed into this method may still be modified in-place to save
+memory, see <em>copy</em>. If <em>fields</em> originated from a single structured ndarray, then a method to get
+a view of the original data, if conditions are satisfied, is to also pass that single structured
+ndarray as a kwarg of the name``structure_data``.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pds4_tools.reader.read_tables.table_data_size_check">
+<span class="sig-name descname"><span class="pre">table_data_size_check</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">table_structure</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quiet</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/read_tables.html#table_data_size_check"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pds4_tools.reader.read_tables.table_data_size_check" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks, and warns, if table is estimated to have a large amount of data.</p>
+<p>This estimate is done from the meta-data only and excludes nested fields (fields inside groups fields)
+and repetitions. A more accurate meta-data only estimate could be obtained via <a class="reference internal" href="pds4_tools.reader.table_objects.html#pds4_tools.reader.table_objects.TableManifest" title="pds4_tools.reader.table_objects.TableManifest"><code class="xref any py py-class docutils literal notranslate"><span class="pre">TableManifest</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>table_structure</strong><span class="classifier">Structure</span></dt><dd><p>The table structure whose data to check for size.</p>
+</dd>
+<dt><strong>quiet</strong><span class="classifier">bool, optional</span></dt><dd><p>If True, does not output warning if table contains a large amount of data. Defaults to False.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>bool</dt><dd><p>True if the table structure exceeds pre-defined parameters for size of its data, False otherwise.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">pds4_tools.reader.read_tables module</a><ul>
+<li><a class="reference internal" href="#functions">Functions</a></li>
+<li><a class="reference internal" href="#details">Details</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="pds4_tools.reader.read_arrays.html"
+                        title="previous chapter">pds4_tools.reader.read_arrays module</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="pds4_tools.reader.read_headers.html"
+                        title="next chapter">pds4_tools.reader.read_headers module</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/pds4_tools.reader.read_tables.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="pds4_tools.reader.read_headers.html" title="pds4_tools.reader.read_headers module"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="pds4_tools.reader.read_arrays.html" title="pds4_tools.reader.read_arrays module"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">PDS4 Python Tools 1.3 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="pds4_tools.reader.html" >pds4_tools.reader package</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">pds4_tools.reader.read_tables module</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2015 - 2021, University of Maryland.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.2.0.
+    </div>
+  </body>
+</html>

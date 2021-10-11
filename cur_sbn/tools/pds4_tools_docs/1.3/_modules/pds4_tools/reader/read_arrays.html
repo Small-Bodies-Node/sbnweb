@@ -1,0 +1,402 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>pds4_tools.reader.read_arrays &#8212; PDS4 Python Tools 1.3 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinxdoc.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css" />
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">PDS4 Python Tools 1.3 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" accesskey="U">Module code</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">pds4_tools.reader.read_arrays</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Source code for pds4_tools.reader.read_arrays</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">absolute_import</span>
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">division</span>
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">print_function</span>
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">unicode_literals</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="kn">from</span> <span class="nn">.array_objects</span> <span class="kn">import</span> <span class="n">ArrayStructure</span><span class="p">,</span> <span class="n">Meta_ArrayStructure</span>
+<span class="kn">from</span> <span class="nn">.data</span> <span class="kn">import</span> <span class="n">PDS_array</span>
+<span class="kn">from</span> <span class="nn">.data_types</span> <span class="kn">import</span> <span class="p">(</span><span class="n">data_type_convert_array</span><span class="p">,</span> <span class="n">pds_to_numpy_type</span><span class="p">,</span> <span class="n">apply_scaling_and_value_offset</span><span class="p">,</span>
+                         <span class="n">mask_special_constants</span><span class="p">)</span>
+
+<span class="kn">from</span> <span class="nn">..utils.logging</span> <span class="kn">import</span> <span class="n">logger_init</span>
+<span class="kn">from</span> <span class="nn">..extern</span> <span class="kn">import</span> <span class="n">six</span>
+
+<span class="c1"># Initialize the logger</span>
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logger_init</span><span class="p">()</span>
+
+<span class="c1">#################################</span>
+
+
+<span class="k">def</span> <span class="nf">_read_array_byte_data</span><span class="p">(</span><span class="n">array_structure</span><span class="p">,</span> <span class="n">as_string</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">memmap</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Reads the byte data from the data file for a PDS4 Array.</span>
+
+<span class="sd">    Determines, from the structure&#39;s meta data, the relevant start and stop bytes in the data file prior to</span>
+<span class="sd">    reading.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    array_structure : ArrayStructure</span>
+<span class="sd">        The PDS4 Array data structure for which the byte data needs to be read. Should have been</span>
+<span class="sd">        initialized via `TableStructure.from_file` method, or contain the required meta data.</span>
+<span class="sd">    as_string : bool, optional</span>
+<span class="sd">        If True, the byte data is returned as a byte string (either ``str`` in Python 2, or ``bytes`` in</span>
+<span class="sd">        Python 3). If False, the byte data is an ndarray of dtype int8. Defaults to True.</span>
+<span class="sd">    memmap: bool, optional</span>
+<span class="sd">        If True, the byte data is memory mapped when *as_string* is False. Defaults to False.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    str, bytes, np.ndarray or np.memmap</span>
+<span class="sd">        The byte data for the table. Either ndarray or memmap of each byte with a dtype of int8,</span>
+<span class="sd">        or a byte string, depending on the input parameters.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">data_filename</span> <span class="o">=</span> <span class="n">array_structure</span><span class="o">.</span><span class="n">parent_filename</span>
+    <span class="n">meta_data</span> <span class="o">=</span> <span class="n">array_structure</span><span class="o">.</span><span class="n">meta_data</span>
+
+    <span class="n">num_elements</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">prod</span><span class="p">([</span><span class="n">axis_array</span><span class="p">[</span><span class="s1">&#39;elements&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">axis_array</span> <span class="ow">in</span> <span class="n">meta_data</span><span class="o">.</span><span class="n">get_axis_arrays</span><span class="p">()])</span>
+    <span class="n">data_type</span> <span class="o">=</span> <span class="n">meta_data</span><span class="o">.</span><span class="n">data_type</span><span class="p">()</span>
+    <span class="n">element_size</span> <span class="o">=</span> <span class="n">pds_to_numpy_type</span><span class="p">(</span><span class="n">data_type</span><span class="p">)</span><span class="o">.</span><span class="n">itemsize</span>
+
+    <span class="n">start_byte</span> <span class="o">=</span> <span class="n">meta_data</span><span class="p">[</span><span class="s1">&#39;offset&#39;</span><span class="p">]</span>
+    <span class="n">stop_byte</span> <span class="o">=</span> <span class="n">start_byte</span> <span class="o">+</span> <span class="n">num_elements</span> <span class="o">*</span> <span class="n">element_size</span>
+
+    <span class="n">num_int8_elements</span> <span class="o">=</span> <span class="n">stop_byte</span> <span class="o">-</span> <span class="n">start_byte</span>
+
+    <span class="c1"># Read byte data from file</span>
+    <span class="k">try</span><span class="p">:</span>
+
+        <span class="k">if</span> <span class="n">memmap</span><span class="p">:</span>
+
+            <span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">memmap</span><span class="p">(</span><span class="n">data_filename</span><span class="p">,</span> <span class="n">offset</span><span class="o">=</span><span class="n">start_byte</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;int8&#39;</span><span class="p">,</span>
+                             <span class="n">shape</span><span class="o">=</span><span class="n">num_int8_elements</span><span class="p">)</span>
+
+        <span class="k">else</span><span class="p">:</span>
+
+            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">data_filename</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file_handler</span><span class="p">:</span>
+                <span class="n">file_handler</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="n">start_byte</span><span class="p">)</span>
+
+                <span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fromfile</span><span class="p">(</span><span class="n">file_handler</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;int8&#39;</span><span class="p">,</span> <span class="n">count</span><span class="o">=</span><span class="n">num_int8_elements</span><span class="p">)</span>
+
+    <span class="k">except</span> <span class="ne">IOError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">six</span><span class="o">.</span><span class="n">raise_from</span><span class="p">(</span><span class="ne">IOError</span><span class="p">(</span><span class="s2">&quot;Unable to read data from file &#39;&quot;</span> <span class="o">+</span> <span class="n">data_filename</span> <span class="o">+</span>
+                                     <span class="s2">&quot;&#39; found in label - </span><span class="si">{0}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">e</span><span class="p">)),</span> <span class="kc">None</span><span class="p">)</span>
+
+    <span class="c1"># Convert to a byte string if requested</span>
+    <span class="k">if</span> <span class="n">as_string</span><span class="p">:</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">tostring</span><span class="p">()</span>
+
+    <span class="k">return</span> <span class="n">data</span>
+
+
+<span class="k">def</span> <span class="nf">_apply_bitmask</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">bit_mask_string</span><span class="p">,</span> <span class="n">special_constants</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Apply bitmask to *data*, modifying it in-place.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    data : array_like</span>
+<span class="sd">        Flat array-like integer data, byteswapped to be correct for endianness of current system if necessary</span>
+<span class="sd">    bit_mask_string : str or unicode</span>
+<span class="sd">        String of 1&#39;s and 0&#39;s, same length as number of bits in each *data* datum</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    None</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># Skip needlessly applying bit_mask if it&#39;s all 1&#39;s</span>
+    <span class="k">if</span> <span class="s1">&#39;0&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">bit_mask_string</span><span class="p">:</span>
+        <span class="k">return</span>
+
+    <span class="c1"># Convert bit mask to binary (python assumes the input is a string describing the integer in MSB format,</span>
+    <span class="c1"># which is what the PDS4 standard specifies.)</span>
+    <span class="n">bit_mask</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">bit_mask_string</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+
+    <span class="c1"># Mask Special_Constants values so that bit mask application does not affect them</span>
+    <span class="n">non_masked</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
+    <span class="k">if</span> <span class="n">special_constants</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+
+        <span class="n">masked_data</span> <span class="o">=</span> <span class="n">mask_special_constants</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">special_constants</span><span class="o">=</span><span class="n">special_constants</span><span class="p">)</span>
+        <span class="n">non_masked</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">masked_data</span><span class="o">.</span><span class="n">mask</span> <span class="o">==</span> <span class="kc">False</span><span class="p">)</span>
+
+        <span class="k">del</span> <span class="n">masked_data</span>
+
+    <span class="c1"># Apply bit mask to each datum</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">nditer</span><span class="p">(</span><span class="n">non_masked</span><span class="p">,</span> <span class="n">flags</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;zerosize_ok&#39;</span><span class="p">]):</span>
+        <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&amp;=</span> <span class="n">bit_mask</span>
+
+
+<div class="viewcode-block" id="new_array"><a class="viewcode-back" href="../../../pds4_tools.reader.read_arrays.html#pds4_tools.reader.read_arrays.new_array">[docs]</a><span class="k">def</span> <span class="nf">new_array</span><span class="p">(</span><span class="nb">input</span><span class="p">,</span> <span class="n">no_scale</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">no_bitmask</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">masked</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">structure_kwargs</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Create an `ArrayStructure` from PDS-compliant data or meta data.</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    The data attribute will not be a view of the original *input* (if it is a data array), but rather a new</span>
+<span class="sd">    array. However, the *input* passed into this method may still be modified in-place to save memory, see</span>
+<span class="sd">    *copy*. A method to get a view of the original data, if conditions are satisfied, is to also pass *input*</span>
+<span class="sd">    as a kwarg of the name ``structure_data``.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    input : PDS_ndarray, PDS_marray or Meta_ArrayStructure</span>
+<span class="sd">        Either an array containing the data, which must also have a valid PDS4 meta_data attribute</span>
+<span class="sd">        describing itself, or an instance of valid Meta_ArrayStructure. If input is data, the base data type</span>
+<span class="sd">        will be taken from its actual dtype, rather than from the meta data it must still contain.</span>
+<span class="sd">    no_scale : bool, optional</span>
+<span class="sd">        If False, and input is an array of data, then the data will scaled according to the scaling_factor</span>
+<span class="sd">        and value_offset meta data. If the *input* is meta data only, then the output data type will be</span>
+<span class="sd">        large enough to store the scaled values. If False, no scaling or data type conversions will be</span>
+<span class="sd">        done.</span>
+<span class="sd">    no_bitmask : bool, optional</span>
+<span class="sd">        If False, and input is an array of data, then the bitmask indicated in the meta data will be</span>
+<span class="sd">        applied. If True, the bitmask will not be used. Defaults to False.</span>
+<span class="sd">    masked : bool or None, optional</span>
+<span class="sd">        If True, and input is an array of data, then the data will retain any masked values and in</span>
+<span class="sd">        additional have numeric Special_Constants values masked. If False, any masked values in the input</span>
+<span class="sd">        array will be unmasked and data assignments will not preserve masked values. If None, masked</span>
+<span class="sd">        values in the input will be retained only if any are present.</span>
+<span class="sd">    copy: bool, optional</span>
+<span class="sd">        If True, a copy of *input* is made, ensuring that it does not get modified during processing.</span>
+<span class="sd">        If False, then the input may change if it is an array of data. In either case, the output data</span>
+<span class="sd">        will not be a view. Defaults to True.</span>
+<span class="sd">    structure_kwargs :  dict, optional</span>
+<span class="sd">        Keywords that are passed directly to the `ArrayStructure` constructor.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    ArrayStructure</span>
+<span class="sd">        An object representing the PDS4 array structure. The data attribute will contain an array that</span>
+<span class="sd">        can store *input* values (or does store it, if input is an array of data). Other attributes may</span>
+<span class="sd">        be specified via *structure_kwargs*.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># Determine and validate that input is a Meta_ArrayStructure, PDS_ndarray or PDS_marray</span>
+    <span class="n">input_is_array</span> <span class="o">=</span> <span class="n">PDS_array</span><span class="o">.</span><span class="n">isinstance</span><span class="p">(</span><span class="nb">input</span><span class="p">)</span>
+    <span class="n">input_is_meta_array</span> <span class="o">=</span> <span class="nb">isinstance</span><span class="p">(</span><span class="nb">input</span><span class="p">,</span> <span class="n">Meta_ArrayStructure</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="ow">not</span> <span class="n">input_is_array</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="ow">not</span> <span class="n">input_is_meta_array</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s1">&#39;Inputs must all be one of Meta_ArrayStructure, PDS_ndarray or PDS_marray.&#39;</span><span class="p">)</span>
+
+    <span class="c1"># Obtain basic meta data</span>
+    <span class="k">if</span> <span class="n">input_is_array</span><span class="p">:</span>
+        <span class="n">array</span> <span class="o">=</span> <span class="nb">input</span>
+        <span class="n">meta_data</span> <span class="o">=</span> <span class="nb">input</span><span class="o">.</span><span class="n">meta_data</span>
+
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">array</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="n">meta_data</span> <span class="o">=</span> <span class="nb">input</span>
+
+    <span class="n">special_constants</span> <span class="o">=</span> <span class="n">meta_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;Special_Constants&#39;</span><span class="p">)</span>
+    <span class="n">element_array</span> <span class="o">=</span> <span class="n">meta_data</span><span class="p">[</span><span class="s1">&#39;Element_Array&#39;</span><span class="p">]</span>
+    <span class="n">scale_kwargs</span> <span class="o">=</span> <span class="p">{}</span> <span class="k">if</span> <span class="n">no_scale</span> <span class="k">else</span> <span class="p">{</span><span class="s1">&#39;scaling_factor&#39;</span><span class="p">:</span> <span class="n">element_array</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;scaling_factor&#39;</span><span class="p">),</span>
+                                        <span class="s1">&#39;value_offset&#39;</span><span class="p">:</span> <span class="n">element_array</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;value_offset&#39;</span><span class="p">)}</span>
+
+    <span class="c1"># Obtain dtype (ensuring to scale it for future application of scaling and offset if necessary)</span>
+    <span class="n">dtype</span> <span class="o">=</span> <span class="n">pds_to_numpy_type</span><span class="p">(</span><span class="n">meta_data</span><span class="o">.</span><span class="n">data_type</span><span class="p">(),</span> <span class="n">data</span><span class="o">=</span><span class="n">array</span><span class="p">,</span> <span class="o">**</span><span class="n">scale_kwargs</span><span class="p">)</span>
+
+    <span class="c1"># Obtain shape</span>
+    <span class="n">array_shape</span> <span class="o">=</span> <span class="n">meta_data</span><span class="o">.</span><span class="n">dimensions</span><span class="p">()</span>
+
+    <span class="c1"># Decide what type of data array we will be using (i.e., masked or otherwise)</span>
+    <span class="k">if</span> <span class="n">masked</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">masked</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ma</span><span class="o">.</span><span class="n">is_masked</span><span class="p">(</span><span class="nb">input</span><span class="p">)</span>
+
+    <span class="n">array_type</span> <span class="o">=</span> <span class="n">PDS_array</span><span class="o">.</span><span class="n">get_array</span><span class="p">(</span><span class="n">masked</span><span class="o">=</span><span class="n">masked</span><span class="p">)</span>
+
+    <span class="c1"># Create the ArrayStructure</span>
+    <span class="n">array_structure</span> <span class="o">=</span> <span class="n">ArrayStructure</span><span class="p">(</span><span class="o">**</span><span class="n">structure_kwargs</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">array_structure</span><span class="o">.</span><span class="n">data_loaded</span><span class="p">:</span>
+
+        <span class="c1"># Ensure data array is of requested type if it was already supplied</span>
+        <span class="n">array_structure</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">array_structure</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="n">array_type</span><span class="p">)</span>
+
+    <span class="k">else</span><span class="p">:</span>
+
+        <span class="c1"># Create the structured data array, and assign a view of it as a PDS_array type</span>
+        <span class="n">array_structure</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">array_shape</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">)</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="n">array_type</span><span class="p">)</span>
+
+    <span class="c1"># For cases where input is PDS_array, we transfer their data into the new array</span>
+    <span class="k">if</span> <span class="n">input_is_array</span><span class="p">:</span>
+
+        <span class="n">array</span> <span class="o">=</span> <span class="nb">input</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span> <span class="k">if</span> <span class="n">copy</span> <span class="k">else</span> <span class="nb">input</span>
+
+        <span class="c1"># Apply the bit mask to extracted_data if necessary</span>
+        <span class="n">bit_mask</span> <span class="o">=</span> <span class="p">(</span><span class="n">meta_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;Object_Statistics&#39;</span><span class="p">)</span> <span class="ow">or</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;bit_mask&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="p">(</span><span class="ow">not</span> <span class="n">no_bitmask</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">bit_mask</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">):</span>
+            <span class="n">bit_mask_string</span> <span class="o">=</span> <span class="n">six</span><span class="o">.</span><span class="n">text_type</span><span class="p">(</span><span class="n">bit_mask</span><span class="p">)</span><span class="o">.</span><span class="n">zfill</span><span class="p">(</span><span class="n">array</span><span class="o">.</span><span class="n">dtype</span><span class="o">.</span><span class="n">itemsize</span> <span class="o">*</span> <span class="mi">8</span><span class="p">)</span>
+            <span class="n">_apply_bitmask</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="n">bit_mask_string</span><span class="p">,</span> <span class="n">special_constants</span><span class="o">=</span><span class="n">special_constants</span><span class="p">)</span>
+
+        <span class="c1"># Adjust data values to account for &#39;scaling_factor&#39; and &#39;value_offset&#39; (in-place if possible)</span>
+        <span class="c1"># (Note that this may change the data type to prevent overflow and thus increase memory usage.)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">no_scale</span><span class="p">:</span>
+            <span class="n">array</span> <span class="o">=</span> <span class="n">apply_scaling_and_value_offset</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="n">special_constants</span><span class="o">=</span><span class="n">special_constants</span><span class="p">,</span> <span class="o">**</span><span class="n">scale_kwargs</span><span class="p">)</span>
+
+        <span class="c1"># Mask Special_Constants in output if requested</span>
+        <span class="k">if</span> <span class="n">masked</span><span class="p">:</span>
+            <span class="n">array</span> <span class="o">=</span> <span class="n">mask_special_constants</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="n">special_constants</span><span class="o">=</span><span class="n">special_constants</span><span class="p">)</span>
+
+        <span class="c1"># Reshape array as necessary</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">array_shape</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">array</span> <span class="o">=</span> <span class="n">array</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">array_shape</span><span class="p">)</span>
+
+        <span class="c1"># Assign data, and ensure data array is of requested type if it was already supplied</span>
+        <span class="n">array_structure</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">array</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="n">array_type</span><span class="p">)</span>
+
+        <span class="c1"># Set correct fill value if our data is masked (necessary only on NumPy &lt; v1.13)</span>
+        <span class="k">if</span> <span class="n">masked</span> <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ma</span><span class="o">.</span><span class="n">MaskedArray</span><span class="p">):</span>
+            <span class="n">array_structure</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">set_fill_value</span><span class="p">(</span><span class="n">array</span><span class="o">.</span><span class="n">fill_value</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">array_structure</span></div>
+
+
+<div class="viewcode-block" id="read_array_data"><a class="viewcode-back" href="../../../pds4_tools.reader.read_arrays.html#pds4_tools.reader.read_arrays.read_array_data">[docs]</a><span class="k">def</span> <span class="nf">read_array_data</span><span class="p">(</span><span class="n">array_structure</span><span class="p">,</span> <span class="n">no_scale</span><span class="p">,</span> <span class="n">masked</span><span class="p">,</span> <span class="n">memmap</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Reads and properly formats the data for a single PDS4 array structure, modifies *array_structure* to</span>
+<span class="sd">    contain all extracted fields for said table.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    array_structure : ArrayStructure</span>
+<span class="sd">        The PDS4 Array data structure to which the data should be added.</span>
+<span class="sd">    no_scale : bool</span>
+<span class="sd">        Returned data will not be adjusted according to the offset and scaling factor.</span>
+<span class="sd">    masked : bool</span>
+<span class="sd">        Returned data will have numeric Special_Constants masked.</span>
+<span class="sd">    memmap : bool, optional</span>
+<span class="sd">        If True, extracted data is memory mapped. Only guaranteed for unscaled data or for *no_scale*;</span>
+<span class="sd">        otherwise returned data maybe a copy. Defaults to False.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    None</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># Obtain basic meta data</span>
+    <span class="n">meta_data</span> <span class="o">=</span> <span class="n">array_structure</span><span class="o">.</span><span class="n">meta_data</span>
+    <span class="n">data_type</span> <span class="o">=</span> <span class="n">meta_data</span><span class="o">.</span><span class="n">data_type</span><span class="p">()</span>
+
+    <span class="c1"># Read the data in, and transform it to the necessary data type</span>
+    <span class="n">extracted_data</span> <span class="o">=</span> <span class="n">_read_array_byte_data</span><span class="p">(</span><span class="n">array_structure</span><span class="p">,</span> <span class="n">as_string</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">memmap</span><span class="o">=</span><span class="n">memmap</span><span class="p">)</span>
+    <span class="n">extracted_data</span> <span class="o">=</span> <span class="n">data_type_convert_array</span><span class="p">(</span><span class="n">data_type</span><span class="p">,</span> <span class="n">extracted_data</span><span class="p">)</span>
+
+    <span class="c1"># Merge data and meta_data into a PDS_ndarray</span>
+    <span class="n">extracted_data</span> <span class="o">=</span> <span class="n">PDS_array</span><span class="p">(</span><span class="n">extracted_data</span><span class="p">,</span> <span class="n">meta_data</span><span class="p">)</span>
+
+    <span class="c1"># Finish processing (scale and applying bit mask), then set obtained data</span>
+    <span class="n">array_structure</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">new_array</span><span class="p">(</span><span class="n">extracted_data</span><span class="p">,</span> <span class="n">no_scale</span><span class="o">=</span><span class="n">no_scale</span><span class="p">,</span> <span class="n">no_bitmask</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                                     <span class="n">masked</span><span class="o">=</span><span class="n">masked</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">data</span></div>
+
+
+<div class="viewcode-block" id="read_array"><a class="viewcode-back" href="../../../pds4_tools.reader.read_arrays.html#pds4_tools.reader.read_arrays.read_array">[docs]</a><span class="k">def</span> <span class="nf">read_array</span><span class="p">(</span><span class="n">full_label</span><span class="p">,</span> <span class="n">array_label</span><span class="p">,</span> <span class="n">data_filename</span><span class="p">,</span> <span class="n">lazy_load</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">no_scale</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Create the `ArrayStructure`, containing label, data and meta data for a PDS4 Array from a file.</span>
+
+<span class="sd">    Used for all forms of PDS4 Arrays (e.g., Array, Array_2D_Image, Array_3D_Spectrum, etc).</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    full_label : Label</span>
+<span class="sd">        The entire label for a PDS4 product, from which *array_label* originated.</span>
+<span class="sd">    array_label : Label</span>
+<span class="sd">        Portion of label that defines the PDS4 array data structure.</span>
+<span class="sd">    data_filename : str or unicode</span>
+<span class="sd">        Filename, including the full path, of the data file that contains the data for this array.</span>
+<span class="sd">    lazy_load : bool, optional</span>
+<span class="sd">        If True, does not read-in the data of this array until the first attempt to access it.</span>
+<span class="sd">        Defaults to False.</span>
+<span class="sd">    no_scale : bool, optional</span>
+<span class="sd">        If True, returned data will not be adjusted according to the offset and scaling factor.</span>
+<span class="sd">        Defaults to False.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    ArrayStructure</span>
+<span class="sd">        An object representing the array; contains its label, data and meta data</span>
+
+<span class="sd">    Raises</span>
+<span class="sd">    ------</span>
+<span class="sd">    TypeError</span>
+<span class="sd">        Raised if called on a non-array according to *array_label*.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># Skip over data structure if its not actually an Array</span>
+    <span class="k">if</span> <span class="s1">&#39;Array&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">array_label</span><span class="o">.</span><span class="n">tag</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s1">&#39;Attempted to read_array() on a non-array: &#39;</span> <span class="o">+</span> <span class="n">array_label</span><span class="o">.</span><span class="n">tag</span><span class="p">)</span>
+
+    <span class="c1"># Create the data structure for this array</span>
+    <span class="n">array_structure</span> <span class="o">=</span> <span class="n">ArrayStructure</span><span class="o">.</span><span class="n">from_file</span><span class="p">(</span><span class="n">data_filename</span><span class="p">,</span> <span class="n">array_label</span><span class="p">,</span> <span class="n">full_label</span><span class="p">,</span>
+                                               <span class="n">lazy_load</span><span class="o">=</span><span class="n">lazy_load</span><span class="p">,</span> <span class="n">no_scale</span><span class="o">=</span><span class="n">no_scale</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">array_structure</span></div>
+</pre></div>
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">PDS4 Python Tools 1.3 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">pds4_tools.reader.read_arrays</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2015 - 2021, University of Maryland.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.2.0.
+    </div>
+  </body>
+</html>

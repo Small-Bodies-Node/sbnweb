@@ -21,7 +21,7 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 <!-- ************************************************** You may begin editing! ************************************************** -->
 <h1>Data Release Schedule</h1>
 
-<p>The Plantary Data System now maintains a unified <a href="https://pds.nasa.gov/datasearch/subscription-service/data-release-calendar.shtml">PDS Data Release Calendar</a> for <em>missions</em>. That calendar does not track non-mission releases.</p>
+<p>The Planetary Data System now maintains a unified <a href="https://pds.nasa.gov/datasearch/subscription-service/data-release-calendar.shtml">PDS Data Release Calendar</a> for <em>missions</em>. That calendar does not track non-mission releases.</p>
 
 <p>This schedule is posted to show what non-mission data we expect to provide to the public in the <em>near future</em>. The unlinked date in the last column is a rough estimation of the data release (data however are expected to be <em>delivered</em> to SBN several months earlier so that they can be reviewed, lien-resolved, etc before release). After the release, we will link to the data from this page <strong><em>for up to 6 months after release</em></strong>. You can always find links to <em>all of the released data</em> from the &quot;Data Archives&quot; menu above.</p>
 
@@ -73,23 +73,23 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 <!-- ************************************************************************ Ground - Asteroid ************************************************************************ -->
 <tr class="odd">
 <td rowspan="4"><a href="/data_sb/missions/ground.shtml">Ground based data</a> and R&amp;A<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em>Asteroid data</em></td>
-<td>OSIRIS-REx Mt. Bigelow Ground Based Bennu Observations</td>
-<td><a href="https://sbn.psi.edu/pds/resource/orexlc.html">released Sep 2020</a></td>
+<td>Asteroid LIghtcurve Database (LCDB) V4.0 </td>
+<td><a href="https://sbn.psi.edu/pds/resource/lc.html">released September 2021</a></td>
 </tr>
 
 <tr class="odd">
-<td>Hendrix IUE asteroid reflectance spectra</td>
-<td><a href="https://sbn.psi.edu/pds/resource/iuespec.html">released Sep 2020</a></td>
+<td>Asteroid LIghtcurve Data Exchange Format (ALCDEF) Database V1.0</td>
+<td><a href="https://sbn.psi.edu/pds/resource/alcdef.html">released September 2021</a></td>
 </tr>
 
 <tr class="odd">
-<td>Roberts Eros Ponds Catalog V1.0</td>
-<td><a href="https://sbn.psi.edu/pds/resource/erosponds.html">released Feb 2020</a></td>
+<td>Gartrelle et al. IRTF Asteroid Spectra V1.0 </td>
+<td><a href="https://sbn.psi.edu/pds/resource/girtfspec.html">released February 2021</a></td>
 </tr>
 
 <tr class="odd">
-<td>Radar shape models of asteroids compiled by Lawrence V1.0</td>
-<td><a href="https://sbn.psi.edu/pds/resource/jplradarshape.html">released Mar 2020</a></td>
+<td>Fieber-Beyer IRTF Mainbelt Asteroid Spectra V2.0 </td>
+<td><a href="https://sbn.psi.edu/pds/resource/fbirtfspec.html">released Jan 2021</a></td>
 </tr>
 
 <!-- ************************************************************************ Ground - Satellite ************************************************************************ -->

@@ -22,6 +22,7 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 <!--
 ===========================================================================
 EDIT HISTORY:
++ 2021-10-14 EMW	added Spitzer Spectro of Comets under Spectra
 + 2021-07-30 EMW	replaced/added Rosetta RPCICA datasets under particle; crude sort (alpha on DSID)
 + 2021-06-22 EMW	NH-KEM1 ver updates
 + 2021-03-05 EMW	updated KPNO MOSAIC DI encounter and McDonald Borrelly data to PDS4
@@ -1307,8 +1308,8 @@ EDIT HISTORY:
 <li><a href="/holdings/pds4-gbo-c2012_s1_ison:hfosc_solar-analog-v1.0/SUPPORT/dataset.shtml">Comet ISON 2014 Solar Analog Spectroscopy Collection</a><code>urn:nasa:pds:gbo-c2012_s1_ison:hfosc_solar-analog::1.0</code></li>
 <li><a href="/holdings/gio-c-nms-4-halley-v1.0/dataset.shtml">Giotto Neutral Mass Spectrometer Density Profiles of Comet Halley</a></li><!-- GIO-C-NMS-4-HALLEY-V1.0 -->
 
-
- </ul>
+<li><a href="/holdings/pds4-spitzer:spitzer-spec-comet-v1.0/SUPPORT/dataset.shtml">Spitzer Space Telescope Spectroscopy of Comets</a> <code>urn:nasa:pds:spitzer:spitzer-spec-comet::1.0</code></li>
+</ul>
 
 <!-- Type Data ======================================================== -->
 <a name="spice"></a>

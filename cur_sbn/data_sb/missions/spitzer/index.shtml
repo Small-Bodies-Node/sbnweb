@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<title>SBN Mission Support: Spitzer Space Telescope</title>
+
+<!-- 
+########################
+ALL of the head, style links, header and menu code is in the include. Edit that file with extreme care!!
+########################
+ -->
+<!--#include virtual="/css-n-includes/incl_top.inc"-->
+
+<!-- ################################################ LEFT SIDEBAR ########################################## -->
+<!--#include virtual="/css-n-includes/incl_left-side.inc"-->
+
+<!-- ################################################ RIGHT SIDEBAR ########################################## -->
+<div id="rightcol">
+<div class="sidebarSection">
+<h2>Mission Websites</h2>
+<p>Here we list links to the primary mission website as well as pages about the mission on other sites such as the NSSDC, NASA portal, etc.</p>
+<ul>
+<li>Mission: <a href="https://www.spitzer.caltech.edu/" onclick="this.target='_blank'">Spitzer</a></li>
+<li>NSSDC: <a href="https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2003-038A" onclick="this.target='_blank'">Spitzer</a></li>
+<li>NASA: <a href="https://www.nasa.gov/mission_pages/spitzer/main/index.html" onclick="this.target='_blank'">Spitzer</a></li>
+</ul>
+</div><!-- end class sidebarSection -->
+</div><!-- end id rightcol -->
+<!-- ################################################ MAIN ################################################## -->
+<div id="centercol">
+<a name="mainContent"></a>
+<!-- ************************************************** You may begin editing! ************************************************** -->
+<!--
+===========================================================================
+EDIT HISTORY:
++ 2021-10-14 EMW	duplicated from HST, edited for Spitzer, added dataset
+
+===========================================================================
+-->
+
+<!-- Mission Title ====================================================== -->
+<h1>Spitzer Space Telescope</h1>
+
+<!-- Mission Description ================================================ -->
+<p>The SBN has a few datasets containing data taken by Spitzer which we list here. The majority of small bodies data is archived at the <a href="https://irsa.ipac.caltech.edu/Missions/spitzer.html">NASA/IPAC Infrared Science Archive</a>. A <a href="/data_other/Spitzer.shtml">catalogue of small bodies</a> has been generated to assist users in finding that data.</p>
+
+<!-- Pointer to project web site ======================================== -->
+<p></p>
+
+<!-- SBN Role =========================================================== -->
+<!-- <p>???</p> -->
+<!-- lists from psi page =========================================================== -->
+<h2>Datasets</h2>
+<ul>
+<li><a href="/holdings/pds4-spitzer:spitzer-spec-comet-v1.0/SUPPORT/dataset.shtml">Spitzer Space Telescope Spectroscopy of Comets</a> <code>urn:nasa:pds:spitzer:spitzer-spec-comet::1.0</code></li>
+</ul>
+
+<h3>Related Datasets</h3>
+<p>Use the <a href="https://sbnapps.psi.edu/ferret/">Small Bodies Data Ferret</a> to find other datasets for this mission/target.</p>
+
+<!-- ************************************************** End editing! ************************************************** -->
+<!--#include virtual="/css-n-includes/incl_bottom.inc"-->
+<br />Last updated: <!--#config timefmt="%A %B %d, %Y"--><!--#echo var="LAST_MODIFIED" --></div><!-- close id whotext -->
+</div><!-- close id footer -->
+</div><!-- end id footwrap -->
+</div><!-- close wrapper -->
+</body>
+</html>

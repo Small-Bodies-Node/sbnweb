@@ -20,16 +20,20 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 <a name="mainContent"></a>
 <!-- ************************************************** You may begin editing! ************************************************** -->
 <h2>Sublimation of Ices</h2>
-<table class="important">
+
+<!-- downtime notice taken down 4 Nov -->
+<!-- <table class="important">
 <tr>
 <td><h1>DOWNTIME ANNOUNCEMENT</h1>
 <h3>June 2021: The online ice sublimation tools are offline until further notice.
 <br />Thank you for your patience.</h3>
 </td>
 </tr>
-</table>
+</table> -->
 
 <p>This page, originally developed by Mike A'Hearn, provides a simple tool to calculate the sublimation of ices under various circumstances. The calculations are all based on the methods described by Cowan and A'Hearn (1979 <i> Moon and Planets</i> <b>21</b>, 155-171), which in turn are based on earlier work by Delsemme and others as referenced in that paper. The calculations have not been substantially altered from the original publication and but updated vapor pressures and latent heats have been used. These changes to the input parameters lead to only small changes in the resultant sublimation rates. We note, as pointed out to us by W. Huebner and D. Boice, that our use of empirical results for heat of sublimation and vapor pressure leads our result to be inconsistent with the Clausius-Clapeyron equation, but this has negligible effect on the results for most (but not all) physical situations. These pages are posted largely as a convenience for the people who ask us for various results. Results are available for pure water, pure CO, pure CO<sub>2</sub>.</p>
+
+<p><a href="https://ice-sublimation-tool.astro.umd.edu/">Access the tool</a></p>
 
 
 <h3>Normal Surfaces and Isothermal Spheres</h3>

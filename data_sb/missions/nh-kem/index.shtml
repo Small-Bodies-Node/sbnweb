@@ -1,0 +1,172 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<title>SBN Mission Support: New Horizons Kuiper Belt Extended Mission</title>
+
+<!-- 
+########################
+ALL of the head, style links, header and menu code is in the include. Edit that file with extreme care!!
+########################
+ -->
+<!--#include virtual="/css-n-includes/incl_top.inc"-->
+
+<!-- ################################################ LEFT SIDEBAR ########################################## -->
+<!--#include virtual="/css-n-includes/incl_left-side.inc"-->
+
+<!-- ################################################ RIGHT SIDEBAR ########################################## -->
+<div id="rightcol">
+<div class="sidebarSection">
+<h2>Mission Websites</h2>
+<p>Here we list links to the primary mission website as well as pages about the mission on other sites such as the NSSDC, NASA portal, etc.</p>
+<ul>
+<li>Mission: <a href="http://pluto.jhuapl.edu/" onclick="this.target='_blank'">New Horizons</a></li>
+<li>NSSDC: <a href="https://nssdc.gsfc.nasa.gov/nmc/spacecraftDisplay.do?id=2006-001A" onclick="this.target='_blank'">New Horizons</a></li>
+<li>NASA: <a href="https://www.nasa.gov/newhorizons/" onclick="this.target='_blank'">New Horizons</a></li>
+<li>SSE: <a href="https://solarsystem.nasa.gov/missions/new-horizons/in-depth/" onclick="this.target='_blank'">New Horizons</a></li>
+</ul>
+</div>
+<!-- end class sidebarSection -->
+</div>
+<!-- end id rightcol -->
+<!-- ################################################ MAIN ################################################## -->
+<div id="centercol">
+<a name="mainContent"></a>
+<!-- ************************************************** You may begin editing! ************************************************** -->
+<!--
+===========================================================================
+EDIT HISTORY:
++ 2021-06-22 EMW	added v4 of ALICE, LEISA, LORRI, MVIC, PEPSSI, SDC, SWAP; v3 of REX... all under Encounter
++ 2020-08-31 EMW	added v3 of ALICE, LEISA, LORRI, MVIC, PEPSSI, SDC, SWAP; v2 of REX... all under Encounter
++ 2020-04-30 EMW	added v2 of ALICE, LEISA, LORRI, MVIC, PEPSSI, SDC, SWAP; v1 of REX... all under Encounter
++ 2019-07-01 EMW	added NH KEM 2x PEPSSI & 2x SDC
++ 2019-06-07 EMW	added 12 linked (2 unlinked) KEM Cruise1 (KC1) datasets
++ 2019-02-08 EMW	added description
++ 2019-02-06 EMW	minor edits (needs more!) to description
++ 2018-09-13 EMW	made live
++ 2018-08-15 EMW	created page
+
+===========================================================================
+-->
+
+<!-- Mission Title ====================================================== -->
+<h1>New Horizons Kuiper Belt Extended Mission (KEM)</h1>
+
+<!-- Mission Description ================================================ -->
+<p>Following the success of the Pluto flyby, and with a fully operational and healthy spacecraft and payload, the New Horizons project was approved for its first extended mission: a 5-year long Kuiper Belt Extended Mission (KEM). KEM extends spacecraft exploration of the Kuiper Belt out to a distance of 50 AU, which the spacecraft will reach in early 2021. The main objective of KEM is an extensive study of the Kuiper Belt environment, observing numerous Kuiper Belt Objects (KBOs) and Centaurs in unique ways, and making the first close flyby of the KBO 486958 2014 MU69 (Ultima Thule). The close flyby of MU69 occurred on January 1, 2019, and the data are now on the way to the Earth. The mission also delivers pre-flyby and post-flyby cruise data for all instruments.</p>
+
+<p></p>
+
+<!-- SBN Role =========================================================== -->
+<p>The SBN is the lead PDS node to archive the New Horizons mission data. Here is the current version of the <a href="/data_sb/missions/newhorizons/05310-DMAP-01_R0_C0.pdf">NH Data Management Plan</a>. The <a href="/data_sb/missions/newhorizons/NH_05310-DMAP-01_R0_Nov05.pdf">original DMAP</a> is also available as a PDF file.</p>
+
+<!-- PDS Subscription Service =========================================== -->
+<!-- <p>Use <a href="https://pds.nasa.gov/datasearch/subscription-service/top.cfm" onclick="this.target='_blank'"><strong>PDS Subscription Service</strong></a> to be first to get the New Horizons data. Sign up there to receive an e-mail notification when new data arrives for each New Horizons instrument.</p> -->
+
+<!-- Instrument List ==================================================== -->
+<h2>Instruments</h2>
+<ul>
+<li><a href="/catalogs/NewHorizons/alice.cat">ALICE Ultraviolet Imaging Spectrograph</a> (ALICE)</li>
+<li><a href="/catalogs/NewHorizons/leisa.cat">Linear Etalon Imaging Spectral Array</a> (LEISA/RALPH)</li>
+<li><a href="/catalogs/NewHorizons/lorri.cat">Long Range Reconnaissance Imager</a> (LORRI)</li>
+<li><a href="/catalogs/NewHorizons/mvic.cat">Multispectral Visible Imaging Camera</a> (MVIC/RALPH)</li>
+<li><a href="/catalogs/NewHorizons/pepssi.cat">Pluto Energetic Particle Spectrometer Science Investigation</a> (PEPSSI)</li>
+<li><a href="/catalogs/NewHorizons/rex.cat">Radio Science Experiment</a> (REX)</li>
+<li><a href="/catalogs/NewHorizons/sdc.cat">Student Dust Counter</a> (SDC)</li>
+<li><a href="/catalogs/NewHorizons/swap.cat">Solar Wind Around Pluto</a> (SWAP)</li>
+</ul>
+
+<!-- Mission Data ======================================================= -->
+<h2>Data Sets</h2>
+
+<h3>Cruise to First KBO Encounter</h3>
+<ul>
+
+<li><a href="/holdings/nh-x-alice-2-kemcruise1-v2.0/dataset.shtml">New Horizons ALICE KEM Cruise 1 Raw Data v2.0</a></li><!-- NH-X-ALICE-2-KEMCRUISE1-V2.0 -->
+<li><a href="/holdings/nh-x-alice-3-kemcruise1-v2.0/dataset.shtml">New Horizons ALICE KEM Cruise 1 Calibrated Data v2.0</a></li><!-- NH-X-ALICE-3-KEMCRUISE1-V2.0 -->
+<li><a href="/holdings/nh-x-leisa-2-kemcruise1-v2.0/dataset.shtml">New Horizons LEISA KEM Cruise 1 Raw Data v2.0</a></li><!-- NH-X-LEISA-2-KEMCRUISE1-V2.0 -->
+<li><a href="/holdings/nh-x-leisa-3-kemcruise1-v2.0/dataset.shtml">New Horizons LEISA KEM Cruise 1 Calibrated Data v2.0</a></li><!-- NH-X-LEISA-3-KEMCRUISE1-V2.0 -->
+<li><a href="/holdings/nh-x-lorri-2-kemcruise1-v2.0/dataset.shtml">New Horizons LORRI KEM Cruise 1 Raw Data v2.0</a></li><!-- NH-X-LORRI-2-KEMCRUISE1-V2.0 -->
+<li><a href="/holdings/nh-x-lorri-3-kemcruise1-v2.0/dataset.shtml">New Horizons LORRI KEM Cruise 1 Calibrated Data v2.0</a></li><!-- NH-X-LORRI-3-KEMCRUISE1-V2.0 -->
+<li><a href="/holdings/nh-x-mvic-2-kemcruise1-v2.0/dataset.shtml">New Horizons MVIC KEM Cruise 1 Raw Data v2.0</a></li><!-- NH-X-MVIC-2-KEMCRUISE1-V2.0 -->
+<li><a href="/holdings/nh-x-mvic-3-kemcruise1-v2.0/dataset.shtml">New Horizons MVIC KEM Cruise 1 Calibrated Data v2.0</a></li><!-- NH-X-MVIC-3-KEMCRUISE1-V2.0 -->
+<li><a href="/holdings/nh-x-pepssi-2-kemcruise1-v2.0/dataset.shtml">New Horizons PEPSSI KEM Cruise 1 Raw Data v2.0</a></li><!-- NH-X-PEPSSI-2-KEMCRUISE1-V2.0 -->
+<li><a href="/holdings/nh-x-pepssi-3-kemcruise1-v2.0/dataset.shtml">New Horizons PEPSSI KEM Cruise 1 Calibrated Data v2.0</a></li><!-- NH-X-PEPSSI-3-KEMCRUISE1-V2.0 -->
+<li><a href="/holdings/nh-x-rex-2-kemcruise1-v2.0/dataset.shtml">New Horizons REX KEM Cruise 1 Raw Data v2.0</a></li><!-- NH-X-REX-2-KEMCRUISE1-V2.0 -->
+<li><a href="/holdings/nh-x-rex-3-kemcruise1-v2.0/dataset.shtml">New Horizons REX KEM Cruise 1 Calibrated Data v2.0</a></li><!-- NH-X-REX-3-KEMCRUISE1-V2.0 -->
+<li><a href="/holdings/nh-x-sdc-2-kemcruise1-v2.0/dataset.shtml">New Horizons SDC KEM Cruise 1 Raw Data v2.0</a></li><!-- NH-X-SDC-2-KEMCRUISE1-V2.0 -->
+<li><a href="/holdings/nh-x-sdc-3-kemcruise1-v2.0/dataset.shtml">New Horizons SDC KEM Cruise 1 Calibrated Data v2.0</a></li><!-- NH-X-SDC-3-KEMCRUISE1-V2.0 -->
+<li><a href="/holdings/nh-x-swap-2-kemcruise1-v2.0/dataset.shtml">New Horizons SWAP KEM Cruise 1 Raw Data v2.0</a></li><!-- NH-X-SWAP-2-KEMCRUISE1-V2.0 -->
+<li><a href="/holdings/nh-x-swap-3-kemcruise1-v2.0/dataset.shtml">New Horizons SWAP KEM Cruise 1 Calibrated Data v2.0</a></li><!-- NH-X-SWAP-3-KEMCRUISE1-V2.0 -->
+</ul>
+
+<h3>First KBO Encounter -- Asteroid 486958 Arrokoth (2014 MU69)</h3>
+<ul>
+<li><a href="/holdings/nh-a-alice-2-kem1-v4.0/dataset.shtml">New Horizons ALICE KEM1 Encounter Raw Data v4.0</a></li><!-- NH-A-ALICE-2-KEM1-V4.0 -->
+<li><a href="/holdings/nh-a-alice-3-kem1-v4.0/dataset.shtml">New Horizons ALICE KEM1 Encounter Calibrated Data v4.0</a></li><!-- NH-A-ALICE-3-KEM1-V4.0 -->
+
+<li><a href="/holdings/nh-a-leisa-2-kem1-v4.0/dataset.shtml">New Horizons LEISA KEM1 Encounter Raw Data v4.0</a></li><!-- NH-A-LEISA-2-KEM1-V4.0 -->
+<li><a href="/holdings/nh-a-leisa-3-kem1-v4.0/dataset.shtml">New Horizons LEISA KEM1 Encounter Calibrated Data v4.0</a></li><!-- NH-A-LEISA-3-KEM1-V4.0 -->
+
+<li><a href="/holdings/nh-a-lorri-2-kem1-v4.0/dataset.shtml">New Horizons LORRI KEM1 Encounter Raw Data v4.0</a></li><!-- NH-A-LORRI-2-KEM1-V4.0 -->
+<li><a href="/holdings/nh-a-lorri-3-kem1-v4.0/dataset.shtml">New Horizons LORRI KEM1 Encounter Calibrated Data v4.0</a></li><!-- NH-A-LORRI-3-KEM1-V4.0 -->
+
+<li><a href="/holdings/nh-a-mvic-2-kem1-v4.0/dataset.shtml">New Horizons MVIC KEM1 Encounter Raw Data v4.0</a></li><!-- NH-A-MVIC-2-KEM1-V4.0 -->
+<li><a href="/holdings/nh-a-mvic-3-kem1-v4.0/dataset.shtml">New Horizons MVIC KEM1 Encounter Calibrated Data v4.0</a></li><!-- NH-A-MVIC-3-KEM1-V4.0 -->
+
+<li><a href="/holdings/nh-a-pepssi-2-kem1-v4.0/dataset.shtml">New Horizons PEPSSI KEM1 Encounter Raw Data v4.0</a></li><!-- NH-A-PEPSSI-2-KEM1-V4.0 -->
+<li><a href="/holdings/nh-a-pepssi-3-kem1-v4.0/dataset.shtml">New Horizons PEPSSI KEM1 Encounter Calibrated Data v4.0</a></li><!-- NH-A-PEPSSI-3-KEM1-V4.0 -->
+
+<li><a href="/holdings/nh-a-rex-2-kem1-v3.0/dataset.shtml">New Horizons REX KEM1 Encounter Raw Data v3.0</a></li><!-- NH-A-REX-2-KEM1-V3.0 -->
+<li><a href="/holdings/nh-a-rex-3-kem1-v3.0/dataset.shtml">New Horizons REX KEM1 Encounter Calibrated Data v3.0</a></li><!-- NH-A-REX-3-KEM1-V3.0 -->
+
+<li><a href="/holdings/nh-a-sdc-2-kem1-v4.0/dataset.shtml">New Horizons SDC KEM1 Encounter Raw Data v4.0</a></li><!-- NH-A-SDC-2-KEM1-V4.0 -->
+<li><a href="/holdings/nh-a-sdc-3-kem1-v4.0/dataset.shtml">New Horizons SDC KEM1 Encounter Calibrated Data v4.0</a></li><!-- NH-A-SDC-3-KEM1-V4.0 -->
+
+<li><a href="/holdings/nh-a-swap-2-kem1-v4.0/dataset.shtml">New Horizons SWAP KEM1 Encounter Raw Data v4.0</a></li><!-- NH-A-SWAP-2-KEM1-V4.0 -->
+<li><a href="/holdings/nh-a-swap-3-kem1-v4.0/dataset.shtml">New Horizons SWAP KEM1 Encounter Calibrated Data v4.0</a></li><!-- NH-A-SWAP-3-KEM1-V4.0 -->
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h3>Other Mission Datasets</h3>
+<ul>
+<li><a href="https://naif.jpl.nasa.gov/naif/data_archived.html">New Horizons Spice Kernels</a></li><!-- NH-J_P_SS-SPICE-6-V1.0 -->
+</ul>
+
+<h3>Related Datasets</h3>
+<p>Use the <a href="https://sbnapps.psi.edu/ferret/">Small Bodies Data Ferret</a> to find other datasets for this mission/target.
+</p>
+
+<h3>Other Links</h3>
+<p><!-- <a href="http://guinan.space.swri.edu/nhcs/">New Horizons Earth-Based Observing Campaign</a> -->
+<br />Rings Node <a href="http://tools.pds-rings.seti.org/opus" onclick="this.target='_blank'">OPUS search tool</a> can be used to search for New Horizons LORRI and MVIC data.</p>
+
+<!-- ************************************************** End editing! ************************************************** -->
+<!--#include virtual="/css-n-includes/incl_bottom.inc"-->
+<br />Last updated:
+<!--#config timefmt="%A %B %d, %Y"-->
+<!--#echo var="LAST_MODIFIED" -->
+</div>
+<!-- close id whotext -->
+</div>
+<!-- close id footer -->
+</div>
+<!-- end id footwrap -->
+</div>
+<!-- close wrapper -->
+</body>
+
+</html>

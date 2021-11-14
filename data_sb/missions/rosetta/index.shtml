@@ -1,0 +1,1532 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<title>SBN Mission Support: Rosetta</title>
+
+<!-- 
+########################
+ALL of the head, style links, header and menu code is in the include. Edit that file with extreme care!!
+########################
+ -->
+<!--#include virtual="/css-n-includes/incl_top.inc"-->
+
+<!-- ################################################ LEFT SIDEBAR ########################################## -->
+<!--#include virtual="/css-n-includes/incl_left-side.inc"-->
+
+<!-- ################################################ RIGHT SIDEBAR ########################################## -->
+<div id="rightcol">
+<div class="sidebarSection">
+<h2>Mission Websites</h2>
+<p>Here we list links to the primary mission website as well as pages about the mission on other sites such as the NSSDC, NASA portal, etc.</p>
+<ul>
+<li>Mission: <a href="http://sci.esa.int/science-e/www/area/index.cfm?fareaid=13" onclick="this.target='_blank'">Rosetta</a> (ESA)</li>
+<li>NSSDC: <a href="https://nssdc.gsfc.nasa.gov/nmc/spacecraftDisplay.do?id=2004-006A" onclick="this.target='_blank'">Rosetta</a></li>
+<li>NASA: <a href="https://www.nasa.gov/rosetta" onclick="this.target='_blank'">Rosetta</a></li>
+<li>ESA: <a href="http://www.esa.int/Science_Exploration/Space_Science/Rosetta" onclick="this.target='_blank'">Rosetta</a></li>
+<li>Campaign: <a href="http://www.rosetta-campaign.net/">67P/C-G Earth-based Observing Campaign</a></li>
+</ul>
+</div>
+<!-- end class sidebarSection -->
+</div>
+<!-- end id rightcol -->
+<!-- ################################################ MAIN ################################################## -->
+<div id="centercol">
+<a name="mainContent"></a>
+<!-- ************************************************** You may begin editing! ************************************************** -->
+<!--
+===========================================================================
+EDIT HISTORY:
++ 2021-07-30 EMW	replaced/added 80 Rosetta RPCICA datasets 
++ 2020-12-21 EMW	34 NAVCAM datasets; removed 38 RPCLAP and added 58 RPCLAP
++ 2020-12-08 EMW	98 SREM datasets
++ 2020-09-29 EMW	67 ROMAP datasets
++ 2020-09-18 EMW	linked in lots of CONSERT datasets
++ 2020-07-29 EMW	linked in OSIRIS cruise phase datsets page (149 datasets)
++ 2020-05-27 EMW	added/replaced Rosetta RPCMAG to v9.0 (60 datasets); added in Mission Phase section with links to sections on page
++ 2020-05-19 EMW	(was supposed to post on 5/07) 11 v1.1 Rosetta NAVCAM
++ 2020-04-30 EMW	updated v2.0 of 8 MIRO 4 for PRL-EXT3
++ 2020-03-11 EMW	updated v2.0 of Rosina 2-3-4-5 for PRL, ESC1, ESC2, ESC3, ESC4, EXT1, EXT2, EXT3; added VIRTIS Derived Map under Other Mission Data
++ 2019-10-31 EMW	updated/added 19 Rosetta MIDAS
++ 2019-10-02 EMW	Updated mission description...
++ 2019-03-01 EMW	24 Rosina datasets (PRL, ESC1-4, EXT1-3)
++ 2019-03-01 EMW	finished removing duplicate OSIRIS dataset (209)
++ 2019-02-28 EMW	created index_OSIRIS; started removing OSIRIS datasets from comet phases (ie duplicates of what was on new index page)
++ 2018-11-16 EMW	24 ALICE: PRL and ESC1 are V3.0, and ESC2 thru EXT3 are V2.0 so all replaced existing data sets
++ 2018-09-28 EMW	Added in MIRO, RPCMIP datasets
++ 2018-09-26 EMW	Added in VIRTIS and CONSERT datasets
++ 2018-08-22 EMW	added SREM inst link
++ 2018-08-02 EMW	Fixed Rosetta ESA Spice link
++ 2018-06-21 EMW	16 OSIRIS under EXT3
++ 2018-05-29 EMW	Updated Cosima
++ 2018-04-19 EMW	12 OSIRIS: 8 Ext2, 4 Ext3; 1 ANCDR
++ 2018-02-23 EMW	12 OSIRIS: 8 Ext1, 4 Ext2
++ 2018-02-21 EMW	4 Rosetta: MIDAS (Esc4, Ext1,2,3)
++ 2018-02-14 EMW	28 Rosetta: MUPUS, SD2, MIDAS, RPCLAP
++ 2017-10-20 EMW	2 MIRO, 2 VIRTIS, 12 OSIRIS
++ 2017-09-07 EMW	26 VIRTIS, 16 RPCIES (4 v2) under various
++ 2017-09-07 EMW	224 datasets: (120 w 69 new RSI ESC2), 8 COSAC, 8 SESAME, 12 new OSIRIS (MTP20-22), 96 v2 OSIRIS (MTP1-19)
++ 2017-08-31 EMW	replaced 34 NAVCAM v1.0 w/ v1.1
++ 2017-08-28 EMW	16 RPCICA under various
++ 2017-08-24 EMW	9 PTOLEMY under various
++ 2017-08-16 EMW	6: 3 RPCMIP, 3 ROSINA under ext 1,2,3
++ 2017-08-12 EMW	11 VIRTIS under Ext 1,2,3
++ 2017-07-20 EMW	added GIADA under Ext3, replaced Shape w/ v2.0
++ 2017-07-18 EMW	added 6 Virtis under PRL
++ 2017-07-10 EMW	added APXS, replace 4 RPCMIP, added 2 RPCMIP
++ 2017-06-19 EMW	added 4 MIDAS and 8 MIRO under Esc4, Ext 1,2,3
++ 2017-06-02 EMW	replaced v4 w/ v5 COSIMA
++ 2017-05-11 EMW	added 7 Virtis: 4 under Esc3, and 3 under Esc4
++ 2017-04-03 EMW	added 3 RPCLP under Esc4 and 4 CONSERT under??
++ 2017-03-29 EMW	added 4 OSIRIS under Esc2 and 8 OSIRIS under Esc3
++ 2017-03-17 EMW	added 44 RSI; 4 Virtis under Esc2
++ 2017-03-13 EMW	Added 4 RPCLAP under Esc3
++ 2017-02-06 EMW	created second page for RSI datasets
++ 2017-01-24 EMW	3 RPCMAG inder Ext2
++ 2017-01-20 EMW	30 RSI under PRL
++ 2016-12-21 EMW	6 OSIRIS NAC, 6 OSIRIS WAC under ESC2
++ 2016-12-16 EMW	(for release 12-19) 4 RPCLAP under ESC2, 1 MIDAS under ESC3
++ 2016-12-13 EMW	1 Rosina under Esc4
++ 2016-11-29 EMW	1 GIADA under Esc4
++ 2016-10-20 EMW	2 NAVCAM under Ext3
++ 2016-10.18 TFB	44 VIRTIS under ESC1, 2 MIRO & 1 RPCIES under ESC3, updated COSIMA link under All
++ 2016-10.04 TFB	43 RPCMAG under EXT1 and 20 RSI under PRL
++ 2016-09-27 TFB	41 NAVCAM under Ext3
++ 2016-09-22 EMW	1 NAVCAM under Ext3
++ 2016-08-29 EMW	1 NAVCAM under Ext3
++ 2016-08-15 EMW	2 MIRO under Esc2
++ 2016-08-05 EMW	6 VIRTIS under Prl
++ 2016-07-25 EMW	1 NAVCAM under Ext2
++ 2016-07-08 EMW	18: 3 RPCMAG under PRL, 3 RPCMAG under Esc1, 3 RPCMAG under Esc2, 3 RPCMAG under Esc3, 3 RPCMAG under Esc4; 1 ROSINA under Esc2, 1 ROSINA under Esc3; 1 GIADA under Esc3
++ 2016-06-28 EMW	13: 1 Navcam under Ext2, 12 OSIRIS under Esc1
++ 2016-06-23 TFB	41 VIRTIS under PRL
++ 2016-06-16 TFB	41 RPCICA under Escort2 and 1 RPCICA under Escort3
++ 2016-06-02 EMW	1 Navcam under Ext2
++ 2016-05-31 EMW	2 MIRO under Esc1
++ 2016-05-10 EMW	2 RPCLAP (Esc1), 1 NAVCAM (Ext 1)
++ 2016-05-04 EMW	16 OSIRIS (12 Prl, 4 Esc1)
++ 2016-04-19 EMW	1 GIADA and 1 RPCIES (Esc2), 1 NAVCAM (Ext1)
++ 2016-04-15 EMW	1 MIDAS (Esc2), 1 shape (other)
++ 2016-03-31 EMW	2 MIRO (under Prelanding), 1 RPCMIP (under Esc2), 2 NAVCAM (under Esc4 and Ext1)
++ 2016-02-29 EMW	2 NAVCAM under Escort4
++ 2016-01-28 EMW	2 NAVCAM under Escort3, 2RPCMAG under Esc1, 2 RPCMAG under Esc2
++ 2016-01-14 EMW	6 datasets: 3 RPCMIP (under Prelanding), 3 ALICE (under Escort 1)
++ 2016-01-12 EMW	added Giada (under Escort 1) and 2 NAVCAM (under Escort 3)
++ 2015-12-11 EMW	16 OSIRIS datasets under Prelanding
++ 2015-12-01 EMW	RO-C-COSIMA-3-V2.0, RO-C-NAVCAM-2-ESC2-MTP016-V1.0, RO-C-NAVCAM-2-ESC2-MTP017-V1.0, RO-C-ROSINA-2-ESC1-V1.0, RO-C-RPCIES-2-ESC1-V1.0, RO-C-RPCMIP-3-ESC1-V1.0, RO-C-RPCLAP-3-PRL-CALIB-V1.0
++ 2015-11-23 EMW	replaced 8 v1.0 to v1.1 Osiris datasets and added 8 under Imaging
++ 2015-11-04 EMW	added RPCLAP PRL level 2 (under prelanding); fixed Cosima info
++ 2015-10-29 EMW	added 2 NAVCAM (under ESC2), 3 ALICE (under prelanding) datasets
++ 2015-10-14 EMW	added MIDAS, RPCICA under Escort 1
++ 2015-09-28 EMW	added 1 NAVCAM (MTP013) datasets under Escort 1
++ 2015-08-11 EMW	added 3 datasets to prelanding
++ 2015-08-03 EMW	added 12 datasets prelanding
++ 2015-06-30 EMW	added 1 NAVCAM datasets under new Escort 1 phase
++ 2015-06-19 EMW	added 2 NAVCAM datasets, linked ROLIS & SD2 lander catalog files
++ 2015-05-19 EMW	added 67P/C-G Ref Frames & Mapping Scheme
++ 2015-05-04 EMW	added 6 NAVCAM datasets, links to some lander inst; GIADA rvm1 raw
++ 2015-04-15 EMW	added 3 RPCIES datasets
++ 2015-02-16 EMW	added link to 67P shape model
++ 2014-11-20 EMW	updated link to Ferret
++ 2014-02-17 EMW	added link for earth-based campaign
++ 2013-11-23 EMW	added 2 RPCLAP Lutetia sets
++ 2013-08-21 EMW	added Steins & Lutetia shape models
++ 2013-07-11 EMW	added RPCIES Steins and Lutetia data
++ 2013-02-21 EMW	added certified vs non-certified disclaimer
++ 2013-02-19 EMW	deleted lots of Rosetta datasets; cleaned up SPICE links; 
++ 2012-10-22 EMW	added 5 RSI datasets, updated links to instruments
++ 2012-07-30 EMW	added 4 Rosetta links into new Rendezvous Maneuver section, but they are commented out until Tilden gets okay to release
++ 2012-06-08 EMW	added links to 4 RSI (CR2 #27, 32, 33, 34) datasets
++ 2012-06-04 EMW	updated 1 link from v1 to v2, added 2 ROSINA and 1 RPCIES link
++ 2012-05-11 EMW	added a bunch of RSI and some ROSINA datasets
++ 2012-05-01 EMW	added links for RPCLAP, VIRTIS instruments; reordered links (alphabetical) to datasets in sections
++ 2012-04-30 EMW	added 69 datasets
++ 2012-02-08 EMW	updated instrument links
++ 2012-01-12 EMW	added, updated 52 datasets
++ 2011-06-29 EMW	made Steins data (13 datasets) live
++ 2011-06-08 EMW	corrected 4 Steins URLs, commented out RSI and Giada links (17)
++ 2011-06-08 BJP	added giada and RSI links
++ 2011-05-17 BJP	added steins links, commented out until made live
++ 2011-04-18 EMW	converted page to list format
++ 2011-02-22 EMW	added right sidebar space
++ 2011-02-16 BJP	links to COSIMA v3
++ 2011-01-28 EMW	added content from old comet/missions page, but need to rearrange now
++ 2010-08-18 EMW	converted to xhtml, updated to new look
++ 2010-04-02 SAM	added link to SPICE data set at ESA per MA/LK 
++ 2010-01-08 SAM	opened links to 4 RPC-IES data sets (raw CVP, EAR1, MARS, CR2) and added ICA, LAP, MAG, MIP instruments to the RPC row (but no data yet)
+===========================================================================
+-->
+
+<!-- Mission Title ====================================================== -->
+<h1>Rosetta Mission</h1>
+
+<!-- Mission Description ================================================ -->
+<p>The Rosetta Mission is the third cornerstone mission in ESA's Horizon 2000 program. The purpose of the mission is to rendezvous with the comet 67P/Churyumov-Gerasimenko, gather information on the comet as the spacecraft orbits it, and to land a package of instruments on the surface of the comet. <br />Scientific objectives of the mission are to study the origin of comets, and the relationship between cometary and interstellar material. <br />The Rosetta spacecraft launched in March 2004 from Kourou, French Guiana. On its way to the comet it has flown by two asteroids, (2867)&nbsp;Steins on 5 September 2008 and (21)&nbsp;Lutetia on 10 July 2010. In May 2014 Rosetta rendezvoused with 67P/Churyumov-Gerasimenko and gathered data on the comet for the next 18 months. The lander Philae landed on the surface of 67P on 12 Novermber 2014. The mission was granted an extension for another 9 months. <br />The mission ended with the landing of the Rosetta Orbiter on 30 September 2016.</p>
+
+<!-- SBN Role =========================================================== -->
+<p>The SBN in cooperation with ESA will archive Earth-based observations of comet 67P/Churyumov-Gerasimenko.</p>
+
+<p>See <a href="ftp://psa.esac.esa.int/pub/mirror//INTERNATIONAL-ROSETTA-MISSION">Rosetta data</a> at the <a href="https://archives.esac.esa.int/psa/">ESA Planetary Science Archive.</a></p>
+<table class="important">
+<tr>
+<td><p>This page only shows data sets that have been <em>archived</em> or were <em>CERTIFIED by a peer review</em> (are currently in lien resolution) or <em>certified by ESA PSA</em>. If you wish to see other Rosetta datasets that have been released but that are NOT CERTIFIED please see our <a href="/draft/Rosetta/">Rosetta Draft Data Set Area</a>.</p>
+</td>
+</tr>
+</table>
+<!-- Instrument List ==================================================== -->
+<h2>Instruments</h2>
+<ul>
+<li>Orbiter
+<ul>
+<li><a href="/catalogs/Rosetta/alice_inst.cat">UV-Spectrometer</a> (ALICE)</li>
+<li><a href="/catalogs/Rosetta/consert_inst.cat">Comet Nucleus Sounding Experiment By Radiowave Transmission</a> (CONSERT) - Nucleus tomography, permittivity, and absorption</li>
+<li><a href="/catalogs/Rosetta/cosima_inst.cat">Cometary Secondary Ion Mass Analyzer</a> (COSIMA)</li>
+<li><a href="/catalogs/Rosetta/giada_inst.cat">Grain Impact Analyser and Dust Accumulator</a> (GIADA) - Dust velocity and impact momentum</li>
+<li><a href="/catalogs/Rosetta/midas_inst.cat">Micro-Imaging Dust Analysis System</a> (MIDAS)</li>
+<li><a href="/catalogs/Rosetta/miro_inst.cat">Microwave Spectroscopy</a> (MIRO)</li>
+<li><a href="/catalogs/Rosetta/navcam_inst.cat">Rosetta Orbiter Navigation Camera</a> (NAVCAM)</li>
+<li>Optical, Spectroscopic, and Infrared Remote Imaging System (OSIRIS) - Imaging of nucleus and dust and gas directly above it
+<ul>
+<li><a href="/catalogs/Rosetta/osinac_inst.cat">OSIRIS Narrow Angle Camera</a> (OSINAC)</li>
+<li><a href="/catalogs/Rosetta/osiwac_inst.cat">OSIRIS Wide Angle Camera</a> (OSIWAC)</li></ul></li>
+<li><a href="/catalogs/Rosetta/rosina_inst.cat">Rosetta Orbiter Spectrometer for Ion and Neutral Analysis</a> (ROSINA)</li>
+<li><a href="/catalogs/Rosetta/rpcica_inst.cat">Rosetta Orbiter Plasma Consortium Ion Composition Analyser</a> (RPCICA)</li>
+<li><a href="/catalogs/Rosetta/rpcies_inst.cat">Rosetta Orbiter Plasma Consortium Ion and Electron Sensor</a> (RPCIES)</li>
+<li><a href="/catalogs/Rosetta/rpclap_inst.cat">Rosetta Orbiter Plasma Consortium Langmuir Probe</a> (RPCLAP) - Density, temperature and flow velocity of cometary plasma</li>
+<li><a href="/catalogs/Rosetta/rpcmag_inst.cat">Rosetta Orbiter Plasma Consortium Fluxgate Magnetometer</a> (RPCMAG)</li>
+<li><a href="/catalogs/Rosetta/rpcmip_inst.cat">Rosetta Orbiter Plasma Consortium Mutual Impedance Probe</a> (RPCMIP) - Electron gas density, temperature and drift velocity of inner coma</li>
+<li><a href="/catalogs/Rosetta/rsi_inst.cat">Radio Science</a> (RSI)</li>
+<li><a href="https://www.cosmos.esa.int/web/spice/spice-for-rosetta">Navigation and ancillary information</a> SPICE</li>
+<li><a href="/catalogs/Rosetta/srem_inst.cat">Standard Radiation Environment Monitor</a> (SREM)</li>
+<li><a href="/catalogs/Rosetta/virtis_inst.cat">Visible and Infrared Thermal Imaging Spectrometer</a> (VIRTIS) - Emission bands and warm dust</li>
+</ul>
+</li>
+<li>Lander
+<ul>
+<li><a href="/catalogs/Rosetta/apxs_inst.cat">Alpha-Proton-X-ray Spectrometer</a> (APXS) - Elemental composition</li>
+<li><a href="/catalogs/Rosetta/civa_inst.cat">Rosetta Lander Cometary Infrared and Visible Analyser</a> (CIVA)</li>
+<li><a href="/catalogs/Rosetta/consert_inst.cat">Comet Nucleus Sounding Experiment By Radiowave Transmission</a> (CONSERT) - Nucleus tomography, permittivity, and absorption</li>
+<li><a href="/catalogs/Rosetta/cosac_inst.cat">Cometary Sampling and Composition Experiment</a> (COSAC) - Elemental and molecular composition</li>
+<li><a href="/catalogs/Rosetta/ptolemy_inst.cat">Methods of Determining and Understanding Light Elements from Unequivocal Stable Isotope Compositions</a> (MODULUS/Ptolemy) - Isotopic composition of the major volatiles</li>
+<li><a href="/catalogs/Rosetta/mupus_inst.cat">Multi-Purpose Sensors For Surface and Sub-Surface Science</a> (MUPUS) - Physical properties and composition (elemental, isotopic, molecular and mineralogical) of the nucleus</li>
+<li><a href="/catalogs/Rosetta/rolis_inst.cat">Rosetta Lander Imaging System - Descent and close-up Imager</a> (ROLIS) - </li>
+<li><a href="/catalogs/Rosetta/romap_inst.cat">RoLand Magnetic field investigation and Plasma monitor</a> (ROMAP) - Magnetic field components; interaction of cometary object with the solar wind</li>
+<li><a href="/catalogs/Rosetta/sd2_inst.cat">Drill and Sampling Device</a> (SD2) - Drilling, sampling, and collection of the cometary surface and subsurface material to be used by the other lander experiments COSAC, MODULUS/Ptolemy, and CIVA. </li>
+<li><a href="/catalogs/Rosetta/sesame_inst.cat">Surface Electrical, Seismic and Acoustic Monitoring Experiments</a> (SESAME) - Mechanic/elastic properties and permittivity of the cometary surface; dust impact and production rate</li>
+</ul>
+</li>
+</ul>
+
+<a name="top"></a>
+<!-- Mission Phases ==================================================== -->
+<h2>Mission Phases</h2>
+
+<p>Please note that the times listed are the official time ranges listed in the <a href="/catalogs/Rosetta/mission.cat">mission catalog file</a>. Some instruments deviate from these times by several days or more or combine multiple mission phases.</p>
+
+<table>
+<thead><tr>
+<th></th>
+<th>Phase (Abbreviation)</th>
+<th>Start Time</th>
+<th>Stop Time</th>
+</tr></thead>
+<tbody>
+
+<tr>
+<td rowspan="18">Cruise Phases:</td>
+<td><a href="#grnd">Ground (GRND)</a></td>
+<td>N/A</td>
+<td>2019-09-30</td>
+</tr>
+
+<tr>
+<td><a href="#grnd">Launch (LEOP)</a></td>
+<td>2004-03-03</td>
+<td>2004-03-04</td>
+</tr>
+
+<tr>
+<td><a href="#cvp">Commissioning 1 (CVP1)</a></td>
+<td>2004-03-05</td>
+<td>2004-06-06</td>
+</tr>
+
+<tr>
+<td><a href="#cvp">Cruise 1 (CR1)</a></td>
+<td>2004-06-07</td>
+<td>2004-09-05</td>
+</tr>
+
+<tr>
+<td><a href="#cvp">Commissioning 2 (CVP2)</a></td>
+<td>2004-09-06</td>
+<td>2004-10-16</td>
+</tr>
+
+<tr>
+<td><a href="#ear1">Earth Swing-by 1 (EAR1)</a></td>
+<td>2004-10-17</td>
+<td>2005-04-04</td>
+</tr>
+
+<tr>
+<td><a href="#cr2">Cruise 2 (CR2)</a></td>
+<td>2005-04-05</td>
+<td>2006-07-28</td>
+</tr>
+
+<tr>
+<td><a href="#mars">Mars Swing-By (MARS)</a></td>
+<td>2006-07-29</td>
+<td>2007-05-28</td>
+</tr>
+
+<tr>
+<td><a href="#cr3">Cruise 3 (CR3)</a></td>
+<td>2007-05-29</td>
+<td>2007-09-12</td>
+</tr>
+
+<tr>
+<td><a href="#ear2">Earth Swing-by 2 (EAR2)</a></td>
+<td>2007-09-13</td>
+<td>2008-01-27</td>
+</tr>
+
+<tr>
+<td><a href="#cr4a">Cruise 4A (CR4A)</a></td>
+<td>2008-01-28</td>
+<td>2008-08-03</td>
+</tr>
+
+<tr>
+<td><a href="#ast1">Asteroid 2867 Steins Flyby (AST1)</a></td>
+<td>2008-08-04</td>
+<td>2008-10-05</td>
+</tr>
+
+<tr>
+<td><a href="#cr4b">Cruise 4B (CR4B)</a></td>
+<td>2008-10-06</td>
+<td>2009-09-13</td>
+</tr>
+
+<tr>
+<td><a href="#ear3">Earth Swing-by 3 (EAR3)</a></td>
+<td>2009-09-14</td>
+<td>2009-12-13</td>
+</tr>
+
+<tr>
+<td><a href="#cr5">Cruise 5 (CR5)</a></td>
+<td>2009-12-14</td>
+<td>2010-05-16</td>
+</tr>
+
+<tr>
+<td><a href="#ast2">Asteroid 21 Lutetia Flyby (AST2)</a></td>
+<td>2010-05-17</td>
+<td>2010-09-03</td>
+</tr>
+
+<tr>
+<td><a href="#rvm1">Rendezvous Maneuver 1 (RVM1)</a></td>
+<td>2010-09-04</td>
+<td>2011-06-07</td>
+</tr>
+
+<tr>
+<td>Cruise 6 (CR6)</td>
+<td>2011-06-08</td>
+<td>2014-01-20</td>
+</tr>
+
+<tr>
+<td rowspan="8">Comet Phases Orbiter only:</td>
+<td><a href="#prl">Prelanding (PRL)</a></td>
+<td>2014-01-21</td>
+<td>2014-11-19</td>
+</tr>
+
+<tr>
+<td><a href="#esc1">Escort Phase 1 (ESC1)</a></td>
+<td>2014-11-20</td>
+<td>2015-03-10</td>
+</tr>
+
+<tr>
+<td><a href="#esc2">Escort Phase 2 (ESC2)</a></td>
+<td>2015-03-11</td>
+<td>2015-06-30</td>
+</tr>
+
+<tr>
+<td><a href="#esc3">Escort Phase 3 (ESC3)</a></td>
+<td>2015-07-01</td>
+<td>2015-10-21</td>
+</tr>
+
+<tr>
+<td><a href="#esc4">Escort Phase 4 (ESC4)</a></td>
+<td>2015-10-22</td>
+<td>2015-12-31</td>
+</tr>
+
+<tr>
+<td><a href="#ext1">Extension 1 (EXT1)</a></td>
+<td>2016-01-01</td>
+<td>2016-04-05</td>
+</tr>
+
+<tr>
+<td><a href="#ext2">Extension 2 (EXT2)</a></td>
+<td>2016-04-06</td>
+<td>2016-06-30</td>
+</tr>
+
+<tr>
+<td><a href="#ext3">Extension 3 (EXT3)</a></td>
+<td>2016-07-01</td>
+<td>2016-09-30</td>
+</tr>
+
+<tr>
+<td rowspan="6">Comet Phases Lander only:</td>
+<td><a href="#phc">Post Hibernation Commissioning (PHC)</a></td>
+<td>2014-04-09<strong>T</strong>08:15:25</td>
+<td>2014-04-23<strong>T</strong>15:45:13</td>
+</tr>
+
+<tr>
+<td><a href="#pdcs">Pre Delivery Calib Science (PDCS)</a></td>
+<td>2014-07-13<strong>T</strong>14:42:56</td>
+<td>2014-10-17<strong>T</strong>20:31:20</td>
+</tr>
+
+<tr>
+<td><a href="#sdl">Separation Descent Landing (SDL)</a></td>
+<td>2014-11-12<strong>T</strong>08:35:02</td>
+<td>2014-11-12<strong>T</strong>15:34:04</td>
+</tr>
+
+<tr>
+<td><a href="#rbd">Rebounds (RBD)</a></td>
+<td>2014-11-12<strong>T</strong>15:34:05</td>
+<td>2014-11-12<strong>T</strong>17:30:20</td>
+</tr>
+
+<tr>
+<td><a href="#fss">First Science Sequence (FSS)</a></td>
+<td>2014-11-12<strong>T</strong>17:30:21</td>
+<td>2014-11-15<strong>T</strong>01:00:00</td>
+</tr>
+
+<tr>
+<td><a href="#lts">Long Term Science (LTS)</a></td>
+<td>2014-11-15<strong>T</strong>01:00:00.000</td>
+<td>2016-09-30<strong>T</strong>10:39:00.000</td>
+</tr>
+
+<tr>
+<td><a href="#all">All Mission Phases</a></td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td><a href="#other">Other Mission Data</a></td>
+<td></td>
+<td></td>
+</tr>
+
+</tbody>
+</table>
+
+<!-- Mission Data ======================================================= -->
+<h2>Data Sets</h2>
+
+<a name="grnd"></a>
+<h3>Ground (GRND) and Launch (LEOP)</h3>
+<ul>
+<li><a href="/holdings/ro_rl-cal-consert-2-grndbench-v1.0/dataset.shtml">Rosetta-Orbiter/Lander CONSERT Laboratory Ground Benchmark Raw Data</a></li><!-- RO/RL-CAL-CONSERT-2-GRNDBENCH-V1.0 -->
+<li><a href="/holdings/ro_rl-cal-consert-2-grnd-v1.0/dataset.shtml">Rosetta-Orbiter/Lander CONSERT Flight and Qualification Ground Edited Raw Data</a></li><!-- RO/RL-CAL-CONSERT-2-GRND-V1.0 -->
+<li><a href="/holdings/ro_rl-cal-consert-3-grnd-v1.1/dataset.shtml">Rosetta-Orbiter/Lander CONSERT Flight and Qualification Ground Calibrated Data v1.1</a></li><!-- RO/RL-CAL-CONSERT-3-GRND-V1.1 -->
+<li><a href="/holdings/ro_rl-cal-consert-4-grnd-v1.0/dataset.shtml">Rosetta-Orbiter/Lander CONSERT Flight and Qualification Ground Resampled Data</a></li><!-- RO/RL-CAL-CONSERT-4-GRND-V1.0 -->
+<li><a href="/holdings/ro-cal-midas-3-grnd-ref-2008-v1.0/dataset.shtml">Rosetta-Orbiter MIDAS 2008 Ground Reference Calibrated Data</a></li><!-- RO-CAL-MIDAS-3-GRND-REF-2008-V1.0 -->
+<li><a href="/holdings/ro-cal-midas-3-grnd-ref-2009-v1.0/dataset.shtml">Rosetta-Orbiter MIDAS 2009 Ground Reference Calibrated Data</a></li><!-- RO-CAL-MIDAS-3-GRND-REF-2009-V1.0 -->
+<li><a href="/holdings/ro-cal-midas-3-grnd-ref-2010-v1.0/dataset.shtml">Rosetta-Orbiter MIDAS 2010 Ground Reference Calibrated Data</a></li><!-- RO-CAL-MIDAS-3-GRND-REF-2010-V1.0 -->
+<li><a href="/holdings/ro-cal-midas-3-grnd-ref-2011-v1.0/dataset.shtml">Rosetta-Orbiter MIDAS 2011 Ground Reference Calibrated Data</a></li><!-- RO-CAL-MIDAS-3-GRND-REF-2011-V1.0 -->
+<li><a href="/holdings/ro-cal-midas-3-grnd-ref-2013-v1.0/dataset.shtml">Rosetta-Orbiter MIDAS 2013 Ground Reference Calibrated Data</a></li><!-- RO-CAL-MIDAS-3-GRND-REF-2013-V1.0 -->
+<li><a href="/holdings/ro-cal-midas-3-grnd-ref-2014-v1.0/dataset.shtml">Rosetta-Orbiter MIDAS 2014 Ground Reference Calibrated Data</a></li><!-- RO-CAL-MIDAS-3-GRND-REF-2014-V1.0 -->
+<li><a href="/holdings/ro-cal-midas-3-grnd-ref-2015-v1.0/dataset.shtml">Rosetta-Orbiter MIDAS 2015 Ground Reference Calibrated Data</a></li><!-- RO-CAL-MIDAS-3-GRND-REF-2015-V1.0 -->
+<li><a href="/holdings/ro-cal-miro-2-grnd-thermal-vac-v1.0/dataset.shtml">Rosetta-Orbiter MIRO Ground Thermal Vacuum Raw Data</a></li>
+<li><a href="/holdings/rl-cal-sd2-3-grnd-v1.0/dataset.shtml">Rosetta-Lander SD2 Ground Test Model Calibrated Data</a></li><!-- RL-CAL-SD2-3-GRND-V1.0 -->
+</ul>
+<p><a href="#top">Back to Mission Phase list</a></p>
+
+<a name="cvp"></a>
+<h3>Commissioning 1 (CVP1) &amp; 2 (CVP2), Cruise 1 (CR1)</h3>
+<ul>
+<li><a href="/holdings/ro-c_cal_x-alice-2-cvp1-v1.0/dataset.shtml">Rosetta-Orbiter ALICE Commissioning 1 &amp; Comet C/2002 T7 (LINEAR) Raw Data</a></li>
+<li><a href="/holdings/ro-c_cal_x-alice-3-cvp1-v1.0/dataset.shtml">Rosetta-Orbiter ALICE Commissioning 1 &amp; Comet C/2002 T7 (LINEAR) Calibrated Data</a></li>
+<li><a href="/holdings/ro-cal_x-alice-2-cvp2-v1.0/dataset.shtml">Rosetta-Orbiter ALICE Commissioning 2 Raw Data</a></li>
+<li><a href="/holdings/ro-cal_x-alice-3-cvp2-v1.0/dataset.shtml">Rosetta-Orbiter ALICE Commissioning 2 Calibrated Data</a></li>
+<li><a href="/holdings/ro-x-alice-2-cr1-v1.0/dataset.shtml">Rosetta-Orbiter ALICE Cruise 1 Raw Data</a></li>
+<li><a href="/holdings/ro-x-alice-3-cr1-v1.0/dataset.shtml">Rosetta-Orbiter ALICE Cruise 1 Calibrated Data</a></li>
+<li><a href="/holdings/ro_rl-cal-consert-2-cvp1-v1.0/dataset.shtml">Rosetta-Orbiter/Lander CONSERT Commissioning 1 Raw Data</a></li><!-- RO/RL-CAL-CONSERT-2-CVP1-V1.0 -->
+<li><a href="/holdings/ro_rl-cal-consert-2-cvp2-v1.0/dataset.shtml">Rosetta-Orbiter/Lander CONSERT Commissioning 2 Raw Data</a></li><!-- RO/RL-CAL-CONSERT-2-CVP2-V1.0 -->
+<li><a href="/holdings/ro-x-gia-2-cvp1-commissioning1-v1.0/dataset.shtml">Rosetta-Orbiter GIADA Commissioning 1 Raw Data</a></li>
+<li><a href="/holdings/ro-x-gia-2-cvp2-commissioning2-v1.0/dataset.shtml">Rosetta-Orbiter GIADA Commissioning 2 Raw Data</a></li>
+<li><a href="/holdings/ro-cal-midas-3-cvp-full-v3.0/dataset.shtml">Rosetta-Orbiter MIDAS Commissioning Calibrated Data v3.0</a></li>
+<li><a href="/holdings/ro-x-miro-2-cvp-commissioning-v1.0/dataset.shtml">Rosetta-Orbiter MIRO Commissioning Raw Data</a></li>
+<li><a href="/holdings/ro-x-miro-3-cvp-commissioning-v1.1/dataset.shtml">Rosetta-Orbiter MIRO Commissioning Calibrated Data v1.1</a></li>
+<li><a href="/holdings/ro-cal-navcam-2-cvp2-v1.1/dataset.shtml">Rosetta-Orbiter NAVCAM Commissioning 2 Raw Data v1.1</a></li><!-- RO-CAL-NAVCAM-2-CVP2-V1.1 -->
+<li><a href="/holdings/ro-e_x-navcam-2-cr1-v1.1/dataset.shtml">Rosetta-Orbiter NAVCAM Cruise 1 & Earth Raw Data v1.1</a></li><!-- RO-E/X-NAVCAM-2-CR1-V1.1 -->
+<li><a href="/holdings/ro-x-rosina-2-eng-v1.0/dataset.shtml">Rosetta-Orbiter ROSINA Commissioning Engineering Raw Data</a></li>
+<li><a href="/holdings/ro-x-rpcica-2-cvp-raw-v3.0/dataset.html">Rosetta-Orbiter RPCICA Commissioning Raw Data v3.0</a></li><!-- RO-X-RPCICA-2-CVP-RAW-V3.0 -->
+<li><a href="/holdings/ro-x-rpcica-3-cvp-calib-v1.0/dataset.html">Rosetta-Orbiter RPCICA Commissioning Calibrated Data</a></li><!-- RO-X-RPCICA-3-CVP-CALIB-V1.0 -->
+<li><a href="/holdings/ro-x-rpcica-4-cvp-corr-v1.0/dataset.html">Rosetta-Orbiter RPCICA Commissioning Resampled Corrected Data</a></li><!-- RO-X-RPCICA-4-CVP-CORR-V1.0 -->
+<li><a href="/holdings/ro-x-rpcica-4-cvp-corr-cts-v1.0/dataset.html">Rosetta-Orbiter RPCICA Commissioning Resampled Corrected in Counts Data</a></li><!-- RO-X-RPCICA-4-CVP-CORR-CTS-V1.0 -->
+<li><a href="/holdings/ro-cal-rpcies-2-cvp-v1.0/dataset.shtml">Rosetta-Orbiter RPCIES Commissioning Raw Data</a></li>
+<li><a href="/holdings/ro-x-rpclap-2-cvp1-edited2-v1.0/dataset.shtml">Rosetta-Orbiter RPCLAP Commissioning 1 Raw Data</a></li><!-- RO-X-RPCLAP-2-CVP1-EDITED2-V1.0 -->
+<li><a href="/holdings/ro-x-rpclap-3-cvp1-calib2-v1.0/dataset.shtml">Rosetta-Orbiter RPCLAP Commissioning 1 Calibrated Data</a></li><!-- RO-X-RPCLAP-3-CVP1-CALIB2-V1.0 -->
+<li><a href="/holdings/ro-x-rpclap-2-cvp2-edited2-v1.0/dataset.shtml">Rosetta-Orbiter RPCLAP Commissioning 2 Raw Data</a></li><!-- RO-X-RPCLAP-2-CVP2-EDITED2-V1.0 -->
+<li><a href="/holdings/ro-x-rpclap-3-cvp2-calib2-v1.0/dataset.shtml">Rosetta-Orbiter RPCLAP Commissioning 2 Calibrated Data</a></li><!-- RO-X-RPCLAP-3-CVP2-CALIB2-V1.0 -->
+<li><a href="/holdings/ro-x-rpcmag-2-cvp-raw-v9.0/dataset.html">Rosetta-Orbiter RPCMAG Commissioning Raw Data v9.0</a></li><!-- RO-X-RPCMAG-2-CVP-RAW-V9.0 -->
+<li><a href="/holdings/ro-x-rpcmag-3-cvp-calibrated-v9.0/dataset.html">Rosetta-Orbiter RPCMAG Commissioning Calibrated Data v9.0</a></li><!-- RO-X-RPCMAG-3-CVP-CALIBRATED-V9.0 -->
+<li><a href="/holdings/ro-x-rpcmag-4-cvp-resampled-v9.0/dataset.html">Rosetta-Orbiter RPCMAG Commissioning Resampled Data v9.0</a></li><!-- RO-X-RPCMAG-4-CVP-RESAMPLED-V9.0 -->
+<li><a href="/holdings/ro-cal-rpcmip-3-cvp1-v1.0/dataset.shtml">Rosetta-Orbiter RPCMIP Commissioning 1 Calibrated Data</a></li><!-- RO-CAL-RPCMIP-3-CVP1-V1.0 -->
+<li><a href="/holdings/ro-cal-rpcmip-3-cvp2-v1.0/dataset.shtml">Rosetta-Orbiter RPCMIP Commissioning 2 Calibrated Data</a></li><!-- RO-CAL-RPCMIP-3-CVP2-V1.0 -->
+<li><a href="/holdings/ro-x-srem-2-cvp1-v1.0/dataset.html">Rosetta-Orbiter SREM Commissioning 1 Raw Data</a></li><!-- RO-X-SREM-2-CVP1-V1.0 -->
+<li><a href="/holdings/ro-x-srem-5-cvp1-v1.0/dataset.html">Rosetta-Orbiter SREM Commissioning 1 Derived Data</a></li><!-- RO-X-SREM-5-CVP1-V1.0 -->
+<li><a href="/holdings/ro-x-srem-2-cvp2-v1.0/dataset.html">Rosetta-Orbiter SREM Commissioning 2 Raw Data</a></li><!-- RO-X-SREM-2-CVP2-V1.0 -->
+<li><a href="/holdings/ro-x-srem-5-cvp2-v1.0/dataset.html">Rosetta-Orbiter SREM Commissioning 2 Derived Data</a></li><!-- RO-X-SREM-5-CVP2-V1.0 -->
+<li><a href="/holdings/ro-x-srem-2-cr1-v1.0/dataset.html">Rosetta-Orbiter SREM Cruise 1 Raw Data</a></li><!-- RO-X-SREM-2-CR1-V1.0 -->
+<li><a href="/holdings/ro-x-srem-5-cr1-v1.0/dataset.html">Rosetta-Orbiter SREM Cruise 1 Derived Data</a></li><!-- RO-X-SREM-5-CR1-V1.0 -->
+<li><a href="/holdings/rl-cal-romap-2-cvp-mag-v1.0/dataset.html">Rosetta-Lander ROMAP-MAG Commissioning Raw Data</a></li><!-- RL-CAL-ROMAP-2-CVP-MAG-V1.0 -->
+<li><a href="/holdings/rl-cal-romap-2-cvp-spm-v1.0/dataset.html">Rosetta-Lander ROMAP-SPM Commissioning Raw Data</a></li><!-- RL-CAL-ROMAP-2-CVP-SPM-V1.0 -->
+
+<li><em>Please refer to <a href="/data_sb/missions/rosetta/OSIRIS_cruise.shtml#list">Rosetta OSIRIS</a> for a listing of OSIRIS datasets from the <strong><em>cruise</em></strong> phases (pre-encounter).</em></li>
+<li><em>Please refer to <a href="/data_sb/missions/rosetta/index_RSI.shtml">Rosetta RSI</a> for a complete listing of RSI datasets.</em></li>
+</ul>
+<p><a href="#top">Back to Mission Phase list</a></p>
+
+<a name="ear1"></a>
+<h3>Earth Swing-by 1 (EAR1)</h3>
+<ul>
+<li><a href="/holdings/ro-cal_x-alice-2-ear1-v1.0/dataset.shtml">Rosetta-Orbiter ALICE Earth Swing-by 1 Raw Data</a></li>
+<li><a href="/holdings/ro-cal-alice-3-ear1-v1.0/dataset.shtml">Rosetta-Orbiter ALICE Earth Swing-by 1 Calibrated Data</a></li>
+<li><a href="/holdings/ro_rl-cal-consert-2-ear1-v2.0/dataset.shtml">Rosetta-Orbiter/Lander CONSERT Earth Swing-by 1 Raw Data v2.0</a></li><!-- RO/RL-CAL-CONSERT-2-EAR1-V2.0 -->
+<li><a href="/holdings/ro-x-gia-2-ear1-earthswingby1-v1.0/dataset.shtml">Rosetta-Orbiter GIADA Earth Swing-by 1 Raw Data</a></li>
+<li><a href="/holdings/ro-x-midas-3-ear1-pc0-v3.0/dataset.shtml">Rosetta-Orbiter MIDAS Earth Swing-by 1 Calibrated Data v3.0</a></li>
+<li><a href="/holdings/ro-e-miro-2-ear1-earth1-v1.0/dataset.shtml">Rosetta-Orbiter MIRO Earth Swing-by 1 Raw Data</a></li>
+<li><a href="/holdings/ro-e-miro-3-ear1-earth1-v1.1/dataset.shtml">Rosetta-Orbiter MIRO Earth Swing-by 1 Calibrated Data v1.1</a></li>
+<li><a href="/holdings/ro-e-navcam-2-ear1-v1.1/dataset.shtml">Rosetta-Orbiter NAVCAM Earth Swing-by 1 Raw Data v1.1</a></li><!-- RO-E-NAVCAM-2-EAR1-V1.1 -->
+<li><a href="/holdings/ro-e-rpcica-2-ear1-raw-v3.0/dataset.html">Rosetta-Orbiter RPCICA Earth Swing-by 1 Raw Data v3.0</a></li><!-- RO-E-RPCICA-2-EAR1-RAW-V3.0 -->
+<li><a href="/holdings/ro-e-rpcica-3-ear1-calib-v1.0/dataset.html">Rosetta-Orbiter RPCICA Earth Swing-by 1 Calibrated Data</a></li><!-- RO-E-RPCICA-3-EAR1-CALIB-V1.0 -->
+<li><a href="/holdings/ro-e-rpcica-4-ear1-corr-v1.0/dataset.html">Rosetta-Orbiter RPCICA Earth Swing-by 1 Resampled Corrected Data</a></li><!-- RO-E-RPCICA-4-EAR1-CORR-V1.0 -->
+<li><a href="/holdings/ro-e-rpcica-4-ear1-corr-cts-v1.0/dataset.html">Rosetta-Orbiter RPCICA Earth Swing-by 1 Resampled Corrected in Counts Data</a></li><!-- RO-E-RPCICA-4-EAR1-CORR-CTS-V1.0 -->
+<li><a href="/holdings/ro-e-rpcies-2-ear1-v1.0/dataset.shtml">Rosetta-Orbiter RPCIES Earth Swing-by 1 Raw Data</a></li>
+<li><a href="/holdings/ro-e-rpclap-2-ear1-edited2-v1.0/dataset.shtml">Rosetta-Orbiter RPCLAP Earth Swing-by 1 Raw Data</a></li><!-- RO-E-RPCLAP-2-EAR1-EDITED2-V1.0 -->
+<li><a href="/holdings/ro-e-rpclap-3-ear1-calib2-v1.0/dataset.shtml">Rosetta-Orbiter RPCLAP Earth Swing-by 1 Calibrated Data</a></li><!-- RO-E-RPCLAP-3-EAR1-CALIB2-V1.0 -->
+<li><a href="/holdings/ro-e-rpcmag-2-ear1-raw-v9.0/dataset.html">Rosetta-Orbiter RPCMAG Earth Swing-by 1 Raw Data v9.0</a></li><!-- RO-E-RPCMAG-2-EAR1-RAW-V9.0 -->
+<li><a href="/holdings/ro-e-rpcmag-3-ear1-calibrated-v9.0/dataset.html">Rosetta-Orbiter RPCMAG Earth Swing-by 1 Calibrated Data v9.0</a></li><!-- RO-E-RPCMAG-3-EAR1-CALIBRATED-V9.0 -->
+<li><a href="/holdings/ro-e-rpcmag-4-ear1-resampled-v9.0/dataset.html">Rosetta-Orbiter RPCMAG Earth Swing-by 1 Resampled Data v9.0</a></li><!-- RO-E-RPCMAG-4-EAR1-RESAMPLED-V9.0 -->
+<li><a href="/holdings/ro-e-rpcmip-3-ear1-v1.0/dataset.shtml">Rosetta-Orbiter RPCMIP Earth Swing-by 1 Calibrated Data</a></li><!-- RO-E-RPCMIP-3-EAR1-V1.0 -->
+<li><a href="/holdings/ro-x-srem-2-ear1-v1.0/dataset.html">Rosetta-Orbiter SREM Earth Swing-by 1 Raw Data</a></li><!-- RO-X-SREM-2-EAR1-V1.0 -->
+<li><a href="/holdings/ro-x-srem-5-ear1-v1.0/dataset.html">Rosetta-Orbiter SREM Earth Swing-by 1 Derived Data</a></li><!-- RO-X-SREM-5-EAR1-V1.0 -->
+<li><a href="/holdings/rl-e-romap-2-ear1-mag-v1.0/dataset.html">Rosetta-Lander ROMAP-MAG Earth Flyby 1 Raw Data</a></li><!-- RL-E-ROMAP-2-EAR1-MAG-V1.0 -->
+<li><a href="/holdings/rl-e-romap-3-ear1-mag-v1.0/dataset.html">Rosetta-Lander ROMAP-MAG Earth Flyby 1 Calibrated Data</a></li><!-- RL-E-ROMAP-3-EAR1-MAG-V1.0 -->
+<li><a href="/holdings/rl-e-romap-2-ear1-spm-v1.0/dataset.html">Rosetta-Lander ROMAP-SPM Earth Flyby 1 Raw Data</a></li><!-- RL-E-ROMAP-2-EAR1-SPM-V1.0 -->
+<li><a href="/holdings/rl-e-romap-3-ear1-spm-v1.0/dataset.html">Rosetta-Lander ROMAP-SPM Earth Flyby 1 Calibrated Data</a></li><!-- RL-E-ROMAP-3-EAR1-SPM-V1.0 -->
+
+<li><em>Please refer to <a href="/data_sb/missions/rosetta/OSIRIS_cruise.shtml#EAR1">Rosetta OSIRIS</a> for a listing of OSIRIS datasets from the <strong><em>cruise</em></strong> phases (pre-encounter).</em></li>
+</ul>
+<p><a href="#top">Back to Mission Phase list</a></p>
+
+<a name="cr2"></a>
+<h3>Cruise 2 (CR2) &amp; Comet 9P/Tempel&nbsp;1</h3>
+<ul>
+<li><a href="/holdings/ro-c_cal_x-alice-2-cr2-v1.0/dataset.shtml">Rosetta-Orbiter ALICE Cruise 2 &amp; 9P/Tempel 1 Raw Data</a></li>
+<li><a href="/holdings/ro-c_cal_x-alice-3-cr2-v1.0/dataset.shtml">Rosetta-Orbiter ALICE Cruise 2 &amp; 9P/Tempel 1 Calibrated Data</a></li>
+<li><a href="/holdings/ro_rl-cal-consert-2-cr2-v2.0/dataset.shtml">Rosetta-Orbiter/Lander CONSERT Cruise 2 Raw Data v2.0</a></li><!-- RO/RL-CAL-CONSERT-2-CR2-V2.0 -->
+<li><a href="/holdings/ro_rl-cal-consert-3-cr2-v2.0/dataset.shtml">Rosetta-Orbiter/Lander CONSERT Cruise 2 Calibrated Data v2.0</a></li><!-- RO/RL-CAL-CONSERT-3-CR2-V2.0 -->
+<li><a href="/holdings/ro_rl-cal-consert-4-cr2-v1.0/dataset.shtml">Rosetta-Orbiter/Lander CONSERT Cruise 2 Resampled Data</a></li><!-- RO/RL-CAL-CONSERT-4-CR2-V1.0 -->
+<li><a href="/holdings/ro-x-gia-2-cr2-cruise2-v1.0/dataset.shtml">Rosetta-Orbiter GIADA Cruise 2 Raw Data</a></li>
+<li><a href="/holdings/ro-x-midas-3-cr2-pc1-2-v3.0/dataset.shtml">Rosetta-Orbiter MIDAS Cruise 2 Calibrated Data v3.0</a></li>
+<li><a href="/holdings/ro-c-miro-2-cr2-9p-tempel1-v1.0/dataset.shtml">Rosetta-Orbiter MIRO Cruise 2 &amp; 9P/Tempel 1 Raw Data</a></li>
+<li><a href="/holdings/ro-c-miro-3-cr2-9p-tempel1-v1.1/dataset.shtml">Rosetta-Orbiter MIRO Cruise 2 &amp; 9P/Tempel 1 Calibrated Data v1.1</a></li>
+<li><a href="/holdings/ro-c_x-navcam-2-cr2-v1.1/dataset.shtml">Rosetta-Orbiter NAVCAM Cruise 2 & 9P/Temple 1 Raw Data v1.1</a></li><!-- RO-C/X-NAVCAM-2-CR2-V1.1 -->
+<li><a href="/holdings/ro-ss-rpcica-2-cr2-raw-v3.0/dataset.html">Rosetta-Orbiter RPCICA Cruise 2 Raw Data v3.0</a></li><!-- RO-SS-RPCICA-2-CR2-RAW-V3.0 -->
+<li><a href="/holdings/ro-ss-rpcica-3-cr2-calib-v1.0/dataset.html">Rosetta-Orbiter RPCICA Cruise 2 Calibrated Data</a></li><!-- RO-SS-RPCICA-3-CR2-CALIB-V1.0 -->
+<li><a href="/holdings/ro-ss-rpcica-4-cr2-corr-v1.0/dataset.html">Rosetta-Orbiter RPCICA Cruise 2 Resampled Corrected Data</a></li><!-- RO-SS-RPCICA-4-CR2-CORR-V1.0 -->
+<li><a href="/holdings/ro-ss-rpcica-4-cr2-corr-cts-v1.0/dataset.html">Rosetta-Orbiter RPCICA Cruise 2 Resampled Corrected in Counts Data</a></li><!-- RO-SS-RPCICA-4-CR2-CORR-CTS-V1.0 -->
+<li><a href="/holdings/ro-ss-rpcies-2-cr2-v1.0/dataset.shtml">Rosetta-Orbiter RPCIES Cruise 2 Raw Data</a></li>
+<li><a href="/holdings/ro-ss-rpclap-2-cr2-edited2-v1.0/dataset.shtml">Rosetta-Orbiter RPCLAP Cruise 2 Raw Data</a></li><!-- RO-SS-RPCLAP-2-CR2-EDITED2-V1.0 -->
+<li><a href="/holdings/ro-ss-rpclap-3-cr2-calib2-v1.0/dataset.shtml">Rosetta-Orbiter RPCLAP Cruise 2 Calibrated Data</a></li><!-- RO-SS-RPCLAP-3-CR2-CALIB2-V1.0 -->
+<li><a href="/holdings/ro-ss-rpcmag-2-cr2-raw-v9.0/dataset.html">Rosetta-Orbiter RPCMAG Cruise 2 Raw Data v9.0</a></li><!-- RO-SS-RPCMAG-2-CR2-RAW-V9.0 -->
+<li><a href="/holdings/ro-ss-rpcmag-3-cr2-calibrated-v9.0/dataset.html">Rosetta-Orbiter RPCMAG Cruise 2 Calibrated Data v9.0</a></li><!-- RO-SS-RPCMAG-3-CR2-CALIBRATED-V9.0 -->
+<li><a href="/holdings/ro-ss-rpcmag-4-cr2-resampled-v9.0/dataset.html">Rosetta-Orbiter RPCMAG Cruise 2 Resampled Data v9.0</a></li><!-- RO-SS-RPCMAG-4-CR2-RESAMPLED-V9.0 -->
+<li><a href="/holdings/ro-cal-rpcmip-3-cr2-v1.0/dataset.shtml">Rosetta-Orbiter RPCMIP Cruise 2 Calibrated Data</a></li><!-- RO-CAL-RPCMIP-3-CR2-V1.0 -->
+<li><a href="/holdings/ro-x-srem-2-cr2-v1.0/dataset.html">Rosetta-Orbiter SREM Cruise 2 Raw Data</a></li><!-- RO-X-SREM-2-CR2-V1.0 -->
+<li><a href="/holdings/ro-x-srem-5-cr2-v1.0/dataset.html">Rosetta-Orbiter SREM Cruise 2 Derived Data</a></li><!-- RO-X-SREM-5-CR2-V1.0 -->
+<li><a href="/holdings/rl-cal-romap-2-cr2-mag-v1.0/dataset.html">Rosetta-Lander ROMAP-MAG Cruise 2 Raw Data</a></li><!-- RL-CAL-ROMAP-2-CR2-MAG-V1.0 -->
+<li><a href="/holdings/rl-cal-romap-3-cr2-mag-v1.0/dataset.html">Rosetta-Lander ROMAP-MAG Cruise 2 Calibrated Data</a></li><!-- RL-CAL-ROMAP-3-CR2-MAG-V1.0 -->
+<li><a href="/holdings/rl-cal-romap-2-cr2-spm-v1.0/dataset.html">Rosetta-Lander ROMAP-SPM Cruise 2 Raw Data</a></li><!-- RL-CAL-ROMAP-2-CR2-SPM-V1.0 -->
+<li><a href="/holdings/rl-cal-romap-3-cr2-spm-v1.0/dataset.html">Rosetta-Lander ROMAP-SPM Cruise 2 Calibrated Data</a></li><!-- RL-CAL-ROMAP-3-CR2-SPM-V1.0 -->
+
+<li><em>Please refer to <a href="/data_sb/missions/rosetta/OSIRIS_cruise.shtml#CR2">Rosetta OSIRIS</a> for a listing of OSIRIS datasets from the <strong><em>cruise</em></strong> phases (pre-encounter).</em></li>
+</ul>
+<p><a href="#top">Back to Mission Phase list</a></p>
+
+<a name="mars"></a>
+<h3>Mars Swing-By (includes Jupiter &amp; Io torus) (MARS)</h3>
+<ul>
+<li><a href="/holdings/ro-cal_j_m-alice-2-mars-v1.0/dataset.shtml">Rosetta-Orbiter ALICE Mars Swing-by &amp; Jupiter Raw Data</a></li>
+<li><a href="/holdings/ro-cal_j_m-alice-3-mars-v1.0/dataset.shtml">Rosetta-Orbiter ALICE Mars Swing-by &amp; Jupiter Calibrated Data</a></li>
+<li><a href="/holdings/ro_rl-cal-consert-2-mars-v2.0/dataset.shtml">Rosetta-Orbiter/Lander CONSERT Mars Swing-by Raw Data v2.0</a></li><!-- RO/RL-CAL-CONSERT-2-MARS-V2.0 -->
+<li><a href="/holdings/ro_rl-cal-consert-3-mars-v2.0/dataset.shtml">Rosetta-Orbiter/Lander CONSERT Mars Swing-by Calibrated Data v2.0</a></li><!-- RO/RL-CAL-CONSERT-3-MARS-V2.0 -->
+<li><a href="/holdings/ro_rl-cal-consert-4-mars-v1.0/dataset.shtml">Rosetta-Orbiter/Lander CONSERT Mars Swing-by Resampled Data</a></li><!-- RO/RL-CAL-CONSERT-4-MARS-V1.0 -->
+<li><a href="/holdings/ro-x-gia-2-mars-marsswingby-v1.0/dataset.shtml">Rosetta-Orbiter GIADA Mars Swing-by Raw Data</a></li>
+<li><a href="/holdings/ro-x-midas-3-mars-pc3-5-v3.0/dataset.shtml">Rosetta-Orbiter MIDAS Mars Swing-by Calibrated Data v3.0</a></li><!-- RO-X-MIDAS-3-MARS-PC3-5-V3.0 -->
+<li><a href="/holdings/ro-m_cal-navcam-2-mars-v1.1/dataset.shtml">Rosetta-Orbiter NAVCAM Mars Swing-by Raw Data v1.1</a></li><!-- RO-M/CAL-NAVCAM-2-MARS-V1.1 -->
+<li><a href="/holdings/ro-m-rpcica-2-mars-raw-v3.0/dataset.html">Rosetta-Orbiter RPCICA Mars Swing-by Raw Data v3.0</a></li><!-- RO-M-RPCICA-2-MARS-RAW-V3.0 -->
+<li><a href="/holdings/ro-m-rpcica-3-mars-calib-v1.0/dataset.html">Rosetta-Orbiter RPCICA Mars Swing-by Calibrated Data</a></li><!-- RO-M-RPCICA-3-MARS-CALIB-V1.0 -->
+<li><a href="/holdings/ro-m-rpcica-4-mars-corr-v1.0/dataset.html">Rosetta-Orbiter RPCICA Mars Swing-by Resampled Corrected Data</a></li><!-- RO-M-RPCICA-4-MARS-CORR-V1.0 -->
+<li><a href="/holdings/ro-m-rpcica-4-mars-corr-cts-v1.0/dataset.html">Rosetta-Orbiter RPCICA Mars Swing-by Resampled Corrected in Counts Data</a></li><!-- RO-M-RPCICA-4-MARS-CORR-CTS-V1.0 -->
+<li><a href="/holdings/ro-m-rpclap-2-mars-edited2-v1.0/dataset.shtml">Rosetta-Orbiter RPCLAP Mars Swing-by Raw Data</a></li><!-- RO-M-RPCLAP-2-MARS-EDITED2-V1.0 -->
+<li><a href="/holdings/ro-m-rpclap-3-mars-calib2-v1.0/dataset.shtml">Rosetta-Orbiter RPCLAP Mars Swing-by Calibrated Data</a></li><!-- RO-M-RPCLAP-3-MARS-CALIB2-V1.0 -->
+<li><a href="/holdings/ro-m-rpcmag-2-mars-raw-v9.0/dataset.html">Rosetta-Orbiter RPCMAG Mars Swing-by Raw Data v9.0</a></li><!-- RO-M-RPCMAG-2-MARS-RAW-V9.0 -->
+<li><a href="/holdings/ro-m-rpcmag-3-mars-calibrated-v9.0/dataset.html">Rosetta-Orbiter RPCMAG Mars Swing-by Calibrated Data v9.0</a></li><!-- RO-M-RPCMAG-3-MARS-CALIBRATED-V9.0 -->
+<li><a href="/holdings/ro-m-rpcmag-4-mars-resampled-v9.0/dataset.html">Rosetta-Orbiter RPCMAG Mars Swing-by Resampled Data v9.0</a></li><!-- RO-M-RPCMAG-4-MARS-RESAMPLED-V9.0 -->
+<li><a href="/holdings/ro-m-rpcmip-3-mars-v1.0/dataset.shtml">Rosetta-Orbiter RPCMIP Mars Swing-by Calibrated Data</a></li><!-- RO-M-RPCMIP-3-MARS-V1.0 -->
+<li><a href="/holdings/ro-x-srem-2-mars-v1.0/dataset.html">Rosetta-Orbiter SREM Mars Swing-by Raw Data</a></li><!-- RO-X-SREM-2-MARS-V1.0 -->
+<li><a href="/holdings/ro-x-srem-5-mars-v1.0/dataset.html">Rosetta-Orbiter SREM Mars Swing-by Derived Data</a></li><!-- RO-X-SREM-5-MARS-V1.0 -->
+<li><a href="/holdings/rl-m-romap-2-mars-mag-v1.0/dataset.html">Rosetta-Lander ROMAP-MAG Mars Swing-by Raw Data</a></li><!-- RL-M-ROMAP-2-MARS-MAG-V1.0 -->
+<li><a href="/holdings/rl-m-romap-3-mars-mag-v1.0/dataset.html">Rosetta-Lander ROMAP-MAG Mars Swing-by Calibrated Data</a></li><!-- RL-M-ROMAP-3-MARS-MAG-V1.0 -->
+<li><a href="/holdings/rl-m-romap-2-mars-spm-v1.0/dataset.html">Rosetta-Lander ROMAP-SPM Mars Swing-by Raw Data</a></li><!-- RL-M-ROMAP-2-MARS-SPM-V1.0 -->
+<li><a href="/holdings/rl-m-romap-3-mars-spm-v1.0/dataset.html">Rosetta-Lander ROMAP-SPM Mars Swing-by Calibrated Data</a></li><!-- RL-M-ROMAP-3-MARS-SPM-V1.0 -->
+
+<li><em>Please refer to <a href="/data_sb/missions/rosetta/OSIRIS_cruise.shtml#MARS">Rosetta OSIRIS</a> for a listing of OSIRIS datasets from the <strong><em>cruise</em></strong> phases (pre-encounter).</em></li>
+</ul>
+<p><a href="#top">Back to Mission Phase list</a></p>
+
+<a name="cr3"></a>
+<h3>Cruise 3 (CR3)</h3>
+<ul>
+<li><a href="/holdings/ro-x-srem-2-cr3-v1.0/dataset.html">Rosetta-Orbiter SREM Cruise 3 Raw Data</a></li><!-- RO-X-SREM-2-CR3-V1.0 -->
+<li><a href="/holdings/ro-x-srem-5-cr3-v1.0/dataset.html">Rosetta-Orbiter SREM Cruise 3 Derived Data</a></li><!-- RO-X-SREM-5-CR3-V1.0 -->
+
+</ul>
+<p><a href="#top">Back to Mission Phase list</a></p>
+
+<a name="ear2"></a>
+<h3>Earth Swing-by 2 (EAR2)</h3>
+<ul>
+<li><a href="/holdings/ro-cal_e-alice-2-ear2-v1.0/dataset.shtml">Rosetta-Orbiter ALICE Earth Swing-by 2 Raw Data</a></li>
+<li><a href="/holdings/ro-cal_e-alice-3-ear2-v1.0/dataset.shtml">Rosetta-Orbiter ALICE Earth Swing-by 2 Calibrated Data</a></li>
+<li><a href="/holdings/ro_rl-cal-consert-2-ear2-v2.0/dataset.shtml">Rosetta-Orbiter/Lander CONSERT Earth Swing-by 2 Raw Data v2.0</a></li><!-- RO/RL-CAL-CONSERT-2-EAR2-V2.0 -->
+<li><a href="/holdings/ro_rl-cal-consert-3-ear2-v2.0/dataset.shtml">Rosetta-Orbiter/Lander CONSERT Earth Swing-by 2 Calibrated Data v2.0</a></li><!-- RO/RL-CAL-CONSERT-3-EAR2-V2.0 -->
+<li><a href="/holdings/ro_rl-cal-consert-4-ear2-v1.0/dataset.shtml">Rosetta-Orbiter/Lander CONSERT Earth Swing-by 2 Resampled Data</a></li><!-- RO/RL-CAL-CONSERT-4-EAR2-V1.0 -->
+<li><a href="/holdings/ro-x-gia-2-ear2-earthswingby2-v1.0/dataset.shtml">Rosetta-Orbiter GIADA Earth Swing-by 2 Raw Data</a></li>
+<li><a href="/holdings/ro-x-midas-3-ear2-pc6-7-v3.0/dataset.shtml">Rosetta-Orbiter MIDAS Earth Swing-by 2 Calibrated Data v3.0</a></li><!-- RO-X-MIDAS-3-EAR2-PC6-7-V3.0 -->
+<li><a href="/holdings/ro-e-miro-2-ear2-earth2-v1.0/dataset.shtml">Rosetta-Orbiter MIRO Earth Swing-by 2 Raw Data</a></li>
+<li><a href="/holdings/ro-e-miro-3-ear2-earth2-v1.0/dataset.shtml">Rosetta-Orbiter MIRO Earth Swing-by 2 Calibrated Data</a></li>
+<li><a href="/holdings/ro-e_cal-navcam-2-ear2-v1.1/dataset.shtml">Rosetta-Orbiter NAVCAM Earth Swing-by 2 Raw Data v1.1</a></li><!-- RO-E/CAL-NAVCAM-2-EAR2-V1.1 -->
+<li><a href="/holdings/ro-e-rpcica-2-ear2-raw-v3.0/dataset.html">Rosetta-Orbiter RPCICA Earth Swing-by 2 Raw Data v3.0</a></li><!-- RO-E-RPCICA-2-EAR2-RAW-V3.0 -->
+<li><a href="/holdings/ro-e-rpcica-3-ear2-calib-v1.0/dataset.html">Rosetta-Orbiter RPCICA Earth Swing-by 2 Calibrated Data</a></li><!-- RO-E-RPCICA-3-EAR2-CALIB-V1.0 -->
+<li><a href="/holdings/ro-e-rpcica-4-ear2-corr-v1.0/dataset.html">Rosetta-Orbiter RPCICA Earth Swing-by 2 Resampled Corrected Data</a></li><!-- RO-E-RPCICA-4-EAR2-CORR-V1.0 -->
+<li><a href="/holdings/ro-e-rpcica-4-ear2-corr-cts-v1.0/dataset.html">Rosetta-Orbiter RPCICA Earth Swing-by 2 Resampled Corrected in Counts Data</a></li><!-- RO-E-RPCICA-4-EAR2-CORR-CTS-V1.0 -->
+<li><a href="/holdings/ro-e-rpclap-2-ear2-edited2-v1.0/dataset.shtml">Rosetta-Orbiter RPCLAP Earth Swing-by 2 Raw Data</a></li><!-- RO-E-RPCLAP-2-EAR2-EDITED2-V1.0 -->
+<li><a href="/holdings/ro-e-rpclap-3-ear2-calib2-v1.0/dataset.shtml">Rosetta-Orbiter RPCLAP Earth Swing-by 2 Calibrated Data</a></li><!-- RO-E-RPCLAP-3-EAR2-CALIB2-V1.0 -->
+<li><a href="/holdings/ro-e-rpcmag-2-ear2-raw-v9.0/dataset.html">Rosetta-Orbiter RPCMAG Earth Swing-by 2 Raw Data v9.0</a></li><!-- RO-E-RPCMAG-2-EAR2-RAW-V9.0 -->
+<li><a href="/holdings/ro-e-rpcmag-3-ear2-calibrated-v9.0/dataset.html">Rosetta-Orbiter RPCMAG Earth Swing-by 2 Calibrated Data v9.0</a></li><!-- RO-E-RPCMAG-3-EAR2-CALIBRATED-V9.0 -->
+<li><a href="/holdings/ro-e-rpcmag-4-ear2-resampled-v9.0/dataset.html">Rosetta-Orbiter RPCMAG Earth Swing-by 2 Resampled Data v9.0</a></li><!-- RO-E-RPCMAG-4-EAR2-RESAMPLED-V9.0 -->
+<li><a href="/holdings/ro-e-rpcmip-3-ear2-v2.0/dataset.shtml">Rosetta-Orbiter RPCMIP Earth Swing-by 2 Calibrated Data v2.0</a></li><!-- RO-E-RPCMIP-3-EAR2-V2.0 -->
+<li><a href="/holdings/ro-x-srem-2-ear2-v1.0/dataset.html">Rosetta-Orbiter SREM Earth Swing-by 2 Raw Data</a></li><!-- RO-X-SREM-2-EAR2-V1.0 -->
+<li><a href="/holdings/ro-x-srem-5-ear2-v1.0/dataset.html">Rosetta-Orbiter SREM Earth Swing-by 2 Derived Data</a></li><!-- RO-X-SREM-5-EAR2-V1.0 -->
+<li><a href="/holdings/rl-e-romap-2-ear2-mag-v1.0/dataset.html">Rosetta-Lander ROMAP-MAG Earth Flyby 2 Raw Data</a></li><!-- RL-E-ROMAP-2-EAR2-MAG-V1.0 -->
+<li><a href="/holdings/rl-e-romap-3-ear2-mag-v1.0/dataset.html">Rosetta-Lander ROMAP-MAG Earth Flyby 2 Calibrated Data</a></li><!-- RL-E-ROMAP-3-EAR2-MAG-V1.0 -->
+<li><a href="/holdings/rl-e-romap-2-ear2-spm-v1.0/dataset.html">Rosetta-Lander ROMAP-SPM Earth Flyby 2 Raw Data</a></li><!-- RL-E-ROMAP-2-EAR2-SPM-V1.0 -->
+<li><a href="/holdings/rl-e-romap-3-ear2-spm-v1.0/dataset.html">Rosetta-Lander ROMAP-SPM Earth Flyby 2 Calibrated Data</a></li><!-- RL-E-ROMAP-3-EAR2-SPM-V1.0 -->
+
+<li><em>Please refer to <a href="/data_sb/missions/rosetta/OSIRIS_cruise.shtml#EAR2">Rosetta OSIRIS</a> for a listing of OSIRIS datasets from the <strong><em>cruise</em></strong> phases (pre-encounter).</em></li>
+</ul>
+<p><a href="#top">Back to Mission Phase list</a></p>
+
+<a name="cr4a"></a>
+<h3>Cruise 4A (CR4A)</h3>
+<ul>
+<li><a href="/holdings/ro-cal-alice-2-cr4a-v1.0/dataset.shtml">Rosetta-Orbiter ALICE Cruise 4A Raw Data</a></li>
+<li><a href="/holdings/ro-cal-alice-3-cr4a-v1.0/dataset.shtml">Rosetta-Orbiter ALICE Cruise 4A Calibrated Data</a></li>
+<li><a href="/holdings/ro-cal-alice-4-cr4a-v1.0/dataset.shtml">Rosetta-Orbiter ALICE Cruise 4A Resampled Data</a></li>
+<li><a href="/holdings/ro_rl-cal-consert-2-cr4a-v2.0/dataset.shtml">Rosetta-Orbiter/Lander CONSERT Cruise 4A Raw Data v2.0</a></li><!-- RO/RL-CAL-CONSERT-2-CR4A-V2.0 -->
+<li><a href="/holdings/ro_rl-cal-consert-3-cr4a-v2.0/dataset.shtml">Rosetta-Orbiter/Lander CONSERT Cruise 4A Calibrated Data v2.0</a></li><!-- RO/RL-CAL-CONSERT-3-CR4A-V2.0 -->
+<li><a href="/holdings/ro_rl-cal-consert-4-cr4a-v1.0/dataset.shtml">Rosetta-Orbiter/Lander CONSERT Cruise 4A Resampled Data</a></li><!-- RO/RL-CAL-CONSERT-4-CR4A-V1.0 -->
+<li><a href="/holdings/ro-x-midas-3-cr4a-pc8-v3.0/dataset.shtml">Rosetta-Orbiter MIDAS Cruise 4A Calibrated Data v3.0</a></li><!-- RO-X-MIDAS-3-CR4A-PC8-V3.0 -->
+<li><a href="/holdings/ro-ss-rpclap-2-cr4a-edited2-v1.0/dataset.shtml">Rosetta-Orbiter RPCLAP Cruise 4A Raw Data</a></li><!-- RO-SS-RPCLAP-2-CR4A-EDITED2-V1.0 -->
+<li><a href="/holdings/ro-ss-rpclap-3-cr4a-calib2-v1.0/dataset.shtml">Rosetta-Orbiter RPCLAP Cruise 4A Calibrated Data</a></li><!-- RO-SS-RPCLAP-3-CR4A-CALIB2-V1.0 -->
+<li><a href="/holdings/ro-x-rpcmag-2-cr4a-raw-v9.0/dataset.html">Rosetta-Orbiter RPCMAG Cruise 4A Raw Data v9.0</a></li><!-- RO-X-RPCMAG-2-CR4A-RAW-V9.0 -->
+<li><a href="/holdings/ro-x-rpcmag-3-cr4a-calibrated-v9.0/dataset.html">Rosetta-Orbiter RPCMAG Cruise 4A Calibrated Data v9.0</a></li><!-- RO-X-RPCMAG-3-CR4A-CALIBRATED-V9.0 -->
+<li><a href="/holdings/ro-x-rpcmag-4-cr4a-resampled-v9.0/dataset.html">Rosetta-Orbiter RPCMAG Cruise 4A Resampled Data v9.0</a></li><!-- RO-X-RPCMAG-4-CR4A-RESAMPLED-V9.0 -->
+<li><a href="/holdings/ro-cal-rpcmip-3-cr4a-v1.0/dataset.shtml">Rosetta-Orbiter RPCMIP Cruise 4A Calibrated Data</a></li><!-- RO-CAL-RPCMIP-3-CR4A-V1.0 -->
+<li><a href="/holdings/ro-x-srem-2-cr4a-v1.0/dataset.html">Rosetta-Orbiter SREM Cruise 4A Raw Data</a></li><!-- RO-X-SREM-2-CR4A-V1.0 -->
+<li><a href="/holdings/ro-x-srem-5-cr4a-v1.0/dataset.html">Rosetta-Orbiter SREM Cruise 4A Derived Data</a></li><!-- RO-X-SREM-5-CR4A-V1.0 -->
+<li><a href="/holdings/rl-cal-romap-2-cr4a-mag-v1.0/dataset.html">Rosetta-Lander ROMAP-MAG Cruise 4A Raw Data</a></li><!-- RL-CAL-ROMAP-2-CR4A-MAG-V1.0 -->
+<li><a href="/holdings/rl-cal-romap-3-cr4a-mag-v1.0/dataset.html">Rosetta-Lander ROMAP-MAG Cruise 4A Calibrated Data</a></li><!-- RL-CAL-ROMAP-3-CR4A-MAG-V1.0 -->
+<li><a href="/holdings/rl-cal-romap-2-cr4a-spm-v1.0/dataset.html">Rosetta-Lander ROMAP-SPM Cruise 4A Raw Data</a></li><!-- RL-CAL-ROMAP-2-CR4A-SPM-V1.0 -->
+<li><a href="/holdings/rl-cal-romap-3-cr4a-spm-v1.0/dataset.html">Rosetta-Lander ROMAP-SPM Cruise 4A Calibrated Data</a></li><!-- RL-CAL-ROMAP-3-CR4A-SPM-V1.0 -->
+
+<li><em>Please refer to <a href="/data_sb/missions/rosetta/OSIRIS_cruise.shtml#CR4A">Rosetta OSIRIS</a> for a listing of OSIRIS datasets from the <strong><em>cruise</em></strong> phases (pre-encounter).</em></li>
+</ul>
+<p><a href="#top">Back to Mission Phase list</a></p>
+
+<a name="ast1"></a>
+<h3>Asteroid 2867 Steins Flyby (AST1)</h3>
+<ul>
+<li><a href="/holdings/ro-a-osinac_osiwac-5-steins-shape-v1.0/dataset.shtml">Rosetta Shape Model of Asteroid Steins</a></li>
+<li><a href="/holdings/ro-a_cal-alice-2-ast1-v1.0/dataset.shtml">Rosetta-Orbiter ALICE Steins Raw Data</a></li>
+<li><a href="/holdings/ro-a_cal-alice-3-ast1-v1.0/dataset.shtml">Rosetta-Orbiter ALICE Steins Calibrated Data</a></li>
+<li><a href="/holdings/ro-a_cal-alice-4-ast1-v1.0/dataset.shtml">Rosetta-Orbiter ALICE Steins Resampled Data</a></li>
+<li><a href="/holdings/ro-a-miro-2-ast1-steins-v1.0/dataset.shtml">Rosetta-Orbiter MIRO Steins Raw Data</a></li>
+<li><a href="/holdings/ro-a-miro-3-ast1-steins-v1.0/dataset.shtml">Rosetta-Orbiter MIRO Steins Calibrated Data</a></li>
+<li><a href="/holdings/ro-a-navcam-2-ast1-v1.1/dataset.shtml">Rosetta-Orbiter NAVCAM Steins Raw Data v1.1</a></li><!-- RO-A-NAVCAM-2-AST1-V1.1 -->
+<li><a href="/holdings/ro-a-rosina-2-ast1-v1.0/dataset.shtml">Rosetta-Orbiter ROSINA Steins Raw Data</a></li>
+<li><a href="/holdings/ro-a-rpcies-2-ast1-v1.0/dataset.shtml">Rosetta-Orbiter RPCIES Steins Edited Raw Data</a></li>
+<li><a href="/holdings/ro-a-rpclap-2-ast1-edited2-v1.0/dataset.shtml">Rosetta-Orbiter RPCLAP Steins Raw Data</a></li><!-- RO-A-RPCLAP-2-AST1-EDITED2-V1.0 -->
+<li><a href="/holdings/ro-a-rpclap-3-ast1-calib2-v1.0/dataset.shtml">Rosetta-Orbiter RPCLAP Steins Calibrated Data</a></li><!-- RO-A-RPCLAP-3-AST1-CALIB2-V1.0 -->
+<li><a href="/holdings/ro-a-rpcmag-2-ast1-raw-v9.0/dataset.html">Rosetta-Orbiter RPCMAG Steins Raw Data v9.0</a></li><!-- RO-A-RPCMAG-2-AST1-RAW-V9.0 -->
+<li><a href="/holdings/ro-a-rpcmag-3-ast1-calibrated-v9.0/dataset.html">Rosetta-Orbiter RPCMAG Steins Calibrated Data v9.0</a></li><!-- RO-A-RPCMAG-3-AST1-CALIBRATED-V9.0 -->
+<li><a href="/holdings/ro-a-rpcmag-4-ast1-resampled-v9.0/dataset.html">Rosetta-Orbiter RPCMAG Steins Resampled Data v9.0</a></li><!-- RO-A-RPCMAG-4-AST1-RESAMPLED-V9.0 -->
+<li><a href="/holdings/ro-a-rpcmip-3-ast1-v2.0/dataset.shtml">Rosetta-Orbiter RPCMIP Steins Calibrated Data v2.0</a></li><!-- RO-A-RPCMIP-3-AST1-V2.0 -->
+<li><a href="/holdings/ro-x-srem-2-ast1-v1.0/dataset.html">Rosetta-Orbiter SREM Steins Raw Data</a></li><!-- RO-X-SREM-2-AST1-V1.0 -->
+<li><a href="/holdings/ro-x-srem-5-ast1-v1.0/dataset.html">Rosetta-Orbiter SREM Steins Derived Data</a></li><!-- RO-X-SREM-5-AST1-V1.0 -->
+<li><a href="/holdings/rl-a-romap-2-ast1-mag-v1.0/dataset.html">Rosetta-Lander ROMAP-MAG Steins Raw Data</a></li><!-- RL-A-ROMAP-2-AST1-MAG-V1.0 -->
+<li><a href="/holdings/rl-a-romap-3-ast1-mag-v1.0/dataset.html">Rosetta-Lander ROMAP-MAG Steins Calibrated Data</a></li><!-- RL-A-ROMAP-3-AST1-MAG-V1.0 -->
+<li><a href="/holdings/rl-a-romap-2-ast1-spm-v1.0/dataset.html">Rosetta-Lander ROMAP-SPM Steins Raw Data</a></li><!-- RL-A-ROMAP-2-AST1-SPM-V1.0 -->
+<li><a href="/holdings/rl-a-romap-3-ast1-spm-v1.0/dataset.html">Rosetta-Lander ROMAP-SPM Steins Calibrated Data</a></li><!-- RL-A-ROMAP-3-AST1-SPM-V1.0 -->
+
+<li><em>Please refer to <a href="/data_sb/missions/rosetta/OSIRIS_cruise.shtml#AST1">Rosetta OSIRIS</a> for a listing of OSIRIS datasets from the <strong><em>cruise</em></strong> phases (pre-encounter).</em></li>
+</ul>
+<p><a href="#top">Back to Mission Phase list</a></p>
+
+<a name="cr4b"></a>
+<h3>Cruise 4B (CR4B)</h3>
+<ul>
+<li><a href="/holdings/ro_rl-cal-consert-2-cr4b-v2.0/dataset.shtml">Rosetta-Orbiter/Lander CONSERT Cruise 4B Raw Data v2.0</a></li><!-- RO/RL-CAL-CONSERT-2-CR4B-V2.0 -->
+<li><a href="/holdings/ro-x-midas-3-cr4b-pc9-v3.0/dataset.shtml">Rosetta-Orbiter MIDAS Cruise 4B Calibrated Data v3.0</a></li><!-- RO-X-MIDAS-3-CR4B-PC9-V3.0 -->
+<li><a href="/holdings/ro-cal-navcam-2-cr4b-v1.1/dataset.shtml">Rosetta-Orbiter NAVCAM Cruise 4B Raw Data v1.1</a></li><!-- RO-CAL-NAVCAM-2-CR4B-V1.1 -->
+<li><a href="/holdings/ro-ss-rpcica-2-cr4-raw-v3.0/dataset.html">Rosetta-Orbiter RPCICA Cruise 4 Raw Data v3.0</a></li><!-- RO-SS-RPCICA-2-CR4-RAW-V3.0 -->
+<li><a href="/holdings/ro-ss-rpcica-3-cr4-calib-v1.0/dataset.html">Rosetta-Orbiter RPCICA Cruise 4 Calibrated Data</a></li><!-- RO-SS-RPCICA-3-CR4-CALIB-V1.0 -->
+<li><a href="/holdings/ro-ss-rpcica-4-cr4-corr-v1.0/dataset.html">Rosetta-Orbiter RPCICA Cruise 4 Resampled Corrected Data</a></li><!-- RO-SS-RPCICA-4-CR4-CORR-V1.0 -->
+<li><a href="/holdings/ro-ss-rpcica-4-cr4-corr-cts-v1.0/dataset.html">Rosetta-Orbiter RPCICA Cruise 4 Resampled Corrected in Counts Data</a></li><!-- RO-SS-RPCICA-4-CR4-CORR-CTS-V1.0 -->
+<li><a href="/holdings/ro-ss-rpclap-2-cr4b-edited2-v1.0/dataset.shtml">Rosetta-Orbiter RPCLAP Cruise 4B Raw Data</a></li><!-- RO-SS-RPCLAP-2-CR4B-EDITED2-V1.0 -->
+<li><a href="/holdings/ro-ss-rpclap-3-cr4b-calib2-v1.0/dataset.shtml">Rosetta-Orbiter RPCLAP Cruise 4B Calibrated Data</a></li><!-- RO-SS-RPCLAP-3-CR4B-CALIB2-V1.0 -->
+<li><a href="/holdings/ro-x-rpcmag-2-cr4b-raw-v9.0/dataset.html">Rosetta-Orbiter RPCMAG Cruise 4B Raw Data v9.0</a></li><!-- RO-X-RPCMAG-2-CR4B-RAW-V9.0 -->
+<li><a href="/holdings/ro-x-rpcmag-3-cr4b-calibrated-v9.0/dataset.html">Rosetta-Orbiter RPCMAG Cruise 4B Calibrated Data v9.0</a></li><!-- RO-X-RPCMAG-3-CR4B-CALIBRATED-V9.0 -->
+<li><a href="/holdings/ro-x-rpcmag-4-cr4b-resampled-v9.0/dataset.html">Rosetta-Orbiter RPCMAG Cruise 4B Resampled Data v9.0</a></li><!-- RO-X-RPCMAG-4-CR4B-RESAMPLED-V9.0 -->
+<li><a href="/holdings/ro-cal-rpcmip-3-cr4b-v1.0/dataset.shtml">Rosetta-Orbiter RPCMIP Cruise 4B Calibrated Data</a></li><!-- RO-CAL-RPCMIP-3-CR4B-V1.0 -->
+<li><a href="/holdings/ro-x-srem-2-cr4b-v1.0/dataset.html">Rosetta-Orbiter SREM Cruise 4B Raw Data</a></li><!-- RO-X-SREM-2-CR4B-V1.0 -->
+<li><a href="/holdings/ro-x-srem-5-cr4b-v1.0/dataset.html">Rosetta-Orbiter SREM Cruise 4B Derived Data</a></li><!-- RO-X-SREM-5-CR4B-V1.0 -->
+<li><a href="/holdings/rl-cal-romap-2-cr4b-mag-v1.0/dataset.html">Rosetta-Lander ROMAP-MAG Cruise 4B Raw Data</a></li><!-- RL-CAL-ROMAP-2-CR4B-MAG-V1.0 -->
+<li><a href="/holdings/rl-cal-romap-3-cr4b-mag-v1.0/dataset.html">Rosetta-Lander ROMAP-MAG Cruise 4B Calibrated Data</a></li><!-- RL-CAL-ROMAP-3-CR4B-MAG-V1.0 -->
+<li><a href="/holdings/rl-cal-romap-2-cr4b-spm-v1.0/dataset.html">Rosetta-Lander ROMAP-SPM Cruise 4B Raw Data</a></li><!-- RL-CAL-ROMAP-2-CR4B-SPM-V1.0 -->
+<li><a href="/holdings/rl-cal-romap-3-cr4b-spm-v1.0/dataset.html">Rosetta-Lander ROMAP-SPM Cruise 4B Calibrated Data</a></li><!-- RL-CAL-ROMAP-3-CR4B-SPM-V1.0 -->
+
+<li><em>Please refer to <a href="/data_sb/missions/rosetta/OSIRIS_cruise.shtml#CR4B">Rosetta OSIRIS</a> for a listing of OSIRIS datasets from the <strong><em>cruise</em></strong> phases (pre-encounter).</em></li>
+</ul>
+<p><a href="#top">Back to Mission Phase list</a></p>
+
+<a name="ear3"></a>
+<h3>Earth Swing-by 3 (EAR3)</h3>
+<ul>
+<li><a href="/holdings/ro_rl-cal-consert-2-ear3-v2.0/dataset.shtml">Rosetta-Orbiter/Lander CONSERT Earth Swing-by 3 Raw Data v2.0</a></li><!-- RO/RL-CAL-CONSERT-2-EAR3-V2.0 -->
+<li><a href="/holdings/ro_rl-cal-consert-3-ear3-v2.0/dataset.shtml">Rosetta-Orbiter/Lander CONSERT Earth Swing-by 3 Calibrated Data v2.0</a></li><!-- RO/RL-CAL-CONSERT-3-EAR3-V2.0 -->
+<li><a href="/holdings/ro_rl-cal-consert-4-ear3-v1.0/dataset.shtml">Rosetta-Orbiter/Lander CONSERT Earth Swing-by 3 Resampled Data</a></li><!-- RO/RL-CAL-CONSERT-4-EAR3-V1.0 -->
+<li><a href="/holdings/ro-x-midas-3-ear3-pc10-v3.0/dataset.shtml">Rosetta-Orbiter MIDAS Earth Swing-by 3 Calibrated Data v3.0</a></li><!-- RO-X-MIDAS-3-EAR3-PC10-V3.0 -->
+<li><a href="/holdings/ro-e_cal-navcam-2-ear3-v1.1/dataset.shtml">Rosetta-Orbiter NAVCAM Earth Swing-by 3 Raw Data v1.1</a></li><!-- RO-E/CAL-NAVCAM-2-EAR3-V1.1 -->
+<li><a href="/holdings/ro-e-rpcica-2-ear3-raw-v2.0/dataset.html">Rosetta-Orbiter RPCICA Earth Swing-by 3 Raw Data v2.0</a></li><!-- RO-E-RPCICA-2-EAR3-RAW-V2.0 -->
+<li><a href="/holdings/ro-e-rpcica-3-ear3-calib-v1.0/dataset.html">Rosetta-Orbiter RPCICA Earth Swing-by 3 Calibrated Data</a></li><!-- RO-E-RPCICA-3-EAR3-CALIB-V1.0 -->
+<li><a href="/holdings/ro-e-rpcica-4-ear3-corr-v1.0/dataset.html">Rosetta-Orbiter RPCICA Earth Swing-by 3 Resampled Corrected Data</a></li><!-- RO-E-RPCICA-4-EAR3-CORR-V1.0 -->
+<li><a href="/holdings/ro-e-rpcica-4-ear3-corr-cts-v1.0/dataset.html">Rosetta-Orbiter RPCICA Earth Swing-by 3 Resampled Corrected in Counts Data</a></li><!-- RO-E-RPCICA-4-EAR3-CORR-CTS-V1.0 -->
+<li><a href="/holdings/ro-e-rpcies-2-ear3-v1.0/dataset.shtml">Rosetta-Orbiter RPCIES Earth Swing-by 3 Raw Data</a></li><!-- RO-E-RPCIES-2-EAR3-V1.0 -->
+<li><a href="/holdings/ro-e-rpclap-2-ear3-edited2-v1.0/dataset.shtml">Rosetta-Orbiter RPCLAP Earth Swing-by 3 Raw Data</a></li><!-- RO-E-RPCLAP-2-EAR3-EDITED2-V1.0 -->
+<li><a href="/holdings/ro-e-rpclap-3-ear3-calib2-v1.0/dataset.shtml">Rosetta-Orbiter RPCLAP Earth Swing-by 3 Calibrated Data</a></li><!-- RO-E-RPCLAP-3-EAR3-CALIB2-V1.0 -->
+<li><a href="/holdings/ro-e-rpcmag-2-ear3-raw-v9.0/dataset.html">Rosetta-Orbiter RPCMAG Earth Swing-by 3 Raw Data v9.0</a></li><!-- RO-E-RPCMAG-2-EAR3-RAW-V9.0 -->
+<li><a href="/holdings/ro-e-rpcmag-3-ear3-calibrated-v9.0/dataset.html">Rosetta-Orbiter RPCMAG Earth Swing-by 3 Calibrated Data v9.0</a></li><!-- RO-E-RPCMAG-3-EAR3-CALIBRATED-V9.0 -->
+<li><a href="/holdings/ro-e-rpcmag-4-ear3-resampled-v9.0/dataset.html">Rosetta-Orbiter RPCMAG Earth Swing-by 3 Resampled Data v9.0</a></li><!-- RO-E-RPCMAG-4-EAR3-RESAMPLED-V9.0 -->
+<li><a href="/holdings/ro-e-rpcmip-3-ear3-v1.0/dataset.shtml">Rosetta-Orbiter RPCMIP Earth Swing-by 3 Calibrated Data</a></li><!-- RO-E-RPCMIP-3-EAR3-V1.0 -->
+<li><a href="/holdings/ro-x-srem-2-ear3-v1.0/dataset.html">Rosetta-Orbiter SREM Earth Swing-by 3 Raw Data</a></li><!-- RO-X-SREM-2-EAR3-V1.0 -->
+<li><a href="/holdings/ro-x-srem-5-ear3-v1.0/dataset.html">Rosetta-Orbiter SREM Earth Swing-by 3 Derived Data</a></li><!-- RO-X-SREM-5-EAR3-V1.0 -->
+<li><a href="/holdings/rl-e-romap-2-ear3-mag-v1.0/dataset.html">Rosetta-Lander ROMAP-MAG Earth Flyby 3 Raw Data</a></li><!-- RL-E-ROMAP-2-EAR3-MAG-V1.0 -->
+<li><a href="/holdings/rl-e-romap-3-ear3-mag-v1.0/dataset.html">Rosetta-Lander ROMAP-MAG Earth Flyby 3 Calibrated Data</a></li><!-- RL-E-ROMAP-3-EAR3-MAG-V1.0 -->
+<li><a href="/holdings/rl-e-romap-2-ear3-spm-v1.0/dataset.html">Rosetta-Lander ROMAP-SPM Earth Flyby 3 Raw Data</a></li><!-- RL-E-ROMAP-2-EAR3-SPM-V1.0 -->
+<li><a href="/holdings/rl-e-romap-3-ear3-spm-v1.0/dataset.html">Rosetta-Lander ROMAP-SPM Earth Flyby 3 Calibrated Data</a></li><!-- RL-E-ROMAP-3-EAR3-SPM-V1.0 -->
+
+<li><em>Please refer to <a href="/data_sb/missions/rosetta/OSIRIS_cruise.shtml#EAR3">Rosetta OSIRIS</a> for a listing of OSIRIS datasets from the <strong><em>cruise</em></strong> phases (pre-encounter).</em></li>
+</ul>
+<p><a href="#top">Back to Mission Phase list</a></p>
+
+<a name="cr5"></a>
+<h3>Cruise 5 (CR5)</h3>
+<ul>
+<li><a href="/holdings/ro_rl-cal-consert-2-cr5-v2.0/dataset.shtml">Rosetta-Orbiter/Lander CONSERT Cruise 5 Raw Data v2.0</a></li><!-- RO/RL-CAL-CONSERT-2-CR5-V2.0 -->
+<li><a href="/holdings/ro_rl-cal-consert-3-cr5-v2.0/dataset.shtml">Rosetta-Orbiter/Lander CONSERT Cruise 5 Calibrated Data v2.0</a></li><!-- RO/RL-CAL-CONSERT-3-CR5-V2.0 -->
+<li><a href="/holdings/ro_rl-cal-consert-4-cr5-v1.0/dataset.shtml">Rosetta-Orbiter/Lander CONSERT Cruise 5 Resampled Data</a></li><!-- RO/RL-CAL-CONSERT-4-CR5-V1.0 -->
+<li><a href="/holdings/ro-x-midas-3-cr5-pc12-v3.0/dataset.shtml">Rosetta-Orbiter MIDAS Cruise 5 Calibrated Data v3.0</a></li><!-- RO-X-MIDAS-3-CR5-PC12-V3.0 -->
+<li><a href="/holdings/ro-ss-rpcies-2-cr5-v1.0/dataset.shtml">Rosetta-Orbiter RPCIES Cruise 5 Solar Wind Raw Data</a></li><!-- RO-SS-RPCIES-2-CR5-V1.0 -->
+<li><a href="/holdings/ro-ss-rpclap-2-cr5-edited2-v1.0/dataset.shtml">Rosetta-Orbiter RPCLAP Cruise 5 Raw Data</a></li><!-- RO-SS-RPCLAP-2-CR5-EDITED2-V1.0 -->
+<li><a href="/holdings/ro-ss-rpclap-3-cr5-calib2-v1.0/dataset.shtml">Rosetta-Orbiter RPCLAP Cruise 5 Calibrated Data</a></li><!-- RO-SS-RPCLAP-3-CR5-CALIB2-V1.0 -->
+<li><a href="/holdings/ro-x-rpcmag-2-cr5-raw-v9.0/dataset.html">Rosetta-Orbiter RPCMAG Cruise 5 Raw Data v9.0</a></li><!-- RO-X-RPCMAG-2-CR5-RAW-V9.0 -->
+<li><a href="/holdings/ro-x-rpcmag-3-cr5-calibrated-v9.0/dataset.html">Rosetta-Orbiter RPCMAG Cruise 5 Calibrated Data v9.0</a></li><!-- RO-X-RPCMAG-3-CR5-CALIBRATED-V9.0 -->
+<li><a href="/holdings/ro-x-rpcmag-4-cr5-resampled-v9.0/dataset.html">Rosetta-Orbiter RPCMAG Cruise 5 Resampled Data v9.0</a></li><!-- RO-X-RPCMAG-4-CR5-RESAMPLED-V9.0 -->
+<li><a href="/holdings/ro-cal-rpcmip-3-cr5-v1.0/dataset.shtml">Rosetta-Orbiter RPCMIP Cruise 5 Calibrated Data</a></li><!-- RO-CAL-RPCMIP-3-CR5-V1.0 -->
+<li><a href="/holdings/ro-x-srem-2-cr5-v1.0/dataset.html">Rosetta-Orbiter SREM Cruise 5 Raw Data</a></li><!-- RO-X-SREM-2-CR5-V1.0 -->
+<li><a href="/holdings/ro-x-srem-5-cr5-v1.0/dataset.html">Rosetta-Orbiter SREM Cruise 5 Derived Data</a></li><!-- RO-X-SREM-5-CR5-V1.0 -->
+<li><a href="/holdings/rl-cal-romap-2-cr5-mag-v1.0/dataset.html">Rosetta-Lander ROMAP-MAG Cruise 5 Raw Data</a></li><!-- RL-CAL-ROMAP-2-CR5-MAG-V1.0 -->
+<li><a href="/holdings/rl-cal-romap-3-cr5-mag-v1.0/dataset.html">Rosetta-Lander ROMAP-MAG Cruise 5 Calibrated Data</a></li><!-- RL-CAL-ROMAP-3-CR5-MAG-V1.0 -->
+<li><a href="/holdings/rl-cal-romap-2-cr5-spm-v1.0/dataset.html">Rosetta-Lander ROMAP-SPM Cruise 5 Raw Data</a></li><!-- RL-CAL-ROMAP-2-CR5-SPM-V1.0 -->
+<li><a href="/holdings/rl-cal-romap-3-cr5-spm-v1.0/dataset.html">Rosetta-Lander ROMAP-SPM Cruise 5 Calibrated Data</a></li><!-- RL-CAL-ROMAP-3-CR5-SPM-V1.0 -->
+
+<li><em>Please refer to <a href="/data_sb/missions/rosetta/OSIRIS_cruise.shtml#CR5">Rosetta OSIRIS</a> for a listing of OSIRIS datasets from the <strong><em>cruise</em></strong> phases (pre-encounter).</em></li>
+</ul>
+<p><a href="#top">Back to Mission Phase list</a></p>
+
+<a name="ast2"></a>
+<h3>Asteroid 21 Lutetia Flyby (AST2)</h3>
+<ul>
+<li><a href="/holdings/ro-a-osinac_osiwac-5-lutetia-shape-v1.0/dataset.shtml">Rosetta Shape Model of Asteroid Lutetia</a></li>
+<li><a href="/holdings/ro-a_cal-alice-2-ast2-v1.0/dataset.shtml">Rosetta-Orbiter ALICE Lutetia Raw Data</a></li>
+<li><a href="/holdings/ro-a_cal-alice-3-ast2-v1.0/dataset.shtml">Rosetta-Orbiter ALICE Lutetia Calibrated Data</a></li>
+<li><a href="/holdings/ro-a_cal-alice-4-ast2-v1.0/dataset.shtml">Rosetta-Orbiter ALICE Lutetia Resampled Data</a></li>
+<li><a href="/holdings/ro_rl-a-consert-2-ast2-v1.0/dataset.shtml">Rosetta-Orbiter/Lander CONSERT Lutetia Raw Data</a></li><!-- RO/RL-A-CONSERT-2-AST2-V1.0 -->
+<li><a href="/holdings/ro-a-midas-3-ast2-lute-v3.0/dataset.shtml">Rosetta-Orbiter MIDAS Lutetia Calibrated Data v3.0</a></li>
+<li><a href="/holdings/ro-a-miro-2-ast2-lutetia-v1.0/dataset.shtml">Rosetta-Orbiter MIRO Lutetia Raw Data</a></li>
+<li><a href="/holdings/ro-a-miro-3-ast2-lutetia-v1.0/dataset.shtml">Rosetta-Orbiter MIRO Lutetia Calibrated Data</a></li>
+<li><a href="/holdings/ro-a_cal-navcam-2-ast2-v1.1/dataset.shtml">Rosetta-Orbiter NAVCAM Lutetia Raw Data v1.1</a></li><!-- RO-A/CAL-NAVCAM-2-AST2-V1.1 -->
+<li><a href="/holdings/ro-a-rpcica-2-ast2-raw-v2.0/dataset.html">Rosetta-Orbiter RPCICA Lutetia Raw Data v2.0</a></li><!-- RO-A-RPCICA-2-AST2-RAW-V2.0 -->
+<li><a href="/holdings/ro-a-rpcica-3-ast2-calib-v1.0/dataset.html">Rosetta-Orbiter RPCICA Lutetia Calibrated Data</a></li><!-- RO-A-RPCICA-3-AST2-CALIB-V1.0 -->
+<li><a href="/holdings/ro-a-rpcica-4-ast2-corr-v1.0/dataset.html">Rosetta-Orbiter RPCICA Lutetia Resampled Corrected Data</a></li><!-- RO-A-RPCICA-4-AST2-CORR-V1.0 -->
+<li><a href="/holdings/ro-a-rpcica-4-ast2-corr-cts-v1.0/dataset.html">Rosetta-Orbiter RPCICA Lutetia Resampled Corrected in Counts Data</a></li><!-- RO-A-RPCICA-4-AST2-CORR-CTS-V1.0 -->
+<li><a href="/holdings/ro-a-rpcies-2-ast2-v1.0/dataset.shtml">Rosetta-Orbiter RPCIES Lutetia Edited Raw Data</a></li>
+<li><a href="/holdings/ro-a-rpclap-2-ast2-edited2-v1.0/dataset.shtml">Rosetta-Orbiter RPCLAP Lutetia Raw Data v2.0</a></li><!-- RO-A-RPCLAP-2-AST2-EDITED2-V1.0 -->
+<li><a href="/holdings/ro-a-rpclap-3-ast2-calib2-v1.0/dataset.shtml">Rosetta-Orbiter RPCLAP Lutetia Calibrated Data v2.0</a></li><!-- RO-A-RPCLAP-3-AST2-CALIB2-V1.0 -->
+<li><a href="/holdings/ro-a-rpcmag-2-ast2-raw-v9.0/dataset.html">Rosetta-Orbiter RPCMAG Lutetia Raw Data v9.0</a></li><!-- RO-A-RPCMAG-2-AST2-RAW-V9.0 -->
+<li><a href="/holdings/ro-a-rpcmag-3-ast2-calibrated-v9.0/dataset.html">Rosetta-Orbiter RPCMAG Lutetia Calibrated Data v9.0</a></li><!-- RO-A-RPCMAG-3-AST2-CALIBRATED-V9.0 -->
+<li><a href="/holdings/ro-a-rpcmag-4-ast2-resampled-v9.0/dataset.html">Rosetta-Orbiter RPCMAG Lutetia Resampled Data v9.0</a></li><!-- RO-A-RPCMAG-4-AST2-RESAMPLED-V9.0 -->
+<li><a href="/holdings/ro-a-rpcmip-3-ast2-v1.0/dataset.shtml">Rosetta-Orbiter RPCMIP Lutetia Calibrated Data</a></li><!-- RO-A-RPCMIP-3-AST2-V1.0 -->
+<li><a href="/holdings/ro-x-srem-2-ast2-v1.0/dataset.html">Rosetta-Orbiter SREM Lutetia Raw Data</a></li><!-- RO-X-SREM-2-AST2-V1.0 -->
+<li><a href="/holdings/ro-x-srem-5-ast2-v1.0/dataset.html">Rosetta-Orbiter SREM Lutetia Derived Data</a></li><!-- RO-X-SREM-5-AST2-V1.0 -->
+<li><a href="/holdings/rl-a-romap-2-ast2-mag-v1.0/dataset.html">Rosetta-Lander ROMAP-MAG Lutetia Raw Data</a></li><!-- RL-A-ROMAP-2-AST2-MAG-V1.0 -->
+<li><a href="/holdings/rl-a-romap-3-ast2-mag-v1.0/dataset.html">Rosetta-Lander ROMAP-MAG Lutetia Calibrated Data</a></li><!-- RL-A-ROMAP-3-AST2-MAG-V1.0 -->
+<li><a href="/holdings/rl-a-romap-2-ast2-spm-v1.0/dataset.html">Rosetta-Lander ROMAP-SPM Lutetia Raw Data</a></li><!-- RL-A-ROMAP-2-AST2-SPM-V1.0 -->
+<li><a href="/holdings/rl-a-romap-3-ast2-spm-v1.0/dataset.html">Rosetta-Lander ROMAP-SPM Lutetia Calibrated Data</a></li><!-- RL-A-ROMAP-3-AST2-SPM-V1.0 -->
+
+<li><em>Please refer to <a href="/data_sb/missions/rosetta/OSIRIS_cruise.shtml#AST2">Rosetta OSIRIS</a> for a listing of OSIRIS datasets from the <strong><em>cruise</em></strong> phases (pre-encounter).</em></li>
+</ul>
+<p><a href="#top">Back to Mission Phase list</a></p>
+
+<a name="rvm1"></a>
+<h3>Rendezvous Maneuver 1 (RVM1)</h3>
+<ul>
+<li><a href="/holdings/ro-cal-alice-2-rvm1-v1.0/dataset.shtml">Rosetta-Orbiter ALICE Rendezvous Maneuver 1 Raw Data</a></li>
+<li><a href="/holdings/ro_rl-cal-consert-2-rvm1-v2.0/dataset.shtml">Rosetta-Orbiter/Lander CONSERT Rendezvous Maneuver 1 Raw Data</a></li><!-- RO/RL-CAL-CONSERT-2-RVM1-V2.0 -->
+<li><a href="/holdings/ro-x-gia-2-rvm1-rendezmanoeuvre1-v1.0/dataset.shtml">Rosetta-Orbiter GIADA Rendezvous Maneuver 1 Raw Data</a></li><!-- RO-X-GIA-2-RVM1-RENDEZMANOEUVRE1-V1.0 -->
+<li><a href="/holdings/ro-x-midas-3-rvm1-pc13-v3.0/dataset.shtml">Rosetta-Orbiter MIDAS Rendezvous Maneuver 1 Calibrated Data v3.0</a></li><!-- RO-X-MIDAS-3-RVM1-PC13-V3.0 -->
+<li><a href="/holdings/ro-cal-navcam-2-rvm1-v1.1/dataset.shtml">Rosetta-Orbiter NAVCAM Rendezvous Maneuver 1 Raw Data v1.1</a></li><!-- RO-CAL-NAVCAM-2-RVM1-V1.1 -->
+<li><a href="/holdings/ro-ss-rpcies-2-rvm1-v1.0/dataset.shtml">Rosetta-Orbiter RPCIES Rendezvous Maneuver 1 Solar Wind Raw Data</a></li><!-- RO-SS-RPCIES-2-RVM1-V1.0 -->
+<li><a href="/holdings/ro-ss-rpclap-2-rvm1-edited2-v1.0/dataset.shtml">Rosetta-Orbiter RPCLAP Rendezvous Maneuver 1 Raw Data</a></li><!-- RO-SS-RPCLAP-2-RVM1-EDITED2-V1.0 -->
+<li><a href="/holdings/ro-ss-rpclap-3-rvm1-calib2-v1.0/dataset.shtml">Rosetta-Orbiter RPCLAP Rendezvous Maneuver 1 Calibrated Data</a></li><!-- RO-SS-RPCLAP-3-RVM1-CALIB2-V1.0 -->
+<li><a href="/holdings/ro-ss-rpcmag-2-rvm1-raw-v9.0/dataset.html">Rosetta-Orbiter RPCMAG Rendezvous Manoeuvre 1 Raw Data v9.0</a></li><!-- RO-SS-RPCMAG-2-RVM1-RAW-V9.0 -->
+<li><a href="/holdings/ro-ss-rpcmag-3-rvm1-calibrated-v9.0/dataset.html">Rosetta-Orbiter RPCMAG Rendezvous Manoeuvre 1 Calibrated Data v9.0</a></li><!-- RO-SS-RPCMAG-3-RVM1-CALIBRATED-V9.0 -->
+<li><a href="/holdings/ro-ss-rpcmag-4-rvm1-resampled-v9.0/dataset.html">Rosetta-Orbiter RPCMAG Rendezvous Manoeuvre 1 Resampled Data v9.0</a></li><!-- RO-SS-RPCMAG-4-RVM1-RESAMPLED-V9.0 -->
+<li><a href="/holdings/ro-cal-rpcmip-3-rvm1-v1.0/dataset.shtml">Rosetta-Orbiter RPCMIP Rendezvous Maneuver 1 Calibrated Data</a></li><!-- RO-CAL-RPCMIP-3-RVM1-V1.0 -->
+<li><a href="/holdings/ro-x-srem-2-rvm1-v1.0/dataset.html">Rosetta-Orbiter SREM Rendezvous Maneuver 1 Raw Data</a></li><!-- RO-X-SREM-2-RVM1-V1.0 -->
+<li><a href="/holdings/ro-x-srem-5-rvm1-v1.0/dataset.html">Rosetta-Orbiter SREM Rendezvous Maneuver 1 Derived Data</a></li><!-- RO-X-SREM-5-RVM1-V1.0 -->
+<li><a href="/holdings/rl-cal-romap-2-rvm1-mag-v1.0/dataset.html">Rosetta-Lander ROMAP-MAG Rendezvous Maneuver 1 Raw Data</a></li><!-- RL-CAL-ROMAP-2-RVM1-MAG-V1.0 -->
+<li><a href="/holdings/rl-cal-romap-3-rvm1-mag-v1.0/dataset.html">Rosetta-Lander ROMAP-MAG Rendezvous Maneuver 1 Calibrated Data</a></li><!-- RL-CAL-ROMAP-3-RVM1-MAG-V1.0 -->
+<li><a href="/holdings/rl-cal-romap-2-rvm1-spm-v1.0/dataset.html">Rosetta-Lander ROMAP-SPM Rendezvous Maneuver 1 Raw Data</a></li><!-- RL-CAL-ROMAP-2-RVM1-SPM-V1.0 -->
+<li><a href="/holdings/rl-cal-romap-3-rvm1-spm-v1.0/dataset.html">Rosetta-Lander ROMAP-SPM Rendezvous Maneuver 1 Calibrated Data</a></li><!-- RL-CAL-ROMAP-3-RVM1-SPM-V1.0 -->
+
+<li><em>Please refer to <a href="/data_sb/missions/rosetta/OSIRIS_cruise.shtml#RVM1">Rosetta OSIRIS</a> for a listing of OSIRIS datasets from the <strong><em>cruise</em></strong> phases (pre-encounter).</em></li>
+</ul>
+<p><a href="#top">Back to Mission Phase list</a></p>
+
+<a name="prl"></a>
+<h3>67P/C-G Prelanding (Orbiter only) (PRL)</h3>
+<ul>
+<li><a href="/holdings/ro-c_cal-alice-2-prl-v3.0/dataset.shtml">Rosetta-Orbiter ALICE Prelanding 67P Raw Data v3.0</a></li><!-- RO-C/CAL-ALICE-2-PRL-V3.0 -->
+<li><a href="/holdings/ro-c_cal-alice-3-prl-v3.0/dataset.shtml">Rosetta-Orbiter ALICE Prelanding 67P Calibrated Data v3.0</a></li><!-- RO-C/CAL-ALICE-3-PRL-V3.0 -->
+<li><a href="/holdings/ro-c_cal-alice-4-prl-v3.0/dataset.shtml">Rosetta-Orbiter ALICE Prelanding 67P Resampled Data v3.0</a></li><!-- RO-C/CAL-ALICE-4-PRL-V3.0 -->
+<li><a href="/holdings/ro-c-gia-3-prl-prelanding-v1.1/dataset.shtml">Rosetta-Orbiter GIADA Prelanding 67P Raw/Calibrated Data v1.1</a></li><!-- RO-C-GIA-3-PRL-PRELANDING-V1.1 -->
+<li><a href="/holdings/ro-d-midas-3-prl-samples-v3.0/dataset.shtml">Rosetta-Orbiter MIDAS 67P Prelanding Samples Calibrated Data v3.0</a></li><!-- RO-D-MIDAS-3-PRL-SAMPLES-V3.0 -->
+<li><a href="/holdings/ro-c-miro-2-prl-67p-v1.0/dataset.shtml">Rosetta-Orbiter MIRO Prelanding 67P Raw Data</a></li><!-- RO-C-MIRO-2-PRL-67P-V1.0 -->
+<li><a href="/holdings/ro-c-miro-3-prl-67p-v3.0/dataset.shtml">Rosetta-Orbiter MIRO Prelanding 67P Calibrated Data v3.0</a></li><!-- RO-C-MIRO-3-PRL-67P-V3.0 -->
+<li><a href="/holdings/ro-c-miro-4-prl-67p-v2.0/dataset.shtml">Rosetta-Orbiter MIRO Prelanding 67P Resampled Data v2.0</a></li><!-- RO-C-MIRO-4-PRL-67P-V2.0 -->
+<li><a href="/holdings/ro-x-navcam-2-prl-com-v1.1/dataset.shtml">Rosetta-Orbiter NAVCAM Prelanding Commissioning Checkout Raw Data v1.1</a></li><!-- RO-X-NAVCAM-2-PRL-COM-V1.1 -->
+<li><a href="/holdings/ro-x-navcam-3-prl-com-v1.0/dataset.shtml">Rosetta-Orbiter NAVCAM Prelanding Commissioning Calibrated Data</a></li><!-- RO-X-NAVCAM-3-PRL-COM-V1.0 -->
+<li><a href="/holdings/ro-c-navcam-2-prl-mtp003-v1.1/dataset.shtml">Rosetta-Orbiter NAVCAM Prelanding MTP003 67P Raw Data v1.1</a></li><!-- RO-C-NAVCAM-2-PRL-MTP003-V1.1 -->
+<li><a href="/holdings/ro-c-navcam-3-prl-mtp003-v1.0/dataset.shtml">Rosetta-Orbiter NAVCAM Prelanding MTP003 67P Calibrated Data</a></li><!-- RO-C-NAVCAM-3-PRL-MTP003-V1.0 -->
+<li><a href="/holdings/ro-c-navcam-2-prl-mtp004-v1.1/dataset.shtml">Rosetta-Orbiter NAVCAM Prelanding MTP004 67P Raw Data v1.1</a></li><!-- RO-C-NAVCAM-2-PRL-MTP004-V1.1 -->
+<li><a href="/holdings/ro-c-navcam-3-prl-mtp004-v1.0/dataset.shtml">Rosetta-Orbiter NAVCAM Prelanding MTP004 67P Calibrated Data</a></li><!-- RO-C-NAVCAM-3-PRL-MTP004-V1.0 -->
+<li><a href="/holdings/ro-c-navcam-2-prl-mtp005-v1.1/dataset.shtml">Rosetta-Orbiter NAVCAM Prelanding MTP005 67P Raw Data v1.1</a></li><!-- RO-C-NAVCAM-2-PRL-MTP005-V1.1 -->
+<li><a href="/holdings/ro-c-navcam-3-prl-mtp005-v1.0/dataset.shtml">Rosetta-Orbiter NAVCAM Prelanding MTP005 67P Calibrated Data</a></li><!-- RO-C-NAVCAM-3-PRL-MTP005-V1.0 -->
+<li><a href="/holdings/ro-c-navcam-2-prl-mtp006-v1.1/dataset.shtml">Rosetta-Orbiter NAVCAM Prelanding MTP006 67P Raw Data v1.1</a></li><!-- RO-C-NAVCAM-2-PRL-MTP006-V1.1 -->
+<li><a href="/holdings/ro-c-navcam-3-prl-mtp006-v1.0/dataset.shtml">Rosetta-Orbiter NAVCAM Prelanding MTP006 67P Calibrated Data</a></li><!-- RO-C-NAVCAM-3-PRL-MTP006-V1.0 -->
+<li><a href="/holdings/ro-c-navcam-2-prl-mtp007-v1.1/dataset.shtml">Rosetta-Orbiter NAVCAM Prelanding MTP007 67P Raw Data v1.1</a></li><!-- RO-C-NAVCAM-2-PRL-MTP007-V1.1 -->
+<li><a href="/holdings/ro-c-navcam-3-prl-mtp007-v1.0/dataset.shtml">Rosetta-Orbiter NAVCAM Prelanding MTP007 67P Calibrated Data</a></li><!-- RO-C-NAVCAM-3-PRL-MTP007-V1.0 -->
+<li><a href="/holdings/ro-c-navcam-2-prl-mtp008-v1.1/dataset.shtml">Rosetta-Orbiter NAVCAM Prelanding MTP008 67P Raw Data v1.1</a></li><!-- RO-C-NAVCAM-2-PRL-MTP008-V1.1 -->
+<li><a href="/holdings/ro-c-navcam-3-prl-mtp008-v1.0/dataset.shtml">Rosetta-Orbiter NAVCAM Prelanding MTP008 67P Calibrated Data</a></li><!-- RO-C-NAVCAM-3-PRL-MTP008-V1.0 -->
+<li><a href="/holdings/ro-c-navcam-2-prl-mtp009-v1.1/dataset.shtml">Rosetta-Orbiter NAVCAM Prelanding MTP009 67P Raw Data v1.1</a></li><!-- RO-C-NAVCAM-2-PRL-MTP009-V1.1 -->
+<li><a href="/holdings/ro-c-navcam-3-prl-mtp009-v1.0/dataset.shtml">Rosetta-Orbiter NAVCAM Prelanding MTP009 67P Calibrated Data</a></li><!-- RO-C-NAVCAM-3-PRL-MTP009-V1.0 -->
+<li><a href="/holdings/ro-c-rosina-2-prl-v2.0/dataset.shtml">Rosetta-Orbiter ROSINA Prelanding 67P Raw Data v2.0</a></li><!-- RO-C-ROSINA-2-PRL-V2.0 -->
+<li><a href="/holdings/ro-c-rosina-3-prl-v2.0/dataset.shtml">Rosetta-Orbiter ROSINA Prelanding 67P Calibrated Data v2.0</a></li><!-- RO-C-ROSINA-3-PRL-V2.0 -->
+<li><a href="/holdings/ro-c-rosina-4-prl-v2.0/dataset.shtml">Rosetta-Orbiter ROSINA Prelanding 67P Resampled Data v2.0</a></li><!-- RO-C-ROSINA-4-PRL-V2.0 -->
+<li><a href="/holdings/ro-c-rosina-5-prl-v2.0/dataset.shtml">Rosetta-Orbiter ROSINA Prelanding 67P Derived Data v2.0</a></li><!-- RO-C-ROSINA-5-PRL-V2.0 -->
+<li><a href="/holdings/ro-c-rpcies-5-prl-v1.0/dataset.shtml">Rosetta-Orbiter RPCIES Prelanding 67P Derived Data</a></li><!-- RO-C-RPCIES-5-PRL-V1.0 -->
+<li><a href="/holdings/ro-c-rpcica-2-prl-raw-v3.0/dataset.html">Rosetta-Orbiter RPCICA Prelanding 67P Raw Data v3.0</a></li><!-- RO-C-RPCICA-2-PRL-RAW-V3.0 -->
+<li><a href="/holdings/ro-c-rpcica-3-prl-calib-v1.0/dataset.html">Rosetta-Orbiter RPCICA Prelanding 67P Calibrated Data</a></li><!-- RO-C-RPCICA-3-PRL-CALIB-V1.0 -->
+<li><a href="/holdings/ro-c-rpcica-4-prl-corr-v1.0/dataset.html">Rosetta-Orbiter RPCICA Prelanding 67P Resampled Corrected Data</a></li><!-- RO-C-RPCICA-4-PRL-CORR-V1.0 -->
+<li><a href="/holdings/ro-c-rpcica-4-prl-corr-cts-v1.0/dataset.html">Rosetta-Orbiter RPCICA Prelanding 67P Resampled Corrected in Counts Data</a></li><!-- RO-C-RPCICA-4-PRL-CORR-CTS-V1.0 -->
+<li><a href="/holdings/ro-c-rpcica-4-prl-phys-mass-v1.0/dataset.html">Rosetta-Orbiter RPCICA Prelanding 67P Resampled Physical Mass Data</a></li><!-- RO-C-RPCICA-4-PRL-PHYS-MASS-V1.0 -->
+<li><a href="/holdings/ro-c-rpcica-5-prl-moment-v1.0/dataset.html">Rosetta-Orbiter RPCICA Prelanding 67P Derived Moment Data</a></li><!-- RO-C-RPCICA-5-PRL-MOMENT-V1.0 -->
+<li><a href="/holdings/ro-c-rpcies-2-prl-v2.0/dataset.shtml">Rosetta-Orbiter RPCIES Prelanding 67P Raw Data v2.0</a></li><!-- RO-C-RPCIES-2-PRL-V2.0 -->
+<li><a href="/holdings/ro-c-rpcies-3-prl-v2.0/dataset.shtml">Rosetta-Orbiter RPCIES Prelanding 67P Calibrated Data v2.0</a></li><!-- RO-C-RPCIES-3-PRL-V2.0 -->
+<li><a href="/holdings/ro-c-rpclap-2-prl-edited2-v1.0/dataset.shtml">Rosetta-Orbiter RPCLAP Prelanding 67P Raw Data v3.0</a></li><!-- RO-C-RPCLAP-2-PRL-EDITED2-V1.0 -->
+<li><a href="/holdings/ro-c-rpclap-3-prl-calib2-v1.0/dataset.shtml">Rosetta-Orbiter RPCLAP Prelanding 67P Calibrated Data v2.0</a></li><!-- RO-C-RPCLAP-3-PRL-CALIB2-V1.0 -->
+<li><a href="/holdings/ro-c-rpclap-5-prl-deriv2-v1.0/dataset.shtml">Rosetta-Orbiter RPCLAP Prelanding 67P Derived (Physical Units) Data</a></li><!-- RO-C-RPCLAP-5-PRL-DERIV2-V1.0 -->
+<li><a href="/holdings/ro-c-rpclap-5-prl-nel-v1.0/dataset.shtml">Rosetta-Orbiter RPCLAP Prelanding 67P Derived (Plasma Density at Higher Time Resolution) Data</a></li><!-- RO-C-RPCLAP-5-PRL-NEL-V1.0 -->
+<li><a href="/holdings/ro-ss-rpcmag-2-prl-raw-v9.0/dataset.html">Rosetta-Orbiter RPCMAG Prelanding 67P Raw Data v9.0</a></li><!-- RO-SS-RPCMAG-2-PRL-RAW-V9.0 -->
+<li><a href="/holdings/ro-ss-rpcmag-3-prl-calibrated-v9.0/dataset.html">Rosetta-Orbiter RPCMAG Prelanding 67P Calibrated Data v9.0</a></li><!-- RO-SS-RPCMAG-3-PRL-CALIBRATED-V9.0 -->
+<li><a href="/holdings/ro-ss-rpcmag-4-prl-resampled-v9.0/dataset.html">Rosetta-Orbiter RPCMAG Prelanding 67P Resampled Data v9.0</a></li><!-- RO-SS-RPCMAG-4-PRL-RESAMPLED-V9.0 -->
+<li><a href="/holdings/ro-c-rpcmip-3-prl1-v3.0/dataset.shtml">Rosetta-Orbiter RPCMIP Prelanding 1 67P Calibrated Data v3.0</a></li><!-- RO-C-RPCMIP-3-PRL1-V3.0 -->
+<li><a href="/holdings/ro-c-rpcmip-3-prl2-v3.0/dataset.shtml">Rosetta-Orbiter RPCMIP Prelanding 2 67P Calibrated Data v3.0</a></li><!-- RO-C-RPCMIP-3-PRL2-V3.0 -->
+<li><a href="/holdings/ro-c-rpcmip-3-prl3-v3.0/dataset.shtml">Rosetta-Orbiter RPCMIP Prelanding 3 67P Calibrated Data v3.0</a></li><!-- RO-C-RPCMIP-3-PRL3-V3.0 -->
+<li><a href="/holdings/ro-x-srem-2-prl-com-v1.0/dataset.html">Rosetta-Orbiter SREM Prelanding Commissioning Raw Data</a></li><!-- RO-X-SREM-2-PRL-COM-V1.0 -->
+<li><a href="/holdings/ro-x-srem-5-prl-com-v1.0/dataset.html">Rosetta-Orbiter SREM Prelanding Commissioning Derived Data</a></li><!-- RO-X-SREM-5-PRL-COM-V1.0 -->
+<li><a href="/holdings/ro-x-srem-2-prl-mtp003-v1.0/dataset.html">Rosetta-Orbiter SREM Prelanding MTP003 Raw Data</a></li><!-- RO-X-SREM-2-PRL-MTP003-V1.0 -->
+<li><a href="/holdings/ro-x-srem-5-prl-mtp003-v1.0/dataset.html">Rosetta-Orbiter SREM Prelanding MTP003 Derived Data</a></li><!-- RO-X-SREM-5-PRL-MTP003-V1.0 -->
+<li><a href="/holdings/ro-x-srem-2-prl-mtp004-v1.0/dataset.html">Rosetta-Orbiter SREM Prelanding MTP004 Raw Data</a></li><!-- RO-X-SREM-2-PRL-MTP004-V1.0 -->
+<li><a href="/holdings/ro-x-srem-5-prl-mtp004-v1.0/dataset.html">Rosetta-Orbiter SREM Prelanding MTP004 Derived Data</a></li><!-- RO-X-SREM-5-PRL-MTP004-V1.0 -->
+<li><a href="/holdings/ro-x-srem-2-prl-mtp005-v1.0/dataset.html">Rosetta-Orbiter SREM Prelanding MTP005 Raw Data</a></li><!-- RO-X-SREM-2-PRL-MTP005-V1.0 -->
+<li><a href="/holdings/ro-x-srem-5-prl-mtp005-v1.0/dataset.html">Rosetta-Orbiter SREM Prelanding MTP005 Derived Data</a></li><!-- RO-X-SREM-5-PRL-MTP005-V1.0 -->
+<li><a href="/holdings/ro-x-srem-2-prl-mtp006-v1.0/dataset.html">Rosetta-Orbiter SREM Prelanding MTP006 Raw Data</a></li><!-- RO-X-SREM-2-PRL-MTP006-V1.0 -->
+<li><a href="/holdings/ro-x-srem-5-prl-mtp006-v1.0/dataset.html">Rosetta-Orbiter SREM Prelanding MTP006 Derived Data</a></li><!-- RO-X-SREM-5-PRL-MTP006-V1.0 -->
+<li><a href="/holdings/ro-x-srem-2-prl-mtp007-v1.0/dataset.html">Rosetta-Orbiter SREM Prelanding MTP007 Raw Data</a></li><!-- RO-X-SREM-2-PRL-MTP007-V1.0 -->
+<li><a href="/holdings/ro-x-srem-5-prl-mtp007-v1.0/dataset.html">Rosetta-Orbiter SREM Prelanding MTP007 Derived Data</a></li><!-- RO-X-SREM-5-PRL-MTP007-V1.0 -->
+<li><a href="/holdings/ro-x-srem-2-prl-mtp008-v1.0/dataset.html">Rosetta-Orbiter SREM Prelanding MTP008 Raw Data</a></li><!-- RO-X-SREM-2-PRL-MTP008-V1.0 -->
+<li><a href="/holdings/ro-x-srem-5-prl-mtp008-v1.0/dataset.html">Rosetta-Orbiter SREM Prelanding MTP008 Derived Data</a></li><!-- RO-X-SREM-5-PRL-MTP008-V1.0 -->
+<li><a href="/holdings/ro-x-srem-2-prl-mtp009-v1.0/dataset.html">Rosetta-Orbiter SREM Prelanding MTP009 Raw Data</a></li><!-- RO-X-SREM-2-PRL-MTP009-V1.0 -->
+<li><a href="/holdings/ro-x-srem-5-prl-mtp009-v1.0/dataset.html">Rosetta-Orbiter SREM Prelanding MTP009 Derived Data</a></li><!-- RO-X-SREM-5-PRL-MTP009-V1.0 -->
+<li><a href="/holdings/ro-c-virtis-2-prl-mtp004-v1.0/dataset.shtml">Rosetta-Orbiter VIRTIS Prelanding MTP004 67P Raw Data</a></li><!-- RO-C-VIRTIS-2-PRL-MTP004-V1.0 -->
+<li><a href="/holdings/ro-c-virtis-2-prl-mtp005-v1.0/dataset.shtml">Rosetta-Orbiter VIRTIS Prelanding MTP005 67P Raw Data</a></li><!-- RO-C-VIRTIS-2-PRL-MTP005-V1.0 -->
+<li><a href="/holdings/ro-c-virtis-2-prl-mtp006-v1.0/dataset.shtml">Rosetta-Orbiter VIRTIS Prelanding MTP006 67P Raw Data</a></li><!-- RO-C-VIRTIS-2-PRL-MTP006-V1.0 -->
+<li><a href="/holdings/ro-c-virtis-2-prl-mtp007-v1.0/dataset.shtml">Rosetta-Orbiter VIRTIS Prelanding MTP007 67P Raw Data</a></li><!-- RO-C-VIRTIS-2-PRL-MTP007-V1.0 -->
+<li><a href="/holdings/ro-c-virtis-2-prl-mtp008-v1.0/dataset.shtml">Rosetta-Orbiter VIRTIS Prelanding MTP008 67P Raw Data</a></li><!-- RO-C-VIRTIS-2-PRL-MTP008-V1.0 -->
+<li><a href="/holdings/ro-c-virtis-2-prl-mtp009-v1.0/dataset.shtml">Rosetta-Orbiter VIRTIS Prelanding MTP009 67P Raw Data</a></li><!-- RO-C-VIRTIS-2-PRL-MTP009-V1.0 -->
+<li><a href="/holdings/ro-c-virtis-3-prl-mtp004-v2.0/dataset.shtml">Rosetta-Orbiter VIRTIS Prelanding MTP004 67P Calibrated Data v2.0</a></li><!-- RO-C-VIRTIS-3-PRL-MTP004-V2.0 -->
+<li><a href="/holdings/ro-c-virtis-3-prl-mtp005-v2.0/dataset.shtml">Rosetta-Orbiter VIRTIS Prelanding MTP005 67P Calibrated Data v2.0</a></li><!-- RO-C-VIRTIS-3-PRL-MTP005-V2.0 -->
+<li><a href="/holdings/ro-c-virtis-3-prl-mtp006-v2.0/dataset.shtml">Rosetta-Orbiter VIRTIS Prelanding MTP006 67P Calibrated Data v2.0</a></li><!-- RO-C-VIRTIS-3-PRL-MTP006-V2.0 -->
+<li><a href="/holdings/ro-c-virtis-3-prl-mtp007-v2.0/dataset.shtml">Rosetta-Orbiter VIRTIS Prelanding MTP007 67P Calibrated Data v2.0</a></li><!-- RO-C-VIRTIS-3-PRL-MTP007-V2.0 -->
+<li><a href="/holdings/ro-c-virtis-3-prl-mtp008-v2.0/dataset.shtml">Rosetta-Orbiter VIRTIS Prelanding MTP008 67P Calibrated Data v2.0</a></li><!-- RO-C-VIRTIS-3-PRL-MTP008-V2.0 -->
+<li><a href="/holdings/ro-c-virtis-3-prl-mtp009-v2.0/dataset.shtml">Rosetta-Orbiter VIRTIS Prelanding MTP009 67P Calibrated Data v2.0</a></li><!-- RO-C-VIRTIS-3-PRL-MTP009-V2.0 -->
+
+<li><em>Please refer to <a href="/data_sb/missions/rosetta/index_OSIRIS.shtml#PRL">Rosetta OSIRIS</a> for a listing of OSIRIS 67P datasets from the comet encounter phases.</em></li>
+<li><em>Please refer to <a href="/data_sb/missions/rosetta/index_RSI.shtml">Rosetta RSI</a> for a complete listing of RSI datasets.</em></li>
+</ul>
+<p><a href="#top">Back to Mission Phase list</a></p>
+
+<a name="phc"></a>
+<h3>Post Hibernation Commissioning (PHC)</h3>
+<ul>
+<li><a href="/holdings/rl-cal-apxs-2-phc-v1.0/dataset.shtml">Rosetta-Lander APXS Post Hibernation Commissioning Raw Data</a></li><!-- RL-CAL-APXS-2-PHC-V1.0 -->
+<li><a href="/holdings/ro_rl-cal-consert-2-phc-v2.0/dataset.shtml">Rosetta-Orbiter/Lander CONSERT Post Hibernation Commissioning Raw Data v2.0</a></li><!-- RO/RL-CAL-CONSERT-2-PHC-V2.0 -->
+<li><a href="/holdings/ro_rl-cal-consert-3-phc-v2.0/dataset.shtml">Rosetta-Orbiter/Lander CONSERT Post Hibernation Commissioning Calibrated Data v2.0</a></li><!-- RO/RL-CAL-CONSERT-3-PHC-V2.0 -->
+<li><a href="/holdings/ro_rl-cal-consert-4-phc-v1.0/dataset.shtml">Rosetta-Orbiter/Lander CONSERT Post Hibernation Commissioning Resampled Data</a></li><!-- RO/RL-CAL-CONSERT-4-PHC-V1.0 -->
+<li><a href="/holdings/rl-cal-cosac-2-phc-v1.0/dataset.shtml">Rosetta-Lander COSAC Post Hibernation Commissioning Raw Data</a></li><!-- RL-CAL-COSAC-2-PHC-V1.0 -->
+<li><a href="/holdings/rl-cal-cosac-3-phc-v1.0/dataset.shtml">Rosetta-Lander COSAC Post Hibernation Commissioning Calibrated Data</a></li><!-- RL-CAL-COSAC-3-PHC-V1.0 -->
+<li><a href="/holdings/rl-cal-ptolemy-2-phc-v1.0/dataset.shtml">Rosetta-Lander PTOLEMY Post Hibernation Commissioning Raw Data</a></li><!-- RL-CAL-PTOLEMY-2-PHC-V1.0 -->
+<li><a href="/holdings/rl-cal-ptolemy-3-phc-v1.0/dataset.shtml">Rosetta-Lander PTOLEMY Post Hibernation Commissioning Calibrated Data</a></li><!-- RL-CAL-PTOLEMY-3-PHC-V1.0 -->
+<li><a href="/holdings/rl-cal-mupus-2-phc-v1.0/dataset.shtml">Rosetta-Lander MUPUS Post Hibernation Commissioning Raw Data</a></li><!-- RL-CAL-MUPUS-2-PHC-V1.0 -->
+<li><a href="/holdings/rl-cal-mupus-3-phc-v1.0/dataset.shtml">Rosetta-Lander MUPUS Post Hibernation Commissioning Calibrated Data</a></li><!-- RL-CAL-MUPUS-3-PHC-V1.0 -->
+<li><a href="/holdings/rl-cal-rolis-2-phc-v1.0/dataset.shtml">Rosetta-Lander ROLIS Post Hibernation Commissioning Raw Data</a></li><!-- RL-CAL-ROLIS-2-PHC-V1.0 -->
+<li><a href="/holdings/rl-cal-romap-2-phc-mag-v1.0/dataset.html">Rosetta-Lander ROMAP-MAG Post Hibernation Commissioning Edited Data</a></li><!-- RL-CAL-ROMAP-2-PHC-MAG-V1.0 -->
+<li><a href="/holdings/rl-cal-romap-3-phc-mag-v1.0/dataset.html">Rosetta-Lander ROMAP-MAG Post Hibernation Commissioning Calibrated Data</a></li><!-- RL-CAL-ROMAP-3-PHC-MAG-V1.0 -->
+<li><a href="/holdings/rl-cal-romap-5-phc-mag-v1.0/dataset.html">Rosetta-Lander ROMAP-MAG Post Hibernation Commissioning Derived Data</a></li><!-- RL-CAL-ROMAP-5-PHC-MAG-V1.0 -->
+<li><a href="/holdings/rl-cal-romap-2-phc-spm-v1.0/dataset.html">Rosetta-Lander ROMAP-SPM Post Hibernation Commissioning Edited Data</a></li><!-- RL-CAL-ROMAP-2-PHC-SPM-V1.0 -->
+<li><a href="/holdings/rl-cal-romap-3-phc-spm-v1.0/dataset.html">Rosetta-Lander ROMAP-SPM Post Hibernation Commissioning Calibrated Data</a></li><!-- RL-CAL-ROMAP-3-PHC-SPM-V1.0 -->
+<li><a href="/holdings/rl-cal-sd2-3-phc-v1.0/dataset.shtml">Rosetta-Lander SD2 Post Hibernation Commissioning Data</a></li><!-- RL-CAL-SD2-3-PHC-V1.0 -->
+<li><a href="/holdings/rl-cal-sesame-2-phc-v1.0/dataset.shtml">Rosetta-Lander SESAME Post Hibernation Commissioning Raw Data</a></li><!-- RL-CAL-SESAME-2-PHC-V1.0 -->
+<li><a href="/holdings/rl-cal-sesame-3-phc-v1.0/dataset.shtml">Rosetta-Lander SESAME Post Hibernation Commissioning Calibrated Data</a></li><!-- RL-CAL-SESAME-3-PHC-V1.0 -->
+</ul>
+<p><a href="#top">Back to Mission Phase list</a></p>
+
+<a name="pdcs"></a>
+<h3>Pre Delivery Calib Science (PDCS)</h3>
+<ul>
+<li><a href="/holdings/ro_rl-cal-consert-2-pdcs-v2.0/dataset.shtml">Rosetta-Orbiter/Lander CONSERT Pre Delivery Calib Science Raw Data v2.0</a></li><!-- RO/RL-CAL-CONSERT-2-PDCS-V2.0 -->
+<li><a href="/holdings/ro_rl-cal-consert-3-pdcs-v1.1/dataset.shtml">Rosetta-Orbiter/Lander CONSERT Pre Delivery Calib Science Calibrated Data v1.1</a></li><!-- RO/RL-CAL-CONSERT-3-PDCS-V1.1 -->
+<li><a href="/holdings/ro_rl-cal-consert-4-pdcs-v1.0/dataset.shtml">Rosetta-Orbiter/Lander CONSERT Pre Delivery Calib Science Resampled Data</a></li><!-- RO/RL-CAL-CONSERT-4-PDCS-V1.0 -->
+<li><a href="/holdings/rl-cal-cosac-2-pdcs-v1.0/dataset.shtml">Rosetta-Lander COSAC Pre Delivery Calib Science Raw Data</a></li><!-- RL-CAL-COSAC-2-PDCS-V1.0 -->
+<li><a href="/holdings/rl-cal-cosac-3-pdcs-v1.0/dataset.shtml">Rosetta-Lander COSAC Pre Delivery Calib Science Calibrated Data</a></li><!-- RL-CAL-COSAC-3-PDCS-V1.0 -->
+<li><a href="/holdings/rl-cal-ptolemy-2-pdcs-v1.0/dataset.shtml">Rosetta-Lander PTOLEMY Pre Delivery Calib Science Raw Data</a></li><!-- RL-CAL-PTOLEMY-2-PDCS-V1.0 -->
+<li><a href="/holdings/rl-cal-ptolemy-3-pdcs-v1.0/dataset.shtml">Rosetta-Lander PTOLEMY Pre Delivery Calib Science Calibrated Data</a></li><!-- RL-CAL-PTOLEMY-3-PDCS-V1.0 -->
+<li><a href="/holdings/rl-cal-romap-2-pdcs-mag-v1.0/dataset.html">Rosetta-Lander ROMAP-MAG Pre Delivery Calib Science Edited Data</a></li><!-- RL-CAL-ROMAP-2-PDCS-MAG-V1.0 -->
+<li><a href="/holdings/rl-cal-romap-3-pdcs-mag-v1.0/dataset.html">Rosetta-Lander ROMAP-MAG Pre Delivery Calib Science Calibrated Data</a></li><!-- RL-CAL-ROMAP-3-PDCS-MAG-V1.0 -->
+<li><a href="/holdings/rl-cal-romap-5-pdcs-mag-v1.0/dataset.html">Rosetta-Lander ROMAP-MAG Pre Delivery Calib Science Derived Data</a></li><!-- RL-CAL-ROMAP-5-PDCS-MAG-V1.0 -->
+<li><a href="/holdings/rl-cal-sd2-3-pdcs-v1.0/dataset.shtml">Rosetta-Lander SD2 Pre Delivery Calib Science Data</a></li><!-- RL-CAL-SD2-3-PDCS-V1.0 -->
+<li><a href="/holdings/rl-cal-sd2-3-pdcs-v1.0/dataset.shtml">Rosetta-Lander SD2 Pre Delivery Calib Science Data</a></li><!-- RL-CAL-SD2-3-PDCS-V1.0 -->
+<li><a href="/holdings/rl-cal-sesame-2-pdcs-v1.0/dataset.shtml">Rosetta-Lander SESAME Pre Delivery Calib Science Raw Data</a></li><!-- RL-CAL-SESAME-2-PDCS-V1.0 -->
+<li><a href="/holdings/rl-cal-sesame-3-pdcs-v1.0/dataset.shtml">Rosetta-Lander SESAME Pre Delivery Calib Science Calibrated Data</a></li><!-- RL-CAL-SESAME-3-PDCS-V1.0 -->
+</ul>
+<p><a href="#top">Back to Mission Phase list</a></p>
+
+<a name="sdl"></a>
+<h3>Separation Descent Landing (SDL)</h3>
+<ul>
+<li><a href="/holdings/ro_rl-c-consert-2-sdl-v2.0/dataset.shtml">Rosetta-Orbiter/Lander CONSERT Separation Descent Landing 67P Raw Data v2.0</a></li><!-- RO/RL-C-CONSERT-2-SDL-V2.0 -->
+<li><a href="/holdings/ro_rl-c-consert-3-sdl-v1.1/dataset.shtml">Rosetta-Orbiter/Lander CONSERT Separation Descent Landing 67P Calibrated Data v1.1</a></li><!-- RO/RL-C-CONSERT-3-SDL-V1.1 -->
+<li><a href="/holdings/ro_rl-c-consert-4-sdl-v1.0/dataset.shtml">Rosetta-Orbiter/Lander CONSERT Separation Descent Landing 67P Resampled Data</a></li><!-- RO/RL-C-CONSERT-4-SDL-V1.0 -->
+<li><a href="/holdings/rl-c-mupus-2-sdl-v1.0/dataset.shtml">Rosetta-Lander MUPUS Separation Descent Landing 67P Raw Data</a></li><!-- RL-C-MUPUS-2-SDL-V1.0 -->
+<li><a href="/holdings/rl-c-mupus-3-sdl-v1.0/dataset.shtml">Rosetta-Lander MUPUS Separation Descent Landing 67P Calibrated Data</a></li><!-- RL-C-MUPUS-3-SDL-V1.0 -->
+<li><a href="/holdings/rl-c-rolis-2-sdl-v1.0/dataset.shtml">Rosetta-Lander ROLIS Separation Descent Landing 67P Raw Data</a></li><!-- RL-C-ROLIS-2-SDL-V1.0 -->
+<li><a href="/holdings/rl-c-rolis-3-sdl-v1.0/dataset.shtml">Rosetta-Lander ROLIS Separation Descent Landing 67P Calibrated Data</a></li><!-- RL-C-ROLIS-3-SDL-V1.0 -->
+<li><a href="/holdings/rl-c-romap-2-sdl-mag-v1.0/dataset.html">Rosetta-Lander ROMAP-MAG Separation Descent Landing 67P Edited Data</a></li><!-- RL-C-ROMAP-2-SDL-MAG-V1.0 -->
+<li><a href="/holdings/rl-c-romap-3-sdl-mag-v1.0/dataset.html">Rosetta-Lander ROMAP-MAG Separation Descent Landing 67P Calibrated Data</a></li><!-- RL-C-ROMAP-3-SDL-MAG-V1.0 -->
+<li><a href="/holdings/rl-c-romap-5-sdl-mag-v1.0/dataset.html">Rosetta-Lander ROMAP-MAG Separation Descent Landing 67P Derived Data</a></li><!-- RL-C-ROMAP-5-SDL-MAG-V1.0 -->
+<li><a href="/holdings/rl-c-sesame-2-sdl-v1.0/dataset.shtml">Rosetta-Lander SESAME Separation Descent Landing 67P Raw Data</a></li><!-- RL-C-SESAME-2-SDL-V1.0 -->
+<li><a href="/holdings/rl-c-sesame-3-sdl-v1.0/dataset.shtml">Rosetta-Lander SESAME Separation Descent Landing 67P Calibrated Data</a></li><!-- RL-C-SESAME-3-SDL-V1.0 -->
+</ul>
+<p><a href="#top">Back to Mission Phase list</a></p>
+
+<a name="rbd"></a>
+<h3>Rebounds (RBD)</h3>
+<ul>
+<li><a href="/holdings/rl-c-cosac-2-rbd-v1.0/dataset.shtml">Rosetta-Lander COSAC Rebounds 67P Raw Data</a></li><!-- RL-C-COSAC-2-RBD-V1.0 -->
+<li><a href="/holdings/rl-c-cosac-3-rbd-v1.0/dataset.shtml">Rosetta-Lander COSAC Rebounds 67P Calibrated Data</a></li><!-- RL-C-COSAC-3-RBD-V1.0 -->
+<li><a href="/holdings/rl-c-ptolemy-2-rbd-v1.0/dataset.shtml">Rosetta-Lander PTOLEMY Rebounds 67P Raw Data</a></li><!-- RL-C-PTOLEMY-2-RBD-V1.0 -->
+<li><a href="/holdings/rl-c-ptolemy-3-rbd-v1.0/dataset.shtml">Rosetta-Lander PTOLEMY Rebounds 67P Calibrated Data</a></li><!-- RL-C-PTOLEMY-3-RBD-V1.0 -->
+<li><a href="/holdings/rl-c-mupus-2-rbd-v1.0/dataset.shtml">Rosetta-Lander MUPUS Rebounds 67P Raw Data</a></li><!-- RL-C-MUPUS-2-RBD-V1.0 -->
+<li><a href="/holdings/rl-c-mupus-3-rbd-v1.0/dataset.shtml">Rosetta-Lander MUPUS Rebounds 67P Calibrated Data</a></li><!-- RL-C-MUPUS-3-RBD-V1.0 -->
+<li><a href="/holdings/rl-c-romap-2-rbd-mag-v1.0/dataset.html">Rosetta-Lander ROMAP-MAG Rebounds 67P Edited Data</a></li><!-- RL-C-ROMAP-2-RBD-MAG-V1.0 -->
+<li><a href="/holdings/rl-c-romap-3-rbd-mag-v1.0/dataset.html">Rosetta-Lander ROMAP-MAG Rebounds 67P Calibrated Data</a></li><!-- RL-C-ROMAP-3-RBD-MAG-V1.0 -->
+<li><a href="/holdings/rl-c-romap-5-rbd-mag-v1.0/dataset.html">Rosetta-Lander ROMAP-MAG Rebounds 67P Derived Data</a></li><!-- RL-C-ROMAP-5-RBD-MAG-V1.0 -->
+<li><a href="/holdings/rl-c-romap-2-rbd-spm-v1.0/dataset.html">Rosetta-Lander ROMAP-SPM Rebounds 67P Edited Data</a></li><!-- RL-C-ROMAP-2-RBD-SPM-V1.0 -->
+<li><a href="/holdings/rl-c-romap-3-rbd-spm-v1.0/dataset.html">Rosetta-Lander ROMAP-SPM Rebounds 67P Calibrated Data</a></li><!-- RL-C-ROMAP-3-RBD-SPM-V1.0 -->
+</ul>
+<p><a href="#top">Back to Mission Phase list</a></p>
+
+<a name="fss"></a>
+<h3>First Science Sequence (FSS)</h3>
+<ul>
+<li><a href="/holdings/ro_rl-c-consert-2-fss-v2.0/dataset.shtml">Rosetta-Orbiter/Lander CONSERT First Science Sequence 67P Raw Data v2.0</a></li><!-- RO/RL-C-CONSERT-2-FSS-V2.0 -->
+<li><a href="/holdings/ro_rl-c-consert-3-fss-v1.1/dataset.shtml">Rosetta-Orbiter/Lander CONSERT First Science Sequence 67P Calibrated Data v1.1</a></li><!-- RO/RL-C-CONSERT-3-FSS-V1.1 -->
+<li><a href="/holdings/ro_rl-c-consert-4-fss-v1.0/dataset.shtml">Rosetta-Orbiter/Lander CONSERT First Science Sequence 67P Resampled Data</a></li><!-- RO/RL-C-CONSERT-4-FSS-V1.0 -->
+<li><a href="/holdings/rl-c-cosac-2-fss-v1.0/dataset.shtml">Rosetta-Lander COSAC First Science Sequence 67P Raw Data</a></li><!-- RL-C-COSAC-2-FSS-V1.0 -->
+<li><a href="/holdings/rl-c-cosac-3-fss-v1.0/dataset.shtml">Rosetta-Lander COSAC First Science Sequence 67P Calibrated Data</a></li><!-- RL-C-COSAC-3-FSS-V1.0 -->
+<li><a href="/holdings/rl-c-ptolemy-2-fss-v1.0/dataset.shtml">Rosetta-Lander PTOLEMY First Science Sequence 67P Raw Data</a></li><!-- RL-C-PTOLEMY-2-FSS-V1.0 -->
+<li><a href="/holdings/rl-c-ptolemy-3-fss-v1.0/dataset.shtml">Rosetta-Lander PTOLEMY First Science Sequence 67P Calibrated Data</a></li><!-- RL-C-PTOLEMY-3-FSS-V1.0 -->
+<li><a href="/holdings/rl-c-ptolemy-5-fss-v1.0/dataset.shtml">Rosetta-Lander PTOLEMY First Science Sequence 67P Derived Data</a></li><!-- RL-C-PTOLEMY-5-FSS-V1.0 -->
+<li><a href="/holdings/rl-c-mupus-2-fss-v1.0/dataset.shtml">Rosetta-Lander MUPUS First Science Sequence 67P Raw Data</a></li><!-- RL-C-MUPUS-2-FSS-V1.0 -->
+<li><a href="/holdings/rl-c-mupus-3-fss-v1.0/dataset.shtml">Rosetta-Lander MUPUS First Science Sequence 67P Calibrated Data</a></li><!-- RL-C-MUPUS-3-FSS-V1.0 -->
+<li><a href="/holdings/rl-c-rolis-2-fss-v1.0/dataset.shtml">Rosetta-Lander ROLIS First Science Sequence 67P Raw Data</a></li><!-- RL-C-ROLIS-2-FSS-V1.0 -->
+<li><a href="/holdings/rl-c-romap-2-fss-mag-v1.0/dataset.html">Rosetta-Lander ROMAP-MAG First Science Sequence 67P Edited Data</a></li><!-- RL-C-ROMAP-2-FSS-MAG-V1.0 -->
+<li><a href="/holdings/rl-c-romap-3-fss-mag-v1.0/dataset.html">Rosetta-Lander ROMAP-MAG First Science Sequence 67P Calibrated Data</a></li><!-- RL-C-ROMAP-3-FSS-MAG-V1.0 -->
+<li><a href="/holdings/rl-c-romap-5-fss-mag-v1.0/dataset.html">Rosetta-Lander ROMAP-MAG First Science Sequence 67P Derived Data</a></li><!-- RL-C-ROMAP-5-FSS-MAG-V1.0 -->
+<li><a href="/holdings/rl-c-romap-2-fss-spm-v1.0/dataset.html">Rosetta-Lander ROMAP-SPM First Science Sequence 67P Edited Data</a></li><!-- RL-C-ROMAP-2-FSS-SPM-V1.0 -->
+<li><a href="/holdings/rl-c-romap-3-fss-spm-v1.0/dataset.html">Rosetta-Lander ROMAP-SPM First Science Sequence 67P Calibrated Data</a></li><!-- RL-C-ROMAP-3-FSS-SPM-V1.0 -->
+<li><a href="/holdings/rl-c-sd2-3-fss-v1.0/dataset.shtml">Rosetta-Lander SD2 First Science Sequence 67P Data</a></li><!-- RL-C-SD2-3-FSS-V1.0 -->
+<li><a href="/holdings/rl-c-sesame-2-fss-v1.0/dataset.shtml">Rosetta-Lander SESAME First Science Sequence 67P Raw Data</a></li><!-- RL-C-SESAME-2-FSS-V1.0 -->
+<li><a href="/holdings/rl-c-sesame-3-fss-v1.0/dataset.shtml">Rosetta-Lander SESAME First Science Sequence 67P Calibrated Data</a></li><!-- RL-C-SESAME-3-FSS-V1.0 -->
+</ul>
+<p><a href="#top">Back to Mission Phase list</a></p>
+
+<a name="lts"></a>
+<h3>Long Term Science (LTS)</h3>
+<ul>
+<li><a href="/holdings/ro_rl-c-consert-2-lts-v1.0/dataset.shtml">Rosetta-Orbiter/Lander CONSERT Long Term Science 67P Raw Data</a></li><!-- RO/RL-C-CONSERT-2-LTS-V1.0 -->
+</ul>
+<p><a href="#top">Back to Mission Phase list</a></p>
+
+<a name="esc1"></a>
+<h3>Escort Phase 1 (ESC1)</h3>
+<ul>
+<li><a href="/holdings/ro-c_cal-alice-2-esc1-v3.0/dataset.shtml">Rosetta-Orbiter ALICE Escort 1 67P Raw Data v3.0</a></li><!-- RO-C/CAL-ALICE-2-ESC1-V3.0 -->
+<li><a href="/holdings/ro-c_cal-alice-3-esc1-v3.0/dataset.shtml">Rosetta-Orbiter ALICE Escort 1 67P Calibrated Data v3.0</a></li><!-- RO-C/CAL-ALICE-3-ESC1-V3.0 -->
+<li><a href="/holdings/ro-c_cal-alice-4-esc1-v3.0/dataset.shtml">Rosetta-Orbiter ALICE Escort 1 67P Resampled Data v3.0</a></li><!-- RO-C/CAL-ALICE-4-ESC1-V3.0 -->
+<li><a href="/holdings/ro-c-gia-3-esc1-comet-escort-1-v1.1/dataset.shtml">Rosetta-Orbiter GIADA Escort 1 67P Raw/Calibrated Data v1.1</a></li><!-- RO-C-GIA-3-ESC1-COMET-ESCORT-1-V1.1 -->
+<li><a href="/holdings/ro-c-midas-3-esc1-samples-v3.0/dataset.shtml">Rosetta-Orbiter MIDAS Escort 1 67P Calibrated Data v3.0</a></li><!-- RO-C-MIDAS-3-ESC1-SAMPLES-V3.0 -->
+<li><a href="/holdings/ro-c-miro-2-esc1-67p-v1.0/dataset.shtml">Rosetta-Orbiter MIRO Escort 1 67P Raw Data</a></li><!-- RO-C-MIRO-2-ESC1-67P-V1.0 -->
+<li><a href="/holdings/ro-c-miro-3-esc1-67p-v3.0/dataset.shtml">Rosetta-Orbiter MIRO Escort 1 67P Calibrated Data v3.0</a></li><!-- RO-C-MIRO-3-ESC1-67P-V3.0 -->
+<li><a href="/holdings/ro-c-miro-4-esc1-67p-v2.0/dataset.shtml">Rosetta-Orbiter MIRO Escort 1 67P Resampled Data v2.0</a></li><!-- RO-C-MIRO-4-ESC1-67P-V2.0 -->
+<li><a href="/holdings/ro-c-navcam-2-esc1-mtp010-v1.1/dataset.shtml">Rosetta-Orbiter NAVCAM Escort 1 MTP010 67P Raw Data v1.1</a></li><!-- RO-C-NAVCAM-2-ESC1-MTP010-V1.1 -->
+<li><a href="/holdings/ro-c-navcam-3-esc1-mtp010-v1.0/dataset.shtml">Rosetta-Orbiter NAVCAM Escort 1 MTP010 67P Calibrated Data</a></li><!-- RO-C-NAVCAM-3-ESC1-MTP010-V1.0 -->
+<li><a href="/holdings/ro-c-navcam-2-esc1-mtp011-v1.1/dataset.shtml">Rosetta-Orbiter NAVCAM Escort 1 MTP011 67P Raw Data v1.1</a></li><!-- RO-C-NAVCAM-2-ESC1-MTP011-V1.1 -->
+<li><a href="/holdings/ro-c-navcam-3-esc1-mtp011-v1.0/dataset.shtml">Rosetta-Orbiter NAVCAM Escort 1 MTP011 67P Calibrated Data</a></li><!-- RO-C-NAVCAM-3-ESC1-MTP011-V1.0 -->
+<li><a href="/holdings/ro-c-navcam-2-esc1-mtp012-v1.1/dataset.shtml">Rosetta-Orbiter NAVCAM Escort 1 MTP012 67P Raw Data v1.1</a></li><!-- RO-C-NAVCAM-2-ESC1-MTP012-V1.1 -->
+<li><a href="/holdings/ro-c-navcam-3-esc1-mtp012-v1.0/dataset.shtml">Rosetta-Orbiter NAVCAM Escort 1 MTP012 67P Calibrated Data</a></li><!-- RO-C-NAVCAM-3-ESC1-MTP012-V1.0 -->
+<li><a href="/holdings/ro-c-navcam-2-esc1-mtp013-v1.1/dataset.shtml">Rosetta-Orbiter NAVCAM Escort 1 MTP013 67P Raw Data v1.1</a></li><!-- RO-C-NAVCAM-2-ESC1-MTP013-V1.1 -->
+<li><a href="/holdings/ro-c-navcam-3-esc1-mtp013-v1.0/dataset.shtml">Rosetta-Orbiter NAVCAM Escort 1 MTP013 67P Calibrated Data</a></li><!-- RO-C-NAVCAM-3-ESC1-MTP013-V1.0 -->
+<li><a href="/holdings/ro-c-rosina-2-esc1-v2.0/dataset.shtml">Rosetta-Orbiter ROSINA Escort 1 67P Raw Data v2.0</a></li><!-- RO-C-ROSINA-2-ESC1-V2.0 -->
+<li><a href="/holdings/ro-c-rosina-3-esc1-v2.0/dataset.shtml">Rosetta-Orbiter ROSINA Escort 1 67P Calibrated Data v2.0</a></li><!-- RO-C-ROSINA-3-ESC1-V2.0 -->
+<li><a href="/holdings/ro-c-rosina-4-esc1-v2.0/dataset.shtml">Rosetta-Orbiter ROSINA Escort 1 67P Resampled Data v2.0</a></li><!-- RO-C-ROSINA-4-ESC1-V2.0 -->
+<li><a href="/holdings/ro-c-rosina-5-esc1-v2.0/dataset.shtml">Rosetta-Orbiter ROSINA Escort 1 67P Derived Data v2.0</a></li><!-- RO-C-ROSINA-5-ESC1-V2.0 -->
+<li><a href="/holdings/ro-c-rpcica-2-esc1-raw-v3.0/dataset.html">Rosetta-Orbiter RPCICA Escort 1 67P Raw Data v3.0</a></li><!-- RO-C-RPCICA-2-ESC1-RAW-V3.0 -->
+<li><a href="/holdings/ro-c-rpcica-3-esc1-calib-v1.0/dataset.html">Rosetta-Orbiter RPCICA Escort 1 67P Calibrated Data</a></li><!-- RO-C-RPCICA-3-ESC1-CALIB-V1.0 -->
+<li><a href="/holdings/ro-c-rpcica-4-esc1-corr-v1.0/dataset.html">Rosetta-Orbiter RPCICA Escort 1 67P Resampled Corrected Data</a></li><!-- RO-C-RPCICA-4-ESC1-CORR-V1.0 -->
+<li><a href="/holdings/ro-c-rpcica-4-esc1-corr-cts-v1.0/dataset.html">Rosetta-Orbiter RPCICA Escort 1 67P Resampled Corrected in Counts Data</a></li><!-- RO-C-RPCICA-4-ESC1-CORR-CTS-V1.0 -->
+<li><a href="/holdings/ro-c-rpcica-4-esc1-phys-mass-v1.0/dataset.html">Rosetta-Orbiter RPCICA Escort 1 67P Resampled Physical Mass Data</a></li><!-- RO-C-RPCICA-4-ESC1-PHYS-MASS-V1.0 -->
+<li><a href="/holdings/ro-c-rpcica-5-esc1-moment-v1.0/dataset.html">Rosetta-Orbiter RPCICA Escort 1 67P Derived Moment Data</a></li><!-- RO-C-RPCICA-5-ESC1-MOMENT-V1.0 -->
+<li><a href="/holdings/ro-c-rpcies-2-esc1-v2.0/dataset.shtml">Rosetta-Orbiter RPCIES Escort 1 67P Raw Data v2.0</a></li><!-- RO-C-RPCIES-2-ESC1-V2.0 -->
+<li><a href="/holdings/ro-c-rpcies-3-esc1-v2.0/dataset.shtml">Rosetta-Orbiter RPCIES Escort 1 67P Calibrated Data v2.0</a></li><!-- RO-C-RPCIES-3-ESC1-V2.0 -->
+<li><a href="/holdings/ro-c-rpcies-5-esc1-v1.0/dataset.shtml">Rosetta-Orbiter RPCIES Escort 1 67P Derived Data</a></li><!-- RO-C-RPCIES-5-ESC1-V1.0 -->
+<li><a href="/holdings/ro-c-rpclap-2-esc1-edited2-v1.0/dataset.shtml">Rosetta-Orbiter RPCLAP Escort 1 67P Raw Data v3.0</a></li><!-- RO-C-RPCLAP-2-ESC1-EDITED2-V1.0 -->
+<li><a href="/holdings/ro-c-rpclap-3-esc1-calib2-v1.0/dataset.shtml">Rosetta-Orbiter RPCLAP Escort 1 67P Calibrated Data v2.0</a></li><!-- RO-C-RPCLAP-3-ESC1-CALIB2-V1.0 -->
+<li><a href="/holdings/ro-c-rpclap-5-esc1-deriv2-v1.0/dataset.shtml">Rosetta-Orbiter RPCLAP Escort 1 67P Derived (Physical Units) Data</a></li><!-- RO-C-RPCLAP-5-ESC1-DERIV2-V1.0 -->
+<li><a href="/holdings/ro-c-rpclap-5-esc1-nel-v1.0/dataset.shtml">Rosetta-Orbiter RPCLAP Escort 1 67P Derived (Plasma Density at Higher Time Resolution) Data</a></li><!-- RO-C-RPCLAP-5-ESC1-NEL-V1.0 -->
+<li><a href="/holdings/ro-c-rpcmag-2-esc1-raw-v9.0/dataset.html">Rosetta-Orbiter RPCMAG Escort 1 67P Raw Data v9.0</a></li><!-- RO-C-RPCMAG-2-ESC1-RAW-V9.0 -->
+<li><a href="/holdings/ro-c-rpcmag-3-esc1-calibrated-v9.0/dataset.html">Rosetta-Orbiter RPCMAG Escort 1 67P Calibrated Data v9.0</a></li><!-- RO-C-RPCMAG-3-ESC1-CALIBRATED-V9.0 -->
+<li><a href="/holdings/ro-c-rpcmag-4-esc1-resampled-v9.0/dataset.html">Rosetta-Orbiter RPCMAG Escort 1 67P Resampled Data v9.0</a></li><!-- RO-C-RPCMAG-4-ESC1-RESAMPLED-V9.0 -->
+<li><a href="/holdings/ro-c-rpcmip-3-esc1-v3.0/dataset.shtml">Rosetta-Orbiter RPCMIP Escort 1 67P Calibrated Data v3.0</a></li><!-- RO-C-RPCMIP-3-ESC1-V3.0 -->
+<li><a href="/holdings/ro-x-srem-2-esc1-mtp010-v1.0/dataset.html">Rosetta-Orbiter SREM Escort 1 MTP010 Raw Data</a></li><!-- RO-X-SREM-2-ESC1-MTP010-V1.0 -->
+<li><a href="/holdings/ro-x-srem-5-esc1-mtp010-v1.0/dataset.html">Rosetta-Orbiter SREM Escort 1 MTP010 Derived Data</a></li><!-- RO-X-SREM-5-ESC1-MTP010-V1.0 -->
+<li><a href="/holdings/ro-x-srem-2-esc1-mtp011-v1.0/dataset.html">Rosetta-Orbiter SREM Escort 1 MTP011 Raw Data</a></li><!-- RO-X-SREM-2-ESC1-MTP011-V1.0 -->
+<li><a href="/holdings/ro-x-srem-5-esc1-mtp011-v1.0/dataset.html">Rosetta-Orbiter SREM Escort 1 MTP011 Derived Data</a></li><!-- RO-X-SREM-5-ESC1-MTP011-V1.0 -->
+<li><a href="/holdings/ro-x-srem-2-esc1-mtp012-v1.0/dataset.html">Rosetta-Orbiter SREM Escort 1 MTP012 Raw Data</a></li><!-- RO-X-SREM-2-ESC1-MTP012-V1.0 -->
+<li><a href="/holdings/ro-x-srem-5-esc1-mtp012-v1.0/dataset.html">Rosetta-Orbiter SREM Escort 1 MTP012 Derived Data</a></li><!-- RO-X-SREM-5-ESC1-MTP012-V1.0 -->
+<li><a href="/holdings/ro-x-srem-2-esc1-mtp013-v1.0/dataset.html">Rosetta-Orbiter SREM Escort 1 MTP013 Raw Data</a></li><!-- RO-X-SREM-2-ESC1-MTP013-V1.0 -->
+<li><a href="/holdings/ro-x-srem-5-esc1-mtp013-v1.0/dataset.html">Rosetta-Orbiter SREM Escort 1 MTP013 Derived Data</a></li><!-- RO-X-SREM-5-ESC1-MTP013-V1.0 -->
+<li><a href="/holdings/ro-c-virtis-2-esc1-mtp010-v1.0/dataset.shtml">Rosetta-Orbiter VIRTIS Escort 1 MTP010 67P Raw Data</a></li><!-- RO-C-VIRTIS-2-ESC1-MTP010-V1.0 -->
+<li><a href="/holdings/ro-c-virtis-3-esc1-mtp010-v2.0/dataset.shtml">Rosetta-Orbiter VIRTIS Escort 1 MTP010 67P Calibrated Data v2.0</a></li><!-- RO-C-VIRTIS-3-ESC1-MTP010-V2.0 -->
+<li><a href="/holdings/ro-c-virtis-2-esc1-mtp011-v1.0/dataset.shtml">Rosetta-Orbiter VIRTIS Escort 1 MTP011 67P Raw Data</a></li><!-- RO-C-VIRTIS-2-ESC1-MTP011-V1.0 -->
+<li><a href="/holdings/ro-c-virtis-3-esc1-mtp011-v2.0/dataset.shtml">Rosetta-Orbiter VIRTIS Escort 1 MTP011 67P Calibrated Data v2.0</a></li><!-- RO-C-VIRTIS-3-ESC1-MTP011-V2.0 -->
+<li><a href="/holdings/ro-c-virtis-2-esc1-mtp012-v1.0/dataset.shtml">Rosetta-Orbiter VIRTIS Escort 1 MTP012 67P Raw Data</a></li><!-- RO-C-VIRTIS-2-ESC1-MTP012-V1.0 -->
+<li><a href="/holdings/ro-c-virtis-3-esc1-mtp012-v2.0/dataset.shtml">Rosetta-Orbiter VIRTIS Escort 1 MTP012 67P Calibrated Data v2.0</a></li><!-- RO-C-VIRTIS-3-ESC1-MTP012-V2.0 -->
+<li><a href="/holdings/ro-c-virtis-2-esc1-mtp013-v1.0/dataset.shtml">Rosetta-Orbiter VIRTIS Escort 1 MTP013 67P Raw Data</a></li><!-- RO-C-VIRTIS-2-ESC1-MTP013-V1.0 -->
+<li><a href="/holdings/ro-c-virtis-3-esc1-mtp013-v2.0/dataset.shtml">Rosetta-Orbiter VIRTIS Escort 1 MTP013 67P Calibrated Data v2.0</a></li><!-- RO-C-VIRTIS-3-ESC1-MTP013-V2.0 -->
+
+<li><em>Please refer to <a href="/data_sb/missions/rosetta/index_OSIRIS.shtml#ESC1">Rosetta OSIRIS</a> for a listing of OSIRIS 67P datasets from the comet encounter phases.</em></li>
+<li><em>Please refer to <a href="/data_sb/missions/rosetta/index_RSI.shtml">Rosetta RSI</a> for a complete listing of RSI datasets.</em></li>
+</ul>
+<p><a href="#top">Back to Mission Phase list</a></p>
+
+<a name="esc2"></a>
+<h3>Escort Phase 2 (ESC2)</h3>
+<ul>
+<li><a href="/holdings/ro-c_cal-alice-2-esc2-v2.0/dataset.shtml">Rosetta-Orbiter ALICE Escort 2 67P Raw Data v2.0</a></li><!-- RO-C/CAL-ALICE-2-ESC2-V2.0 -->
+<li><a href="/holdings/ro-c_cal-alice-3-esc2-v2.0/dataset.shtml">Rosetta-Orbiter ALICE Escort 2 67P Calibrated Data v2.0</a></li><!-- RO-C/CAL-ALICE-3-ESC2-V2.0 -->
+<li><a href="/holdings/ro-c_cal-alice-4-esc2-v2.0/dataset.shtml">Rosetta-Orbiter ALICE Escort 2 67P Resampled Data v2.0</a></li><!-- RO-C/CAL-ALICE-4-ESC2-V2.0 -->
+<li><a href="/holdings/ro-c-gia-3-esc2-comet-escort-2-v1.1/dataset.shtml">Rosetta-Orbiter GIADA Escort 2 67P Raw/Calibrated Data v1.1</a></li><!-- RO-C-GIA-3-ESC2-COMET-ESCORT-2-V1.1 -->
+<li><a href="/holdings/ro-c-midas-3-esc2-samples-v3.0/dataset.shtml">Rosetta-Orbiter MIDAS Escort 2 67P Calibrated Data v3.0</a></li><!-- RO-C-MIDAS-3-ESC2-SAMPLES-V3.0 -->
+<li><a href="/holdings/ro-c-miro-2-esc2-67p-v1.0/dataset.shtml">Rosetta-Orbiter MIRO Escort 2 67P Raw Data</a></li><!-- RO-C-MIRO-2-ESC2-67P-V1.0 -->
+<li><a href="/holdings/ro-c-miro-3-esc2-67p-v3.0/dataset.shtml">Rosetta-Orbiter MIRO Escort 2 67P Calibrated Data v3.0</a></li><!-- RO-C-MIRO-3-ESC2-67P-V3.0 -->
+<li><a href="/holdings/ro-c-miro-4-esc2-67p-v2.0/dataset.shtml">Rosetta-Orbiter MIRO Escort 2 67P Resampled Data v2.0</a></li><!-- RO-C-MIRO-4-ESC2-67P-V2.0 -->
+<li><a href="/holdings/ro-c-navcam-2-esc2-mtp014-v1.1/dataset.shtml">Rosetta-Orbiter NAVCAM Escort 2 MTP014 67P Raw Data v1.1</a></li><!-- RO-C-NAVCAM-2-ESC2-MTP014-V1.1 -->
+<li><a href="/holdings/ro-c-navcam-3-esc2-mtp014-v1.0/dataset.shtml">Rosetta-Orbiter NAVCAM Escort 2 MTP014 67P Calibrated Data</a></li><!-- RO-C-NAVCAM-3-ESC2-MTP014-V1.0 -->
+<li><a href="/holdings/ro-c-navcam-2-esc2-mtp015-v1.1/dataset.shtml">Rosetta-Orbiter NAVCAM Escort 2 MTP015 67P Raw Data v1.1</a></li><!-- RO-C-NAVCAM-2-ESC2-MTP015-V1.1 -->
+<li><a href="/holdings/ro-c-navcam-3-esc2-mtp015-v1.0/dataset.shtml">Rosetta-Orbiter NAVCAM Escort 2 MTP015 67P Calibrated Data</a></li><!-- RO-C-NAVCAM-3-ESC2-MTP015-V1.0 -->
+<li><a href="/holdings/ro-c-navcam-2-esc2-mtp016-v1.1/dataset.shtml">Rosetta-Orbiter NAVCAM Escort 2 MTP016 67P Raw Data v1.1</a></li><!-- RO-C-NAVCAM-2-ESC2-MTP016-V1.1 -->
+<li><a href="/holdings/ro-c-navcam-3-esc2-mtp016-v1.0/dataset.shtml">Rosetta-Orbiter NAVCAM Escort 2 MTP016 67P Calibrated Data</a></li><!-- RO-C-NAVCAM-3-ESC2-MTP016-V1.0 -->
+<li><a href="/holdings/ro-c-navcam-2-esc2-mtp017-v1.1/dataset.shtml">Rosetta-Orbiter NAVCAM Escort 2 MTP017 67P Raw Data v1.1</a></li><!-- RO-C-NAVCAM-2-ESC2-MTP017-V1.1 -->
+<li><a href="/holdings/ro-c-navcam-3-esc2-mtp017-v1.0/dataset.shtml">Rosetta-Orbiter NAVCAM Escort 2 MTP017 67P Calibrated Data</a></li><!-- RO-C-NAVCAM-3-ESC2-MTP017-V1.0 -->
+<li><a href="/holdings/ro-c-rosina-2-esc2-v2.0/dataset.shtml">Rosetta-Orbiter ROSINA Escort 2 67P Raw Data v2.0</a></li><!-- RO-C-ROSINA-2-ESC2-V2.0 -->
+<li><a href="/holdings/ro-c-rosina-3-esc2-v2.0/dataset.shtml">Rosetta-Orbiter ROSINA Escort 2 67P Calibrated Data v2.0</a></li><!-- RO-C-ROSINA-3-ESC2-V2.0 -->
+<li><a href="/holdings/ro-c-rosina-4-esc2-v2.0/dataset.shtml">Rosetta-Orbiter ROSINA Escort 2 67P Resampled Data v2.0</a></li><!-- RO-C-ROSINA-4-ESC2-V2.0 -->
+<li><a href="/holdings/ro-c-rosina-5-esc2-v2.0/dataset.shtml">Rosetta-Orbiter ROSINA Escort 2 67P Derived Data v2.0</a></li><!-- RO-C-ROSINA-5-ESC2-V2.0 -->
+<li><a href="/holdings/ro-c-rpcica-2-esc2-raw-v3.0/dataset.html">Rosetta-Orbiter RPCICA Escort 2 67P Raw Data v3.0</a></li><!-- RO-C-RPCICA-2-ESC2-RAW-V3.0 -->
+<li><a href="/holdings/ro-c-rpcica-3-esc2-calib-v1.0/dataset.html">Rosetta-Orbiter RPCICA Escort 2 67P Calibrated Data</a></li><!-- RO-C-RPCICA-3-ESC2-CALIB-V1.0 -->
+<li><a href="/holdings/ro-c-rpcica-4-esc2-corr-v1.0/dataset.html">Rosetta-Orbiter RPCICA Escort 2 67P Resampled Corrected Data</a></li><!-- RO-C-RPCICA-4-ESC2-CORR-V1.0 -->
+<li><a href="/holdings/ro-c-rpcica-4-esc2-corr-cts-v1.0/dataset.html">Rosetta-Orbiter RPCICA Escort 2 67P Resampled Corrected in Counts Data</a></li><!-- RO-C-RPCICA-4-ESC2-CORR-CTS-V1.0 -->
+<li><a href="/holdings/ro-c-rpcica-4-esc2-phys-mass-v1.0/dataset.html">Rosetta-Orbiter RPCICA Escort 2 67P Resampled Physical Mass Data</a></li><!-- RO-C-RPCICA-4-ESC2-PHYS-MASS-V1.0 -->
+<li><a href="/holdings/ro-c-rpcica-5-esc2-moment-v1.0/dataset.html">Rosetta-Orbiter RPCICA Escort 2 67P Derived Moment Data</a></li><!-- RO-C-RPCICA-5-ESC2-MOMENT-V1.0 -->
+<li><a href="/holdings/ro-c-rpcies-2-esc2-v2.0/dataset.shtml">Rosetta-Orbiter RPCIES Escort 2 67P Raw Data v2.0</a></li><!-- RO-C-RPCIES-2-ESC2-V2.0 -->
+<li><a href="/holdings/ro-c-rpcies-3-esc2-v2.0/dataset.shtml">Rosetta-Orbiter RPCIES Escort 2 67P Calibrated Data v2.0</a></li><!-- RO-C-RPCIES-3-ESC2-V2.0 -->
+<li><a href="/holdings/ro-c-rpcies-5-esc2-v1.0/dataset.shtml">Rosetta-Orbiter RPCIES Escort 2 67P Derived Data</a></li><!-- RO-C-RPCIES-5-ESC2-V1.0 -->
+<li><a href="/holdings/ro-c-rpclap-2-esc2-edited2-v1.0/dataset.shtml">Rosetta-Orbiter RPCLAP Escort 2 67P Raw Data v3.0</a></li><!-- RO-C-RPCLAP-2-ESC2-EDITED2-V1.0 -->
+<li><a href="/holdings/ro-c-rpclap-3-esc2-calib2-v1.0/dataset.shtml">Rosetta-Orbiter RPCLAP Escort 2 67P Calibrated Data</a></li><!-- RO-C-RPCLAP-3-ESC2-CALIB2-V1.0 -->
+<li><a href="/holdings/ro-c-rpclap-5-esc2-deriv2-v1.0/dataset.shtml">Rosetta-Orbiter RPCLAP Escort 2 67P Derived (Physical Units) Data</a></li><!-- RO-C-RPCLAP-5-ESC2-DERIV2-V1.0 -->
+<li><a href="/holdings/ro-c-rpclap-5-esc2-nel-v1.0/dataset.shtml">Rosetta-Orbiter RPCLAP Escort 2 67P Derived (Plasma Density at Higher Time Resolution) Data</a></li><!-- RO-C-RPCLAP-5-ESC2-NEL-V1.0 -->
+<li><a href="/holdings/ro-c-rpcmag-2-esc2-raw-v9.0/dataset.html">Rosetta-Orbiter RPCMAG Escort 2 67P Raw Data v9.0</a></li><!-- RO-C-RPCMAG-2-ESC2-RAW-V9.0 -->
+<li><a href="/holdings/ro-c-rpcmag-3-esc2-calibrated-v9.0/dataset.html">Rosetta-Orbiter RPCMAG Escort 2 67P Calibrated Data v9.0</a></li><!-- RO-C-RPCMAG-3-ESC2-CALIBRATED-V9.0 -->
+<li><a href="/holdings/ro-c-rpcmag-4-esc2-resampled-v9.0/dataset.html">Rosetta-Orbiter RPCMAG Escort 2 67P Resampled Data v9.0</a></li><!-- RO-C-RPCMAG-4-ESC2-RESAMPLED-V9.0 -->
+<li><a href="/holdings/ro-c-rpcmip-3-esc2-v3.0/dataset.shtml">Rosetta-Orbiter RPCMIP Escort 2 67P Calibrated Data v3.0</a></li><!-- RO-C-RPCMIP-3-ESC2-V3.0 -->
+<li><a href="/holdings/ro-x-srem-2-esc2-mtp014-v1.0/dataset.html">Rosetta-Orbiter SREM Escort 2 MTP014 Raw Data</a></li><!-- RO-X-SREM-2-ESC2-MTP014-V1.0 -->
+<li><a href="/holdings/ro-x-srem-5-esc2-mtp014-v1.0/dataset.html">Rosetta-Orbiter SREM Escort 2 MTP014 Derived Data</a></li><!-- RO-X-SREM-5-ESC2-MTP014-V1.0 -->
+<li><a href="/holdings/ro-x-srem-2-esc2-mtp015-v1.0/dataset.html">Rosetta-Orbiter SREM Escort 2 MTP015 Raw Data</a></li><!-- RO-X-SREM-2-ESC2-MTP015-V1.0 -->
+<li><a href="/holdings/ro-x-srem-5-esc2-mtp015-v1.0/dataset.html">Rosetta-Orbiter SREM Escort 2 MTP015 Derived Data</a></li><!-- RO-X-SREM-5-ESC2-MTP015-V1.0 -->
+<li><a href="/holdings/ro-x-srem-2-esc2-mtp016-v1.0/dataset.html">Rosetta-Orbiter SREM Escort 2 MTP016 Raw Data</a></li><!-- RO-X-SREM-2-ESC2-MTP016-V1.0 -->
+<li><a href="/holdings/ro-x-srem-5-esc2-mtp016-v1.0/dataset.html">Rosetta-Orbiter SREM Escort 2 MTP016 Derived Data</a></li><!-- RO-X-SREM-5-ESC2-MTP016-V1.0 -->
+<li><a href="/holdings/ro-x-srem-2-esc2-mtp017-v1.0/dataset.html">Rosetta-Orbiter SREM Escort 2 MTP017 Raw Data</a></li><!-- RO-X-SREM-2-ESC2-MTP017-V1.0 -->
+<li><a href="/holdings/ro-x-srem-5-esc2-mtp017-v1.0/dataset.html">Rosetta-Orbiter SREM Escort 2 MTP017 Derived Data</a></li><!-- RO-X-SREM-5-ESC2-MTP017-V1.0 -->
+<li><a href="/holdings/ro-c-virtis-2-esc2-mtp014-v1.0/dataset.shtml">Rosetta-Orbiter VIRTIS Escort 2 MTP014 67P Raw Data</a></li><!-- RO-C-VIRTIS-2-ESC2-MTP014-V1.0 -->
+<li><a href="/holdings/ro-c-virtis-3-esc2-mtp014-v2.0/dataset.shtml">Rosetta-Orbiter VIRTIS Escort 2 MTP014 67P Calibrated Data v2.0</a></li><!-- RO-C-VIRTIS-3-ESC2-MTP014-V2.0 -->
+<li><a href="/holdings/ro-c-virtis-2-esc2-mtp015-v1.0/dataset.shtml">Rosetta-Orbiter VIRTIS Escort 2 MTP015 67P Raw Data</a></li><!-- RO-C-VIRTIS-2-ESC2-MTP015-V1.0 -->
+<li><a href="/holdings/ro-c-virtis-3-esc2-mtp015-v2.0/dataset.shtml">Rosetta-Orbiter VIRTIS Escort 2 MTP015 67P Calibrated Data v2.0</a></li><!-- RO-C-VIRTIS-3-ESC2-MTP015-V2.0 -->
+<li><a href="/holdings/ro-c-virtis-2-esc2-mtp016-v1.0/dataset.shtml">Rosetta-Orbiter VIRTIS Escort 2 MTP016 67P Raw Data</a></li><!-- RO-C-VIRTIS-2-ESC2-MTP016-V1.0 -->
+<li><a href="/holdings/ro-c-virtis-3-esc2-mtp016-v2.0/dataset.shtml">Rosetta-Orbiter VIRTIS Escort 2 MTP016 67P Calibrated Data v2.0</a></li><!-- RO-C-VIRTIS-3-ESC2-MTP016-V2.0 -->
+<li><a href="/holdings/ro-c-virtis-2-esc2-mtp017-v1.0/dataset.shtml">Rosetta-Orbiter VIRTIS Escort 2 MTP017 67P Raw Data</a></li><!-- RO-C-VIRTIS-2-ESC2-MTP017-V1.0 -->
+<li><a href="/holdings/ro-c-virtis-3-esc2-mtp017-v2.0/dataset.shtml">Rosetta-Orbiter VIRTIS Escort 2 MTP017 67P Calibrated Data v2.0</a></li><!-- RO-C-VIRTIS-3-ESC2-MTP017-V2.0 -->
+
+<li><em>Please refer to <a href="/data_sb/missions/rosetta/index_OSIRIS.shtml#ESC2">Rosetta OSIRIS</a> for a listing of OSIRIS 67P datasets from the comet encounter phases.</em></li>
+<li><em>Please refer to <a href="/data_sb/missions/rosetta/index_RSI.shtml">Rosetta RSI</a> for a complete listing of RSI datasets.</em></li>
+</ul>
+<p><a href="#top">Back to Mission Phase list</a></p>
+
+<a name="esc3"></a>
+<h3>Escort Phase 3 (ESC3)</h3>
+<ul>
+<li><a href="/holdings/ro-c_cal-alice-2-esc3-v2.0/dataset.shtml">Rosetta-Orbiter ALICE Escort 3 67P Raw Data v2.0</a></li><!-- RO-C/CAL-ALICE-2-ESC3-V2.0 -->
+<li><a href="/holdings/ro-c_cal-alice-3-esc3-v2.0/dataset.shtml">Rosetta-Orbiter ALICE Escort 3 67P Calibrated Data v2.0</a></li><!-- RO-C/CAL-ALICE-3-ESC3-V2.0 -->
+<li><a href="/holdings/ro-c_cal-alice-4-esc3-v2.0/dataset.shtml">Rosetta-Orbiter ALICE Escort 3 67P Resampled Data v2.0</a></li><!-- RO-C/CAL-ALICE-4-ESC3-V2.0 -->
+<li><a href="/holdings/ro-c-gia-3-esc3-comet-escort-3-v1.0/dataset.shtml">Rosetta-Orbiter GIADA Escort 3 67P Raw/Calibrated Data</a></li><!-- RO-C-GIA-3-ESC3-COMET-ESCORT-3-V1.0 -->
+<li><a href="/holdings/ro-c-midas-3-esc3-samples-v3.0/dataset.shtml">Rosetta-Orbiter MIDAS Escort 3 67P Calibrated Data v3.0</a></li><!-- RO-C-MIDAS-3-ESC3-SAMPLES-V3.0 -->
+<li><a href="/holdings/ro-c-miro-2-esc3-67p-v1.0/dataset.shtml">Rosetta-Orbiter MIRO Escort 3 67P Raw Data</a></li><!-- RO-C-MIRO-2-ESC3-67P-V1.0 -->
+<li><a href="/holdings/ro-c-miro-3-esc3-67p-v3.0/dataset.shtml">Rosetta-Orbiter MIRO Escort 3 67P Calibrated Data v3.0</a></li><!-- RO-C-MIRO-3-ESC3-67P-V3.0 -->
+<li><a href="/holdings/ro-c-miro-4-esc3-67p-v2.0/dataset.shtml">Rosetta-Orbiter MIRO Escort 3 67P Resampled Data v2.0</a></li><!-- RO-C-MIRO-4-ESC3-67P-V2.0 -->
+<li><a href="/holdings/ro-c-navcam-2-esc3-mtp018-v1.1/dataset.shtml">Rosetta-Orbiter NAVCAM Escort 3 MTP018 67P Raw Data v1.1</a></li><!-- RO-C-NAVCAM-2-ESC3-MTP018-V1.1 -->
+<li><a href="/holdings/ro-c-navcam-3-esc3-mtp018-v1.0/dataset.shtml">Rosetta-Orbiter NAVCAM Escort 3 MTP018 67P Calibrated Data</a></li><!-- RO-C-NAVCAM-3-ESC3-MTP018-V1.0 -->
+<li><a href="/holdings/ro-c-navcam-2-esc3-mtp019-v1.1/dataset.shtml">Rosetta-Orbiter NAVCAM Escort 3 MTP019 67P Raw Data v1.1</a></li><!-- RO-C-NAVCAM-2-ESC3-MTP019-V1.1 -->
+<li><a href="/holdings/ro-c-navcam-3-esc3-mtp019-v1.0/dataset.shtml">Rosetta-Orbiter NAVCAM Escort 3 MTP019 67P Calibrated Data</a></li><!-- RO-C-NAVCAM-3-ESC3-MTP019-V1.0 -->
+<li><a href="/holdings/ro-c-navcam-2-esc3-mtp020-v1.1/dataset.shtml">Rosetta-Orbiter NAVCAM Escort 3 MTP020 67P Raw Data v1.1</a></li><!-- RO-C-NAVCAM-2-ESC3-MTP020-V1.1 -->
+<li><a href="/holdings/ro-c-navcam-3-esc3-mtp020-v1.0/dataset.shtml">Rosetta-Orbiter NAVCAM Escort 3 MTP020 67P Calibrated Data</a></li><!-- RO-C-NAVCAM-3-ESC3-MTP020-V1.0 -->
+<li><a href="/holdings/ro-c-navcam-2-esc3-mtp021-v1.1/dataset.shtml">Rosetta-Orbiter NAVCAM Escort 3 MTP021 67P Raw Data v1.1</a></li><!-- RO-C-NAVCAM-2-ESC3-MTP021-V1.1 -->
+<li><a href="/holdings/ro-c-navcam-3-esc3-mtp021-v1.0/dataset.shtml">Rosetta-Orbiter NAVCAM Escort 3 MTP021 67P Calibrated Data</a></li><!-- RO-C-NAVCAM-3-ESC3-MTP021-V1.0 -->
+<li><a href="/holdings/ro-c-rosina-2-esc3-v2.0/dataset.shtml">Rosetta-Orbiter ROSINA Escort 3 67P Raw Data v2.0</a></li><!-- RO-C-ROSINA-2-ESC3-V2.0 -->
+<li><a href="/holdings/ro-c-rosina-3-esc3-v2.0/dataset.shtml">Rosetta-Orbiter ROSINA Escort 3 67P Calibrated Data v2.0</a></li><!-- RO-C-ROSINA-3-ESC3-V2.0 -->
+<li><a href="/holdings/ro-c-rosina-4-esc3-v2.0/dataset.shtml">Rosetta-Orbiter ROSINA Escort 3 67P Resampled Data v2.0</a></li><!-- RO-C-ROSINA-4-ESC3-V2.0 -->
+<li><a href="/holdings/ro-c-rosina-5-esc3-v2.0/dataset.shtml">Rosetta-Orbiter ROSINA Escort 3 67P Derived Data v2.0</a></li><!-- RO-C-ROSINA-5-ESC3-V2.0 -->
+<li><a href="/holdings/ro-c-rpcica-2-esc3-raw-v3.0/dataset.html">Rosetta-Orbiter RPCICA Escort 3 67P Raw Data v3.0</a></li><!-- RO-C-RPCICA-2-ESC3-RAW-V3.0 -->
+<li><a href="/holdings/ro-c-rpcica-3-esc3-calib-v1.0/dataset.html">Rosetta-Orbiter RPCICA Escort 3 67P Calibrated Data</a></li><!-- RO-C-RPCICA-3-ESC3-CALIB-V1.0 -->
+<li><a href="/holdings/ro-c-rpcica-4-esc3-corr-v1.0/dataset.html">Rosetta-Orbiter RPCICA Escort 3 67P Resampled Corrected Data</a></li><!-- RO-C-RPCICA-4-ESC3-CORR-V1.0 -->
+<li><a href="/holdings/ro-c-rpcica-4-esc3-corr-cts-v1.0/dataset.html">Rosetta-Orbiter RPCICA Escort 3 67P Resampled Corrected in Counts Data</a></li><!-- RO-C-RPCICA-4-ESC3-CORR-CTS-V1.0 -->
+<li><a href="/holdings/ro-c-rpcica-4-esc3-phys-mass-v1.0/dataset.html">Rosetta-Orbiter RPCICA Escort 3 67P Resampled Physical Mass Data</a></li><!-- RO-C-RPCICA-4-ESC3-PHYS-MASS-V1.0 -->
+<li><a href="/holdings/ro-c-rpcica-5-esc3-moment-v1.0/dataset.html">Rosetta-Orbiter RPCICA Escort 3 67P Derived Moment Data</a></li><!-- RO-C-RPCICA-5-ESC3-MOMENT-V1.0 -->
+<li><a href="/holdings/ro-c-rpcies-2-esc3-v2.0/dataset.shtml">Rosetta-Orbiter RPCIES Escort 3 67P Raw Data v2.0</a></li><!-- RO-C-RPCIES-2-ESC3-V2.0 -->
+<li><a href="/holdings/ro-c-rpcies-3-esc3-v2.0/dataset.shtml">Rosetta-Orbiter RPCIES Escort 3 67P Calibrated Data v2.0</a></li><!-- RO-C-RPCIES-3-ESC3-V2.0 -->
+<li><a href="/holdings/ro-c-rpcies-5-esc3-v1.0/dataset.shtml">Rosetta-Orbiter RPCIES Escort 3 67P Derived Data</a></li><!-- RO-C-RPCIES-5-ESC3-V1.0 -->
+<li><a href="/holdings/ro-c-rpclap-2-esc3-edited2-v1.0/dataset.shtml">Rosetta-Orbiter RPCLAP Escort 3 67P Raw Data v3.0</a></li><!-- RO-C-RPCLAP-2-ESC3-EDITED2-V1.0 -->
+<li><a href="/holdings/ro-c-rpclap-3-esc3-calib2-v1.0/dataset.shtml">Rosetta-Orbiter RPCLAP Escort 3 67P Calibrated Data</a></li><!-- RO-C-RPCLAP-3-ESC3-CALIB2-V1.0 -->
+<li><a href="/holdings/ro-c-rpclap-5-esc3-deriv2-v1.0/dataset.shtml">Rosetta-Orbiter RPCLAP Escort 3 67P Derived (Physical Units) Data</a></li><!-- RO-C-RPCLAP-5-ESC3-DERIV2-V1.0 -->
+<li><a href="/holdings/ro-c-rpclap-5-esc3-nel-v1.0/dataset.shtml">Rosetta-Orbiter RPCLAP Escort 3 67P Derived (Plasma Density at Higher Time Resolution) Data</a></li><!-- RO-C-RPCLAP-5-ESC3-NEL-V1.0 -->
+<li><a href="/holdings/ro-c-rpcmag-2-esc3-raw-v9.0/dataset.html">Rosetta-Orbiter RPCMAG Escort 3 67P Raw Data v9.0</a></li><!-- RO-C-RPCMAG-2-ESC3-RAW-V9.0 -->
+<li><a href="/holdings/ro-c-rpcmag-3-esc3-calibrated-v9.0/dataset.html">Rosetta-Orbiter RPCMAG Escort 3 67P Calibrated Data v9.0</a></li><!-- RO-C-RPCMAG-3-ESC3-CALIBRATED-V9.0 -->
+<li><a href="/holdings/ro-c-rpcmag-4-esc3-resampled-v9.0/dataset.html">Rosetta-Orbiter RPCMAG Escort 3 67P Resampled Data v9.0</a></li><!-- RO-C-RPCMAG-4-ESC3-RESAMPLED-V9.0 -->
+<li><a href="/holdings/ro-c-rpcmip-3-esc3-v2.0/dataset.shtml">Rosetta-Orbiter RPCMIP Escort 3 67P Calibrated Data v2.0</a></li><!-- RO-C-RPCMIP-3-ESC3-V2.0 -->
+<li><a href="/holdings/ro-x-srem-2-esc3-mtp018-v1.0/dataset.html">Rosetta-Orbiter SREM Escort 3 MTP018 Raw Data</a></li><!-- RO-X-SREM-2-ESC3-MTP018-V1.0 -->
+<li><a href="/holdings/ro-x-srem-5-esc3-mtp018-v1.0/dataset.html">Rosetta-Orbiter SREM Escort 3 MTP018 Derived Data</a></li><!-- RO-X-SREM-5-ESC3-MTP018-V1.0 -->
+<li><a href="/holdings/ro-x-srem-2-esc3-mtp019-v1.0/dataset.html">Rosetta-Orbiter SREM Escort 3 MTP019 Raw Data</a></li><!-- RO-X-SREM-2-ESC3-MTP019-V1.0 -->
+<li><a href="/holdings/ro-x-srem-5-esc3-mtp019-v1.0/dataset.html">Rosetta-Orbiter SREM Escort 3 MTP019 Derived Data</a></li><!-- RO-X-SREM-5-ESC3-MTP019-V1.0 -->
+<li><a href="/holdings/ro-x-srem-2-esc3-mtp020-v1.0/dataset.html">Rosetta-Orbiter SREM Escort 3 MTP020 Raw Data</a></li><!-- RO-X-SREM-2-ESC3-MTP020-V1.0 -->
+<li><a href="/holdings/ro-x-srem-5-esc3-mtp020-v1.0/dataset.html">Rosetta-Orbiter SREM Escort 3 MTP020 Derived Data</a></li><!-- RO-X-SREM-5-ESC3-MTP020-V1.0 -->
+<li><a href="/holdings/ro-x-srem-2-esc3-mtp021-v1.0/dataset.html">Rosetta-Orbiter SREM Escort 3 MTP021 Raw Data</a></li><!-- RO-X-SREM-2-ESC3-MTP021-V1.0 -->
+<li><a href="/holdings/ro-x-srem-5-esc3-mtp021-v1.0/dataset.html">Rosetta-Orbiter SREM Escort 3 MTP021 Derived Data</a></li><!-- RO-X-SREM-5-ESC3-MTP021-V1.0 -->
+<li><a href="/holdings/ro-c-virtis-2-esc3-mtp018-v1.0/dataset.shtml">Rosetta-Orbiter VIRTIS Escort 3 MTP018 67P Raw Data</a></li><!-- RO-C-VIRTIS-2-ESC3-MTP018-V1.0 -->
+<li><a href="/holdings/ro-c-virtis-3-esc3-mtp018-v2.0/dataset.shtml">Rosetta-Orbiter VIRTIS Escort 3 MTP018 67P Calibrated Data v2.0</a></li><!-- RO-C-VIRTIS-3-ESC3-MTP018-V2.0 -->
+<li><a href="/holdings/ro-c-virtis-2-esc3-mtp019-v1.0/dataset.shtml">Rosetta-Orbiter VIRTIS Escort 3 MTP019 67P Raw Data</a></li><!-- RO-C-VIRTIS-2-ESC3-MTP019-V1.0 -->
+<li><a href="/holdings/ro-c-virtis-3-esc3-mtp019-v2.0/dataset.shtml">Rosetta-Orbiter VIRTIS Escort 3 MTP019 67P Calibrated Data v2.0</a></li><!-- RO-C-VIRTIS-3-ESC3-MTP019-V2.0 -->
+<li><a href="/holdings/ro-c-virtis-2-esc3-mtp020-v1.0/dataset.shtml">Rosetta-Orbiter VIRTIS Escort 3 MTP020 67P Raw Data</a></li><!-- RO-C-VIRTIS-2-ESC3-MTP020-V1.0 -->
+<li><a href="/holdings/ro-c-virtis-3-esc3-mtp020-v2.0/dataset.shtml">Rosetta-Orbiter VIRTIS Escort 3 MTP020 67P Calibrated Data v2.0</a></li><!-- RO-C-VIRTIS-3-ESC3-MTP020-V2.0 -->
+<li><a href="/holdings/ro-c-virtis-2-esc3-mtp021-v1.0/dataset.shtml">Rosetta-Orbiter VIRTIS Escort 3 MTP021 67P Raw Data</a></li><!-- RO-C-VIRTIS-2-ESC3-MTP021-V1.0 -->
+<li><a href="/holdings/ro-c-virtis-3-esc3-mtp021-v2.0/dataset.shtml">Rosetta-Orbiter VIRTIS Escort 3 MTP021 67P Calibrated Data v2.0</a></li><!-- RO-C-VIRTIS-3-ESC3-MTP021-V2.0 -->
+
+<li><em>Please refer to <a href="/data_sb/missions/rosetta/index_OSIRIS.shtml#ESC3">Rosetta OSIRIS</a> for a listing of OSIRIS 67P datasets from the comet encounter phases.</em></li>
+<li><em>Please refer to <a href="/data_sb/missions/rosetta/index_RSI.shtml">Rosetta RSI</a> for a complete listing of RSI datasets.</em></li>
+</ul>
+<p><a href="#top">Back to Mission Phase list</a></p>
+
+<a name="esc4"></a>
+<h3>Escort Phase 4 (ESC4)</h3>
+<ul>
+<li><a href="/holdings/ro-c_cal-alice-2-esc4-v2.0/dataset.shtml">Rosetta-Orbiter ALICE Escort 4 67P Raw Data v2.0</a></li><!-- RO-C/CAL-ALICE-2-ESC4-V2.0 -->
+<li><a href="/holdings/ro-c_cal-alice-3-esc4-v2.0/dataset.shtml">Rosetta-Orbiter ALICE Escort 4 67P Calibrated Data v2.0</a></li><!-- RO-C/CAL-ALICE-3-ESC4-V2.0 -->
+<li><a href="/holdings/ro-c_cal-alice-4-esc4-v2.0/dataset.shtml">Rosetta-Orbiter ALICE Escort 4 67P Resampled Data v2.0</a></li><!-- RO-C/CAL-ALICE-4-ESC4-V2.0 -->
+<li><a href="/holdings/ro-c-gia-3-esc4-comet-escort-4-v1.0/dataset.shtml">Rosetta-Orbiter GIADA Escort 4 67P Raw/Calibrated Data</a></li><!-- RO-C-GIA-3-ESC4-COMET-ESCORT-4-V1.0 -->
+
+<li><a href="/holdings/ro-c-midas-3-esc4-samples-v3.0/dataset.shtml">Rosetta-Orbiter MIDAS Escort 4 67P Calibrated Data v3.0</a></li><!-- RO-C-MIDAS-3-ESC4-SAMPLES-V3.0 -->
+<li><a href="/holdings/ro-c-miro-2-esc4-67p-v1.0/dataset.shtml">Rosetta-Orbiter MIRO Escort 4 67P Raw Data</a></li><!-- RO-C-MIRO-2-ESC4-67P-V1.0 -->
+<li><a href="/holdings/ro-c-miro-3-esc4-67p-v3.0/dataset.shtml">Rosetta-Orbiter MIRO Escort 4 67P Calibrated Data v3.0</a></li><!-- RO-C-MIRO-3-ESC4-67P-V3.0 -->
+<li><a href="/holdings/ro-c-miro-4-esc4-67p-v2.0/dataset.shtml">Rosetta-Orbiter MIRO Escort 4 67P Resampled Data v2.0</a></li><!-- RO-C-MIRO-4-ESC4-67P-V2.0 -->
+<li><a href="/holdings/ro-c-navcam-2-esc4-mtp022-v1.1/dataset.shtml">Rosetta-Orbiter NAVCAM Escort 4 MTP022 67P Raw Data v1.1</a></li><!-- RO-C-NAVCAM-2-ESC4-MTP022-V1.1 -->
+<li><a href="/holdings/ro-c-navcam-3-esc4-mtp022-v1.0/dataset.shtml">Rosetta-Orbiter NAVCAM Escort 4 MTP022 67P Calibrated Data</a></li><!-- RO-C-NAVCAM-3-ESC4-MTP022-V1.0 -->
+<li><a href="/holdings/ro-c-navcam-2-esc4-mtp023-v1.1/dataset.shtml">Rosetta-Orbiter NAVCAM Escort 4 MTP023 67P Raw Data v1.1</a></li><!-- RO-C-NAVCAM-2-ESC4-MTP023-V1.1 -->
+<li><a href="/holdings/ro-c-navcam-3-esc4-mtp023-v1.0/dataset.shtml">Rosetta-Orbiter NAVCAM Escort 4 MTP023 67P Calibrated Data</a></li><!-- RO-C-NAVCAM-3-ESC4-MTP023-V1.0 -->
+<li><a href="/holdings/ro-c-navcam-2-esc4-mtp024-v1.1/dataset.shtml">Rosetta-Orbiter NAVCAM Escort 4 MTP024 67P Raw Data v1.1</a></li><!-- RO-C-NAVCAM-2-ESC4-MTP024-V1.1 -->
+<li><a href="/holdings/ro-c-navcam-3-esc4-mtp024-v1.0/dataset.shtml">Rosetta-Orbiter NAVCAM Escort 4 MTP024 67P Calibrated Data</a></li><!-- RO-C-NAVCAM-3-ESC4-MTP024-V1.0 -->
+<li><a href="/holdings/ro-c-rosina-2-esc4-v2.0/dataset.shtml">Rosetta-Orbiter ROSINA Escort 4 67P Raw Data v2.0</a></li><!-- RO-C-ROSINA-2-ESC4-V2.0 -->
+<li><a href="/holdings/ro-c-rosina-3-esc4-v2.0/dataset.shtml">Rosetta-Orbiter ROSINA Escort 4 67P Calibrated Data v2.0</a></li><!-- RO-C-ROSINA-3-ESC4-V2.0 -->
+<li><a href="/holdings/ro-c-rosina-4-esc4-v2.0/dataset.shtml">Rosetta-Orbiter ROSINA Escort 4 67P Resampled Data v2.0</a></li><!-- RO-C-ROSINA-4-ESC4-V2.0 -->
+<li><a href="/holdings/ro-c-rosina-5-esc4-v2.0/dataset.shtml">Rosetta-Orbiter ROSINA Escort 4 67P Derived Data v2.0</a></li><!-- RO-C-ROSINA-5-ESC4-V2.0 -->
+<li><a href="/holdings/ro-c-rpcica-2-esc4-raw-v2.0/dataset.html">Rosetta-Orbiter RPCICA Escort 4 67P Raw Data v2.0</a></li><!-- RO-C-RPCICA-2-ESC4-RAW-V2.0 -->
+<li><a href="/holdings/ro-c-rpcica-3-esc4-calib-v1.0/dataset.html">Rosetta-Orbiter RPCICA Escort 4 67P Calibrated Data</a></li><!-- RO-C-RPCICA-3-ESC4-CALIB-V1.0 -->
+<li><a href="/holdings/ro-c-rpcica-4-esc4-corr-v1.0/dataset.html">Rosetta-Orbiter RPCICA Escort 4 67P Resampled Corrected Data</a></li><!-- RO-C-RPCICA-4-ESC4-CORR-V1.0 -->
+<li><a href="/holdings/ro-c-rpcica-4-esc4-corr-cts-v1.0/dataset.html">Rosetta-Orbiter RPCICA Escort 4 67P Resampled Corrected in Counts Data</a></li><!-- RO-C-RPCICA-4-ESC4-CORR-CTS-V1.0 -->
+<li><a href="/holdings/ro-c-rpcica-4-esc4-phys-mass-v1.0/dataset.html">Rosetta-Orbiter RPCICA Escort 4 67P Resampled Physical Mass Data</a></li><!-- RO-C-RPCICA-4-ESC4-PHYS-MASS-V1.0 -->
+<li><a href="/holdings/ro-c-rpcica-5-esc4-moment-v1.0/dataset.html">Rosetta-Orbiter RPCICA Escort 4 67P Derived Moment Data</a></li><!-- RO-C-RPCICA-5-ESC4-MOMENT-V1.0 -->
+<li><a href="/holdings/ro-c-rpcies-2-esc4-v1.0/dataset.shtml">Rosetta-Orbiter RPCIES Escort 4 67P Raw Data</a></li><!-- RO-C-RPCIES-2-ESC4-V1.0 -->
+<li><a href="/holdings/ro-c-rpcies-3-esc4-v2.0/dataset.shtml">Rosetta-Orbiter RPCIES Escort 4 67P Calibrated Data v2.0</a></li><!-- RO-C-RPCIES-3-ESC4-V2.0 -->
+<li><a href="/holdings/ro-c-rpcies-5-esc4-v1.0/dataset.shtml">Rosetta-Orbiter RPCIES Escort 4 67P Derived Data</a></li><!-- RO-C-RPCIES-5-ESC4-V1.0 -->
+<li><a href="/holdings/ro-c-rpclap-2-esc4-edited2-v1.0/dataset.shtml">Rosetta-Orbiter RPCLAP Escort 4 67P Raw Data v3.0</a></li><!-- RO-C-RPCLAP-2-ESC4-EDITED2-V1.0 -->
+<li><a href="/holdings/ro-c-rpclap-3-esc4-calib2-v1.0/dataset.shtml">Rosetta-Orbiter RPCLAP Escort 4 67P Calibrated Data</a></li><!-- RO-C-RPCLAP-3-ESC4-CALIB2-V1.0 -->
+<li><a href="/holdings/ro-c-rpclap-5-esc4-deriv2-v1.0/dataset.shtml">Rosetta-Orbiter RPCLAP Escort 4 67P Derived (Physical Units) Data</a></li><!-- RO-C-RPCLAP-5-ESC4-DERIV2-V1.0 -->
+<li><a href="/holdings/ro-c-rpclap-5-esc4-nel-v1.0/dataset.shtml">Rosetta-Orbiter RPCLAP Escort 4 67P Derived (Plasma Density at Higher Time Resolution) Data</a></li><!-- RO-C-RPCLAP-5-ESC4-NEL-V1.0 -->
+<li><a href="/holdings/ro-c-rpcmag-2-esc4-raw-v9.0/dataset.html">Rosetta-Orbiter RPCMAG Escort 4 67P Raw Data v9.0</a></li><!-- RO-C-RPCMAG-2-ESC4-RAW-V9.0 -->
+<li><a href="/holdings/ro-c-rpcmag-3-esc4-calibrated-v9.0/dataset.html">Rosetta-Orbiter RPCMAG Escort 4 67P Calibrated Data v9.0</a></li><!-- RO-C-RPCMAG-3-ESC4-CALIBRATED-V9.0 -->
+<li><a href="/holdings/ro-c-rpcmag-4-esc4-resampled-v9.0/dataset.html">Rosetta-Orbiter RPCMAG Escort 4 67P Resampled Data v9.0</a></li><!-- RO-C-RPCMAG-4-ESC4-RESAMPLED-V9.0 -->
+<li><a href="/holdings/ro-c-rpcmip-3-esc4-v2.0/dataset.shtml">Rosetta-Orbiter RPCMIP Escort 4 67P Calibrated Data v2.0</a></li><!-- RO-C-RPCMIP-3-ESC4-V2.0 -->
+<li><a href="/holdings/ro-x-srem-2-esc4-mtp022-v1.0/dataset.html">Rosetta-Orbiter SREM Escort 4 MTP022 Raw Data</a></li><!-- RO-X-SREM-2-ESC4-MTP022-V1.0 -->
+<li><a href="/holdings/ro-x-srem-5-esc4-mtp022-v1.0/dataset.html">Rosetta-Orbiter SREM Escort 4 MTP022 Derived Data</a></li><!-- RO-X-SREM-5-ESC4-MTP022-V1.0 -->
+<li><a href="/holdings/ro-x-srem-2-esc4-mtp023-v1.0/dataset.html">Rosetta-Orbiter SREM Escort 4 MTP023 Raw Data</a></li><!-- RO-X-SREM-2-ESC4-MTP023-V1.0 -->
+<li><a href="/holdings/ro-x-srem-5-esc4-mtp023-v1.0/dataset.html">Rosetta-Orbiter SREM Escort 4 MTP023 Derived Data</a></li><!-- RO-X-SREM-5-ESC4-MTP023-V1.0 -->
+<li><a href="/holdings/ro-x-srem-2-esc4-mtp024-v1.0/dataset.html">Rosetta-Orbiter SREM Escort 4 MTP024 Raw Data</a></li><!-- RO-X-SREM-2-ESC4-MTP024-V1.0 -->
+<li><a href="/holdings/ro-x-srem-5-esc4-mtp024-v1.0/dataset.html">Rosetta-Orbiter SREM Escort 4 MTP024 Derived Data</a></li><!-- RO-X-SREM-5-ESC4-MTP024-V1.0 -->
+<li><a href="/holdings/ro-c-virtis-2-esc4-mtp022-v1.0/dataset.shtml">Rosetta-Orbiter VIRTIS Escort 4 MTP022 67P Raw Data</a></li><!-- RO-C-VIRTIS-2-ESC4-MTP022-V1.0 -->
+<li><a href="/holdings/ro-c-virtis-3-esc4-mtp022-v2.0/dataset.shtml">Rosetta-Orbiter VIRTIS Escort 4 MTP022 67P Calibrated Data v2.0</a></li><!-- RO-C-VIRTIS-3-ESC4-MTP022-V2.0 -->
+<li><a href="/holdings/ro-c-virtis-2-esc4-mtp023-v1.0/dataset.shtml">Rosetta-Orbiter VIRTIS Escort 4 MTP023 67P Raw Data</a></li><!-- RO-C-VIRTIS-2-ESC4-MTP023-V1.0 -->
+<li><a href="/holdings/ro-c-virtis-3-esc4-mtp023-v2.0/dataset.shtml">Rosetta-Orbiter VIRTIS Escort 4 MTP023 67P Calibrated Data v2.0</a></li><!-- RO-C-VIRTIS-3-ESC4-MTP023-V2.0 -->
+<li><a href="/holdings/ro-c-virtis-2-esc4-mtp024-v1.0/dataset.shtml">Rosetta-Orbiter VIRTIS Escort 4 MTP024 67P Raw Data</a></li><!-- RO-C-VIRTIS-2-ESC4-MTP024-V1.0 -->
+<li><a href="/holdings/ro-c-virtis-3-esc4-mtp024-v2.0/dataset.shtml">Rosetta-Orbiter VIRTIS Escort 4 MTP024 67P Calibrated Data v2.0</a></li><!-- RO-C-VIRTIS-3-ESC4-MTP024-V2.0 -->
+
+<li><em>Please refer to <a href="/data_sb/missions/rosetta/index_OSIRIS.shtml#ESC4">Rosetta OSIRIS</a> for a listing of OSIRIS 67P datasets from the comet encounter phases.</em></li>
+<li><em>Please refer to <a href="/data_sb/missions/rosetta/index_RSI.shtml">Rosetta RSI</a> for a complete listing of RSI datasets.</em></li>
+</ul>
+<p><a href="#top">Back to Mission Phase list</a></p>
+
+<a name="ext1"></a>
+<h3>Extension 1 (EXT1)</h3>
+<ul>
+<li><a href="/holdings/ro-c_cal-alice-2-ext1-v2.0/dataset.shtml">Rosetta-Orbiter ALICE Extension 1 67P Raw Data v2.0</a></li><!-- RO-C/CAL-ALICE-2-EXT1-V2.0 -->
+<li><a href="/holdings/ro-c_cal-alice-3-ext1-v2.0/dataset.shtml">Rosetta-Orbiter ALICE Extension 1 67P Calibrated Data v2.0</a></li><!-- RO-C/CAL-ALICE-3-EXT1-V2.0 -->
+<li><a href="/holdings/ro-c_cal-alice-4-ext1-v2.0/dataset.shtml">Rosetta-Orbiter ALICE Extension 1 67P Resampled Data v2.0</a></li><!-- RO-C/CAL-ALICE-4-EXT1-V2.0 -->
+<li><a href="/holdings/ro-c-gia-3-ext1-extension-1-v1.0/dataset.shtml">Rosetta-Orbiter GIADA Extension 1 67P Raw/Calibrated Data</a></li><!-- RO-C-GIA-3-EXT1-EXTENSION-1-V1.0 -->
+<li><a href="/holdings/ro-c-midas-3-ext1-samples-v3.0/dataset.shtml">Rosetta-Orbiter MIDAS Extension 1 67P Calibrated Data v3.0</a></li><!-- RO-C-MIDAS-3-EXT1-SAMPLES-V3.0 -->
+<li><a href="/holdings/ro-c-miro-2-ext1-67p-v1.0/dataset.shtml">Rosetta-Orbiter MIRO Extension 1 67P Raw Data</a></li><!-- RO-C-MIRO-2-EXT1-67P-V1.0 -->
+<li><a href="/holdings/ro-c-miro-3-ext1-67p-v3.0/dataset.shtml">Rosetta-Orbiter MIRO Extension 1 67P Calibrated Data v3.0</a></li><!-- RO-C-MIRO-3-EXT1-67P-V3.0 -->
+<li><a href="/holdings/ro-c-miro-4-ext1-67p-v2.0/dataset.shtml">Rosetta-Orbiter MIRO Extension 1 67P Resampled Data v2.0</a></li><!-- RO-C-MIRO-4-EXT1-67P-V2.0 -->
+<li><a href="/holdings/ro-c-navcam-2-ext1-mtp025-v1.1/dataset.shtml">Rosetta-Orbiter NAVCAM Extension 1 MTP025 67P Raw Data v1.1</a></li><!-- RO-C-NAVCAM-2-EXT1-MTP025-V1.1 -->
+<li><a href="/holdings/ro-c-navcam-3-ext1-mtp025-v1.0/dataset.shtml">Rosetta-Orbiter NAVCAM Extension 1 MTP025 67P Calibrated Data</a></li><!-- RO-C-NAVCAM-3-EXT1-MTP025-V1.0 -->
+<li><a href="/holdings/ro-c-navcam-2-ext1-mtp026-v1.1/dataset.shtml">Rosetta-Orbiter NAVCAM Extension 1 MTP026 67P Raw Data v1.1</a></li><!-- RO-C-NAVCAM-2-EXT1-MTP026-V1.1 -->
+<li><a href="/holdings/ro-c-navcam-3-ext1-mtp026-v1.0/dataset.shtml">Rosetta-Orbiter NAVCAM Extension 1 MTP026 67P Calibrated Data</a></li><!-- RO-C-NAVCAM-3-EXT1-MTP026-V1.0 -->
+<li><a href="/holdings/ro-c-navcam-2-ext1-mtp027-v1.1/dataset.shtml">Rosetta-Orbiter NAVCAM Extension 1 MTP027 67P Raw Data v1.1</a></li><!-- RO-C-NAVCAM-2-EXT1-MTP027-V1.1 -->
+<li><a href="/holdings/ro-c-navcam-3-ext1-mtp027-v1.0/dataset.shtml">Rosetta-Orbiter NAVCAM Extension 1 MTP027 67P Calibrated Data</a></li><!-- RO-C-NAVCAM-3-EXT1-MTP027-V1.0 -->
+<li><a href="/holdings/ro-c-rosina-2-ext1-v2.0/dataset.shtml">Rosetta-Orbiter ROSINA Extension 1 67P Raw Data v2.0</a></li><!-- RO-C-ROSINA-2-EXT1-V2.0 -->
+<li><a href="/holdings/ro-c-rosina-3-ext1-v2.0/dataset.shtml">Rosetta-Orbiter ROSINA Extension 1 67P Calibrated Data v2.0</a></li><!-- RO-C-ROSINA-3-EXT1-V2.0 -->
+<li><a href="/holdings/ro-c-rosina-4-ext1-v2.0/dataset.shtml">Rosetta-Orbiter ROSINA Extension 1 67P Resampled Data v2.0</a></li><!-- RO-C-ROSINA-4-EXT1-V2.0 -->
+<li><a href="/holdings/ro-c-rosina-5-ext1-v2.0/dataset.shtml">Rosetta-Orbiter ROSINA Extension 1 67P Derived Data v2.0</a></li><!-- RO-C-ROSINA-5-EXT1-V2.0 -->
+<li><a href="/holdings/ro-c-rpcica-2-ext1-raw-v2.0/dataset.html">Rosetta-Orbiter RPCICA Extension 1 67P Raw Data v2.0</a></li><!-- RO-C-RPCICA-2-EXT1-RAW-V2.0 -->
+<li><a href="/holdings/ro-c-rpcica-3-ext1-calib-v1.0/dataset.html">Rosetta-Orbiter RPCICA Extension 1 67P Calibrated Data</a></li><!-- RO-C-RPCICA-3-EXT1-CALIB-V1.0 -->
+<li><a href="/holdings/ro-c-rpcica-4-ext1-corr-v1.0/dataset.html">Rosetta-Orbiter RPCICA Extension 1 67P Resampled Corrected Data</a></li><!-- RO-C-RPCICA-4-EXT1-CORR-V1.0 -->
+<li><a href="/holdings/ro-c-rpcica-4-ext1-corr-cts-v1.0/dataset.html">Rosetta-Orbiter RPCICA Extension 1 67P Resampled Corrected in Counts Data</a></li><!-- RO-C-RPCICA-4-EXT1-CORR-CTS-V1.0 -->
+<li><a href="/holdings/ro-c-rpcica-4-ext1-phys-mass-v1.0/dataset.html">Rosetta-Orbiter RPCICA Extension 1 67P Resampled Physical Mass Data</a></li><!-- RO-C-RPCICA-4-EXT1-PHYS-MASS-V1.0 -->
+<li><a href="/holdings/ro-c-rpcica-5-ext1-moment-v1.0/dataset.html">Rosetta-Orbiter RPCICA Extension 1 67P Derived Moment Data</a></li><!-- RO-C-RPCICA-5-EXT1-MOMENT-V1.0 -->
+<li><a href="/holdings/ro-c-rpcies-2-ext1-v1.0/dataset.shtml">Rosetta-Orbiter RPCIES Extension 1 67P Raw Data</a></li><!-- RO-C-RPCIES-2-EXT1-V1.0 -->
+<li><a href="/holdings/ro-c-rpcies-3-ext1-v2.0/dataset.shtml">Rosetta-Orbiter RPCIES Extension 1 67P Calibrated Data v2.0</a></li><!-- RO-C-RPCIES-3-EXT1-V2.0 -->
+<li><a href="/holdings/ro-c-rpcies-5-ext1-v1.0/dataset.shtml">Rosetta-Orbiter RPCIES Extension 1 67P Derived Data</a></li><!-- RO-C-RPCIES-5-EXT1-V1.0 -->
+<li><a href="/holdings/ro-c-rpclap-2-ext1-edited2-v1.0/dataset.shtml">Rosetta-Orbiter RPCLAP Extension 1 67P Raw Data v2.0</a></li><!-- RO-C-RPCLAP-2-EXT1-EDITED2-V1.0 -->
+<li><a href="/holdings/ro-c-rpclap-3-ext1-calib2-v1.0/dataset.shtml">Rosetta-Orbiter RPCLAP Extension 1 67P Calibrated Data</a></li><!-- RO-C-RPCLAP-3-EXT1-CALIB2-V1.0 -->
+<li><a href="/holdings/ro-c-rpclap-5-ext1-deriv2-v1.0/dataset.shtml">Rosetta-Orbiter RPCLAP Extension 1 67P Derived (Physical Units) Data</a></li><!-- RO-C-RPCLAP-5-EXT1-DERIV2-V1.0 -->
+<li><a href="/holdings/ro-c-rpclap-5-ext1-nel-v1.0/dataset.shtml">Rosetta-Orbiter RPCLAP Extension 1 67P Derived (Plasma Density at Higher Time Resolution) Data</a></li><!-- RO-C-RPCLAP-5-EXT1-NEL-V1.0 -->
+<li><a href="/holdings/ro-c-rpcmag-2-ext1-raw-v9.0/dataset.html">Rosetta-Orbiter RPCMAG Extension 1 67P Raw Data v9.0</a></li><!-- RO-C-RPCMAG-2-EXT1-RAW-V9.0 -->
+<li><a href="/holdings/ro-c-rpcmag-3-ext1-calibrated-v9.0/dataset.html">Rosetta-Orbiter RPCMAG Extension 1 67P Calibrated Data v9.0</a></li><!-- RO-C-RPCMAG-3-EXT1-CALIBRATED-V9.0 -->
+<li><a href="/holdings/ro-c-rpcmag-4-ext1-resampled-v9.0/dataset.html">Rosetta-Orbiter RPCMAG Extension 1 67P Resampled Data v9.0</a></li><!-- RO-C-RPCMAG-4-EXT1-RESAMPLED-V9.0 -->
+<li><a href="/holdings/ro-c-rpcmip-3-ext1-v2.0/dataset.shtml">Rosetta-Orbiter RPCMIP Extension 1 67P Calibrated Data v2.0</a></li><!-- RO-C-RPCMIP-3-EXT1-V2.0 -->
+<li><a href="/holdings/ro-x-srem-2-ext1-mtp025-v1.0/dataset.html">Rosetta-Orbiter SREM Extension 1 MTP025 Raw Data</a></li><!-- RO-X-SREM-2-EXT1-MTP025-V1.0 -->
+<li><a href="/holdings/ro-x-srem-5-ext1-mtp025-v1.0/dataset.html">Rosetta-Orbiter SREM Extension 1 MTP025 Derived Data</a></li><!-- RO-X-SREM-5-EXT1-MTP025-V1.0 -->
+<li><a href="/holdings/ro-x-srem-2-ext1-mtp026-v1.0/dataset.html">Rosetta-Orbiter SREM Extension 1 MTP026 Raw Data</a></li><!-- RO-X-SREM-2-EXT1-MTP026-V1.0 -->
+<li><a href="/holdings/ro-x-srem-5-ext1-mtp026-v1.0/dataset.html">Rosetta-Orbiter SREM Extension 1 MTP026 Derived Data</a></li><!-- RO-X-SREM-5-EXT1-MTP026-V1.0 -->
+<li><a href="/holdings/ro-x-srem-2-ext1-mtp027-v1.0/dataset.html">Rosetta-Orbiter SREM Extension 1 MTP027 Raw Data</a></li><!-- RO-X-SREM-2-EXT1-MTP027-V1.0 -->
+<li><a href="/holdings/ro-x-srem-5-ext1-mtp027-v1.0/dataset.html">Rosetta-Orbiter SREM Extension 1 MTP027 Derived Data</a></li><!-- RO-X-SREM-5-EXT1-MTP027-V1.0 -->
+<li><a href="/holdings/ro-c-virtis-2-ext1-mtp025-v1.0/dataset.shtml">Rosetta-Orbiter VIRTIS Extension 1 MTP025 67P Raw Data</a></li><!-- RO-C-VIRTIS-2-EXT1-MTP025-V1.0 -->
+<li><a href="/holdings/ro-c-virtis-3-ext1-mtp025-v2.0/dataset.shtml">Rosetta-Orbiter VIRTIS Extension 1 MTP025 67P Calibrated Data v2.0</a></li><!-- RO-C-VIRTIS-3-EXT1-MTP025-V2.0 -->
+<li><a href="/holdings/ro-c-virtis-2-ext1-mtp026-v1.0/dataset.shtml">Rosetta-Orbiter VIRTIS Extension 1 MTP026 67P Raw Data</a></li><!-- RO-C-VIRTIS-2-EXT1-MTP026-V1.0 -->
+<li><a href="/holdings/ro-c-virtis-3-ext1-mtp026-v2.0/dataset.shtml">Rosetta-Orbiter VIRTIS Extension 1 MTP026 67P Calibrated Data v2.0</a></li><!-- RO-C-VIRTIS-3-EXT1-MTP026-V2.0 -->
+<li><a href="/holdings/ro-c-virtis-2-ext1-mtp027-v1.0/dataset.shtml">Rosetta-Orbiter VIRTIS Extension 1 MTP027 67P Raw Data</a></li><!-- RO-C-VIRTIS-2-EXT1-MTP027-V1.0 -->
+<li><a href="/holdings/ro-c-virtis-3-ext1-mtp027-v2.0/dataset.shtml">Rosetta-Orbiter VIRTIS Extension 1 MTP027 67P Calibrated Data v2.0</a></li><!-- RO-C-VIRTIS-3-EXT1-MTP027-V2.0 -->
+
+<li><em>Please refer to <a href="/data_sb/missions/rosetta/index_OSIRIS.shtml#EXT1">Rosetta OSIRIS</a> for a listing of OSIRIS 67P datasets from the comet encounter phases.</em></li>
+<li><em>Please refer to <a href="/data_sb/missions/rosetta/index_RSI.shtml">Rosetta RSI</a> for a complete listing of RSI datasets.</em></li>
+</ul>
+<p><a href="#top">Back to Mission Phase list</a></p>
+
+<a name="ext2"></a>
+<h3>Extension 2 (EXT2)</h3>
+<ul>
+<li><a href="/holdings/ro-c_cal-alice-2-ext2-v2.0/dataset.shtml">Rosetta-Orbiter ALICE Extension 2 67P Raw Data v2.0</a></li><!-- RO-C/CAL-ALICE-2-EXT2-V2.0 -->
+<li><a href="/holdings/ro-c_cal-alice-3-ext2-v2.0/dataset.shtml">Rosetta-Orbiter ALICE Extension 2 67P Calibrated Data v2.0</a></li><!-- RO-C/CAL-ALICE-3-EXT2-V2.0 -->
+<li><a href="/holdings/ro-c_cal-alice-4-ext2-v2.0/dataset.shtml">Rosetta-Orbiter ALICE Extension 2 67P Resampled Data v2.0</a></li><!-- RO-C/CAL-ALICE-4-EXT2-V2.0 -->
+<li><a href="/holdings/ro-c-gia-3-ext2-extension-2-v1.0/dataset.shtml">Rosetta-Orbiter GIADA Extension 2 67P Raw/Calibrated Data</a></li><!-- RO-C-GIA-3-EXT2-EXTENSION-2-V1.0 -->
+<li><a href="/holdings/ro-c-midas-3-ext2-samples-v3.0/dataset.shtml">Rosetta-Orbiter MIDAS Extension 2 67P Calibrated Data v3.0</a></li><!-- RO-C-MIDAS-3-EXT2-SAMPLES-V3.0 -->
+<li><a href="/holdings/ro-c-miro-2-ext2-67p-v1.0/dataset.shtml">Rosetta-Orbiter MIRO Extension 2 67P Raw Data</a></li><!-- RO-C-MIRO-2-EXT2-67P-V1.0 -->
+<li><a href="/holdings/ro-c-miro-3-ext2-67p-v3.0/dataset.shtml">Rosetta-Orbiter MIRO Extension 2 67P Calibrated Data v3.0</a></li><!-- RO-C-MIRO-3-EXT2-67P-V3.0 -->
+<li><a href="/holdings/ro-c-miro-4-ext2-67p-v2.0/dataset.shtml">Rosetta-Orbiter MIRO Extension 2 67P Resampled Data v2.0</a></li><!-- RO-C-MIRO-4-EXT2-67P-V2.0 -->
+<li><a href="/holdings/ro-c-navcam-2-ext2-mtp028-v1.1/dataset.shtml">Rosetta-Orbiter NAVCAM Extension 2 MTP028 67P Raw Data v1.1</a></li><!-- RO-C-NAVCAM-2-EXT2-MTP028-V1.1 -->
+<li><a href="/holdings/ro-c-navcam-3-ext2-mtp028-v1.0/dataset.shtml">Rosetta-Orbiter NAVCAM Extension 2 MTP028 67P Calibrated Data</a></li><!-- RO-C-NAVCAM-3-EXT2-MTP028-V1.0 -->
+<li><a href="/holdings/ro-c-navcam-2-ext2-mtp029-v1.1/dataset.shtml">Rosetta-Orbiter NAVCAM Extension 2 MTP029 67P Raw Data v1.1</a></li><!-- RO-C-NAVCAM-2-EXT2-MTP029-V1.1 -->
+<li><a href="/holdings/ro-c-navcam-3-ext2-mtp029-v1.0/dataset.shtml">Rosetta-Orbiter NAVCAM Extension 2 MTP029 67P Calibrated Data</a></li><!-- RO-C-NAVCAM-3-EXT2-MTP029-V1.0 -->
+<li><a href="/holdings/ro-c-navcam-2-ext2-mtp030-v1.1/dataset.shtml">Rosetta-Orbiter NAVCAM Extension 2 MTP030 67P Raw Data v1.1</a></li><!-- RO-C-NAVCAM-2-EXT2-MTP030-V1.1 -->
+<li><a href="/holdings/ro-c-navcam-3-ext2-mtp030-v1.0/dataset.shtml">Rosetta-Orbiter NAVCAM Extension 2 MTP030 67P Calibrated Data</a></li><!-- RO-C-NAVCAM-3-EXT2-MTP030-V1.0 -->
+<li><a href="/holdings/ro-c-rosina-2-ext2-v2.0/dataset.shtml">Rosetta-Orbiter ROSINA Extension 2 67P Raw Data v2.0</a></li><!-- RO-C-ROSINA-2-EXT2-V2.0 -->
+<li><a href="/holdings/ro-c-rosina-3-ext2-v2.0/dataset.shtml">Rosetta-Orbiter ROSINA Extension 2 67P Calibrated Data v2.0</a></li><!-- RO-C-ROSINA-3-EXT2-V2.0 -->
+<li><a href="/holdings/ro-c-rosina-4-ext2-v2.0/dataset.shtml">Rosetta-Orbiter ROSINA Extension 2 67P Resampled Data v2.0</a></li><!-- RO-C-ROSINA-4-EXT2-V2.0 -->
+<li><a href="/holdings/ro-c-rosina-5-ext2-v2.0/dataset.shtml">Rosetta-Orbiter ROSINA Extension 2 67P Derived Data v2.0</a></li><!-- RO-C-ROSINA-5-EXT2-V2.0 -->
+<li><a href="/holdings/ro-c-rpcica-2-ext2-raw-v2.0/dataset.html">Rosetta-Orbiter RPCICA Extension 2 67P Raw Data v2.0</a></li><!-- RO-C-RPCICA-2-EXT2-RAW-V2.0 -->
+<li><a href="/holdings/ro-c-rpcica-3-ext2-calib-v1.0/dataset.html">Rosetta-Orbiter RPCICA Extension 2 67P Calibrated Data</a></li><!-- RO-C-RPCICA-3-EXT2-CALIB-V1.0 -->
+<li><a href="/holdings/ro-c-rpcica-4-ext2-corr-v1.0/dataset.html">Rosetta-Orbiter RPCICA Extension 2 67P Resampled Corrected Data</a></li><!-- RO-C-RPCICA-4-EXT2-CORR-V1.0 -->
+<li><a href="/holdings/ro-c-rpcica-4-ext2-corr-cts-v1.0/dataset.html">Rosetta-Orbiter RPCICA Extension 2 67P Resampled Corrected in Counts Data</a></li><!-- RO-C-RPCICA-4-EXT2-CORR-CTS-V1.0 -->
+<li><a href="/holdings/ro-c-rpcica-4-ext2-phys-mass-v1.0/dataset.html">Rosetta-Orbiter RPCICA Extension 2 67P Resampled Physical Mass Data</a></li><!-- RO-C-RPCICA-4-EXT2-PHYS-MASS-V1.0 -->
+<li><a href="/holdings/ro-c-rpcica-5-ext2-moment-v1.0/dataset.html">Rosetta-Orbiter RPCICA Extension 2 67P Derived Moment Data</a></li><!-- RO-C-RPCICA-5-EXT2-MOMENT-V1.0 -->
+<li><a href="/holdings/ro-c-rpcies-2-ext2-v1.0/dataset.shtml">Rosetta-Orbiter RPCIES Extension 2 67P Raw Data</a></li><!-- RO-C-RPCIES-2-EXT2-V1.0 -->
+<li><a href="/holdings/ro-c-rpcies-3-ext2-v2.0/dataset.shtml">Rosetta-Orbiter RPCIES Extension 2 67P Calibrated Data v2.0</a></li><!-- RO-C-RPCIES-3-EXT2-V2.0 -->
+<li><a href="/holdings/ro-c-rpcies-5-ext2-v1.0/dataset.shtml">Rosetta-Orbiter RPCIES Extension 2 67P Derived Data</a></li><!-- RO-C-RPCIES-5-EXT2-V1.0 -->
+<li><a href="/holdings/ro-c-rpclap-2-ext2-edited2-v1.0/dataset.shtml">Rosetta-Orbiter RPCLAP Extension 2 67P Raw Data v2.0</a></li><!-- RO-C-RPCLAP-2-EXT2-EDITED2-V1.0 -->
+<li><a href="/holdings/ro-c-rpclap-3-ext2-calib2-v1.0/dataset.shtml">Rosetta-Orbiter RPCLAP Extension 2 67P Calibrated Data</a></li><!-- RO-C-RPCLAP-3-EXT2-CALIB2-V1.0 -->
+<li><a href="/holdings/ro-c-rpclap-5-ext2-deriv2-v1.0/dataset.shtml">Rosetta-Orbiter RPCLAP Extension 2 67P Derived (Physical Units) Data</a></li><!-- RO-C-RPCLAP-5-EXT2-DERIV2-V1.0 -->
+<li><a href="/holdings/ro-c-rpclap-5-ext2-nel-v1.0/dataset.shtml">Rosetta-Orbiter RPCLAP Extension 2 67P Derived (Plasma Density at Higher Time Resolution) Data</a></li><!-- RO-C-RPCLAP-5-EXT2-NEL-V1.0 -->
+<li><a href="/holdings/ro-c-rpcmag-2-ext2-raw-v9.0/dataset.html">Rosetta-Orbiter RPCMAG Extension 2 67P Raw Data v9.0</a></li><!-- RO-C-RPCMAG-2-EXT2-RAW-V9.0 -->
+<li><a href="/holdings/ro-c-rpcmag-3-ext2-calibrated-v9.0/dataset.html">Rosetta-Orbiter RPCMAG Extension 2 67P Calibrated Data v9.0</a></li><!-- RO-C-RPCMAG-3-EXT2-CALIBRATED-V9.0 -->
+<li><a href="/holdings/ro-c-rpcmag-4-ext2-resampled-v9.0/dataset.html">Rosetta-Orbiter RPCMAG Extension 2 67P Resampled Data v9.0</a></li><!-- RO-C-RPCMAG-4-EXT2-RESAMPLED-V9.0 -->
+<li><a href="/holdings/ro-c-rpcmip-3-ext2-v2.0/dataset.shtml">Rosetta-Orbiter RPCMIP Extension 2 67P Calibrated Data v2.0</a></li><!-- RO-C-RPCMIP-3-EXT2-V2.0 -->
+<li><a href="/holdings/ro-x-srem-2-ext2-mtp028-v1.0/dataset.html">Rosetta-Orbiter SREM Extension 2 MTP028 Raw Data</a></li><!-- RO-X-SREM-2-EXT2-MTP028-V1.0 -->
+<li><a href="/holdings/ro-x-srem-5-ext2-mtp028-v1.0/dataset.html">Rosetta-Orbiter SREM Extension 2 MTP028 Derived Data</a></li><!-- RO-X-SREM-5-EXT2-MTP028-V1.0 -->
+<li><a href="/holdings/ro-x-srem-2-ext2-mtp029-v1.0/dataset.html">Rosetta-Orbiter SREM Extension 2 MTP029 Raw Data</a></li><!-- RO-X-SREM-2-EXT2-MTP029-V1.0 -->
+<li><a href="/holdings/ro-x-srem-5-ext2-mtp029-v1.0/dataset.html">Rosetta-Orbiter SREM Extension 2 MTP029 Derived Data</a></li><!-- RO-X-SREM-5-EXT2-MTP029-V1.0 -->
+<li><a href="/holdings/ro-x-srem-2-ext2-mtp030-v1.0/dataset.html">Rosetta-Orbiter SREM Extension 2 MTP030 Raw Data</a></li><!-- RO-X-SREM-2-EXT2-MTP030-V1.0 -->
+<li><a href="/holdings/ro-x-srem-5-ext2-mtp030-v1.0/dataset.html">Rosetta-Orbiter SREM Extension 2 MTP030 Derived Data</a></li><!-- RO-X-SREM-5-EXT2-MTP030-V1.0 -->
+<li><a href="/holdings/ro-c-virtis-2-ext2-mtp028-v1.0/dataset.shtml">Rosetta-Orbiter VIRTIS Extension 2 MTP028 67P Raw Data</a></li><!-- RO-C-VIRTIS-2-EXT2-MTP028-V1.0 -->
+<li><a href="/holdings/ro-c-virtis-3-ext2-mtp028-v2.0/dataset.shtml">Rosetta-Orbiter VIRTIS Extension 2 MTP028 67P Calibrated Data v2.0</a></li><!-- RO-C-VIRTIS-3-EXT2-MTP028-V2.0 -->
+<li><a href="/holdings/ro-c-virtis-2-ext2-mtp029-v1.0/dataset.shtml">Rosetta-Orbiter VIRTIS Extension 2 MTP029 67P Raw Data</a></li><!-- RO-C-VIRTIS-2-EXT2-MTP029-V1.0 -->
+<li><a href="/holdings/ro-c-virtis-3-ext2-mtp029-v2.0/dataset.shtml">Rosetta-Orbiter VIRTIS Extension 2 MTP029 67P Calibrated Data v2.0</a></li><!-- RO-C-VIRTIS-3-EXT2-MTP029-V2.0 -->
+<li><a href="/holdings/ro-c-virtis-2-ext2-mtp030-v1.0/dataset.shtml">Rosetta-Orbiter VIRTIS Extension 2 MTP030 67P Raw Data</a></li><!-- RO-C-VIRTIS-2-EXT2-MTP030-V1.0 -->
+<li><a href="/holdings/ro-c-virtis-3-ext2-mtp030-v2.0/dataset.shtml">Rosetta-Orbiter VIRTIS Extension 2 MTP030 67P Calibrated Data v2.0</a></li><!-- RO-C-VIRTIS-3-EXT2-MTP030-V2.0 -->
+
+<li><em>Please refer to <a href="/data_sb/missions/rosetta/index_OSIRIS.shtml#EXT2">Rosetta OSIRIS</a> for a listing of OSIRIS 67P datasets from the comet encounter phases.</em></li>
+<li><em>Please refer to <a href="/data_sb/missions/rosetta/index_RSI.shtml">Rosetta RSI</a> for a complete listing of RSI datasets.</em></li>
+</ul>
+<p><a href="#top">Back to Mission Phase list</a></p>
+
+<a name="ext3"></a>
+<h3>Extension 3 (EXT3)</h3>
+<ul>
+<li><a href="/holdings/ro-c_cal-alice-2-ext3-v2.0/dataset.shtml">Rosetta-Orbiter ALICE Extension 3 67P Raw Data v2.0</a></li><!-- RO-C/CAL-ALICE-2-EXT3-V2.0 -->
+<li><a href="/holdings/ro-c_cal-alice-3-ext3-v2.0/dataset.shtml">Rosetta-Orbiter ALICE Extension 3 67P Calibrated Data v2.0</a></li><!-- RO-C/CAL-ALICE-3-EXT3-V2.0 -->
+<li><a href="/holdings/ro-c_cal-alice-4-ext3-v2.0/dataset.shtml">Rosetta-Orbiter ALICE Extension 3 67P Resampled Data v2.0</a></li><!-- RO-C/CAL-ALICE-4-EXT3-V2.0 -->
+<li><a href="/holdings/ro-c-gia-3-ext3-extension-3-v1.0/dataset.shtml">Rosetta-Orbiter GIADA Extension 3 67P Raw/Calibrated Data</a></li><!-- RO-C-GIA-3-EXT3-EXTENSION-3-V1.0 -->
+<li><a href="/holdings/ro-c-midas-3-ext3-samples-v3.0/dataset.shtml">Rosetta-Orbiter MIDAS Extension 3 67P Calibrated Data v3.0</a></li><!-- RO-C-MIDAS-3-EXT3-SAMPLES-V3.0 -->
+<li><a href="/holdings/ro-c-miro-2-ext3-67p-v1.0/dataset.shtml">Rosetta-Orbiter MIRO Extension 3 67P Raw Data</a></li><!-- RO-C-MIRO-2-EXT3-67P-V1.0 -->
+<li><a href="/holdings/ro-c-miro-3-ext3-67p-v3.0/dataset.shtml">Rosetta-Orbiter MIRO Extension 3 67P Calibrated Data v3.0</a></li><!-- RO-C-MIRO-3-EXT3-67P-V3.0 -->
+<li><a href="/holdings/ro-c-miro-4-ext3-67p-v2.0/dataset.shtml">Rosetta-Orbiter MIRO Extension 3 67P Resampled Data v2.0</a></li><!-- RO-C-MIRO-4-EXT3-67P-V2.0 -->
+<li><a href="/holdings/ro-c-navcam-2-ext3-mtp031-v1.1/dataset.shtml">Rosetta-Orbiter NAVCAM Extension 3 MTP031 67P Raw Data v1.1</a></li><!-- RO-C-NAVCAM-2-EXT3-MTP031-V1.1 -->
+<li><a href="/holdings/ro-c-navcam-3-ext3-mtp031-v1.0/dataset.shtml">Rosetta-Orbiter NAVCAM Extension 3 MTP031 67P Calibrated Data</a></li><!-- RO-C-NAVCAM-3-EXT3-MTP031-V1.0 -->
+<li><a href="/holdings/ro-c-navcam-2-ext3-mtp032-v1.1/dataset.shtml">Rosetta-Orbiter NAVCAM Extension 3 MTP032 67P Raw Data v1.1</a></li><!-- RO-C-NAVCAM-2-EXT3-MTP032-V1.1 -->
+<li><a href="/holdings/ro-c-navcam-3-ext3-mtp032-v1.0/dataset.shtml">Rosetta-Orbiter NAVCAM Extension 3 MTP032 67P Calibrated Data</a></li><!-- RO-C-NAVCAM-3-EXT3-MTP032-V1.0 -->
+<li><a href="/holdings/ro-c-navcam-2-ext3-mtp033-v1.1/dataset.shtml">Rosetta-Orbiter NAVCAM Extension 3 MTP033 67P Raw Data v1.1</a></li><!-- RO-C-NAVCAM-2-EXT3-MTP033-V1.1 -->
+<li><a href="/holdings/ro-c-navcam-3-ext3-mtp033-v1.0/dataset.shtml">Rosetta-Orbiter NAVCAM Extension 3 MTP033 67P Calibrated Data</a></li><!-- RO-C-NAVCAM-3-EXT3-MTP033-V1.0 -->
+<li><a href="/holdings/ro-c-navcam-2-ext3-mtp034-v1.1/dataset.shtml">Rosetta-Orbiter NAVCAM Extension 3 MTP034 67P Raw Data v1.1</a></li><!-- RO-C-NAVCAM-2-EXT3-MTP034-V1.1 -->
+<li><a href="/holdings/ro-c-navcam-3-ext3-mtp034-v1.0/dataset.shtml">Rosetta-Orbiter NAVCAM Extension 3 MTP034 67P Calibrated Data</a></li><!-- RO-C-NAVCAM-3-EXT3-MTP034-V1.0 -->
+<li><a href="/holdings/ro-c-navcam-2-ext3-mtp035-v1.1/dataset.shtml">Rosetta-Orbiter NAVCAM Extension 3 MTP035 67P Raw Data v1.1</a></li><!-- RO-C-NAVCAM-2-EXT3-MTP035-V1.1 -->
+<li><a href="/holdings/ro-c-navcam-3-ext3-mtp035-v1.0/dataset.shtml">Rosetta-Orbiter NAVCAM Extension 3 MTP035 67P Calibrated Data</a></li><!-- RO-C-NAVCAM-3-EXT3-MTP035-V1.0 -->
+<li><a href="/holdings/ro-c-rosina-2-ext3-v2.0/dataset.shtml">Rosetta-Orbiter ROSINA Extension 3 67P Raw Data v2.0</a></li><!-- RO-C-ROSINA-2-EXT3-V2.0 -->
+<li><a href="/holdings/ro-c-rosina-3-ext3-v2.0/dataset.shtml">Rosetta-Orbiter ROSINA Extension 3 67P Calibrated Data v2.0</a></li><!-- RO-C-ROSINA-3-EXT3-V2.0 -->
+<li><a href="/holdings/ro-c-rosina-4-ext3-v2.0/dataset.shtml">Rosetta-Orbiter ROSINA Extension 3 67P Resampled Data v2.0</a></li><!-- RO-C-ROSINA-4-EXT3-V2.0 -->
+<li><a href="/holdings/ro-c-rosina-5-ext3-v2.0/dataset.shtml">Rosetta-Orbiter ROSINA Extension 3 67P Derived Data v2.0</a></li><!-- RO-C-ROSINA-5-EXT3-V2.0 -->
+<li><a href="/holdings/ro-c-rpcica-2-ext3-raw-v2.0/dataset.html">Rosetta-Orbiter RPCICA Extension 3 67P Raw Data v2.0</a></li><!-- RO-C-RPCICA-2-EXT3-RAW-V2.0 -->
+<li><a href="/holdings/ro-c-rpcica-3-ext3-calib-v1.0/dataset.html">Rosetta-Orbiter RPCICA Extension 3 67P Calibrated Data</a></li><!-- RO-C-RPCICA-3-EXT3-CALIB-V1.0 -->
+<li><a href="/holdings/ro-c-rpcica-4-ext3-corr-v1.0/dataset.html">Rosetta-Orbiter RPCICA Extension 3 67P Resampled Corrected Data</a></li><!-- RO-C-RPCICA-4-EXT3-CORR-V1.0 -->
+<li><a href="/holdings/ro-c-rpcica-4-ext3-corr-cts-v1.0/dataset.html">Rosetta-Orbiter RPCICA Extension 3 67P Resampled Corrected in Counts Data</a></li><!-- RO-C-RPCICA-4-EXT3-CORR-CTS-V1.0 -->
+<li><a href="/holdings/ro-c-rpcica-4-ext3-phys-mass-v1.0/dataset.html">Rosetta-Orbiter RPCICA Extension 3 67P Resampled Physical Mass Data</a></li><!-- RO-C-RPCICA-4-EXT3-PHYS-MASS-V1.0 -->
+<li><a href="/holdings/ro-c-rpcica-5-ext3-moment-v1.0/dataset.html">Rosetta-Orbiter RPCICA Extension 3 67P Derived Moment Data</a></li><!-- RO-C-RPCICA-5-EXT3-MOMENT-V1.0 -->
+<li><a href="/holdings/ro-c-rpcies-2-ext3-v1.0/dataset.shtml">Rosetta-Orbiter RPCIES Extension 3 67P Raw Data</a></li><!-- RO-C-RPCIES-2-EXT3-V1.0 -->
+<li><a href="/holdings/ro-c-rpcies-3-ext3-v2.0/dataset.shtml">Rosetta-Orbiter RPCIES Extension 3 67P Calibrated Data v2.0</a></li><!-- RO-C-RPCIES-3-EXT3-V2.0 -->
+<li><a href="/holdings/ro-c-rpcies-5-ext3-v1.0/dataset.shtml">Rosetta-Orbiter RPCIES Extension 3 67P Derived Data</a></li><!-- RO-C-RPCIES-5-EXT3-V1.0 -->
+<li><a href="/holdings/ro-c-rpclap-2-ext3-edited2-v1.0/dataset.shtml">Rosetta-Orbiter RPCLAP Extension 3 67P Raw Data v2.0</a></li><!-- RO-C-RPCLAP-2-EXT3-EDITED2-V1.0 -->
+<li><a href="/holdings/ro-c-rpclap-3-ext3-calib2-v1.0/dataset.shtml">Rosetta-Orbiter RPCLAP Extension 3 67P Calibrated Data</a></li><!-- RO-C-RPCLAP-3-EXT3-CALIB2-V1.0 -->
+<li><a href="/holdings/ro-c-rpclap-5-ext3-deriv2-v1.0/dataset.shtml">Rosetta-Orbiter RPCLAP Extension 3 67P Derived (Physical Units) Data</a></li><!-- RO-C-RPCLAP-5-EXT3-DERIV2-V1.0 -->
+<li><a href="/holdings/ro-c-rpclap-5-ext3-nel-v1.0/dataset.shtml">Rosetta-Orbiter RPCLAP Extension 3 67P Derived (Plasma Density at Higher Time Resolution) Data</a></li><!-- RO-C-RPCLAP-5-EXT3-NEL-V1.0 -->
+<li><a href="/holdings/ro-c-rpcmag-2-ext3-raw-v9.0/dataset.html">Rosetta-Orbiter RPCMAG Extension 3 67P Raw Data v9.0</a></li><!-- RO-C-RPCMAG-2-EXT3-RAW-V9.0 -->
+<li><a href="/holdings/ro-c-rpcmag-3-ext3-calibrated-v9.0/dataset.html">Rosetta-Orbiter RPCMAG Extension 3 67P Calibrated Data v9.0</a></li><!-- RO-C-RPCMAG-3-EXT3-CALIBRATED-V9.0 -->
+<li><a href="/holdings/ro-c-rpcmag-4-ext3-resampled-v9.0/dataset.html">Rosetta-Orbiter RPCMAG Extension 3 67P Resampled Data v9.0</a></li><!-- RO-C-RPCMAG-4-EXT3-RESAMPLED-V9.0 -->
+<li><a href="/holdings/ro-c-rpcmip-3-ext3-v2.0/dataset.shtml">Rosetta-Orbiter RPCMIP Extension 3 67P Calibrated Data v2.0</a></li><!-- RO-C-RPCMIP-3-EXT3-V2.0 -->
+<li><a href="/holdings/ro-x-srem-2-ext3-mtp031-v1.0/dataset.html">Rosetta-Orbiter SREM Extension 3 MTP031 Raw Data</a></li><!-- RO-X-SREM-2-EXT3-MTP031-V1.0 -->
+<li><a href="/holdings/ro-x-srem-5-ext3-mtp031-v1.0/dataset.html">Rosetta-Orbiter SREM Extension 3 MTP031 Derived Data</a></li><!-- RO-X-SREM-5-EXT3-MTP031-V1.0 -->
+<li><a href="/holdings/ro-x-srem-2-ext3-mtp032-v1.0/dataset.html">Rosetta-Orbiter SREM Extension 3 MTP032 Raw Data</a></li><!-- RO-X-SREM-2-EXT3-MTP032-V1.0 -->
+<li><a href="/holdings/ro-x-srem-5-ext3-mtp032-v1.0/dataset.html">Rosetta-Orbiter SREM Extension 3 MTP032 Derived Data</a></li><!-- RO-X-SREM-5-EXT3-MTP032-V1.0 -->
+<li><a href="/holdings/ro-x-srem-2-ext3-mtp033-v1.0/dataset.html">Rosetta-Orbiter SREM Extension 3 MTP033 Raw Data</a></li><!-- RO-X-SREM-2-EXT3-MTP033-V1.0 -->
+<li><a href="/holdings/ro-x-srem-5-ext3-mtp033-v1.0/dataset.html">Rosetta-Orbiter SREM Extension 3 MTP033 Derived Data</a></li><!-- RO-X-SREM-5-EXT3-MTP033-V1.0 -->
+<li><a href="/holdings/ro-x-srem-2-ext3-mtp034-v1.0/dataset.html">Rosetta-Orbiter SREM Extension 3 MTP034 Raw Data</a></li><!-- RO-X-SREM-2-EXT3-MTP034-V1.0 -->
+<li><a href="/holdings/ro-x-srem-5-ext3-mtp034-v1.0/dataset.html">Rosetta-Orbiter SREM Extension 3 MTP034 Derived Data</a></li><!-- RO-X-SREM-5-EXT3-MTP034-V1.0 -->
+<li><a href="/holdings/ro-x-srem-2-ext3-mtp035-v1.0/dataset.html">Rosetta-Orbiter SREM Extension 3 MTP035 Raw Data</a></li><!-- RO-X-SREM-2-EXT3-MTP035-V1.0 -->
+<li><a href="/holdings/ro-x-srem-5-ext3-mtp035-v1.0/dataset.html">Rosetta-Orbiter SREM Extension 3 MTP035 Derived Data</a></li><!-- RO-X-SREM-5-EXT3-MTP035-V1.0 -->
+<li><a href="/holdings/ro-c-virtis-2-ext3-mtp031-v1.0/dataset.shtml">Rosetta-Orbiter VIRTIS Extension 3 MTP031 67P Raw Data</a></li><!-- RO-C-VIRTIS-2-EXT3-MTP031-V1.0 -->
+<li><a href="/holdings/ro-c-virtis-3-ext3-mtp031-v2.0/dataset.shtml">Rosetta-Orbiter VIRTIS Extension 3 MTP031 67P Calibrated Data v2.0</a></li><!-- RO-C-VIRTIS-3-EXT3-MTP031-V2.0 -->
+<li><a href="/holdings/ro-c-virtis-2-ext3-mtp032-v1.0/dataset.shtml">Rosetta-Orbiter VIRTIS Extension 3 MTP032 67P Raw Data</a></li><!-- RO-C-VIRTIS-2-EXT3-MTP032-V1.0 -->
+<li><a href="/holdings/ro-c-virtis-3-ext3-mtp032-v2.0/dataset.shtml">Rosetta-Orbiter VIRTIS Extension 3 MTP032 67P Calibrated Data v2.0</a></li><!-- RO-C-VIRTIS-3-EXT3-MTP032-V2.0 -->
+<li><a href="/holdings/ro-c-virtis-2-ext3-mtp033-v1.0/dataset.shtml">Rosetta-Orbiter VIRTIS Extension 3 MTP033 67P Raw Data</a></li><!-- RO-C-VIRTIS-2-EXT3-MTP033-V1.0 -->
+<li><a href="/holdings/ro-c-virtis-3-ext3-mtp033-v2.0/dataset.shtml">Rosetta-Orbiter VIRTIS Extension 3 MTP033 67P Calibrated Data v2.0</a></li><!-- RO-C-VIRTIS-3-EXT3-MTP033-V2.0 -->
+<li><a href="/holdings/ro-c-virtis-2-ext3-mtp034-v1.0/dataset.shtml">Rosetta-Orbiter VIRTIS Extension 3 MTP034 67P Raw Data</a></li><!-- RO-C-VIRTIS-2-EXT3-MTP034-V1.0 -->
+<li><a href="/holdings/ro-c-virtis-3-ext3-mtp034-v2.0/dataset.shtml">Rosetta-Orbiter VIRTIS Extension 3 MTP034 67P Calibrated Data v2.0</a></li><!-- RO-C-VIRTIS-3-EXT3-MTP034-V2.0 -->
+<li><a href="/holdings/ro-c-virtis-2-ext3-mtp035-v1.0/dataset.shtml">Rosetta-Orbiter VIRTIS Extension 3 MTP035 67P Raw Data</a></li><!-- RO-C-VIRTIS-2-EXT3-MTP035-V1.0 -->
+<li><a href="/holdings/ro-c-virtis-3-ext3-mtp035-v2.0/dataset.shtml">Rosetta-Orbiter VIRTIS Extension 3 MTP035 67P Calibrated Data v2.0</a></li><!-- RO-C-VIRTIS-3-EXT3-MTP035-V2.0 -->
+
+<li><em>Please refer to <a href="/data_sb/missions/rosetta/index_OSIRIS.shtml#EXT3">Rosetta OSIRIS</a> for a listing of OSIRIS 67P datasets from the comet encounter phases.</em></li>
+<li><em>Please refer to <a href="/data_sb/missions/rosetta/index_RSI.shtml">Rosetta RSI</a> for a complete listing of RSI datasets.</em></li>
+</ul>
+<p><a href="#top">Back to Mission Phase list</a></p>
+
+<a name="all"></a>
+<h3>All Mission Phases</h3>
+<!-- what to do with this one?? -->
+<ul>
+<li><a href="/holdings/ro-c-cosima-3-v6.0/dataset.shtml">Rosetta-Orbiter COSIMA In-Flight and 67P Raw and Calibrated Data</a></li><!-- RO-C-COSIMA-3-V6.0 -->
+<li><a href="/holdings/ro-x-hk-3-antennastatus-v1.0/dataset.shtml">Rosetta Spacecraft RF Antenna Engineering Data</a></li><!-- RO-X-HK-3-ANTENNASTATUS-V1.0 -->
+<li><a href="/holdings/ro-x-hk-3-aocgen-v1.0/dataset.shtml">Rosetta Spacecraft Attitude &amp; Orbit Control System Data</a></li><!-- RO-X-HK-3-AOCGEN-V1.0 -->
+<li><a href="/holdings/ro-x-hk-3-edac-v1.0/dataset.shtml">Rosetta Spacecraft Radiation Data Correction Data</a></li><!-- RO-X-HK-3-EDAC-V1.0 -->
+<li><a href="/holdings/ro-x-hk-3-hgaapm-v1.0/dataset.shtml">Rosetta Spacecraft High Gain Antenna Engineering Data</a></li><!-- RO-X-HK-3-HGAAPM-V1.0 -->
+<li><a href="/holdings/ro-x-hk-3-imp-v1.0/dataset.shtml">Rosetta Spacecraft Inertial Measurement Package Data</a></li><!-- RO-X-HK-3-IMP-V1.0 -->
+<li><a href="/holdings/ro-x-hk-3-navcam-v1.0/dataset.shtml">Rosetta Spacecraft Navigation Camera Engineering Data</a></li><!-- RO-X-HK-3-NAVCAM-V1.0 -->
+<li><a href="/holdings/ro-x-hk-3-ocmrcs-v1.0/dataset.shtml">Rosetta Spacecraft Orbit Control Manoeuvre Data</a></li><!-- RO-X-HK-3-OCMRCS-V1.0 -->
+<li><a href="/holdings/ro-x-hk-3-rwl-v1.0/dataset.shtml">Rosetta Spacecraft Reaction Wheel Engineering Data</a></li><!-- RO-X-HK-3-RWL-V1.0 -->
+<li><a href="/holdings/ro-x-hk-3-solararray-v1.0/dataset.shtml">Rosetta Spacecraft Solar Array &amp; Power Engineering Data</a></li><!-- RO-X-HK-3-SOLARARRAY-V1.0 -->
+<li><a href="/holdings/ro-x-hk-3-startracker-v1.0/dataset.shtml">Rosetta Spacecraft Startracker Engineering Data</a></li><!-- RO-X-HK-3-STARTRACKER-V1.0 -->
+<li><a href="/holdings/ro-x-hk-3-tcs-v1.0/dataset.shtml">Rosetta Spacecraft Thermal Control System Data</a></li><!-- RO-X-HK-3-TCS-V1.0 -->
+</ul>
+<p><a href="#top">Back to Mission Phase list</a></p>
+
+<a name="other"></a>
+<h3>Other Mission Data</h3>
+<ul>
+<li><a href="https://naif.jpl.nasa.gov/naif/data_archived.html">Rosetta Spice Kernels</a></li><!-- ROS-E_M_A_C-SPICE-6-V1.0 -->
+<li><a href="https://www.cosmos.esa.int/web/spice/spice-for-rosetta">Rosetta Spice Kernals</a> @ ESA</li>
+<li><a href="/holdings/ro-a-osinac_osiwac-5-steins-shape-v1.0/dataset.shtml">Rosetta Shape Model of Asteroid Steins</a></li>
+<li><a href="/holdings/ro-a-osinac_osiwac-5-lutetia-shape-v1.0/dataset.shtml">Rosetta Shape Model of Asteroid Lutetia</a></li>
+<li><a href="/holdings/ro-c-multi-5-67p-shape-v1.0/document/cheops_ref_frame_v1.pdf">67P/C-G Reference Frames and Mapping Scheme</a></li>
+<li><a href="/holdings/ro-c-multi-5-67p-shape-v2.0/dataset.shtml">Rosetta Shape Models of Comet 67P/C-G v2.0</a></li><!-- RO-C-MULTI-5-67P-SHAPE-V2.0 -->
+<li><a href="/holdings/rl-c-multi-5-ancdr-v2.0/dataset.shtml">Rosetta-Lander Ancillary 67P data v2.0</a></li><!-- RL-C-MULTI-5-ANCDR-V2.0 -->
+<li><a href="/holdings/ro-c-midas-5-prl-to-ext3-v2.0/dataset.shtml">Rosetta-Orbiter MIDAS 67P Cometary Particles Derived Data v2.0</a></li><!-- RO-C-MIDAS-5-PRL-TO-EXT3-V2.0 -->
+<li><a href="/holdings/ro-x-alice-6-supplementary-v1.0/dataset.shtml">Rosetta-Orbiter ALICE Supplementary Documents and Data</a></li><!-- RO-X-ALICE-6-SUPPLEMENTARY-V1.0 -->
+<li><a href="/holdings/ro-c-gia-5-67p-dust-maps-v1.0/dataset.shtml">Rosetta-Orbiter GIADA 67P Dust Maps</a></li><!-- RO-C-GIA-5-67P-DUST-MAPS-V1.0 -->
+<li><a href="/holdings/ro-c-virtis-5-67p-maps-v1.0/dataset.shtml">Rosetta-Orbiter VIRTIS Derived 67P Maps</a></li><!-- RO-C-VIRTIS-5-67P-MAPS-V1.0 -->
+</ul>
+<p><a href="#top">Back to Mission Phase list</a></p>
+
+<h3>Related Datasets</h3>
+<p>Use the <a href="https://sbnapps.psi.edu/ferret/">Small Bodies Data Ferret</a> to find other datasets for this mission/target.</p>
+
+<h3>Other Links</h3>
+<p><a href="http://www.rosetta-campaign.net/">67P/Churyumov-Gerasimenko ground-based observations in support of the Rosetta mission</a> (ground campaign website)</p>
+
+<!-- ************************************************** End editing! ************************************************** -->
+<!--#include virtual="/css-n-includes/incl_bottom.inc"-->
+<br />Last updated:
+<!--#config timefmt="%A %B %d, %Y"-->
+<!--#echo var="LAST_MODIFIED" -->
+</div>
+<!-- close id whotext -->
+</div>
+<!-- close id footer -->
+</div>
+<!-- end id footwrap -->
+</div>
+<!-- close wrapper -->
+</body>
+
+</html>

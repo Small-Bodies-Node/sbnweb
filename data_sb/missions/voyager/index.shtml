@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<title>SBN Mission Support: Voyager 1 &amp; 2</title>
+
+<!-- 
+########################
+ALL of the head, style links, header and menu code is in the include. Edit that file with extreme care!!
+########################
+ -->
+<!--#include virtual="/css-n-includes/incl_top.inc"-->
+
+<!-- ################################################ LEFT SIDEBAR ########################################## -->
+<!--#include virtual="/css-n-includes/incl_left-side.inc"-->
+
+<!-- ################################################ RIGHT SIDEBAR ########################################## -->
+<div id="rightcol">
+<div class="sidebarSection">
+<h2>Mission Websites</h2>
+<p>Here we list links to the primary mission website as well as pages about the mission on other sites such as the NSSDC, NASA portal, etc.</p>
+<ul>
+<li>Mission: <a href="http://voyager.jpl.nasa.gov/" onclick="this.target='_blank'">Voyager</a></li>
+<li>NSSDC: <a href="https://nssdc.gsfc.nasa.gov/nmc/spacecraftDisplay.do?id=1977-084A" onclick="this.target='_blank'">Voyager&nbsp;1</a></li>
+<li>NSSDC: <a href="https://nssdc.gsfc.nasa.gov/nmc/spacecraftDisplay.do?id=1977-076A" onclick="this.target='_blank'">Voyager&nbsp;2</a></li>
+<li>NASA: <a href="https://www.nasa.gov/voyager/" onclick="this.target='_blank'">Voyager</a></li>
+</ul>
+</div><!-- end class sidebarSection -->
+</div><!-- end id rightcol -->
+<!-- ################################################ MAIN ################################################## -->
+<div id="centercol">
+<a name="mainContent"></a>
+<!-- ************************************************** You may begin editing! ************************************************** -->
+<!--
+===========================================================================
+EDIT HISTORY:
++ 2014-11-20 EMW	updated link to Ferret
++ 2012-06-06 EMW	added link to SL9 dataset
++ 2011-04-15 EMW	added description
++ 2011-02-22 EMW	added right sidebar space
++ 2011-01-28 EMW	added content from psi page, but need to rearrange now
++ 2011-01-27 EMW	new page for missing missions
+
+===========================================================================
+-->
+
+<!-- Mission Title ====================================================== -->
+<h1>Voyager 1 &amp; 2</h1>
+
+<!-- Mission Description ================================================ -->
+<p>The twin spacecraft Voyager 1 and 2 were launched on 5 September and 20 August 1977, respectively, and over the next 12 years visited Jupiter, Saturn, Uranus and Neptune. Along the way many planetary satellites were observed, and new ones were discovered.</p>
+
+<!-- SBN Role =========================================================== -->
+<!-- <p>???</p> -->
+<!-- lists from psi page =========================================================== -->
+<h2>Datasets</h2>
+<ul>
+<li><a href="https://sbn.psi.edu/pds/resource/oshape.html">Small Body Optical Shape Models</a> including Hyperion, Janus, and Epimetheus from Voyager</li>
+<li><a href="https://sbn.psi.edu/pds/resource/stkshape.html">Stooke Small Body Shape Models</a> including Amalthea, Larissa, Proteus, Janus, Epimetheus, Prometheus, and Pandora from Voyager</li>
+<li><a href="https://sbn.psi.edu/pds/resource/stookemaps.html">Stook Small Bodies Maps v2.0</a> including Amalthea, Hyperion, and Epimetheus from Voyager</li>
+<li><a href="/holdings/vg2-j-uvs-0--sl9-null-results-v1.0/dataset.shtml">Voyager 2 UV Spectrometer Attempted Observations of D/Shoemaker-Levy 9 (Null Results)</a></li>
+</ul>
+
+<h3>Related Datasets</h3>
+<p>Use the <a href="https://sbnapps.psi.edu/ferret/">Small Bodies Data Ferret</a> to find other datasets for this mission/target.</p>
+
+<!-- ************************************************** End editing! ************************************************** -->
+<!--#include virtual="/css-n-includes/incl_bottom.inc"-->
+<br />Last updated: <!--#config timefmt="%A %B %d, %Y"--><!--#echo var="LAST_MODIFIED" --></div><!-- close id whotext -->
+</div><!-- close id footer -->
+</div><!-- end id footwrap -->
+</div><!-- close wrapper -->
+</body>
+</html>

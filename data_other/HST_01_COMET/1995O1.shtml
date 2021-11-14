@@ -1,0 +1,1357 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<title>PDS: Small Bodies Node</title>
+
+<!--
+########################
+ALL of the head, style links, header and menu code is in the include. Edit that file with extreme care!!
+########################
+ -->
+
+<!--#include virtual="/css-n-includes/incl_top.inc"-->
+
+<!-- ################################################ MAIN ################################################## -->
+
+<div id="centeronly">
+
+<a name="mainContent"></a>
+<!-- ************************************************** You may begin editing! ************************************************** -->
+
+<a name="top"></a><h3>Object: C/Hale-Bopp (1995 O1) [<a href="../objclass.shtml#COM">COM</a>]</h3>
+
+<table width="95%" class="datatab">
+	<colgroup>
+		<col width="11%" />
+		<col width="13%" />
+		<col width="8%" />
+		<col width="8%" />
+		<col width="55%" />
+	</colgroup>
+	<thead><tr>
+		<td>Observation ID</td>
+		<td>Start Time</td>
+		<td>Instrument</td>
+		<td>Proposal ID</td>
+		<td>Proposal Title</td>
+	</tr></thead>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U2XC0101T" onclick="this.target='_blank'">U2XC0101T</a></td>
+		<td>09/26/95 04:00 PM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=5844&mission=hst" onclick="this.target='_blank'">5844</a></td>
+		<td>HST Investigation of a Bright New Comet</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U2XC0102T" onclick="this.target='_blank'">U2XC0102T</a></td>
+		<td>09/26/95 04:03 PM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=5844&mission=hst" onclick="this.target='_blank'">5844</a></td>
+		<td>HST Investigation of a Bright New Comet</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U2XC0103T" onclick="this.target='_blank'">U2XC0103T</a></td>
+		<td>09/26/95 04:11 PM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=5844&mission=hst" onclick="this.target='_blank'">5844</a></td>
+		<td>HST Investigation of a Bright New Comet</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U2XC0104T" onclick="this.target='_blank'">U2XC0104T</a></td>
+		<td>09/26/95 04:28 PM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=5844&mission=hst" onclick="this.target='_blank'">5844</a></td>
+		<td>HST Investigation of a Bright New Comet</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=Y2XC0201T" onclick="this.target='_blank'">Y2XC0201T</a></td>
+		<td>09/27/95 08:07 AM</td>
+		<td><a href="../HST_instruments.shtml">FOS </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=5844&mission=hst" onclick="this.target='_blank'">5844</a></td>
+		<td>HST Investigation of a Bright New Comet</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=Y2XC0202T" onclick="this.target='_blank'">Y2XC0202T</a></td>
+		<td>09/27/95 08:15 AM</td>
+		<td><a href="../HST_instruments.shtml">FOS </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=5844&mission=hst" onclick="this.target='_blank'">5844</a></td>
+		<td>HST Investigation of a Bright New Comet</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=Y2XC0203T" onclick="this.target='_blank'">Y2XC0203T</a></td>
+		<td>09/27/95 08:47 AM</td>
+		<td><a href="../HST_instruments.shtml">FOS </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=5844&mission=hst" onclick="this.target='_blank'">5844</a></td>
+		<td>HST Investigation of a Bright New Comet</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=Y2XC0204T" onclick="this.target='_blank'">Y2XC0204T</a></td>
+		<td>09/27/95 09:40 AM</td>
+		<td><a href="../HST_instruments.shtml">FOS </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=5844&mission=hst" onclick="this.target='_blank'">5844</a></td>
+		<td>HST Investigation of a Bright New Comet</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=Y2XC0205T" onclick="this.target='_blank'">Y2XC0205T</a></td>
+		<td>09/27/95 10:06 AM</td>
+		<td><a href="../HST_instruments.shtml">FOS </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=5844&mission=hst" onclick="this.target='_blank'">5844</a></td>
+		<td>HST Investigation of a Bright New Comet</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=Y2XC0206T" onclick="this.target='_blank'">Y2XC0206T</a></td>
+		<td>09/27/95 10:14 AM</td>
+		<td><a href="../HST_instruments.shtml">FOS </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=5844&mission=hst" onclick="this.target='_blank'">5844</a></td>
+		<td>HST Investigation of a Bright New Comet</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=Y2XC0207T" onclick="this.target='_blank'">Y2XC0207T</a></td>
+		<td>09/27/95 11:21 AM</td>
+		<td><a href="../HST_instruments.shtml">FOS </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=5844&mission=hst" onclick="this.target='_blank'">5844</a></td>
+		<td>HST Investigation of a Bright New Comet</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=Y2XC0208T" onclick="this.target='_blank'">Y2XC0208T</a></td>
+		<td>09/27/95 11:52 AM</td>
+		<td><a href="../HST_instruments.shtml">FOS </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=5844&mission=hst" onclick="this.target='_blank'">5844</a></td>
+		<td>HST Investigation of a Bright New Comet</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=Y2XC0209T" onclick="this.target='_blank'">Y2XC0209T</a></td>
+		<td>09/27/95 12:53 PM</td>
+		<td><a href="../HST_instruments.shtml">FOS </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=5844&mission=hst" onclick="this.target='_blank'">5844</a></td>
+		<td>HST Investigation of a Bright New Comet</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=Y2XC020AT" onclick="this.target='_blank'">Y2XC020AT</a></td>
+		<td>09/27/95 01:25 PM</td>
+		<td><a href="../HST_instruments.shtml">FOS </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=5844&mission=hst" onclick="this.target='_blank'">5844</a></td>
+		<td>HST Investigation of a Bright New Comet</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=Z2XC0302T" onclick="this.target='_blank'">Z2XC0302T</a></td>
+		<td>09/27/95 02:34 PM</td>
+		<td><a href="../HST_instruments.shtml">HRS </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=5844&mission=hst" onclick="this.target='_blank'">5844</a></td>
+		<td>HST Investigation of a Bright New Comet</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=Z2XC0304T" onclick="this.target='_blank'">Z2XC0304T</a></td>
+		<td>09/27/95 02:57 PM</td>
+		<td><a href="../HST_instruments.shtml">HRS </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=5844&mission=hst" onclick="this.target='_blank'">5844</a></td>
+		<td>HST Investigation of a Bright New Comet</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=Z2XC0306T" onclick="this.target='_blank'">Z2XC0306T</a></td>
+		<td>09/27/95 04:06 PM</td>
+		<td><a href="../HST_instruments.shtml">HRS </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=5844&mission=hst" onclick="this.target='_blank'">5844</a></td>
+		<td>HST Investigation of a Bright New Comet</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=Z2XC0308T" onclick="this.target='_blank'">Z2XC0308T</a></td>
+		<td>09/27/95 04:29 PM</td>
+		<td><a href="../HST_instruments.shtml">HRS </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=5844&mission=hst" onclick="this.target='_blank'">5844</a></td>
+		<td>HST Investigation of a Bright New Comet</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U2XC5101T" onclick="this.target='_blank'">U2XC5101T</a></td>
+		<td>10/23/95 06:28 AM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=5844&mission=hst" onclick="this.target='_blank'">5844</a></td>
+		<td>HST Investigation of a Bright New Comet</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U2XC5102T" onclick="this.target='_blank'">U2XC5102T</a></td>
+		<td>10/23/95 06:31 AM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=5844&mission=hst" onclick="this.target='_blank'">5844</a></td>
+		<td>HST Investigation of a Bright New Comet</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U2XC5103T" onclick="this.target='_blank'">U2XC5103T</a></td>
+		<td>10/23/95 06:39 AM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=5844&mission=hst" onclick="this.target='_blank'">5844</a></td>
+		<td>HST Investigation of a Bright New Comet</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U2XC5104T" onclick="this.target='_blank'">U2XC5104T</a></td>
+		<td>10/23/95 06:56 AM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=5844&mission=hst" onclick="this.target='_blank'">5844</a></td>
+		<td>HST Investigation of a Bright New Comet</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=Y2XC5201T" onclick="this.target='_blank'">Y2XC5201T</a></td>
+		<td>10/25/95 02:00 AM</td>
+		<td><a href="../HST_instruments.shtml">FOS </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=5844&mission=hst" onclick="this.target='_blank'">5844</a></td>
+		<td>HST Investigation of a Bright New Comet</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=Y2XC5202T" onclick="this.target='_blank'">Y2XC5202T</a></td>
+		<td>10/25/95 02:08 AM</td>
+		<td><a href="../HST_instruments.shtml">FOS </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=5844&mission=hst" onclick="this.target='_blank'">5844</a></td>
+		<td>HST Investigation of a Bright New Comet</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=Y2XC5203T" onclick="this.target='_blank'">Y2XC5203T</a></td>
+		<td>10/25/95 03:28 AM</td>
+		<td><a href="../HST_instruments.shtml">FOS </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=5844&mission=hst" onclick="this.target='_blank'">5844</a></td>
+		<td>HST Investigation of a Bright New Comet</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=Y2XC5204T" onclick="this.target='_blank'">Y2XC5204T</a></td>
+		<td>10/25/95 04:00 AM</td>
+		<td><a href="../HST_instruments.shtml">FOS </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=5844&mission=hst" onclick="this.target='_blank'">5844</a></td>
+		<td>HST Investigation of a Bright New Comet</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=Y2XC5205T" onclick="this.target='_blank'">Y2XC5205T</a></td>
+		<td>10/25/95 05:08 AM</td>
+		<td><a href="../HST_instruments.shtml">FOS </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=5844&mission=hst" onclick="this.target='_blank'">5844</a></td>
+		<td>HST Investigation of a Bright New Comet</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=Y2XC5206T" onclick="this.target='_blank'">Y2XC5206T</a></td>
+		<td>10/25/95 05:40 AM</td>
+		<td><a href="../HST_instruments.shtml">FOS </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=5844&mission=hst" onclick="this.target='_blank'">5844</a></td>
+		<td>HST Investigation of a Bright New Comet</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=Y2XC5207T" onclick="this.target='_blank'">Y2XC5207T</a></td>
+		<td>10/25/95 06:41 AM</td>
+		<td><a href="../HST_instruments.shtml">FOS </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=5844&mission=hst" onclick="this.target='_blank'">5844</a></td>
+		<td>HST Investigation of a Bright New Comet</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=Y2XC5208T" onclick="this.target='_blank'">Y2XC5208T</a></td>
+		<td>10/25/95 07:13 AM</td>
+		<td><a href="../HST_instruments.shtml">FOS </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=5844&mission=hst" onclick="this.target='_blank'">5844</a></td>
+		<td>HST Investigation of a Bright New Comet</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U2XC3301T" onclick="this.target='_blank'">U2XC3301T</a></td>
+		<td>04/07/96 12:57 AM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=5844&mission=hst" onclick="this.target='_blank'">5844</a></td>
+		<td>HST Investigation of a Bright New Comet</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U2XC3302T" onclick="this.target='_blank'">U2XC3302T</a></td>
+		<td>04/07/96 01:03 AM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=5844&mission=hst" onclick="this.target='_blank'">5844</a></td>
+		<td>HST Investigation of a Bright New Comet</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U2XC3303T" onclick="this.target='_blank'">U2XC3303T</a></td>
+		<td>04/07/96 02:11 AM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=5844&mission=hst" onclick="this.target='_blank'">5844</a></td>
+		<td>HST Investigation of a Bright New Comet</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U2XC3304T" onclick="this.target='_blank'">U2XC3304T</a></td>
+		<td>04/07/96 02:17 AM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=5844&mission=hst" onclick="this.target='_blank'">5844</a></td>
+		<td>HST Investigation of a Bright New Comet</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U2XC3305T" onclick="this.target='_blank'">U2XC3305T</a></td>
+		<td>04/07/96 02:26 AM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=5844&mission=hst" onclick="this.target='_blank'">5844</a></td>
+		<td>HST Investigation of a Bright New Comet</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=Y2XC0401T" onclick="this.target='_blank'">Y2XC0401T</a></td>
+		<td>04/07/96 11:44 AM</td>
+		<td><a href="../HST_instruments.shtml">FOS </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=5844&mission=hst" onclick="this.target='_blank'">5844</a></td>
+		<td>HST Investigation of a Bright New Comet</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=Y2XC0402T" onclick="this.target='_blank'">Y2XC0402T</a></td>
+		<td>04/07/96 11:53 AM</td>
+		<td><a href="../HST_instruments.shtml">FOS </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=5844&mission=hst" onclick="this.target='_blank'">5844</a></td>
+		<td>HST Investigation of a Bright New Comet</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=Y2XC0403T" onclick="this.target='_blank'">Y2XC0403T</a></td>
+		<td>04/07/96 01:12 PM</td>
+		<td><a href="../HST_instruments.shtml">FOS </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=5844&mission=hst" onclick="this.target='_blank'">5844</a></td>
+		<td>HST Investigation of a Bright New Comet</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=Y2XC0404T" onclick="this.target='_blank'">Y2XC0404T</a></td>
+		<td>04/07/96 01:43 PM</td>
+		<td><a href="../HST_instruments.shtml">FOS </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=5844&mission=hst" onclick="this.target='_blank'">5844</a></td>
+		<td>HST Investigation of a Bright New Comet</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=Y2XC0405T" onclick="this.target='_blank'">Y2XC0405T</a></td>
+		<td>04/07/96 02:49 PM</td>
+		<td><a href="../HST_instruments.shtml">FOS </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=5844&mission=hst" onclick="this.target='_blank'">5844</a></td>
+		<td>HST Investigation of a Bright New Comet</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=Y2XC0406T" onclick="this.target='_blank'">Y2XC0406T</a></td>
+		<td>04/07/96 03:21 PM</td>
+		<td><a href="../HST_instruments.shtml">FOS </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=5844&mission=hst" onclick="this.target='_blank'">5844</a></td>
+		<td>HST Investigation of a Bright New Comet</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U2XC0501T" onclick="this.target='_blank'">U2XC0501T</a></td>
+		<td>05/20/96 10:46 AM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=5844&mission=hst" onclick="this.target='_blank'">5844</a></td>
+		<td>HST Investigation of a Bright New Comet</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U2XC0502T" onclick="this.target='_blank'">U2XC0502T</a></td>
+		<td>05/20/96 10:52 AM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=5844&mission=hst" onclick="this.target='_blank'">5844</a></td>
+		<td>HST Investigation of a Bright New Comet</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U2XC0503P" onclick="this.target='_blank'">U2XC0503P</a></td>
+		<td>05/20/96 10:57 AM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=5844&mission=hst" onclick="this.target='_blank'">5844</a></td>
+		<td>HST Investigation of a Bright New Comet</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U2XC0504T" onclick="this.target='_blank'">U2XC0504T</a></td>
+		<td>05/20/96 12:12 PM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=5844&mission=hst" onclick="this.target='_blank'">5844</a></td>
+		<td>HST Investigation of a Bright New Comet</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U2XC0505P" onclick="this.target='_blank'">U2XC0505P</a></td>
+		<td>05/20/96 12:18 PM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=5844&mission=hst" onclick="this.target='_blank'">5844</a></td>
+		<td>HST Investigation of a Bright New Comet</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U2XC0506T" onclick="this.target='_blank'">U2XC0506T</a></td>
+		<td>05/20/96 12:25 PM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=5844&mission=hst" onclick="this.target='_blank'">5844</a></td>
+		<td>HST Investigation of a Bright New Comet</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U2XC0507T" onclick="this.target='_blank'">U2XC0507T</a></td>
+		<td>05/20/96 12:27 PM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=5844&mission=hst" onclick="this.target='_blank'">5844</a></td>
+		<td>HST Investigation of a Bright New Comet</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=Y2XC0601T" onclick="this.target='_blank'">Y2XC0601T</a></td>
+		<td>05/20/96 09:59 PM</td>
+		<td><a href="../HST_instruments.shtml">FOS </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=5844&mission=hst" onclick="this.target='_blank'">5844</a></td>
+		<td>HST Investigation of a Bright New Comet</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=Y2XC0602T" onclick="this.target='_blank'">Y2XC0602T</a></td>
+		<td>05/20/96 10:06 PM</td>
+		<td><a href="../HST_instruments.shtml">FOS </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=5844&mission=hst" onclick="this.target='_blank'">5844</a></td>
+		<td>HST Investigation of a Bright New Comet</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=Y2XC0603T" onclick="this.target='_blank'">Y2XC0603T</a></td>
+		<td>05/20/96 11:33 PM</td>
+		<td><a href="../HST_instruments.shtml">FOS </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=5844&mission=hst" onclick="this.target='_blank'">5844</a></td>
+		<td>HST Investigation of a Bright New Comet</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=Y2XC0604T" onclick="this.target='_blank'">Y2XC0604T</a></td>
+		<td>05/21/96 12:04 AM</td>
+		<td><a href="../HST_instruments.shtml">FOS </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=5844&mission=hst" onclick="this.target='_blank'">5844</a></td>
+		<td>HST Investigation of a Bright New Comet</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=Y2XC0605T" onclick="this.target='_blank'">Y2XC0605T</a></td>
+		<td>05/21/96 01:21 AM</td>
+		<td><a href="../HST_instruments.shtml">FOS </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=5844&mission=hst" onclick="this.target='_blank'">5844</a></td>
+		<td>HST Investigation of a Bright New Comet</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=Y2XC0606T" onclick="this.target='_blank'">Y2XC0606T</a></td>
+		<td>05/21/96 03:06 AM</td>
+		<td><a href="../HST_instruments.shtml">FOS </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=5844&mission=hst" onclick="this.target='_blank'">5844</a></td>
+		<td>HST Investigation of a Bright New Comet</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U2XC5501T" onclick="this.target='_blank'">U2XC5501T</a></td>
+		<td>06/22/96 11:35 AM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=5844&mission=hst" onclick="this.target='_blank'">5844</a></td>
+		<td>HST Investigation of a Bright New Comet</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U2XC5502T" onclick="this.target='_blank'">U2XC5502T</a></td>
+		<td>06/22/96 11:40 AM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=5844&mission=hst" onclick="this.target='_blank'">5844</a></td>
+		<td>HST Investigation of a Bright New Comet</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U2XC5503T" onclick="this.target='_blank'">U2XC5503T</a></td>
+		<td>06/22/96 11:46 AM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=5844&mission=hst" onclick="this.target='_blank'">5844</a></td>
+		<td>HST Investigation of a Bright New Comet</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U2XC5504T" onclick="this.target='_blank'">U2XC5504T</a></td>
+		<td>06/22/96 11:51 AM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=5844&mission=hst" onclick="this.target='_blank'">5844</a></td>
+		<td>HST Investigation of a Bright New Comet</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U2XC5505T" onclick="this.target='_blank'">U2XC5505T</a></td>
+		<td>06/22/96 11:57 AM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=5844&mission=hst" onclick="this.target='_blank'">5844</a></td>
+		<td>HST Investigation of a Bright New Comet</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U2XC5506T" onclick="this.target='_blank'">U2XC5506T</a></td>
+		<td>06/22/96 12:04 PM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=5844&mission=hst" onclick="this.target='_blank'">5844</a></td>
+		<td>HST Investigation of a Bright New Comet</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U2XC5507T" onclick="this.target='_blank'">U2XC5507T</a></td>
+		<td>06/22/96 12:06 PM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=5844&mission=hst" onclick="this.target='_blank'">5844</a></td>
+		<td>HST Investigation of a Bright New Comet</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=Y2XC5601T" onclick="this.target='_blank'">Y2XC5601T</a></td>
+		<td>06/23/96 06:13 PM</td>
+		<td><a href="../HST_instruments.shtml">FOS </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=5844&mission=hst" onclick="this.target='_blank'">5844</a></td>
+		<td>HST Investigation of a Bright New Comet</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=Y2XC5602T" onclick="this.target='_blank'">Y2XC5602T</a></td>
+		<td>06/23/96 06:20 PM</td>
+		<td><a href="../HST_instruments.shtml">FOS </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=5844&mission=hst" onclick="this.target='_blank'">5844</a></td>
+		<td>HST Investigation of a Bright New Comet</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=Y2XC5603T" onclick="this.target='_blank'">Y2XC5603T</a></td>
+		<td>06/23/96 07:47 PM</td>
+		<td><a href="../HST_instruments.shtml">FOS </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=5844&mission=hst" onclick="this.target='_blank'">5844</a></td>
+		<td>HST Investigation of a Bright New Comet</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=Y2XC5604T" onclick="this.target='_blank'">Y2XC5604T</a></td>
+		<td>06/23/96 08:18 PM</td>
+		<td><a href="../HST_instruments.shtml">FOS </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=5844&mission=hst" onclick="this.target='_blank'">5844</a></td>
+		<td>HST Investigation of a Bright New Comet</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=Y2XC5605T" onclick="this.target='_blank'">Y2XC5605T</a></td>
+		<td>06/23/96 09:18 PM</td>
+		<td><a href="../HST_instruments.shtml">FOS </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=5844&mission=hst" onclick="this.target='_blank'">5844</a></td>
+		<td>HST Investigation of a Bright New Comet</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=Y2XC5606T" onclick="this.target='_blank'">Y2XC5606T</a></td>
+		<td>06/23/96 09:50 PM</td>
+		<td><a href="../HST_instruments.shtml">FOS </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=5844&mission=hst" onclick="this.target='_blank'">5844</a></td>
+		<td>HST Investigation of a Bright New Comet</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U3DU0101T" onclick="this.target='_blank'">U3DU0101T</a></td>
+		<td>07/25/96 02:05 PM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6663&mission=hst" onclick="this.target='_blank'">6663</a></td>
+		<td>SYSTEMATIC INVESTIGATION OF C/1995 O1 (HALE-BOPP)</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U3DU0102T" onclick="this.target='_blank'">U3DU0102T</a></td>
+		<td>07/25/96 02:07 PM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6663&mission=hst" onclick="this.target='_blank'">6663</a></td>
+		<td>SYSTEMATIC INVESTIGATION OF C/1995 O1 (HALE-BOPP)</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U3DU0103T" onclick="this.target='_blank'">U3DU0103T</a></td>
+		<td>07/25/96 02:10 PM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6663&mission=hst" onclick="this.target='_blank'">6663</a></td>
+		<td>SYSTEMATIC INVESTIGATION OF C/1995 O1 (HALE-BOPP)</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U3DU0104T" onclick="this.target='_blank'">U3DU0104T</a></td>
+		<td>07/25/96 02:13 PM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6663&mission=hst" onclick="this.target='_blank'">6663</a></td>
+		<td>SYSTEMATIC INVESTIGATION OF C/1995 O1 (HALE-BOPP)</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U3DU0105T" onclick="this.target='_blank'">U3DU0105T</a></td>
+		<td>07/25/96 02:17 PM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6663&mission=hst" onclick="this.target='_blank'">6663</a></td>
+		<td>SYSTEMATIC INVESTIGATION OF C/1995 O1 (HALE-BOPP)</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U3DU0106T" onclick="this.target='_blank'">U3DU0106T</a></td>
+		<td>07/25/96 02:19 PM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6663&mission=hst" onclick="this.target='_blank'">6663</a></td>
+		<td>SYSTEMATIC INVESTIGATION OF C/1995 O1 (HALE-BOPP)</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U3DU0107T" onclick="this.target='_blank'">U3DU0107T</a></td>
+		<td>07/25/96 02:22 PM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6663&mission=hst" onclick="this.target='_blank'">6663</a></td>
+		<td>SYSTEMATIC INVESTIGATION OF C/1995 O1 (HALE-BOPP)</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U3DU0108T" onclick="this.target='_blank'">U3DU0108T</a></td>
+		<td>07/25/96 02:24 PM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6663&mission=hst" onclick="this.target='_blank'">6663</a></td>
+		<td>SYSTEMATIC INVESTIGATION OF C/1995 O1 (HALE-BOPP)</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U3DU0109T" onclick="this.target='_blank'">U3DU0109T</a></td>
+		<td>07/25/96 02:29 PM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6663&mission=hst" onclick="this.target='_blank'">6663</a></td>
+		<td>SYSTEMATIC INVESTIGATION OF C/1995 O1 (HALE-BOPP)</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U3DU010AT" onclick="this.target='_blank'">U3DU010AT</a></td>
+		<td>07/25/96 02:35 PM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6663&mission=hst" onclick="this.target='_blank'">6663</a></td>
+		<td>SYSTEMATIC INVESTIGATION OF C/1995 O1 (HALE-BOPP)</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=Y3DU0201M" onclick="this.target='_blank'">Y3DU0201M</a></td>
+		<td>07/26/96 06:15 AM</td>
+		<td><a href="../HST_instruments.shtml">FOS </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6663&mission=hst" onclick="this.target='_blank'">6663</a></td>
+		<td>SYSTEMATIC INVESTIGATION OF C/1995 O1 (HALE-BOPP)</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=Y3DU0202M" onclick="this.target='_blank'">Y3DU0202M</a></td>
+		<td>07/26/96 06:24 AM</td>
+		<td><a href="../HST_instruments.shtml">FOS </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6663&mission=hst" onclick="this.target='_blank'">6663</a></td>
+		<td>SYSTEMATIC INVESTIGATION OF C/1995 O1 (HALE-BOPP)</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=Y3DU0203M" onclick="this.target='_blank'">Y3DU0203M</a></td>
+		<td>07/26/96 07:42 AM</td>
+		<td><a href="../HST_instruments.shtml">FOS </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6663&mission=hst" onclick="this.target='_blank'">6663</a></td>
+		<td>SYSTEMATIC INVESTIGATION OF C/1995 O1 (HALE-BOPP)</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=Y3DU0204M" onclick="this.target='_blank'">Y3DU0204M</a></td>
+		<td>07/26/96 08:13 AM</td>
+		<td><a href="../HST_instruments.shtml">FOS </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6663&mission=hst" onclick="this.target='_blank'">6663</a></td>
+		<td>SYSTEMATIC INVESTIGATION OF C/1995 O1 (HALE-BOPP)</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=Y3DU0205T" onclick="this.target='_blank'">Y3DU0205T</a></td>
+		<td>07/26/96 09:19 AM</td>
+		<td><a href="../HST_instruments.shtml">FOS </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6663&mission=hst" onclick="this.target='_blank'">6663</a></td>
+		<td>SYSTEMATIC INVESTIGATION OF C/1995 O1 (HALE-BOPP)</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=Y3DU0206T" onclick="this.target='_blank'">Y3DU0206T</a></td>
+		<td>07/26/96 09:51 AM</td>
+		<td><a href="../HST_instruments.shtml">FOS </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6663&mission=hst" onclick="this.target='_blank'">6663</a></td>
+		<td>SYSTEMATIC INVESTIGATION OF C/1995 O1 (HALE-BOPP)</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U3DU0301T" onclick="this.target='_blank'">U3DU0301T</a></td>
+		<td>09/23/96 03:56 AM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6663&mission=hst" onclick="this.target='_blank'">6663</a></td>
+		<td>SYSTEMATIC INVESTIGATION OF C/1995 O1 (HALE-BOPP)</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U3DU0302T" onclick="this.target='_blank'">U3DU0302T</a></td>
+		<td>09/23/96 03:58 AM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6663&mission=hst" onclick="this.target='_blank'">6663</a></td>
+		<td>SYSTEMATIC INVESTIGATION OF C/1995 O1 (HALE-BOPP)</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U3DU0303T" onclick="this.target='_blank'">U3DU0303T</a></td>
+		<td>09/23/96 04:01 AM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6663&mission=hst" onclick="this.target='_blank'">6663</a></td>
+		<td>SYSTEMATIC INVESTIGATION OF C/1995 O1 (HALE-BOPP)</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U3DU0304T" onclick="this.target='_blank'">U3DU0304T</a></td>
+		<td>09/23/96 04:04 AM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6663&mission=hst" onclick="this.target='_blank'">6663</a></td>
+		<td>SYSTEMATIC INVESTIGATION OF C/1995 O1 (HALE-BOPP)</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U3DU0305T" onclick="this.target='_blank'">U3DU0305T</a></td>
+		<td>09/23/96 04:08 AM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6663&mission=hst" onclick="this.target='_blank'">6663</a></td>
+		<td>SYSTEMATIC INVESTIGATION OF C/1995 O1 (HALE-BOPP)</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U3DU0306P" onclick="this.target='_blank'">U3DU0306P</a></td>
+		<td>09/23/96 04:10 AM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6663&mission=hst" onclick="this.target='_blank'">6663</a></td>
+		<td>SYSTEMATIC INVESTIGATION OF C/1995 O1 (HALE-BOPP)</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U3DU0307T" onclick="this.target='_blank'">U3DU0307T</a></td>
+		<td>09/23/96 04:13 AM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6663&mission=hst" onclick="this.target='_blank'">6663</a></td>
+		<td>SYSTEMATIC INVESTIGATION OF C/1995 O1 (HALE-BOPP)</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U3DU0308T" onclick="this.target='_blank'">U3DU0308T</a></td>
+		<td>09/23/96 04:15 AM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6663&mission=hst" onclick="this.target='_blank'">6663</a></td>
+		<td>SYSTEMATIC INVESTIGATION OF C/1995 O1 (HALE-BOPP)</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U3DU0309T" onclick="this.target='_blank'">U3DU0309T</a></td>
+		<td>09/23/96 04:21 AM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6663&mission=hst" onclick="this.target='_blank'">6663</a></td>
+		<td>SYSTEMATIC INVESTIGATION OF C/1995 O1 (HALE-BOPP)</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U3DU030AT" onclick="this.target='_blank'">U3DU030AT</a></td>
+		<td>09/23/96 04:27 AM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6663&mission=hst" onclick="this.target='_blank'">6663</a></td>
+		<td>SYSTEMATIC INVESTIGATION OF C/1995 O1 (HALE-BOPP)</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=Y3DU0401T" onclick="this.target='_blank'">Y3DU0401T</a></td>
+		<td>09/23/96 10:22 AM</td>
+		<td><a href="../HST_instruments.shtml">FOS </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6663&mission=hst" onclick="this.target='_blank'">6663</a></td>
+		<td>SYSTEMATIC INVESTIGATION OF C/1995 O1 (HALE-BOPP)</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=Y3DU0402T" onclick="this.target='_blank'">Y3DU0402T</a></td>
+		<td>09/23/96 10:30 AM</td>
+		<td><a href="../HST_instruments.shtml">FOS </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6663&mission=hst" onclick="this.target='_blank'">6663</a></td>
+		<td>SYSTEMATIC INVESTIGATION OF C/1995 O1 (HALE-BOPP)</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=Y3DU0403T" onclick="this.target='_blank'">Y3DU0403T</a></td>
+		<td>09/23/96 11:53 AM</td>
+		<td><a href="../HST_instruments.shtml">FOS </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6663&mission=hst" onclick="this.target='_blank'">6663</a></td>
+		<td>SYSTEMATIC INVESTIGATION OF C/1995 O1 (HALE-BOPP)</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=Y3DU0404T" onclick="this.target='_blank'">Y3DU0404T</a></td>
+		<td>09/23/96 12:25 PM</td>
+		<td><a href="../HST_instruments.shtml">FOS </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6663&mission=hst" onclick="this.target='_blank'">6663</a></td>
+		<td>SYSTEMATIC INVESTIGATION OF C/1995 O1 (HALE-BOPP)</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=Y3DU0405T" onclick="this.target='_blank'">Y3DU0405T</a></td>
+		<td>09/23/96 01:44 PM</td>
+		<td><a href="../HST_instruments.shtml">FOS </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6663&mission=hst" onclick="this.target='_blank'">6663</a></td>
+		<td>SYSTEMATIC INVESTIGATION OF C/1995 O1 (HALE-BOPP)</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=Y3DU0406T" onclick="this.target='_blank'">Y3DU0406T</a></td>
+		<td>09/23/96 03:19 PM</td>
+		<td><a href="../HST_instruments.shtml">FOS </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6663&mission=hst" onclick="this.target='_blank'">6663</a></td>
+		<td>SYSTEMATIC INVESTIGATION OF C/1995 O1 (HALE-BOPP)</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U3DU0501T" onclick="this.target='_blank'">U3DU0501T</a></td>
+		<td>10/17/96 02:54 PM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6663&mission=hst" onclick="this.target='_blank'">6663</a></td>
+		<td>SYSTEMATIC INVESTIGATION OF C/1995 O1 (HALE-BOPP)</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U3DU0502T" onclick="this.target='_blank'">U3DU0502T</a></td>
+		<td>10/17/96 02:56 PM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6663&mission=hst" onclick="this.target='_blank'">6663</a></td>
+		<td>SYSTEMATIC INVESTIGATION OF C/1995 O1 (HALE-BOPP)</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U3DU0503T" onclick="this.target='_blank'">U3DU0503T</a></td>
+		<td>10/17/96 02:59 PM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6663&mission=hst" onclick="this.target='_blank'">6663</a></td>
+		<td>SYSTEMATIC INVESTIGATION OF C/1995 O1 (HALE-BOPP)</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U3DU0504T" onclick="this.target='_blank'">U3DU0504T</a></td>
+		<td>10/17/96 03:02 PM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6663&mission=hst" onclick="this.target='_blank'">6663</a></td>
+		<td>SYSTEMATIC INVESTIGATION OF C/1995 O1 (HALE-BOPP)</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U3DU0505T" onclick="this.target='_blank'">U3DU0505T</a></td>
+		<td>10/17/96 03:06 PM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6663&mission=hst" onclick="this.target='_blank'">6663</a></td>
+		<td>SYSTEMATIC INVESTIGATION OF C/1995 O1 (HALE-BOPP)</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U3DU0506T" onclick="this.target='_blank'">U3DU0506T</a></td>
+		<td>10/17/96 03:08 PM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6663&mission=hst" onclick="this.target='_blank'">6663</a></td>
+		<td>SYSTEMATIC INVESTIGATION OF C/1995 O1 (HALE-BOPP)</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U3DU0507T" onclick="this.target='_blank'">U3DU0507T</a></td>
+		<td>10/17/96 03:11 PM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6663&mission=hst" onclick="this.target='_blank'">6663</a></td>
+		<td>SYSTEMATIC INVESTIGATION OF C/1995 O1 (HALE-BOPP)</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U3DU0508T" onclick="this.target='_blank'">U3DU0508T</a></td>
+		<td>10/17/96 03:13 PM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6663&mission=hst" onclick="this.target='_blank'">6663</a></td>
+		<td>SYSTEMATIC INVESTIGATION OF C/1995 O1 (HALE-BOPP)</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U3DU0509T" onclick="this.target='_blank'">U3DU0509T</a></td>
+		<td>10/17/96 03:19 PM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6663&mission=hst" onclick="this.target='_blank'">6663</a></td>
+		<td>SYSTEMATIC INVESTIGATION OF C/1995 O1 (HALE-BOPP)</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U3DU050AT" onclick="this.target='_blank'">U3DU050AT</a></td>
+		<td>10/17/96 03:24 PM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6663&mission=hst" onclick="this.target='_blank'">6663</a></td>
+		<td>SYSTEMATIC INVESTIGATION OF C/1995 O1 (HALE-BOPP)</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=Y3DU0601T" onclick="this.target='_blank'">Y3DU0601T</a></td>
+		<td>10/18/96 03:07 PM</td>
+		<td><a href="../HST_instruments.shtml">FOS </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6663&mission=hst" onclick="this.target='_blank'">6663</a></td>
+		<td>SYSTEMATIC INVESTIGATION OF C/1995 O1 (HALE-BOPP)</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=Y3DU0602T" onclick="this.target='_blank'">Y3DU0602T</a></td>
+		<td>10/18/96 03:15 PM</td>
+		<td><a href="../HST_instruments.shtml">FOS </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6663&mission=hst" onclick="this.target='_blank'">6663</a></td>
+		<td>SYSTEMATIC INVESTIGATION OF C/1995 O1 (HALE-BOPP)</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=Y3DU0603T" onclick="this.target='_blank'">Y3DU0603T</a></td>
+		<td>10/18/96 04:34 PM</td>
+		<td><a href="../HST_instruments.shtml">FOS </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6663&mission=hst" onclick="this.target='_blank'">6663</a></td>
+		<td>SYSTEMATIC INVESTIGATION OF C/1995 O1 (HALE-BOPP)</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=Y3DU0604T" onclick="this.target='_blank'">Y3DU0604T</a></td>
+		<td>10/18/96 05:06 PM</td>
+		<td><a href="../HST_instruments.shtml">FOS </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6663&mission=hst" onclick="this.target='_blank'">6663</a></td>
+		<td>SYSTEMATIC INVESTIGATION OF C/1995 O1 (HALE-BOPP)</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=Y3DU0605T" onclick="this.target='_blank'">Y3DU0605T</a></td>
+		<td>10/18/96 06:13 PM</td>
+		<td><a href="../HST_instruments.shtml">FOS </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6663&mission=hst" onclick="this.target='_blank'">6663</a></td>
+		<td>SYSTEMATIC INVESTIGATION OF C/1995 O1 (HALE-BOPP)</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=Y3DU0606T" onclick="this.target='_blank'">Y3DU0606T</a></td>
+		<td>10/18/96 06:45 PM</td>
+		<td><a href="../HST_instruments.shtml">FOS </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=6663&mission=hst" onclick="this.target='_blank'">6663</a></td>
+		<td>SYSTEMATIC INVESTIGATION OF C/1995 O1 (HALE-BOPP)</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=O48101TAQ" onclick="this.target='_blank'">O48101TAQ</a></td>
+		<td>08/27/97 01:48 AM</td>
+		<td><a href="../HST_instruments.shtml">STIS </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=7313&mission=hst" onclick="this.target='_blank'">7313</a></td>
+		<td>Systematic Investigation of C/1995 O1 {Hale-Bopp}: Part 3</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=O48101010" onclick="this.target='_blank'">O48101010</a></td>
+		<td>08/27/97 01:58 AM</td>
+		<td><a href="../HST_instruments.shtml">STIS </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=7313&mission=hst" onclick="this.target='_blank'">7313</a></td>
+		<td>Systematic Investigation of C/1995 O1 {Hale-Bopp}: Part 3</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=O48101020" onclick="this.target='_blank'">O48101020</a></td>
+		<td>08/27/97 02:15 AM</td>
+		<td><a href="../HST_instruments.shtml">STIS </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=7313&mission=hst" onclick="this.target='_blank'">7313</a></td>
+		<td>Systematic Investigation of C/1995 O1 {Hale-Bopp}: Part 3</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=O48101030" onclick="this.target='_blank'">O48101030</a></td>
+		<td>08/27/97 03:25 AM</td>
+		<td><a href="../HST_instruments.shtml">STIS </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=7313&mission=hst" onclick="this.target='_blank'">7313</a></td>
+		<td>Systematic Investigation of C/1995 O1 {Hale-Bopp}: Part 3</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=O48101040" onclick="this.target='_blank'">O48101040</a></td>
+		<td>08/27/97 03:42 AM</td>
+		<td><a href="../HST_instruments.shtml">STIS </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=7313&mission=hst" onclick="this.target='_blank'">7313</a></td>
+		<td>Systematic Investigation of C/1995 O1 {Hale-Bopp}: Part 3</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=O48101TRQ" onclick="this.target='_blank'">O48101TRQ</a></td>
+		<td>08/27/97 04:05 AM</td>
+		<td><a href="../HST_instruments.shtml">STIS </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=7313&mission=hst" onclick="this.target='_blank'">7313</a></td>
+		<td>Systematic Investigation of C/1995 O1 {Hale-Bopp}: Part 3</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=O48101TSQ" onclick="this.target='_blank'">O48101TSQ</a></td>
+		<td>08/27/97 04:06 AM</td>
+		<td><a href="../HST_instruments.shtml">STIS </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=7313&mission=hst" onclick="this.target='_blank'">7313</a></td>
+		<td>Systematic Investigation of C/1995 O1 {Hale-Bopp}: Part 3</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=N46S01010" onclick="this.target='_blank'">N46S01010</a></td>
+		<td>08/27/97 10:52 PM</td>
+		<td><a href="../HST_instruments.shtml">NICMOS</a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=7240&mission=hst" onclick="this.target='_blank'">7240</a></td>
+		<td>High Spatial Resolution Imaging of Comet Hale-Bopp {C/1995 O1}</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=N46S01020" onclick="this.target='_blank'">N46S01020</a></td>
+		<td>08/27/97 10:58 PM</td>
+		<td><a href="../HST_instruments.shtml">NICMOS</a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=7240&mission=hst" onclick="this.target='_blank'">7240</a></td>
+		<td>High Spatial Resolution Imaging of Comet Hale-Bopp {C/1995 O1}</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=N46S01030" onclick="this.target='_blank'">N46S01030</a></td>
+		<td>08/27/97 11:05 PM</td>
+		<td><a href="../HST_instruments.shtml">NICMOS</a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=7240&mission=hst" onclick="this.target='_blank'">7240</a></td>
+		<td>High Spatial Resolution Imaging of Comet Hale-Bopp {C/1995 O1}</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=N46S01031" onclick="this.target='_blank'">N46S01031</a></td>
+		<td>08/27/97 11:09 PM</td>
+		<td><a href="../HST_instruments.shtml">NICMOS</a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=7240&mission=hst" onclick="this.target='_blank'">7240</a></td>
+		<td>High Spatial Resolution Imaging of Comet Hale-Bopp {C/1995 O1}</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=N46S01040" onclick="this.target='_blank'">N46S01040</a></td>
+		<td>08/27/97 11:19 PM</td>
+		<td><a href="../HST_instruments.shtml">NICMOS</a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=7240&mission=hst" onclick="this.target='_blank'">7240</a></td>
+		<td>High Spatial Resolution Imaging of Comet Hale-Bopp {C/1995 O1}</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=N46S01041" onclick="this.target='_blank'">N46S01041</a></td>
+		<td>08/27/97 11:23 PM</td>
+		<td><a href="../HST_instruments.shtml">NICMOS</a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=7240&mission=hst" onclick="this.target='_blank'">7240</a></td>
+		<td>High Spatial Resolution Imaging of Comet Hale-Bopp {C/1995 O1}</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=N46S01050" onclick="this.target='_blank'">N46S01050</a></td>
+		<td>08/28/97 12:20 AM</td>
+		<td><a href="../HST_instruments.shtml">NICMOS</a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=7240&mission=hst" onclick="this.target='_blank'">7240</a></td>
+		<td>High Spatial Resolution Imaging of Comet Hale-Bopp {C/1995 O1}</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=O46S01A10" onclick="this.target='_blank'">O46S01A10</a></td>
+		<td>08/28/97 12:20 AM</td>
+		<td><a href="../HST_instruments.shtml">STIS </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=7240&mission=hst" onclick="this.target='_blank'">7240</a></td>
+		<td>High Spatial Resolution Imaging of Comet Hale-Bopp {C/1995 O1}</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=U46S0101R" onclick="this.target='_blank'">U46S0101R</a></td>
+		<td>08/28/97 12:22 AM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=7240&mission=hst" onclick="this.target='_blank'">7240</a></td>
+		<td>High Spatial Resolution Imaging of Comet Hale-Bopp {C/1995 O1}</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=N46S01060" onclick="this.target='_blank'">N46S01060</a></td>
+		<td>08/28/97 12:23 AM</td>
+		<td><a href="../HST_instruments.shtml">NICMOS</a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=7240&mission=hst" onclick="this.target='_blank'">7240</a></td>
+		<td>High Spatial Resolution Imaging of Comet Hale-Bopp {C/1995 O1}</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=N46S01WXQ" onclick="this.target='_blank'">N46S01WXQ</a></td>
+		<td>08/28/97 12:26 AM</td>
+		<td><a href="../HST_instruments.shtml">NICMOS</a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=7240&mission=hst" onclick="this.target='_blank'">7240</a></td>
+		<td>High Spatial Resolution Imaging of Comet Hale-Bopp {C/1995 O1}</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=N46S01X0Q" onclick="this.target='_blank'">N46S01X0Q</a></td>
+		<td>08/28/97 12:31 AM</td>
+		<td><a href="../HST_instruments.shtml">NICMOS</a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=7240&mission=hst" onclick="this.target='_blank'">7240</a></td>
+		<td>High Spatial Resolution Imaging of Comet Hale-Bopp {C/1995 O1}</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=O48102JNQ" onclick="this.target='_blank'">O48102JNQ</a></td>
+		<td>11/11/97 04:54 PM</td>
+		<td><a href="../HST_instruments.shtml">STIS </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=7313&mission=hst" onclick="this.target='_blank'">7313</a></td>
+		<td>Systematic Investigation of C/1995 O1 {Hale-Bopp}: Part 3</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=O48102010" onclick="this.target='_blank'">O48102010</a></td>
+		<td>11/11/97 05:04 PM</td>
+		<td><a href="../HST_instruments.shtml">STIS </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=7313&mission=hst" onclick="this.target='_blank'">7313</a></td>
+		<td>Systematic Investigation of C/1995 O1 {Hale-Bopp}: Part 3</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=O48102020" onclick="this.target='_blank'">O48102020</a></td>
+		<td>11/11/97 05:20 PM</td>
+		<td><a href="../HST_instruments.shtml">STIS </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=7313&mission=hst" onclick="this.target='_blank'">7313</a></td>
+		<td>Systematic Investigation of C/1995 O1 {Hale-Bopp}: Part 3</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=O48102030" onclick="this.target='_blank'">O48102030</a></td>
+		<td>11/11/97 06:28 PM</td>
+		<td><a href="../HST_instruments.shtml">STIS </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=7313&mission=hst" onclick="this.target='_blank'">7313</a></td>
+		<td>Systematic Investigation of C/1995 O1 {Hale-Bopp}: Part 3</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=O48102040" onclick="this.target='_blank'">O48102040</a></td>
+		<td>11/11/97 06:45 PM</td>
+		<td><a href="../HST_instruments.shtml">STIS </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=7313&mission=hst" onclick="this.target='_blank'">7313</a></td>
+		<td>Systematic Investigation of C/1995 O1 {Hale-Bopp}: Part 3</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=O48102K2Q" onclick="this.target='_blank'">O48102K2Q</a></td>
+		<td>11/11/97 07:05 PM</td>
+		<td><a href="../HST_instruments.shtml">STIS </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=7313&mission=hst" onclick="this.target='_blank'">7313</a></td>
+		<td>Systematic Investigation of C/1995 O1 {Hale-Bopp}: Part 3</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=O48102K4Q" onclick="this.target='_blank'">O48102K4Q</a></td>
+		<td>11/11/97 07:08 PM</td>
+		<td><a href="../HST_instruments.shtml">STIS </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=7313&mission=hst" onclick="this.target='_blank'">7313</a></td>
+		<td>Systematic Investigation of C/1995 O1 {Hale-Bopp}: Part 3</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=O48103RDQ" onclick="this.target='_blank'">O48103RDQ</a></td>
+		<td>02/19/98 10:57 AM</td>
+		<td><a href="../HST_instruments.shtml">STIS </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=7313&mission=hst" onclick="this.target='_blank'">7313</a></td>
+		<td>Systematic Investigation of C/1995 O1 {Hale-Bopp}: Part 3</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=O48103010" onclick="this.target='_blank'">O48103010</a></td>
+		<td>02/19/98 11:10 AM</td>
+		<td><a href="../HST_instruments.shtml">STIS </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=7313&mission=hst" onclick="this.target='_blank'">7313</a></td>
+		<td>Systematic Investigation of C/1995 O1 {Hale-Bopp}: Part 3</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=O48103020" onclick="this.target='_blank'">O48103020</a></td>
+		<td>02/19/98 11:29 AM</td>
+		<td><a href="../HST_instruments.shtml">STIS </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=7313&mission=hst" onclick="this.target='_blank'">7313</a></td>
+		<td>Systematic Investigation of C/1995 O1 {Hale-Bopp}: Part 3</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=O48103030" onclick="this.target='_blank'">O48103030</a></td>
+		<td>02/19/98 12:31 PM</td>
+		<td><a href="../HST_instruments.shtml">STIS </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=7313&mission=hst" onclick="this.target='_blank'">7313</a></td>
+		<td>Systematic Investigation of C/1995 O1 {Hale-Bopp}: Part 3</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=O48103040" onclick="this.target='_blank'">O48103040</a></td>
+		<td>02/19/98 12:56 PM</td>
+		<td><a href="../HST_instruments.shtml">STIS </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=7313&mission=hst" onclick="this.target='_blank'">7313</a></td>
+		<td>Systematic Investigation of C/1995 O1 {Hale-Bopp}: Part 3</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=O48103RPQ" onclick="this.target='_blank'">O48103RPQ</a></td>
+		<td>02/19/98 01:14 PM</td>
+		<td><a href="../HST_instruments.shtml">STIS </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=7313&mission=hst" onclick="this.target='_blank'">7313</a></td>
+		<td>Systematic Investigation of C/1995 O1 {Hale-Bopp}: Part 3</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=O48103RQQ" onclick="this.target='_blank'">O48103RQQ</a></td>
+		<td>02/19/98 01:15 PM</td>
+		<td><a href="../HST_instruments.shtml">STIS </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=7313&mission=hst" onclick="this.target='_blank'">7313</a></td>
+		<td>Systematic Investigation of C/1995 O1 {Hale-Bopp}: Part 3</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=O48103070" onclick="this.target='_blank'">O48103070</a></td>
+		<td>02/19/98 02:11 PM</td>
+		<td><a href="../HST_instruments.shtml">STIS </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=7313&mission=hst" onclick="this.target='_blank'">7313</a></td>
+		<td>Systematic Investigation of C/1995 O1 {Hale-Bopp}: Part 3</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=O48103080" onclick="this.target='_blank'">O48103080</a></td>
+		<td>02/19/98 02:34 PM</td>
+		<td><a href="../HST_instruments.shtml">STIS </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=7313&mission=hst" onclick="this.target='_blank'">7313</a></td>
+		<td>Systematic Investigation of C/1995 O1 {Hale-Bopp}: Part 3</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=O48103090" onclick="this.target='_blank'">O48103090</a></td>
+		<td>02/19/98 03:44 PM</td>
+		<td><a href="../HST_instruments.shtml">STIS </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=7313&mission=hst" onclick="this.target='_blank'">7313</a></td>
+		<td>Systematic Investigation of C/1995 O1 {Hale-Bopp}: Part 3</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=O481030A0" onclick="this.target='_blank'">O481030A0</a></td>
+		<td>02/19/98 04:10 PM</td>
+		<td><a href="../HST_instruments.shtml">STIS </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=7313&mission=hst" onclick="this.target='_blank'">7313</a></td>
+		<td>Systematic Investigation of C/1995 O1 {Hale-Bopp}: Part 3</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=O48103S2Q" onclick="this.target='_blank'">O48103S2Q</a></td>
+		<td>02/19/98 04:27 PM</td>
+		<td><a href="../HST_instruments.shtml">STIS </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=7313&mission=hst" onclick="this.target='_blank'">7313</a></td>
+		<td>Systematic Investigation of C/1995 O1 {Hale-Bopp}: Part 3</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=O48103S3Q" onclick="this.target='_blank'">O48103S3Q</a></td>
+		<td>02/19/98 04:28 PM</td>
+		<td><a href="../HST_instruments.shtml">STIS </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=7313&mission=hst" onclick="this.target='_blank'">7313</a></td>
+		<td>Systematic Investigation of C/1995 O1 {Hale-Bopp}: Part 3</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J8ED01011" onclick="this.target='_blank'">J8ED01011</a></td>
+		<td>10/27/02 12:12 PM</td>
+		<td><a href="../HST_instruments.shtml">ACS </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=9302&mission=hst" onclick="this.target='_blank'">9302</a></td>
+		<td>Comet Hale-Bopp at large heliocentric distance</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J8ED01021" onclick="this.target='_blank'">J8ED01021</a></td>
+		<td>10/27/02 12:14 PM</td>
+		<td><a href="../HST_instruments.shtml">ACS </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=9302&mission=hst" onclick="this.target='_blank'">9302</a></td>
+		<td>Comet Hale-Bopp at large heliocentric distance</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J8ED01B3Q" onclick="this.target='_blank'">J8ED01B3Q</a></td>
+		<td>10/27/02 12:20 PM</td>
+		<td><a href="../HST_instruments.shtml">ACS </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=9302&mission=hst" onclick="this.target='_blank'">9302</a></td>
+		<td>Comet Hale-Bopp at large heliocentric distance</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J8ED01031" onclick="this.target='_blank'">J8ED01031</a></td>
+		<td>10/27/02 12:21 PM</td>
+		<td><a href="../HST_instruments.shtml">ACS </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=9302&mission=hst" onclick="this.target='_blank'">9302</a></td>
+		<td>Comet Hale-Bopp at large heliocentric distance</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J8EDA1BDQ" onclick="this.target='_blank'">J8EDA1BDQ</a></td>
+		<td>10/27/02 01:06 PM</td>
+		<td><a href="../HST_instruments.shtml">ACS </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=9302&mission=hst" onclick="this.target='_blank'">9302</a></td>
+		<td>Comet Hale-Bopp at large heliocentric distance</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J8EDA1011" onclick="this.target='_blank'">J8EDA1011</a></td>
+		<td>10/27/02 01:09 PM</td>
+		<td><a href="../HST_instruments.shtml">ACS </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=9302&mission=hst" onclick="this.target='_blank'">9302</a></td>
+		<td>Comet Hale-Bopp at large heliocentric distance</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J8ED02011" onclick="this.target='_blank'">J8ED02011</a></td>
+		<td>10/27/02 01:48 PM</td>
+		<td><a href="../HST_instruments.shtml">ACS </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=9302&mission=hst" onclick="this.target='_blank'">9302</a></td>
+		<td>Comet Hale-Bopp at large heliocentric distance</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J8ED02021" onclick="this.target='_blank'">J8ED02021</a></td>
+		<td>10/27/02 01:50 PM</td>
+		<td><a href="../HST_instruments.shtml">ACS </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=9302&mission=hst" onclick="this.target='_blank'">9302</a></td>
+		<td>Comet Hale-Bopp at large heliocentric distance</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J8ED02BOQ" onclick="this.target='_blank'">J8ED02BOQ</a></td>
+		<td>10/27/02 01:56 PM</td>
+		<td><a href="../HST_instruments.shtml">ACS </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=9302&mission=hst" onclick="this.target='_blank'">9302</a></td>
+		<td>Comet Hale-Bopp at large heliocentric distance</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J8ED02031" onclick="this.target='_blank'">J8ED02031</a></td>
+		<td>10/27/02 01:57 PM</td>
+		<td><a href="../HST_instruments.shtml">ACS </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=9302&mission=hst" onclick="this.target='_blank'">9302</a></td>
+		<td>Comet Hale-Bopp at large heliocentric distance</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J8EDA2BSQ" onclick="this.target='_blank'">J8EDA2BSQ</a></td>
+		<td>10/27/02 02:42 PM</td>
+		<td><a href="../HST_instruments.shtml">ACS </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=9302&mission=hst" onclick="this.target='_blank'">9302</a></td>
+		<td>Comet Hale-Bopp at large heliocentric distance</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=J8EDA2011" onclick="this.target='_blank'">J8EDA2011</a></td>
+		<td>10/27/02 02:45 PM</td>
+		<td><a href="../HST_instruments.shtml">ACS </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=9302&mission=hst" onclick="this.target='_blank'">9302</a></td>
+		<td>Comet Hale-Bopp at large heliocentric distance</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=UBAJ6101M" onclick="this.target='_blank'">UBAJ6101M</a></td>
+		<td>03/07/09 10:07 PM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=11972&mission=hst" onclick="this.target='_blank'">11972</a></td>
+		<td>Investigating the Early Solar System with Distant Comet Nuclei</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=UBAJ6102M" onclick="this.target='_blank'">UBAJ6102M</a></td>
+		<td>03/07/09 10:19 PM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=11972&mission=hst" onclick="this.target='_blank'">11972</a></td>
+		<td>Investigating the Early Solar System with Distant Comet Nuclei</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=UBAJ6103M" onclick="this.target='_blank'">UBAJ6103M</a></td>
+		<td>03/07/09 10:31 PM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=11972&mission=hst" onclick="this.target='_blank'">11972</a></td>
+		<td>Investigating the Early Solar System with Distant Comet Nuclei</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=UBAJ6104M" onclick="this.target='_blank'">UBAJ6104M</a></td>
+		<td>03/07/09 10:43 PM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=11972&mission=hst" onclick="this.target='_blank'">11972</a></td>
+		<td>Investigating the Early Solar System with Distant Comet Nuclei</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=UBAJ6105M" onclick="this.target='_blank'">UBAJ6105M</a></td>
+		<td>03/07/09 11:39 PM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=11972&mission=hst" onclick="this.target='_blank'">11972</a></td>
+		<td>Investigating the Early Solar System with Distant Comet Nuclei</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=UBAJ6106M" onclick="this.target='_blank'">UBAJ6106M</a></td>
+		<td>03/07/09 11:51 PM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=11972&mission=hst" onclick="this.target='_blank'">11972</a></td>
+		<td>Investigating the Early Solar System with Distant Comet Nuclei</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=UBAJ6107M" onclick="this.target='_blank'">UBAJ6107M</a></td>
+		<td>03/08/09 12:03 AM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=11972&mission=hst" onclick="this.target='_blank'">11972</a></td>
+		<td>Investigating the Early Solar System with Distant Comet Nuclei</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=UBAJ6108M" onclick="this.target='_blank'">UBAJ6108M</a></td>
+		<td>03/08/09 12:15 AM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=11972&mission=hst" onclick="this.target='_blank'">11972</a></td>
+		<td>Investigating the Early Solar System with Distant Comet Nuclei</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=UBAJ6109M" onclick="this.target='_blank'">UBAJ6109M</a></td>
+		<td>03/08/09 01:15 AM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=11972&mission=hst" onclick="this.target='_blank'">11972</a></td>
+		<td>Investigating the Early Solar System with Distant Comet Nuclei</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=UBAJ610AM" onclick="this.target='_blank'">UBAJ610AM</a></td>
+		<td>03/08/09 01:27 AM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=11972&mission=hst" onclick="this.target='_blank'">11972</a></td>
+		<td>Investigating the Early Solar System with Distant Comet Nuclei</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=UBAJ610BM" onclick="this.target='_blank'">UBAJ610BM</a></td>
+		<td>03/08/09 01:39 AM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=11972&mission=hst" onclick="this.target='_blank'">11972</a></td>
+		<td>Investigating the Early Solar System with Distant Comet Nuclei</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=UBAJ610CM" onclick="this.target='_blank'">UBAJ610CM</a></td>
+		<td>03/08/09 01:51 AM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=11972&mission=hst" onclick="this.target='_blank'">11972</a></td>
+		<td>Investigating the Early Solar System with Distant Comet Nuclei</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=UBAJ610DM" onclick="this.target='_blank'">UBAJ610DM</a></td>
+		<td>03/08/09 02:51 AM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=11972&mission=hst" onclick="this.target='_blank'">11972</a></td>
+		<td>Investigating the Early Solar System with Distant Comet Nuclei</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=UBAJ610EM" onclick="this.target='_blank'">UBAJ610EM</a></td>
+		<td>03/08/09 03:03 AM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=11972&mission=hst" onclick="this.target='_blank'">11972</a></td>
+		<td>Investigating the Early Solar System with Distant Comet Nuclei</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=UBAJ610FM" onclick="this.target='_blank'">UBAJ610FM</a></td>
+		<td>03/08/09 03:15 AM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=11972&mission=hst" onclick="this.target='_blank'">11972</a></td>
+		<td>Investigating the Early Solar System with Distant Comet Nuclei</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=UBAJ610GM" onclick="this.target='_blank'">UBAJ610GM</a></td>
+		<td>03/08/09 03:27 AM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=11972&mission=hst" onclick="this.target='_blank'">11972</a></td>
+		<td>Investigating the Early Solar System with Distant Comet Nuclei</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=UBAJ610HM" onclick="this.target='_blank'">UBAJ610HM</a></td>
+		<td>03/08/09 04:27 AM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=11972&mission=hst" onclick="this.target='_blank'">11972</a></td>
+		<td>Investigating the Early Solar System with Distant Comet Nuclei</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=UBAJ610IM" onclick="this.target='_blank'">UBAJ610IM</a></td>
+		<td>03/08/09 04:39 AM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=11972&mission=hst" onclick="this.target='_blank'">11972</a></td>
+		<td>Investigating the Early Solar System with Distant Comet Nuclei</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=UBAJ610JM" onclick="this.target='_blank'">UBAJ610JM</a></td>
+		<td>03/08/09 04:51 AM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=11972&mission=hst" onclick="this.target='_blank'">11972</a></td>
+		<td>Investigating the Early Solar System with Distant Comet Nuclei</td>
+	</tr>
+	<tr>
+		<td><a href="http://archive.stsci.edu/cgi-bin/mastpreview?mission=hst&dataid=UBAJ610KM" onclick="this.target='_blank'">UBAJ610KM</a></td>
+		<td>03/08/09 05:03 AM</td>
+		<td><a href="../HST_instruments.shtml">WFPC2 </a></td>
+		<td><a href="http://archive.stsci.edu/proposal_search.php?id=11972&mission=hst" onclick="this.target='_blank'">11972</a></td>
+		<td>Investigating the Early Solar System with Distant Comet Nuclei</td>
+	</tr>
+</table>
+<br /><p>[<a href="#top">Back to Top</a>] [<a href="../HST.shtml#01_COMET">Back to Comets</a>]</p>
+
+<a name="bottom"></a>
+
+<!-- ************************************************** End editing! ************************************************** -->
+<!--#include virtual="/css-n-includes/incl_bottom.inc"-->
+<br />Last updated: <!--#config timefmt="%A %B %d, %Y"--><!--#echo var="LAST_MODIFIED" --></div><!-- close id whotext -->
+
+</div><!-- close id footer -->
+</div><!-- end id footwrap -->
+
+</div><!-- close wrapper -->
+
+</body>
+</html>

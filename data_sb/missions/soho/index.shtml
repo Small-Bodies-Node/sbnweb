@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<title>SBN Mission Support: SOHO</title>
+
+<!-- 
+########################
+ALL of the head, style links, header and menu code is in the include. Edit that file with extreme care!!
+########################
+ -->
+<!--#include virtual="/css-n-includes/incl_top.inc"-->
+
+<!-- ################################################ LEFT SIDEBAR ########################################## -->
+<!--#include virtual="/css-n-includes/incl_left-side.inc"-->
+
+<!-- ################################################ RIGHT SIDEBAR ########################################## -->
+<div id="rightcol">
+<div class="sidebarSection">
+<h2>Mission Websites</h2>
+<p>Here we list links to the primary mission website as well as pages about the mission on other sites such as the NSSDC, NASA portal, etc.</p>
+<ul>
+<li>Mission: <a href="http://sohowww.nascom.nasa.gov/" onclick="this.target='_blank'">SOHO</a></li>
+<li>NSSDC: <a href="https://nssdc.gsfc.nasa.gov/nmc/spacecraftDisplay.do?id=1995-065A" onclick="this.target='_blank'">SOHO</a></li>
+<li>NASA: <a href="https://www.nasa.gov/mission_pages/soho/index.html" onclick="this.target='_blank'">SOHO</a></li>
+</ul>
+</div><!-- end class sidebarSection -->
+</div><!-- end id rightcol -->
+<!-- ################################################ MAIN ################################################## -->
+<div id="centercol">
+<a name="mainContent"></a>
+<!-- ************************************************** You may begin editing! ************************************************** -->
+<!--
+===========================================================================
+EDIT HISTORY:
++ 2020-04-28 EMW	updated doc collection to v1.1, SWAN to v2.0
++ 2017-03-10 EMW	added links to instruments, added SWAN instrument, added 2 PDS4 datasets
++ 2014-11-20 EMW	updated link to Ferret
++ 2011-08-17 EMW	added description, instrument
++ 2011-02-22 EMW	added right sidebar space
++ 2011-01-28 EMW	added content from old comet/missions page, but need to rearrange now
++ 2011-01-27 EMW	new page for missing missions
+
+===========================================================================
+-->
+
+<!-- Mission Title ====================================================== -->
+<h1>SOHO</h1>
+
+<!-- Mission Description ================================================ -->
+<p>The Solar &amp;Heliospheric Observatory (SOHO) was developed by ESA and NASA and was designed to study the internal structure of the Sun, its extensive outer atmosphere and the origin of the solar wind, the stream of highly ionized gas that blows continuously outward through the Solar System. The spacecraft was launched on Dec 2, 1995. </p>
+
+<!-- SBN Role =========================================================== -->
+<!-- <p>???</p> -->
+<!-- Instrument List ==================================================== -->
+<h2>Instruments</h2>
+<ul>
+<li><a href="/holdings/pds4-soho:document-v1.0/overview/lasco.txt">Large Angle Spectrometric Coronagraph (LASCO)</a> - Wide-field white light and spectrometric coronagraph consisting of three optical systems.</li>
+<li><a href="/holdings/pds4-soho:document-v1.0/overview/swan.txt">Solar Wind ANisotropies (SWAN)</a></li>
+</ul>
+
+<!-- lists from old comet/mission page =========================================================== -->
+<h2>Datasets</h2>
+<ul>
+<li><a href="/holdings/soho-c-lasco-4-cometimages-v1.0/dataset.shtml">SOHO Comet Images</a></li>
+<li><a href="/holdings/soho-c-lasco-5-kreutzphotom-v1.0/dataset.shtml">SOHO Photometry of Kreutz Family Comets</a></li>
+
+<li><a href="/holdings/pds4-soho:document-v1.0/SUPPORT/dataset.shtml">SOHO Documentation Collection v1.1</a><code>urn:nasa:pds:soho:document::v1.1</code></li>
+<li><a href="/holdings/pds4-soho:swan_derived-v1.0/SUPPORT/dataset.shtml">SOHO SWAN Derived Cometary Water Production Rates Collection v2.0</a><code>urn:nasa:pds:soho:swan_derived::v2.0</code></li>
+</ul>
+
+<h3>Related Datasets</h3>
+<p>Use the <a href="https://sbnapps.psi.edu/ferret/">Small Bodies Data Ferret</a> to find other datasets for this mission/target.</p>
+
+<!-- ************************************************** End editing! ************************************************** -->
+<!--#include virtual="/css-n-includes/incl_bottom.inc"-->
+<br />Last updated: <!--#config timefmt="%A %B %d, %Y"--><!--#echo var="LAST_MODIFIED" --></div><!-- close id whotext -->
+</div><!-- close id footer -->
+</div><!-- end id footwrap -->
+</div><!-- close wrapper -->
+</body>
+</html>

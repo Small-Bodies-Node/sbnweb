@@ -1,0 +1,55 @@
+PDS_VERSION_ID                    = PDS3                                      
+RECORD_TYPE                       = "STREAM"                                  
+LABEL_REVISION_NOTE               = "2008-12-15 EPOXI:McLaughlin Created.     
+  2009-08-06  EPOXI:McLaughlin  Lien resolution for 23 Jul 2009 peer review:  
+    Copied and dated latest properties from Extrasolar Planets Encyclopedia.  
+"                                                                             
+                                                                              
+OBJECT                            = TARGET                                    
+  TARGET_NAME                     = "GJ 436"                                  
+                                                                              
+  OBJECT                          = TARGET_INFORMATION                        
+    TARGET_TYPE                   = "STAR"                                    
+    PRIMARY_BODY_NAME             = "N/A"                                     
+    ORBIT_DIRECTION               = "N/A"                                     
+    ROTATION_DIRECTION            = "N/A"                                     
+    TARGET_DESC                   = "                                         
+                                                                              
+    Target Description                                                        
+    ==================                                                        
+      GJ 436 (Gliese 436) is a star with a detected substellar companion,     
+      GJ 436 b, and is a target of the Extrasolar Planet Observation and      
+      CHaracterization (EPOCh) phase of the NASA EPOXI mission.  Other        
+      designations for this star are USNO-B1.0 1167-00204205 and 2MASS        
+      J11421096+2642251.  The star has the following astrometric and          
+      photometric properties:                                                 
+                                                                              
+        Spectral type        : M2.5                                           
+        Apparent V Magnitude : 10.68                                          
+        Distance             : 10.2 pc                                        
+        Mass                 : 0.452 (-0.012/+0.014) solar masses             
+        Radius               : 0.464 (-0.011/+0.009) solar radii              
+        RA                   : 11 42 11.094 (FK5, epoch and equinox 2000)     
+        Dec                  : +26 42 23.65 (FK5, epoch and equinox 2000)     
+                                                                              
+      The substellar companion GJ 436 b was discovered in 2004 by Paul        
+      Butler of the Carnegie Institute of Washington and Geoffrey Marcy of    
+      the University of California, Berkeley.  The known properties of this   
+      extrasolar planet are:                                                  
+                                                                              
+        Mass               : 0.072 (+/- 0.0025) Jupiter masses                
+        Semi major axis    : 0.02872 (-5.8e-05/+6e-05) AU                     
+        Orbital period     : 2.6438986 (-/+1.6e-06) days                      
+        Eccentricity       : 0.15 (-/+0.012)                                  
+        Radius             : 0.438 (-0.03/+0.04) Jupiter radii                
+        Inclination        : 85.8 (-0.25/+0.21) deg                           
+                                                                              
+      The astrometric and photometric properties were taken from the          
+      13 May 2009 update for this planetary system in the Extrasolar          
+      Planets Encyclopedia.  The encyclopedia is maintained by the Paris      
+      Observatory and is available online at http://exoplanet.eu.  Please     
+      consult this web site for the most up-to-date properties.               
+    "                                                                         
+  END_OBJECT                      = TARGET_INFORMATION                        
+END_OBJECT                        = TARGET                                    
+END                                                                           

@@ -1,0 +1,128 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<title>PDS-SBN: Data Release Schedule</title>
+
+<!-- 
+########################
+ALL of the head, style links, header and menu code is in the include. Edit that file with extreme care!!
+########################
+ -->
+<!--#include virtual="/css-n-includes/incl_top.inc"-->
+
+<!-- ################################################ LEFT SIDEBAR ########################################## -->
+<!--#include virtual="/css-n-includes/incl_left-side.inc"-->
+
+<!-- ################################################ MAIN ################################################## -->
+<div id="centerwide">
+<a name="mainContent"></a>
+<!-- ************************************************** You may begin editing! ************************************************** -->
+<h1>Data Release Schedule</h1>
+
+<p>The Planetary Data System now maintains a unified <a href="https://pds.nasa.gov/datasearch/subscription-service/data-release-calendar.shtml">PDS Data Release Calendar</a> for <em>missions</em>. That calendar does not track non-mission releases.</p>
+
+<p>This schedule is posted to show what non-mission data we expect to provide to the public in the <em>near future</em>. The unlinked date in the last column is a rough estimation of the data release (data however are expected to be <em>delivered</em> to SBN several months earlier so that they can be reviewed, lien-resolved, etc before release). After the release, we will link to the data from this page <strong><em>for up to 6 months after release</em></strong>. You can always find links to <em>all of the released data</em> from the &quot;Data Archives&quot; menu above.</p>
+
+<table class="datatab" cellspacing="0">
+<colgroup>
+<col width="30%" />
+<col width="30%" />
+<col width="20%" />
+</colgroup>
+<thead>
+<tr>
+<td>Project</td><td>Data Description</td><td>Data Available Online</td>
+</tr>
+</thead>
+
+<!-- ************************************************************************** Ground - Comet ************************************************************************* -->
+<tr>
+<td rowspan="3"><a href="/data_sb/missions/ground.shtml">Ground based data</a> and R&amp;A<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em>Comet Data</em></td>
+<td>9P/Tempel&nbsp;1 photometry from K. Meech (UH)</td>
+<td>unknown</td>
+</tr>
+
+<!-- <tr>
+<td>Unidentified Cometary Emissions</td>
+<td><a href="/holdings/pds4-compil-comet:unid-emis-v1.0/SUPPORT/dataset.shtml">released Nov 2018</a></td>
+</tr> -->
+
+<tr>
+<td>CARA comet AfRho data</td>
+<td>unknown</td>
+</tr>
+
+<!-- <tr>
+<td>Comet ISON images and spectra, various telescopes</td>
+<td><a href="/holdings/pds4-gbo-c2012_s1_ison-v1.0/SUPPORT/dataset.shtml">released Nov 2019</a></td>
+</tr> -->
+
+<!-- <tr>
+<td>Comet Hale-Bopp photometry from multiple observers</td>
+<td><a href="/holdings/pds4-compil-comet:halebopp-v1.0/SUPPORT/dataset.shtml">released Oct 2018</a></td>
+</tr> -->
+
+<tr>
+<td>Spitzer Space Telescope Spectroscopy of Comets</td>
+<td><a href="/holdings/pds4-spitzer:spitzer-spec-comet-v1.0/SUPPORT/dataset.shtml">released Oct 2021</a></td>
+</tr>
+
+
+<!-- ************************************************************************ Ground - Asteroid ************************************************************************ -->
+<tr class="odd">
+<td rowspan="4"><a href="/data_sb/missions/ground.shtml">Ground based data</a> and R&amp;A<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em>Asteroid data</em></td>
+<td>Asteroid Lightcurve Database (LCDB) V4.0 </td>
+<td><a href="https://sbn.psi.edu/pds/resource/lc.html">released Sep 2021</a></td>
+</tr>
+
+<tr class="odd">
+<td>Asteroid Lightcurve Data Exchange Format (ALCDEF) Database V1.0</td>
+<td><a href="https://sbn.psi.edu/pds/resource/alcdef.html">released Sep 2021</a></td>
+</tr>
+
+<tr class="odd">
+<td>Gartrelle et al. IRTF Asteroid Spectra V1.0 </td>
+<td><a href="https://sbn.psi.edu/pds/resource/girtfspec.html">released Feb 2021</a></td>
+</tr>
+
+<tr class="odd">
+<td>Fieber-Beyer IRTF Mainbelt Asteroid Spectra V2.0 </td>
+<td><a href="https://sbn.psi.edu/pds/resource/fbirtfspec.html">released Jan 2021</a></td>
+</tr>
+
+<!-- ************************************************************************ Ground - Satellite ************************************************************************ -->
+<tr>
+<td><a href="/data_sb/missions/ground.shtml">Ground based data</a> and R&amp;A<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em>(Natural) Satellites data</em></td>
+<td>Uranian satellites NIR spectra</td>
+<td>unknown</td>
+</tr>
+<!-- ************************************************************************ RESTORATION ************************************************************************ -->
+<tr class="odd">
+<td rowspan="2">DATA RESTORATION</td>
+<td>Comet Halley near-nucleus images, orientation corrected</td>
+<td><a href="/holdings/ihw-c-nnsn-3-edr-halley-v2.0/dataset.shtml">released Oct 2019</a></td>
+</tr>
+
+<!-- <tr class="odd">
+<td>Photometry of comet 9P/Tempel 1 from Deep Impact, v2.0</td>
+<td>May 2018</td>
+</tr> -->
+</table>
+<!-- ************************************************** End editing! ************************************************** -->
+<!--#include virtual="/css-n-includes/incl_bottom.inc"-->
+<br />Last updated:
+<!--#config timefmt="%A %B %d, %Y"-->
+<!--#echo var="LAST_MODIFIED" -->
+</div>
+<!-- close id whotext -->
+</div>
+<!-- close id footer -->
+</div>
+<!-- end id footwrap -->
+</div>
+<!-- close wrapper -->
+</body>
+
+</html>

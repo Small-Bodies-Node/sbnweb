@@ -1,0 +1,467 @@
+html {margin: 0;}
+
+* {margin: 0;
+font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+padding: 0;}
+
+body {margin: 5px;
+font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+/* font-size: 80%; */
+padding: 0;
+background: #fff;
+color: #000;
+min-width: 900px;}
+
+#wrapper {margin: auto;
+position: relative;
+text-align: left;
+width: 100%;}
+
+/* comment tag */
+
+/* ################################################ To see where some of the DIVs are ################################################ */
+/* simply uncomment this section to see the where the major layout divs are and to adjust margins and padding; when not needed just comment out! */
+
+
+/* #wrapper, 
+#headwrap, 
+#logo, 
+#logotext, 
+.placeholder, 
+#nasaLinks, 
+#nasaLinks p, 
+#search, 
+#backgroundHolder, 
+#leftcol, 
+#centerwide, 
+#centeronly, 
+#footwrap, 
+#govlogo, 
+#govlogotext, 
+#mdlogo, 
+#whotext   {border: 1px dotted;} */
+/*   */
+
+/* ################################################ BASIC ################################################ */
+
+.hidden {display: none;}
+
+.invisible {visibility: hidden;}
+
+.nonvisual {display: block;
+position: absolute;
+top: 0;
+left: -1000px;}
+
+.clear {clear: both;}
+.left {float: left;}
+.right {float: right;}
+.center {margin: auto;}
+
+img {border: none;}
+img.left {margin: 0px 8px 5px 0;}		/* provides space around images when they are floated left */
+img.right {margin: 0px 0 5px 8px;}		/* provides space around images when they are floated right */
+
+hr {margin: 1em 0 1em 0;}
+
+/* ################################################ HEADER stuff ################################################ */
+
+#headwrap {display: table-row;
+border-collapse: collapse;
+width: 100%;}					/* basic container for the header stuff */
+
+.placeholder {display: table-cell;
+width: 800px;
+min-width: 100px;}
+
+#logo {display: table-cell;
+min-width: 65px;}
+
+#logo img {vertical-align: middle;}
+
+#logotext {display: table-cell;
+min-width: 650px;}
+
+#logotext a {margin: 0 0 0 10px;
+text-decoration: none;
+color: #000;
+vertical-align: middle;}
+
+
+
+
+
+#nasaLinks {display: table-cell;
+vertical-align: middle;
+min-width: 100px;}
+
+#nasaLinks p {margin: 0;
+font-size: 0.7em;
+border-left: 2px solid #ab6500;
+padding: 3px 0 3px 12px;}
+
+#nasaLinks p a:link, #nasaLinks p a:visited {text-decoration: none;
+font-weight: normal;
+color: #333;}
+
+#nasaLinks p a:hover {text-decoration: underline;}
+
+
+
+
+
+#search {display: table-cell;
+vertical-align: middle;
+min-width: 230px;}
+
+#searchbox {margin: 0;
+padding: 5px 10px 5px 15px;
+color: #fff;
+background: #ab6500;
+font-size: 0.7em;}
+
+#searchbox.rbutton {font-size: 0.7em;
+color: #fff;}
+
+/* ################################################ FOOTER ################################################ */
+
+#footwrap {display: table-row;
+border-collapse: collapse;
+width: 100%;}					/* basic container for the footer stuff */
+
+#footer {border-top: 2px solid;
+border-color: #ab6500;
+padding: 5px 0 15px 0;}
+
+#govlogo {display: table-cell;
+vertical-align: middle;
+min-width: 200px;}
+
+#govlogotext {display: table-cell;
+min-width: 200px;
+color: #000;
+vertical-align: middle;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 0.7em;}
+
+#mdlogo {display: table-cell;
+vertical-align: middle;
+min-width: 200px;}
+
+#whotext {display: table-cell;
+vertical-align: middle;
+min-width: 230px;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 0.7em;}
+
+/* ################################################ MENU stuff ################################################ */
+
+/* please see nav.css for the navigation menu style sheet 
+
+In general, you shouldn't mess with that css unless you really know what you are doing!*/
+
+/* ################################################ LEFT & RIGHT SIDEBAR stuff ################################################ */
+
+#leftcol {margin: 5px 0px 5px 0px;
+float: left;
+width: 15em;}
+
+#rightcol {margin: 5px 0px 5px 0px;
+float: right;
+width: 15em;}
+
+.sidebarSection {margin-bottom: 1em;
+border: 1px solid #ab6500;}
+
+.sidebarSection h2 {margin: 0;
+padding: .1em .5em;
+color: #fff;
+background: #ab6500;
+font-size: 110%;}
+
+.sidebarSection h3 {margin: 0;
+padding: .6em .5em .1em .5em;
+color: #000;
+background: #fff;}
+
+.sidebarSection p {margin: 0;
+padding: .2em;}
+
+.sidebarSection ul {
+list-style: none;
+padding-left: 0;
+padding-top: .3em;
+padding-bottom: .8em;}
+
+.sidebarSection li {
+padding: .2em .5em;}
+
+/* The following styles for the sidebar section do not appear to be used but are available if needed */
+
+.sidebarSection li.list {margin: 0;
+font-size: 70%;
+list-style-position: inside;
+list-style-type: circle;
+list-style-image: url(/webdings/arrow_ori.gif);
+line-height: 1.0em;
+padding: 4px 5px .8em 5px;}
+
+.sidebarSection li.none{list-style-type: none;}
+
+.sidebarSection li.sublist{margin: 0;
+font-size: 70%;
+list-style-position: inside;
+list-style-type: circle;
+list-style-image: url(/webdings/arrow_ori.gif);
+line-height: 1.0em;
+padding: 2px 0px .3em 30px;}
+
+.sidebarSection li.subsublist {margin: 0;
+font-size: 70%;
+list-style-position: inside;
+list-style-type: circle;
+list-style-image: url(/webdings/arrow_ori.gif);
+line-height: 1.0em;
+padding: 2px 0px .3em 40px;}
+
+.sidebarLink {padding: .2em .5em .8em 1.2em;
+background: transparent url(/webdings/plus.gif) no-repeat .5em .5em;
+font-size: 75%;}
+
+/* The above styles for the sidebar section do not appear to be used but are available if needed */
+
+.sidebar a {color: #00c;
+text-decoration: none;}
+
+.sidebar a:hover {text-decoration: underline;}
+
+/* ################################################ MAIN CONTENT ################################################ */
+/* if using a right column; used occasionally*/
+#centercol {margin: 5px 15.5em 0 15.5em;
+padding: 10px;}
+
+/* if there is no right column; used most of the time*/
+#centerwide {margin: 5px 50px 0 15.5em;
+padding: 10px;}
+
+/* if there are no left or right columns!! */
+#centeronly {margin: 5px 5.5em 0 10px;
+padding: 10px;}
+
+/* ################################################ content stuff ################################################ */
+/* These have been checked out and 'work' */
+
+h1 {margin-top: 0;
+margin-bottom: .5em;
+font-size: 200%;}
+
+h2 {margin-top: 1em;
+margin-bottom: .5em;
+font-size: 125%;
+border-bottom: 1px dotted;}
+
+p {margin-top: .6em;
+margin-bottom: 1.4em;}
+
+blockquote {margin-left: 1em;
+margin-right: 1em;}
+
+code {
+	margin-left: 2em;
+	color: #900;
+	font-family: monospace;
+	font-size: 110%;
+}
+
+/* A definition list. */		/* Used on the FAQ page */
+dl {margin-top: 0.5em;}
+dd {padding-bottom: 0.5em;
+margin-left: 2em;}
+
+#centercol ol, #centerwide ol, #centeronly ol, 
+#centercol ul, #centerwide ul, #centeronly ul {margin:5px 15px 15px 30px;
+padding-left:5px;
+list-style-position:outside;
+text-align:left;
+}
+
+#centercol li, #centerwide li, #centeronly li {padding-bottom:5px;}
+
+table, tbody, tr, td, th {
+padding:0;
+border:0;
+background:#fff;
+vertical-align:top;}
+
+table {margin: auto;}
+tbody, tr, td, th {margin:0;}
+
+table.datatab {margin:auto;
+width: 96%;
+border: 1px solid #666;
+margin-bottom:15px;
+/* font-size:12px; */}
+
+table.datatab thead tr td {
+background:#9cf;
+color:#000;
+font-weight:bold;
+padding: 3px 8px;
+border-left: 1px solid #fff;
+border-bottom: 1px solid #fff;}
+
+/* added class to mimic thead when want a row later to resemble */
+tr.thead2 td {
+background:#9cf;
+color:#000;
+font-weight:bold;
+padding: 3px 8px;}
+
+table.datatab tbody tr td {
+/* font-size:12px; */
+padding: 3px 8px;
+border-left: 1px solid #D9D9D9;
+border-bottom: 1px solid #D9D9D9;}
+
+table.datatab tbody tr.odd td {
+background-color:#edf3fe;}
+
+/* added row color for meeting breaks*/
+table.datatab tbody tr.break td {
+background-color:#f3feed;}
+
+/* added row color for restricted data*/
+table.datatab tbody td.access {
+	background-color: #fce3dd;
+	
+}
+
+table.important {margin: auto;
+border: 3px solid #f00;
+margin-bottom: 15px;
+padding: 10px;
+width: 75%;}
+
+table.important h1 {font-size: 2em;
+color: #f00;
+text-align: center;}
+
+table.important p {text-align: justify;
+color: #000;}
+
+table.mfa {margin: auto;
+border: 5px solid #FF7900;
+margin-bottom: 15px;
+padding: 10px;
+width: 75%;}
+
+table.mfa h1 {font-size: 2em;
+color: #009A49;
+text-align: center;}
+
+table.mfa p {text-align: justify;
+color: #000;}
+
+pre {font-family: monospace;}
+
+/* ################################################ style for images with captions ################################################ */
+
+#centercol div.capleft, #centerwide div.capleft, #centeronly div.capleft {
+margin:0 20px 5px 0;
+float:left;
+padding: 0;}
+
+#centercol div.capleft p, #centerwide div.capleft p, #centeronly div.capleft p, 
+#centercol div.capright p, #centerwide div.capright p, #centeronly div.capright p {
+font-size:11px;
+color:#036;}
+
+#centercol div.capleft img, #centerwide div.capleft img #centeronly div.capleft img,
+#centercol div.caplright img, #centerwide div.capright img #centeronly div.capright img {
+margin:0;
+padding:0px;}
+
+#centercol div.capright, #centerwide div.capright, #centeronly div.capright {
+margin:0 0 5px 20px;
+float:right;
+padding: 0;}
+
+/* ################################################ other special styles ################################################ */
+
+.title, dt {color: #081d8b;
+font-weight: bold;}
+
+.title {text-decoration: underline;}
+
+.red {color: #b00;
+font-weight:bold;}
+
+.green {color: #0b0;
+font-weight:bold;}
+
+.gold {color: #D4AF37;
+font-weight:bold;}
+
+.highlight {background-color: #ff0;}
+
+.even {background-color:#edf3fe;}
+
+a[href^="http://"], a[href^="https://"] {background: url(/webdings/link_external.png) center right no-repeat;
+padding-right: 13px;}
+
+a[href^="http://sbn.psi.edu"], a[href^="https://sbn.psi.edu"] {background: none;
+padding-right: 0;}
+
+a[href^="ftp://"] {background: url(/webdings/link_external.png) center right no-repeat;
+padding-right: 13px;}
+
+a[href$='.pdf'], a[href$='.PDF'] {
+background:transparent url(/webdings/link_pdf.png) center right no-repeat;
+/* display:inline-block; */
+padding-right: 21px;
+/* padding-left:20px;
+line-height:18px; */}
+
+a[href$='.zip'], a[href$='.rar'], a[href$='.gzip'], a[href$='.tar.Z'], a[href$='.tar.gz'] {
+background:transparent url(/webdings/link_compress.png) center right no-repeat;
+/* display:inline-block; */
+padding-right: 21px;
+/* padding-left:20px;
+line-height:18px; */}
+
+a[href$='.doc'], a[href$='.docx'] {
+background:transparent url(/webdings/link_word.png) center right no-repeat;
+/* display:inline-block; */
+padding-right: 21px;
+/* padding-left:20px;
+line-height:18px; */}
+
+a[href$='.ppt'], a[href$='.pptx'] {
+background:transparent url(/webdings/link_ppt.png) center right no-repeat;
+/* display:inline-block; */
+padding-right: 21px;
+/* padding-left:20px;
+line-height:18px; */}
+
+/* ################################################ form styles ################################################ */
+
+/* ################################################ accessibility ################################################ */
+a:focus{outline: lime solid 2px;}
+
+
+/* ################################################ sortable tables ################################################ */
+/* Sortable tables */
+
+/* table.sortable thead {
+    background-color:#eee;
+    color:#666666;
+    font-weight: bold;
+    cursor: default;} */
+
+table.sortable thead tr td {
+background:#9fc;
+color:#000;
+font-weight:bold;
+padding: 3px 8px;
+border-left: 1px solid #fff;
+border-bottom: 1px solid #fff;

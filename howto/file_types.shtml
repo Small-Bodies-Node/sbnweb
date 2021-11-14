@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<title>PDS-SBN: Archive File Types</title>
+
+<!-- 
+########################
+ALL of the head, style links, header and menu code is in the include. Edit that file with extreme care!!
+########################
+ -->
+<!--#include virtual="/css-n-includes/incl_top.inc"-->
+
+<!-- ################################################ LEFT SIDEBAR ########################################## -->
+<!--#include virtual="/css-n-includes/incl_left-side.inc"-->
+
+<!-- ################################################ MAIN ################################################## -->
+<div id="centerwide">
+<a name="mainContent"></a>
+<!-- ************************************************** You may begin editing! ************************************************** -->
+<h1>SBN Archive File Types</h1>
+<p>There are several different file types, indicated by the file extension, found in the SBN archives and in the data set review pages. They include:</p>
+<dl>
+<dt><strong>.asc</strong></dt>
+<dd>These are plain ASCII text files which are most often found in the document/ directory of a data set. Many times they accompany a .doc file and contain identical information for those users who can not open .doc files. They can be opened using a standard text editor or a browser.</dd>
+<dt><strong>.bin</strong></dt>
+<dd>These files contain tabular binary data. Some sort of software is typically required to view these files. The SBN utility for IDL, ReadPDS should read be able to read these files into IDL for further processing and display. (Be sure to use the correct PDS3 or PDS4 version.)</dd>
+<dt><strong>.cat</strong></dt>
+<dd>These are PDS3 required catalog files which supply high-level information about the (PDS3) data set for use in the central PDS catalog and will be found in the catalog/ directory. They include things like an overview of the data set, its processing history, and other information associated with the mission or subsequent data reduction which might be of interest. They are ASCII text files and can be displayed with any standard text editor. However, users with Windows systems should be aware that Windows reserves the .cat extension to indicate system security files, and may not allow unprivileged users to open or even see the files. Changing the files extension to .txt usually solves the problem. Browsers other than Internet Explorer will usually display these files on Windows systems without complaint. Do note, these can be found in a PDS4 archive for data that has been migrated from PDS3 into PDS4.</dd>
+<dt><strong>.csv</strong></dt>
+<dd>These are Comma-separated Variable format ASCII spreadsheets. In PDS4 they are used as to list all of the products in a collection and are referenced by the collection label. In PDS3 they may be found in the data/, document/, calibration (calib/), or index/ directory. They can be opened using any standard text editor, browser, or most spreadsheet programs with a CSV-import option.</dd>
+<dt><strong>.dat</strong></dt>
+<dd>The <strong>.dat</strong> suffix indicates a binary data file. They may appear in the data/ directory and have an associated PDS label. Some sort of software is typically required to view these files. The SBN utility for IDL, <a href="/tools/tools_readPDS.shtml">ReadPDS</a>, should read be able to read these files into IDL for further processing and display. (Be sure to use the correct PDS3 or PDS4 version.)</em>
+</dd>
+<dt><strong>.doc</strong></dt>
+<dd>These are Microsoft Word document files which may be found in the document/ directory. They contain detailed documentation on some aspect of the dataset from which they come. Typically, they are accompanied by a plain text version of the file (.asc file) or a .pdf version and a PDS label. They can be opened using Microsoft Word or other word processing software that is capable of reading Word 2003 and earlier documents.</dd>
+<dt><strong>.fit</strong></dt>
+<dd>Flexible Image Transport System (FITS) files are data files, and the most common image data format in the SBN archive. They may contain images, spectra, and/or tables. All FITS files have both a header and data in the same file and may have multiple file extensions. They also have separate PDS labels. FITS files should be readily interpreted by any standard FITS image display software or pre-existing routines in standard analysis packages (like IRAF, IDL, MatLab, Mathematica, etc.). Some links are provided for downloading display software: 
+<ul> 
+<li><a href="http://ds9.si.edu/" onclick="this.target='_blank'">SAOImage ds9</a></li> 
+<li><a href="http://heasarc.gsfc.nasa.gov/ftools/fv/fv_download.html" onclick="this.target='_blank'">fv</a></li> 
+</ul> 
+Note that the PDS labels which correspond to the FITS image files will contain a pointer and object description for the FITS header as well as the image.</dd>
+<dt><strong>.gif</strong></dt>
+<dd>Graphics Interface Format files are low-resolution image files which may appear in the document/ directory either as part of a larger collection of files or as stand-alone graphics. They will be listed in a PDS label and can be opened using most image manipulation software (like XV, Photoshop, etc.) or a browser.</dd>
+<dt><strong>.html/.htm</strong></dt>
+<dd>HyperText Markup Language (HTML/HTM) files can be included in a PDS archive so long as they are human-readable and do not have links external to the archive.</dd>
+<dt><strong>.img</strong></dt>
+<dd>These are PDS binary image files with attached or detached PDS labels. They may be found in the /data directory. They can be displayed using the PDS <a href="https://pds.jpl.nasa.gov/tools/nasa-view.shtml" onclick="this.target='_blank'">NASAView</a> tool. The SBN utility <a href="/tools/tools_readPDS.shtml">ReadPDS</a> will read the data into IDL. (Be sure to use the PDS4 version for PDS4 data sets.)</em></dd>
+<dt><strong>.jpg</strong></dt>
+<dd>These are compressed image files which may appear in the document/ directory either as part of a larger document or as stand-alone images. They will be referenced by a PDS label and can be opened using most image manipulation software (like XV, Photoshop, etc.) or a browser.</dd>
+<dt><strong>.lbl</strong></dt>
+<dd><strong>(PDS3 only)</strong> The PDS label files describe the contents of each referenced file in detail, field-by-field, and are a PDS3 archive requirement. Labels include a physical description of the storage format as well as a logical explanation of the significance or content of each field. Detached labels accompany most files in the SBN holdings and are ASCII text, so they can be read with any standard text editor or browser.</dd>
+<dt><strong>.pdf</strong></dt>
+<dd>These are Adobe Portable Document Format (PDF) files. They may be found in the document/ directory and should have an associated PDS label. They can be opened using any standard PDF viewer.</dd>
+<dt><strong>.png</strong></dt>
+<dd>These are Portable Network Graphics images, another image format. They may appear in the document/ directory as part of a larger document or as stand-alone images. They can be opened using most image manipulation software (like XV, Photoshop, etc.) or a browser.</dd>
+<dt><strong>.sch</strong></dt>
+<dd>This is the Schematron document. It is one of the two schema files referenced in PDS4 labels. The Schematron defines the syntax for relationships in XML documents and standard values. The SBN Wiki contains a useful page on viewing XML files which also applies to .sch files.</dd>
+<dt><strong>.tab</strong></dt>
+<dd>These are ASCII table files. Table files may be found in most directories. The tables should be accompanied by PDS labels. The tables should be displayable in a standard text editor or browser.</dd>
+<dt><strong>.tar</strong></dt>
+<dd>These files are tape archive format files, which are used to simplify storage and downloads of large data sets. They preserve the directory structure of the data set volume. Data reviewers and archive users may encounter .tar files when downloading an entire data directory or a large set of documentation. Tar files can be opened by using <a href="http://www.gnu.org/software/tar/" onclick="this.target='_blank'">GNU Tar software</a> or a similar program. <em>If the .tar file contains FITS files, <strong>do not use WinZip</strong> because it may corrupt the FITS files.</em></dd>
+<dt><strong>.tgz</strong></dt>
+<dd>These files are tape archive format (tar) files that have been compressed by gzip (GNU zip). This type of file is used to simplify storage and downloads of large data sets while preserving the directory structure. Data reviewers and archive users may encounter .tgz files when downloading an entire data directory or a large set of documentation. Tgz files can be opened by using:
+<ul>
+<li>On a Mac, the <em>Archive Utility</em></li>
+<li>On a Linux machine, <a href="http://www.gnu.org/software/tar/" onclick="this.target='_blank'">GNU Tar software</a> (<em>tar xcvz file.tgz</em>)</li>
+<li>On a Windows machine, a combination of <em>WinGzip</em> software and <a href="http://gnuwin32.sourceforge.net/" onclick="this.target='_blank'">GNU Win32 BsdTar software</a> to uncompress then unpack the file. <em>If the .tgz file contains FITS files, <strong>do not use WinZip</strong> because it may corrupt the FITS files.</em></li>
+</ul></dd>
+<dt><strong>.tif</strong></dt>
+<dd>Tagged Image File Format files are image files that may appear in the document/ directory either as part of a larger document or as stand-alone images. They can be opened using most image manipulation software (like XV, Photoshop, etc.) or a browser.</dd>
+<dt><strong>.txt</strong></dt>
+<dd>Typically the .txt extension is used in PDS to indicate small, simple text files that provide information about directory contents. Occasionally they will also appear as labeled ASCII documents in the document/ directory. These files will begin with PDS labels that are general only about a dozen lines long, followed immediately by the explanatory text. They can be read with any standard text editor or a browser.</dd>
+<dt><strong>.xls</strong></dt>
+<dd>These are Microsoft Excel (2003 and earlier) Spreadsheet files which may be found in the document/ directory. They may contain tabular data specific to the instrument and data reduction or details of the data acquisition. Typically, they are accompanied by a .tab or .asc version of the file and a PDS label. They can be opened using Microsoft Excel.</dd>
+<dt><strong>.xml</strong></dt>
+<dd>IN PDS4 .xml are used as label files that contain unique ID's for the products they are paired with, point to the physical files that contain the data, describe the structure of the data files, document various important aspects of the data, and are a PDS archive requirement. The <a href="https://sbnwiki.astro.umd.edu/wiki/SBN_PDS4_Migration_Wiki">SBN Wiki</a> contains a useful page on <a href="https://sbnwiki.astro.umd.edu/wiki/How_to_View_an_XML_File">viewing XML files</a>. Do note that although .xml files will largely be label files, it is conceivable that a .xml file could be used in another way within a dataset.</dd>
+<dt><strong>.xsd</strong></dt>
+<dd>This is the XML Schema document. It is one of the two schema files referenced in PDS4 labels. The XML Schema defines the structure of the XML documents with classes and attributes. The SBN Wiki contains a useful page on viewing XML files which also applies to .xsd files.</dd>
+<dt><strong>.zip</strong></dt>
+<dd>Zip files are compressed files. Data reviewers and archive users may encounter .zip files when downloading an entire data set, data directory or a large set of documentation. Zip files can be unpacked by using <a href="http://www.winzip.com/" onclick="this.target='_blank'">Zip software</a>, <a href="http://www.gnu.org/software/gzip/" onclick="this.target='_blank'">GNU Zip software</a>, <a href="http://www.winzip.com/downwz.htm" onclick="this.target='_blank'">WinZip</a> or a similar program.</dd>
+<dt><strong>SPICE files</strong></dt>
+<dd>Spacecraft, Planet, Instrument C-Matrix Events (SPICE) is an information system focused on solar system geometry, time, and related information. The <a href="https://naif.jpl.nasa.gov/naif/pds.html" onclick="this.target='_blank'">Navigation and Ancillary Information Facility</a> (NAIF) of the PDS has documentation, tools, tutorials, and sub-routines to read SPICE kernels (in C, Fortran, or IDL) for mission SPICE data. When supplied with a data set, SPICE files are in their own directory.</dd>
+</dl>
+<!-- ************************************************** End editing! ************************************************** -->
+<!--#include virtual="/css-n-includes/incl_bottom.inc"-->
+<br />Last updated: <!--#config timefmt="%A %B %d, %Y"--><!--#echo var="LAST_MODIFIED" --></div><!-- close id whotext -->
+</div><!-- close id footer -->
+</div><!-- end id footwrap -->
+</div><!-- close wrapper -->
+</body>
+</html>

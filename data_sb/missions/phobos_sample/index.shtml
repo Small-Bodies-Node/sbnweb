@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<title>SBN Mission Support: Phobos Sample Return</title>
+
+<!-- 
+########################
+ALL of the head, style links, header and menu code is in the include. Edit that file with extreme care!!
+########################
+ -->
+<!--#include virtual="/css-n-includes/incl_top.inc"-->
+
+<!-- ################################################ LEFT SIDEBAR ########################################## -->
+<!--#include virtual="/css-n-includes/incl_left-side.inc"-->
+
+<!-- ################################################ RIGHT SIDEBAR ########################################## -->
+<div id="rightcol">
+<div class="sidebarSection">
+<h2>Mission Websites</h2>
+<p>Here we list links to the primary mission website as well as pages about the mission on other sites such as the NSSDC, NASA portal, etc.</p>
+<ul>
+<li>Mission: <em>na</em></li>
+<li>NSSDC: <em>na</em></li>
+<li>NASA: <em>na</em></li>
+<li>SSE: <a href="https://solarsystem.nasa.gov/missions/phobos-grunt/in-depth" onclick="this.target='_blank'">Phobos-Grunt</a></li>
+<li>RSW: <a href="http://www.russianspaceweb.com/phobos_grunt.html" onclick="this.target='_blank'">Phobos-Grunt</a></li>
+<li>Wikipedia: <a href="https://en.wikipedia.org/wiki/Fobos-Grunt" onclick="this.target='_blank'">Fobos-Grunt</a></li>
+</ul>
+</div><!-- end class sidebarSection -->
+</div><!-- end id rightcol -->
+<!-- ################################################ MAIN ################################################## -->
+<div id="centercol">
+<a name="mainContent"></a>
+<!-- ************************************************** You may begin editing! ************************************************** -->
+<!--
+===========================================================================
+EDIT HISTORY:
++ 2014-11-20 EMW	updated link to Ferret
++ 2012-02-21 EMW	updated status of mission
++ 2011-08-17 EMW	added instrument list
++ 2011-04-15 EMW	converted page to list format
++ 2011-02-22 EMW	added right sidebar space
++ 2011-01-27 EMW	new page for missing missions
+===========================================================================
+-->
+
+<!-- Mission Title ====================================================== -->
+<h1>Phobos Sample Return</h1>
+
+<!-- Mission Description ================================================ -->
+<p>Phobos Sample Return is a planned Russian mission to Phobos with the goals of collecting soil samples from Phobos and returning them to Earth for scientific research, performing in situ and remote studies of Phobos including analysis of soil samples, and to study the Mars and its environment.
+
+<br /><br />Feb 2012: The spacecraft launched successfully on Nov. 9, 2011 and went into Earth-orbit. However, it failed to leave orbit and eventually burned up in the Earth's atmosphere on Jan. 15, 2012. At this time, the <a href="http://www.federalspace.ru/main.php" onclick="this.target='_blank'">Russian Federal Space Agency</a> is planning to try again by building a second spacecraft to be launched in 2016.</p>
+
+<!-- SBN Role =========================================================== -->
+<p>The archive of the Phobos Sample Return Mission (PhSRM) data will be prepared by the <a href="http://www.iki.rssi.ru/eng/" onclick="this.target='_blank'">Space Research Institute</a> (IKI) of the Russian Academy of Sciences under SBN supervision. IKI will provide web access to the data and SBN will provide a mirror site for this archive.</p>
+
+<!-- Instrument List ==================================================== -->
+<h2>Instruments</h2>
+<ul>
+<li>TV System (TVs) - Navigation and guidance imaging</li>
+<li>Gamma ray Spectrometer (GS)</li>
+<li>Neutron Spectrometer (NSP)</li>
+<li>Laser TOF Mass Spectrometer (MSS)</li>
+<li>Seismometer (SSM)</li>
+<li>Long-Wave Penetrating Radar (LWR)</li>
+<li>Optical Solar Sensor (AOS)</li>
+<li>Libration Measurements Thermodetector (LMT)</li>
+<li>Messbauer Spectrometer (MS)</li>
+<li>Gas Chromatograph (CHS)</li>
+<li>IR Fourier Spectrometer (IRFS)</li>
+<li>Dust Counter (DUC)</li>
+<li>Plasma Science Package (ICS)</li>
+<li>Living Interplanetary Flight Experiment (LIFE) - Test survival of organisms exposed to years of deep space travel</li>
+<li>Housekeeping Imager for Landing (TNSS) - Imaging to support landing on Phobos</li>
+<li>Housekeeping Laser Ranging System for Landing (LVV) - Altimetry measurements to support landing on Phobos</li>
+<li>Manipulator for Collecting Sample Returns (GZK)</li>
+<li>Doppler Measuring Instrument of Speed and Range (DISD)</li>
+</ul>
+
+<!-- Mission Data ======================================================= -->
+<h2>Data Sets</h2>
+<p>No data at this time.</p>
+
+<h3>Related Datasets</h3>
+<p>Use the <a href="https://sbnapps.psi.edu/ferret/">Small Bodies Data Ferret</a> to find other datasets for this mission/target.</p>
+
+<!-- ************************************************** End editing! ************************************************** -->
+<!--#include virtual="/css-n-includes/incl_bottom.inc"-->
+<br />Last updated: <!--#config timefmt="%A %B %d, %Y"--><!--#echo var="LAST_MODIFIED" --></div><!-- close id whotext -->
+</div><!-- close id footer -->
+</div><!-- end id footwrap -->
+</div><!-- close wrapper -->
+</body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<title>PDS: Small Bodies Node Home</title>
+
+<!-- 
+########################
+ALL of the head, style links, header and menu code is in the include. Edit that file with extreme care!!
+########################
+ -->
+<!--#include virtual="/css-n-includes/incl_top.inc"-->
+
+<!-- ################################################ LEFT SIDEBAR ########################################## -->
+<!--#include virtual="/css-n-includes/incl_left-side.inc"-->
+
+<!-- ################################################ RIGHT SIDEBAR ########################################## -->
+<!-- If there is a job (or anything that needs a right sidebar), use the jobs (or other) include and use div id="centercol"; otherwise, delete include line and use div id="centerwide" -->
+<!-- jobs include goes here when we have one -->
+
+<!-- ################################################ MAIN ################################################## -->
+<div id="centerwide"><!-- USE WHEN JUST HAVE LEFT AND MAIN CONTENT -->
+<!-- <div id="centercol"> --><!-- USE WHEN HAVE LEFT AND NEED RIGHT CONTENT -->
+<a name="mainContent"></a>
+<!-- ************************************************** You may begin editing! ************************************************** -->
+<h1>Welcome to the PDS Small Bodies Node</h1>
+<p><img src="/webdings/planets.jpg" width="89" height="92" class="left" alt="thumbnail of planets" />The <strong>S</strong>mall <strong>B</strong>odies <strong>N</strong>ode (SBN), a part of NASA's <strong><a href="https://pds.jpl.nasa.gov/" onclick="this.target='_blank'">Planetary Data System</a></strong>, specializes in the archiving, cataloging, and distributing of scientific data sets relevant to asteroids, comets and interplanetary dust.</p>
+
+<p>More specifically, SBN seeks to archive data from:</p>
+<ul>
+<li>space missions (primarily NASA, but also from other national agencies) that target small bodies or that have collected small bodies data<br />&nbsp;</li>
+<li>laboratory and ground-based data collected in support of small bodies missions as well as contributed ground-based observations<br />&nbsp;</li>
+<li>collected information about small bodies from published literature<br />&nbsp;</li>
+</ul>
+
+<p>NASA missions are <em>obligated</em> to archive their data within PDS so most of the data is related to and in support of NASA missions. Ground-based observers are <em>not required</em> to archive their data (because they are often funded from non-NASA/public sources) but are <em>welcome</em> to <a href="/howto/prepare_PDS4.shtml">contribute their data</a>.</p>
+
+<h2>Data Analysis Proposals Support</h2>
+<p><strong><em>Proposers please note:</em></strong> If you are planning to use PDS data for your ROSES data analysis proposal (e.g., Discovery Data Analysis Program, Cassini Data Analysis, Lunar Data Analysis, etc), please note the archive status indicated on the top of each dataset webpage. A status of &quot;archived&quot; or &quot;locally archived&quot; indicates the data are in their final form, while &quot;certified&quot; indicates there are minor editing corrections still to be made. Data sets with other status levels may be either in active development, or considered to have some significant deficiency. Proposers are urged to consult the ROSES solicitation and the appendix for the Program Element to which they are proposing for the specific guidelines on the use of spacecraft data in general and data sets with known issues in particular.</p>
+<ul class="news">
+
+<li>+ <a href="/proposals/ROSES.shtml">SBN Support for ROSES 2021</a><br />&nbsp;</li>
+<li>+ <a href="https://nspires.nasaprs.com/external/solicitations/summary!init.do?solId=%7B7E892B3A-4F62-AEB4-6A08-9DCA1977F31A%7D" onclick="this.target='_blank'">ROSES 2021</a> at <a href="https://nspires.nasaprs.com/external/" onclick="this.target='_blank'">NSPIRES</a>.<br /><br /></li>
+
+<li>+ <a href="/proposals/ROSES2020.shtml">SBN Support for ROSES 2020</a><br />&nbsp;</li>
+<li>+ <a href="https://nspires.nasaprs.com/external/solicitations/summary.do?solId=%7bBCEE336B-D550-CCBA-1C8C-7A866DB06F45%7d&path=&method=init" onclick="this.target='_blank'">ROSES 2020</a> at <a href="https://nspires.nasaprs.com/external/" onclick="this.target='_blank'">NSPIRES</a>.<br /><br /></li>
+
+<!-- <li>+ <a href="/proposals/ROSES2019.shtml">SBN Support for ROSES 2019</a><br />&nbsp;</li>
+<li>+ <a href="https://nspires.nasaprs.com/external/solicitations/summary!init.do?solId={ABB576B8-F844-25E0-AD23-9E94AAC04AE1}&path=open" onclick="this.target='_blank'">ROSES 2019</a> at <a href="https://nspires.nasaprs.com/external/" onclick="this.target='_blank'">NSPIRES</a>.<br /><br /></li> -->
+
+<!-- <li>+ <a href="/proposals/ROSES2018.shtml">SBN Support for ROSES 2018</a><br />&nbsp;</li>
+<li>+ <a href="https://nspires.nasaprs.com/external/solicitations/summary!init.do?solId={E2CB9318-72CB-C51A-6962-013E762AE713}&path=open" onclick="this.target='_blank'">ROSES 2018</a> at <a href="https://nspires.nasaprs.com/external/" onclick="this.target='_blank'">NSPIRES</a>.<br /><br /> --></li>
+
+</ul>
+
+<h2>Data Release Schedule</h2>
+<!-- <p>We have a <a href="/data_sb/resources/release_sched.shtml">data release schedule</a> that has the proposed dates of when data provided to the SBN for archiving will be publicly available. This is a proposed schedule and users should not be surprised if missions/projects are late.</p> -->
+<p>The <a href="https://pds.nasa.gov/datasearch/subscription-service/data-release-calendar.shtml">PDS Data Release Calendar</a> has the proposed dates of when mission data provided to the SBN for archiving will be publicly available. Additionally, SBN maintains a ground-based and R&amp;A <a href="/data_sb/resources/release_sched.shtml">data release schedule</a>.</p>
+
+
+
+<h2>New @ SBN</h2>
+<ul class="news">
+
+<!-- 2021.10.14 -->
+<li><span class="date">2021.10.14</span>
+<br />+ <a href="/holdings/pds4-spitzer:spitzer-spec-comet-v1.0/SUPPORT/dataset.shtml">Spitzer Space Telescope Spectroscopy of Comets</a> <code>urn:nasa:pds:spitzer:spitzer-spec-comet::1.0</code>
+<br />&nbsp;</li>
+
+
+<!-- 2021.10.10 -->
+<li><span class="date">2021.10.10</span>
+<br />+ <a href="https://sbnwiki.astro.umd.edu/wiki/PDS4_Viewer">PDS4 Viewer</a> and <a href="https://sbnwiki.astro.umd.edu/wiki/Python_PDS4_Tools">PDS4 Python Tools</a> v1.3 have been released.
+<br />&nbsp;</li>
+
+
+<!-- 2021.09.20 -->
+<li><span class="date">2021.09.20</span>
+<br />+ <a href="https://sbn.psi.edu/pds/resource/lc.html">Asteroid Lightcurve Database (LCDB) V4.0</a> and <a href="https://sbn.psi.edu/pds/resource/alcdef.html">Asteroid Lightcurve Data Exchange Format (ALCDEF) Database V1.0</a> released
+<br />&nbsp;</li>
+
+
+<!-- 2021.07.30 -->
+<li><span class="date">2021.07.30</span>
+<br />+ 80 datasets for all mission phases: <a href="data_sb/missions/rosetta/index.shtml">Rosetta-Orbiter RPCICA</a> Raw, Calibrated, Resampled Corrected, Resampled Corrected in Counts, Resampled Physical Mass, and Derived Moment data.
+<br />&nbsp;</li>
+
+<!-- 2021.07.28 -->
+<li><span class="date">2021.07.28</span>
+<br />+ The <a href="https://sbnmpc.astro.umd.edu/">Minor Planet Center Annex</a> has a simple new tool to search the naming citations of named minor planets. Check it out at <a href="https://sbnmpc.astro.umd.edu/mpcitations/index.shtml">Asteroid Name/Citation Search</a>.
+<br />&nbsp;</li>
+
+<!-- 2021.06.22 -->
+<li><span class="date">2021.06.22</span> 
+<br />+ <a href="/holdings/nh-a-alice-2-kem1-v4.0/dataset.shtml">New Horizons ALICE KEM1 Encounter Raw Data v4.0</a><!-- NH-A-ALICE-2-KEM1-V4.0 -->
+<br />+ <a href="/holdings/nh-a-alice-3-kem1-v4.0/dataset.shtml">New Horizons ALICE KEM1 Encounter Calibrated Data v4.0</a><!-- NH-A-ALICE-3-KEM1-V4.0 -->
+<br />+ <a href="/holdings/nh-a-leisa-2-kem1-v4.0/dataset.shtml">New Horizons LEISA KEM1 Encounter Raw Data v4.0</a><!-- NH-A-LEISA-2-KEM1-V4.0 -->
+<br />+ <a href="/holdings/nh-a-leisa-3-kem1-v4.0/dataset.shtml">New Horizons LEISA KEM1 Encounter Calibrated Data v4.0</a><!-- NH-A-LEISA-3-KEM1-V4.0 -->
+<br />+ <a href="/holdings/nh-a-lorri-2-kem1-v4.0/dataset.shtml">New Horizons LORRI KEM1 Encounter Raw Data v4.0</a><!-- NH-A-LORRI-2-KEM1-V4.0 -->
+<br />+ <a href="/holdings/nh-a-lorri-3-kem1-v4.0/dataset.shtml">New Horizons LORRI KEM1 Encounter Calibrated Data v4.0</a><!-- NH-A-LORRI-3-KEM1-V4.0 -->
+<br />+ <a href="/holdings/nh-a-mvic-2-kem1-v4.0/dataset.shtml">New Horizons MVIC KEM1 Encounter Raw Data v4.0</a><!-- NH-A-MVIC-2-KEM1-V4.0 -->
+<br />+ <a href="/holdings/nh-a-mvic-3-kem1-v4.0/dataset.shtml">New Horizons MVIC KEM1 Encounter Calibrated Data v4.0</a><!-- NH-A-MVIC-3-KEM1-V4.0 -->
+<br />+ <a href="/holdings/nh-a-pepssi-2-kem1-v4.0/dataset.shtml">New Horizons PEPSSI KEM1 Encounter Raw Data v4.0</a><!-- NH-A-PEPSSI-2-KEM1-V4.0 -->
+<br />+ <a href="/holdings/nh-a-pepssi-3-kem1-v4.0/dataset.shtml">New Horizons PEPSSI KEM1 Encounter Calibrated Data v4.0</a><!-- NH-A-PEPSSI-3-KEM1-V4.0 -->
+<br />+ <a href="/holdings/nh-a-rex-2-kem1-v3.0/dataset.shtml">New Horizons REX KEM1 Encounter Raw Data v3.0</a><!-- NH-A-REX-2-KEM1-V3.0 -->
+<br />+ <a href="/holdings/nh-a-rex-3-kem1-v3.0/dataset.shtml">New Horizons REX KEM1 Encounter Calibrated Data v3.0</a><!-- NH-A-REX-3-KEM1-V3.0 -->
+<br />+ <a href="/holdings/nh-a-sdc-2-kem1-v4.0/dataset.shtml">New Horizons SDC KEM1 Encounter Raw Data v4.0</a><!-- NH-A-SDC-2-KEM1-V4.0 -->
+<br />+ <a href="/holdings/nh-a-sdc-3-kem1-v4.0/dataset.shtml">New Horizons SDC KEM1 Encounter Calibrated Data v4.0</a><!-- NH-A-SDC-3-KEM1-V4.0 -->
+<br />+ <a href="/holdings/nh-a-swap-2-kem1-v4.0/dataset.shtml">New Horizons SWAP KEM1 Encounter Raw Data v4.0</a><!-- NH-A-SWAP-2-KEM1-V4.0 -->
+<br />+ <a href="/holdings/nh-a-swap-3-kem1-v4.0/dataset.shtml">New Horizons SWAP KEM1 Encounter Calibrated Data v4.0</a><!-- NH-A-SWAP-3-KEM1-V4.0 -->
+<br />&nbsp;</li>
+
+<!-- 2021.04.28 -->
+<li><span class="date">2021.04.28</span>
+<br />+ <a href="https://sbn.psi.edu/pds/resource/hayabusa2/nirs3.html">Hayabusa2 NIRS3 Bundle</a> <code>urn:jaxa:darts:hyb2_nirs3::1.0</code>
+<br />&nbsp;</li>
+
+<!-- 2021.03.05 -->
+<li><span class="date">2021.03.05</span> Datasets migrated to PDS4
+<br />+ <a href="/holdings/pds4-gbo-mcdonald:igi-19p-v1.0/SUPPORT/dataset.shtml">McDonald Observatory Images of Comet 19P/Borrelly</a><code>urn:nasa:pds:gbo-mcdonald:igi-19p::1.0</code>
+<br />+ <a href="/holdings/pds4-gbo-kpno:mosaic-9p-v1.0/SUPPORT/dataset.shtml">KPNO MOSAIC Images of 9P/Tempel 1 from 2005 Around the DI Encounter</a><code>urn:nasa:pds:gbo-kpno:mosaic-9p::1.0</code>
+<br />&nbsp;</li>
+
+<!-- 2020.12.21 -->
+<li><span class="date">2020.12.21</span> <a href="data_sb/missions/rosetta/index.shtml">Rosetta</a> NAVCAM (34 datasets) and RPCLAP (58 datasets) released
+<br />&nbsp;</li>
+
+<!-- 2020.12.08-->
+<li><span class="date">2020.12.08</span> <a href="data_sb/missions/rosetta/index.shtml">Rosetta</a> SREM release (98 datasets)
+<br />&nbsp;</li>
+
+<!-- 2020.11.12-->
+<li><span class="date">2020.11.12</span> NEW TOOL FOR SMALL-BODIES SEARCH
+<br />The NASA Planetary Data System's Small Bodies Node (SBN) announces the beta release of the <a href="https://catch.astro.umd.edu/">
+Comet Asteroid Telescopic Catalog Hub (CATCH)</a>, a graphical user interface service for searching SBN, and other survey, archives for small bodies. CATCH also has an API interface to facilitate automated searches by object name.
+<br />&nbsp;</li>
+
+
+</ul>
+
+<!-- ************************************************** End editing! ************************************************** -->
+<!--#include virtual="/css-n-includes/incl_bottom.inc"-->
+<br />Last updated:
+<!--#config timefmt="%A %B %d, %Y"-->
+<!--#echo var="LAST_MODIFIED" -->
+</div>
+<!-- close id whotext -->
+</div>
+<!-- close id footer -->
+</div>
+<!-- end id footwrap -->
+</div>
+<!-- close wrapper -->
+</body>
+
+</html>

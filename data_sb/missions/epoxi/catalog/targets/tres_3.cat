@@ -1,0 +1,54 @@
+PDS_VERSION_ID                    = PDS3                                      
+RECORD_TYPE                       = "STREAM"                                  
+LABEL_REVISION_NOTE               = "2008-12-15 EPOXI:McLaughlin Created.     
+  2009-08-06  EPOXI:McLaughlin  Lien resolution for 23 Jul 2009 peer review:  
+    Copied and dated latest properties from Extrasolar Planets Encyclopedia.  
+"                                                                             
+                                                                              
+OBJECT                            = TARGET                                    
+  TARGET_NAME                     = "TRES-3"                                  
+                                                                              
+  OBJECT                          = TARGET_INFORMATION                        
+    TARGET_TYPE                   = "STAR"                                    
+    PRIMARY_BODY_NAME             = "N/A"                                     
+    ORBIT_DIRECTION               = "N/A"                                     
+    ROTATION_DIRECTION            = "N/A"                                     
+    TARGET_DESC                   = "                                         
+                                                                              
+    Target Description                                                        
+    ==================                                                        
+      TrES-3 is a star with a detected substellar companion with the same     
+      designation, TrES-3, and is a target of the Extrasolar Planet           
+      Observation and CHaracterization (EPOCh) phase of the NASA EPOXI        
+      mission.  Other designations for this star are GSC 03089-00929 and      
+      1SWASP J175207.01+373246.3.  The star has the following astrometric     
+      and photometric properties:                                             
+                                                                              
+        Spectral type        : G                                              
+        Apparent V Magnitude : 12.4                                           
+        Distance             : 398 (+/- 92) pc                                
+        Mass                 : 0.924 (-0.04/+0.012) solar masses              
+        Radius               : 0.813 (-0.027/+0.012) solar radii              
+        RA                   : 17 52 07.020 (FK5, epoch and equinox 2000)     
+        Dec                  : +37 32 46.18 (FK5, epoch and equinox 2000)     
+                                                                              
+      The substellar companion TrES-3 was discovered in 2007 by the           
+      Trans-atlantic Exoplanet Survey (TrES).  The known properties of        
+      this extrasolar planet are:                                             
+                                                                              
+        Mass               : 1.92 (-/+0.023) Jupiter masses                   
+        Semi major axis    : 0.0226 (+/-0.0013) AU                            
+        Orbital period     : 1.30619 (-/+1e-5) days                           
+        Eccentricity       : 0                                                
+        Radius             : 1.295 (-/+0.081) Jupiter radii                   
+        Inclination        : 82.15 (-/+0.21) deg                              
+                                                                              
+      The astrometric and photometric properties were taken from the          
+      23 June 2009 update for this planetary system in the Extrasolar         
+      Planets Encyclopedia.  The encyclopedia is maintained by the Paris      
+      Observatory and is available online at http://exoplanet.eu.  Please     
+      consult this web site for the most up-to-date properties.               
+    "                                                                         
+  END_OBJECT                      = TARGET_INFORMATION                        
+END_OBJECT                        = TARGET                                    
+END                                                                           

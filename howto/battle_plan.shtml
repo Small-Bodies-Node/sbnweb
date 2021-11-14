@@ -1,0 +1,116 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<title>PDS-SBN: Data Reviewers: Basic Battle Plan</title>
+
+<!-- 
+########################
+ALL of the head, style links, header and menu code is in the include. Edit that file with extreme care!!
+########################
+ -->
+<!--#include virtual="/css-n-includes/incl_top.inc"-->
+
+<!-- ################################################ LEFT SIDEBAR ########################################## -->
+<!--#include virtual="/css-n-includes/incl_left-side.inc"-->
+
+<!-- ################################################ MAIN ################################################## -->
+<div id="centerwide">
+<a name="mainContent"></a>
+<!-- ************************************************** You may begin editing! ************************************************** -->
+<h1>SBN Data Reviewers: Basic Battle Plan</h1>
+<p>This page presents a basic plan of attack for reviewing a dataset. We assume you have already downloaded and unpacked the entire data set rather than just a few selected files, although these comments may also provide some ideas for working your way through a data set online without downloading the entire collection.</p>
+
+<p>As always, if you have any questions or problems with the data, please give us a call ASAP.</p>
+
+<p>Here are the basic steps:</p>
+<ol>
+<li><a href="#directory">Understand the directory structure.</a></li>
+<li><a href="#catalog">Read the catalog files.</a></li>
+<li><a href="#documents">Note the documentation.</a></li>
+<li><a href="#browse">Check for additional browsing help.</a></li>
+<li><a href="#data">Rummage through the data.</a></li>
+<li><a href="#other">Inspect any remaining directories.</a></li>
+<li><a href="#present">Present your results.</a></li>
+</ol>
+
+<hr />
+<a name="directory"></a>
+<h3>Understanding the directory structure</h3>
+<p>Each data set is organized as a directory tree. Most of the directory names are dictated by the PDS Standards Requirements. The directories you will most likely encounter are:</p>
+<ul>
+<li><strong><em>catalog/</em>:</strong> Contains files with the very high-level information used to populate the central PDS catalog for searching.</li>
+<li><strong><em>calibration/</em>:</strong> An optional directory that, when present, will contain calibration data files used to produce the data set.</li>
+<li><strong><em>document/</em>:</strong> Document files that provide detailed description and explanation of various topics related to the data, like calibration procedures, instrument descriptions and so on.</li>
+<li><strong><em>index/</em>:</strong> At a minimum this directory will contain files called <em>index.tab</em>, which contains the PDS manifest for the data set, and <em>checksum.tab</em>, which has MD5 checksums for everything in the data set. There might be additional table files containing scientific indices into the data (look for <em>.lbl</em> files describing the contents of the <em>.tab</em> files), or you might find scientifically interesting fields added to the <em>index.tab</em> file.</li>
+<li><strong><em>data/</em>:</strong> In SBN data sets, you will nearly always find the data in this subdirectory. If the data subdirectory has a different name for some reason, we'll make a big point of telling you.</li>
+</ul>
+<hr />
+<a name="catalog"></a>
+<h3>Read the catalog files</h3>
+<p>Start in the <em>catalog/</em> directory with the <em>catinfo.txt</em> file. This file will tell you what is in all the other files in the directory - so you can find the instrument catalog file, for example, by looking up its name in the <em>catinfo.txt</em> file. You should carefully review the data set catalog file (almost always called <em>dataset.cat</em> in SBN data sets), which should provide a good, high-level overview of the data set. Next, you should read the instrument catalog file, which should provide an overview of the instrument and its operations. Since these files are intended to provide high-level information, it is common for them to refer to other documents, either in the literature or included with the data in the <em>document/</em> directory, that contain more detailed descriptions. You should report any omissions or inadequacies you find in these files.</p>
+
+<p>After that there are a number of other files that contain either additional high-level information, like the mission and instrument host files, or very low-level detail, like the full citations for references mentioned in the various label and catalog files. These are less critical to the data set review, but we would appreciate any comments you can supply on these as well.</p>
+<blockquote>
+<h4><em>Note for</em> Windows <em>Users</em></h4>
+<p>The files of interest in here have an extension of <em>.cat</em> and are simple text files. If you are a Windows user you may have to force Windows to open them with a specific file editor, because Windows has reserved the <em>.cat</em> extension for security catalog files and gets nervous when ordinary users start messing with <em>.cat</em> files. Use the &quot;Open with&quot; right-click option in your Windows Explorer window to select an editor for viewing the files. Notepad and Wordpad usually work well.</p>
+
+<p>If you're trying to look at a <em>.cat</em> file in Internet Explorer, you will be stymied by the browser. You will have to download the file (right-click and &quot;Save target as&quot;) to your hard disk and then open it with any text editor. Other browsers may be happy to display these files directly and without complaint (Google Chrome is known to do so, for example).</p>
+</blockquote>
+<hr />
+<a name="documents"></a>
+<h3>Note the documentation</h3>
+<p>The <em>docinfo.txt</em> file provides a quick guide into the contents of the <em>document/</em> directory. This is the place to look for things like detailed instrument descriptions, calibration instructions, observers logs, or anything that serves to describe or explain the data and isn't an observational record. Not all the files will be relevant to the data set you are reviewing. We appreciate your comments on any and all documents you have the opportunity to read or reference during your review.</p>
+
+<p>In general, our reviewers tend to focus on the <em>data/</em> directory and consult the <em>document/</em> directory as questions arise, rather than attempting to read every document file in advance or trying to determine which document files are relevant to the data set in question.</p>
+
+<hr />
+<a name="browse"></a>
+<h3>Check for additional browsing help</h3>
+<p>Very large data sets frequently have a top-level directory called <em>browse/</em> which can provide a useful entry point for exploring the data. This directory may contain thumbnail representations of the data files, HTML files that can be opened in a browser for searching through the data, or specialized browsing indices (for use in Web browsers or spreadsheets, for example). When it exists, the contents of this directory can provide a useful overview of the data set and help focus your examination of the data.</p>
+
+<hr />
+<a name="data"></a>
+<h3>Rummage through the data</h3>
+<p>At this point you should have enough information to dive into the data and know where to look if you have questions about what you find in the data files and PDS labels. The <em>data/</em> directory itself may be subdivided in many ways, depending on the size of the data set. Small data sets may have no subdirectories; large mission data sets may have subdirectories for date or mission phase; and so on.</p>
+
+<p>In the data directories you will likely see files with an <em>.lbl</em> extension. These are detached PDS label files; they are plain text and can be displayed in any text editor. If you don't see any <em>.lbl</em> files, the PDS labels will appear at the top of the data files themselves. The labels, attached or detached, will have internal pointers to the data, a structural description of the observational data (usually at the bottom), and a series of <code>keyword = value</code> statements that should provide all the information essential to understanding and working with the data. Definitions for the <code>keywords</code> used in PDS labels are either in the <a href="https://pds.nasa.gov/tools/dd-search/" onclick="this.target='_blank'">Planetary Science Data Dictionary</a> database or in a local data dictionary provided by the mission which should be included in the <em>document/</em> directory of the data set.</p>
+
+<p>In examining the data files, you should check that all the keywords and the data themselves make sense. Try to use the data files to answer some observational question or scientific query. Apply any sanity checks that you can think of to the values you find in the label and data. The goal in reviewing the data files is to try to use them as an outside scientist would to do research. Verify that you have all the information needed to answer a scientific question based on the data and, if practical, work through to that answer.</p>
+
+<p>If the data set is very large, say thousands of images, we realize you won't be able to examine every image; but you should be able to carefully examine a few select files from various parts of the data set. Then you should spot-check a variety of other data files, e.g., by running a small script to display them in succession or to perform some calculation for which you have some idea what the answer should be.</p>
+
+<hr />
+<a name="other"></a>
+<h3>Inspect any remaining directories</h3>
+<p>Occasionally there are other directories included with the data that provide additional supporting information. For example:</p>
+<ul>
+<li><strong><em>geometry/</em>:</strong> This directory contains geometry data (pointing, target ephemeris, etc.). Sometimes this will be in the form of tables of text; sometimes this directory will contain kernel files for use with the NAIF SPICE system. The <em>geominfo.txt</em> file will provide content information.</li>
+<li><strong><em>software/</em>:</strong> It is rare to see software delivered as software because PDS will not generally guarantee to maintain and port the software <em>ad infinitum</em>. A <em>softinfo.txt</em> file should list the contents of the directory. More often you will encounter software source code provided to document a calibration algorithm or as an example of how to read a particularly complex data format in the <em>document/</em> directory. The principle task of the reviewer in this case is to ensure that the software is sufficiently well documented that the information indicated can actually be recovered from it.</li>
+<li><strong><em>extras/</em>:</strong> In fact, this directory is not considered to be part of the permanent archive. It is used to include things like specialized display code that might be useful for a few years while the data are still new, but which is not essential to the long-term viability of the data. An <em>extrinfo.txt</em> file should explain what is in the directory and what it might be good for.</li>
+</ul>
+
+<p>Comments on the usefulness, completeness, etc., of the contents of these additional directories are encouraged.</p>
+
+<hr />
+<a name="present"></a>
+<h3>Present your results</h3>
+<p>Many of our reviewers prepare a PowerPoint summary of their findings to present to the review team. We find that this is often very helpful when provided. In any case, we need some sort of written report of your findings, preferably before you leave the review. Major findings will be discussed in the review, while minor points (editorial points, typos, etc.) can be submitted in writing without discussion as desired.</p>
+
+<!-- ************************************************** End editing! ************************************************** -->
+<!--#include virtual="/css-n-includes/incl_bottom.inc"-->
+<br />Last updated:
+<!--#config timefmt="%A %B %d, %Y"-->
+<!--#echo var="LAST_MODIFIED" -->
+</div>
+<!-- close id whotext -->
+</div>
+<!-- close id footer -->
+</div>
+<!-- end id footwrap -->
+</div>
+<!-- close wrapper -->
+</body>
+
+</html>

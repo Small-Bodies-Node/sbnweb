@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<title>PDS-SBN: How to Prepare Data</title>
+
+<!-- 
+########################
+ALL of the head, style links, header and menu code is in the include. Edit that file with extreme care!!
+########################
+ -->
+<!--#include virtual="/css-n-includes/incl_top.inc"-->
+
+<!-- ################################################ LEFT SIDEBAR ########################################## -->
+<!--#include virtual="/css-n-includes/incl_left-side.inc"-->
+
+<!-- ################################################ MAIN ################################################## -->
+<div id="centerwide">
+<a name="mainContent"></a>
+<!-- ************************************************** You may begin editing! ************************************************** -->
+<h1>How to Prepare PDS4 Data</h1>
+<p>Preparing data for submission to the PDS includes not only labelling of data files and collection of documentation, but also content verification and usually at least some measure of reformatting to get the data into one of the standard deep archive formats required by the PDS. The formatting and documentation requirements of the PDS were developed in conjunction with astronomers to ensure that the data archived will be accessible long past the lifetime of the mission, its collaborators, or its hardware/software installation. The PDS format is specifically designed to be an <em>archive</em> format, not a working data format. Listed on this page are pointers to information and software tools to assist you in preparing and verifying data for submission to the PDS.</p>
+<ul>
+<li><a href="#Intro">Introductions</a></li>
+<li><a href="#Formats">A Word About Data Formats</a></li>
+<li><a href="#PDSdocs">PDS Standards Documents</a></li>
+<li><a href="#PDStools">PDS Tools</a></li>
+<li><a href="#SBNtools">SBN Tools</a></li>
+
+<!-- <li><a href="#Before">Verifying Data Submissions</a></li> -->
+</ul>
+<a name="Intro"></a>
+<h2>Introductions</h2>
+<p>The <a href="https://pds.jpl.nasa.gov/" onclick="this.target='_blank'">Planetary Data System (PDS)</a> is an archive of data products from NASA planetary missions and supporting ground observations sponsored by the NASA Office of Space Science. A useful mission archive, as required by most NRAs and AOs, includes formatted raw data from each instrument, data calibrated to physical units, and derived products. Derived data products are those based on further processing of the calibrated data, or on combinations of data from different sources, and include things like maps, overlays, and comparative tables. The archive should contain sufficient documentation of the mission, the instruments, and the calibrations so that future generations of scientists can intelligently use and, if required, even recalibrate the data on contemporary computing platforms, without recourse to the original mission personnel and facilities. <br /><br />The PDS has an <a href="https://pds.nasa.gov/home/proposers/proposing-missions.shtml" onclick="this.target='_blank'">Mission Preparer's Archive Guide</a> (MPAG) available to guide new data preparers through the archiving process. Preparing data for submission to the PDS includes not only the labeling of data files and collection of documentation, but also content verification and usually at least some measure of reformatting to get the data into one of the standard deep archive formats required by the PDS. The formatting and documentation requirements of the PDS were developed in conjunction with astronomers to ensure that the data archived will be accessible long past the lifetime of the mission, its collaborators, or its hardware/software installation. The PDS format is specifically designed to be an archive format, not a working data format. <br /><br />The <a href="https://olaf.psi.edu/">On-Line Archiving Facility (OLAF)</a> is a tool that data preparers can use to prepare and submit data and supporting documentation to the PDS for review and archiving. OLAF can accommodate tabular ASCII data and simple, single-image FITS files, whether from ground-based or spacecraft observations. OLAF simplifies the generation of the label, index and catalog files required for archiving these simple data formats. <br /><br />If you are submitting observations of a solar system small body, please follow these <a href="/howto/sbn_target_names.shtml">Small Body Target Name Conventions</a> to ensure that users can find your targets in the PDS catalog database.</p>
+
+<p>If you are using a coordinate system of a small body and this system has not been approved by IAU or you want to update the IAU approved coordinate system for some object, then SBN should review your coordinate system before you deliver data using the coordinate system. The procedure and requirements are described in the document <a href="/data_sb/resources/coordinate_systems.shtml">Coordinate Systems at PDS-SBN</a>.</p>
+<a name="Formats"></a>
+<h2>A Word About Data Formats</h2>
+<p>It has been our experience that simple data formats have several major advantages over more complex or proprietary formats:</p>
+<ol>
+<li>They are immediately accessible to a much wider section of the science community.</li>
+<li>They are stable over decades, maintaining accessibility for the projected life of the archive.</li>
+<li>They are easier to document and verify, facilitating efficient review and archiving.</li>
+</ol>
+<p>Therefore, the Small Bodies Node is a strong advocate of simple data structures, especially in high-level mission data products. The simple data structures are homogeneous arrays and flat (ASCII or binary) tables. Not surprisingly, these are also the formats well supported by the Flexible Image Transport System (FITS) standard, which provides a very general and widely accessible format for exchanging files between various platforms. <br />Note that, from an archiving point of view, headers (and trailers) that are appended to the data structures present no major problems, as long as they do not interrupt the byte stream which constitutes the observational data. Thus any compliant FITS file can be easily prepared for PDS archiving without modifying the original FITS file because the headers occur <em>before</em> the individual data structures.</p>
+<a name="PDSdocs"></a>
+<h2>PDS Standards Documents</h2>
+<p>In addition to the <a href="https://pds.jpl.nasa.gov/datastandards/documents/" onclick="this.target='_blank'">printed documents</a> available from the PDS, there are on-line versions accessible by Web browser:</p>
+<dl>
+<dt><strong>The Archiving Process</strong></dt>
+<dd>The <a href="https://pds.jpl.nasa.gov/home/providers/" onclick="this.target='_blank'">Archiving Process</a> discusses the structure of a PDS4 archive and the archiving process, including the data management plan, archive delivery, and peer review process.
+<br /></dd>
+<dt><strong>Information for Proposers</strong></dt>
+<dd>The PDS <a href="https://pds.jpl.nasa.gov/home/proposers/" onclick="this.target='_blank'">Information for Proposers</a> page includes links to various guides, tools and examples for use in preparing proposal containing archiving elements.
+<br /><a href="https://pds.nasa.gov/home/proposers/proposing-missions.shtml">Mission Proposer's Archiving Guide (MPAG)</a>
+<br /><a href="https://pds.nasa.gov/home/proposers/proposing-programs.shtml">Individual Proposer's Archive Guide (IPAG)</a></dd>
+<dt><strong>PDS Standards Reference</strong></dt>
+<dd>The <a href="https://pds.nasa.gov/datastandards/documents/" onclick="this.target='_blank'">PDS Standards Reference</a> contains the detailed PDS standards for things like archive layout, data label requirements, units of measure, time values and other aspects of the PDS archives.</dd>
+<dt><strong>Data Provider's Handbook</strong></dt>
+<dd>A <a href="https://pds.jpl.nasa.gov/datastandards/documents/">step-by-step guide</a> guide to developing an archive.</dd>
+<dt><strong>Data Dictionary</strong></dt>
+<dd>The <a href="https://pds.jpl.nasa.gov/datastandards/documents/" onclick="this.target='_blank'">Data Dictionary</a> contains the definitions for all keywords and data structures used in and available for archive datasets. A PDF version is available as well as a web interface to search for specific terms.
+<br /><a href="https://pds.jpl.nasa.gov/tools/dd-search/">Data Dictionary Search</a>.</dd>
+</dl>
+<a name="PDStools"></a>
+<h2>PDS Tools</h2>
+<p>A number of tools have been developed for generating and verifying PDS labels. The <a href="https://pds.jpl.nasa.gov/tools/about/" onclick="this.target='_blank'">complete inventory</a> of general PDS utilities is available from the Engineering Node. The tools our data preparers have found most useful are:</p>
+<ul>
+<li>The <a href="https://nasa-pds-incubator.github.io/validate/" onclick="this.target='_blank'">PDS Validate Tool</a> is intended for validating PDS product labels according to the PDS Standards and the Planetary Science Data Dictionary (PSDD).</li>
+<li>The <a href="https://nasa-pds-incubator.github.io/pds4-information-model/model-lddtool/index.html" onclick="this.target='_blank'">PDS Local Data Dictionary Tool</a> generates the files necessary to use a local data dictionary in PDS4 labels.</li>
+</ul>
+<a name="SBNtools"></a>
+<h2>SBN Tools</h2>
+<p>The SBN has also developed suites of small utilities for working with the types of data we most frequently encounter. The majority of these routines are written in Perl; some are written in ANSI-standard C. All are maintained in a linux environment. The source code for these routines is available from the SBN, as is, from our <a href="/tools/software.shtml">software archives</a>. Utilities available include:</p>
+<ul>
+<li>IDL procedures for reading PDS-labeled data</li>
+<li>Utilities for formatting and verifying PDS labels</li>
+<li>Text-handling utilities for working with FITS headers</li>
+<li>General utilities for formatting and manipulating ASCII files</li>
+</ul>
+
+<!-- <a name="Before"></a>
+<h2>Verifying Data Submissions</h2>
+<p>Most of the format and content validators used by the PDS archivists are available to download and run locally. It is highly recommended that data preparers run at least the PDS Validation Tool (Vtool), available from the <a href="https://pds.jpl.nasa.gov/tools/nasa-view.shtml" onclick="this.target='_blank'">PDS Software Download</a> page, on all labels and catalog files and to correct all syntactic and semantic errors reported. (Warnings about standard values and keywords which are not yet in the data dictionary but which are scheduled to be added may be ignored.)</p>
+
+<p>The same <a href="https://pds.jpl.nasa.gov/tools/nasa-view.shtml" onclick="this.target='_blank'">PDS Software Download</a> page has other types of validators available, as does the <a href="https://pds.nasa.gov/tools/tool-registry/other-tools.shtml" onclick="this.target='_blank'">Other Tools</a> page of the main PDS site, for use on particular types of data or for checking entire data sets. The <a href="http://pdstools.arc.nasa.gov/pdsWeb/ManageDataSets.action" onclick="this.target='_blank'">Volume Validation Tool</a>, for example, can perform referential integrity and indexing checks on an entire data set.</p>
+
+<p>If you are submitting data via the <a href="https://olaf.psi.edu/">On-Line Archiving Facility</a>, OLAF will run the appropriate validation routines on the data as it creates the labels and other PDS-required files.</p> -->
+<!-- ************************************************** End editing! ************************************************** -->
+<!--#include virtual="/css-n-includes/incl_bottom.inc"-->
+<br />Last updated:
+<!--#config timefmt="%A %B %d, %Y"-->
+<!--#echo var="LAST_MODIFIED" -->
+</div>
+<!-- close id whotext -->
+</div>
+<!-- close id footer -->
+</div>
+<!-- end id footwrap -->
+</div>
+<!-- close wrapper -->
+</body>
+
+</html>

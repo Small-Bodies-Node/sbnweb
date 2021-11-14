@@ -1,0 +1,119 @@
+PDS_VERSION_ID                    = PDS3                                      
+RECORD_TYPE                       = STREAM                                    
+LABEL_REVISION_NOTE               = "2007-06-08 Maud Barthelemy"              
+                                                                              
+OBJECT                            = TARGET                                    
+  TARGET_NAME                     = "EARTH"                                   
+                                                                              
+  OBJECT                          = TARGET_INFORMATION                        
+    TARGET_TYPE                   = "PLANET"                                  
+    PRIMARY_BODY_NAME             = "SUN"                                     
+    ORBIT_DIRECTION               = "PROGRADE"                                
+    ROTATION_DIRECTION            = "PROGRADE"                                
+    TARGET_DESC                   = "                                         
+                                                                              
+    TARGET PARAMETERS                                                         
+    =================                                                         
+                                                                              
+    A_AXIS_RADIUS                   : 6378.140000                             
+        TARGET_PARAMETER_UNCERTAINTY    :  0.01                               
+        DATA_SOURCE_ID                  :  RADIUS-PLANET                      
+                                                                              
+    B_AXIS_RADIUS                   : 6378.140000                             
+        TARGET_PARAMETER_UNCERTAINTY    :  0.01                               
+        DATA_SOURCE_ID                  :  RADIUS-PLANET                      
+                                                                              
+    C_AXIS_RADIUS                   : 6356.750000                             
+        TARGET_PARAMETER_UNCERTAINTY    :  0.01                               
+        DATA_SOURCE_ID                  :  RADIUS-PLANET                      
+                                                                              
+    FLATTENING                      : 0.003300                                
+        TARGET_PARAMETER_UNCERTAINTY    :  0.2E-5                             
+        DATA_SOURCE_ID                  :  RADIUS-PLANET                      
+                                                                              
+    MAGNETIC_MOMENT                 : 8000000000000000.000000                 
+        TARGET_PARAMETER_UNCERTAINTY    : UNK                                 
+        TARGET_PARAMETER_EPOCH          : 1987                                
+        DATA_SOURCE_ID                  : MAGMOMENT-PLANET                    
+    MASS                           : 5974200000000000270532608.000000         
+        TARGET_PARAMETER_UNCERTAINTY    : UNK                                 
+        TARGET_PARAMETER_EPOCH          : 1989                                
+        DATA_SOURCE_ID                  :PHYSICAL-PLANET                      
+                                                                              
+    MASS_DENSITY                    : 5.520000                                
+        TARGET_PARAMETER_UNCERTAINTY    : UNK                                 
+        TARGET_PARAMETER_EPOCH          : 1989                                
+        DATA_SOURCE_ID                  :PHYSICAL-PLANET                      
+                                                                              
+    EQUATORIAL_RADIUS               : 6378.140000                             
+        TARGET_PARAMETER_UNCERTAINTY    : 0.01                                
+        DATA_SOURCE_ID                  : RADIUS-PLANET                       
+                                                                              
+    MEAN_RADIUS                     : 6371.000000                             
+        TARGET_PARAMETER_UNCERTAINTY    : 0.01                                
+        DATA_SOURCE_ID                  : RADIUS-PLANET                       
+                                                                              
+    SURFACE_GRAVITY                 : 9.820000                                
+        TARGET_PARAMETER_UNCERTAINTY    : UNK                                 
+        TARGET_PARAMETER_EPOCH          : 1989                                
+        DATA_SOURCE_ID                  : SURFGRAV-PLANET                     
+                                                                              
+    REVOLUTION_PERIOD               : 365.200000                              
+        TARGET_PARAMETER_UNCERTAINTY    : UNK                                 
+        TARGET_PARAMETER_EPOCH          : 1989-02-03                          
+        DATA_SOURCE_ID                  : REVPER-PLANET                       
+                                                                              
+    POLE_RIGHT_ASCENSION            : -0.070000                               
+        TARGET_PARAMETER_UNCERTAINTY    : UNK                                 
+        TARGET_PARAMETER_EPOCH          : 1989                                
+        DATA_SOURCE_ID                  : ROTATION-PLANET                     
+                                                                              
+    POLE_DECLINATION                : 89.940000                               
+        TARGET_PARAMETER_UNCERTAINTY    : UNK                                 
+        TARGET_PARAMETER_EPOCH          : 1989                                
+        DATA_SOURCE_ID                  : ROTATION-PLANET                     
+                                                                              
+    SIDEREAL_ROTATION_PERIOD        : 0.997000                                
+        TARGET_PARAMETER_UNCERTAINTY    : UNK                                 
+        DATA_SOURCE_ID                  : PHYSICAL-PLANET                     
+                                                                              
+    MEAN_SOLAR_DAY                  : 1.000000                                
+        TARGET_PARAMETER_UNCERTAINTY    : UNK                                 
+        DATA_SOURCE_ID                  : MEANSOLARDAY-PLANET                 
+                                                                              
+    OBLIQUITY                       : 23.500000                               
+        TARGET_PARAMETER_UNCERTAINTY    : UNK                                 
+        DATA_SOURCE_ID                  : PHYSICAL-PLANET                     
+                                                                              
+    ORBITAL_ECCENTRICITY            : 0.017000                                
+        TARGET_PARAMETER_UNCERTAINTY    : UNK                                 
+        TARGET_PARAMETER_EPOCH          : 1989-02-03                          
+        DATA_SOURCE_ID                  : ELEMENTS-PLANET                     
+                                                                              
+    ORBITAL_INCLINATION             : 0.001400                                
+        TARGET_PARAMETER_UNCERTAINTY    : UNK                                 
+        TARGET_PARAMETER_EPOCH          : 1989-02-03                          
+        DATA_SOURCE_ID                  : ELEMENTS-PLANET                     
+                                                                              
+    ORBITAL_SEMIMAJOR_AXIS          : 149595611.000000                        
+        TARGET_PARAMETER_UNCERTAINTY    : UNK                                 
+        TARGET_PARAMETER_EPOCH          : 1989-02-03                          
+        DATA_SOURCE_ID                  : ORBSEMIMAJAX-PLANET                 
+                                                                              
+    ASCENDING_NODE_LONGITUDE        : 350.500000                              
+        TARGET_PARAMETER_UNCERTAINTY    : UNK                                 
+        TARGET_PARAMETER_EPOCH          : 1989-02-03                          
+        DATA_SOURCE_ID                  : ELEMENTS-PLANET                     
+                                                                              
+    PERIAPSIS_ARGUMENT_ANGLE        : 112.300000                              
+        TARGET_PARAMETER_UNCERTAINTY    : UNK                                 
+        TARGET_PARAMETER_EPOCH          : 1989-02-03                          
+        DATA_SOURCE_ID                  : PERIARGANG-PLANET"                  
+                                                                              
+  END_OBJECT                      = TARGET_INFORMATION                        
+                                                                              
+  OBJECT                          = TARGET_REFERENCE_INFORMATION              
+    REFERENCE_KEY_ID              = "UNK"                                     
+  END_OBJECT                      = TARGET_REFERENCE_INFORMATION              
+END_OBJECT                        = TARGET                                    
+END                                                                           

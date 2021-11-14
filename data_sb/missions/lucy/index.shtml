@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<title>SBN Mission Support: Lucy Mission</title>
+
+<!-- 
+########################
+ALL of the head, style links, header and menu code is in the include. Edit that file with extreme care!!
+########################
+ -->
+<!--#include virtual="/css-n-includes/incl_top.inc"-->
+
+<!-- ################################################ LEFT SIDEBAR ########################################## -->
+<!--#include virtual="/css-n-includes/incl_left-side.inc"-->
+
+<!-- ################################################ RIGHT SIDEBAR ########################################## -->
+<div id="rightcol">
+<div class="sidebarSection">
+<h2>Mission Websites</h2>
+<p>Here we list links to the primary mission website as well as pages about the mission on other sites such as the NSSDC, NASA portal, etc.</p>
+<ul>
+<li>Mission: <a href="http://lucy.swri.edu/" onclick="this.target='_blank'">Lucy</a></li><!-- <li>NSSDC: <a href="https://nssdc.gsfc.nasa.gov/nmc/spacecraftDisplay.do?id=2006-001A" onclick="this.target='_blank'">New Horizons</a></li> -->
+<li>NASA: <a href="https://www.nasa.gov/lucy/" onclick="this.target='_blank'">Lucy</a></li>
+<li>SSE: <a href="https://solarsystem.nasa.gov/missions/lucy/in-depth/" onclick="this.target='_blank'">Lucy</a></li>
+
+</ul>
+</div>
+<!-- end class sidebarSection -->
+</div>
+<!-- end id rightcol -->
+<!-- ################################################ MAIN ################################################## -->
+<div id="centercol">
+<a name="mainContent"></a>
+<!-- ************************************************** You may begin editing! ************************************************** -->
+<!--
+===========================================================================
+EDIT HISTORY:
++ 2019-02-08 EMW	added links, desciption, instruments
++ 2019-02-06 EMW	created page
+
+===========================================================================
+-->
+
+<!-- Mission Title ====================================================== -->
+<h1>Lucy</h1>
+
+<!-- Mission Description ================================================ -->
+<p>The mission description Lucy is a planned NASA mission that will tour six Jupiter trojans, asteroids which share Jupiter's orbit around the Sun, orbiting either ahead of or behind the planet and one main belt asteroid. Trojan asteroids may be remnants of the primordial material that formed the outer planets, and serve as time capsules from the birth of our Solar System more than 4 billion years ago. Lucy is planned to launch in 2021 and will arrive at the L4 Trojan cloud in 2027, where it will fly by four Trojans, 3548 Eurybates, 15094 Polymele, 11351 Leucus, and 21900 Orus. After these flybys, Lucy will return to the vicinity of the Earth whereupon it will receive a gravity assist to take it to the L5 Trojan cloud, where it will visit the binary Trojan 617 Patroclus with its satellite Menoetius.</p>
+
+<p></p>
+
+<!-- SBN Role =========================================================== -->
+<p>The SBN is the lead PDS node to archive the Lucy mission data. </p>
+
+<!-- PDS Subscription Service =========================================== -->
+<!-- <p>Use <a href="https://pds.nasa.gov/datasearch/subscription-service/top.cfm" onclick="this.target='_blank'"><strong>PDS Subscription Service</strong></a> to be first to get the New Horizons data. Sign up there to receive an e-mail notification when new data arrives for each New Horizons instrument.</p> -->
+
+<!-- Instrument List ==================================================== -->
+<h2>Instruments</h2>
+<ul>
+<li>L'Ralph - panchromatic and color visible imager (0.4-0.85 micron) and infrared spectroscopic mapper (1-3.6 &micro;m)</li>
+<li>L'LORRI - high-resolution visible imager.</li>
+<li>L'TES - thermal infrared spectrometer (6-75 &micro;m). </li>
+<li>The radio science investigation will determine the mass of the Trojans by using the spacecraft radio telecommunications hardware and high-gain antenna to measure Doppler shifts</li>
+</ul>
+
+<!-- Mission Data ======================================================= -->
+<h2>Data Sets</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <h3>Other Mission Datasets</h3>
+<ul>
+<li></li>
+</ul>
+
+<h3>Related Datasets</h3>
+<p>Use the <a href="https://sbnapps.psi.edu/ferret/">Small Bodies Data Ferret</a> to find other datasets for this mission/target.</p>
+
+<h3>Other Links</h3>
+
+<!-- ************************************************** End editing! ************************************************** -->
+<!--#include virtual="/css-n-includes/incl_bottom.inc"-->
+<br />Last updated:
+<!--#config timefmt="%A %B %d, %Y"-->
+<!--#echo var="LAST_MODIFIED" -->
+</div>
+<!-- close id whotext -->
+</div>
+<!-- close id footer -->
+</div>
+<!-- end id footwrap -->
+</div>
+<!-- close wrapper -->
+</body>
+
+</html>

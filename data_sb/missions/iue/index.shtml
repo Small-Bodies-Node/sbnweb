@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<title>SBN: The IUE Comet Observations</title>
+
+<!-- 
+########################
+ALL of the head, style links, header and menu code is in the include. Edit that file with extreme care!!
+########################
+ -->
+<!--#include virtual="/css-n-includes/incl_top.inc"-->
+
+<!-- ################################################ LEFT SIDEBAR ########################################## -->
+<!--#include virtual="/css-n-includes/incl_left-side.inc"-->
+
+<!-- ################################################ RIGHT SIDEBAR ########################################## -->
+<div id="rightcol">
+<div class="sidebarSection">
+<h2>Mission Websites</h2>
+<p>Here we list links to the primary mission website as well as pages about the mission on other sites such as the NSSDC, NASA portal, etc.</p>
+<ul>
+<li>Mission: <a href="http://sci.esa.int/science-e/www/area/index.cfm?fareaid=22" onclick="this.target='_blank'">IUE</a> (ESA)</li>
+<li>NSSDC: <a href="https://nssdc.gsfc.nasa.gov/nmc/spacecraftDisplay.do?id=1978-012A" onclick="this.target='_blank'">IUE</a></li>
+<li>NASA: <em>na</em></li>
+<li>MAST: <a href="http://archive.stsci.edu/iue/" onclick="this.target='_blank'">IUE data</a> (all)</li>
+</ul>
+</div><!-- end class sidebarSection -->
+</div><!-- end id rightcol -->
+<!-- ################################################ MAIN ################################################## -->
+<div id="centercol">
+<a name="mainContent"></a>
+<!-- ************************************************** You may begin editing! ************************************************** -->
+<!--
+===========================================================================
+EDIT HISTORY:
++ 2014-11-20 EMW	updated link to Ferret
++ 2012-06-06 EMW	used text sent by A'Hearn, redid page removing *volume* links
++ 2011-08-25 EMW	deleted links to disk1.html, disk2.html, disk3.html, disk4.html;
+					links to /JB/ are also bad but not sure what correct ones are
++ 2011-02-22 EMW	added right sidebar space
++ 2011-01-28 EMW	added content from old comet/missions page, but need to rearrange now
++ 2010-08-18 EMW	converted to xhtml, updated to new look
++ 2003-05-12 SAM	Corrected IEU instr desc and dataset overview links
+===========================================================================
+-->
+
+<!-- Mission Title ====================================================== -->
+<h1>The IUE Comet Observations</h1>
+
+<!-- Mission Description ================================================ -->
+<p>The International Ultraviolet Explorer (IUE) was launched on 26 January 1978 to serve as the first 'observatory facility' in space for use by guest observers. It contains two pairs (a Prime pair and a Redundant pair) of spectrographs, the Short-Wave spectrometer covering 1200-2000Å and the Long-Wave spectrometer covering 1900-3350Å. Both had a low dispersion (single grating) mode and a high resolution (cross-dispersed echelon) mode. There was gradual deterioration over that remarkably long operational period, including loos of gyroscopes, which resulted in less accurate pointing from 1985 on, and scattered light at small solar elongations thought to be reflections from torn pieces of thermal blankets. Having been designed for three years of operation, the observatory was shut down on 30 September 1996, after more than 18 years of continuous operation.
+<br /><br />This dataset consists of all spectra of comets that were obtained with IUE, extracted from the IUE databases and uniformly processed. The SWR spectrograph (Short-Wave Redundant) was almost never used. Use of LWP (Long-Wave Prime) was transferred to LWR (Long-Wave Redundant) fairly early in the mission. Spectra are numbered sequentially within each of the three cameras. Prefixes other than LWP, LWR, and SWP correspond to various processing stages (but always beginning with L or S).
+<br /><br />Additional IUE spectra associated with the impact of comet D/Shoemaker-Levy 9 into Jupiter are in the separate S-L9 dataset collection. Those are spectra of the impact events with Jupiter as the primary target rather than the comet.</p>
+
+<!-- Instrument List ==================================================== -->
+<h2>Instruments</h2>
+<ul>
+<li><a href="/holdings/iue-c-lwp-3-edr-iuecdb-v1.0/catalog/lwp.cat">Long-Wavelength Prime</a></li>
+<li><a href="/holdings/iue-c-lwr-3-edr-iuecdb-v1.0/catalog/lwr.cat">Long-Wavelength Redundant</a></li>
+<li><a href="/holdings/iue-c-swp-3-edr-iuecdb-v1.0/catalog/swp.cat">Short-Wavelength Prime</a></li>
+</ul>
+
+<!-- Mission Data ======================================================= -->
+<h2>Data Sets</h2>
+
+<h3>Comets</h3>
+<ul>
+<li><a href="/holdings/iue-c-lwp-3-edr-iuecdb-v1.0/dataset.shtml">Comet Database - LWP Spectrograph Observations - (Surveys)</a></li>
+<li><a href="/holdings/iue-c-lwr-3-edr-iuecdb-v1.0/dataset.shtml">Comet Database - LWR Spectrograph Observations - (Surveys)</a></li>
+<li><a href="/holdings/iue-c-swp-3-edr-iuecdb-v1.0/dataset.shtml">Comet Database - SWP Spectrograph Observations - (Surveys)</a></li>
+</ul>
+
+<h3>D/Shoemaker-Levy 9</h3>
+<ul>
+<li><a href="/holdings/iue-j-lwp-3-edr-sl9-v1.0/dataset.shtml">International Ultraviolet Explorer Long Wavelength Prime Spectra of D/Shoemaker-Levy 9</a></li>
+<li><a href="/holdings/iue-j-swp-3-edr-sl9-v1.0/dataset.shtml">International Ultraviolet Explorer Short Wavelength Prime Spectra of D/Shoemaker-Levy 9</a></li>
+</ul>
+
+<h3>Related Datasets</h3>
+<p>Use the <a href="https://sbnapps.psi.edu/ferret/">Small Bodies Data Ferret</a> to find other datasets for this mission/target.</p>
+
+<!-- ************************************************** End editing! ************************************************** -->
+<!--#include virtual="/css-n-includes/incl_bottom.inc"-->
+<br />Last updated: <!--#config timefmt="%A %B %d, %Y"--><!--#echo var="LAST_MODIFIED" --></div><!-- close id whotext -->
+</div><!-- close id footer -->
+</div><!-- end id footwrap -->
+</div><!-- close wrapper -->
+</body>
+</html>

@@ -1,0 +1,234 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<title>PDS: Small Bodies Node</title>
+
+<!--
+########################
+ALL of the head, style links, header and menu code is in the include. Edit that file with extreme care!!
+########################
+ -->
+
+<!--#include virtual="/css-n-includes/incl_top.inc"-->
+
+<!-- ################################################ MAIN ################################################## -->
+
+<div id="centeronly">
+
+<a name="mainContent"></a>
+<!-- ************************************************** You may begin editing! ************************************************** -->
+
+<a name="top"></a><h3>Object: 2P/Encke 1 (1818 W1) [<a href="../objclass.shtml#ETc" >ETc</a>]</h3>
+
+<table width="95%" class="datatab">
+	<colgroup>
+		<col width="25%" />
+		<col width="25%" />
+		<col width="25%" />
+		<col width="20%" />
+	</colgroup>
+	<thead><tr>
+		<td>Observation ID</td>
+		<td>Start Time</td>
+		<td>Instrument</td>
+		<td>Proposal ID</td>
+	</tr></thead>
+	<tr class="odd">
+		<td><a href="http://cda.harvard.edu/chaser?obsid=4468" onclick="this.target='_blank'">4468</a></td>
+		<td>2003-11-24 04:12:13</td>
+		<td>ACIS-S</td>
+		<td>05100560</td>
+	</tr>
+	<tr>
+		<td><a href="http://cda.harvard.edu/chaser?obsid=5253" onclick="this.target='_blank'">5253</a></td>
+		<td>2003-11-24 04:53:44</td>
+		<td>ACIS-S</td>
+		<td>05100560</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://cda.harvard.edu/chaser?obsid=5254" onclick="this.target='_blank'">5254</a></td>
+		<td>2003-11-24 05:23:44</td>
+		<td>ACIS-S</td>
+		<td>05100560</td>
+	</tr>
+	<tr>
+		<td><a href="http://cda.harvard.edu/chaser?obsid=5255" onclick="this.target='_blank'">5255</a></td>
+		<td>2003-11-24 05:53:44</td>
+		<td>ACIS-S</td>
+		<td>05100560</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://cda.harvard.edu/chaser?obsid=5256" onclick="this.target='_blank'">5256</a></td>
+		<td>2003-11-24 06:23:44</td>
+		<td>ACIS-S</td>
+		<td>05100560</td>
+	</tr>
+	<tr>
+		<td><a href="http://cda.harvard.edu/chaser?obsid=5257" onclick="this.target='_blank'">5257</a></td>
+		<td>2003-11-24 06:53:44</td>
+		<td>ACIS-S</td>
+		<td>05100560</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://cda.harvard.edu/chaser?obsid=5258" onclick="this.target='_blank'">5258</a></td>
+		<td>2003-11-24 07:23:44</td>
+		<td>ACIS-S</td>
+		<td>05100560</td>
+	</tr>
+	<tr>
+		<td><a href="http://cda.harvard.edu/chaser?obsid=5259" onclick="this.target='_blank'">5259</a></td>
+		<td>2003-11-24 07:53:44</td>
+		<td>ACIS-S</td>
+		<td>05100560</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://cda.harvard.edu/chaser?obsid=5260" onclick="this.target='_blank'">5260</a></td>
+		<td>2003-11-24 08:23:44</td>
+		<td>ACIS-S</td>
+		<td>05100560</td>
+	</tr>
+	<tr>
+		<td><a href="http://cda.harvard.edu/chaser?obsid=5261" onclick="this.target='_blank'">5261</a></td>
+		<td>2003-11-24 08:53:43</td>
+		<td>ACIS-S</td>
+		<td>05100560</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://cda.harvard.edu/chaser?obsid=5262" onclick="this.target='_blank'">5262</a></td>
+		<td>2003-11-24 09:23:44</td>
+		<td>ACIS-S</td>
+		<td>05100560</td>
+	</tr>
+	<tr>
+		<td><a href="http://cda.harvard.edu/chaser?obsid=5263" onclick="this.target='_blank'">5263</a></td>
+		<td>2003-11-24 09:53:44</td>
+		<td>ACIS-S</td>
+		<td>05100560</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://cda.harvard.edu/chaser?obsid=5264" onclick="this.target='_blank'">5264</a></td>
+		<td>2003-11-24 10:23:44</td>
+		<td>ACIS-S</td>
+		<td>05100560</td>
+	</tr>
+	<tr>
+		<td><a href="http://cda.harvard.edu/chaser?obsid=5265" onclick="this.target='_blank'">5265</a></td>
+		<td>2003-11-24 10:53:44</td>
+		<td>ACIS-S</td>
+		<td>05100560</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://cda.harvard.edu/chaser?obsid=5266" onclick="this.target='_blank'">5266</a></td>
+		<td>2003-11-24 11:23:43</td>
+		<td>ACIS-S</td>
+		<td>05100560</td>
+	</tr>
+	<tr>
+		<td><a href="http://cda.harvard.edu/chaser?obsid=5267" onclick="this.target='_blank'">5267</a></td>
+		<td>2003-11-24 11:53:43</td>
+		<td>ACIS-S</td>
+		<td>05100560</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://cda.harvard.edu/chaser?obsid=5268" onclick="this.target='_blank'">5268</a></td>
+		<td>2003-11-24 12:23:43</td>
+		<td>ACIS-S</td>
+		<td>05100560</td>
+	</tr>
+	<tr>
+		<td><a href="http://cda.harvard.edu/chaser?obsid=5269" onclick="this.target='_blank'">5269</a></td>
+		<td>2003-11-24 12:53:43</td>
+		<td>ACIS-S</td>
+		<td>05100560</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://cda.harvard.edu/chaser?obsid=5270" onclick="this.target='_blank'">5270</a></td>
+		<td>2003-11-24 13:23:44</td>
+		<td>ACIS-S</td>
+		<td>05100560</td>
+	</tr>
+	<tr>
+		<td><a href="http://cda.harvard.edu/chaser?obsid=5271" onclick="this.target='_blank'">5271</a></td>
+		<td>2003-11-24 13:53:44</td>
+		<td>ACIS-S</td>
+		<td>05100560</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://cda.harvard.edu/chaser?obsid=5272" onclick="this.target='_blank'">5272</a></td>
+		<td>2003-11-24 14:23:44</td>
+		<td>ACIS-S</td>
+		<td>05100560</td>
+	</tr>
+	<tr>
+		<td><a href="http://cda.harvard.edu/chaser?obsid=5273" onclick="this.target='_blank'">5273</a></td>
+		<td>2003-11-24 14:53:44</td>
+		<td>ACIS-S</td>
+		<td>05100560</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://cda.harvard.edu/chaser?obsid=5274" onclick="this.target='_blank'">5274</a></td>
+		<td>2003-11-24 15:23:44</td>
+		<td>ACIS-S</td>
+		<td>05100560</td>
+	</tr>
+	<tr>
+		<td><a href="http://cda.harvard.edu/chaser?obsid=5275" onclick="this.target='_blank'">5275</a></td>
+		<td>2003-11-24 15:53:44</td>
+		<td>ACIS-S</td>
+		<td>05100560</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://cda.harvard.edu/chaser?obsid=5276" onclick="this.target='_blank'">5276</a></td>
+		<td>2003-11-24 16:23:43</td>
+		<td>ACIS-S</td>
+		<td>05100560</td>
+	</tr>
+	<tr>
+		<td><a href="http://cda.harvard.edu/chaser?obsid=5277" onclick="this.target='_blank'">5277</a></td>
+		<td>2003-11-24 16:53:43</td>
+		<td>ACIS-S</td>
+		<td>05100560</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://cda.harvard.edu/chaser?obsid=5278" onclick="this.target='_blank'">5278</a></td>
+		<td>2003-11-24 17:23:43</td>
+		<td>ACIS-S</td>
+		<td>05100560</td>
+	</tr>
+	<tr>
+		<td><a href="http://cda.harvard.edu/chaser?obsid=5279" onclick="this.target='_blank'">5279</a></td>
+		<td>2003-11-24 17:53:43</td>
+		<td>ACIS-S</td>
+		<td>05100560</td>
+	</tr>
+	<tr class="odd">
+		<td><a href="http://cda.harvard.edu/chaser?obsid=5280" onclick="this.target='_blank'">5280</a></td>
+		<td>2003-11-24 18:23:44</td>
+		<td>ACIS-S</td>
+		<td>05100560</td>
+	</tr>
+	<tr>
+		<td><a href="http://cda.harvard.edu/chaser?obsid=5281" onclick="this.target='_blank'">5281</a></td>
+		<td>2003-11-24 18:53:43</td>
+		<td>ACIS-S</td>
+		<td>05100560</td>
+	</tr>
+</table>
+<br />
+<p>To access the information above, click <a href="http://cda.harvard.edu/chaser?obsid=4468,5253,5254,5255,5256,5257,5258,5259,5260,5261,5262,5263,5264,5265,5266,5267,5268,5269,5270,5271,5272,5273,5274,5275,5276,5277,5278,5279,5280,5281" onclick="this.target='_blank'">here</a>, or go to the <a href="http://cda.harvard.edu/chaser/" onclick="this.target='_blank'">Chandra Observation Search site</a> and enter the Observation ID or Proposal Number in the fields provided and click the search button found on the upper-left-hand-corner.</p><br /><p>[<a href="#top">Back to Top</a>] [<a href="../Chandra.shtml#COMET">Back to Comets</a>]</p>
+
+<a name="bottom"></a>
+
+<!-- ************************************************** End editing! ************************************************** -->
+<!--#include virtual="/css-n-includes/incl_bottom.inc"-->
+<br />Last updated: <!--#config timefmt="%A %B %d, %Y"--><!--#echo var="LAST_MODIFIED" --></div><!-- close id whotext -->
+
+</div><!-- close id footer -->
+</div><!-- end id footwrap -->
+
+</div><!-- close wrapper -->
+
+</body>
+</html>

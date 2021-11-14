@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<title>SBN Data by Type of Observation (Data Type)</title>
+
+<!-- 
+########################
+ALL of the head, style links, header and menu code is in the include. Edit that file with extreme care!!
+########################
+ -->
+<!--#include virtual="/css-n-includes/incl_top.inc"-->
+
+<!-- ################################################ LEFT SIDEBAR ########################################## -->
+<!--#include virtual="/css-n-includes/incl_left-side.inc"-->
+
+<!-- ################################################ MAIN ################################################## -->
+<div id="centerwide">
+<a name="mainContent"></a>
+<!-- ************************************************** You may begin editing! ************************************************** -->
+<!--
+===========================================================================
+EDIT HISTORY:
++ 2019-02-28 EMW	fixed link to PSI's shape models
++ 2016-03-31 EMW	renamed 'Thermal Models' to 'Thermal and Microwave Data'
++ 2012-06-08 EMW	updated PSI grouping per Carol's email; reordered comet groups to alphabetical
++ 2011-03-14 EMW	edited descriptions
++ 2011-02-03 EMW	rearranged page for new landing page, most original information copied over to comet_type.shtml
+===========================================================================
+-->
+<a name="top"></a>
+<h1>SBN Data by Type of Observation (Data Type)</h1>
+<p></p>
+<table width="85%">
+<colgroup>
+<col width="40" />
+<col width="5%" />
+<col width="40" />
+</colgroup>
+<tr>
+<td>
+<h2>Asteroids and Satellites</h2>
+<ul>
+<li><a href="https://sbn.psi.edu/pds/archive/altimetry.html">Altimetry</a></li>
+<li><a href="https://sbn.psi.edu/pds/resource/near/maginst.html">Magnetometer</a> - NEAR Magnetometer</li>
+<li><a href="https://sbn.psi.edu/pds/archive/image.html">Optical Image Data</a></li>
+<li><a href="https://sbn.psi.edu/pds/archive/orbital.html">Orbital data</a>, including proper elements and dynamical families </li>
+<li><a href="https://sbn.psi.edu/pds/archive/phot.html">Photometry and Lightcurves</a></li>
+<li><a href="https://sbn.psi.edu/pds/archive/physical.html">Physical Properties</a>, including spin vectors, taxonomic classifications, albedos, densities, and diameters.</li>
+<li><a href="https://sbn.psi.edu/pds/archive/polarimetry.html">Polarimetry</a></li>
+<li><a href="https://sbn.psi.edu/pds/archive/radar.html">Radar</a></li>
+<li><a href="https://sbn.psi.edu/pds/resource/near/rssinst.html">Radio Science</a> - NEAR Radio Science</li>
+<li><a href="https://sbn.psi.edu/pds/shape-models/">Shape Models</a></li>
+<li><a href="https://sbn.psi.edu/pds/resource/near/spice.html">SPICE Kernels</a> - NEAR SPICE Archive</li>
+<li><a href="https://sbn.psi.edu/pds/archive/spectra.html">Spectrophotometry and Spectra</a></li>
+<li><a href="https://sbn.psi.edu/pds/archive/xgn.html">X-ray/Gamma-ray/Neutron</a></li>
+<li><a href="https://sbn.psi.edu/pds/archive/other.html">Other</a>, including maps, names and id's, and bibliography</li>
+</ul>
+
+<br />
+<h2>Dust</h2>
+<p><a href="https://sbn.psi.edu/pds/archive/dust.html">Dust Archive @ PSI</a></p>
+</td>
+<td></td>
+<td>
+<h2>Comets</h2>
+<ul>
+<li><a href="/data_sb/comet_type.shtml#astro">Astrometry</a></li>
+<li><a href="/data_sb/comet_type.shtml#image">Imaging</a></li>
+<li><a href="/data_sb/comet_type.shtml#movie">Movies</a></li>
+<li><a href="/data_sb/comet_type.shtml#parti">Particles/Plasma/Magnetosphere Detectors</a></li>
+<li><a href="/data_sb/comet_type.shtml#photo">Photometry &amp; Lightcurves</a></li>
+<li><a href="/data_sb/comet_type.shtml#physi">Physical Properties</a></li>
+<li><a href="/data_sb/comet_type.shtml#polar">Polarimetry</a></li>
+<li><a href="/data_sb/comet_type.shtml#radio">Radio Science</a></li>
+<li><a href="/data_sb/comet_type.shtml#shape">Shape Models</a></li>
+<li><a href="/data_sb/comet_type.shtml#spect">Spectra</a></li>
+<li><a href="/data_sb/comet_type.shtml#spice">SPICE Kernels</a></li>
+<li><a href="/data_sb/comet_type.shtml#therm">Thermal and Microwave Data</a></li>
+<li><a href="/data_sb/comet_type.shtml#misc">Miscellaneous</a></li>
+</ul>
+
+<br />
+<h2>Laboratory Data</h2>
+<ul>
+<li><a href="lab_type.shtml">@ SBN</a></li>
+<li><a href="https://pds-geosciences.wustl.edu/spectrallibrary/default.htm">@ Geo</a></li>
+</ul>
+</td>
+</tr>
+</table>
+<!-- ************************************************** End editing! ************************************************** -->
+<!--#include virtual="/css-n-includes/incl_bottom.inc"-->
+<br />Last updated: <!--#config timefmt="%A %B %d, %Y"--><!--#echo var="LAST_MODIFIED" --></div><!-- close id whotext -->
+</div><!-- close id footer -->
+</div><!-- end id footwrap -->
+</div><!-- close wrapper -->
+</body>
+</html>

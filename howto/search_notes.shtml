@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<title>PDS-SBN: How to Search for Data</title>
+
+<!-- 
+########################
+ALL of the head, style links, header and menu code is in the include. Edit that file with extreme care!!
+########################
+ -->
+<!--#include virtual="/css-n-includes/incl_top.inc"-->
+
+<!-- ################################################ LEFT SIDEBAR ########################################## -->
+<!--#include virtual="/css-n-includes/incl_left-side.inc"-->
+
+<!-- ################################################ MAIN ################################################## -->
+<div id="centerwide">
+<a name="mainContent"></a>
+<!-- ************************************************** You may begin editing! ************************************************** -->
+<h1>How to Search for Data</h1>
+<p>There are several ways to search for data archived within SBN:</p>
+<ul>
+<li>You can browse through the SBN data collection using the Data Archives link in the top menu of this page (replicated in the top box to the left). These menus appear on all the primary website pages.</li>
+<li>There is also a Google search box in the top right of every page on this website that will do a text-based search on the content of the SBN data sets themselves.</li>
+<li>You can search through the main PDS catalog, which lists all data from all the PDS nodes including the SBN, on the <a href="https://pds.nasa.gov/datasearch/data-search/" onclick="this.target='_blank'">PDS Data Search</a> page. Several different search methods are available through that site.</li>
+</ul>
+
+<p>Since asteroids and comets are notorious for having several designations, and for changing names and IDs over time, we have two cross-identification utilities available on our <a href="/tools/software.shtml">tools and utilities page</a> to assist in disambiguating names and finding alternate identifications for these objects to use in searching.</p>
+
+<h3>How the Site is Organized</h3>
+<p>Although the actual data is simply archived as data sets with unique data set IDs, we have organized the overlying website by mission/investigation since most of the data we have are from missions. We've also cross-referenced the data by target and data/observation type. So if you know what mission or target or observation type, then using the top menu or left sidebox &quot;Data Archives&quot; links will probably be the easiest. There are some ground-based observations, but it is up to individual researchers as to whether or not they archive their data within PDS.</p>
+
+<h3>What You'll Find</h3>
+<p>All NASA planetary missions are required to archive their data with the Planetary Data system. In the archives you'll find data from past missions as well as current missions that have been operating long enough to collect, review and submit data for archiving. Also included are some data from a few non-US missions, especially those that have (or had) instrument teams funded by NASA. The Small Bodies Node (SBN) curates the comet, asteroid and dust data from these missions. </p>
+
+<p>In addition, the SBN has also collected several hundred ground-based data sets, including surveys and a number of catalogs of properties collected from the literature as well as ground-based spectroscopy, imaging, and so on. Very often these data sets contain tables of data that list hundreds or even thousands of different objects in each table. For these data sets the target name in the database is often just &quot;Comets&quot; or &quot;Asteroids&quot;.</p>
+
+<p>When you are looking for a specific, named object, bear in mind that unless this object was the target of an entire data set, as with Comet Tempel&nbsp;1 and Deep Impact, a search on target name may not produce many specific data sets. In this case, you should try searching first for the kind of data you want - images, spectra, physical characteristics, etc. - and then look in the data set index or data tables for the specific object you're interested in. <!-- The <a href="/tools/form_sbxid.shtml">Small Bodies Cross-ID</a> utility can help you find alternate names for objects of interest. --></p>
+
+<p>Alternately, you can test out the <a href="https://sbnapps.psi.edu/ferret/">SBN Data Ferret</a>, a utility still in active development that integrates many of these ground-based surveys and catalogs into a single database that can be searched by target name to return known properties and archived observations. It can also be used to generate a list of objects matching a set of given characteristics.</p>
+
+<p>Finally, note that only NASA-funded planetary missions and NASA-funded instrument teams on foreign spacecraft are obligated to archive their data with the PDS. The PDS does work cooperatively with a number of foreign space agencies to include non-US data in the archives wherever feasible, and the SBN in particular regularly seeks out ground-based data sets of significance to our users to include in the archives. If you have or know of a data set that would augment or complement our current holdings, please let us know.</p>
+
+<!-- ************************************************** End editing! ************************************************** -->
+<!--#include virtual="/css-n-includes/incl_bottom.inc"-->
+<br />Last updated: <!--#config timefmt="%A %B %d, %Y"--><!--#echo var="LAST_MODIFIED" --></div><!-- close id whotext -->
+</div><!-- close id footer -->
+</div><!-- end id footwrap -->
+</div><!-- close wrapper -->
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<title>PDS-SBN: Small Bodies Cross-Identification Utility</title>
+<style type="text/css">
+label {float:left;display:block;width:5em;font-weight:bold;padding:2px 6px;}
+label:hover {background:#FFFF66;cursor:pointer;}
+fieldset {border:1px solid gray;padding: 6px;}
+fieldset span {display:block;}
+fieldset span label {float:none;display:inline;}
+fieldset legend {font-weight:bold;}
+</style>
+<!-- 
+########################
+ALL of the head, style links, header and menu code is in the include. Edit that file with extreme care!!
+########################
+ -->
+<!--#include virtual="/css-n-includes/incl_top.inc"-->
+
+<!-- ################################################ LEFT SIDEBAR ########################################## -->
+<!--#include virtual="/css-n-includes/incl_left-side.inc"-->
+
+<!-- ################################################ MAIN ################################################## -->
+<div id="centerwide">
+<a name="mainContent"></a>
+<!-- ************************************************** You may begin editing! ************************************************** -->
+<h1>Small Bodies Cross-Identification Utility</h1>
+<table class="important">
+<tr>
+<td><h1>Updating to New Version!</h1>
+<p>Note this version of the Cross-ID Utility is no longer working. We are in the process of porting and upgrading the code and expect to have the new version ready in late June.</p>
+</td>
+</tr>
+</table>
+<p><em><strong>Last cross-ID update:</strong> 01 April 2011</em></p>
+
+<!-- <form action="/SBNcgi/sbxid" method="POST"> -->
+<div class="center">
+<input type="hidden" name="attributes" value="x" />
+	<fieldset>
+		<legend>&nbsp;&nbsp;Search String&nbsp;&nbsp;</legend>
+		
+		<p>Enter an identification string below corresponding to all or part of an official <a href="/data_sb/resources/designation_formats.shtml">small body designation</a> and select the match criterion:</p>
+		<label for="mstring" id="Searchstring-ariaLabel"></label> 
+		<input id="mstring" name="mstring" type="text" aria-labeledby="Searchstring-ariaLabel" />
+	</fieldset>
+<br /><br />
+
+	<fieldset>
+		<legend>&nbsp;&nbsp;Match criterion&nbsp;&nbsp;</legend>
+		
+		<span>
+		<input value="exact" id="rad_Exact" name="mtype" type="radio" aria-labeledby="Matchcriterion-ariaLabel" />
+		<label for="rad_Exact" id="Matchcriterion-ariaLabel">Exact Match</label>
+		</span>
+		<blockquote>All characters, blanks and case are significant and must match the entire identification as it appears in the database.</blockquote>
+		
+		<span>
+		<input value="part" id="rad_Wildcard" name="mtype" type="radio" aria-labeledby="Matchcriterion-ariaLabel" checked="checked" />
+		<label for="rad_Wildcard" id="Matchcriterion-ariaLabel">Wildcard Match</label>
+		</span>
+		<blockquote>Case is not significant; non-alphanumeric characters are ignored. Two wildcard characters are recognized: the underscore ( _ ) matches exactly one arbitrary character; and the percent sign ( % ) matches zero or more arbitrary characters.</blockquote>
+	</fieldset>
+<br /><br />
+
+	<fieldset>
+		<legend>&nbsp;&nbsp;Object Types&nbsp;&nbsp;</legend>
+		<p>Select one or more of the following to limit the type of objects returned (selecting none returns all matching objects):</p>
+		<label for="objtypes" id="ObjectTypes-ariaLabel"></label>
+		<select id="objtypes" name="objtypes" multiple="multiple" aria-labeledby="ObjectTypes-ariaLabel">
+			<option value="AB">Asteroids</option>
+			<option value="PCDXB">All Comets</option>
+			<option value="PB">Periodic Comets (usually numbered)</option>
+			<option value="C">Non-periodic Comets</option>
+			<option value="D">Defunct Comets (disappeared, disintegrated, etc.)</option>
+			<option value="X">Lost Comets (inadequately determined orbit)</option>
+			<option value="S">Satellites</option>
+			<option value="M">Meteorites</option>
+			<option value="L">Major Planets</option>
+			<option value="W">Dwarf Planets</option>
+		</select>
+	</fieldset>
+<br /><br />
+<!-- 
+<input type="submit" value="Submit Query" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="reset" value="Reset Form" />
+ -->
+</div>
+</form>
+<h2>Cross-ID Sources</h2>
+<p>The cross-IDs incorporated into the database come from the following sources:</p>
+<ul>
+<li>Asteroid number and discovery designation correspondences come from Ted Bowell's asteroid cross-ID database, which he maintains privately and graciously makes available with regular updates every 2-3 months.</li>
+<li>Asteroid names come from the Minor Planet Center's <a href="http://www.minorplanetcenter.net/iau/lists/MPNames.html" onclick="this.target='_blank'">Minor Planet Names: Alphabetical List</a> page.</li>
+<li>Comet names, numbers and discovery designations come from a database of information extracted from IAU Circulars, Minor Planet Electronic Circulars and IAU Central Bureau Electronic Telegrams, maintained by the Comet Group at the University of Maryland.</li>
+<li>Planet, dwarf planet and natural satellite names and permanent designations come from the USGS Gazetteer of Planetary Nomenclature <a href="http://planetarynames.wr.usgs.gov/Page/Planets" onclick="this.target='_blank'">Planet and Satellite Names and Discoverers</a> page.</li>
+<li>Discovery designations for natural satellites come from a private database maintained by Mike A'Hearn, culled from information found in the IAU Circulars and Minor Planet Electronic Circulars.</li>
+<li>Meteorite names are those from the <a href="https://sbn.psi.edu/pds/resource/gaffey.html">Gaffey Meteorite Spectra</a> data set, which is included in the PDS/SBN holdings. Note that this source is far from complete for meteorite names. If you are specifically looking for meteorite names, a more complete <a href="http://www.lpi.usra.edu/meteor/metbullcheck.php" onclick="this.target='_blank'">Meteorite Name Checking Utility</a> is maintained by the Meteoritical Society.</li>
+</ul>
+
+<p>The contributions from all these sources are invaluable and much appreciated.</p>
+
+
+
+
+
+<!-- ************************************************** End editing! ************************************************** -->
+<!--#include virtual="/css-n-includes/incl_bottom.inc"-->
+<br />Last updated: <!--#config timefmt="%A %B %d, %Y"--><!--#echo var="LAST_MODIFIED" --></div><!-- close id whotext -->
+</div><!-- close id footer -->
+</div><!-- end id footwrap -->
+</div><!-- close wrapper -->
+</body>
+</html>

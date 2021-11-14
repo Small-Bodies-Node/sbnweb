@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<title>PDS-SBN: Small Body TARGET_NAME Conventions</title>
+
+<!-- 
+########################
+ALL of the head, style links, header and menu code is in the include. Edit that file with extreme care!!
+########################
+ -->
+<!--#include virtual="/css-n-includes/incl_top.inc"-->
+
+<!-- ################################################ LEFT SIDEBAR ########################################## -->
+<!--#include virtual="/css-n-includes/incl_left-side.inc"-->
+
+<!-- ################################################ MAIN ################################################## -->
+<div id="centerwide">
+<a name="mainContent"></a>
+<!-- ************************************************** You may begin editing! ************************************************** -->
+<h1>SBN Small Body TARGET_NAME Conventions</h1>
+<p>The only slightly facetious question has been asked:</p>
+<pre>
+ &gt; So what naming convention are we using for the three-trillion objects in
+ &gt; the small bodies universe?...
+</pre>
+<p>Selecting the appropriate TARGET_NAME value for a small body is a tricky business. Small body names are notorious for changing, often frequently and retrospectively back over decades (in the case of comets, for example). The colloquial name for an object like, say, &quot;SL9&quot; might seem suitable at the time of data preparation, but will that name be what a user enters at a prompt to search the PDS catalog 10 or even 5 years later? Worse than that, even a famous name like &quot;Halley&quot; is not unique, and in order to be useful in the catalog the TARGET_NAME value must at least be guaranteed to uniquely identify the physical body in question.</p>
+
+<p>Consequently, the SBN has settled on a target name format that actually combines several IDs. It has the advantage of including the definitive ID, which is often not commonly known, as well as the name (where available), which is commonly known but often only unique in a limited context.</p>
+
+<p>A few examples of SBN TARGET_NAME values will illustrate some of the various subtleties:</p>
+<pre> Halley's comet: &quot;1P/HALLEY 1 (1682 Q1)&quot;
+ Halley, the asteroid: &quot;2688 HALLEY&quot;
+ That bright comet from 1996: &quot;C/HYAKUTAKE (1996 B2)&quot;
+ A faint comet from 1995: &quot;C/HYAKUTAKE (1995 Y1)&quot;
+ One piece of split comet SL9: &quot;D/SHOEMAKER-LEVY 9-G (1993 F2-G)&quot;
+ Comet/Asteroid Chiron: &quot;95P/CHIRON (ASTEROID 2060)&quot; (comet dataset) &quot;2060 CHIRON&quot; (asteroid dataset) Asteroid Eros: &quot;433 EROS&quot;
+ An Unnamed Asteroid: &quot;ASTEROID 11000&quot;
+ An Unnumbered Asteroid: &quot;2003 AR1&quot;
+ Amalthea, the asteroid: &quot;113 AMALTHEA&quot;
+ Amalthea, the moon of Jupiter: &quot;J5 AMALTHEA&quot;
+ Castalia, the asteroid: &quot;4769 CASTALIA&quot;
+ Castalia, the meteorite: &quot;CASTALIA&quot;
+</pre>
+<p>For comets, the components are:</p>
+<ol>
+<li>Periodic number, if any</li>
+<li>Comet class designation (this may change)</li>
+<li>Comet name (this may change)</li>
+<li>Nucleus identifier, if any (used to reference a specific piece of a comet that has split - there may be several)</li>
+<li>Definitive IAU discovery designation (declared by Brian Marsden, who occasionally changes), including the nucleus identifier, if any</li>
+</ol>
+<h3>A Note About Comet Names</h3>
+<p>The SBN will continue the previous IAU practice of appending a sequential number to the names of short period (<em>P</em> &lt; 200 years) comets, a practice recently abandoned by the Minor Planet Center. So, for example,Halley's famous comet is &quot;Halley 1&quot;; there are comets Shoemaker-Levy 1 through 8 preceding the famous Shoemaker-Levy 9; and we can easily distinguish between the briefly famous comet Tempel&nbsp;1, the target for the Deep Impact mission, and comet Tempel 2, which will likely make its next pass through the inner solar system unmolested, at least by humans.</p>
+
+<p>For numbered asteroids, the components are:</p>
+<ol>
+<li>The word &quot;ASTEROID&quot;, for numbered but unnamed asteroids</li>
+<li>The asteroid number</li>
+<li>The asteroid name, if any</li>
+</ol>
+<p>For unnumbered asteroids, the only component is the principal preliminary designation. This can, and often does, change.</p>
+
+<p>For moons, the components are:</p>
+<ol>
+<li>The IAU designation (a letter indicating the planet followed by a number)</li>
+<li>The name, if any</li>
+</ol>
+<p>For meteorites, the only component is the name as listed in the &quot;Catalogue of Meteorites&quot; (Graham et al., 1985).</p>
+
+<p>Note that these conventions are relatively new. There are names like &quot;HALLEY&quot;and &quot;SL9&quot; in the central catalog data base now, and we are probably stuck with them for the foreseeable future. However, that does not preclude using appropriate TARGET_NAME values for new data sets.</p>
+
+<!-- ************************************************** End editing! ************************************************** -->
+<!--#include virtual="/css-n-includes/incl_bottom.inc"-->
+<br />Last updated: <!--#config timefmt="%A %B %d, %Y"--><!--#echo var="LAST_MODIFIED" --></div><!-- close id whotext -->
+</div><!-- close id footer -->
+</div><!-- end id footwrap -->
+</div><!-- close wrapper -->
+</body>
+</html>

@@ -166,7 +166,7 @@ a:active {} /* requires a blank style for :active to stop it being buggy */
 
 <div class="clear"></div>
 <!-- BEGIN Maintenance banner -->
-<table class="important">
+<!-- <table class="important">
 <tr>
 <td><h1>DOWNTIME ANNOUNCEMENT</h1>
 <h3>Tue 11 Jan 2022: There may be extended outages between 8am-6pm EST.
@@ -174,7 +174,7 @@ a:active {} /* requires a blank style for :active to stop it being buggy */
 <blockquote>College Park Energy (CPE) will be performing an electrical outage at the Atlantic Building (Wings 1, 2 & 3) & Cambridge Hall (Whole building), from 8:00 a.m. to 6:00 p.m. on Tuesday, January 11th, 2022. This is to perform maintenance on the electrical distribution system.</blockquote>
 </td>
 </tr>
-</table>
+</table> -->
 <!-- END Maintenance banner -->
 
 <!-- %&%&%&%&%&%&%&%&%&%&%&%&%&%&%&%&%&%&%&%&%&%& This ends the top include %&%&%&%&%&%&%&%&%&%&%&%&%&%&%&%&%&%&%&%&%&%& -->

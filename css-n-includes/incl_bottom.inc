@@ -4,7 +4,7 @@
 <div id="footwrap">
 <div id="footer">
 <div id="govlogo"><a href="https://www.nasa.gov/"><img src="/webdings/FirstGov_Logo.gif" width="195" height="59" alt="FirstGov logo as link to firstGov site" /></a></div><!-- close id govlogo -->
-<div id="govlogotext"><a href="https://itsupport.umd.edu/itsupport?id=kb_article_view&sysparm_article=KB0012916" onclick="this.target='_blank'" class="external">Privacy</a> / Copyright
+<div id="govlogotext"><a href="https://umd.edu/privacy-notice" onclick="this.target='_blank'" class="external">UMD Privacy Notice</a> / Copyright
 <br /><a href="https://www.hq.nasa.gov/pao/FOIA/" onclick="this.target='_blank'" class="external">Freedom of Information Act</a></div><!-- close id govlogotext -->
 <div class="placeholder">&nbsp;</div>
 <div id="mdlogo"><img src="/webdings/UM_primarysm.gif" width="185" height="32" alt="UMD Logo ball" />

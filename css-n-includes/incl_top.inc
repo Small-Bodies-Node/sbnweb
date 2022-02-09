@@ -166,14 +166,14 @@ a:active {} /* requires a blank style for :active to stop it being buggy */
 
 <div class="clear"></div>
 <!-- BEGIN Maintenance banner -->
-<table class="important">
+<!-- <table class="important">
 <tr>
 <td><h1>DOWNTIME ANNOUNCEMENT</h1>
 <h3>Mon 7 Feb 2022: There may be extended outages between 11am-6pm EST due to server maintenance.
 <br />Thank you for your patience.</h3>
 </td>
 </tr>
-</table>
+</table> -->
 <!-- END Maintenance banner -->
 
 <!-- %&%&%&%&%&%&%&%&%&%&%&%&%&%&%&%&%&%&%&%&%&%& This ends the top include %&%&%&%&%&%&%&%&%&%&%&%&%&%&%&%&%&%&%&%&%&%& -->

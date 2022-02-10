@@ -35,7 +35,7 @@
 
 	// Replace $SECRET_CODE with the Google Recaptcha secret code
 	// Contact PDS Engineering Node at pds_operator@jpl.nasa.gov to get this information.
-	$secret = '$SECRET_CODE';
+	$secret = '6LfLCIgUAAAAACC7IgKTyoC3Yv3xoc7bK2QiV2rc';
 
 	$response = $_POST['response'];
 	$verifyURL = $url . '?secret=' . urlencode($secret) . '&response=' . urlencode($response);

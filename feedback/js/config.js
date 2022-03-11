@@ -19,7 +19,7 @@ var config = {
 			{
 				title: "OpenPlanetary Forum",
 				url: "https://forum.openplanetary.org/"
-			},
+			}
 		]
 	},
 	tab: {

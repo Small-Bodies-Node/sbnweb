@@ -6,24 +6,20 @@ var config = {
 		additionalLinks: [
 			{
 				title: "Information for Data Users",
-				url: "https://pds.nasa.gov/home/users/"
+				url: "https://pdssbn.astro.umd.edu/howto/"
 			},
 			{
 				title: "Information for Proposers",
-				url: "https://pds.nasa.gov/home/proposers/"
+				url: "https://pdssbn.astro.umd.edu/proposals/ROSES.shtml"
 			},
 			{
 				title: "Information for Providers",
-				url: "https://pds.nasa.gov/home/providers/"
+				url: "https://pdssbn.astro.umd.edu/howto/prepare_PDS4.shtml"
 			},
 			{
 				title: "OpenPlanetary Forum",
 				url: "https://forum.openplanetary.org/"
 			},
-			{
-				title: "Site Map",
-				url: "https://pds.nasa.gov/site-help.shtml"
-			}
 		]
 	},
 	tab: {

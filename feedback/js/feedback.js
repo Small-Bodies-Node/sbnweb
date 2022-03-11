@@ -125,8 +125,11 @@ document.addEventListener("DOMContentLoaded", function(){
 				sendButton.type = "submit";
 				sendButton.value = "Send Feedback";
 				sendButton.setAttribute("class", "feedback-btn g-recaptcha");
-				sendButton.setAttribute("data-callback", "captchaCallback");
-				sendButton.setAttribute("id", "recaptcha");
+				// *** These two lines commented out to disable recaptcha:
+				// sendButton.setAttribute("data-callback", "captchaCallback");
+				// sendButton.setAttribute("id", "recaptcha");
+				// *** This line added as part of disabling recaptcha:
+				sendButton.onclick = returnMethods.send;
 
 				modalFooter.className = "feedback-footer";
 				modalFooter.appendChild( sendButton );
@@ -140,7 +143,8 @@ document.addEventListener("DOMContentLoaded", function(){
 
 				document.body.appendChild( modal );
 
-				window.grecaptcha.render("recaptcha", {sitekey: "6LfLCIgUAAAAAI3xLW5PQijxDyZcaUUlTyPDfYlZ"});
+				// *** This line commented out to disable recaptcha:
+				// window.grecaptcha.render("recaptcha", {sitekey: "6LfLCIgUAAAAAI3xLW5PQijxDyZcaUUlTyPDfYlZ"});
 			},
 
 			setupClose: function() {
@@ -160,7 +164,8 @@ document.addEventListener("DOMContentLoaded", function(){
 
 				button.disabled = false;
 
-				window.grecaptcha.reset();
+				// *** This line commented out to disable recaptcha:
+				// window.grecaptcha.reset();
 
 				// remove feedback elements
 				emptyElements( modalHeader );
@@ -175,7 +180,12 @@ document.addEventListener("DOMContentLoaded", function(){
 
 				// make sure send adapter is of right prototype
 				if ( !(adapter instanceof window.Feedback.Send) ) {
-					throw new Error( "Adapter is not an instance of Feedback.Send" );
+					// *** This line commented out to disable recaptcha:
+					// throw new Error( "Adapter is not an instance of Feedback.Send" );
+					// *** This code added as part of disabling recaptcha:
+					options.url = options.url || options.host + feedbackUrl;
+					options.adapter = options.adapter || new window.Feedback.XHR(options.url);
+					adapter = options.adapter;
 				}
 
 				data = options.page.data();

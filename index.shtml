@@ -63,9 +63,14 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 <h2>New @ SBN</h2>
 <ul class="news">
 
+<!-- 2022.03.10 -->
+<li><span class="date">2022.03.10</span>
+<br />+ <a href="/tools/tools_readPDS.shtml" onclick="this.target='_blank'">ReadPDS for PDS3</a> v4.10 has been released.
+<br />&nbsp;</li>
+
 <!-- 2022.02.23 -->
 <li><span class="date">2022.02.23</span>
-<br />+ The PDS Small Bodies Node (PDS SBN) announces the alpha release of the < href="https://sbnmpc.astro.umd.edu/mpecwatch/index.html" onclick="this.target='_blank'">MPEC Watch</a>, a service that provides various statistical metrics and plots derived from the Minor Planet Center's Minor Planet Electronic Circular service.
+<br />+ The PDS Small Bodies Node (PDS SBN) announces the alpha release of the <a href="https://sbnmpc.astro.umd.edu/mpecwatch/index.html" onclick="this.target='_blank'">MPEC Watch</a>, a service that provides various statistical metrics and plots derived from the Minor Planet Center's Minor Planet Electronic Circular service.
 <br />&nbsp;</li>
 
 <!-- 2021.10.14 -->

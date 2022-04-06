@@ -125,11 +125,8 @@ document.addEventListener("DOMContentLoaded", function(){
 				sendButton.type = "submit";
 				sendButton.value = "Send Feedback";
 				sendButton.setAttribute("class", "feedback-btn g-recaptcha");
-				// *** These two lines commented out to disable recaptcha:
-				// sendButton.setAttribute("data-callback", "captchaCallback");
-				// sendButton.setAttribute("id", "recaptcha");
-				// *** This line added as part of disabling recaptcha:
-				sendButton.onclick = returnMethods.send;
+				sendButton.setAttribute("data-callback", "captchaCallback");
+				sendButton.setAttribute("id", "recaptcha");
 
 				modalFooter.className = "feedback-footer";
 				modalFooter.appendChild( sendButton );
@@ -143,8 +140,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
 				document.body.appendChild( modal );
 
-				// *** This line commented out to disable recaptcha:
-				// window.grecaptcha.render("recaptcha", {sitekey: "6LfLCIgUAAAAAI3xLW5PQijxDyZcaUUlTyPDfYlZ"});
+				window.grecaptcha.render("recaptcha", {sitekey: "6LfLCIgUAAAAAI3xLW5PQijxDyZcaUUlTyPDfYlZ"});
 			},
 
 			setupClose: function() {
@@ -164,8 +160,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
 				button.disabled = false;
 
-				// *** This line commented out to disable recaptcha:
-				// window.grecaptcha.reset();
+				window.grecaptcha.reset();
 
 				// remove feedback elements
 				emptyElements( modalHeader );
@@ -180,12 +175,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
 				// make sure send adapter is of right prototype
 				if ( !(adapter instanceof window.Feedback.Send) ) {
-					// *** This line commented out to disable recaptcha:
-					// throw new Error( "Adapter is not an instance of Feedback.Send" );
-					// *** This code added as part of disabling recaptcha:
-					options.url = options.url || options.host + feedbackUrl;
-					options.adapter = options.adapter || new window.Feedback.XHR(options.url);
-					adapter = options.adapter;
+					throw new Error( "Adapter is not an instance of Feedback.Send" );
 				}
 
 				data = options.page.data();
@@ -202,7 +192,7 @@ document.addEventListener("DOMContentLoaded", function(){
 					if ( success === true ) {
 						message.innerHTML = 'Thank you for making the PDS a better site.<br/>If you provided an email address, a PDS representative will get back to you as soon as possible.';
 					} else {
-						message.innerHTML = 'There was an error sending your feedback.<br/>If the problem persists, please email <a href="mailto:pds_operator@jpl.nasa.gov">pds_operator@jpl.nasa.gov</a>.';
+						message.innerHTML = 'There was an error sending your feedback.<br/>If the problem persists, please email the <a href="mailto:pds_operator@jpl.nasa.gov">PDS Help Desk</a>.';
 					}
 					modalBody.appendChild( message );
 
@@ -226,24 +216,51 @@ document.addEventListener("DOMContentLoaded", function(){
 						url: captchaUrl,
 						data: {response: response},
 						success: function (data) {
-							//console.log(data);
-							captchaScore = parseFloat(data.substring(data.indexOf("float") + 6, data.indexOf("float") + 9));
-							if (captchaScore > 0.70) {
+							// console.log(data);
+							if (data === "true") {
 								options.url = options.url || options.host + feedbackUrl;
 								options.adapter = options.adapter || new window.Feedback.XHR(options.url);
 								emptyElements(modalBody);
 								returnMethods.send(options.adapter);
-							} else {
+							} else if (data === "false") {
 								modalBody.setAttribute("class", "feedback-body suspectedBot");
 								document.getElementById("recaptcha").disabled = true;
 								modalBody.insertAdjacentElement("afterbegin", element("p", "Are you a bot? Suspicious behavior detected."));
+							} else {
+								modalBody.setAttribute("class", "feedback-body captchaError");
+								returnMethods.setupClose();
+								var message = document.createElement("p"),
+									htmlString;
+								if (data.startsWith("[")) {
+									var captchaErrors = JSON.parse(data),
+										captchaErrorsLength = captchaErrors.length,
+										captchaErrorsHtmlString;
+									if (captchaErrorsLength > 1) {
+										captchaErrorsHtmlString = '<ul>';
+										for (var i = 0; i < captchaErrors.length; i++) {
+											captchaErrorsHtmlString += '<li>' + captchaErrors[i] + '</li>';
+										}
+										captchaErrorsHtmlString += '</ul>';
+									} else {
+										captchaErrorsHtmlString = captchaErrors[0];
+									}
+									htmlString = '<b>Error codes: </b>' + captchaErrorsHtmlString + '<br/>If the problem persists, please email the <a href="mailto:pds_operator@jpl.nasa.gov">PDS Help Desk</a>.';
+								} else {
+									htmlString = '<b>No reCaptcha response.</b><br/>If the problem persists, please email the <a href="mailto:pds_operator@jpl.nasa.gov">PDS Help Desk</a>.';
+								}
+								message.innerHTML = htmlString;
+								modalBody.insertAdjacentElement("afterbegin", message);
+
+								if ( window.additionalHelp ) {
+									modalBody.appendChild( window.additionalHelp );
+								}
 							}
 						},
 						error: function (XMLHttpRequest, textStatus, errorThrown) {
 							modalBody.setAttribute("class", "feedback-body captchaError");
 							returnMethods.setupClose();
 							var message = document.createElement("p");
-							message.innerHTML = '<b>Status: </b>' + textStatus + '; <b>Error: </b>' + errorThrown + '<br/>If the problem persists, please email <a href="mailto:pds_operator@jpl.nasa.gov">pds_operator@jpl.nasa.gov</a>.';
+							message.innerHTML = '<b>Status: </b>' + textStatus + '; <b>Error: </b>' + errorThrown + '<br/>If the problem persists, please email the <a href="mailto:pds_operator@jpl.nasa.gov">PDS Help Desk</a>.';
 							modalBody.insertAdjacentElement("afterbegin", message);
 
 							if ( window.additionalHelp ) {
@@ -574,7 +591,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
 		for (var key in data) {
 			emailData += key + ': ';
-			emailData += data[key] + '\n';
+			emailData += encodeURIComponent(data[key]) + '\n';
 		}
 
 		emailData += '\nLocation: ' + window.location.href + '\n';

@@ -38,6 +38,7 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 <!--
 ===========================================================================
 EDIT HISTORY:
++ 2022-04-06 EMW	fixed bad link to PSA Roetta archive
 + 2021-07-30 EMW	replaced/added 80 Rosetta RPCICA datasets 
 + 2020-12-21 EMW	34 NAVCAM datasets; removed 38 RPCLAP and added 58 RPCLAP
 + 2020-12-08 EMW	98 SREM datasets
@@ -167,7 +168,7 @@ EDIT HISTORY:
 <!-- SBN Role =========================================================== -->
 <p>The SBN in cooperation with ESA will archive Earth-based observations of comet 67P/Churyumov-Gerasimenko.</p>
 
-<p>See <a href="ftp://psa.esac.esa.int/pub/mirror//INTERNATIONAL-ROSETTA-MISSION">Rosetta data</a> at the <a href="https://archives.esac.esa.int/psa/">ESA Planetary Science Archive.</a></p>
+<p>See <a href="https://archives.esac.esa.int/psa/#!Table%20View/Rosetta=mission">Rosetta data</a> at the <a href="https://archives.esac.esa.int/psa/">ESA Planetary Science Archive.</a></p>
 <table class="important">
 <tr>
 <td><p>This page only shows data sets that have been <em>archived</em> or were <em>CERTIFIED by a peer review</em> (are currently in lien resolution) or <em>certified by ESA PSA</em>. If you wish to see other Rosetta datasets that have been released but that are NOT CERTIFIED please see our <a href="/draft/Rosetta/">Rosetta Draft Data Set Area</a>.</p>

@@ -33,7 +33,8 @@ a:active {} /* requires a blank style for :active to stop it being buggy */
 <!-- -->
 
 
-<script src='https://www.google.com/recaptcha/api.js'></script>
+<!-- 6 Apr 2022, found this line, not sure when it got added. don't think we need it. Am commenting it out. EMW -->
+<!-- <script src='https://www.google.com/recaptcha/api.js'></script> -->
 
 </head>
 <body>

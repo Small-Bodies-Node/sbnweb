@@ -38,6 +38,7 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 <!--
 ===========================================================================
 EDIT HISTORY:
++ 2022-04-07 EMW commented out sentence/link to data at USGS; see email between EMW and Trent Hare 6,7 Apr 2022
 + 2021-03-05 EMW	updated McDonald Borrelly data to PDS4
 + 2014-11-20 EMW	updated link to Ferret
 + 2013-02-19 EMW	cleaned up SPICE links
@@ -62,7 +63,8 @@ EDIT HISTORY:
 <!-- SBN Role =========================================================== -->
 <p>The SBN is the lead node to archive DS1 data from the Borrelly encounter into the PDS.</p>
 
-<p>The USGS Astrogeology Research Program holds the <a href="http://astrogeology.usgs.gov/Projects/DeepSpace1/MICAS_Archive/index.htm" onclick="this.target='_blank'">MICAS archive</a>. It includes the original engineering data records and calibrated data in cube format from the MICAS Visible CCD and IR Spectrometer. Nucleus topographic models and Borrelly animations are also held at the USGS.</p>
+<!-- 7 Apr 2022: Per email with USGS, commented out below paragraph. -->
+<!-- <p>The USGS Astrogeology Research Program holds the <a href="http://astrogeology.usgs.gov/Projects/DeepSpace1/MICAS_Archive/index.htm" onclick="this.target='_blank'">MICAS archive</a>. It includes the original engineering data records and calibrated data in cube format from the MICAS Visible CCD and IR Spectrometer. Nucleus topographic models and Borrelly animations are also held at the USGS.</p> -->
 
 <!-- Instrument List ==================================================== -->
 <h2>Instruments</h2>

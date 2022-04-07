@@ -21,11 +21,7 @@ var config = {
 			},
 			{
 				title: "OpenPlanetary Forum",
-				// default: url: "https://forum.openplanetary.org/"
-			},
-			{
-				// default: title: "Site Map",
-				// default: url: "https://pds.nasa.gov/site-help.shtml"
+				url: "https://forum.openplanetary.org/"
 			}
 		]
 	},

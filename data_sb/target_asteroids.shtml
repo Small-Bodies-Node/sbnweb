@@ -22,6 +22,8 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 <!--
 ===========================================================================
 EDIT HISTORY:
++ 2022-04-26 EMW	DART: added 3 under Didymos
++ 2022-04-25 EMW	added (65803) Didymos (&amp; its Satellites)
 + 2021-07-30 EMW	replaced/added Rosetta RPCICA datasets under Lutetia; crude sort (alpha on DSID)
 + 2021-06-22 EMW	NH-KEM1 ver updates; added 3 new targets
 + 2020-12-21 EMW	removed 2, added 4 Rosetta RPCLAP
@@ -91,6 +93,7 @@ EDIT HISTORY:
 <li><a href="#29981_1999TD10">(29981)&nbsp;1999&nbsp;TD10</a></li>
 <li><a href="#38628_Huya">(38628)&nbsp;Huya</a></li>
 <li><a href="#50000_Quaoar">(50000)&nbsp;Quaoar</a></li>
+<li><a href="#65803_Didymos"></a>(65803)&nbsp;Didymos (&amp; its Satellites)</li>
 <li><a href="#101955_Bennu">(101955)&nbsp;Bennu</a></li>
 <li><a href="#119951_2002KX14">(119951)&nbsp;2002&nbsp;KX14</a></li>
 <li><a href="#132524_APL">(132524)&nbsp;APL</a></li>
@@ -540,7 +543,15 @@ EDIT HISTORY:
 </ul>
 
 <!-- Target Data ======================================================== -->
+<a name="65803_Didymos"></a>
+<h2>(65803)&nbsp;Didymos (&amp; its Satellites)</h2>
+<ul>
+<li><a href="/holdings/pds4-dart_teleobs:data_ldtraw-v1.0/SUPPORT/dataset.shtml">DART Lowell Discovery Telescope (LDT) Raw Data Collection</a><code>urn:nasa:pds:dart_teleobs:data_ldtraw::1.0</code></li>
+<li><a href="/holdings/pds4-dart_teleobs:data_ldtcal-v1.0/SUPPORT/dataset.shtml">DART Lowell Discovery Telescope (LDT) Calibrated Data Collection</a><code>urn:nasa:pds:dart_teleobs:data_ldtcal::1.0</code></li>
+<li><a href="/holdings/pds4-dart_teleobs:data_ldtddp-v1.0/SUPPORT/dataset.shtml">DART Lowell Discovery Telescope (LDT) Derived Data Product Collectio</a><code>urn:nasa:pds:dart_teleobs:data_ldtddp::1.0</code></li>
+</ul>
 
+<!-- Target Data ======================================================== -->
 <a name="101955_Bennu"></a>
 <h2>(101955)&nbsp;Bennu</h2>
 <ul>

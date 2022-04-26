@@ -74,6 +74,11 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 <h2>New @ SBN</h2>
 <ul class="news">
 
+<!-- 2022.04.26 -->
+<li><span class="date">2022.04.26</span>
+<br />+ <a href="/holdings/pds4-dart_teleobs-v1.0/SUPPORT/dataset.shtml">DART Telescopic Observation Archive</a> <code>urn:nasa:pds:dart_teleobs::1.0</code>
+<br />&nbsp;</li>
+
 <!-- 2022.03.10 -->
 <li><span class="date">2022.03.10</span>
 <br />+ <a href="/tools/tools_readPDS.shtml" onclick="this.target='_blank'">ReadPDS for PDS3</a> v4.10 has been released.

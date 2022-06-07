@@ -169,7 +169,7 @@ a:active {} /* requires a blank style for :active to stop it being buggy */
 <!-- <table class="important">
 <tr>
 <td><h1>DOWNTIME ANNOUNCEMENT</h1>
-<h3>Mon 7 Feb 2022: There may be extended outages between 11am-6pm EST due to server maintenance.
+<h3>10-11 Jun 2022: There may be extended outages between 2-8pm EDT Fri 10 Jun and unknown times on Sat 11 Jun for network and server maintenance.
 <br />Thank you for your patience.</h3>
 </td>
 </tr>

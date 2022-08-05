@@ -24,7 +24,7 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 <li>Mission: <em>na</em></li>
 <li>NSSDC: <a href="https://nssdc.gsfc.nasa.gov/nmc/spacecraftDisplay.do?id=1975-075A" onclick="this.target='_blank'">Viking&nbsp;1 Orbiter</a></li>
 <li>NSSDC: <a href="https://nssdc.gsfc.nasa.gov/nmc/spacecraftDisplay.do?id=1975-083A" onclick="this.target='_blank'">Viking&nbsp;2 Orbiter</a></li>
-<li>NASA: <a href="https://www.nasa.gov/viking/" onclick="this.target='_blank'">Viking</a></li>
+<li>NASA: <a href="https://mars.nasa.gov/mars-exploration/missions/viking-1-2/" onclick="this.target='_blank'">Viking</a></li>
 <li>Wikipedia: <a href="https://en.wikipedia.org/wiki/Viking_program" onclick="this.target='_blank'">Viking Program</a></li>
 </ul>
 </div><!-- end class sidebarSection -->
@@ -36,6 +36,7 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 <!--
 ===========================================================================
 EDIT HISTORY:
++ 2022-08-05 EMW	updated mission link;
 + 2014-11-20 EMW	updated link to Ferret
 + 2011-04-15 EMW	added description
 + 2011-02-22 EMW	added right sidebar space

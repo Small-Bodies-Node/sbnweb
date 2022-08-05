@@ -21,7 +21,7 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 <h2>Mission Websites</h2>
 <p>Here we list links to the primary mission website as well as pages about the mission on other sites such as the NSSDC, NASA portal, etc.</p>
 <ul>
-<li>Mission: <a href="https://saturn.jpl.nasa.gov/" onclick="this.target='_blank'">Cassini</a></li>
+<li>Mission: <a href="https://solarsystem.nasa.gov/missions/cassini/overview/" onclick="this.target='_blank'">Cassini</a></li> <!-- https://saturn.jpl.nasa.gov/ -->
 <li>NSSDC: <a href="https://nssdc.gsfc.nasa.gov/nmc/spacecraftDisplay.do?id=1997-061A" onclick="this.target='_blank'">Cassini</a></li>
 <li>NASA: <a href="https://www.nasa.gov/mission_pages/cassini/main/index.html" onclick="this.target='_blank'">Cassini</a></li>
 <li>SSE: <a href="https://solarsystem.nasa.gov/missions/cassini/overview/" onclick="this.target='_blank'">Cassini</a></li>
@@ -37,6 +37,7 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 <!--
 ===========================================================================
 EDIT HISTORY:
++ 2022-08-05 EMW	updated mission link; old link just redirects to SSE link
 + 2018-10-03 EMW	added Saturn Sm Moon Shape Models
 + 2017-01-26 EMW	edited 1st paragraph (dust) per C.Neese email
 + 2014-11-20 EMW	updated link to Ferret

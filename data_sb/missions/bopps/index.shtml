@@ -21,7 +21,7 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 <h2>Mission Websites</h2>
 <p>Here we list links to the primary mission website as well as pages about the mission on other sites such as the NSSDC, NASA portal, etc.</p>
 <ul>
-<li>Mission: <a href="http://bopps.jhuapl.edu/">BOPPS</a></li>
+<li>Mission: <em>na</em></li> <!-- http://bopps.jhuapl.edu/ -->
 <li>NSSDC: <em>na</em></li>
 <li>NASA: <em>na</em></li>
 <li>SSE: <em>na</em></li>
@@ -35,6 +35,7 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 <!-- 
 ===========================================================================
 EDIT HISTORY:
++ 2022-08-05 EMW	updated mission link; site removed at JHUAPL
 + 2016-11-07 EMW	updated links to bundle and collections
 + 2016-06-14 EMW	added link for instrument, fixed dataset links
 + 2016-01-15 EMW	made updates, corrections per LF email

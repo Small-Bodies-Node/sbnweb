@@ -15,27 +15,34 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 <!-- ################################################ LEFT SIDEBAR ########################################## -->
 <!--#include virtual="/css-n-includes/incl_left-side.inc"-->
 
-<!-- ################################################ RIGHT SIDEBAR ########################################## -->
-<div id="rightcol">
-<div class="sidebarSection">
-<h2>Coordinate Systems</h2>
-<ul>
-<li>+ <a href="SBN_Coordinate_System_Guidelines20220912.pdf">2022 SBN Coordinate System Guidelines</a></li>
-<li>+ <a href="CoordinateSystems-at-SBN_Final.pdf">2014 SBN Coordinate Systems Policy</a><br /><br /></li>
-<li>+ <a href="/holdings/ro-c-multi-5-67p-shape-v1.0/document/cheops_ref_frame_v1.pdf">67P/C-G Reference Frames and Mapping Scheme</a></li>
-<li>+ <a href="https://sbnarchive.psi.edu/pds3/dawn/fc/DWNVFC2_1A/DOCUMENT/VESTA_COORDINATES/VESTA_COORDINATES_131018.PDF">Vesta Coordinate Systems</a></li>
-</ul>
-</div>
-<!-- end class sidebarSection -->
-</div>
-<!-- end id rightcol -->
+
 <!-- ################################################ MAIN ################################################## -->
-<div id="centercol">
+<div id="centerwide">
 <a name="mainContent"></a>
 <!-- ************************************************** You may begin editing! ************************************************** -->
 <h1>Coordinate Systems at PDS-SBN</h1>
 <p>Any project or individual who will be submitting products to SBN that involve coordinates on the surface of a small body must adhere to the international guidelines for such coordinates and must also insure the coordinate system used is sufficiently documented. The <a href="SBN_Coordinate_System_Guidelines20220912.pdf">SBN Coordinate System Guidelines</a> is an essential reference to meeting the PDS and SBN requirements for coordinate systems, and should be read carefully by anyone planning to submit such products to SBN. Examples of specific cases already submitted to PDS-SBN are in the right sidebar.</p>
 
+
+<h2>Guideline</h2>
+<ul>
+<li><a href="SBN_Coordinate_System_Guidelines20220912.pdf">2022 SBN Coordinate System Guidelines</a></li>
+<li><a href="CoordinateSystems-at-SBN_Final.pdf">2014 SBN Coordinate Systems Policy</a></li>
+</ul>
+
+<h2>Coordinate Systems</h2>
+<ul>
+<li><a href="https://sbnarchive.psi.edu/pds4/orex/orex.mission/document/Bennu_Coordinate_System_Description.pdf">OSIRIS-REx Bennu</a></li>
+
+<li><a href="https://sbnarchive.psi.edu/pds4/hayabusa2/hyb2/document/Ryugu_Coordinate_System_Description.pdf">Hayabusa2 Ryugu</a></li>
+
+<li><a href="https://sbnarchive.psi.edu/pds3/dawn/grand/DWNVGRD_1B/DOCUMENT/VESTA_COORDINATES/VESTA_COORDINATES_131018.PDF">Dawn Vesta</a></li>
+
+<li><a href="https://sbnarchive.psi.edu/pds3/dawn/grav/DWNCGRS_2_v3_181005/DOCUMENT/CERES_COORD_SYS_180628.PDF">Dawn Ceres</a></li>
+
+<li><a href="/holdings/ro-c-multi-5-67p-shape-v1.0/document/cheops_ref_frame_v1.pdf">67P/C-G Reference Frames and Mapping Scheme</a></li>
+
+</ul>
 
 
 <!-- ************************************************** End editing! ************************************************** -->

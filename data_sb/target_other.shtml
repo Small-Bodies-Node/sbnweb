@@ -22,6 +22,7 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 <!--
 ===========================================================================
 EDIT HISTORY:
++ 2022-12-05 EMW	added L2 VIRTIS PRL-COM under Earth, Saturn
 + 2021-08-11 EMW	NH-KEM1 ver updates
 + 2021-07-30 EMW	replaced/added Rosetta RPCICA datasets under Sun, Earth, Mars; crude sort (alpha on DSID)
 + 2021-06-22 EMW	NH-KEM1 ver updates
@@ -315,6 +316,7 @@ EDIT HISTORY:
 <li><a href="/holdings/ro-x-srem-5-ear1-v1.0/dataset.html">Rosetta-Orbiter SREM Earth Swing-by 1 Derived Data</a></li><!-- RO-X-SREM-5-EAR1-V1.0 -->
 <li><a href="/holdings/ro-x-srem-5-ear2-v1.0/dataset.html">Rosetta-Orbiter SREM Earth Swing-by 2 Derived Data</a></li><!-- RO-X-SREM-5-EAR2-V1.0 -->
 <li><a href="/holdings/ro-x-srem-5-ear3-v1.0/dataset.html">Rosetta-Orbiter SREM Earth Swing-by 3 Derived Data</a></li><!-- RO-X-SREM-5-EAR3-V1.0 -->
+<li><a href="/holdings/ro-c-virtis-2-prl-com-v2.0/dataset.shtml">Rosetta-Orbiter VIRTIS Prelanding Commissioning 67P Raw Data</a></li><!-- RO-C-VIRTIS-2-PRL-COM-V2.0 -->
 </ul></li>
 
 <li>Moon
@@ -486,6 +488,7 @@ EDIT HISTORY:
 <li><a href="/holdings/ro-x-osinac-4-cvp2-chkout-strlight-v1.0/dataset.html">Rosetta-Orbiter OSIRIS Narrow Angle Camera Commission 2 Resampled-C (Solar Stray Light and Geometric Distortion Corrected in W/m^2/sr/nm) Data</a></li><!-- RO-X-OSINAC-4-CVP2-CHKOUT-STRLIGHT-V1.0 -->
 <li><a href="/holdings/ro-x-osinac-4-cvp2-chkout-str-refl-v1.0/dataset.html">Rosetta-Orbiter OSIRIS Narrow Angle Camera Commission 2 Resampled-D (Solar Stray Light and Geometric Distortion Corrected in Reflectance Units) Data</a></li><!-- RO-X-OSINAC-4-CVP2-CHKOUT-STR-REFL-V1.0 -->
 <li><a href="https://sbn.psi.edu/pds/resource/saturnsatshapes.html">Saturn Small Moon Shape Models</a></li>
+<li><a href="/holdings/ro-c-virtis-2-prl-com-v2.0/dataset.shtml">Rosetta-Orbiter VIRTIS Prelanding Commissioning 67P Raw Data</a></li><!-- RO-C-VIRTIS-2-PRL-COM-V2.0 -->
 </ul></li>
 
 <li>Uranus

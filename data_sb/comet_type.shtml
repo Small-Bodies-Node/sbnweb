@@ -22,6 +22,7 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 <!--
 ===========================================================================
 EDIT HISTORY:
++ 2023-01-26 EMW	added COMP v1, GEOPHYS v1 under Imaging; PEPSSI v1 and SWAP v2 under Plasma/Particles; COMP v1 undere Spectra; GEOPHYS, COMP, ATMOS v2 under Phys Prop; IPM under Misc
 + 2022-12-05 EMW	added L2 Virtis PRL-COM V2 and replaced 32 V1 w/ V2 VIRTIS L2
 + 2021-08-11 EMW	NH-KEM1 ver updates
 + 2022-04-26 EMW	DART: added 3 under Imaging, 1 under Misc
@@ -349,6 +350,10 @@ EDIT HISTORY:
 <li><a href="/holdings/nh-a-mvic-2-kem1-v5.0/dataset.shtml">New Horizons MVIC KEM1 Encounter Raw Data v5.0</a></li><!-- NH-A-MVIC-2-KEM1-V5.0 -->
 <li><a href="/holdings/nh-a-mvic-3-kem1-v5.0/dataset.shtml">New Horizons MVIC KEM1 Encounter Calibrated Data v5.0</a></li><!-- NH-A-MVIC-3-KEM1-V5.0 -->
 
+<li><a href="/holdings/nh-a-leisa_mvic-5-comp-v1.0/dataset.shtml">New Horizons Arrokoth Encounter Surface Composition Maps</a></li><!-- NH-A-LEISA/MVIC-5-COMP-V1.0 -->
+<li><a href="/holdings/nh-a-lorri_mvic-5-geophys-v1.0/dataset.shtml">New Horizons Arrokoth Encounter Geology and Geophysical Maps and Shape Models</a></li><!-- NH-A-LORRI/MVIC-5-GEOPHYS-V1.0 -->
+
+
 <li><a href="https://sbn.psi.edu/pds/resource/orex/ocams.html">OSIRIS-REx OCAMS Bundle</a></li>
 <li><a href="https://sbn.psi.edu/pds/resource/orex/tagcams.html">OSIRIS-REx TAGCAMS Bundle</a></li>
 
@@ -474,6 +479,9 @@ EDIT HISTORY:
 <li><a href="/holdings/nh-p-swap-2-pluto-v3.0/dataset.shtml">New Horizons SWAP Pluto Encounter Raw Data v3.0</a></li><!-- NH-P-SWAP-2-PLUTO-V3.0 -->
 <li><a href="/holdings/nh-p-swap-3-pluto-v3.0/dataset.shtml">New Horizons SWAP Pluto Encounter Calibrated Data v3.0</a></li><!-- NH-P-SWAP-3-PLUTO-V3.0 -->
 <li><a href="/holdings/nh-p-swap-5-derived-solarwind-v1.0/dataset.shtml">New Horizons SWAP Pluto Encounter Solar Wind Derived Characteristics</a></li><!-- NH-P-SWAP-5-DERIVED-SOLARWIND-V1.0 -->
+<li><a href="/holdings/nh-x-pepssi-4-plasma-v1.0/dataset.shtml">New Horizons PEPSSI Derived Plasma Fluxes and Rates</a></li><!-- NH-X-PEPSSI-4-PLASMA-V1.0 -->
+<li><a href="/holdings/nh-x-swap-5-derived-solarwind-v2.0/dataset.shtml">New Horizons SWAP Solar Wind Derived Data v2.0</a></li><!-- NH-X-SWAP-5-DERIVED-SOLARWIND-V2.0 -->
+
 <li><a href="/holdings/nh-x-pepssi-2-kemcruise1-v2.0/dataset.shtml">New Horizons PEPSSI KEM Cruise 1 Raw Data v2.0</a></li><!-- NH-X-PEPSSI-2-KEMCRUISE1-V2.0 -->
 <li><a href="/holdings/nh-x-pepssi-3-kemcruise1-v2.0/dataset.shtml">New Horizons PEPSSI KEM Cruise 1 Calibrated Data v2.0</a></li><!-- NH-X-PEPSSI-3-KEMCRUISE1-V2.0 -->
 <li><a href="/holdings/nh-x-sdc-2-kemcruise1-v2.0/dataset.shtml">New Horizons SDC KEM Cruise 1 Raw Data v2.0</a></li><!-- NH-X-SDC-2-KEMCRUISE1-V2.0 -->
@@ -997,12 +1005,12 @@ EDIT HISTORY:
 <li><a href="/holdings/rl-c-mupus-3-rbd-v1.0/dataset.shtml">Rosetta-Lander MUPUS Rebounds 67P Calibrated Data</a></li><!-- RL-C-MUPUS-3-RBD-V1.0 -->
 <li><a href="/holdings/rl-c-mupus-2-fss-v1.0/dataset.shtml">Rosetta-Lander MUPUS First Science Sequence 67P Raw Data</a></li><!-- RL-C-MUPUS-2-FSS-V1.0 -->
 <li><a href="/holdings/rl-c-mupus-3-fss-v1.0/dataset.shtml">Rosetta-Lander MUPUS First Science Sequence 67P Calibrated Data</a></li><!-- RL-C-MUPUS-3-FSS-V1.0 -->
-<!-- 2018.07.13 -->
 <li><a href="/holdings/nh-p_psa-leisa_mvic-5-comp-v1.0/dataset.shtml">New Horizons Pluto Encounter Surface Composition Maps</a></li><!-- NH-P/PSA-LEISA/MVIC-5-COMP-V1.0 -->
-<li><a href="/holdings/nh-p_psa-lorri_alice_rex-5-atmos-v1.0/dataset.shtml">New Horizons Pluto Encounter Atmosphere Data</a></li><!-- NH-P/PSA-LORRI/ALICE/REX-5-ATMOS-V1.0 -->
+<li><a href="/holdings/nh-p_psa-lorri_alice_rex-5-atmos-v2.0/dataset.shtml">New Horizons Pluto Encounter Atmosphere Data v2.0</a></li><!-- NH-P/PSA-LORRI/ALICE/REX-5-ATMOS-V2.0 -->
 <li><a href="/holdings/nh-p_psa-lorri_mvic-5-geophys-v1.0/dataset.shtml">New Horizons Pluto Encounter Geology and Geophysical Maps</a></li><!-- NH-P/PSA-LORRI/MVIC-5-GEOPHYS-V1.0 -->
+<li><a href="/holdings/nh-a-leisa_mvic-5-comp-v1.0/dataset.shtml">New Horizons Arrokoth Encounter Surface Composition Maps</a></li><!-- NH-A-LEISA/MVIC-5-COMP-V1.0 -->
+<li><a href="/holdings/nh-a-lorri_mvic-5-geophys-v1.0/dataset.shtml">New Horizons Arrokoth Encounter Geology and Geophysical Maps and Shape Models</a></li><!-- NH-A-LORRI/MVIC-5-GEOPHYS-V1.0 -->
 <li><a href="/holdings/ro-c-virtis-5-67p-maps-v1.0/dataset.shtml">Rosetta-Orbiter VIRTIS Derived 67P Maps</a></li><!-- RO-C-VIRTIS-5-67P-MAPS-V1.0 -->
-
 </ul>
 
 <!-- Type Data ======================================================== -->
@@ -1304,7 +1312,7 @@ EDIT HISTORY:
 
 <li><a href="/holdings/nh-a-alice-2-kem1-v5.0/dataset.shtml">New Horizons ALICE KEM1 Encounter Raw Data v5.0</a></li><!-- NH-A-ALICE-2-KEM1-V5.0 -->
 <li><a href="/holdings/nh-a-alice-3-kem1-v5.0/dataset.shtml">New Horizons ALICE KEM1 Encounter Calibrated Data v5.0</a></li><!-- NH-A-ALICE-3-KEM1-V5.0 -->
-
+<li><a href="/holdings/nh-a-leisa_mvic-5-comp-v1.0/dataset.shtml">New Horizons Arrokoth Encounter Surface Composition Maps</a></li><!-- NH-A-LEISA/MVIC-5-COMP-V1.0 -->
 <li><a href="https://sbn.psi.edu/pds/resource/orex/ovirs.html">OSIRIS-REx OVIRS Bundle</a></li>
 <li><a href="https://sbn.psi.edu/pds/resource/orex/otes.html">OSIRIS-REx OTES Bundle</a></li>
 
@@ -1415,6 +1423,7 @@ EDIT HISTORY:
 <li><a href="/holdings/ro-x-hk-3-tcs-v1.0/dataset.shtml">Rosetta Spacecraft Thermal Control System Data</a></li><!-- RO-X-HK-3-TCS-V1.0 -->
 
 <li><a href="/holdings/pds4-dart_teleobs:document_ldt-v1.0/SUPPORT/dataset.shtml">DART Lowell Document Collection</a><code>urn:nasa:pds:dart_teleobs:document_ldt::1.0</code></li>
+<li><a href="/holdings/nh-x-alice-5-ipm-v1.0/dataset.shtml">New Horizons ALICE Interplanetary Medium Scans</a></li><!-- NH-X-ALICE-5-IPM-V1.0 -->
 </ul>
 
 <!-- ************************************************** End editing! ************************************************** -->

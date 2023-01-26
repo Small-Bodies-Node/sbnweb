@@ -22,6 +22,7 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 <!--
 ===========================================================================
 EDIT HISTORY:
++ 2023-01-26 EMW	added IPM section; added PEPSSI v1 to Sun and IPM; updated SWAP v1 to v2 under Sun and added to IPM; added IPM to IPM
 + 2022-12-05 EMW	added L2 VIRTIS PRL-COM under Earth, Saturn
 + 2021-08-11 EMW	NH-KEM1 ver updates
 + 2021-07-30 EMW	replaced/added Rosetta RPCICA datasets under Sun, Earth, Mars; crude sort (alpha on DSID)
@@ -122,7 +123,8 @@ EDIT HISTORY:
 <li><a href="/holdings/nh-x-swap-2-plutocruise-v3.0/dataset.shtml">New Horizons SWAP Pluto Cruise Raw Data v3.0</a></li><!-- NH-X-SWAP-2-PLUTOCRUISE-V3.0 -->
 <li><a href="/holdings/nh-x-swap-3-kemcruise1-v2.0/dataset.shtml">New Horizons SWAP KEM Cruise 1 Calibrated Data v2.0</a></li><!-- NH-X-SWAP-3-KEMCRUISE1-V2.0 -->
 <li><a href="/holdings/nh-x-swap-3-plutocruise-v3.0/dataset.shtml">New Horizons SWAP Pluto Cruise Calibrated Data v3.0</a></li><!-- NH-X-SWAP-3-PLUTOCRUISE-V3.0 -->
-<li><a href="/holdings/nh-x-swap-5-derived-solarwind-v1.0/dataset.shtml">New Horizons SWAP Solar Wind Derived Characteristics</a></li><!-- NH-X-SWAP-5-DERIVED-SOLARWIND-V1.0 -->
+<li><a href="/holdings/nh-x-swap-5-derived-solarwind-v2.0/dataset.shtml">New Horizons SWAP Solar Wind Derived Data v2.0</a></li><!-- NH-X-SWAP-5-DERIVED-SOLARWIND-V2.0 -->
+<li><a href="/holdings/nh-x-pepssi-4-plasma-v1.0/dataset.shtml">New Horizons PEPSSI Derived Plasma Fluxes and Rates</a></li><!-- NH-X-PEPSSI-4-PLASMA-V1.0 -->
 <li><a href="/holdings/ro-a-rpcmag-2-ast1-raw-v9.0/dataset.html">Rosetta-Orbiter RPCMAG Steins Raw Data v9.0</a></li><!-- RO-A-RPCMAG-2-AST1-RAW-V9.0 -->
 <li><a href="/holdings/ro-a-rpcmag-2-ast2-raw-v9.0/dataset.html">Rosetta-Orbiter RPCMAG Lutetia Raw Data v9.0</a></li><!-- RO-A-RPCMAG-2-AST2-RAW-V9.0 -->
 <li><a href="/holdings/ro-a-rpcmag-3-ast1-calibrated-v9.0/dataset.html">Rosetta-Orbiter RPCMAG Steins Calibrated Data v9.0</a></li><!-- RO-A-RPCMAG-3-AST1-CALIBRATED-V9.0 -->
@@ -517,6 +519,17 @@ EDIT HISTORY:
 	<li><a href="/holdings/nh-a-lorri-3-kem1-v5.0/dataset.shtml">New Horizons LORRI KEM1 Encounter Calibrated Data v5.0</a></li><!-- NH-A-LORRI-3-KEM1-V5.0 -->
 	</ul></li>
 </ul></li>
+
+</ul>
+
+<!-- Target Data ======================================================== -->
+<a name="ipm"></a>
+<h2>InterPlanetary Medium (IPM)</h2>
+<p>(similar data may be found in '<a href="https://sbn.psi.edu/pds/archive/dust.html">Dust</a>' or '<a href="/data_sb/target_other.shtml#sun">Sun, Solar Wind</a>' sections)</p>
+<ul>
+<li><a href="/holdings/nh-x-alice-5-ipm-v1.0/dataset.shtml">New Horizons ALICE Interplanetary Medium Scans</a></li><!-- NH-X-ALICE-5-IPM-V1.0 -->
+<li><a href="/holdings/nh-x-pepssi-4-plasma-v1.0/dataset.shtml">New Horizons PEPSSI Derived Plasma Fluxes and Rates</a></li><!-- NH-X-PEPSSI-4-PLASMA-V1.0 -->
+<li><a href="/holdings/nh-x-swap-5-derived-solarwind-v2.0/dataset.shtml">New Horizons SWAP Solar Wind Derived Data v2.0</a></li><!-- NH-X-SWAP-5-DERIVED-SOLARWIND-V2.0 -->
 
 </ul>
 

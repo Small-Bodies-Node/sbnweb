@@ -22,7 +22,8 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 <!--
 ===========================================================================
 EDIT HISTORY:
-+ 2021-08-11 EMW	NH-KEM1 ver updates; added Eris and 6 other new targets
++ 2023-01-26 EMW	added COMP v1, GEOPHYS v1 under Arrokoth; update ATMOS v2 under Pluto
++ 2022-08-11 EMW	NH-KEM1 ver updates; added Eris and 6 other new targets
 + 2022-04-26 EMW	DART: added 3 under Didymos
 + 2022-04-25 EMW	added (65803) Didymos (&amp; its Satellites)
 + 2021-07-30 EMW	replaced/added Rosetta RPCICA datasets under Lutetia; crude sort (alpha on DSID)
@@ -613,7 +614,7 @@ EDIT HISTORY:
 <li><a href="/holdings/nh-a-mvic-3-kem1-v5.0/dataset.shtml">New Horizons MVIC KEM1 Encounter Calibrated Data v5.0</a></li><!-- NH-A-MVIC-3-KEM1-V5.0 -->
 
 <li><a href="/holdings/nh-p_psa-leisa_mvic-5-comp-v1.0/dataset.shtml">New Horizons Pluto Encounter Surface Composition Maps</a></li><!-- NH-P/PSA-LEISA/MVIC-5-COMP-V1.0 -->
-<li><a href="/holdings/nh-p_psa-lorri_alice_rex-5-atmos-v1.0/dataset.shtml">New Horizons Pluto Encounter Atmosphere Data</a></li><!-- NH-P/PSA-LORRI/ALICE/REX-5-ATMOS-V1.0 -->
+<li><a href="/holdings/nh-p_psa-lorri_alice_rex-5-atmos-v2.0/dataset.shtml">New Horizons Pluto Encounter Atmosphere Data v2.0</a></li><!-- NH-P/PSA-LORRI/ALICE/REX-5-ATMOS-V2.0 -->
 <li><a href="/holdings/nh-p_psa-lorri_mvic-5-geophys-v1.0/dataset.shtml">New Horizons Pluto Encounter Geology and Geophysical Maps</a></li><!-- NH-P/PSA-LORRI/MVIC-5-GEOPHYS-V1.0 -->
 <li><a href="https://sbn.psi.edu/pds/resource/pcme.html">Pluto-Charon Mutual Events</a></li><!-- EAR-A-3-RDR-PCME-V3.1 and urn:nasa:pds:pluto-charon-mutual-events::1.0 -->
 <li><a href="http://sbn.psi.edu/pds/resource/benecchiocc.html">P445.3 (Pluto) Occultation</a></li><!-- EAR-P-I0962/I0964-5-BENECCHIOCC-V1.0 -->
@@ -704,6 +705,10 @@ EDIT HISTORY:
 <li><a href="/holdings/nh-a-lorri-3-kem1-v5.0/dataset.shtml">New Horizons LORRI KEM1 Encounter Calibrated Data v5.0</a></li><!-- NH-A-LORRI-3-KEM1-V5.0 -->
 <li><a href="/holdings/nh-a-mvic-2-kem1-v5.0/dataset.shtml">New Horizons MVIC KEM1 Encounter Raw Data v5.0</a></li><!-- NH-A-MVIC-2-KEM1-V5.0 -->
 <li><a href="/holdings/nh-a-mvic-3-kem1-v5.0/dataset.shtml">New Horizons MVIC KEM1 Encounter Calibrated Data v5.0</a></li><!-- NH-A-MVIC-3-KEM1-V5.0 -->
+<li><a href="/holdings/nh-a-leisa_mvic-5-comp-v1.0/dataset.shtml">New Horizons Arrokoth Encounter Surface Composition Maps</a></li><!-- NH-A-LEISA/MVIC-5-COMP-V1.0 -->
+<li><a href="/holdings/nh-a-lorri_mvic-5-geophys-v1.0/dataset.shtml">New Horizons Arrokoth Encounter Geology and Geophysical Maps and Shape Models</a></li><!-- NH-A-LORRI/MVIC-5-GEOPHYS-V1.0 -->
+
+
 </ul>
 
 <!-- Target Data ======================================================== -->

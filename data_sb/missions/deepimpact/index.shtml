@@ -21,7 +21,7 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 <h2>Mission Websites</h2>
 <p>Here we list links to the primary mission website as well as pages about the mission on other sites such as the NSSDC, NASA portal, etc.</p>
 <ul>
-<li>Mission: <a href="http://deepimpact.umd.edu/" onclick="this.target='_blank'">Deep Impact</a></li>
+<li>Mission: <a href="https://deepimpact.astro.umd.edu/" onclick="this.target='_blank'">Deep Impact</a></li>
 <li>NSSDC: <a href="https://nssdc.gsfc.nasa.gov/nmc/spacecraftDisplay.do?id=2005-001A" onclick="this.target='_blank'">Deep Impact/EPOXI</a></li>
 <li>NASA: <a href="https://www.nasa.gov/mission_pages/deepimpact/main/" onclick="this.target='_blank'">Deep Impact</a></li>
 <li>SSE: <a href="https://solarsystem.nasa.gov/missions/deep-impact-epoxi/in-depth/" onclick="this.target='_blank'">Deep Impact/EPOXI</a></li>
@@ -72,7 +72,7 @@ EDIT HISTORY:
 <h1>Deep Impact</h1>
 
 <!-- Mission Description ================================================ -->
-<p><a href="http://deepimpact.umd.edu/" onclick="this.target='_blank'">Deep Impact</a> is the eighth mission in the Discovery Program, designed to investigate the interior of a cometary nucleus. The two-piece spacecraft was launched on 12 January 2005 and successfully encountered the comet 9P/Tempel&nbsp;1 on 4 July 2005. About 24 hours before the spacecraft encountered the comet, the flyby spacecraft released the impactor spacecraft, a 1/2-ton copper projectile equipped with a visible CCD, to hit the comet's nucleus. This impact ejected material from the interior of the comet out into space and produced a crater that is believed to be at least 100-m in diameter. The flyby spacecraft and its three instruments survived the encounter with Tempel&nbsp;1, and resumed operations from October 2007 to February 2011 for the <a href="/data_sb/missions/epoxi/index.shtml">EPOXI</a> mission.</p>
+<p><a href="https://deepimpact.astro.umd.edu/" onclick="this.target='_blank'">Deep Impact</a> is the eighth mission in the Discovery Program, designed to investigate the interior of a cometary nucleus. The two-piece spacecraft was launched on 12 January 2005 and successfully encountered the comet 9P/Tempel&nbsp;1 on 4 July 2005. About 24 hours before the spacecraft encountered the comet, the flyby spacecraft released the impactor spacecraft, a 1/2-ton copper projectile equipped with a visible CCD, to hit the comet's nucleus. This impact ejected material from the interior of the comet out into space and produced a crater that is believed to be at least 100-m in diameter. The flyby spacecraft and its three instruments survived the encounter with Tempel&nbsp;1, and resumed operations from October 2007 to February 2011 for the <a href="/data_sb/missions/epoxi/index.shtml">EPOXI</a> mission.</p>
 
 <!-- SBN's role ========================================================= -->
 <p>The SBN is the lead PDS node to archive the Deep Impact mission data. The <a href="deep_impact_pdmp.pdf">Deep Impact Project Data Management Plan</a> is available as a PDF file (518Kb).</p>

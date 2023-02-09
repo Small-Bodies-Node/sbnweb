@@ -108,6 +108,7 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 <!--
 ===========================================================================
 EDIT HISTORY:
++ 2023-02-09 EMW	8 RPCMIP derived data (PRL-EXT3), 8 RPCMIP/RPCLAP Cross-Calibrated Derived Data (PRL-EXT3) under 67P
 + 2022-12-05 EMW	added L2 Virtis PRL-COM V2 and replaced 32 V1 w/ V2 VIRTIS L2
 + 2021-10-14 EMW	added Spitzer Spectro of Comets under Surveys
 + 2021-07-30 EMW	replaced/added Rosetta RPCICA datasets under 67P; crude sort (alpha on DSID)
@@ -1127,6 +1128,23 @@ EDIT HISTORY:
 <li><a href="/holdings/ro-x-srem-5-prl-mtp007-v1.0/dataset.html">Rosetta-Orbiter SREM Prelanding MTP007 Derived Data</a></li><!-- RO-X-SREM-5-PRL-MTP007-V1.0 -->
 <li><a href="/holdings/ro-x-srem-5-prl-mtp008-v1.0/dataset.html">Rosetta-Orbiter SREM Prelanding MTP008 Derived Data</a></li><!-- RO-X-SREM-5-PRL-MTP008-V1.0 -->
 <li><a href="/holdings/ro-x-srem-5-prl-mtp009-v1.0/dataset.html">Rosetta-Orbiter SREM Prelanding MTP009 Derived Data</a></li><!-- RO-X-SREM-5-PRL-MTP009-V1.0 -->
+
+<li><a href="/holdings/ro-c-rpcmip-5-prl-v1.0/dataset.shtml">Rosetta-Orbiter RPCMIP Prelanding 67P Derived Data</a></li><!-- RO-C-RPCMIP-5-PRL-V1.0 -->
+<li><a href="/holdings/ro-c-rpcmip_rpclap-5-prl-v1.0/dataset.shtml">Rosetta-Orbiter RPCMIP/RPCLAP Prelanding 67P Cross-Calibrated Derived Data</a></li><!-- RO-C-RPCMIP/RPCLAP-5-PRL-V1.0 -->
+<li><a href="/holdings/ro-c-rpcmip-5-esc1-v1.0/dataset.shtml">Rosetta-Orbiter RPCMIP Escort 1 67P Derived Data</a></li><!-- RO-C-RPCMIP-5-ESC1-V1.0 -->
+<li><a href="/holdings/ro-c-rpcmip_rpclap-5-esc1-v1.0/dataset.shtml">Rosetta-Orbiter RPCMIP/RPCLAP Escort 1 67P Cross-Calibrated Derived Data</a></li><!-- RO-C-RPCMIP/RPCLAP-5-ESC1-V1.0 -->
+<li><a href="/holdings/ro-c-rpcmip-5-esc2-v1.0/dataset.shtml">Rosetta-Orbiter RPCMIP Escort 2 67P Derived Data</a></li><!-- RO-C-RPCMIP-5-ESC2-V1.0 -->
+<li><a href="/holdings/ro-c-rpcmip_rpclap-5-esc2-v1.0/dataset.shtml">Rosetta-Orbiter RPCMIP/RPCLAP Escort 2 67P Cross-Calibrated Derived Data</a></li><!-- RO-C-RPCMIP/RPCLAP-5-ESC2-V1.0 -->
+<li><a href="/holdings/ro-c-rpcmip-5-esc3-v1.0/dataset.shtml">Rosetta-Orbiter RPCMIP Escort 3 67P Derived Data</a></li><!-- RO-C-RPCMIP-5-ESC3-V1.0 -->
+<li><a href="/holdings/ro-c-rpcmip_rpclap-5-esc3-v1.0/dataset.shtml">Rosetta-Orbiter RPCMIP/RPCLAP Escort 3 67P Cross-Calibrated Derived Data</a></li><!-- RO-C-RPCMIP/RPCLAP-5-ESC3-V1.0 -->
+<li><a href="/holdings/ro-c-rpcmip-5-esc4-v1.0/dataset.shtml">Rosetta-Orbiter RPCMIP Escort 4 67P Derived Data</a></li><!-- RO-C-RPCMIP-5-ESC4-V1.0 -->
+<li><a href="/holdings/ro-c-rpcmip_rpclap-5-esc4-v1.0/dataset.shtml">Rosetta-Orbiter RPCMIP/RPCLAP Escort 4 67P Cross-Calibrated Derived Data</a></li><!-- RO-C-RPCMIP/RPCLAP-5-ESC4-V1.0 -->
+<li><a href="/holdings/ro-c-rpcmip-5-ext1-v1.0/dataset.shtml">Rosetta-Orbiter RPCMIP Extension 1 67P Derived Data</a></li><!-- RO-C-RPCMIP-5-EXT1-V1.0 -->
+<li><a href="/holdings/ro-c-rpcmip_rpclap-5-ext1-v1.0/dataset.shtml">Rosetta-Orbiter RPCMIP/RPCLAP Extension 1 67P Cross-Calibrated Derived Data</a></li><!-- RO-C-RPCMIP/RPCLAP-5-EXT1-V1.0 -->
+<li><a href="/holdings/ro-c-rpcmip-5-ext2-v1.0/dataset.shtml">Rosetta-Orbiter RPCMIP Extension 2 67P Derived Data</a></li><!-- RO-C-RPCMIP-5-EXT2-V1.0 -->
+<li><a href="/holdings/ro-c-rpcmip_rpclap-5-ext2-v1.0/dataset.shtml">Rosetta-Orbiter RPCMIP/RPCLAP Extension 2 67P Cross-Calibrated Derived Data</a></li><!-- RO-C-RPCMIP/RPCLAP-5-EXT2-V1.0 -->
+<li><a href="/holdings/ro-c-rpcmip-5-ext3-v1.0/dataset.shtml">Rosetta-Orbiter RPCMIP Extension 3 67P Derived Data</a></li><!-- RO-C-RPCMIP-5-EXT3-V1.0 -->
+<li><a href="/holdings/ro-c-rpcmip_rpclap-5-ext3-v1.0/dataset.shtml">Rosetta-Orbiter RPCMIP/RPCLAP Extension 3 67P Cross-Calibrated Derived Data</a></li><!-- RO-C-RPCMIP/RPCLAP-5-EXT3-V1.0 -->
 
 <li><em>Please refer to <a href="/data_sb/missions/rosetta/index_OSIRIS.shtml">Rosetta OSIRIS</a> for a listing of OSIRIS datasets from the <strong><em>comet encounter</em></strong> phases.</em></li>
 <li><em>Please refer to <a href="/data_sb/missions/rosetta/index_RSI.shtml">Rosetta RSI</a> for a complete listing of RSI datasets.</em></li>

@@ -22,6 +22,7 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 <!--
 ===========================================================================
 EDIT HISTORY:
++ 2023-02-15 EMW	because this is an EU mission, changed instances of maneuver to manoeuvre for consistency in the Rosetta datasets
 + 2023-01-26 EMW	added IPM section; added PEPSSI v1 to Sun and IPM; updated SWAP v1 to v2 under Sun and added to IPM; added IPM to IPM
 + 2022-12-05 EMW	added L2 VIRTIS PRL-COM under Earth, Saturn
 + 2021-08-11 EMW	NH-KEM1 ver updates
@@ -152,17 +153,17 @@ EDIT HISTORY:
 <li><a href="/holdings/ro-ss-rpcica-4-cr4-corr-cts-v1.0/dataset.html">Rosetta-Orbiter RPCICA Cruise 4 Resampled Corrected in Counts Data</a></li><!-- RO-SS-RPCICA-4-CR4-CORR-CTS-V1.0 -->
 <li><a href="/holdings/ro-ss-rpcica-4-cr4-corr-v1.0/dataset.html">Rosetta-Orbiter RPCICA Cruise 4 Resampled Corrected Data</a></li><!-- RO-SS-RPCICA-4-CR4-CORR-V1.0 -->
 <li><a href="/holdings/ro-ss-rpcies-2-cr5-v1.0/dataset.shtml">Rosetta-Orbiter RPCIES Cruise 5 Solar Wind Raw Data</a></li><!-- RO-SS-RPCIES-2-CR5-V1.0 -->
-<li><a href="/holdings/ro-ss-rpcies-2-rvm1-v1.0/dataset.shtml">Rosetta-Orbiter RPCIES Rendezvous Maneuver 1 Solar Wind Raw Data</a></li><!-- RO-SS-RPCIES-2-RVM1-V1.0 -->
+<li><a href="/holdings/ro-ss-rpcies-2-rvm1-v1.0/dataset.shtml">Rosetta-Orbiter RPCIES Rendezvous Manoeuvre 1 Solar Wind Raw Data</a></li><!-- RO-SS-RPCIES-2-RVM1-V1.0 -->
 <li><a href="/holdings/ro-ss-rpclap-2-cr2-edited2-v1.0/dataset.shtml">Rosetta-Orbiter RPCLAP Cruise 2 Raw Data</a></li><!-- RO-SS-RPCLAP-2-CR2-EDITED2-V1.0 -->
 <li><a href="/holdings/ro-ss-rpclap-2-cr4a-edited2-v1.0/dataset.shtml">Rosetta-Orbiter RPCLAP Cruise 4A Raw Data</a></li><!-- RO-SS-RPCLAP-2-CR4A-EDITED2-V1.0 -->
 <li><a href="/holdings/ro-ss-rpclap-2-cr4b-edited2-v1.0/dataset.shtml">Rosetta-Orbiter RPCLAP Cruise 4B Raw Data</a></li><!-- RO-SS-RPCLAP-2-CR4B-EDITED2-V1.0 -->
 <li><a href="/holdings/ro-ss-rpclap-2-cr5-edited2-v1.0/dataset.shtml">Rosetta-Orbiter RPCLAP Cruise 5 Raw Data</a></li><!-- RO-SS-RPCLAP-2-CR5-EDITED2-V1.0 -->
-<li><a href="/holdings/ro-ss-rpclap-2-rvm1-edited2-v1.0/dataset.shtml">Rosetta-Orbiter RPCLAP Rendezvous Maneuver 1 Raw Data</a></li><!-- RO-SS-RPCLAP-2-RVM1-EDITED2-V1.0 -->
+<li><a href="/holdings/ro-ss-rpclap-2-rvm1-edited2-v1.0/dataset.shtml">Rosetta-Orbiter RPCLAP Rendezvous Manoeuvre 1 Raw Data</a></li><!-- RO-SS-RPCLAP-2-RVM1-EDITED2-V1.0 -->
 <li><a href="/holdings/ro-ss-rpclap-3-cr2-calib2-v1.0/dataset.shtml">Rosetta-Orbiter RPCLAP Cruise 2 Calibrated Data</a></li><!-- RO-SS-RPCLAP-3-CR2-CALIB2-V1.0 -->
 <li><a href="/holdings/ro-ss-rpclap-3-cr4a-calib2-v1.0/dataset.shtml">Rosetta-Orbiter RPCLAP Cruise 4A Calibrated Data</a></li><!-- RO-SS-RPCLAP-3-CR4A-CALIB2-V1.0 -->
 <li><a href="/holdings/ro-ss-rpclap-3-cr4b-calib2-v1.0/dataset.shtml">Rosetta-Orbiter RPCLAP Cruise 4B Calibrated Data</a></li><!-- RO-SS-RPCLAP-3-CR4B-CALIB2-V1.0 -->
 <li><a href="/holdings/ro-ss-rpclap-3-cr5-calib2-v1.0/dataset.shtml">Rosetta-Orbiter RPCLAP Cruise 5 Calibrated Data</a></li><!-- RO-SS-RPCLAP-3-CR5-CALIB2-V1.0 -->
-<li><a href="/holdings/ro-ss-rpclap-3-rvm1-calib2-v1.0/dataset.shtml">Rosetta-Orbiter RPCLAP Rendezvous Maneuver 1 Calibrated Data</a></li><!-- RO-SS-RPCLAP-3-RVM1-CALIB2-V1.0 -->
+<li><a href="/holdings/ro-ss-rpclap-3-rvm1-calib2-v1.0/dataset.shtml">Rosetta-Orbiter RPCLAP Rendezvous Manoeuvre 1 Calibrated Data</a></li><!-- RO-SS-RPCLAP-3-RVM1-CALIB2-V1.0 -->
 <li><a href="/holdings/ro-ss-rpcmag-2-cr2-raw-v9.0/dataset.html">Rosetta-Orbiter RPCMAG Cruise 2 Raw Data v9.0</a></li><!-- RO-SS-RPCMAG-2-CR2-RAW-V9.0 -->
 <li><a href="/holdings/ro-ss-rpcmag-2-prl-raw-v9.0/dataset.html">Rosetta-Orbiter RPCMAG Prelanding 67P Raw Data v9.0</a></li><!-- RO-SS-RPCMAG-2-PRL-RAW-V9.0 -->
 <li><a href="/holdings/ro-ss-rpcmag-2-rvm1-raw-v9.0/dataset.html">Rosetta-Orbiter RPCMAG Rendezvous Manoeuvre 1 Raw Data v9.0</a></li><!-- RO-SS-RPCMAG-2-RVM1-RAW-V9.0 -->

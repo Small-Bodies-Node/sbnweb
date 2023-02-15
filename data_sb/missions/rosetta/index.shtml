@@ -38,6 +38,7 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 <!--
 ===========================================================================
 EDIT HISTORY:
++ 2023-02-15 EMW	because this is an EU mission, changed instances of maneuver to manoeuvre for consistency in the Rosetta datasets
 + 2023-02-09 EMW	8 RPCMIP derived data (PRL-EXT3), 8 RPCMIP/RPCLAP Cross-Calibrated Derived Data (PRL-EXT3)
 + 2022-12-05 EMW	added L2 Virtis PRL-COM V2 and replaced 32 V1 w/ V2 VIRTIS L2
 + 2022-04-06 EMW	fixed bad link to PSA Roetta archive
@@ -139,7 +140,7 @@ EDIT HISTORY:
 + 2013-02-21 EMW	added certified vs non-certified disclaimer
 + 2013-02-19 EMW	deleted lots of Rosetta datasets; cleaned up SPICE links; 
 + 2012-10-22 EMW	added 5 RSI datasets, updated links to instruments
-+ 2012-07-30 EMW	added 4 Rosetta links into new Rendezvous Maneuver section, but they are commented out until Tilden gets okay to release
++ 2012-07-30 EMW	added 4 Rosetta links into new Rendezvous Manoeuvre section, but they are commented out until Tilden gets okay to release
 + 2012-06-08 EMW	added links to 4 RSI (CR2 #27, 32, 33, 34) datasets
 + 2012-06-04 EMW	updated 1 link from v1 to v2, added 2 ROSINA and 1 RPCIES link
 + 2012-05-11 EMW	added a bunch of RSI and some ROSINA datasets
@@ -334,7 +335,7 @@ EDIT HISTORY:
 </tr>
 
 <tr>
-<td><a href="#rvm1">Rendezvous Maneuver 1 (RVM1)</a></td>
+<td><a href="#rvm1">Rendezvous Manoeuvre 1 (RVM1)</a></td>
 <td>2010-09-04</td>
 <td>2011-06-07</td>
 </tr>
@@ -831,26 +832,26 @@ EDIT HISTORY:
 <p><a href="#top">Back to Mission Phase list</a></p>
 
 <a name="rvm1"></a>
-<h3>Rendezvous Maneuver 1 (RVM1)</h3>
+<h3>Rendezvous Manoeuvre 1 (RVM1)</h3>
 <ul>
-<li><a href="/holdings/ro-cal-alice-2-rvm1-v1.0/dataset.shtml">Rosetta-Orbiter ALICE Rendezvous Maneuver 1 Raw Data</a></li>
-<li><a href="/holdings/ro_rl-cal-consert-2-rvm1-v2.0/dataset.shtml">Rosetta-Orbiter/Lander CONSERT Rendezvous Maneuver 1 Raw Data</a></li><!-- RO/RL-CAL-CONSERT-2-RVM1-V2.0 -->
-<li><a href="/holdings/ro-x-gia-2-rvm1-rendezmanoeuvre1-v1.0/dataset.shtml">Rosetta-Orbiter GIADA Rendezvous Maneuver 1 Raw Data</a></li><!-- RO-X-GIA-2-RVM1-RENDEZMANOEUVRE1-V1.0 -->
-<li><a href="/holdings/ro-x-midas-3-rvm1-pc13-v3.0/dataset.shtml">Rosetta-Orbiter MIDAS Rendezvous Maneuver 1 Calibrated Data v3.0</a></li><!-- RO-X-MIDAS-3-RVM1-PC13-V3.0 -->
-<li><a href="/holdings/ro-cal-navcam-2-rvm1-v1.1/dataset.shtml">Rosetta-Orbiter NAVCAM Rendezvous Maneuver 1 Raw Data v1.1</a></li><!-- RO-CAL-NAVCAM-2-RVM1-V1.1 -->
-<li><a href="/holdings/ro-ss-rpcies-2-rvm1-v1.0/dataset.shtml">Rosetta-Orbiter RPCIES Rendezvous Maneuver 1 Solar Wind Raw Data</a></li><!-- RO-SS-RPCIES-2-RVM1-V1.0 -->
-<li><a href="/holdings/ro-ss-rpclap-2-rvm1-edited2-v1.0/dataset.shtml">Rosetta-Orbiter RPCLAP Rendezvous Maneuver 1 Raw Data</a></li><!-- RO-SS-RPCLAP-2-RVM1-EDITED2-V1.0 -->
-<li><a href="/holdings/ro-ss-rpclap-3-rvm1-calib2-v1.0/dataset.shtml">Rosetta-Orbiter RPCLAP Rendezvous Maneuver 1 Calibrated Data</a></li><!-- RO-SS-RPCLAP-3-RVM1-CALIB2-V1.0 -->
+<li><a href="/holdings/ro-cal-alice-2-rvm1-v1.0/dataset.shtml">Rosetta-Orbiter ALICE Rendezvous Manoeuvre 1 Raw Data</a></li>
+<li><a href="/holdings/ro_rl-cal-consert-2-rvm1-v2.0/dataset.shtml">Rosetta-Orbiter/Lander CONSERT Rendezvous Manoeuvre 1 Raw Data</a></li><!-- RO/RL-CAL-CONSERT-2-RVM1-V2.0 -->
+<li><a href="/holdings/ro-x-gia-2-rvm1-rendezmanoeuvre1-v1.0/dataset.shtml">Rosetta-Orbiter GIADA Rendezvous Manoeuvre 1 Raw Data</a></li><!-- RO-X-GIA-2-RVM1-RENDEZMANOEUVRE1-V1.0 -->
+<li><a href="/holdings/ro-x-midas-3-rvm1-pc13-v3.0/dataset.shtml">Rosetta-Orbiter MIDAS Rendezvous Manoeuvre 1 Calibrated Data v3.0</a></li><!-- RO-X-MIDAS-3-RVM1-PC13-V3.0 -->
+<li><a href="/holdings/ro-cal-navcam-2-rvm1-v1.1/dataset.shtml">Rosetta-Orbiter NAVCAM Rendezvous Manoeuvre 1 Raw Data v1.1</a></li><!-- RO-CAL-NAVCAM-2-RVM1-V1.1 -->
+<li><a href="/holdings/ro-ss-rpcies-2-rvm1-v1.0/dataset.shtml">Rosetta-Orbiter RPCIES Rendezvous Manoeuvre 1 Solar Wind Raw Data</a></li><!-- RO-SS-RPCIES-2-RVM1-V1.0 -->
+<li><a href="/holdings/ro-ss-rpclap-2-rvm1-edited2-v1.0/dataset.shtml">Rosetta-Orbiter RPCLAP Rendezvous Manoeuvre 1 Raw Data</a></li><!-- RO-SS-RPCLAP-2-RVM1-EDITED2-V1.0 -->
+<li><a href="/holdings/ro-ss-rpclap-3-rvm1-calib2-v1.0/dataset.shtml">Rosetta-Orbiter RPCLAP Rendezvous Manoeuvre 1 Calibrated Data</a></li><!-- RO-SS-RPCLAP-3-RVM1-CALIB2-V1.0 -->
 <li><a href="/holdings/ro-ss-rpcmag-2-rvm1-raw-v9.0/dataset.html">Rosetta-Orbiter RPCMAG Rendezvous Manoeuvre 1 Raw Data v9.0</a></li><!-- RO-SS-RPCMAG-2-RVM1-RAW-V9.0 -->
 <li><a href="/holdings/ro-ss-rpcmag-3-rvm1-calibrated-v9.0/dataset.html">Rosetta-Orbiter RPCMAG Rendezvous Manoeuvre 1 Calibrated Data v9.0</a></li><!-- RO-SS-RPCMAG-3-RVM1-CALIBRATED-V9.0 -->
 <li><a href="/holdings/ro-ss-rpcmag-4-rvm1-resampled-v9.0/dataset.html">Rosetta-Orbiter RPCMAG Rendezvous Manoeuvre 1 Resampled Data v9.0</a></li><!-- RO-SS-RPCMAG-4-RVM1-RESAMPLED-V9.0 -->
-<li><a href="/holdings/ro-cal-rpcmip-3-rvm1-v1.0/dataset.shtml">Rosetta-Orbiter RPCMIP Rendezvous Maneuver 1 Calibrated Data</a></li><!-- RO-CAL-RPCMIP-3-RVM1-V1.0 -->
-<li><a href="/holdings/ro-x-srem-2-rvm1-v1.0/dataset.html">Rosetta-Orbiter SREM Rendezvous Maneuver 1 Raw Data</a></li><!-- RO-X-SREM-2-RVM1-V1.0 -->
-<li><a href="/holdings/ro-x-srem-5-rvm1-v1.0/dataset.html">Rosetta-Orbiter SREM Rendezvous Maneuver 1 Derived Data</a></li><!-- RO-X-SREM-5-RVM1-V1.0 -->
-<li><a href="/holdings/rl-cal-romap-2-rvm1-mag-v1.0/dataset.html">Rosetta-Lander ROMAP-MAG Rendezvous Maneuver 1 Raw Data</a></li><!-- RL-CAL-ROMAP-2-RVM1-MAG-V1.0 -->
-<li><a href="/holdings/rl-cal-romap-3-rvm1-mag-v1.0/dataset.html">Rosetta-Lander ROMAP-MAG Rendezvous Maneuver 1 Calibrated Data</a></li><!-- RL-CAL-ROMAP-3-RVM1-MAG-V1.0 -->
-<li><a href="/holdings/rl-cal-romap-2-rvm1-spm-v1.0/dataset.html">Rosetta-Lander ROMAP-SPM Rendezvous Maneuver 1 Raw Data</a></li><!-- RL-CAL-ROMAP-2-RVM1-SPM-V1.0 -->
-<li><a href="/holdings/rl-cal-romap-3-rvm1-spm-v1.0/dataset.html">Rosetta-Lander ROMAP-SPM Rendezvous Maneuver 1 Calibrated Data</a></li><!-- RL-CAL-ROMAP-3-RVM1-SPM-V1.0 -->
+<li><a href="/holdings/ro-cal-rpcmip-3-rvm1-v1.0/dataset.shtml">Rosetta-Orbiter RPCMIP Rendezvous Manoeuvre 1 Calibrated Data</a></li><!-- RO-CAL-RPCMIP-3-RVM1-V1.0 -->
+<li><a href="/holdings/ro-x-srem-2-rvm1-v1.0/dataset.html">Rosetta-Orbiter SREM Rendezvous Manoeuvre 1 Raw Data</a></li><!-- RO-X-SREM-2-RVM1-V1.0 -->
+<li><a href="/holdings/ro-x-srem-5-rvm1-v1.0/dataset.html">Rosetta-Orbiter SREM Rendezvous Manoeuvre 1 Derived Data</a></li><!-- RO-X-SREM-5-RVM1-V1.0 -->
+<li><a href="/holdings/rl-cal-romap-2-rvm1-mag-v1.0/dataset.html">Rosetta-Lander ROMAP-MAG Rendezvous Manoeuvre 1 Raw Data</a></li><!-- RL-CAL-ROMAP-2-RVM1-MAG-V1.0 -->
+<li><a href="/holdings/rl-cal-romap-3-rvm1-mag-v1.0/dataset.html">Rosetta-Lander ROMAP-MAG Rendezvous Manoeuvre 1 Calibrated Data</a></li><!-- RL-CAL-ROMAP-3-RVM1-MAG-V1.0 -->
+<li><a href="/holdings/rl-cal-romap-2-rvm1-spm-v1.0/dataset.html">Rosetta-Lander ROMAP-SPM Rendezvous Manoeuvre 1 Raw Data</a></li><!-- RL-CAL-ROMAP-2-RVM1-SPM-V1.0 -->
+<li><a href="/holdings/rl-cal-romap-3-rvm1-spm-v1.0/dataset.html">Rosetta-Lander ROMAP-SPM Rendezvous Manoeuvre 1 Calibrated Data</a></li><!-- RL-CAL-ROMAP-3-RVM1-SPM-V1.0 -->
 
 <li><em>Please refer to <a href="/data_sb/missions/rosetta/OSIRIS_cruise.shtml#RVM1">Rosetta OSIRIS</a> for a listing of OSIRIS datasets from the <strong><em>cruise</em></strong> phases (pre-encounter).</em></li>
 </ul>
@@ -1535,7 +1536,7 @@ EDIT HISTORY:
 <h3>Other Mission Data</h3>
 <ul>
 <li><a href="https://naif.jpl.nasa.gov/naif/data_archived.html">Rosetta Spice Kernels</a></li><!-- ROS-E_M_A_C-SPICE-6-V1.0 -->
-<li><a href="https://www.cosmos.esa.int/web/spice/spice-for-rosetta">Rosetta Spice Kernals</a> @ ESA</li>
+<li><a href="https://www.cosmos.esa.int/web/spice/spice-for-rosetta">Rosetta Spice Kernels</a> @ ESA</li>
 <li><a href="/holdings/ro-a-osinac_osiwac-5-steins-shape-v1.0/dataset.shtml">Rosetta Shape Model of Asteroid Steins</a></li>
 <li><a href="/holdings/ro-a-osinac_osiwac-5-lutetia-shape-v1.0/dataset.shtml">Rosetta Shape Model of Asteroid Lutetia</a></li>
 <li><a href="/holdings/ro-c-multi-5-67p-shape-v1.0/document/cheops_ref_frame_v1.pdf">67P/C-G Reference Frames and Mapping Scheme</a></li>

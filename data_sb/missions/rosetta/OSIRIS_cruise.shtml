@@ -38,6 +38,7 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 <!--
 ===========================================================================
 EDIT HISTORY:
++ 2023-02-15 EMW	because this is an EU mission, changed instances of maneuver to manoeuvre for consistency in the Rosetta datasets
 + 2020-07-29 EMW	finished page, posted to coincide with PSA release
 + 2020-07-28 EMW	duplicated from index_Osiris for cruise phases
 
@@ -701,20 +702,20 @@ EDIT HISTORY:
 
 <p>Jump up to <a href="#table">table</a>, top of <a href="#list">list</a> or to
 <br /><a href="#CVP1">CVP1</a> || <a href="#CR1">CR1</a> || <a href="#CVP2">CVP2</a> || <a href="#EAR1">EAR1</a> || <a href="#CR2">CR2</a> || <a href="#MARS">MARS</a> || <a href="#EAR2">EAR2</a> || <a href="#CR4A">CR4A</a> || <a href="#AST1">AST1</a> || <a href="#CR4B">CR4B</a> || <a href="#EAR3">EAR3</a> || <a href="#CR5">CR5</a> || <a href="#AST2">AST2</a> || <a href="#RVM1">RVM1</a></p>
-<h3>Rendezvous Maneuver 1 (RVM1)</h3>
+<h3>Rendezvous Manoeuvre 1 (RVM1)</h3>
 <ul>
-<li><a href="/holdings/ro-x-osinac-2-rvm1-checkout-v1.0/dataset.html">Rosetta-Orbiter OSIRIS Narrow Angle Camera Rendezvous Maneuver 1 Raw Data</a></li><!-- RO-X-OSINAC-2-RVM1-CHECKOUT-V1.0 -->
-<li><a href="/holdings/ro-x-osinac-3-rvm1-checkout-v1.0/dataset.html">Rosetta-Orbiter OSIRIS Narrow Angle Camera Rendezvous Maneuver 1 Calibrated Data</a></li><!-- RO-X-OSINAC-3-RVM1-CHECKOUT-V1.0 -->
-<li><a href="/holdings/ro-x-osinac-4-rvm1-checkout-v1.0/dataset.html">Rosetta-Orbiter OSIRIS Narrow Angle Camera Rendezvous Maneuver 1 Resampled-A (Geometric Distortion Corrected in W/m^2/sr/nm) Data</a></li><!-- RO-X-OSINAC-4-RVM1-CHECKOUT-V1.0 -->
-<li><a href="/holdings/ro-x-osinac-4-rvm1-chkout-reflect-v1.0/dataset.html">Rosetta-Orbiter OSIRIS Narrow Angle Camera Rendezvous Maneuver 1 Resampled-B (Geometric Distortion Corrected in Reflectance Units) Data</a></li><!-- RO-X-OSINAC-4-RVM1-CHKOUT-REFLECT-V1.0 -->
-<li><a href="/holdings/ro-x-osinac-4-rvm1-chkout-strlight-v1.0/dataset.html">Rosetta-Orbiter OSIRIS Narrow Angle Camera Rendezvous Maneuver 1 Resampled-C (Solar Stray Light and Geometric Distortion Corrected in W/m^2/sr/nm) Data</a></li><!-- RO-X-OSINAC-4-RVM1-CHKOUT-STRLIGHT-V1.0 -->
-<li><a href="/holdings/ro-x-osinac-4-rvm1-chkout-str-refl-v1.0/dataset.html">Rosetta-Orbiter OSIRIS Narrow Angle Camera Rendezvous Maneuver 1 Resampled-D (Solar Stray Light and Geometric Distortion Corrected in Reflectance Units) Data</a></li><!-- RO-X-OSINAC-4-RVM1-CHKOUT-STR-REFL-V1.0 -->
-<li><a href="/holdings/ro-x-osiwac-2-rvm1-checkout-v1.0/dataset.html">Rosetta-Orbiter OSIRIS Wide Angle Camera Rendezvous Maneuver 1 Raw Data</a></li><!-- RO-X-OSIWAC-2-RVM1-CHECKOUT-V1.0 -->
-<li><a href="/holdings/ro-x-osiwac-3-rvm1-checkout-v1.0/dataset.html">Rosetta-Orbiter OSIRIS Wide Angle Camera Rendezvous Maneuver 1 Calibrated Data</a></li><!-- RO-X-OSIWAC-3-RVM1-CHECKOUT-V1.0 -->
-<li><a href="/holdings/ro-x-osiwac-4-rvm1-checkout-v1.0/dataset.html">Rosetta-Orbiter OSIRIS Wide Angle Camera Rendezvous Maneuver 1 Resampled-A (Geometric Distortion Corrected in W/m^2/sr/nm) Data</a></li><!-- RO-X-OSIWAC-4-RVM1-CHECKOUT-V1.0 -->
-<li><a href="/holdings/ro-x-osiwac-4-rvm1-chkout-reflect-v1.0/dataset.html">Rosetta-Orbiter OSIRIS Wide Angle Camera Rendezvous Maneuver 1 Resampled-B (Geometric Distortion Corrected in Reflectance Units) Data</a></li><!-- RO-X-OSIWAC-4-RVM1-CHKOUT-REFLECT-V1.0 -->
-<li><a href="/holdings/ro-x-osiwac-4-rvm1-chkout-strlight-v1.0/dataset.html">Rosetta-Orbiter OSIRIS Wide Angle Camera Rendezvous Maneuver 1 Resampled-C (Solar Stray Light and Geometric Distortion Corrected in W/m^2/sr/nm) Data</a></li><!-- RO-X-OSIWAC-4-RVM1-CHKOUT-STRLIGHT-V1.0 -->
-<li><a href="/holdings/ro-x-osiwac-4-rvm1-chkout-str-refl-v1.0/dataset.html">Rosetta-Orbiter OSIRIS Wide Angle Camera Rendezvous Maneuver 1 Resampled-D (Solar Stray Light and Geometric Distortion Corrected in Reflectance Units) Data</a></li><!-- RO-X-OSIWAC-4-RVM1-CHKOUT-STR-REFL-V1.0 -->
+<li><a href="/holdings/ro-x-osinac-2-rvm1-checkout-v1.0/dataset.html">Rosetta-Orbiter OSIRIS Narrow Angle Camera Rendezvous Manoeuvre 1 Raw Data</a></li><!-- RO-X-OSINAC-2-RVM1-CHECKOUT-V1.0 -->
+<li><a href="/holdings/ro-x-osinac-3-rvm1-checkout-v1.0/dataset.html">Rosetta-Orbiter OSIRIS Narrow Angle Camera Rendezvous Manoeuvre 1 Calibrated Data</a></li><!-- RO-X-OSINAC-3-RVM1-CHECKOUT-V1.0 -->
+<li><a href="/holdings/ro-x-osinac-4-rvm1-checkout-v1.0/dataset.html">Rosetta-Orbiter OSIRIS Narrow Angle Camera Rendezvous Manoeuvre 1 Resampled-A (Geometric Distortion Corrected in W/m^2/sr/nm) Data</a></li><!-- RO-X-OSINAC-4-RVM1-CHECKOUT-V1.0 -->
+<li><a href="/holdings/ro-x-osinac-4-rvm1-chkout-reflect-v1.0/dataset.html">Rosetta-Orbiter OSIRIS Narrow Angle Camera Rendezvous Manoeuvre 1 Resampled-B (Geometric Distortion Corrected in Reflectance Units) Data</a></li><!-- RO-X-OSINAC-4-RVM1-CHKOUT-REFLECT-V1.0 -->
+<li><a href="/holdings/ro-x-osinac-4-rvm1-chkout-strlight-v1.0/dataset.html">Rosetta-Orbiter OSIRIS Narrow Angle Camera Rendezvous Manoeuvre 1 Resampled-C (Solar Stray Light and Geometric Distortion Corrected in W/m^2/sr/nm) Data</a></li><!-- RO-X-OSINAC-4-RVM1-CHKOUT-STRLIGHT-V1.0 -->
+<li><a href="/holdings/ro-x-osinac-4-rvm1-chkout-str-refl-v1.0/dataset.html">Rosetta-Orbiter OSIRIS Narrow Angle Camera Rendezvous Manoeuvre 1 Resampled-D (Solar Stray Light and Geometric Distortion Corrected in Reflectance Units) Data</a></li><!-- RO-X-OSINAC-4-RVM1-CHKOUT-STR-REFL-V1.0 -->
+<li><a href="/holdings/ro-x-osiwac-2-rvm1-checkout-v1.0/dataset.html">Rosetta-Orbiter OSIRIS Wide Angle Camera Rendezvous Manoeuvre 1 Raw Data</a></li><!-- RO-X-OSIWAC-2-RVM1-CHECKOUT-V1.0 -->
+<li><a href="/holdings/ro-x-osiwac-3-rvm1-checkout-v1.0/dataset.html">Rosetta-Orbiter OSIRIS Wide Angle Camera Rendezvous Manoeuvre 1 Calibrated Data</a></li><!-- RO-X-OSIWAC-3-RVM1-CHECKOUT-V1.0 -->
+<li><a href="/holdings/ro-x-osiwac-4-rvm1-checkout-v1.0/dataset.html">Rosetta-Orbiter OSIRIS Wide Angle Camera Rendezvous Manoeuvre 1 Resampled-A (Geometric Distortion Corrected in W/m^2/sr/nm) Data</a></li><!-- RO-X-OSIWAC-4-RVM1-CHECKOUT-V1.0 -->
+<li><a href="/holdings/ro-x-osiwac-4-rvm1-chkout-reflect-v1.0/dataset.html">Rosetta-Orbiter OSIRIS Wide Angle Camera Rendezvous Manoeuvre 1 Resampled-B (Geometric Distortion Corrected in Reflectance Units) Data</a></li><!-- RO-X-OSIWAC-4-RVM1-CHKOUT-REFLECT-V1.0 -->
+<li><a href="/holdings/ro-x-osiwac-4-rvm1-chkout-strlight-v1.0/dataset.html">Rosetta-Orbiter OSIRIS Wide Angle Camera Rendezvous Manoeuvre 1 Resampled-C (Solar Stray Light and Geometric Distortion Corrected in W/m^2/sr/nm) Data</a></li><!-- RO-X-OSIWAC-4-RVM1-CHKOUT-STRLIGHT-V1.0 -->
+<li><a href="/holdings/ro-x-osiwac-4-rvm1-chkout-str-refl-v1.0/dataset.html">Rosetta-Orbiter OSIRIS Wide Angle Camera Rendezvous Manoeuvre 1 Resampled-D (Solar Stray Light and Geometric Distortion Corrected in Reflectance Units) Data</a></li><!-- RO-X-OSIWAC-4-RVM1-CHKOUT-STR-REFL-V1.0 -->
 
 </ul>
 

@@ -166,14 +166,14 @@ a:active {} /* requires a blank style for :active to stop it being buggy */
 
 <div class="clear"></div>
 <!-- BEGIN Maintenance banner -->
-<table class="important">
+<!-- <table class="important">
 <tr>
 <td><h1>DOWNTIME ANNOUNCEMENT</h1>
 <h3>Fri 17 Feb 2023: Between 11am-6pm EST, PDS SBN websites may experience brief outages due to maintenance and relocation work on several support servers.
 <br />Thank you for your patience.</h3>
 </td>
 </tr>
-</table>
+</table> -->
 <!-- END Maintenance banner -->
 
 <!-- %&%&%&%&%&%&%&%&%&%&%&%&%&%&%&%&%&%&%&%&%&%& This ends the top include %&%&%&%&%&%&%&%&%&%&%&%&%&%&%&%&%&%&%&%&%&%& -->

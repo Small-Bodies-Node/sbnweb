@@ -33,13 +33,16 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 </colgroup>
 <thead>
 <tr>
-<td>Project</td><td>Data Description</td><td>Data Available Online</td>
+<td>Project</td>
+<td>Data Description</td>
+<td>Data Available Online</td>
 </tr>
 </thead>
 
+
 <!-- ************************************************************************** Ground - Comet ************************************************************************* -->
 <tr>
-<td rowspan="2"><a href="/data_sb/missions/ground.shtml">Ground based data</a> and R&amp;A
+<td rowspan="3"><a href="/data_sb/missions/ground.shtml">Ground based data</a> and R&amp;A
 <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em>Comet Data</em></td>
 <td>9P/Tempel&nbsp;1 photometry from K. Meech (UH)</td>
 <td>unknown</td>
@@ -51,13 +54,18 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 </tr>
 
 
+<tr>
+<td>New Horizons Cosmic Optical Background Observations</td>
+<td><a href="/holdings/pds4-nh_derived:lorri_cob-v1.0/SUPPORT/dataset.shtml">released May 2023</a></td>
+</tr>
 
 <!-- ************************************************************************ Ground - Asteroid ************************************************************************ -->
 <tr class="odd">
-<td rowspan="5"><!-- <a href="/data_sb/missions/ground.shtml"> -->Ground based data</a> and R&amp;A
+<td rowspan="5"><!-- <a href="/data_sb/missions/ground.shtml"> -->Ground based data<!-- </a> --> and R&amp;A
 <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em>Asteroid data</em></td>
 <td>HST UV Slitless Reflectance Spectra of (1) Ceres V1.0</td>
 <td><a href="https://sbn.psi.edu/pds/resource/hstuvspec.html">released Jan 2023</a></td>
+</tr>
 
 <tr class="odd">
 <td>ALMA Ceres Imaging and Spectrum V1.0</td>
@@ -81,7 +89,7 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 
 <!-- ************************************************************************ Ground - Satellite ************************************************************************ -->
 <tr>
-<td><!-- <a href="/data_sb/missions/ground.shtml"> -->Ground based data</a> and R&amp;A
+<td><!-- <a href="/data_sb/missions/ground.shtml"> -->Ground based data<!-- </a> --> and R&amp;A
 <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em>(Natural) Satellites data</em></td>
 <td></td>
 <td></td>

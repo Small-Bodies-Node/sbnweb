@@ -37,6 +37,7 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 <!--
 ===========================================================================
 EDIT HISTORY:
++ 2023-05-26 EMW	added NH Cosmic Optical Background Observations under Related
 + 2023-04-13 EMW	v6 for most, v5 for REX; fixed target name and other typos
 + 2023-01-26 EMW	added COMP v1, GEOPHYS v1, IPM v1, PEPSSI v1, SWAP v2
 + 2022-08-11 EMW	added v5 of ALICE, LEISA, LORRI, MVIC, PEPSSI, SDC, SWAP; v4 of REX... all under Encounter
@@ -145,8 +146,10 @@ EDIT HISTORY:
 </ul>
 
 <h3>Related Datasets</h3>
-<p>Use the <a href="https://sbnapps.psi.edu/ferret/">Small Bodies Data Ferret</a> to find other datasets for this mission/target.
-</p>
+<p>Use the <a href="https://sbnapps.psi.edu/ferret/">Small Bodies Data Ferret</a> to find other datasets for this mission/target.</p>
+<ul>
+<li><a href="/holdings/pds4-nh_derived:lorri_cob-v1.0/SUPPORT/dataset.shtml">New Horizons Cosmic Optical Background Observations</a> <code>urn:nasa:pds:nh_derived:lorri_cob::1.0</code></li>
+</ul>
 
 <h3>Other Links</h3>
 <p><!-- <a href="http://guinan.space.swri.edu/nhcs/">New Horizons Earth-Based Observing Campaign</a> -->

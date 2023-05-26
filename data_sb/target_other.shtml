@@ -22,6 +22,7 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 <!--
 ===========================================================================
 EDIT HISTORY:
++ 2023-05-26 EMW	added NH Cosmic Optical Background Observations under IPM
 + 2023-04-13 EMW	NH K -- v6 for most, v5 for REX; fixed typos
 + 2023-02-15 EMW	because this is an EU mission, changed instances of maneuver to manoeuvre for consistency in the Rosetta datasets
 + 2023-01-26 EMW	added IPM section; added PEPSSI v1 to Sun and IPM; updated SWAP v1 to v2 under Sun and added to IPM; added IPM to IPM
@@ -80,6 +81,7 @@ EDIT HISTORY:
 <ul>
 <li><a href="#sun">Sun, Solar Wind</a></li>
 <li><a href="#planets">Planets</a></li>
+<li><a href="#ipm">InterPlanetary Medium (IPM</a></li>
 <li><a href="#exoplanets">Exoplanets</a></li>
 </ul>
 <hr />
@@ -532,7 +534,7 @@ EDIT HISTORY:
 <li><a href="/holdings/nh-x-alice-5-ipm-v1.0/dataset.shtml">New Horizons ALICE Interplanetary Medium Scans</a></li><!-- NH-X-ALICE-5-IPM-V1.0 -->
 <li><a href="/holdings/nh-x-pepssi-4-plasma-v1.0/dataset.shtml">New Horizons PEPSSI Derived Plasma Fluxes and Rates</a></li><!-- NH-X-PEPSSI-4-PLASMA-V1.0 -->
 <li><a href="/holdings/nh-x-swap-5-derived-solarwind-v2.0/dataset.shtml">New Horizons SWAP Solar Wind Derived Data v2.0</a></li><!-- NH-X-SWAP-5-DERIVED-SOLARWIND-V2.0 -->
-
+<li><a href="/holdings/pds4-nh_derived:lorri_cob-v1.0/SUPPORT/dataset.shtml">New Horizons Cosmic Optical Background Observations</a> <code>urn:nasa:pds:nh_derived:lorri_cob::1.0</code></li>
 </ul>
 
 <!-- Target Data ======================================================== -->

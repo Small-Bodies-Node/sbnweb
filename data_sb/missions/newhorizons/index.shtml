@@ -38,6 +38,7 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 <!--
 ===========================================================================
 EDIT HISTORY:
++ 2023-05-26 EMW	added NH Cosmic Optical Background Observations under Related
 + 2023-01-26 EMW	updated ATMOS and SWAP v1 to v2
 + 2019-02-06 EMW	minor edits (needs more!) to description, link to KEM
 + 2018-07-19 EMW	8 datasets: L2 and L3 REX
@@ -191,13 +192,15 @@ EDIT HISTORY:
 </ul>
 
 <h3>Related Datasets</h3>
-<p>Use the <a href="https://sbnapps.psi.edu/ferret/">Small Bodies Data Ferret</a> to find other datasets for this mission/target.
- </p>
+<p>Use the <a href="https://sbnapps.psi.edu/ferret/">Small Bodies Data Ferret</a> to find other datasets for this mission/target.</p>
+<ul>
+<li><a href="/holdings/pds4-nh_derived:lorri_cob-v1.0/SUPPORT/dataset.shtml">New Horizons Cosmic Optical Background Observations</a> <code>urn:nasa:pds:nh_derived:lorri_cob::1.0</code></li>
+</ul>
 
 <h3>Other Links</h3>
 <p><!-- <a href="http://guinan.space.swri.edu/nhcs/">New Horizons Earth-Based Observing Campaign</a> -->
-<br />The Ring-Moon Systems Node’s <a href="https://opus.pds-rings.seti.org" onclick="this.target='_blank'">OPUS search tool</a> can be used to find New Horizons <a href="https://opus.pds-rings.seti.org/#/instrument=New+Horizons+LORRI&widgets=instrument,observationtype,target" onclick="this.target='_blank'">LORRI</a> and <a href="https://opus.pds-rings.seti.org/#/instrument=New+Horizons+MVIC&widgets=instrument,observationtype,target" onclick="this.target='_blank'">MVIC</a> data.
-<br />The Ring-Moon Systems Node’s <a href="https://pds-rings.seti.org/viewmaster/volumes" onclick="this.target='_blank'">Viewmaster browsing tool</a> can be used to find New Horizons <a href="https://pds-rings.seti.org/viewmaster/volumes/NHxxLO_xxxx" onclick="this.target='_blank'">LORRI</a> and <a href="https://pds-rings.seti.org/viewmaster/volumes/NHxxMV_xxxx" onclick="this.target='_blank'">MVIC</a> data.
+<br />The Ring-Moon Systems Node's <a href="https://opus.pds-rings.seti.org" onclick="this.target='_blank'">OPUS search tool</a> can be used to find New Horizons <a href="https://opus.pds-rings.seti.org/#/instrument=New+Horizons+LORRI&widgets=instrument,observationtype,target" onclick="this.target='_blank'">LORRI</a> and <a href="https://opus.pds-rings.seti.org/#/instrument=New+Horizons+MVIC&widgets=instrument,observationtype,target" onclick="this.target='_blank'">MVIC</a> data.
+<br />The Ring-Moon Systems Node's <a href="https://pds-rings.seti.org/viewmaster/volumes" onclick="this.target='_blank'">Viewmaster browsing tool</a> can be used to find New Horizons <a href="https://pds-rings.seti.org/viewmaster/volumes/NHxxLO_xxxx" onclick="this.target='_blank'">LORRI</a> and <a href="https://pds-rings.seti.org/viewmaster/volumes/NHxxMV_xxxx" onclick="this.target='_blank'">MVIC</a> data.
 </p>
 <!-- ************************************************** End editing! ************************************************** -->
 <!--#include virtual="/css-n-includes/incl_bottom.inc"-->

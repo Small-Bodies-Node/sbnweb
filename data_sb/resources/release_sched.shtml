@@ -42,7 +42,7 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 
 <!-- ************************************************************************** Ground - Comet ************************************************************************* -->
 <tr>
-<td rowspan="3"><a href="/data_sb/missions/ground.shtml">Ground based data</a> and R&amp;A
+<td rowspan="4"><a href="/data_sb/missions/ground.shtml">Ground based data</a> and R&amp;A
 <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em>Comet Data</em></td>
 <td>9P/Tempel&nbsp;1 photometry from K. Meech (UH)</td>
 <td>unknown</td>
@@ -57,6 +57,11 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 <tr>
 <td>New Horizons Cosmic Optical Background Observations</td>
 <td><a href="/holdings/pds4-nh_derived:lorri_cob-v1.0/SUPPORT/dataset.shtml">released May 2023</a></td>
+</tr>
+
+<tr>
+<td>Rosetta ROSINA DFMS Time Series Abundances</td>
+<td><a href="/holdings/pds4-ro_derived:dfms_ts_abundance-v1.0/SUPPORT/dataset.shtml">released Jun 2023</a></td>
 </tr>
 
 <!-- ************************************************************************ Ground - Asteroid ************************************************************************ -->

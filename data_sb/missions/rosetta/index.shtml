@@ -38,6 +38,7 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 <!--
 ===========================================================================
 EDIT HISTORY:
++ 2023-06-01 EMW	ROSINA DFMS Time Series Abundances under  Related
 + 2023-02-15 EMW	because this is an EU mission, changed instances of maneuver to manoeuvre for consistency in the Rosetta datasets
 + 2023-02-09 EMW	8 RPCMIP derived data (PRL-EXT3), 8 RPCMIP/RPCLAP Cross-Calibrated Derived Data (PRL-EXT3)
 + 2022-12-05 EMW	added L2 Virtis PRL-COM V2 and replaced 32 V1 w/ V2 VIRTIS L2
@@ -440,6 +441,18 @@ EDIT HISTORY:
 
 <tr>
 <td><a href="#other">Other Mission Data</a></td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td><a href="#related">Related Data Sets</a></td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td><a href="#links">Other Links</a></td>
 <td></td>
 <td></td>
 </tr>
@@ -1549,9 +1562,16 @@ EDIT HISTORY:
 </ul>
 <p><a href="#top">Back to Mission Phase list</a></p>
 
+
+<a name="related"></a>
 <h3>Related Datasets</h3>
+<ul>
+<li><a href="/holdings/pds4-ro_derived:dfms_ts_abundance-v1.0/SUPPORT/dataset.shtml">Rosetta ROSINA DFMS Time Series Abundances</a> <code>urn:nasa:pds:ro_derived:dfms_ts_abundance::1.0</code></li>
+</ul>
 <p>Use the <a href="https://sbnapps.psi.edu/ferret/">Small Bodies Data Ferret</a> to find other datasets for this mission/target.</p>
 
+
+<a name="links"></a>
 <h3>Other Links</h3>
 <p><a href="http://www.rosetta-campaign.net/">67P/Churyumov-Gerasimenko ground-based observations in support of the Rosetta mission</a> (ground campaign website)</p>
 

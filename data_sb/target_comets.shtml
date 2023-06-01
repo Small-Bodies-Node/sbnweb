@@ -108,6 +108,7 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 <!--
 ===========================================================================
 EDIT HISTORY:
++ 2023-06-01 EMW	ROSINA DFMS Time Series Abundances under  67P
 + 2023-02-15 EMW	because this is an EU mission, changed instances of maneuver to manoeuvre for consistency in the Rosetta datasets
 + 2023-02-09 EMW	8 RPCMIP derived data (PRL-EXT3), 8 RPCMIP/RPCLAP Cross-Calibrated Derived Data (PRL-EXT3) under 67P
 + 2022-12-05 EMW	added L2 Virtis PRL-COM V2 and replaced 32 V1 w/ V2 VIRTIS L2
@@ -1146,6 +1147,8 @@ EDIT HISTORY:
 <li><a href="/holdings/ro-x-srem-5-prl-mtp007-v1.0/dataset.html">Rosetta-Orbiter SREM Prelanding MTP007 Derived Data</a></li><!-- RO-X-SREM-5-PRL-MTP007-V1.0 -->
 <li><a href="/holdings/ro-x-srem-5-prl-mtp008-v1.0/dataset.html">Rosetta-Orbiter SREM Prelanding MTP008 Derived Data</a></li><!-- RO-X-SREM-5-PRL-MTP008-V1.0 -->
 <li><a href="/holdings/ro-x-srem-5-prl-mtp009-v1.0/dataset.html">Rosetta-Orbiter SREM Prelanding MTP009 Derived Data</a></li><!-- RO-X-SREM-5-PRL-MTP009-V1.0 -->
+
+<li><a href="/holdings/pds4-ro_derived:dfms_ts_abundance-v1.0/SUPPORT/dataset.shtml">Rosetta ROSINA DFMS Time Series Abundances</a> <code>urn:nasa:pds:ro_derived:dfms_ts_abundance::1.0</code></li>
 
 <li><em>Please refer to <a href="/data_sb/missions/rosetta/index_OSIRIS.shtml">Rosetta OSIRIS</a> for a listing of OSIRIS datasets from the <strong><em>comet encounter</em></strong> phases.</em></li>
 <li><em>Please refer to <a href="/data_sb/missions/rosetta/index_RSI.shtml">Rosetta RSI</a> for a complete listing of RSI datasets.</em></li>

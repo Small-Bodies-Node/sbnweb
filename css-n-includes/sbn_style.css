@@ -285,7 +285,7 @@ list-style-position:outside;
 text-align:left;
 }
 
-#centercol li, #centerwide li, #centeronly li {padding-bottom:5px;}
+#centercol li, #centerwide li, #centeronly li {padding-bottom:10px;}
 
 table, tbody, tr, td, th {
 padding:0;

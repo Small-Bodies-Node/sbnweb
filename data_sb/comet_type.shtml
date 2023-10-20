@@ -22,7 +22,8 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 <!--
 ===========================================================================
 EDIT HISTORY:
-+ 2023-06-01 EMW	ROSINA DFMS Time Series Abundances under  Spectra
++ 2023-10-19 EMW	moved LDT Derived Data from Imaging to Photometry
++ 2023-06-01 EMW	ROSINA DFMS Time Series Abundances under Spectra
 + 2023-05-26 EMW	added NH Cosmic Optical Background Observations under Imaging
 + 2023-04-13 EMW	NH K -- v6 for most, v5 for REX; fixed typos
 + 2023-03-10 EMW	2 DART DRACO under Imaging, 3 DART RS under Radio Science
@@ -428,9 +429,13 @@ EDIT HISTORY:
 
 <li><a href="/holdings/pds4-dart_teleobs:data_ldtraw-v1.0/SUPPORT/dataset.shtml">DART Lowell Discovery Telescope (LDT) Raw Data Collection</a> <code>urn:nasa:pds:dart_teleobs:data_ldtraw::1.0</code></li>
 <li><a href="/holdings/pds4-dart_teleobs:data_ldtcal-v1.0/SUPPORT/dataset.shtml">DART Lowell Discovery Telescope (LDT) Calibrated Data Collection</a> <code>urn:nasa:pds:dart_teleobs:data_ldtcal::1.0</code></li>
-<li><a href="/holdings/pds4-dart_teleobs:data_ldtddp-v1.0/SUPPORT/dataset.shtml">DART Lowell Discovery Telescope (LDT) Derived Data Product Collection</a> <code>urn:nasa:pds:dart_teleobs:data_ldtddp::1.0</code></li>
-<li><a href="/holdings/pds4-dart:data_dracoraw-v2.0/SUPPORT/dataset.shtml">DART Raw Images for the Didymos Reconnaissance and Asteroid Camera for OpNav (DRACO) instrument v2.0</a> <code>urn:nasa:pds:dart:data_dracoraw::2.0</code></li>
-<li><a href="/holdings/pds4-dart:data_dracocal-v2.0/SUPPORT/dataset.shtml">DART Calibrated Images for the Didymos Reconnaissance and Asteroid Camera for OpNav (DRACO) instrument v2.0</a> <code>urn:nasa:pds:dart:data_dracocal::2.0</code></li>
+
+<li><a href="/holdings/pds4-dart:data_dracoraw-v3.0/SUPPORT/dataset.shtml">DART Raw Images for the Didymos Reconnaissance and Asteroid Camera for OpNav (DRACO) instrument v3.0</a> <code>urn:nasa:pds:dart:data_dracoraw::3.0</code></li>
+<li><a href="/holdings/pds4-dart:data_dracocal-v3.0/SUPPORT/dataset.shtml">DART Calibrated Images for the Didymos Reconnaissance and Asteroid Camera for OpNav (DRACO) instrument v3.0</a> <code>urn:nasa:pds:dart:data_dracocal::3.0</code></li>
+
+<li><a href="/holdings/pds4-liciacube:leia_raw-v1.0/SUPPORT/dataset.shtml">Liciacube Explorer Imaging for Asteroid (LEIA) Light Italian Cubesat for Imaging of Asteroids (LICIACube) Raw Data Collection</a> <code>urn:nasa:pds:liciacube:leia_raw::1.0</code></li>
+<li><a href="/holdings/pds4-liciacube:luke_raw-v1.0/SUPPORT/dataset.shtml">Liciacube Unit Key Explorer (LUKE) Light Italian Cubesat for Imaging of Asteroids (LICIACube) Raw Data Collection</a> <code>urn:nasa:pds:liciacube:luke_raw::1.0</code></li>
+
 
 <li><a href="/holdings/pds4-nh_derived:lorri_cob-v1.0/SUPPORT/dataset.shtml">New Horizons Cosmic Optical Background Observations</a> <code>urn:nasa:pds:nh_derived:lorri_cob::1.0</code></li>
 </ul>
@@ -1014,6 +1019,8 @@ EDIT HISTORY:
 <li><a href="/holdings/pds4-epoxi_mri:hartley2_photometry-v1.0/SUPPORT/dataset.shtml">EPOXI MRI-VIS 103P/Hartley 2 Encounter Photometry Collection</a> <code>urn:nasa:pds:epoxi_mri:hartley2_photometry::1.0</code></li>
 
 <li><a href="/holdings/pds4-compil-comet:halebopp-v1.0/SUPPORT/dataset.shtml">Hale-Bopp Visual Lightcurve</a> <code>urn:nasa:pds:compil-comet:halebopp::1.0</code></li>
+
+<li><a href="/holdings/pds4-dart_teleobs:data_ldtddp-v1.0/SUPPORT/dataset.shtml">DART Lowell Discovery Telescope (LDT) Derived Data Product Collection</a> <code>urn:nasa:pds:dart_teleobs:data_ldtddp::1.0</code></li>
 </ul>
 
 <!-- Type Data ======================================================== -->
@@ -1129,6 +1136,7 @@ EDIT HISTORY:
 <li><a href="/holdings/pds4-dart:data_maf-v1.0/SUPPORT/dataset.shtml">DART Maneuver Acceleration Files (MAF) Data Collection</a> <code>urn:nasa:pds:dart:data_maf::1.0</code></li>
 <li><a href="/holdings/pds4-dart:data_trk223-v1.0/SUPPORT/dataset.shtml">DSN Media Calibration (TRK-2-23) Files for DART Data Collection</a> <code>urn:nasa:pds:dart:data_trk223::1.0</code></li>
 <li><a href="/holdings/pds4-dart:data_trk234-v1.0/SUPPORT/dataset.shtml">DART Radio Science Tracking and Navigation Files (TRK-2-34) Data Collection</a> <code>urn:nasa:pds:dart:data_trk234::1.0</code></li>
+<li><a href="/holdings/pds4-liciacube:data_tnf-v1.0/SUPPORT/dataset.shtml">LICIACube Radio Science Tracking and Navigation Files (TRK-2-34) Data Collection</a> <code>urn:nasa:pds:liciacube:data_tnf::1.0</code></li>
 </ul>
 
 <!-- Type Data ======================================================== -->
@@ -1455,6 +1463,9 @@ EDIT HISTORY:
 
 <li><a href="/holdings/pds4-dart_teleobs:document_ldt-v1.0/SUPPORT/dataset.shtml">DART Lowell Document Collection</a> <code>urn:nasa:pds:dart_teleobs:document_ldt::1.0</code></li>
 <li><a href="/holdings/nh-x-alice-5-ipm-v1.0/dataset.shtml">New Horizons ALICE Interplanetary Medium Scans</a></li><!-- NH-X-ALICE-5-IPM-V1.0 -->
+
+<li><a href="/holdings/pds4-dart:document_draco-v3.0/SUPPORT/dataset.shtml">DART Documentation for the Didymos Reconnaissance and Asteroid Camera for OpNav (DRACO) instrument v3.0</a> <code>urn:nasa:pds:dart:document_draco::3.0</code></li>
+<li><a href="/holdings/pds4-liciacube:document-v1.0/SUPPORT/dataset.shtml">Light Italian Cubseat for Imaging of Asteroids (LICIACube) Document Collection</a> <code>urn:nasa:pds:liciacube:document::1.0</code></li>
 </ul>
 
 <!-- ************************************************** End editing! ************************************************** -->

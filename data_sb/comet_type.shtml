@@ -22,6 +22,7 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 <!--
 ===========================================================================
 EDIT HISTORY:
++ 2023-10-27 EMW	added Didymos System Shape Model Bundle under Shape Model
 + 2023-10-25 EMW	added DART teleobs raw and calibrated (9) under Imaging, teleobs derived (3) under Photometry, teleobs doc (3) under Misc
 + 2023-10-20 EMW	added DRACO v3 (3 collections) and LICIACube (2 collections under Imaging; 2 doc collections under misc; 1 LICIACube RS under Radio
 + 2023-10-19 EMW	moved LDT Derived Data from Imaging to Photometry
@@ -1134,6 +1135,8 @@ EDIT HISTORY:
 <li><a href="https://sbn.psi.edu/pds/resource/dawn/dwncfcL1.html">Dawn: Ceres digital terrain model</a></li>
 <li><a href="/holdings/rl-c-multi-5-ancdr-v2.0/dataset.shtml">Rosetta-Lander Ancillary 67P data v2.0</a></li><!-- RL-C-MULTI-5-ANCDR-V2.0 -->
 <li><a href="https://sbn.psi.edu/pds/resource/saturnsatshapes.html">Saturn Small Moon Shape Models</a></li>
+
+<li><a href="/holdings/pds4-dart_shapemodel-v1.0/SUPPORT/dataset.shtml">DART Didymos System Shapemodel Archive Bundle</a> <code>urn:nasa:pds:dart_shapemodel::1.0</code></li>
 </ul>
 
 <!-- Type Data ======================================================== -->

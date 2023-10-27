@@ -38,6 +38,7 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 <!--
 ===========================================================================
 EDIT HISTORY:
++ 2023-10-27 EMW	added Didymos System Shape Model Bundle under Other Mission Data
 + 2023-10-25 EMW	added 15 teleobs under Ground-based Obs
 + 2023-10-20 EMW	added DRACO v3 (3 collections) and LICIACube (4 collections)
 + 2023-10-19 EMW	various text edits
@@ -145,7 +146,7 @@ EDIT HISTORY:
 
 <h3>Other Mission Data</h3>
 <ul>
-<li></li>
+<li><a href="/holdings/pds4-dart_shapemodel-v1.0/SUPPORT/dataset.shtml">DART Shapemodel Archive Bundle</a> <code>urn:nasa:pds:dart_shapemodel::1.0</code></li>
 </ul>
 
 <h3>Related Datasets</h3>

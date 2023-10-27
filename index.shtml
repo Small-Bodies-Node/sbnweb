@@ -68,7 +68,17 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 <ul class="news">
 
 
-		
+<!-- 2023.10.27 -->
+<li><span class="date">2023.10.27</span>
+<br />+ <a href="/holdings/pds4-dart_shapemodel-v1.0/SUPPORT/dataset.shtml">DART Shapemodel Archive Bundle</a> <code>urn:nasa:pds:dart_shapemodel::1.0</code> has been made publicly available and includes the following collections:
+<ul>
+<li><a href="/holdings/pds4-dart_shapemodel:data_derived_didymos_model_v003-v1.0/SUPPORT/dataset.shtml">Derived data products for DART shapemodel: didymos_model_v003</a> <code>urn:nasa:pds:dart_shapemodel:data_derived_didymos_model_v003::1.0</code></li>
+<li><a href="/holdings/pds4-dart_shapemodel:data_derived_dimorphos_model_v003-v1.0/SUPPORT/dataset.shtml">Derived data products for DART shapemodel: dimorphos_model_v003</a> <code>urn:nasa:pds:dart_shapemodel:data_derived_dimorphos_model_v003::1.0</code></li>
+<li><a href="/holdings/pds4-dart_shapemodel:data_derived_dimorphos_model_v004-v1.0/SUPPORT/dataset.shtml">Derived data products for DART shapemodel: dimorphos_model_v004</a> <code>urn:nasa:pds:dart_shapemodel:data_derived_dimorphos_model_v004::1.0</code></li>
+<li><a href="/holdings/pds4-dart_shapemodel:document-v1.0/SUPPORT/dataset.shtml">Documentation Collection for the DART Shapemodel Archive Bundle</a> <code>urn:nasa:pds:dart_shapemodel:document::1.0</code></li>
+</ul>
+</li>
+
 
 <!-- 2023.10.25 -->
 <li><span class="date">2023.10.25</span>

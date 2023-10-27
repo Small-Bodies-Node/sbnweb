@@ -22,6 +22,7 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 <!--
 ===========================================================================
 EDIT HISTORY:
++ 2023-10-27 EMW	added Didymos System Shape Model Bundle under Didymos
 + 2023-12-25 EMW	added 15 DART teleobs under Didymos
 + 2023-10-20 EMW	added DRACO v3 (3 collections) and LICIACube (3 collections, not doc) under Didymos
 + 2023-04-13 EMW	NH K -- v6 for most, v5 for REX; fixed typos
@@ -580,6 +581,8 @@ EDIT HISTORY:
 <li><a href="/holdings/pds4-dart_teleobs:data_mroraw-v1.0/SUPPORT/dataset.shtml">DART Magdalena Ridge Observatory 2.4m Telescope Raw Data Product Collection</a> <code>urn:nasa:pds:dart_teleobs:data_mroraw::1.0</code></li>
 <li><a href="/holdings/pds4-dart_teleobs:data_mrocal-v1.0/SUPPORT/dataset.shtml">DART Magdalena Ridge Observatory 2.4m Telescope Calibrated Data Product Collection</a> <code>urn:nasa:pds:dart_teleobs:data_mrocal::1.0</code></li>
 <li><a href="/holdings/pds4-dart_teleobs:data_mroddp-v1.0/SUPPORT/dataset.shtml">DART Magdalena Ridge Observatory 2.4m Telescope Derived Data Product Collection</a> <code>urn:nasa:pds:dart_teleobs:data_mroddp::1.0</code></li>
+
+<li><a href="/holdings/pds4-dart_shapemodel-v1.0/SUPPORT/dataset.shtml">DART Shapemodel Archive Bundle</a> <code>urn:nasa:pds:dart_shapemodel::1.0</code></li>
 
 </ul>
 

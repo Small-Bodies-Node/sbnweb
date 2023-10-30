@@ -39,7 +39,7 @@
 </ul>
 
 <h2>MPC FEEDBACK</h2>
-<p>Please provide <a href="/about/comment_form_MPC.shtml">feedback on the MPC</a> website.</p>
+<p>Any issues, concerns, questions about the MPC should be addressed via the forms at the <a href="https://mpc-service.atlassian.net/servicedesk/customer/portals">Minor Planet Center Help Center</a>.</p>
 
 </div><!-- end class sidebarSection -->
 

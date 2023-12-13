@@ -39,7 +39,7 @@
 </ul>
 
 <h2>MPC FEEDBACK</h2>
-<p>Any issues, concerns, questions about the MPC should be addressed via the forms at the <a href="https://mpc-service.atlassian.net/servicedesk/customer/portals">Minor Planet Center Help Center</a>.</p>
+<p>The MPC Users' Group (MUG) <a href="https://mpcmug.astro.umd.edu/">invites community feedback</a> on any issues, concerns, or questions about the MPC.</p>
 
 </div><!-- end class sidebarSection -->
 

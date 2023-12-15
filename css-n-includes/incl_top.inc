@@ -170,7 +170,7 @@ a:active {} /* requires a blank style for :active to stop it being buggy */
 <table class="important">
 <tr>
 <td><h1>DOWNTIME ANNOUNCEMENT</h1>
-<h3>15 Dec 2023: There may be brief outages between 3-6pm EsT for server maintenance.
+<h3>15 Dec 2023: There may be brief outages between 3-6pm EST for server maintenance.
 <br />Thank you for your patience.</h3>
 </td>
 </tr>

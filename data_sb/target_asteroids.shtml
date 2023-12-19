@@ -22,6 +22,7 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 <!--
 ===========================================================================
 EDIT HISTORY:
++ 2023-12-19 EMW	replaced NH KEM (PDS3) MVIC raw/cal v6 datasets with (PDS4) MVIC raw/cal collections under Arrokoth and Pluto
 + 2023-12-15 EMW	DART collections (v2 LDT, Leia/Luke calibrated, IMACS/SWOPE derived, DRACO calibrated backplanes under Didymos
 + 2023-10-27 EMW	added Didymos System Shape Model Bundle under Didymos
 + 2023-12-25 EMW	added 15 DART teleobs under Didymos
@@ -640,8 +641,8 @@ EDIT HISTORY:
 <li><a href="/holdings/ro-c-osinac-3-esc3-67pchuryumov-m18-v2.0/dataset.shtml">Rosetta-Orbiter OSIRIS Narrow Angle Camera Escort 3 MTP018 67P Calibrated Data v2.0</a></li><!-- RO-C-OSINAC-3-ESC3-67PCHURYUMOV-M18-V2.0 -->
 <li><a href="/holdings/ro-c-osiwac-2-esc3-67pchuryumov-m18-v2.0/dataset.shtml">Rosetta-Orbiter OSIRIS Wide Angle Camera Escort 3 MTP018 67P Raw Data v2.0</a></li><!-- RO-C-OSIWAC-2-ESC3-67PCHURYUMOV-M18-V2.0 -->
 <li><a href="/holdings/ro-c-osiwac-3-esc3-67pchuryumov-m18-v2.0/dataset.shtml">Rosetta-Orbiter OSIRIS Wide Angle Camera Escort 3 MTP018 67P Calibrated Data v2.0</a></li><!-- RO-C-OSIWAC-3-ESC3-67PCHURYUMOV-M18-V2.0 -->
-<li><a href="/holdings/nh-a-mvic-2-kem1-v6.0/dataset.shtml">New Horizons MVIC KEM1 Encounter Raw Data v6.0</a></li><!-- NH-A-MVIC-2-KEM1-V6.0 -->
-<li><a href="/holdings/nh-a-mvic-3-kem1-v6.0/dataset.shtml">New Horizons MVIC KEM1 Encounter Calibrated Data v6.0</a></li><!-- NH-A-MVIC-3-KEM1-V6.0 -->
+<li><a href="/holdings/pds4-nh_mvic:kem1_raw-v1.0/SUPPORT/dataset.shtml">New Horizons KEM1 Encounter MVIC Raw Data</a> <code>urn:nasa:pds:nh_mvic:kem1_raw::1.0</code></li>
+<li><a href="/holdings/pds4-nh_mvic:kem1_cal-v1.0/SUPPORT/dataset.shtml">New Horizons KEM1 Encounter MVIC Partially Processed Data</a> <code>urn:nasa:pds:nh_mvic:kem1_cal::1.0</code></li>
 <li><a href="/holdings/nh-p_psa-leisa_mvic-5-comp-v1.0/dataset.shtml">New Horizons Pluto Encounter Surface Composition Maps</a></li><!-- NH-P/PSA-LEISA/MVIC-5-COMP-V1.0 -->
 <li><a href="/holdings/nh-p_psa-lorri_alice_rex-5-atmos-v2.0/dataset.shtml">New Horizons Pluto Encounter Atmosphere Data v2.0</a></li><!-- NH-P/PSA-LORRI/ALICE/REX-5-ATMOS-V2.0 -->
 <li><a href="/holdings/nh-p_psa-lorri_mvic-5-geophys-v1.0/dataset.shtml">New Horizons Pluto Encounter Geology and Geophysical Maps</a></li><!-- NH-P/PSA-LORRI/MVIC-5-GEOPHYS-V1.0 -->
@@ -730,8 +731,8 @@ EDIT HISTORY:
 <li><a href="/holdings/nh-a-leisa-3-kem1-v6.0/dataset.shtml">New Horizons LEISA KEM1 Encounter Calibrated Data v6.0</a></li><!-- NH-A-LEISA-3-KEM1-V6.0 -->
 <li><a href="/holdings/nh-a-lorri-2-kem1-v6.0/dataset.shtml">New Horizons LORRI KEM1 Encounter Raw Data v6.0</a></li><!-- NH-A-LORRI-2-KEM1-V6.0 -->
 <li><a href="/holdings/nh-a-lorri-3-kem1-v6.0/dataset.shtml">New Horizons LORRI KEM1 Encounter Calibrated Data v6.0</a></li><!-- NH-A-LORRI-3-KEM1-V6.0 -->
-<li><a href="/holdings/nh-a-mvic-2-kem1-v6.0/dataset.shtml">New Horizons MVIC KEM1 Encounter Raw Data v6.0</a></li><!-- NH-A-MVIC-2-KEM1-V6.0 -->
-<li><a href="/holdings/nh-a-mvic-3-kem1-v6.0/dataset.shtml">New Horizons MVIC KEM1 Encounter Calibrated Data v6.0</a></li><!-- NH-A-MVIC-3-KEM1-V6.0 -->
+<li><a href="/holdings/pds4-nh_mvic:kem1_raw-v1.0/SUPPORT/dataset.shtml">New Horizons KEM1 Encounter MVIC Raw Data</a> <code>urn:nasa:pds:nh_mvic:kem1_raw::1.0</code></li>
+<li><a href="/holdings/pds4-nh_mvic:kem1_cal-v1.0/SUPPORT/dataset.shtml">New Horizons KEM1 Encounter MVIC Partially Processed Data</a> <code>urn:nasa:pds:nh_mvic:kem1_cal::1.0</code></li>
 <li><a href="/holdings/nh-a-leisa_mvic-5-comp-v1.0/dataset.shtml">New Horizons Arrokoth Encounter Surface Composition Maps</a></li><!-- NH-A-LEISA/MVIC-5-COMP-V1.0 -->
 <li><a href="/holdings/nh-a-lorri_mvic-5-geophys-v1.0/dataset.shtml">New Horizons Arrokoth Encounter Geology and Geophysical Maps and Shape Models</a></li><!-- NH-A-LORRI/MVIC-5-GEOPHYS-V1.0 -->
 
@@ -935,7 +936,7 @@ EDIT HISTORY:
 
 <!-- ************************************************** End editing! ************************************************** -->
 <!--#include virtual="/css-n-includes/incl_bottom.inc"-->
-<br />Last updated:
+<br>Last updated:
 <!--#config timefmt="%A %B %d, %Y"-->
 <!--#echo var="LAST_MODIFIED" -->
 </div>

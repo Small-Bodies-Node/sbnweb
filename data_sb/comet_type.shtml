@@ -22,6 +22,7 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 <!--
 ===========================================================================
 EDIT HISTORY:
++ 2023-12-19 EMW	replaced NH KEM (PDS3) MVIC raw/cal v6 datasets with (PDS4) MVIC raw/cal collections under Imaging; added NH Documents bundle under Misc
 + 2023-12-15 EMW	DART collections (v2 LDT raw cal under Imaging, derived under Photometry), Leia/Luke calibrated (under Imaging), IMACS/SWOPE derived (under Photometry), DRACO calibrated backplanes (under Imaging)
 + 2023-10-27 EMW	added Didymos System Shape Model Bundle under Shape Model
 + 2023-10-25 EMW	added DART teleobs raw and calibrated (9) under Imaging, teleobs derived (3) under Photometry, teleobs doc (3) under Misc
@@ -353,8 +354,8 @@ EDIT HISTORY:
 <li><a href="/holdings/nh-x-mvic-3-kemcruise1-v2.0/dataset.shtml">New Horizons MVIC KEM Cruise 1 Calibrated Data v2.0</a></li><!-- NH-X-MVIC-3-KEMCRUISE1-V2.0 -->
 <li><a href="/holdings/nh-a-lorri-2-kem1-v6.0/dataset.shtml">New Horizons LORRI KEM1 Encounter Raw Data v6.0</a></li><!-- NH-A-LORRI-2-KEM1-V6.0 -->
 <li><a href="/holdings/nh-a-lorri-3-kem1-v6.0/dataset.shtml">New Horizons LORRI KEM1 Encounter Calibrated Data v6.0</a></li><!-- NH-A-LORRI-3-KEM1-V6.0 -->
-<li><a href="/holdings/nh-a-mvic-2-kem1-v6.0/dataset.shtml">New Horizons MVIC KEM1 Encounter Raw Data v6.0</a></li><!-- NH-A-MVIC-2-KEM1-V6.0 -->
-<li><a href="/holdings/nh-a-mvic-3-kem1-v6.0/dataset.shtml">New Horizons MVIC KEM1 Encounter Calibrated Data v6.0</a></li><!-- NH-A-MVIC-3-KEM1-V6.0 -->
+<li><a href="/holdings/pds4-nh_mvic:kem1_raw-v1.0/SUPPORT/dataset.shtml">New Horizons KEM1 Encounter MVIC Raw Data</a> <code>urn:nasa:pds:nh_mvic:kem1_raw::1.0</code></li>
+<li><a href="/holdings/pds4-nh_mvic:kem1_cal-v1.0/SUPPORT/dataset.shtml">New Horizons KEM1 Encounter MVIC Partially Processed Data</a> <code>urn:nasa:pds:nh_mvic:kem1_cal::1.0</code></li>
 <li><a href="/holdings/nh-a-leisa_mvic-5-comp-v1.0/dataset.shtml">New Horizons Arrokoth Encounter Surface Composition Maps</a></li><!-- NH-A-LEISA/MVIC-5-COMP-V1.0 -->
 <li><a href="/holdings/nh-a-lorri_mvic-5-geophys-v1.0/dataset.shtml">New Horizons Arrokoth Encounter Geology and Geophysical Maps and Shape Models</a></li><!-- NH-A-LORRI/MVIC-5-GEOPHYS-V1.0 -->
 <li><a href="https://sbn.psi.edu/pds/resource/orex/ocams.html">OSIRIS-REx OCAMS Bundle</a></li>
@@ -1445,11 +1446,12 @@ EDIT HISTORY:
 <li><a href="/holdings/pds4-dart_teleobs:document_lcogt-v1.0/SUPPORT/dataset.shtml">DART Las Cumbres Observatory 1.0m Telescope Documentation Collection</a> <code>urn:nasa:pds:dart_teleobs:document_lcogt::1.0</code></li>
 <li><a href="/holdings/pds4-dart_teleobs:document_mro-v1.0/SUPPORT/dataset.shtml">DART Magdalena Ridge Observatory 2.4m Telescope Documentation Collection</a> <code>urn:nasa:pds:dart_teleobs:document_mro::1.0</code></li>
 
+<li><a href="/holdings/pds4-nh_documents-v1.0/SUPPORT/dataset.shml">New Horizons Mission Instrument-Specific and Mission-Wide Document</a> <code>urn:nasa:pds:nh_documents::1.0</code></li>
 </ul>
 
 <!-- ************************************************** End editing! ************************************************** -->
 <!--#include virtual="/css-n-includes/incl_bottom.inc"-->
-<br />Last updated:
+<br>Last updated:
 <!--#config timefmt="%A %B %d, %Y"-->
 <!--#echo var="LAST_MODIFIED" -->
 </div>

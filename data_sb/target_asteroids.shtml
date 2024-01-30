@@ -22,6 +22,7 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 <!--
 ===========================================================================
 EDIT HISTORY:
++ 2024-01-30 EMW	added KEM2 Cruise Leisa and Lorri datasets (4) under Arroketh
 + 2023-12-19 EMW	replaced NH KEM (PDS3) MVIC raw/cal v6 datasets with (PDS4) MVIC raw/cal collections under Arrokoth and Pluto
 + 2023-12-15 EMW	DART collections (v2 LDT, Leia/Luke calibrated, IMACS/SWOPE derived, DRACO calibrated backplanes under Didymos
 + 2023-10-27 EMW	added Didymos System Shape Model Bundle under Didymos
@@ -142,7 +143,7 @@ EDIT HISTORY:
 
 <!-- <li><a href="#Surveys">Surveys</a></li> -->
 </ul>
-<hr />
+<hr>
 <!-- Target Data ======================================================== -->
 <a name="1_Ceres"></a><!-- checked against Tracking DB 2013-10-21 -->
 <h2>(1)&nbsp;Ceres</h2>
@@ -211,7 +212,6 @@ EDIT HISTORY:
 <li><a href="/holdings/ro-x-osiwac-4-cr5-chkout-strlight-v1.0/dataset.html">Rosetta-Orbiter OSIRIS Wide Angle Camera Cruise 5 Resampled-C (Solar Stray Light and Geometric Distortion Corrected in W/m^2/sr/nm) Data</a></li><!-- RO-X-OSIWAC-4-CR5-CHKOUT-STRLIGHT-V1.0 -->
 <li><a href="/holdings/ro-x-osinac-4-cr5-chkout-str-refl-v1.0/dataset.html">Rosetta-Orbiter OSIRIS Narrow Angle Camera Cruise 5 Resampled-D (Solar Stray Light and Geometric Distortion Corrected in Reflectance Units) Data</a></li><!-- RO-X-OSINAC-4-CR5-CHKOUT-STR-REFL-V1.0 -->
 <li><a href="/holdings/ro-x-osiwac-4-cr5-chkout-str-refl-v1.0/dataset.html">Rosetta-Orbiter OSIRIS Wide Angle Camera Cruise 5 Resampled-D (Solar Stray Light and Geometric Distortion Corrected in Reflectance Units) Data</a></li><!-- RO-X-OSIWAC-4-CR5-CHKOUT-STR-REFL-V1.0 -->
-
 </ul>
 
 <!-- Target Data ======================================================== -->
@@ -453,7 +453,6 @@ EDIT HISTORY:
 <li><a href="/holdings/ro-x-srem-5-ast1-v1.0/dataset.html">Rosetta-Orbiter SREM Steins Derived Data</a></li><!-- RO-X-SREM-5-AST1-V1.0 -->
 <li><a href="/holdings/ro-a-rpclap-2-ast1-edited2-v1.0/dataset.shtml">Rosetta-Orbiter RPCLAP Steins Raw Data</a></li><!-- RO-A-RPCLAP-2-AST1-EDITED2-V1.0 -->
 <li><a href="/holdings/ro-a-rpclap-3-ast1-calib2-v1.0/dataset.shtml">Rosetta-Orbiter RPCLAP Steins Calibrated Data</a></li><!-- RO-A-RPCLAP-3-AST1-CALIB2-V1.0 -->
-
 </ul>
 
 <!-- Target Data ======================================================== -->
@@ -656,7 +655,6 @@ EDIT HISTORY:
 <li><a href="/holdings/ro-c-osiwac-4-esc3-67p-m18-str-refl-v1.0/dataset.shtml">Rosetta-Orbiter OSIRIS Wide Angle Camera Escort 3 MTP018 67P Resampled-D (Solar Stray Light and Geometric Distortion Corrected in Reflectance Units) Data</a></li><!-- RO-C-OSIWAC-4-ESC3-67P-M18-STR-REFL-V1.0 -->
 <li><a href="/holdings/ro-c-osiwac-4-esc3-67p-m18-strlight-v1.0/dataset.shtml">Rosetta-Orbiter OSIRIS Wide Angle Camera Escort 3 MTP018 67P Resampled-C (Solar Stray Light and Geometric Distortion Corrected in W/m^2/sr/nm) Data</a></li><!-- RO-C-OSIWAC-4-ESC3-67P-M18-STRLIGHT-V1.0 -->
 <li><a href="/holdings/ro-c-osiwac-4-esc3-67pchuryumov-m18-v2.0/dataset.shtml">Rosetta-Orbiter OSIRIS Wide Angle Camera Escort 3 MTP018 67P Resampled-A (Geometric Distortion Corrected in W/m^2/sr/nm) Data v2.0</a></li><!-- RO-C-OSIWAC-4-ESC3-67PCHURYUMOV-M18-V2.0 -->
-
 </ul>
 
 <!-- Target Data ======================================================== -->
@@ -736,7 +734,10 @@ EDIT HISTORY:
 <li><a href="/holdings/nh-a-leisa_mvic-5-comp-v1.0/dataset.shtml">New Horizons Arrokoth Encounter Surface Composition Maps</a></li><!-- NH-A-LEISA/MVIC-5-COMP-V1.0 -->
 <li><a href="/holdings/nh-a-lorri_mvic-5-geophys-v1.0/dataset.shtml">New Horizons Arrokoth Encounter Geology and Geophysical Maps and Shape Models</a></li><!-- NH-A-LORRI/MVIC-5-GEOPHYS-V1.0 -->
 
-
+<li><a href="/holdings/nh-a-leisa-2-kem2-v1.0/dataset.shtml">New Horizons LEISA KEM2 Raw Data</a></li><!-- NH-A-LEISA-2-KEM2-V1.0 -->
+<li><a href="/holdings/nh-a-leisa-3-kem2-v1.0/dataset.shtml">New Horizons LEISA KEM2 Calibrated Data</a></li><!-- NH-A-LEISA-3-KEM2-V1.0 -->
+<li><a href="/holdings/nh-a-lorri-2-kem2-v1.0/dataset.shtml">New Horizons LORRI KEM2 Raw Data</a></li><!-- NH-A-LORRI-2-KEM2-V1.0 -->
+<li><a href="/holdings/nh-a-lorri-3-kem2-v1.0/dataset.shtml">New Horizons LORRI KEM2 Calibrated Data</a></li><!-- NH-A-LORRI-3-KEM2-V1.0 -->
 </ul>
 
 <!-- Target Data ======================================================== -->

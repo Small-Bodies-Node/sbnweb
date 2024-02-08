@@ -25,7 +25,7 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 <h2>Small Body Ephemerides</h2>
 <ul>
 <li><a href="https://ssd.jpl.nasa.gov/?horizons" onclick="this.target='_blank'">HORIZONS</a> JPL Solar System Dynamics ephemeris generator</li>
-<li><a href="https://asteroid.lowell.edu/main/astorb/" onclick="this.target='_blank'">The Asteroid Orbital Elements Database</a> (Ted Bowell, Lowell Observatory)</li>
+<li><a href="https://asteroid.lowell.edu/astorb/" onclick="this.target='_blank'">The Asteroid Orbital Elements Database</a> (Lowell Observatory)</li>
 </ul>
 
 <h2>Astronomical Information and Data Resources</h2>
@@ -121,8 +121,8 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 
 <h2>Small Body Missions</h2>
 <ul>
-<li><a href="https://www.nasa.gov/missions/index.html" onclick="this.target='_blank'">NASA Missions</a> (all)</li>
-<li><a href="https://www.nasa.gov/planetarymissions/index.html" onclick="this.target='_blank'">NASA Planetary Missions</a></li>
+<li><a href="https://www.nasa.gov/missions/" onclick="this.target='_blank'">NASA Missions</a> (all)</li>
+<!-- <li><a href="https://www.nasa.gov/planetarymissions/index.html" onclick="this.target='_blank'">NASA Planetary Missions</a></li> -->
 <li><a href="http://www.esa.int/ESA" onclick="this.target='_blank'">ESA's Solar and Planetary Missions</a></li>
 <li><a href="http://www.jaxa.jp/countdown/f17/special/exploration_e.html" onclick="this.target='_blank'">JAXA's Planet Exploration Missions</a></li>
 <li><a href="http://planetary.org/explore/space-topics/space-missions/missions-beyond-mars.html" onclick="this.target='_blank'">The Planetary Society: Missions beyond Mars</a></li>

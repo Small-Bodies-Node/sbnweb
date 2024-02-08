@@ -66,7 +66,7 @@
 <h2>PDS Support</h2>
 <ul>
 <li><a href="https://pds.nasa.gov/" onclick="this.target='_blank'" class="external">PDS Home</a></li>
-<li><a href="https://pdsmgmt.gsfc.nasa.gov/" onclick="this.target='_blank'" class="external">Management</a></li>
+<!-- <li><a href="https://pdsmgmt.gsfc.nasa.gov/" onclick="this.target='_blank'" class="external">Management</a></li> -->
 <li><a href="https://pds-engineering.jpl.nasa.gov/" onclick="this.target='_blank'" class="external">Engineering</a></li>
 </ul>
 </div><!-- end class sidebarSection -->

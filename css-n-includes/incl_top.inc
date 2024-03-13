@@ -115,7 +115,7 @@ a:active {} /* requires a blank style for :active to stop it being buggy */
 	<li><a href="http://sbib.psi.edu/"><span class="item">Small Bodies Image Browser</span></a></li>
 
 	<!-- <li><a href="/tools/form_sbxid.shtml"><span class="item">Small Bodies Cross-ID Utility</span></a></li> -->
-	<li><a href="/tools/form_cxid.shtml"><span class="item">Comet Cross-ID Utility</span></a></li>
+	<!-- <li><a href="/tools/form_cxid.shtml"><span class="item">Comet Cross-ID Utility</span></a></li> -->
 	<li><a href="/tools/software.shtml#analysis"><span class="item">Small Bodies Modeling</span></a></li>
 	<li><a href="https://naif.jpl.nasa.gov/naif/self_training.html" onclick="this.target='_blank'" class="external"><span class="item">SPICE Self Training</span></a></li>
 	</ul>

@@ -23,6 +23,7 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 <!--
 ===========================================================================
 EDIT HISTORY:
++ 2024-05-30 EMW	added Pluto Albedo Map under Lab
 + 2021-03-05 EMW	updated McDonald Borrelly data to PDS4
 + 2019-06-07 EMW	updated KPNO & IRTF DI Encounter data to PDS4
 + 2019-02-28 EMW	migrated datasets: Nuc Prop, Nuc Rotation, 19P, Devico, Faint comets
@@ -97,7 +98,7 @@ EDIT HISTORY:
 
 
 
- <li><a href="/holdings/pds4-gbo-c2012_s1_ison-v1.0/SUPPORT/dataset.shtml">Comet C/ISON (2012 S1) Ground-Based Observations Bundle</a> <code>urn:nasa:pds:gbo-c2012_s1_ison::1.0</code></li>
+<li><a href="/holdings/pds4-gbo-c2012_s1_ison-v1.0/SUPPORT/dataset.shtml">Comet C/ISON (2012 S1) Ground-Based Observations Bundle</a> <code>urn:nasa:pds:gbo-c2012_s1_ison::1.0</code></li>
 
 <li><a href="/holdings/pds4-gbo-c2012_s1_ison:jan2013_hfosc-v1.0/SUPPORT/dataset.shtml">Comet ISON January 2013 HFOSC Observations Collection</a> <code>urn:nasa:pds:gbo-c2012_s1_ison:jan2013_hfosc::1.0</code></li>
 <li><a href="/holdings/pds4-gbo-c2012_s1_ison:feb2013_hfosc_fosc-v1.0/SUPPORT/dataset.shtml">Comet ISON February 2013 HFOSC and FOSC Observations Collection</a> <code>urn:nasa:pds:gbo-c2012_s1_ison:feb2013_hfosc_fosc::1.0</code></li>
@@ -117,6 +118,10 @@ EDIT HISTORY:
 <li><a href="https://sbn.psi.edu/pds/resource/icespec.html">Optical Constants and Lab Spectra of Water Ice</a></li>
 <li><a href="https://sbn.psi.edu/pds/resource/olivspec.html">Olivine Laboratory Infrared Absorbance Spectra</a></li>
 <li><a href="/holdings/ear-x-i2041-5-ch3dicespec-v1.0/dataset.shtml">Lab CH3D Ice Absorption Coefficients</a></li>
+
+
+<li><a href="/holdings/pds4-nh_derived:pluto_albedo-v1.0/SUPPORT/dataset.shtml">Bolometric Hemispherical Albedo Map of Pluto from New Horizons Observations</a> <code>urn:nasa:pds:nh_derived:pluto_albedo::1.0</code></li>
+
 </ul>
 
 <!-- ************************************************** End editing! ************************************************** -->

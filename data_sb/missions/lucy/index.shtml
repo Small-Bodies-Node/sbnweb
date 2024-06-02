@@ -38,6 +38,7 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 <!--
 ===========================================================================
 EDIT HISTORY:
++ 2024-06-01 EMW	updated description, instruments, and datset sections; added Didymos and other datasets
 + 2023-04-13 EMW	added MBA targets in description
 + 2019-02-08 EMW	added links, desciption, instruments
 + 2019-02-06 EMW	created page
@@ -49,7 +50,7 @@ EDIT HISTORY:
 <h1>Lucy</h1>
 
 <!-- Mission Description ================================================ -->
-<p>Lucy is a NASA mission that will tour six Jupiter trojans, asteroids which share Jupiter's orbit around the Sun, orbiting either ahead of or behind the planet and main belt asteroids 152830 Dinkinesh and 52246 Donaldjohanson. Trojan asteroids may be remnants of the primordial material that formed the outer planets, and serve as time capsules from the birth of our Solar System more than 4 billion years ago. Lucy is planned to launch in 2021 and will arrive at the L4 Trojan cloud in 2027, where it will fly by four Trojans, 3548 Eurybates, 15094 Polymele, 11351 Leucus, and 21900 Orus. After these flybys, Lucy will return to the vicinity of the Earth whereupon it will receive a gravity assist to take it to the L5 Trojan cloud, where it will visit the binary Trojan 617 Patroclus with its satellite Menoetius.</p>
+<p>Lucy is a NASA mission that will tour six Jupiter trojans, asteroids which share Jupiter's orbit around the Sun, orbiting either ahead of or behind the planet and main belt asteroids 152830 Dinkinesh and 52246 Donaldjohanson. Trojan asteroids may be remnants of the primordial material that formed the outer planets, and serve as time capsules from the birth of our Solar System more than 4 billion years ago. Lucy was launched in Oct 2021 and will arrive at the L4 Trojan cloud in 2027, where it will fly by four Trojans, 3548 Eurybates, 15094 Polymele, 11351 Leucus, and 21900 Orus. After these flybys, Lucy will return to the vicinity of the Earth whereupon it will receive a gravity assist to take it to the L5 Trojan cloud, where it will visit the binary Trojan 617 Patroclus with its satellite Menoetius.</p>
 
 <p></p>
 
@@ -62,30 +63,58 @@ EDIT HISTORY:
 <!-- Instrument List ==================================================== -->
 <h2>Instruments</h2>
 <ul>
-<li>L'Ralph - panchromatic and color visible imager (0.4-0.85 micron) and infrared spectroscopic mapper (1-3.6 &micro;m)</li>
-<li>L'LORRI - high-resolution visible imager.</li>
-<li>L'TES - thermal infrared spectrometer (6-75 &micro;m). </li>
-<li>The radio science investigation will determine the mass of the Trojans by using the spacecraft radio telecommunications hardware and high-gain antenna to measure Doppler shifts</li>
+<li>Lucy Long Range Reconnaissance Imager (L'LORRI) - high-resolution panchromatic camera</li>
+<li>Lucy Ralph (L'Ralph) Linear Etalon Imaging Spectral Array (LEISA) - infrared spectroscopic mapper (1-3.6 &micro;m)</li>
+<li>Lucy Ralph (L'Ralph) Multispectral Visible Imaging Camera (MVIC) - panchromatic and color visible imager (0.4-0.85 micron)</li>
+<li>Lucy Thermal Emission Spectrometer (L'TES) - thermal infrared spectrometer (6-75 &micro;m)</li>
+<li>Lucy Terminal Tracking Cameras (TTCam) - monochromatic (475-625 nm bandpass) terminal tracking cameras</li>
+<li>Lucy Radio Science (RSS) - The Lucy Radio Science Investigation and Telecom Subsystem</li>
 </ul>
 
 <!-- Mission Data ======================================================= -->
 <h2>Data Sets</h2>
 
+<h3>Didymos Observations (2022)</h3>
+<ul>
+<li><a href="holdings/pds4-lucy.llorri:data_didymos_raw-v1.0/SUPPORT/dataset.shtml">L'LORRI Raw Data</a> <code>urn:nasa:pds:lucy.llorri:data_didymos_raw::1.0</code></li>
+<li><a href="holdings/pds4-lucy.llorri:data_didymos_partially_processed-v1.0/SUPPORT/dataset.shtml">L'LORRI Partially Processed Data</a> <code>urn:nasa:pds:lucy.llorri:data_didymos_partially_processed::1.0</code></li>
+</ul>
 
-
-
-
-
-
-
-
-
-
-
-
- <h3>Other Mission Datasets</h3>
+<h3>Dinkinesh Encounter (2023)</h3>
 <ul>
 <li></li>
+</ul>
+
+<h3>DonaldJohanson Encounter (2025)</h3>
+<ul>
+<li></li>
+</ul>
+
+<h3>Eurybates and Polymele Encounters (2027)</h3>
+<ul>
+<li></li>
+</ul>
+
+<h3>Leucus Encounter (2028)</h3>
+<ul>
+<li></li>
+</ul>
+
+<h3>Orus Encounter (2028)</h3>
+<ul>
+<li></li>
+</ul>
+
+<h3>Patroclus and Menoetius Binary Encounter (2033)</h3>
+<ul>
+<li></li>
+</ul>
+
+
+<h3>Other Mission Datasets</h3>
+<ul>
+<li><a href="holdings/pds4-lucy.llorri:document-v1.0/SUPPORT/dataset.shtml">L'LORRI Documentation</a> <code>urn:nasa:pds:lucy.llorri:document::1.0</code></li>
+<li><a href="holdings/pds4-lucy.llorri:calibration-v1.0/SUPPORT/dataset.shtml">L'LORRI Calibration Data</a> <code>urn:nasa:pds:lucy.llorri:calibration::1.0</code></li>
 </ul>
 
 <h3>Related Datasets</h3>

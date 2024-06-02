@@ -23,6 +23,7 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 <!--
 ===========================================================================
 EDIT HISTORY:
++ 2024-06-01 EMW	(2024-05-31) added Lucy Didymos inder Didymos
 + 2024-06-01 EMW	removed/readded the Pluto ALbedo and CLASSE Charon (this page in a weird way was not affected by the mixup since both datsets were added under Pluto anyways)
 + 2024-05-30 EMW	added Pluto Albedo Map under Pluto; added CLASSE CHaron under Pluto
 + 2024-01-30 EMW	added KEM2 Cruise Leisa and Lorri datasets (4) under Arroketh
@@ -592,6 +593,9 @@ EDIT HISTORY:
 <li><a href="/holdings/pds4-dart_teleobs:data_ldtcal-v2.0/SUPPORT/dataset.shtml">DART Lowell Discovery Telescope (LDT) Calibrated Data Collection v2.0</a> <code>urn:nasa:pds:dart_teleobs:data_ldtcal::2.0</code></li>
 <li><a href="/holdings/pds4-dart_teleobs:data_ldtddp-v2.0/SUPPORT/dataset.shtml">DART Lowell Discovery Telescope (LDT) Derived Data Product Collection v2.0</a> <code>urn:nasa:pds:dart_teleobs:data_ldtddp::2.0</code></li>
 <li><a href="/holdings/pds4-dart_shapemodel-v1.0/SUPPORT/dataset.shtml">DART Shapemodel Archive Bundle</a> <code>urn:nasa:pds:dart_shapemodel::1.0</code></li>
+
+<li><a href="holdings/pds4-lucy.llorri:data_didymos_raw-v1.0/SUPPORT/dataset.shtml">Lucy LOng Range Reconnaissance Imager (L'LORRI) Raw Data for the Didymos Observation Data Archive</a> <code>urn:nasa:pds:lucy.llorri:data_didymos_raw::1.0</code></li>
+<li><a href="holdings/pds4-lucy.llorri:data_didymos_partially_processed-v1.0/SUPPORT/dataset.shtml">Lucy LOng Range Reconnaissance Imager (L'LORRI) Partially Processed Data for the Didymos Observation Data Archive</a> <code>urn:nasa:pds:lucy.llorri:data_didymos_partially_processed::1.0</code></li>
 
 </ul>
 

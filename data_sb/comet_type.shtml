@@ -23,6 +23,7 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 <!--
 ===========================================================================
 EDIT HISTORY:
++ 2024-06-01 EMW	(2024-05-31) added Lucy Didymos inder Imaging
 + 2024-06-01 EMW	removed CLASSE Charon and added Pluto Albedo under Imaging, Photo, Physical
 + 2024-05-30 EMW	added CLASSE CHaron under Imaging, Photo, Physical
 + 2024-01-30 EMW	added KEM2 Cruise Leisa (under Thermal), Lorri (under Imaging), PEPPSI and SWAP under Plasma
@@ -442,6 +443,9 @@ EDIT HISTORY:
 <li><a href="/holdings/nh-a-lorri-3-kem2-v1.0/dataset.shtml">New Horizons LORRI KEM2 Calibrated Data</a></li><!-- NH-A-LORRI-3-KEM2-V1.0 -->
 
 <li><a href="/holdings/pds4-nh_derived:pluto_albedo-v1.0/SUPPORT/dataset.shtml">Bolometric Hemispherical Albedo Map of Pluto from New Horizons Observations</a> <code>urn:nasa:pds:nh_derived:pluto_albedo::1.0</code></li>
+
+<li><a href="holdings/pds4-lucy.llorri:data_didymos_raw-v1.0/SUPPORT/dataset.shtml">Lucy LOng Range Reconnaissance Imager (L'LORRI) Raw Data for the Didymos Observation Data Archive</a> <code>urn:nasa:pds:lucy.llorri:data_didymos_raw::1.0</code></li>
+<li><a href="holdings/pds4-lucy.llorri:data_didymos_partially_processed-v1.0/SUPPORT/dataset.shtml">Lucy LOng Range Reconnaissance Imager (L'LORRI) Partially Processed Data for the Didymos Observation Data Archive</a> <code>urn:nasa:pds:lucy.llorri:data_didymos_partially_processed::1.0</code></li>
 
 </ul>
 

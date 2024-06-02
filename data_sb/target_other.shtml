@@ -23,6 +23,7 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 <!--
 ===========================================================================
 EDIT HISTORY:
++ 2024-06-01 EMW	removed Pluto Albedo, added CLASSE Charon
 + 2024-05-30 EMW	added Pluto Albedo Map under Lab
 + 2024-01-30 EMW	added KEM2 Cruise Peppsi and SWAP datasets (4) under Sun
 + 2023-12-19 EMW	replaced NH KEM (PDS3) MVIC raw/cal v6 datasets with (PDS4) MVIC raw/cal collections under Uranus, Neptune
@@ -562,7 +563,8 @@ EDIT HISTORY:
 <li><a href="https://sbn.psi.edu/pds/resource/olivspec.html">Olivine Laboratory Infrared Absorbance Spectra</a></li>
 <li><a href="/holdings/ear-x-i2041-5-ch3dicespec-v1.0/dataset.shtml">Lab CH3D Ice Absorption Coefficients</a></li>
 
-<li><a href="/holdings/pds4-nh_derived:pluto_albedo-v1.0/SUPPORT/dataset.shtml">Bolometric Hemispherical Albedo Map of Pluto from New Horizons Observations</a> <code>urn:nasa:pds:nh_derived:pluto_albedo::1.0</code></li>
+<li><a href="/holdings/pds4-gbl-classe:charon_exosphere-v1.0/SUPPORT/dataset.shtml">Center for Laboratory Astrophysics and Space Science Experiments (CLASSE) Charon Exospheric Simulation Data</a> <code>urn:nasa:pds:gbl-classe:charon_exosphere::1.0</code></li>
+
 </ul>
 
 <!-- ************************************************** End editing! ************************************************** -->

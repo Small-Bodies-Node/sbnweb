@@ -23,6 +23,8 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 <!--
 ===========================================================================
 EDIT HISTORY:
++ 2024-06-01 EMW	removed Pluto Albedo, added CLASSE Charon
++ 2024-05-30 EMW	added Pluto Albedo Map
 + 2021-03-29 EMW	created page
 
 ===========================================================================
@@ -39,13 +41,14 @@ EDIT HISTORY:
 <li><a href="https://sbn.psi.edu/pds/resource/icespec.html">Optical Constants and Lab Spectra of Water Ice</a></li>
 <li><a href="https://sbn.psi.edu/pds/resource/olivspec.html">Olivine Laboratory Infrared Absorbance Spectra</a></li>
 
-<li><a href="/holdings/pds4-nh_derived:pluto_albedo-v1.0/SUPPORT/dataset.shtml">Bolometric Hemispherical Albedo Map of Pluto from New Horizons Observations</a> <code>urn:nasa:pds:nh_derived:pluto_albedo::1.0</code></li>
+<li><a href="/holdings/pds4-gbl-classe:charon_exosphere-v1.0/SUPPORT/dataset.shtml">Center for Laboratory Astrophysics and Space Science Experiments (CLASSE) Charon Exospheric Simulation Data</a> <code>urn:nasa:pds:gbl-classe:charon_exosphere::1.0</code></li>
+
 </ul>
 
 
 <!-- ************************************************** End editing! ************************************************** -->
 <!--#include virtual="/css-n-includes/incl_bottom.inc"-->
-<br />Last updated:
+<br>Last updated:
 <!--#config timefmt="%A %B %d, %Y"-->
 <!--#echo var="LAST_MODIFIED" -->
 </div>

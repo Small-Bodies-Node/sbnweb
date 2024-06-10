@@ -1,0 +1,144 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PDS-SBN: ROSES Data Management Plan Tips</title>
+
+<!-- 
+########################
+ALL of the head, style links, header and menu code is in the include. Edit that file with extreme care!!
+########################
+ -->
+<!--#include virtual="/css-n-includes/incl_top.inc"-->
+
+<!-- ################################################ LEFT SIDEBAR ########################################## -->
+<!--#include virtual="/css-n-includes/incl_left-side.inc"-->
+
+<!-- ################################################ RIGHT SIDEBAR ########################################## -->
+<div id="rightcol">
+
+<div class="sidebarSection">
+<h2>Contents</h2>
+	<ol type="1">
+	<li><a href="#Introduction"> Introduction</a></li>
+	<li><a href="#Small_Bodies_Node_data"> Small Bodies Node data</a></li>
+	<li><a href="#Letters_of_support"> Letters of support</a></li>
+	<li><a href="#ROSES_data_management_plan"> ROSES data management plan</a>
+		<ol type="1">
+		<li><a href="#A_description_of_data_types.2C_volume.2C_formats.2C_and_.28where_relevant.29_standards"> A description of data types, volume, formats, and (where relevant) standards</a></li>
+		<li><a href="#A_description_of_the_schedule_for_data_archiving_and_sharing"> A description of the schedule for data archiving and sharing</a></li>
+		<li><a href="#A_description_of_the_intended_repositories_for_archived_data.2C_including_mechanisms_for_public_access_and_distribution"> A description of the intended repositories for archived data, including mechanisms for public access and distribution</a></li>
+		<li><a href="#A_discussion_of_how_the_plan_enables_long-term_preservation_of_data"> A discussion of how the plan enables long-term preservation of data</a></li>
+		<li><a href="#A_discussion_of_roles_and_responsibilities_of_team_members_in_accomplishing_the_DMP"> A discussion of roles and responsibilities of team members in accomplishing the DMP</a></li>
+		</ol></li>
+	</ol>
+</div>
+<!-- end class sidebarSection -->
+
+<div class="sidebarSection">
+<h2>Past ROSES</h2>
+<ul>
+<li><a href="/proposals/ROSES2023.shtml">ROSES 2023</a></li>
+<li><a href="/proposals/ROSES2022.shtml">ROSES 2022</a></li>
+<li><a href="/proposals/ROSES2021.shtml">ROSES 2021</a></li>
+<li><a href="/proposals/ROSES2020.shtml">ROSES 2020</a></li>
+<li><a href="/proposals/ROSES2019.shtml">ROSES 2019</a></li>
+<li><a href="/proposals/ROSES2018.shtml">ROSES 2018</a></li>
+<li><a href="/proposals/ROSES2017.shtml">ROSES 2017</a></li>
+<li><a href="/proposals/ROSES2016.shtml">ROSES 2016</a></li>
+<li><a href="/proposals/ROSES2015.shtml">ROSES 2015</a></li>
+</ul>
+</div>
+<!-- end class sidebarSection -->
+</div>
+<!-- end id rightcol -->
+<!-- ################################################ MAIN ################################################## -->
+<div id="centercol">
+<a name="mainContent"></a>
+<!-- ************************************************** You may begin editing! ************************************************** -->
+<h1>ROSES Data Management Plan Tips</h1>
+
+<h2><span id="Introduction">Introduction</span></h2>
+<p>Almost all proposals to ROSES are required to have a data management plan (DMP) or an explanation of why one is not necessary. &#160;For more details, confer with:</p>
+<ul>
+<li><a rel="nofollow" class="external text" href="https://www.nasa.gov/open/researchaccess">Data Management Plans</a> at NASA-Funded Research Results main site,</li>
+<li>NASA Plan for Increasing Access to the Results of Scientific Research,</li>
+<li>NASA Research Announcement for ROSES,</li>
+<li>Planetary Science Division Research Program Overview,</li>
+<li>ROSES appendix for the particular program to which you are applying.</li></ul>
+<p>What follows here is a summary of what a proposer needs to consider if archiving with the PDS Small-Bodies Node.</p>
+
+<h2><span id="Small_Bodies_Node_data">Small Bodies Node data</span></h2>
+<p>The Small Bodies Node archives data concerning comets, asteroids, small satellites, meteorites, and dust, including Kuiper Belt objects, dwarf planets, returned dust samples, and laboratory spectra. Ring data, possibly including small satellites within rings, should be submitted to the Rings Node. Large satellite data is best submitted to the Imaging Node.</p>
+<p>Data in this context is mainly concerned with spacecraft/telescopic/laboratory observations and derived products. Results of the computer modeling are accepted only if they produce derived products for mission/observation data that are also archived in PDS and are based on some well-proven (or commonly accepted) modeling techniques. Data that are primarily theoretical in nature should be archived elsewhere. See <a rel="nofollow" class="external text" href="https://www.nasa.gov/open/researchaccess/nasa-data-portal">NASA's Open Data Portal description</a> at the NASA-Funded Research Results site, and <a rel="nofollow" class="external text" href="https://data.nasa.gov">NASA's Open Data Portal main site</a> for more information.</p>
+<p>Other PDS nodes may have different procedures or guidelines, contact whichever node you think is relevant for your dataset. If you are unsure but think SBN may be the relevant node, <a rel="nofollow" class="external text" href="https://pdssbn.astro.umd.edu/about/contact_info.shtml">contact us</a> first.</p>
+
+<h2><span id="Letters_of_support">Letters of support</span></h2>
+<p>If archiving with PDS, ROSES program elements require a letter of support from the relevant PDS Node. We encourage <i>all</i> potential SBN data providers to <a rel="nofollow" class="external text" href="https://pdssbn.astro.umd.edu/about/contact_info.shtml">contact us</a> well in advance of the program deadline for a letter of support, two weeks or more is best. &#160;When requesting a letter of support, please include the following information:</p>
+<ul>
+<li>Title of the proposal.</li>
+<li>Name and institution of the principal investigator.</li>
+<li>Type of data to be archived, e.g., spectra, images, photometric curves.</li>
+<li>Format of the data, e.g., ASCII tables (fixed width or CSV), PDS4 compliant FITS files.</li>
+<li>Main documentation format, either PDF/A or ASCII.</li>
+<li>Expected volume of the data.</li>
+</ul>
+<p>We may request more information or iterate with you regarding what details are needed. If appropriate, we will return to you a letter of support that you can attach to your proposal.</p>
+
+<h2><span id="ROSES_data_management_plan">ROSES data management plan</span></h2>
+<p>NASA ROSES Appendix C (Planetary Science Division Research Program Overview) outlines the requirements for DMPs and archiving. Refer to the overview for a description of what data is covered by the DMP. In general, SBN encourages the submission of any scientifically meaningful data relevant to small bodies in our Solar System.</p>
+
+<h3><span id="A_description_of_data_types,_volume,_formats,_and_(where_relevant)_standards"></span><span id="A_description_of_data_types.2C_volume.2C_formats.2C_and_.28where_relevant.29_standards">A description of data types, volume, formats, and (where relevant) standards</span></h3>
+<ul>
+<li>For submission to the SBN, the standard should be the Planetary Data System version 4 (PDS4).</li>
+<li>PDS4 has a limited set of acceptable data formats, summarized on our <a href="https://sbnwiki.asteroiddata.org/PDS4_Data_Structures.html" title="PDS4 Data Structures">PDS4 Wiki</a> and detailed in the <a rel="nofollow" class="external text" href="https://pds.nasa.gov/pds4/doc/index.shtml">PDS4 documentation</a>.</li>
+<li>Most SBN data providers submit text-based tables, binary 2D arrays (images), and associated documentation (ASCII or PDF/A text).</li>
+<li>Software is potentially covered by the DMP, but PDS SBN does not archive software or source code. Consider archiving your software elsewhere (see the ROSES call for guidance).</li>
+</ul>
+
+<h3><span id="A_description_of_the_schedule_for_data_archiving_and_sharing">A description of the schedule for data archiving and sharing</span></h3>
+<p>The schedule should include:</p>
+<ul>
+<li>Time to <strong>prepare the archive</strong>.</li>
+<li>Time for the <strong>peer-review process</strong>, including the review meeting. We encourage all data providers to attend the review meeting, either in person or via telephone.</li>
+<li>Time to <strong>address referee comments</strong>. It is very common for data providers to have issues that must be addressed before the data can be accepted.
+	<ul>
+	<li>Comments are typically related to documentation or formatting.</li>
+	<li>Occasionally more serious issues are discovered.</li>
+	</ul></li>
+</ul>
+<p>Altogether, a general rule is to submit your data set at least <strong>4 months</strong> before your project end date, which includes:</p>
+<ul>
+<li><strong>A few weeks</strong> for us to check your data for compliance, and for you to resolve any issues.</li>
+<li><strong>A couple months</strong> for the review to be scheduled. &#160;SBN reviews are scheduled when a sufficient number of data sets have been submitted. &#160;Ultimately, we require the data set 5 weeks before the review date, which includes time for the reviewers to review the data.</li>
+<li>And, <strong>an additional</strong> month for you to resolve the review comments and the reviewers to accept the changes (typically executed via e-mail or teleconference).</li>
+</ul>
+
+<h3><span id="A_description_of_the_intended_repositories_for_archived_data,_including_mechanisms_for_public_access_and_distribution"></span><span id="A_description_of_the_intended_repositories_for_archived_data.2C_including_mechanisms_for_public_access_and_distribution">A description of the intended repositories for archived data, including mechanisms for public access and distribution</span></h3>
+<p>The NASA Planetary Data System Archive is the intended repository. The archive is publicly accessible via online servers maintained by NASA and the PDS node host institutions.</p>
+
+<h3><span id="A_discussion_of_how_the_plan_enables_long-term_preservation_of_data">A discussion of how the plan enables long-term preservation of data</span></h3>
+<p>SBN standards and peer-review practices are designed to archive data files with sufficient documentation and ancillary information that the data will be useful, meaningful, and accessible to astronomers in future generations.</p>
+
+<h3><span id="A_discussion_of_roles_and_responsibilities_of_team_members_in_accomplishing_the_DMP">A discussion of roles and responsibilities of team members in accomplishing the DMP</span></h3>
+<p>Note that PDS4 labels are XML based. If someone on your team has relevant experience with PDS4 or XML, consider pointing this out.</p>
+
+
+<!-- ************************************************** End editing! ************************************************** -->
+<!--#include virtual="/css-n-includes/incl_bottom.inc"-->
+<br />Last updated:
+<!--#config timefmt="%A %B %d, %Y"-->
+<!--#echo var="LAST_MODIFIED" -->
+</div>
+<!-- close id whotext -->
+</div>
+<!-- close id footer -->
+</div>
+<!-- end id footwrap -->
+</div>
+<!-- close wrapper -->
+</body>
+
+</html>

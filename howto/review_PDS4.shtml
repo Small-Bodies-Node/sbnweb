@@ -34,13 +34,13 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 <p>Many file types found in the SBN archives and review pages are common to the planetary community. For reference, we have included a <a href="file_types.shtml">listing of file type by extension</a> which should include all file types that a user or reviewer would encounter. This list gives a brief description of the file type and/or definition of its acronym, the location in a data set volume where the file would most likely be found, and a link, if deemed necessary, to free, downloadable software that reads the data stored in the file.</p>
 
 <h3>PDS4 Viewer</h3>
-<p>A tool designed to visualize PDS data, using the information contained in the PDS4 labels as a guide to accessing the information. <br /><a href="https://sbnwiki.astro.umd.edu/wiki/PDS4_Viewer">Details and download</a>.</p>
+<p>A tool designed to visualize PDS data, using the information contained in the PDS4 labels as a guide to accessing the information. <br /><a href="https://sbnwiki.asteroiddata.org/PDS4_Viewer.html">Details and download</a>.</p>
 
 <h3>ReadPDS for PDS4 (IDL)</h3>
 <p><a href="/tools/tools_readPDS.shtml">ReadPDS</a> for PDS4 is a set of IDL procedures for reading the PDS4 labels common to small bodies data sets. It reads the xml label to extract the metadata and then uses that to read in all of the data files described as a single structure. This package is intended primarily for end-users of PDS4 data. <em>Be certain to download the PDS4 version.</em></p>
 
 <h3>ReadPDS for PDS4 (Python)</h3>
-<p>A Python package to read-in PDS4 data and meta data is available. It reads the xml label to extract the metadata and then uses that to read in all of the data files described. <br /><a href="https://sbnwiki.astro.umd.edu/wiki/Python_PDS4_Tools">Details and download</a>.</p>
+<p>A Python package to read-in PDS4 data and meta data is available. It reads the xml label to extract the metadata and then uses that to read in all of the data files described. <br /><a href="https://sbnwiki.asteroiddata.org/Python_PDS4_Tools.html">Details and download</a>.</p>
 
 <h3>Non-SBN Utilities</h3>
 <p>Here are other software packages that may be of use when trying to view and manipulate data files (images, spectra and tables). These utilities provide at least a basic GUI are available for Windows, Mac and Linux systems.</p>

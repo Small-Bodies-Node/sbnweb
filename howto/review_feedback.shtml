@@ -28,9 +28,9 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 <div class="sidebarSection">
 <h2>PDS4 Tools</h2>
 <ul>
-<li><strong><a href="https://sbnwiki.astro.umd.edu/wiki/PDS4_Viewer">PDS4 Viewer:</a></strong> A tool that allows examination and visualization of PDS4 data, including tabular view, plot view and image views.</li>
+<li><strong><a href="https://sbnwiki.asteroiddata.org/PDS4_Viewer.html">PDS4 Viewer:</a></strong> A tool that allows examination and visualization of PDS4 data, including tabular view, plot view and image views.</li>
 <li><strong><a href="https://github.com/Small-Bodies-Node/PDS4-IDL">ReadPDS for PDS4 (IDL):</a></strong> A set of IDL procedures that allow easy read-in of PDS4 data into IDL. The tool also provides a display interface to visualize some PDS4 data from IDL.</li>
-<li><strong><a href="https://sbnwiki.astro.umd.edu/wiki/Python_PDS4_Tools#Reading_and_Displaying_PDS4_Data">ReadPDS for PDS4 (Python):</a></strong> A Python package that allows easy read-in of PDS4 data into Python. The tool also provides a display interface to visualize some PDS4 data from Python.</li>
+<li><strong><a href="https://sbnwiki.asteroiddata.org/Python_PDS4_Tools.html#Reading_and_Displaying_PDS4_Data">ReadPDS for PDS4 (Python):</a></strong> A Python package that allows easy read-in of PDS4 data into Python. The tool also provides a display interface to visualize some PDS4 data from Python.</li>
 </ul>
 </div><!-- end class sidebarSection -->
 </div><!-- end id rightcol -->

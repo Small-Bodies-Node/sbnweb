@@ -23,6 +23,7 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 <!--
 ===========================================================================
 EDIT HISTORY:
++ 2024-06-20 EMW	added 2 NH-KEM SDC datasets under Particles
 + 2024-06-01 EMW	(2024-05-31) added Lucy Didymos inder Imaging
 + 2024-06-01 EMW	removed CLASSE Charon and added Pluto Albedo under Imaging, Photo, Physical
 + 2024-05-30 EMW	added CLASSE CHaron under Imaging, Photo, Physical
@@ -441,7 +442,6 @@ EDIT HISTORY:
 
 <li><a href="/holdings/nh-a-lorri-2-kem2-v1.0/dataset.shtml">New Horizons LORRI KEM2 Raw Data</a></li><!-- NH-A-LORRI-2-KEM2-V1.0 -->
 <li><a href="/holdings/nh-a-lorri-3-kem2-v1.0/dataset.shtml">New Horizons LORRI KEM2 Calibrated Data</a></li><!-- NH-A-LORRI-3-KEM2-V1.0 -->
-
 <li><a href="/holdings/pds4-nh_derived:pluto_albedo-v1.0/SUPPORT/dataset.shtml">Bolometric Hemispherical Albedo Map of Pluto from New Horizons Observations</a> <code>urn:nasa:pds:nh_derived:pluto_albedo::1.0</code></li>
 
 <li><a href="/holdings/pds4-lucy.llorri:data_didymos_raw-v1.0/SUPPORT/dataset.shtml">Lucy LOng Range Reconnaissance Imager (L'LORRI) Raw Data for the Didymos Observation Data Archive</a> <code>urn:nasa:pds:lucy.llorri:data_didymos_raw::1.0</code></li>
@@ -1000,6 +1000,8 @@ EDIT HISTORY:
 <li><a href="/holdings/vega2-c-sp2-2-rdr-halley-v1.0/dataset.shtml">Vega 2 Dust Impact Plasma Detector, Acoustic Sensor Data</a></li>
 <li><a href="/holdings/nh-a-pepssi-2-kem2-v1.0/dataset.shtml">New Horizons PEPSSI KEM2 Raw Data</a></li><!-- NH-A-PEPSSI-2-KEM2-V1.0 -->
 <li><a href="/holdings/nh-a-pepssi-3-kem2-v1.0/dataset.shtml">New Horizons PEPSSI KEM2 Calibrated Data</a></li><!-- NH-A-PEPSSI-3-KEM2-V1.0 -->
+<li><a href="/holdings/nh-a-sdc-2-kem2-v1.0/dataset.shtml">New Horizons SDC KEM2 Raw Data</a></li><!-- NH-A-SDC-2-KEM2-V1.0 -->
+<li><a href="/holdings/nh-a-sdc-3-kem2-v1.0/dataset.shtml">New Horizons SDC KEM2 Calibrated Data</a></li><!-- NH-A-SDC-3-KEM2-V1.0 -->
 <li><a href="/holdings/nh-a-swap-2-kem2-v1.0/dataset.shtml">New Horizons SWAP KEM2 Raw Data</a></li><!-- NH-A-SWAP-2-KEM2-V1.0 -->
 <li><a href="/holdings/nh-a-swap-3-kem2-v1.0/dataset.shtml">New Horizons SWAP KEM2 Calibrated Data</a></li><!-- NH-A-SWAP-3-KEM2-V1.0 -->
 </ul>
@@ -1060,7 +1062,6 @@ EDIT HISTORY:
 <li><a href="/holdings/nh-a-leisa_mvic-5-comp-v1.0/dataset.shtml">New Horizons Arrokoth Encounter Surface Composition Maps</a></li><!-- NH-A-LEISA/MVIC-5-COMP-V1.0 -->
 <li><a href="/holdings/nh-a-lorri_mvic-5-geophys-v1.0/dataset.shtml">New Horizons Arrokoth Encounter Geology and Geophysical Maps and Shape Models</a></li><!-- NH-A-LORRI/MVIC-5-GEOPHYS-V1.0 -->
 <li><a href="/holdings/ro-c-virtis-5-67p-maps-v1.0/dataset.shtml">Rosetta-Orbiter VIRTIS Derived 67P Maps</a></li><!-- RO-C-VIRTIS-5-67P-MAPS-V1.0 -->
-
 <li><a href="/holdings/pds4-nh_derived:pluto_albedo-v1.0/SUPPORT/dataset.shtml">Bolometric Hemispherical Albedo Map of Pluto from New Horizons Observations</a> <code>urn:nasa:pds:nh_derived:pluto_albedo::1.0</code></li>
 
 </ul>
@@ -1091,7 +1092,6 @@ EDIT HISTORY:
 <li><a href="/holdings/nh-x-rex-3-plutocruise-v1.0/dataset.shtml">New Horizons REX Pluto Cruise Calibrated Data</a></li><!-- NH-X-REX-3-PLUTOCRUISE-V1.0 -->
 <li><a href="/holdings/nh-p-rex-2-pluto-v2.0/dataset.shtml">New Horizons REX Pluto Encounter Raw Data v2.0</a></li><!-- NH-P-REX-2-PLUTO-V2.0 -->
 <li><a href="/holdings/nh-p-rex-3-pluto-v1.0/dataset.shtml">New Horizons REX Pluto Encounter Calibrated Data</a></li><!-- NH-P-REX-3-PLUTO-V1.0 -->
-<!-- 2017-02-07 -->
 <li><em>Please refer to <a href="/data_sb/missions/rosetta/index_RSI.shtml">Rosetta RSI</a> for a complete listing of RSI datasets.</em></li>
 <li><a href="/holdings/ro_rl-cal-consert-2-grndbench-v1.0/dataset.shtml">Rosetta-Orbiter/Lander CONSERT Laboratory Ground Benchmark Raw Data</a></li><!-- RO/RL-CAL-CONSERT-2-GRNDBENCH-V1.0 -->
 <li><a href="/holdings/ro_rl-cal-consert-2-grnd-v1.0/dataset.shtml">Rosetta-Orbiter/Lander CONSERT Flight and Qualification Ground Edited Raw Data</a></li><!-- RO/RL-CAL-CONSERT-2-GRND-V1.0 -->
@@ -1309,7 +1309,6 @@ EDIT HISTORY:
 <li><a href="/holdings/ro-c-virtis-3-ext3-mtp033-v2.0/dataset.shtml">Rosetta-Orbiter VIRTIS Extension 3 MTP033 67P Calibrated Data v2.0</a></li><!-- RO-C-VIRTIS-3-EXT3-MTP033-V2.0 -->
 <li><a href="/holdings/ro-c-virtis-3-ext3-mtp034-v2.0/dataset.shtml">Rosetta-Orbiter VIRTIS Extension 3 MTP034 67P Calibrated Data v2.0</a></li><!-- RO-C-VIRTIS-3-EXT3-MTP034-V2.0 -->
 <li><a href="/holdings/ro-c-virtis-3-ext3-mtp035-v2.0/dataset.shtml">Rosetta-Orbiter VIRTIS Extension 3 MTP035 67P Calibrated Data v2.0</a></li><!-- RO-C-VIRTIS-3-EXT3-MTP035-V2.0 -->
-<!-- 2018.07.13 -->
 <li><a href="/holdings/nh-p_psa-leisa_mvic-5-comp-v1.0/dataset.shtml">New Horizons Pluto Encounter Surface Composition Maps</a></li><!-- NH-P/PSA-LEISA/MVIC-5-COMP-V1.0 -->
 <li><a href="/holdings/pds4-compil-comet:unid-emis-v1.0/SUPPORT/dataset.shtml">Catalog of Unidentified Cometary Emission Lines</a> <code>urn:nasa:pds:compil-comet:unid-emis::1.0</code></li>
 <li><a href="/holdings/pds4-gbo-mcdonald:19p_col_density-v1.0/SUPPORT/dataset.shtml">McDonald Observatory Column Density Observations of 19P/Borrelly</a> <code>urn:nasa:pds:gbo-mcdonald:19p_col_density::1.0</code></li>

@@ -38,6 +38,7 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 <!--
 ===========================================================================
 EDIT HISTORY:
++ 2024-08-30 EMW	replaced data collection with bundle under Other Mission; Leisa K1 v6 to PDS4 raw & calibrated
 + 2024-06-28 EMW	replaced ALICE and LORRI PDS3 w/ PDS 4; added PDS4 document and calibration collections under Other Mission Datasets
 + 2024-06-20 EMW	added 2 SDC datasets KEM2 Cruise
 + 2024-01-30 EMW	added KEM2 Cruise datasets (8)
@@ -114,8 +115,8 @@ EDIT HISTORY:
 <ul>
 <li><a href="/holdings/pds4-nh_alice:kem1_raw-v1.0/SUPPORT/dataset.shtml">New Horizons Alice KEM1 Encounter Raw Data</a> <code>urn:nasa:pds:nh_alice:kem1_raw::1.0</code></li>
 <li><a href="/holdings/pds4-nh_alice:kem1_cal-v1.0/SUPPORT/dataset.shtml">New Horizons Alice KEM1 Encounter Calibrated Data</a> <code>urn:nasa:pds:nh_alice:kem1_cal::1.0</code></li>
-<li><a href="/holdings/nh-a-leisa-2-kem1-v6.0/dataset.shtml">New Horizons LEISA KEM1 Encounter Raw Data v6.0</a></li><!-- NH-A-LEISA-2-KEM1-V6.0 -->
-<li><a href="/holdings/nh-a-leisa-3-kem1-v6.0/dataset.shtml">New Horizons LEISA KEM1 Encounter Calibrated Data v6.0</a></li><!-- NH-A-LEISA-3-KEM1-V6.0 -->
+<li><a href="/holdings/pds4-nh_leisa:kem1_raw-v1.0/SUPPORT/dataset.shtml">New Horizons LEISA KEM1 Encounter Raw Data</a> <code>urn:nasa:pds:nh_leisa:kem1_raw::1.0</code></li>
+<li><a href="/holdings/pds4-nh_leisa:kem1_cal-v1.0/SUPPORT/dataset.shtml">New Horizons LEISA KEM1 Encounter Calibrated Data</a> <code>urn:nasa:pds:nh_leisa:kem1_cal::1.0</code></li>
 <li><a href="/holdings/pds4-nh_lorri:kem1_raw-v1.0/SUPPORT/dataset.shtml">New Horizons LORRI KEM1 Encounter Raw Data</a> <code>urn:nasa:pds:nh_lorri:kem1_raw::1.0</code></li>
 <li><a href="/holdings/pds4-nh_lorri:kem1_cal-v1.0/SUPPORT/dataset.shtml">New Horizons LORRI KEM1 Encounter Partially Processed Data</a> <code>urn:nasa:pds:nh_lorri:kem1_cal::1.0</code></li>
 <li><a href="/holdings/pds4-nh_mvic:kem1_raw-v1.0/SUPPORT/dataset.shtml">New Horizons MVIC KEM1 Encounter Raw Data</a> <code>urn:nasa:pds:nh_mvic:kem1_raw::1.0</code></li>
@@ -153,13 +154,10 @@ EDIT HISTORY:
 <li><a href="/holdings/nh-x-alice-5-ipm-v1.0/dataset.shtml">New Horizons ALICE Interplanetary Medium Scans</a></li><!-- NH-X-ALICE-5-IPM-V1.0 -->
 <li><a href="/holdings/nh-x-pepssi-4-plasma-v1.0/dataset.shtml">New Horizons PEPSSI Derived Plasma Fluxes and Rates</a></li><!-- NH-X-PEPSSI-4-PLASMA-V1.0 -->
 <li><a href="/holdings/nh-x-swap-5-derived-solarwind-v2.0/dataset.shtml">New Horizons SWAP Solar Wind Derived Data v2.0</a></li><!-- NH-X-SWAP-5-DERIVED-SOLARWIND-V2.0 -->
-<li><a href="/holdings/pds4-nh_documents:mission-v2.0/SUPPORT/dataset.shtml">New Horizons Mission Documents v2.0</a> <code>urn:nasa:pds:nh_documents:mission::2.0</code></li>
-<li><a href="/holdings/pds4-nh_documents:alice-v1.0/SUPPORT/dataset.shtml">New Horizons Documents for the Alice Instrument</a> <code>urn:nasa:pds:nh_documents:alice::1.0</code></li>
-<li><a href="/holdings/pds4-nh_documents:lorri-v1.0/SUPPORT/dataset.shtml">New Horizons Documents for the LORRI Instrument</a> <code>urn:nasa:pds:nh_documents:lorri::1.0</code></li>
-<li><a href="/holdings/pds4-nh_documents:ralph-v1.0/SUPPORT/dataset.shtml">New Horizons Ralph (LEISA/MVIC) Instrument Package Documents</a> <code>urn:nasa:pds:nh_documents:ralph::1.0</code></li>
-<li><a href="/holdings/pds4-nh_documents:swap-v1.0/SUPPORT/dataset.shtml">New Horizons Documents for the SWAP Instrument</a> <code>urn:nasa:pds:nh_documents:swap::1.0</code></li>
+<li><a href="/holdings/pds4-nh_documents-v3.0/SUPPORT/dataset.shtml">New Horizons Mission Instrument-Specific and Mission-Wide Documents v3.0</a> <code>urn:nasa:pds:nh_documents::3.0</code></li>
 <li><a href="/holdings/pds4-nh_alice:calibration_files-v1.0/SUPPORT/dataset.shtml">New Horizons Alice Reference Files Used in Calibrating Data</a> <code>urn:nasa:pds:nh_alice:calibration_files::1.0</code></li>
 <li><a href="/holdings/pds4-nh_lorri:calibration_files-v1.0/SUPPORT/dataset.shtml">New Horizons LORRI Reference Files Used in Calibrating Data</a> <code>urn:nasa:pds:nh_lorri:calibration_files::1.0</code></li>
+<li><a href="/holdings/pds4-nh_leisa:calibration_files-v1.0/SUPPORT/dataset.shtml">New Horizons LEISA Reference Files Used in Calibrating Data</a> <code>urn:nasa:pds:nh_leisa:calibration_files::1.0</code></li>
 <li><a href="/holdings/pds4-nh_mvic:calibration_files-v1.0/SUPPORT/dataset.shtml">New Horizons MVIC Calibration Files</a> <code>urn:nasa:pds:nh_mvic:calibration_files::1.0</code></li>
 </ul>
 

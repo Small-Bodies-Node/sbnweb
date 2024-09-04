@@ -39,6 +39,7 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 <!--
 ===========================================================================
 EDIT HISTORY:
++ 2024-08-30 EMW	replaced data collection with bundle under Other Mission
 + 2024-06-28 EMW	added PDS4 document and calibration collections under Other Mission Datasets
 + 2024-06-01 EMW	removed CLASSE Charon and added Pluto Albedo under Related
 + 2024-05-30 EMW	added CLASSE CHaron under Related
@@ -194,11 +195,8 @@ EDIT HISTORY:
 <li><a href="https://naif.jpl.nasa.gov/naif/data_archived.html">New Horizons Spice Kernels</a></li><!-- NH-J_P_SS-SPICE-6-V1.0 -->
 <li><a href="/holdings/nh-x-swap-5-derived-solarwind-v2.0/dataset.shtml">New Horizons SWAP Solar Wind Derived Data v2.0</a></li><!-- NH-X-SWAP-5-DERIVED-SOLARWIND-V2.0 -->
 
-<li><a href="/holdings/pds4-nh_documents:mission-v2.0/SUPPORT/dataset.shtml">New Horizons Mission Documents v2.0</a> <code>urn:nasa:pds:nh_documents:mission::2.0</code></li>
-<li><a href="/holdings/pds4-nh_documents:alice-v1.0/SUPPORT/dataset.shtml">New Horizons Documents for the Alice Instrument</a> <code>urn:nasa:pds:nh_documents:alice::1.0</code></li>
-<li><a href="/holdings/pds4-nh_documents:lorri-v1.0/SUPPORT/dataset.shtml">New Horizons Documents for the LORRI Instrument</a> <code>urn:nasa:pds:nh_documents:lorri::1.0</code></li>
-<li><a href="/holdings/pds4-nh_documents:ralph-v1.0/SUPPORT/dataset.shtml">New Horizons Ralph (LEISA/MVIC) Instrument Package Documents</a> <code>urn:nasa:pds:nh_documents:ralph::1.0</code></li>
-<li><a href="/holdings/pds4-nh_documents:swap-v1.0/SUPPORT/dataset.shtml">New Horizons Documents for the SWAP Instrument</a> <code>urn:nasa:pds:nh_documents:swap::1.0</code></li>
+<li><a href="/holdings/pds4-nh_documents-v3.0/SUPPORT/dataset.shtml">New Horizons Mission Instrument-Specific and Mission-Wide Documents v3.0</a> <code>urn:nasa:pds:nh_documents::3.0</code></li>
+
 <li><a href="/holdings/pds4-nh_alice:calibration_files-v1.0/SUPPORT/dataset.shtml">New Horizons Alice Reference Files Used in Calibrating Data</a> <code>urn:nasa:pds:nh_alice:calibration_files::1.0</code></li>
 <li><a href="/holdings/pds4-nh_lorri:calibration_files-v1.0/SUPPORT/dataset.shtml">New Horizons LORRI Reference Files Used in Calibrating Data</a> <code>urn:nasa:pds:nh_lorri:calibration_files::1.0</code></li>
 <li><a href="/holdings/pds4-nh_mvic:calibration_files-v1.0/SUPPORT/dataset.shtml">New Horizons MVIC Reference Files Used in Calibrating Data</a> <code>urn:nasa:pds:nh_mvic:calibration_files::1.0</code></li>
@@ -212,6 +210,22 @@ EDIT HISTORY:
 <li><a href="/holdings/pds4-nh_derived:pluto_albedo-v1.0/SUPPORT/dataset.shtml">Bolometric Hemispherical Albedo Map of Pluto from New Horizons Observations</a> <code>urn:nasa:pds:nh_derived:pluto_albedo::1.0</code></li>
 
 </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <h3>Other Links</h3>
 <p><!-- <a href="http://guinan.space.swri.edu/nhcs/">New Horizons Earth-Based Observing Campaign</a> -->

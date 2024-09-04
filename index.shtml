@@ -58,8 +58,21 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 <h2>New @ SBN</h2>
 <ul class="news">
 
+<!-- 2024.08.30 -->
+<li><span class="date">2024.08.30</span>
 
+<br>+ <a href="/holdings/pds4-nh_leisa-v1.0/SUPPORT/dataset.shtml">New Horizons LEISA Archive Bundle</a> <code>urn:nasa:pds:nh_leisa::1.0</code>
+<ul>
+<li><a href="/holdings/pds4-nh_leisa:calibration_files-v1.0/SUPPORT/dataset.shtml">New Horizons LEISA Reference Files Used in Calibrating Data</a> <code>urn:nasa:pds:nh_leisa:calibration_files::1.0</code></li>
+<li><a href="/holdings/pds4-nh_leisa:kem1_raw-v1.0/SUPPORT/dataset.shtml">New Horizons LEISA KEM1 Encounter Raw Data</a> <code>urn:nasa:pds:nh_leisa:kem1_raw::1.0</code></li>
+<li><a href="/holdings/pds4-nh_leisa:kem1_cal-v1.0/SUPPORT/dataset.shtml">New Horizons LEISA KEM1 Encounter Calibrated Data</a> <code>urn:nasa:pds:nh_leisa:kem1_cal::1.0</code></li>
+</ul>
 
+<br>+ <a href="/holdings/pds4-nh_documents-v3.0/SUPPORT/dataset.shtml">New Horizons Mission Instrument-Specific and Mission-Wide Documents v3.0</a> <code>urn:nasa:pds:nh_documents::3.0</code> This collection has been versioned:
+<ul>
+<li><a href="/holdings/pds4-nh_documents:ralph-v2.0/SUPPORT/dataset.shtml">New Horizons Documents for the Ralph Instrument Package v2.0</a> <code>urn:nasa:pds:nh_documents:ralph::2.0</code></li>
+</ul>
+</li>
 
 <!-- 2024.06.28 -->
 <li><span class="date">2024.06.28</span>

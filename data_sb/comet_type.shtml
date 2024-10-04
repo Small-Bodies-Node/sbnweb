@@ -23,7 +23,8 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 <!--
 ===========================================================================
 EDIT HISTORY:
-+ 2024-10-04 EMW	added Arrokoth shape model under Phys Prop and Shape
++ 2024-10-04 EMW	added Lucy Dinkinesh LORRI, MVIC, TTCam underImaging; RS under Radio; LEISA under Spectra; LTES under Therma; documents under Misc;
++ 2024-10-04 EMW	added Arrokoth shape model under Phys Prop and Shape; missing PDS3 Arrokoth shape model under Shape
 + 2024-08-30 EMW	Leisa K1 v6 to PDS4 raw & calibrated under Thermal
 + 2024-06-28 EMW	replaced ALICE & LORRI NH KEM1 PDS3 w/ PDS 4
 + 2024-06-20 EMW	added 2 NH-KEM SDC datasets under Particles
@@ -449,6 +450,21 @@ EDIT HISTORY:
 
 <li><a href="/holdings/pds4-lucy.llorri:data_didymos_raw-v1.0/SUPPORT/dataset.shtml">Lucy LOng Range Reconnaissance Imager (L'LORRI) Raw Data for the Didymos Observation Data Archive</a> <code>urn:nasa:pds:lucy.llorri:data_didymos_raw::1.0</code></li>
 <li><a href="/holdings/pds4-lucy.llorri:data_didymos_partially_processed-v1.0/SUPPORT/dataset.shtml">Lucy LOng Range Reconnaissance Imager (L'LORRI) Partially Processed Data for the Didymos Observation Data Archive</a> <code>urn:nasa:pds:lucy.llorri:data_didymos_partially_processed::1.0</code></li>
+
+
+<li><a href="/holdings/pds4-lucy.llorri:data_dinkinesh_raw-v1.0/SUPPORT/dataset.shtml">Lucy L'LORRI Dinkinesh Raw Data Collection</a> <code>urn:nasa:pds:lucy.llorri:data_dinkinesh_raw::1.0</code></li>
+<li><a href="/holdings/pds4-lucy.llorri:data_dinkinesh_partially_processed-v1.0/SUPPORT/dataset.shtml">Lucy L'LORRI Dinkinesh Partially Processed Data Collection</a> <code>urn:nasa:pds:lucy.llorri:data_dinkinesh_partially_processed::1.0</code></li>
+<li><a href="/holdings/pds4-lucy.mvic:data_dinkinesh_raw-v1.0/SUPPORT/dataset.shtml">Lucy MVIC Dinkinesh Raw Data Collection</a> <code>urn:nasa:pds:lucy.mvic:data_dinkinesh_raw::1.0</code></li>
+<li><a href="/holdings/pds4-lucy.mvic:data_dinkinesh_calibrated-v1.0/SUPPORT/dataset.shtml">Lucy MVIC Dinkinesh Calibrated Data Collection</a> <code>urn:nasa:pds:lucy.mvic:data_dinkinesh_calibrated::1.0</code></li>
+<li><a href="/holdings/pds4-lucy.ttcam:data_dinkinesh_raw-v1.0/SUPPORT/dataset.shtml">Lucy TTCam Dinkinesh Raw Data Collection</a> <code>urn:nasa:pds:lucy.ttcam:data_dinkinesh_raw::1.0</code></li>
+<li><a href="/holdings/pds4-lucy.ttcam:data_dinkinesh_calibrated-v1.0/SUPPORT/dataset.shtml">Lucy TTCam Dinkinesh Calibrated Data Collection</a> <code>urn:nasa:pds:lucy.ttcam:data_dinkinesh_calibrated::1.0</code></li>
+
+
+
+
+
+
+
 
 </ul>
 
@@ -1145,6 +1161,14 @@ EDIT HISTORY:
 <li><a href="/holdings/pds4-dart:data_trk223-v1.0/SUPPORT/dataset.shtml">DSN Media Calibration (TRK-2-23) Files for DART Data Collection</a> <code>urn:nasa:pds:dart:data_trk223::1.0</code></li>
 <li><a href="/holdings/pds4-dart:data_trk234-v1.0/SUPPORT/dataset.shtml">DART Radio Science Tracking and Navigation Files (TRK-2-34) Data Collection</a> <code>urn:nasa:pds:dart:data_trk234::1.0</code></li>
 <li><a href="/holdings/pds4-liciacube:data_tnf-v1.0/SUPPORT/dataset.shtml">LICIACube Radio Science Tracking and Navigation Files (TRK-2-34) Data Collection</a> <code>urn:nasa:pds:liciacube:data_tnf::1.0</code></li>
+
+<li><a href="/holdings/pds4-lucy.rss:data_dinkinesh_ion-v1.0/SUPPORT/dataset.shtml">Lucy Radio Science Subsystem Dinkinesh Mission Dependent Ionosphere Data Collection</a> <code>urn:nasa:pds:lucy.rss:data_dinkinesh_ion::1.0</code></li>
+<li><a href="/holdings/pds4-lucy.rss:data_dinkinesh_sff-v1.0/SUPPORT/dataset.shtml">Lucy Radio Science Subsystem Dinkinesh Small Forces File Data Collection</a> <code>urn:nasa:pds:lucy.rss:data_dinkinesh_sff::1.0</code></li>
+<li><a href="/holdings/pds4-lucy.rss:data_dinkinesh_skyfreq-v1.0/SUPPORT/dataset.shtml">Lucy Radio Science Subsystem Dinkinesh Sky Frequency Data Collection</a> <code>urn:nasa:pds:lucy.rss:data_dinkinesh_skyfreq::1.0</code></li>
+<li><a href="/holdings/pds4-lucy.rss:data_dinkinesh_trk234-v1.0/SUPPORT/dataset.shtml">Lucy Radio Science Subsystem Dinkinesh Tracking Data Collection</a> <code>urn:nasa:pds:lucy.rss:data_dinkinesh_trk234::1.0</code></li>
+
+
+
 </ul>
 
 <!-- Type Data ======================================================== -->
@@ -1161,7 +1185,7 @@ EDIT HISTORY:
 <li><a href="https://sbn.psi.edu/pds/resource/dawn/dwncfcL1.html">Dawn: Ceres digital terrain model</a></li>
 <li><a href="/holdings/rl-c-multi-5-ancdr-v2.0/dataset.shtml">Rosetta-Lander Ancillary 67P data v2.0</a></li><!-- RL-C-MULTI-5-ANCDR-V2.0 -->
 <li><a href="https://sbn.psi.edu/pds/resource/saturnsatshapes.html">Saturn Small Moon Shape Models</a></li>
-
+<li><a href="/holdings/nh-a-lorri_mvic-5-geophys-v1.0/dataset.shtml">New Horizons Arrokoth Encounter Geology and Geophysical Maps and Shape Models</a></li><!-- NH-A-LORRI/MVIC-5-GEOPHYS-V1.0 -->
 <li><a href="/holdings/pds4-dart_shapemodel-v1.0/SUPPORT/dataset.shtml">DART Didymos System Shapemodel Archive Bundle</a> <code>urn:nasa:pds:dart_shapemodel::1.0</code></li>
 
 <li><a href="/holdings/pds4-nh_derived:arrokoth_shapemodel_porter2024-v1.0/SUPPORT/dataset.shtml">New Horizons Porter (2024) Arrokoth Shape Model Collection</a> <code>urn:nasa:pds:nh_derived:arrokoth_shapemodel_porter2024::1.0</code></li>
@@ -1366,6 +1390,11 @@ EDIT HISTORY:
 <li><a href="/holdings/gio-c-nms-4-halley-v1.0/dataset.shtml">Giotto Neutral Mass Spectrometer Density Profiles of Comet Halley</a></li><!-- GIO-C-NMS-4-HALLEY-V1.0 -->
 <li><a href="/holdings/pds4-spitzer:spitzer-spec-comet-v1.0/SUPPORT/dataset.shtml">Spitzer Space Telescope Spectroscopy of Comets</a> <code>urn:nasa:pds:spitzer:spitzer-spec-comet::1.0</code></li>
 <li><a href="/holdings/pds4-ro_derived:dfms_ts_abundance-v1.0/SUPPORT/dataset.shtml">Rosetta ROSINA DFMS Time Series Abundances</a> <code>urn:nasa:pds:ro_derived:dfms_ts_abundance::1.0</code></li>
+
+<li><a href="/holdings/pds4-lucy.leisa:data_dinkinesh_raw-v1.0/SUPPORT/dataset.shtml">Lucy LEISA Dinkinesh Raw Data Collection</a> <code>urn:nasa:pds:lucy.leisa:data_dinkinesh_raw::1.0</code></li>
+<li><a href="/holdings/pds4-lucy.leisa:data_dinkinesh_calibrated-v1.0/SUPPORT/dataset.shtml">Lucy LEISA Dinkinesh Calibrated Data Collection</a> <code>urn:nasa:pds:lucy.leisa:data_dinkinesh_calibrated::1.0</code></li>
+
+
 </ul>
 
 <!-- Type Data ======================================================== -->
@@ -1426,6 +1455,12 @@ EDIT HISTORY:
 <li><a href="/holdings/pds4-nh_leisa:kem1_cal-v1.0/SUPPORT/dataset.shtml">New Horizons LEISA KEM1 Encounter Calibrated Data</a> <code>urn:nasa:pds:nh_leisa:kem1_cal::1.0</code></li>
 <li><a href="/holdings/nh-a-leisa-2-kem2-v1.0/dataset.shtml">New Horizons LEISA KEM2 Raw Data</a></li><!-- NH-A-LEISA-2-KEM2-V1.0 -->
 <li><a href="/holdings/nh-a-leisa-3-kem2-v1.0/dataset.shtml">New Horizons LEISA KEM2 Calibrated Data</a></li><!-- NH-A-LEISA-3-KEM2-V1.0 -->
+
+<li><a href="/holdings/pds4-lucy.ltes:data_dinkinesh_raw-v1.0/SUPPORT/dataset.shtml">Lucy L'TES Dinkinesh Raw Data Collection</a> <code>urn:nasa:pds:lucy.ltes:data_dinkinesh_raw::1.0</code></li>
+<li><a href="/holdings/pds4-lucy.ltes:data_dinkinesh_hkraw-v1.0/SUPPORT/dataset.shtml">Lucy L'TES Dinkinesh Raw Housekeeping Data Collection</a> <code>urn:nasa:pds:lucy.ltes:data_dinkinesh_hkraw::1.0</code></li>
+<li><a href="/holdings/pds4-lucy.ltes:data_dinkinesh_calibrated-v1.0/SUPPORT/dataset.shtml">Lucy L'TES Dinkinesh Calibrated Data Collection</a> <code>urn:nasa:pds:lucy.ltes:data_dinkinesh_calibrated::1.0</code></li>
+
+
 </ul>
 
 <!-- Type Data ======================================================== -->
@@ -1470,6 +1505,20 @@ EDIT HISTORY:
 <li><a href="/holdings/pds4-dart_teleobs:document_mro-v1.0/SUPPORT/dataset.shtml">DART Magdalena Ridge Observatory 2.4m Telescope Documentation Collection</a> <code>urn:nasa:pds:dart_teleobs:document_mro::1.0</code></li>
 
 <li><a href="/holdings/pds4-nh_documents-v1.0/SUPPORT/dataset.shml">New Horizons Mission Instrument-Specific and Mission-Wide Documents</a> <code>urn:nasa:pds:nh_documents::1.0</code></li>
+
+
+<li><a href="/holdings/pds4-lucy.llorri:document-v2.0/SUPPORT/dataset.shtml">Lucy L'LORRI Document Collection v2.0</a> <code>urn:nasa:pds:lucy.llorri:document::2.0</code></li>
+<li><a href="/holdings/pds4-lucy.leisa:document-v1.0/SUPPORT/dataset.shtml">Lucy LEISA Document Collection</a> <code>urn:nasa:pds:lucy.leisa:document::1.0</code></li>
+<li><a href="/holdings/pds4-lucy.mvic:document-v1.0/SUPPORT/dataset.shtml">Lucy MVIC Document Collection</a> <code>urn:nasa:pds:lucy.mvic:document::1.0</code></li>
+<li><a href="/holdings/pds4-lucy.rss:document-v1.0/SUPPORT/dataset.shtml">Lucy Radio Science Subsystem Document Collection</a> <code>urn:nasa:pds:lucy.rss:document::1.0</code></li>
+<li><a href="/holdings/pds4-lucy.ltes:document-v1.0/SUPPORT/dataset.shtml">Lucy L'TES Document Collection</a> <code>urn:nasa:pds:lucy.ltes:document::1.0</code></li>
+<li><a href="/holdings/pds4-lucy.ttcam:document-v1.0/SUPPORT/dataset.shtml">Lucy TTCam Document Collection</a> <code>urn:nasa:pds:lucy.ttcam:document::1.0</code></li>
+<li><a href="/holdings/pds4-lucy.mission:document-v1.0/SUPPORT/dataset.shtml">Lucy Mission Document Collection</a> <code>urn:nasa:pds:lucy.mission:document::1.0</code></li>
+
+
+
+
+
 </ul>
 
 <!-- ************************************************** End editing! ************************************************** -->

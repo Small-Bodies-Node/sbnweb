@@ -38,6 +38,7 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 <!--
 ===========================================================================
 EDIT HISTORY:
++ 2024-10-04 EMW	added Arrokoth shape model
 + 2024-08-30 EMW	replaced data collection with bundle under Other Mission; Leisa K1 v6 to PDS4 raw & calibrated
 + 2024-06-28 EMW	replaced ALICE and LORRI PDS3 w/ PDS 4; added PDS4 document and calibration collections under Other Mission Datasets
 + 2024-06-20 EMW	added 2 SDC datasets KEM2 Cruise
@@ -132,6 +133,9 @@ EDIT HISTORY:
 <li><a href="/holdings/nh-a-swap-3-kem1-v6.0/dataset.shtml">New Horizons SWAP KEM1 Encounter Calibrated Data v6.0</a></li><!-- NH-A-SWAP-3-KEM1-V6.0 -->
 <li><a href="/holdings/nh-a-leisa_mvic-5-comp-v1.0/dataset.shtml">New Horizons Arrokoth Encounter Surface Composition Maps</a></li><!-- NH-A-LEISA/MVIC-5-COMP-V1.0 -->
 <li><a href="/holdings/nh-a-lorri_mvic-5-geophys-v1.0/dataset.shtml">New Horizons Arrokoth Encounter Geology and Geophysical Maps and Shape Models</a></li><!-- NH-A-LORRI/MVIC-5-GEOPHYS-V1.0 -->
+
+<li><a href="/holdings/pds4-nh_derived:arrokoth_shapemodel_porter2024-v1.0/SUPPORT/dataset.shtml">New Horizons Porter (2024) Arrokoth Shape Model Collection</a> <code>urn:nasa:pds:nh_derived:arrokoth_shapemodel_porter2024::1.0</code></li>
+
 </ul>
 
 <h3>KEM2 Cruise</h3>

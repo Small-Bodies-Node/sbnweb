@@ -23,6 +23,7 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 <!--
 ===========================================================================
 EDIT HISTORY:
++ 2024-10-04 EMW	added Arrokoth shape model
 + 2024-08-30 EMW	Leisa K1 v6 to PDS4 raw & calibrated under Arrokoth
 + 2024-06-28 EMW	replaced LORRI NH KEM1 PDS3 w/ PDS 4
 + 2024-06-01 EMW	(2024-05-31) added Lucy Didymos inder Didymos
@@ -751,6 +752,8 @@ EDIT HISTORY:
 <li><a href="/holdings/nh-a-leisa-3-kem2-v1.0/dataset.shtml">New Horizons LEISA KEM2 Calibrated Data</a></li><!-- NH-A-LEISA-3-KEM2-V1.0 -->
 <li><a href="/holdings/nh-a-lorri-2-kem2-v1.0/dataset.shtml">New Horizons LORRI KEM2 Raw Data</a></li><!-- NH-A-LORRI-2-KEM2-V1.0 -->
 <li><a href="/holdings/nh-a-lorri-3-kem2-v1.0/dataset.shtml">New Horizons LORRI KEM2 Calibrated Data</a></li><!-- NH-A-LORRI-3-KEM2-V1.0 -->
+
+<li><a href="/holdings/pds4-nh_derived:arrokoth_shapemodel_porter2024-v1.0/SUPPORT/dataset.shtml">New Horizons Porter (2024) Arrokoth Shape Model Collection</a> <code>urn:nasa:pds:nh_derived:arrokoth_shapemodel_porter2024::1.0</code></li>
 </ul>
 
 <!-- Target Data ======================================================== -->

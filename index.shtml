@@ -60,55 +60,68 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 
 
 <!-- 2024.10.04 -->
-<li><span class="date">2024.10.04</span>NH KEM Mission
+<li><span class="date">2024.10.04</span> NH KEM Mission
 <br>+ <a href="/holdings/pds4-nh_derived:arrokoth_shapemodel_porter2024-v1.0/SUPPORT/dataset.shtml">New Horizons Porter (2024) Arrokoth Shape Model Collection</a> <code>urn:nasa:pds:nh_derived:arrokoth_shapemodel_porter2024::1.0</code>
-<br />&nbsp;</li>
+</li>
 
 
 <!-- 2024.10.04 -->
-<li><span class="date">2024.10.04</span>Lucy Mission
+<li><span class="date">2024.10.04</span> Lucy Mission
 <ul>
-<li><a href="/holdings/pds4-lucy.llorri-v2.0/SUPPORT/dataset.shtml">Lucy L'LORRI Bundle v2.0</a> <code>urn:nasa:pds:lucy.llorri::2.0</code></li>
+<li><a href="/holdings/pds4-lucy.llorri-v2.0/SUPPORT/dataset.shtml">Lucy L'LORRI Bundle v2.0</a> <code>urn:nasa:pds:lucy.llorri::2.0</code>
+<ul>
 <li><a href="/holdings/pds4-lucy.llorri:data_dinkinesh_raw-v1.0/SUPPORT/dataset.shtml">Lucy L'LORRI Dinkinesh Raw Data Collection</a> <code>urn:nasa:pds:lucy.llorri:data_dinkinesh_raw::1.0</code></li>
 <li><a href="/holdings/pds4-lucy.llorri:data_dinkinesh_partially_processed-v1.0/SUPPORT/dataset.shtml">Lucy L'LORRI Dinkinesh Partially Processed Data Collection</a> <code>urn:nasa:pds:lucy.llorri:data_dinkinesh_partially_processed::1.0</code></li>
 <li><a href="/holdings/pds4-lucy.llorri:calibration-v2.0/SUPPORT/dataset.shtml">Lucy L'LORRI Calibration Collection v2.0</a> <code>urn:nasa:pds:lucy.llorri:calibration::2.0</code></li>
 <li><a href="/holdings/pds4-lucy.llorri:document-v2.0/SUPPORT/dataset.shtml">Lucy L'LORRI Document Collection v2.0</a> <code>urn:nasa:pds:lucy.llorri:document::2.0</code></li>
+</ul></li>
 
-<li><a href="/holdings/pds4-lucy.leisa-v1.0/SUPPORT/dataset.shtml">Lucy L'Ralph LEISA Bundle</a> <code>urn:nasa:pds:lucy.leisa::1.0</code></li>
+<li><a href="/holdings/pds4-lucy.leisa-v1.0/SUPPORT/dataset.shtml">Lucy L'Ralph LEISA Bundle</a> <code>urn:nasa:pds:lucy.leisa::1.0</code>
+<ul>
 <li><a href="/holdings/pds4-lucy.leisa:data_dinkinesh_raw-v1.0/SUPPORT/dataset.shtml">Lucy LEISA Dinkinesh Raw Data Collection</a> <code>urn:nasa:pds:lucy.leisa:data_dinkinesh_raw::1.0</code></li>
 <li><a href="/holdings/pds4-lucy.leisa:data_dinkinesh_calibrated-v1.0/SUPPORT/dataset.shtml">Lucy LEISA Dinkinesh Calibrated Data Collection</a> <code>urn:nasa:pds:lucy.leisa:data_dinkinesh_calibrated::1.0</code></li>
 <li><a href="/holdings/pds4-lucy.leisa:calibration-v1.0/SUPPORT/dataset.shtml">Lucy LEISA Calibration Collection</a> <code>urn:nasa:pds:lucy.leisa:calibration::1.0</code></li>
 <li><a href="/holdings/pds4-lucy.leisa:document-v1.0/SUPPORT/dataset.shtml">Lucy LEISA Document Collection</a> <code>urn:nasa:pds:lucy.leisa:document::1.0</code></li>
+</ul></li>
 
-<li><a href="/holdings/pds4-lucy.mvic-v1.0/SUPPORT/dataset.shtml">Lucy L'Ralph MVIC Bundle</a> <code>urn:nasa:pds:lucy.mvic::1.0</code></li>
+<li><a href="/holdings/pds4-lucy.mvic-v1.0/SUPPORT/dataset.shtml">Lucy L'Ralph MVIC Bundle</a> <code>urn:nasa:pds:lucy.mvic::1.0</code>
+<ul>
 <li><a href="/holdings/pds4-lucy.mvic:data_dinkinesh_raw-v1.0/SUPPORT/dataset.shtml">Lucy MVIC Dinkinesh Raw Data Collection</a> <code>urn:nasa:pds:lucy.mvic:data_dinkinesh_raw::1.0</code></li>
 <li><a href="/holdings/pds4-lucy.mvic:data_dinkinesh_calibrated-v1.0/SUPPORT/dataset.shtml">Lucy MVIC Dinkinesh Calibrated Data Collection</a> <code>urn:nasa:pds:lucy.mvic:data_dinkinesh_calibrated::1.0</code></li>
 <li><a href="/holdings/pds4-lucy.mvic:calibration-v1.0/SUPPORT/dataset.shtml">Lucy MVIC Calibration Collection</a> <code>urn:nasa:pds:lucy.mvic:calibration::1.0</code></li>
 <li><a href="/holdings/pds4-lucy.mvic:document-v1.0/SUPPORT/dataset.shtml">Lucy MVIC Document Collection</a> <code>urn:nasa:pds:lucy.mvic:document::1.0</code></li>
+</ul></li>
 
-<li><a href="/holdings/pds4-lucy.rss-v1.0/SUPPORT/dataset.shtml">Lucy Radio Science Bundle</a> <code>urn:nasa:pds:lucy.rss::1.0</code></li>
+
+<li><a href="/holdings/pds4-lucy.rss-v1.0/SUPPORT/dataset.shtml">Lucy Radio Science Bundle</a> <code>urn:nasa:pds:lucy.rss::1.0</code>
+<ul>
 <li><a href="/holdings/pds4-lucy.rss:data_dinkinesh_ion-v1.0/SUPPORT/dataset.shtml">Lucy Radio Science Subsystem Dinkinesh Mission Dependent Ionosphere Data Collection</a> <code>urn:nasa:pds:lucy.rss:data_dinkinesh_ion::1.0</code></li>
 <li><a href="/holdings/pds4-lucy.rss:data_dinkinesh_sff-v1.0/SUPPORT/dataset.shtml">Lucy Radio Science Subsystem Dinkinesh Small Forces File Data Collection</a> <code>urn:nasa:pds:lucy.rss:data_dinkinesh_sff::1.0</code></li>
 <li><a href="/holdings/pds4-lucy.rss:data_dinkinesh_skyfreq-v1.0/SUPPORT/dataset.shtml">Lucy Radio Science Subsystem Dinkinesh Sky Frequency Data Collection</a> <code>urn:nasa:pds:lucy.rss:data_dinkinesh_skyfreq::1.0</code></li>
 <li><a href="/holdings/pds4-lucy.rss:data_dinkinesh_trk234-v1.0/SUPPORT/dataset.shtml">Lucy Radio Science Subsystem Dinkinesh Tracking Data Collection</a> <code>urn:nasa:pds:lucy.rss:data_dinkinesh_trk234::1.0</code></li>
 <li><a href="/holdings/pds4-lucy.rss:document-v1.0/SUPPORT/dataset.shtml">Lucy Radio Science Subsystem Document Collection</a> <code>urn:nasa:pds:lucy.rss:document::1.0</code></li>
+</ul></li>
 
-<li><a href="/holdings/pds4-lucy.ltes-v1.0/SUPPORT/dataset.shtml">Lucy L'TES Bundle</a> <code>urn:nasa:pds:lucy.ltes::1.0</code></li>
+<li><a href="/holdings/pds4-lucy.ltes-v1.0/SUPPORT/dataset.shtml">Lucy L'TES Bundle</a> <code>urn:nasa:pds:lucy.ltes::1.0</code>
+<ul>
 <li><a href="/holdings/pds4-lucy.ltes:data_dinkinesh_raw-v1.0/SUPPORT/dataset.shtml">Lucy L'TES Dinkinesh Raw Data Collection</a> <code>urn:nasa:pds:lucy.ltes:data_dinkinesh_raw::1.0</code></li>
 <li><a href="/holdings/pds4-lucy.ltes:data_dinkinesh_hkraw-v1.0/SUPPORT/dataset.shtml">Lucy L'TES Dinkinesh Raw Housekeeping Data Collection</a> <code>urn:nasa:pds:lucy.ltes:data_dinkinesh_hkraw::1.0</code></li>
 <li><a href="/holdings/pds4-lucy.ltes:data_dinkinesh_calibrated-v1.0/SUPPORT/dataset.shtml">Lucy L'TES Dinkinesh Calibrated Data Collection</a> <code>urn:nasa:pds:lucy.ltes:data_dinkinesh_calibrated::1.0</code></li>
 <li><a href="/holdings/pds4-lucy.ltes:document-v1.0/SUPPORT/dataset.shtml">Lucy L'TES Document Collection</a> <code>urn:nasa:pds:lucy.ltes:document::1.0</code></li>
+</ul></li>
 
-<li><a href="/holdings/pds4-lucy.ttcam-v1.0/SUPPORT/dataset.shtml">Lucy TTCam Bundle</a> <code>urn:nasa:pds:lucy.ttcam::1.0</code></li>
+<li><a href="/holdings/pds4-lucy.ttcam-v1.0/SUPPORT/dataset.shtml">Lucy TTCam Bundle</a> <code>urn:nasa:pds:lucy.ttcam::1.0</code>
+<ul>
 <li><a href="/holdings/pds4-lucy.ttcam:data_dinkinesh_raw-v1.0/SUPPORT/dataset.shtml">Lucy TTCam Dinkinesh Raw Data Collection</a> <code>urn:nasa:pds:lucy.ttcam:data_dinkinesh_raw::1.0</code></li>
 <li><a href="/holdings/pds4-lucy.ttcam:data_dinkinesh_calibrated-v1.0/SUPPORT/dataset.shtml">Lucy TTCam Dinkinesh Calibrated Data Collection</a> <code>urn:nasa:pds:lucy.ttcam:data_dinkinesh_calibrated::1.0</code></li>
 <li><a href="/holdings/pds4-lucy.ttcam:calibration-v1.0/SUPPORT/dataset.shtml">Lucy TTCam Calibration Collection</a> <code>urn:nasa:pds:lucy.ttcam:calibration::1.0</code></li>
 <li><a href="/holdings/pds4-lucy.ttcam:document-v1.0/SUPPORT/dataset.shtml">Lucy TTCam Document Collection</a> <code>urn:nasa:pds:lucy.ttcam:document::1.0</code></li>
+</ul></li>
 
 <li><a href="/holdings/pds4-lucy.mission-v1.0/SUPPORT/dataset.shtml">Lucy Mission Bundle</a> <code>urn:nasa:pds:lucy.mission::1.0</code></li>
 <li><a href="/holdings/pds4-lucy.mission:document-v1.0/SUPPORT/dataset.shtml">Lucy Mission Document Collection</a> <code>urn:nasa:pds:lucy.mission:document::1.0</code></li>
 </ul>
-<br />&nbsp;</li>
+</li>
 
 
 <!-- 2024.08.30 -->

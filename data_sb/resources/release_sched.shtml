@@ -67,8 +67,19 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 
 <!-- ************************************************************************ Ground - Asteroid ************************************************************************ -->
 <tr class="odd">
-<td rowspan="5"><!-- <a href="/data_sb/missions/ground.shtml"> -->Ground based data<!-- </a> --> and R&amp;A
+<td rowspan="4"><!-- <a href="/data_sb/missions/ground.shtml"> -->Ground based data<!-- </a> --> and R&amp;A
 <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em>Asteroid data</em></td>
+
+<td>Bolometric Hemispherical Albedo Map of Pluto from New Horizons Observations</td>
+<td><a href="/holdings/pds4-nh_derived:pluto_albedo-v1.0/SUPPORT/dataset.shtml">released May 2024</a></td>
+</tr>
+
+<tr class="odd">
+<td>Center for Laboratory Astrophysics and Space Science Experiments (CLASSE) Charon Exospheric Simulation Data</td>
+<td><a href="/holdings/pds4-gbl-classe:charon_exosphere-v1.0/SUPPORT/dataset.shtml">released May 2024</a></td>
+</tr>
+
+<tr class="odd">
 <td>HST UV Slitless Reflectance Spectra of (1) Ceres V1.0</td>
 <td><a href="https://sbn.psi.edu/pds/resource/hstuvspec.html">released Jan 2023</a></td>
 </tr>
@@ -78,20 +89,7 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 <td><a href="https://sbn.psi.edu/pds/resource/almaceres.html">released Jul 2022</a></td>
 </tr>
 
-<tr class="odd">
-<td>OSIRIS-REx Simulated Test Models V1.0</td>
-<td><a href="https://sbn.psi.edu/pds/resource/doi/bennu_sim_1.0.html">released May 2022</a></td>
-</tr>
 
-<tr class="odd">
-<td>Asteroid Polarimetric Database (APD) V2.0</td>
-<td><a href="https://sbn.psi.edu/pds/resource/apd.html">released Jan 2022</a></td>
-</tr>
-
-<tr class="odd">
-<td>PRIMASS-L Spectra V1.0</td>
-<td><a href="https://sbn.psi.edu/pds/resource/primassl.html">released Nov 2021</a></td>
-</tr>
 
 <!-- ************************************************************************ Ground - Satellite ************************************************************************ -->
 <tr>

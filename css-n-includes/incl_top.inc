@@ -172,8 +172,8 @@ a:active {} /* requires a blank style for :active to stop it being buggy */
 <td><h1>DOWNTIME ANNOUNCEMENT</h1>
 <h3>Intermittent network outages due to network upgrades:</h3>
 <ul>
-<li>7am-11pm Sun 08 Dec 2024 (during the day and into evening)</li>
-<li>6pm Mon 09 Dec 2024 - 6am Tue 10 Dec 2024 (overnight)</li>
+<li>EST 7am-11pm Sun 08 Dec 2024 (during the day and into evening)</li>
+<li>EST 6pm Mon 09 Dec 2024 - 6am Tue 10 Dec 2024 (overnight)</li>
 </ul>
 <p>Thank you for your patience.</p>
 </td>

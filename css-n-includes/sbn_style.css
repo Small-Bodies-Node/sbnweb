@@ -278,7 +278,8 @@ dl {margin-top: 0.5em;}
 dd {padding-bottom: 0.5em;
 margin-left: 2em;}
 
-head, #centercol ol, #centerwide ol, #centeronly ol, 
+table.important ol, table.important ul, 
+#centercol ol, #centerwide ol, #centeronly ol, 
 #centercol ul, #centerwide ul, #centeronly ul {margin:5px 15px 15px 30px;
 padding-left:5px;
 list-style-position:outside;

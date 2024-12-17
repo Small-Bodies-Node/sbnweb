@@ -61,10 +61,12 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 <!-- 2024.12.17 -->
 <li><span class="date">2024.12.17</span> New Horizons K5 migrations
 <ul>
-	<li><a href="/holdings/pds4-nh_documents-v4.0/SUPPORT/dataset.shtml">New Horizons Mission Instrument-Specific and Mission-Wide Documents v4.0</a> <code>urn:nasa:pds:nh_documents::4.0</code></li>
-	<li><a href="/holdings/pds4-nh_documents:pepssi-v1.0/SUPPORT/dataset.shtml">New Horizons Documents for the PEPSSI Instrument</a> <code>urn:nasa:pds:nh_documents:pepssi::1.0</code></li>
-	<li><a href="/holdings/pds4-nh_documents:rex-v1.0/SUPPORT/dataset.shtml">New Horizons Documents for the REX Instrument</a> <code>urn:nasa:pds:nh_documents:rex::1.0</code></li>
-	<li><a href="/holdings/pds4-nh_documents:sdc-v1.0/SUPPORT/dataset.shtml">New Horizons Documents for the SDC Instrument</a> <code>urn:nasa:pds:nh_documents:sdc::1.0</code></li>
+	<li><a href="/holdings/pds4-nh_documents-v4.0/SUPPORT/dataset.shtml">New Horizons Mission Instrument-Specific and Mission-Wide Documents v4.0</a> <code>urn:nasa:pds:nh_documents::4.0</code>
+		<ul>
+		<li><a href="/holdings/pds4-nh_documents:pepssi-v1.0/SUPPORT/dataset.shtml">New Horizons Documents for the PEPSSI Instrument</a> <code>urn:nasa:pds:nh_documents:pepssi::1.0</code></li>
+		<li><a href="/holdings/pds4-nh_documents:rex-v1.0/SUPPORT/dataset.shtml">New Horizons Documents for the REX Instrument</a> <code>urn:nasa:pds:nh_documents:rex::1.0</code></li>
+		<li><a href="/holdings/pds4-nh_documents:sdc-v1.0/SUPPORT/dataset.shtml">New Horizons Documents for the SDC Instrument</a> <code>urn:nasa:pds:nh_documents:sdc::1.0</code></li>
+		</ul></li>
 	
 	<li><a href="/holdings/pds4-nh_sdc-v1.0/SUPPORT/dataset.shtml">New Horizons SDC Archive Bundle</a> <code>urn:nasa:pds:nh_sdc::1.0</code>
 		<ul>

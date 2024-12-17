@@ -39,6 +39,7 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 <!--
 ===========================================================================
 EDIT HISTORY:
++ 2024-12-17 EMW	NH K5 migrations per email 17 Dec TFB
 + 2024-12-06 EMW	minor typo in link text to NH KEM (per email from TB)
 + 2024-08-30 EMW	replaced data collection with bundle under Other Mission
 + 2024-06-28 EMW	added PDS4 document and calibration collections under Other Mission Datasets
@@ -195,21 +196,21 @@ EDIT HISTORY:
 <ul>
 <li><a href="https://naif.jpl.nasa.gov/naif/data_archived.html">New Horizons Spice Kernels</a></li><!-- NH-J_P_SS-SPICE-6-V1.0 -->
 <li><a href="/holdings/nh-x-swap-5-derived-solarwind-v2.0/dataset.shtml">New Horizons SWAP Solar Wind Derived Data v2.0</a></li><!-- NH-X-SWAP-5-DERIVED-SOLARWIND-V2.0 -->
-
-<li><a href="/holdings/pds4-nh_documents-v3.0/SUPPORT/dataset.shtml">New Horizons Mission Instrument-Specific and Mission-Wide Documents v3.0</a> <code>urn:nasa:pds:nh_documents::3.0</code></li>
-
+<li><a href="/holdings/pds4-nh_documents-v4.0/SUPPORT/dataset.shtml">New Horizons Mission Instrument-Specific and Mission-Wide Documents v4.0</a> <code>urn:nasa:pds:nh_documents::4.0</code></li>
 <li><a href="/holdings/pds4-nh_alice:calibration_files-v1.0/SUPPORT/dataset.shtml">New Horizons Alice Reference Files Used in Calibrating Data</a> <code>urn:nasa:pds:nh_alice:calibration_files::1.0</code></li>
 <li><a href="/holdings/pds4-nh_lorri:calibration_files-v1.0/SUPPORT/dataset.shtml">New Horizons LORRI Reference Files Used in Calibrating Data</a> <code>urn:nasa:pds:nh_lorri:calibration_files::1.0</code></li>
+<li><a href="/holdings/pds4-nh_leisa:calibration_files-v1.0/SUPPORT/dataset.shtml">New Horizons LEISA Reference Files Used in Calibrating Data</a> <code>urn:nasa:pds:nh_leisa:calibration_files::1.0</code></li>
 <li><a href="/holdings/pds4-nh_mvic:calibration_files-v1.0/SUPPORT/dataset.shtml">New Horizons MVIC Reference Files Used in Calibrating Data</a> <code>urn:nasa:pds:nh_mvic:calibration_files::1.0</code></li>
+<li><a href="/holdings/pds4-nh_sdc:calibration_files-v1.0/SUPPORT/dataset.shtml">New Horizons SDC Reference Files Used in Calibrating Data</a> <code>urn:nasa:pds:nh_sdc:calibration_files::1.0</code></li>
+<li><a href="/holdings/pds4-nh_swap:calibration_files-v1.0/SUPPORT/dataset.shtml">New Horizons SWAP Reference Files Used in Calibrating Data</a> <code>urn:nasa:pds:nh_swap:calibration_files::1.0</code></li>
+<li><a href="/holdings/pds4-nh_swap:trajectory-v1.0/SUPPORT/dataset.shtml">New Horizons Spacecraft Trajectory</a> <code>urn:nasa:pds:nh_swap:trajectory::1.0</code></li>
 </ul>
 
 <h3>Related Datasets</h3>
 <p>Use the <a href="https://sbnapps.psi.edu/ferret/">Small Bodies Data Ferret</a> to find other datasets for this mission/target.</p>
 <ul>
 <li><a href="/holdings/pds4-nh_derived:lorri_cob-v1.0/SUPPORT/dataset.shtml">New Horizons Cosmic Optical Background Observations</a> <code>urn:nasa:pds:nh_derived:lorri_cob::1.0</code></li>
-
 <li><a href="/holdings/pds4-nh_derived:pluto_albedo-v1.0/SUPPORT/dataset.shtml">Bolometric Hemispherical Albedo Map of Pluto from New Horizons Observations</a> <code>urn:nasa:pds:nh_derived:pluto_albedo::1.0</code></li>
-
 </ul>
 
 

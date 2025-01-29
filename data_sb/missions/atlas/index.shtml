@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SBN Mission Support: ATLAS</title>
+
+<!-- 
+########################
+ALL of the head, style links, header and menu code is in the include. Edit that file with extreme care!!
+########################
+ -->
+<!--#include virtual="/css-n-includes/incl_top.inc"-->
+
+<!-- ################################################ LEFT SIDEBAR ########################################## -->
+<!--#include virtual="/css-n-includes/incl_left-side.inc"-->
+
+<!-- ################################################ RIGHT SIDEBAR ########################################## -->
+<div id="rightcol">
+<div class="sidebarSection">
+<h2>Program Websites</h2>
+<p>Here we list links to the primary program website as well as pages about the program on other sites such as the NSSDC, NASA portal, etc.</p>
+<ul>
+<li>Program: <em><a href="https://atlas.fallingstar.com/" onclick="this.target='_blank'">ATLAS</a></em></li>
+<li>Wikipedia: <em><a href="https://en.wikipedia.org/wiki/Asteroid_Terrestrial-impact_Last_Alert_System" onclick="this.target='_blank'">ATLAS</a></em></li>
+</ul>
+</div><!-- end class sidebarSection -->
+</div><!-- end id rightcol -->
+<!-- ################################################ MAIN ################################################## -->
+<div id="centercol">
+<a name="mainContent"></a>
+<!-- ************************************************** You may begin editing! ************************************************** -->
+<!-- 
+===========================================================================
+EDIT HISTORY:
+
++ 2025-01-29 EMW	created page
+===========================================================================
+ -->
+<!-- Mission Title ====================================================== -->
+<h1>Asteroid Terrestrial-impact Last Alert System (ATLAS)</h1>
+
+<!-- Mission Description ================================================ -->
+<p>The Asteroid Terrestrial-impact Last Alert System (ATLAS) is a multi-telescope network located around the world providing a ground-based robotic survey with all-sky coverage detection for near-Earth objects (NEOs). As of April 2022, as part of this network, there were a total of four telescopes, one in South Africa, Chile, and two in Hawaii.</p>
+
+<!-- SBN's role ========================================================= -->
+<p>The SBN is the lead PDS node to archive the ATLAS survey reduced images and source detection catalogs. Astrometric measurements of small bodies can be found at the Minor Planet Center (MPC).</p>
+
+<!-- Instrument List ==================================================== -->
+<h2>Ground-based Observatories</h2>
+<ul>
+<li>ATLAS-Haleakal&macr;a, Haleakal&macr;a, Maui (MPC T05)</li>
+<li>ATLAS-Maunaloa, Maunaloa, Hawai&145;i (MPC T08)</li>
+<li>ATLAS-Chile, El Sauce Observatory, Rio Hurtado, Chile (MPC W68)</li>
+<li>ATLAS-South Africa, Sutherland Observing Station, South Africa (MPC M22)</li>
+</ul>
+
+<!-- Mission Data ======================================================= -->
+<h2>Data Sets</h2>
+<ul>
+<li>ATLAS data are being delivered and made available as soon as possible. Search for objects in the ATLAS archive using <a href="https://catch.astro.umd.edu/">CATCH.</a></li>
+</ul>
+
+<h3>Citation</h3>
+<p>Citation to use when referencing ATLAS archive: [TBD]</p>
+
+<h3>Essential Documents</h3>
+<ul>
+<li><a href="ATLAS_Operations_and_Data_Processing.pdf">ATLAS History, Operations and Data Processing</a></li>
+<li><a href="ATLAS_PDS_Bundle_Overview.pdf">ATLAS PDS Bundle Overview</a></li>
+</ul>
+
+<!-- ************************************************** End editing! ************************************************** -->
+<!--#include virtual="/css-n-includes/incl_bottom.inc"-->
+<br />Last updated: <!--#config timefmt="%A %B %d, %Y"--><!--#echo var="LAST_MODIFIED" --></div><!-- close id whotext -->
+</div><!-- close id footer -->
+</div><!-- end id footwrap -->
+</div><!-- close wrapper -->
+</body>
+</html>

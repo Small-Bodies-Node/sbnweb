@@ -43,7 +43,7 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 <li><strong>ReadPDS</strong>: Updated for PDS4 and includes IDL and Python versions! Set of IDL procedures designed to read SBN data files, using the information contained in the PDS labels as a guide to accessing the information.
 <br /><a href="tools_readPDS.shtml">Details and download</a><br /><br /></li>
 <li><strong>PDS4 Viewer</strong>: A tool designed to visualize PDS data, using the information contained in the PDS4 labels as a guide to accessing the information. (PDS4 only.)
-<br /><a href="https://sbnwiki.asteroiddata.org/PDS4_Viewer.html">Details and download</a><br /><br /></li>
+<br /><a href="pds4_tools_info/pds4_viewer.html">Details and download</a><br /><br /></li>
 <li><strong>File and Label Formatting/Verifying Routines</strong>: A number of small routines for formatting and/or verifying files and labels.
 <br /><a href="tools_file-label.shtml">Details and download</a><br /><br /></li>
 <li><strong>On-Line Archiving Facility (OLAF)</strong>: Online tool that allows individuals to submit data to the PDS so that it can be archived and made available to the public.

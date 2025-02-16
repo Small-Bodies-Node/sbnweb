@@ -1,0 +1,49 @@
+/* Remove word hyphenation on long lines */
+div.body p, div.body dd, div.body li, div.body blockquote {
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    -webkit-hyphens: none;
+    hyphens: none;
+}
+
+/* Do not change link color once visited */
+a:link, a:visited {
+    color: #004B6B;
+}
+
+/* Add background and border to figures */
+figure {
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    margin-bottom: 2em;
+}
+
+/* Remove unnecessary margin from figure captions */
+figcaption > p {
+    margin: 0 !important;
+}
+
+/* Remove ugly background and border from contents directive */
+.contents {
+    background-color: white !important;
+    border: none            !important;
+}
+
+/* Increase line spacing between lines for line blocks */
+.line-block > .line:not(:last-child) {
+    margin-bottom: 0.3em;
+}
+/* Add whitespace between list elements in the main body */
+.body li {
+    margin-bottom: 0.5em;
+}
+
+/* Remove page title from table of contents */
+.sphinxsidebar div > ul > li > a {
+    display: none;
+}
+
+/* Center the footer text */
+.footer {
+    text-align: center !important;
+}

@@ -39,6 +39,7 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 <!--
 ===========================================================================
 EDIT HISTORY:
++ 2025-02-14 EMW	PEPSSI (PDS3) v6 to (PDS4) v1 PEPSSI Data Archive
 + 2024-12-17 EMW	NH K5 migrations per email 17 Dec TFB
 + 2024-12-06 EMW	minor typo in link text to NH KEM (per email from TB)
 + 2024-08-30 EMW	replaced data collection with bundle under Other Mission
@@ -201,6 +202,7 @@ EDIT HISTORY:
 <li><a href="/holdings/pds4-nh_lorri:calibration_files-v1.0/SUPPORT/dataset.shtml">New Horizons LORRI Reference Files Used in Calibrating Data</a> <code>urn:nasa:pds:nh_lorri:calibration_files::1.0</code></li>
 <li><a href="/holdings/pds4-nh_leisa:calibration_files-v1.0/SUPPORT/dataset.shtml">New Horizons LEISA Reference Files Used in Calibrating Data</a> <code>urn:nasa:pds:nh_leisa:calibration_files::1.0</code></li>
 <li><a href="/holdings/pds4-nh_mvic:calibration_files-v1.0/SUPPORT/dataset.shtml">New Horizons MVIC Reference Files Used in Calibrating Data</a> <code>urn:nasa:pds:nh_mvic:calibration_files::1.0</code></li>
+<li><a href="/holdings/pds4-nh_pepssi:calibration_files-v1.0/SUPPORT/dataset.shtml">New Horizons PEPSSI Reference Files Used in Calibrating Data</a> <code>urn:nasa:pds:nh_pepssi:calibration_files::1.0</code></li>
 <li><a href="/holdings/pds4-nh_sdc:calibration_files-v1.0/SUPPORT/dataset.shtml">New Horizons SDC Reference Files Used in Calibrating Data</a> <code>urn:nasa:pds:nh_sdc:calibration_files::1.0</code></li>
 <li><a href="/holdings/pds4-nh_swap:calibration_files-v1.0/SUPPORT/dataset.shtml">New Horizons SWAP Reference Files Used in Calibrating Data</a> <code>urn:nasa:pds:nh_swap:calibration_files::1.0</code></li>
 <li><a href="/holdings/pds4-nh_swap:trajectory-v1.0/SUPPORT/dataset.shtml">New Horizons Spacecraft Trajectory</a> <code>urn:nasa:pds:nh_swap:trajectory::1.0</code></li>
@@ -212,7 +214,6 @@ EDIT HISTORY:
 <li><a href="/holdings/pds4-nh_derived:lorri_cob-v1.0/SUPPORT/dataset.shtml">New Horizons Cosmic Optical Background Observations</a> <code>urn:nasa:pds:nh_derived:lorri_cob::1.0</code></li>
 <li><a href="/holdings/pds4-nh_derived:pluto_albedo-v1.0/SUPPORT/dataset.shtml">Bolometric Hemispherical Albedo Map of Pluto from New Horizons Observations</a> <code>urn:nasa:pds:nh_derived:pluto_albedo::1.0</code></li>
 </ul>
-
 
 
 

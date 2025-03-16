@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>pds4_tools.reader.array_objects module &#8212; PDS4 Python Tools 1.4 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinxdoc.css?v=34905f61" />
+    <link rel="stylesheet" type="text/css" href="_static/css/custom.css?v=8e6781f1" />
+    <script src="_static/documentation_options.js?v=0ed52906"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="pds4_tools.reader.table_objects module" href="pds4_tools.reader.table_objects.html" />
+    <link rel="prev" title="pds4_tools.reader.label_objects module" href="pds4_tools.reader.label_objects.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="pds4_tools.reader.table_objects.html" title="pds4_tools.reader.table_objects module"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="pds4_tools.reader.label_objects.html" title="pds4_tools.reader.label_objects module"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">PDS4 Python Tools 1.4 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="pds4_tools.reader.html" accesskey="U">pds4_tools.reader package</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">pds4_tools.reader.array_objects module</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="module-pds4_tools.reader.array_objects">
+<span id="pds4-tools-reader-array-objects-module"></span><h1>pds4_tools.reader.array_objects module<a class="headerlink" href="#module-pds4_tools.reader.array_objects" title="Link to this heading">¶</a></h1>
+<section id="classes">
+<h2>Classes<a class="headerlink" href="#classes" title="Link to this heading">¶</a></h2>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pds4_tools.reader.array_objects.ArrayStructure" title="pds4_tools.reader.array_objects.ArrayStructure"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ArrayStructure</span></code></a>([structure_data, ...])</p></td>
+<td><p>Stores a single PDS4 array data structure.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pds4_tools.reader.array_objects.Meta_ArrayStructure" title="pds4_tools.reader.array_objects.Meta_ArrayStructure"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Meta_ArrayStructure</span></code></a>(*args, **kwds)</p></td>
+<td><p>Meta data about a PDS4 array data structure.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pds4_tools.reader.array_objects.ArraySection" title="pds4_tools.reader.array_objects.ArraySection"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ArraySection</span></code></a>(array_structure[, no_scale])</p></td>
+<td><p>Stores and allows retrieval of a section of an array.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="details">
+<h2>Details<a class="headerlink" href="#details" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="pds4_tools.reader.array_objects.ArrayStructure">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ArrayStructure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">structure_data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">structure_meta_data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">structure_label</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">full_label</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parent_filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">structure_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/array_objects.html#ArrayStructure"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pds4_tools.reader.array_objects.ArrayStructure" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="pds4_tools.reader.general_objects.html#pds4_tools.reader.general_objects.Structure" title="pds4_tools.reader.general_objects.Structure"><code class="xref py py-class docutils literal notranslate"><span class="pre">Structure</span></code></a></p>
+<p>Stores a single PDS4 array data structure.</p>
+<p>Contains the array’s data, meta data and label portion. All forms of Array
+(e.g. Array, Array_2D, Array_3D_Image, etc) are stored by this class.</p>
+<p>See <a class="reference internal" href="pds4_tools.reader.general_objects.html#pds4_tools.reader.general_objects.Structure" title="pds4_tools.reader.general_objects.Structure"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Structure</span></code></a>’s and <a class="reference internal" href="pds4_tools.reader.core.html#pds4_tools.reader.core.pds4_read" title="pds4_tools.reader.core.pds4_read"><code class="xref any py py-func docutils literal notranslate"><span class="pre">pds4_read</span></code></a>’s docstrings for attributes, properties and usage instructions
+of this object.</p>
+<p>Inherits all Attributes, Parameters and Properties from <a class="reference internal" href="pds4_tools.reader.general_objects.html#pds4_tools.reader.general_objects.Structure" title="pds4_tools.reader.general_objects.Structure"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Structure</span></code></a>. Overrides <a class="reference internal" href="#pds4_tools.reader.array_objects.ArrayStructure.info" title="pds4_tools.reader.array_objects.ArrayStructure.info"><code class="xref any py py-meth docutils literal notranslate"><span class="pre">info</span></code></a>, <a class="reference internal" href="#pds4_tools.reader.array_objects.ArrayStructure.data" title="pds4_tools.reader.array_objects.ArrayStructure.data"><code class="xref any py py-attr docutils literal notranslate"><span class="pre">data</span></code></a>
+and <a class="reference internal" href="#pds4_tools.reader.array_objects.ArrayStructure.from_file" title="pds4_tools.reader.array_objects.ArrayStructure.from_file"><code class="xref any py py-meth docutils literal notranslate"><span class="pre">from_file</span></code></a> methods to implement them.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pds4_tools.reader.array_objects.ArrayStructure.from_file">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">structure_label</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">full_label</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lazy_load</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">no_scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">decode_strings</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/array_objects.html#ArrayStructure.from_file"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pds4_tools.reader.array_objects.ArrayStructure.from_file" title="Link to this definition">¶</a></dt>
+<dd><p>Create an array structure from relevant labels and file for the data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>data_filename</strong><span class="classifier">str or unicode</span></dt><dd><p>Filename of the data file that contained the data for this array structure.</p>
+</dd>
+<dt><strong>structure_label</strong><span class="classifier">Label</span></dt><dd><p>The segment of the label describing only this array structure.</p>
+</dd>
+<dt><strong>full_label</strong><span class="classifier">Label</span></dt><dd><p>The entire label describing the PDS4 product this structure originated from.</p>
+</dd>
+<dt><strong>lazy_load</strong><span class="classifier">bool, optional</span></dt><dd><p>If True, does not read-in the data of this structure until the first attempt to access it.
+Defaults to False.</p>
+</dd>
+<dt><strong>no_scale</strong><span class="classifier">bool, optional</span></dt><dd><p>If True, read-in data will not be adjusted according to the offset and scaling factor.
+Defaults to False.</p>
+</dd>
+<dt><strong>decode_strings</strong><span class="classifier">None, optional</span></dt><dd><p>Has no effect because Arrays may not contain string data. Defaults to None.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt>ArrayStructure</dt><dd><p>An object representing the PDS4 array structure; contains its label, data and meta data.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pds4_tools.reader.array_objects.ArrayStructure.from_array">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_array</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">no_scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">no_bitmask</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">masked</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">structure_kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/array_objects.html#ArrayStructure.from_array"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pds4_tools.reader.array_objects.ArrayStructure.from_array" title="Link to this definition">¶</a></dt>
+<dd><p>Create an array structure from PDS-compliant data or meta data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>input</strong><span class="classifier">PDS_ndarray, PDS_marray or Meta_ArrayStructure</span></dt><dd><p>Either an array containing the data, which must also have a valid PDS4 meta_data attribute
+describing itself, or an instance of valid Meta_ArrayStructure.</p>
+</dd>
+<dt><strong>no_scale</strong><span class="classifier">bool, optional</span></dt><dd><p>If False, and input is an array of data, then the data will scaled according to the scaling_factor
+and value_offset meta data. If the <em>input</em> is meta data only, then the output data type will be
+large enough to store the scaled values. If True, no scaling or data type conversions will be
+done. Defaults to False.</p>
+</dd>
+<dt><strong>no_bitmask</strong><span class="classifier">bool, optional</span></dt><dd><p>If False, and input is an array of data, then the bitmask indicated in the meta data will be
+applied. If True, the bitmask will not be used. Defaults to False.</p>
+</dd>
+<dt><strong>masked</strong><span class="classifier">bool or None, optional</span></dt><dd><p>If True, and input is an array of data, then the data will retain any masked values and in
+additional have numeric Special_Constants values masked. If False, any masked values in the input
+array will be unmasked and data assignments will not preserve masked values. If None, masked
+values in the input will be retained only if any are present. Defaults to None.</p>
+</dd>
+<dt><strong>structure_kwargs</strong><span class="classifier">dict, optional</span></dt><dd><p>Keywords that are passed directly to the <a class="reference internal" href="#pds4_tools.reader.array_objects.ArrayStructure" title="pds4_tools.reader.array_objects.ArrayStructure"><code class="xref any py py-class docutils literal notranslate"><span class="pre">ArrayStructure</span></code></a> constructor.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt>ArrayStructure</dt><dd><p>An object representing the PDS4 array structure. The data attribute will contain an array that
+can store <em>input</em> values (or does store it, if input is an array of data). Other attributes may
+be specified via <em>structure_kwargs</em>.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pds4_tools.reader.array_objects.ArrayStructure.info">
+<span class="sig-name descname"><span class="pre">info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">abbreviated</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/array_objects.html#ArrayStructure.info"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pds4_tools.reader.array_objects.ArrayStructure.info" title="Link to this definition">¶</a></dt>
+<dd><p>Prints a summary of this data structure.</p>
+<p>Contains the type and dimensions of the Array, and if <em>abbreviated</em> is False then
+also outputs the name and number of elements of each axis in the array.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>abbreviated</strong><span class="classifier">bool, optional</span></dt><dd><p>If False, output additional detail. Defaults to False.</p>
+</dd>
+<dt><strong>output</strong><span class="classifier">file, bool or None, optional</span></dt><dd><p>A file-like object to write the output to.  If set to False then instead of outputting
+to a file a list representing the summary parameters for the Structure is returned.
+Writes to <code class="docutils literal notranslate"><span class="pre">sys.stdout</span></code> by default.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt>None or list</dt><dd><p>If output is False, then returns a list representing the summary parameters for the Structure.
+Otherwise returns None.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pds4_tools.reader.array_objects.ArrayStructure.data">
+<span class="sig-name descname"><span class="pre">data</span></span><a class="headerlink" href="#pds4_tools.reader.array_objects.ArrayStructure.data" title="Link to this definition">¶</a></dt>
+<dd><p>All data in the PDS4 array data structure.</p>
+<p>This property is implemented as a thread-safe cacheable attribute. Once it is run
+for the first time, it replaces itself with an attribute having the exact
+data that was originally returned.</p>
+<p>Unlike normal properties, this property/attribute is settable without a __set__ method.
+To never run the read-in routine inside this property, you need to manually create the
+the <code class="docutils literal notranslate"><span class="pre">.data</span></code> attribute prior to ever invoking this method (or pass in the data to the
+constructor on object instantiation, which does this for you).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt>PDS_ndarray or PDS_marray</dt><dd><p>An array (either effectively np.ndarray or np.ma.MaskedArray) representing all the data in
+this array structure.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pds4_tools.reader.array_objects.ArrayStructure.section">
+<span class="sig-name descname"><span class="pre">section</span></span><a class="headerlink" href="#pds4_tools.reader.array_objects.ArrayStructure.section" title="Link to this definition">¶</a></dt>
+<dd><p>A section of the data in the PDS4 array data structure.</p>
+<p>This property is implemented as a thread-safe cacheable attribute. See docstring of <code class="docutils literal notranslate"><span class="pre">.data</span></code>
+for more info.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt>ArraySection</dt><dd><p>An object that allows access to sections of the array without reading the entire array
+into memory.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pds4_tools.reader.array_objects.ArrayStructure.as_masked">
+<span class="sig-name descname"><span class="pre">as_masked</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/array_objects.html#ArrayStructure.as_masked"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pds4_tools.reader.array_objects.ArrayStructure.as_masked" title="Link to this definition">¶</a></dt>
+<dd><p>Obtain a view of this ArrayStructure, with numeric Special_Constants masked.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt>ArrayStructure</dt><dd><p>A view of this structure, where the data is masked for numeric Special_Constants. The data,
+labels and meta data are all effectively views, no copies are made.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>The returned Structure may not be easily converted back to unmasked. However, the original
+Structure can continue to be used to access the unmasked data.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pds4_tools.reader.array_objects.ArrayStructure.data_loaded">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">data_loaded</span></span><a class="headerlink" href="#pds4_tools.reader.array_objects.ArrayStructure.data_loaded" title="Link to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt>bool</dt><dd><p>True if the <a class="reference internal" href="#pds4_tools.reader.array_objects.ArrayStructure.data" title="pds4_tools.reader.array_objects.ArrayStructure.data"><code class="xref any py py-attr docutils literal notranslate"><span class="pre">data</span></code></a> attribute has been set (e.g. data has been read from file or set),
+False otherwise.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pds4_tools.reader.array_objects.ArrayStructure.id">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#pds4_tools.reader.array_objects.ArrayStructure.id" title="Link to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt>str or unicode</dt><dd><p>The ID (either local identifier if given, or name if given) of this data structure. If
+neither was given, an ID was likely assigned.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pds4_tools.reader.array_objects.ArrayStructure.is_array">
+<span class="sig-name descname"><span class="pre">is_array</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pds4_tools.reader.array_objects.ArrayStructure.is_array" title="Link to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt>bool</dt><dd><p>True if this <a class="reference internal" href="pds4_tools.reader.general_objects.html#pds4_tools.reader.general_objects.Structure" title="pds4_tools.reader.general_objects.Structure"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Structure</span></code></a> is a form of a PDS4 array, false otherwise.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pds4_tools.reader.array_objects.ArrayStructure.is_header">
+<span class="sig-name descname"><span class="pre">is_header</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pds4_tools.reader.array_objects.ArrayStructure.is_header" title="Link to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt>bool</dt><dd><p>True if this <a class="reference internal" href="pds4_tools.reader.general_objects.html#pds4_tools.reader.general_objects.Structure" title="pds4_tools.reader.general_objects.Structure"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Structure</span></code></a> is a form of a PDS4 header, false otherwise.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pds4_tools.reader.array_objects.ArrayStructure.is_table">
+<span class="sig-name descname"><span class="pre">is_table</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pds4_tools.reader.array_objects.ArrayStructure.is_table" title="Link to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt>bool</dt><dd><p>True if this <a class="reference internal" href="pds4_tools.reader.general_objects.html#pds4_tools.reader.general_objects.Structure" title="pds4_tools.reader.general_objects.Structure"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Structure</span></code></a> is a form of a PDS4 table, false otherwise.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pds4_tools.reader.array_objects.ArrayStructure.type">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">type</span></span><a class="headerlink" href="#pds4_tools.reader.array_objects.ArrayStructure.type" title="Link to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt>str, unicode or None</dt><dd><p>The official PDS4 data structure type name for this structure.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pds4_tools.reader.array_objects.Meta_ArrayStructure">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Meta_ArrayStructure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwds</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/array_objects.html#Meta_ArrayStructure"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pds4_tools.reader.array_objects.Meta_ArrayStructure" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="pds4_tools.reader.general_objects.html#pds4_tools.reader.general_objects.Meta_Structure" title="pds4_tools.reader.general_objects.Meta_Structure"><code class="xref py py-class docutils literal notranslate"><span class="pre">Meta_Structure</span></code></a></p>
+<p>Meta data about a PDS4 array data structure.</p>
+<p>Meta data stored in this class is accessed in <code class="docutils literal notranslate"><span class="pre">dict</span></code>-like fashion.  Stores meta data about all forms
+of Array (e.g. Array, Array_2D, Array_3D_Image, etc). Normally this meta data originates from the
+label (e.g., if this is an Array_2D then everything from the opening tag of Array_2D to its closing
+tag will be stored in this object), via the <a class="reference internal" href="#pds4_tools.reader.array_objects.Meta_ArrayStructure.from_label" title="pds4_tools.reader.array_objects.Meta_ArrayStructure.from_label"><code class="xref any py py-meth docutils literal notranslate"><span class="pre">from_label</span></code></a> method.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Attributes<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>display_settings</strong><span class="classifier">Meta_DisplaySettings</span></dt><dd><p>Meta data about the Display Settings for this array data structure.</p>
+</dd>
+<dt><strong>spectral_characteristics</strong><span class="classifier">Meta_SpectralCharacteristics</span></dt><dd><p>Meta data about the Spectral Characteristics for this array data structure.</p>
+</dd>
+<dt><strong>Inherits all Attributes, Parameters and Properties from `Meta_Structure`.</strong></dt><dd></dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Supposing the following Array definition from a label:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">Array_3D_Spectrum</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">local_identifier</span><span class="o">&gt;</span><span class="n">data_Primary</span><span class="o">&lt;/</span><span class="n">local_identifier</span><span class="o">&gt;</span>
+  <span class="o">...</span>
+  <span class="o">&lt;</span><span class="n">Axis_Array</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">axis_name</span><span class="o">&gt;</span><span class="n">Time</span><span class="o">&lt;/</span><span class="n">axis_name</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">elements</span><span class="o">&gt;</span><span class="mi">21</span><span class="o">&lt;/</span><span class="n">elements</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">sequence_number</span><span class="o">&gt;</span><span class="mi">1</span><span class="o">&lt;/</span><span class="n">sequence_number</span><span class="o">&gt;</span>
+  <span class="o">&lt;/</span><span class="n">Axis_Array</span><span class="o">&gt;</span>
+  <span class="o">...</span>
+<span class="o">&lt;/</span><span class="n">Array_3D_Spectrum</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">meta_array</span> <span class="o">=</span> <span class="n">Meta_ArrayStructure</span><span class="o">.</span><span class="n">from_label</span><span class="p">(</span><span class="n">structure_xml</span><span class="p">,</span> <span class="n">full_label</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">meta_array</span><span class="p">[</span><span class="s1">&#39;local_identifier&#39;</span><span class="p">])</span>
+<span class="go">data_Primary</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">meta_array</span><span class="p">[</span><span class="s1">&#39;Axis_Array&#39;</span><span class="p">][</span><span class="s1">&#39;elements&#39;</span><span class="p">]</span>
+<span class="go">21</span>
+</pre></div>
+</div>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pds4_tools.reader.array_objects.Meta_ArrayStructure.id">
+<span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#pds4_tools.reader.array_objects.Meta_ArrayStructure.id" title="Link to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt>str or unicode</dt><dd><p>The local_identifier of the PDS4 data structure if it exists, otherwise the name if it exists.
+If neither was specified in the label, None is returned.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pds4_tools.reader.array_objects.Meta_ArrayStructure.from_label">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_label</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xml_array</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">full_label</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/array_objects.html#Meta_ArrayStructure.from_label"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pds4_tools.reader.array_objects.Meta_ArrayStructure.from_label" title="Link to this definition">¶</a></dt>
+<dd><p>Create a Meta_ArrayStructure from XML originating from a label.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>xml_array</strong><span class="classifier">Label or ElementTree Element</span></dt><dd><p>Portion of label that defines the Array data structure.</p>
+</dd>
+<dt><strong>full_label</strong><span class="classifier">Label or ElementTree Element, optional</span></dt><dd><p>The entire label from which <em>xml_array</em> originated.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt>Meta_ArrayStructure</dt><dd><p>Instance containing meta data about the array structure, as taken from the XML label.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt>PDS4StandardsException</dt><dd><p>Raised if required meta data is absent.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pds4_tools.reader.array_objects.Meta_ArrayStructure.data_type">
+<span class="sig-name descname"><span class="pre">data_type</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/array_objects.html#Meta_ArrayStructure.data_type"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pds4_tools.reader.array_objects.Meta_ArrayStructure.data_type" title="Link to this definition">¶</a></dt>
+<dd><p>Data type of the array elements.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt>PDSdtype</dt><dd><p>A PDS4 data type.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pds4_tools.reader.array_objects.Meta_ArrayStructure.dimensions">
+<span class="sig-name descname"><span class="pre">dimensions</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/array_objects.html#Meta_ArrayStructure.dimensions"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pds4_tools.reader.array_objects.Meta_ArrayStructure.dimensions" title="Link to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt>list</dt><dd><p>Dimensions of the array.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pds4_tools.reader.array_objects.Meta_ArrayStructure.num_axes">
+<span class="sig-name descname"><span class="pre">num_axes</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/array_objects.html#Meta_ArrayStructure.num_axes"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pds4_tools.reader.array_objects.Meta_ArrayStructure.num_axes" title="Link to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt>int</dt><dd><p>Number of axes/dimensions in the array.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pds4_tools.reader.array_objects.Meta_ArrayStructure.get_axis_arrays">
+<span class="sig-name descname"><span class="pre">get_axis_arrays</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sort</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/array_objects.html#Meta_ArrayStructure.get_axis_arrays"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pds4_tools.reader.array_objects.Meta_ArrayStructure.get_axis_arrays" title="Link to this definition">¶</a></dt>
+<dd><p>Convenience method to always obtain Axis_Arrays as a <code class="docutils literal notranslate"><span class="pre">list</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>sort</strong><span class="classifier">bool, optional</span></dt><dd><p>Sorts returned Axis Arrays by sequence_number if True. Defaults to True.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt>list</dt><dd><p>List of <code class="docutils literal notranslate"><span class="pre">OrderedDict</span></code>’s containing meta data about each Axis_Array.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pds4_tools.reader.array_objects.Meta_ArrayStructure.get_axis_array">
+<span class="sig-name descname"><span class="pre">get_axis_array</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">axis_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sequence_number</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/array_objects.html#Meta_ArrayStructure.get_axis_array"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pds4_tools.reader.array_objects.Meta_ArrayStructure.get_axis_array" title="Link to this definition">¶</a></dt>
+<dd><p>Searches for a specific Axis_Array.</p>
+<p>Either <em>axis_name</em>, <em>sequence_number</em> or both must be specified.
+When both are given, then the result must match both values.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>axis_name</strong><span class="classifier">str or unicode, optional</span></dt><dd><p>Searches for an Axis_Array with this name.</p>
+</dd>
+<dt><strong>sequence_number</strong><span class="classifier">int, optional</span></dt><dd><p>Searches for an Axis_Array with this sequence number.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt>OrderedDict or None</dt><dd><p>The matched Axis_Array, or None if no match was found.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pds4_tools.reader.array_objects.ArraySection">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ArraySection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">array_structure</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">no_scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pds4_tools/reader/array_objects.html#ArraySection"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pds4_tools.reader.array_objects.ArraySection" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Stores and allows retrieval of a section of an array.</p>
+<p>Used to extract and scale (if necessary) a portion of a PDS4 array. Usually this would be used for
+an array that is too large to hold entirely in memory.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>array_structure</strong><span class="classifier">ArrayStructure</span></dt><dd><p>A PDS4 array structure. The data attribute in this structure should be memory-mapped.</p>
+</dd>
+<dt><strong>no_scale</strong><span class="classifier">bool, optional</span></dt><dd><p>If True, returned data will not be adjusted according to the offset and scaling factor.
+Defaults to False.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>We use this instead of memory mapping to access extremely large arrays because the latter does not work
+for scaled arrays in which the scaled data type is different from the data type on disk.</p>
+</dd></dl>
+
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">pds4_tools.reader.array_objects module</a><ul>
+<li><a class="reference internal" href="#classes">Classes</a></li>
+<li><a class="reference internal" href="#details">Details</a><ul>
+<li><a class="reference internal" href="#pds4_tools.reader.array_objects.ArrayStructure"><code class="docutils literal notranslate"><span class="pre">ArrayStructure</span></code></a><ul>
+<li><a class="reference internal" href="#pds4_tools.reader.array_objects.ArrayStructure.from_file"><code class="docutils literal notranslate"><span class="pre">ArrayStructure.from_file()</span></code></a></li>
+<li><a class="reference internal" href="#pds4_tools.reader.array_objects.ArrayStructure.from_array"><code class="docutils literal notranslate"><span class="pre">ArrayStructure.from_array()</span></code></a></li>
+<li><a class="reference internal" href="#pds4_tools.reader.array_objects.ArrayStructure.info"><code class="docutils literal notranslate"><span class="pre">ArrayStructure.info()</span></code></a></li>
+<li><a class="reference internal" href="#pds4_tools.reader.array_objects.ArrayStructure.data"><code class="docutils literal notranslate"><span class="pre">ArrayStructure.data</span></code></a></li>
+<li><a class="reference internal" href="#pds4_tools.reader.array_objects.ArrayStructure.section"><code class="docutils literal notranslate"><span class="pre">ArrayStructure.section</span></code></a></li>
+<li><a class="reference internal" href="#pds4_tools.reader.array_objects.ArrayStructure.as_masked"><code class="docutils literal notranslate"><span class="pre">ArrayStructure.as_masked()</span></code></a></li>
+<li><a class="reference internal" href="#pds4_tools.reader.array_objects.ArrayStructure.data_loaded"><code class="docutils literal notranslate"><span class="pre">ArrayStructure.data_loaded</span></code></a></li>
+<li><a class="reference internal" href="#pds4_tools.reader.array_objects.ArrayStructure.id"><code class="docutils literal notranslate"><span class="pre">ArrayStructure.id</span></code></a></li>
+<li><a class="reference internal" href="#pds4_tools.reader.array_objects.ArrayStructure.is_array"><code class="docutils literal notranslate"><span class="pre">ArrayStructure.is_array()</span></code></a></li>
+<li><a class="reference internal" href="#pds4_tools.reader.array_objects.ArrayStructure.is_header"><code class="docutils literal notranslate"><span class="pre">ArrayStructure.is_header()</span></code></a></li>
+<li><a class="reference internal" href="#pds4_tools.reader.array_objects.ArrayStructure.is_table"><code class="docutils literal notranslate"><span class="pre">ArrayStructure.is_table()</span></code></a></li>
+<li><a class="reference internal" href="#pds4_tools.reader.array_objects.ArrayStructure.type"><code class="docutils literal notranslate"><span class="pre">ArrayStructure.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#pds4_tools.reader.array_objects.Meta_ArrayStructure"><code class="docutils literal notranslate"><span class="pre">Meta_ArrayStructure</span></code></a><ul>
+<li><a class="reference internal" href="#pds4_tools.reader.array_objects.Meta_ArrayStructure.id"><code class="docutils literal notranslate"><span class="pre">Meta_ArrayStructure.id</span></code></a></li>
+<li><a class="reference internal" href="#pds4_tools.reader.array_objects.Meta_ArrayStructure.from_label"><code class="docutils literal notranslate"><span class="pre">Meta_ArrayStructure.from_label()</span></code></a></li>
+<li><a class="reference internal" href="#pds4_tools.reader.array_objects.Meta_ArrayStructure.data_type"><code class="docutils literal notranslate"><span class="pre">Meta_ArrayStructure.data_type()</span></code></a></li>
+<li><a class="reference internal" href="#pds4_tools.reader.array_objects.Meta_ArrayStructure.dimensions"><code class="docutils literal notranslate"><span class="pre">Meta_ArrayStructure.dimensions()</span></code></a></li>
+<li><a class="reference internal" href="#pds4_tools.reader.array_objects.Meta_ArrayStructure.num_axes"><code class="docutils literal notranslate"><span class="pre">Meta_ArrayStructure.num_axes()</span></code></a></li>
+<li><a class="reference internal" href="#pds4_tools.reader.array_objects.Meta_ArrayStructure.get_axis_arrays"><code class="docutils literal notranslate"><span class="pre">Meta_ArrayStructure.get_axis_arrays()</span></code></a></li>
+<li><a class="reference internal" href="#pds4_tools.reader.array_objects.Meta_ArrayStructure.get_axis_array"><code class="docutils literal notranslate"><span class="pre">Meta_ArrayStructure.get_axis_array()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#pds4_tools.reader.array_objects.ArraySection"><code class="docutils literal notranslate"><span class="pre">ArraySection</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="pds4_tools.reader.label_objects.html"
+                          title="previous chapter">pds4_tools.reader.label_objects module</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="pds4_tools.reader.table_objects.html"
+                          title="next chapter">pds4_tools.reader.table_objects module</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/pds4_tools.reader.array_objects.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="pds4_tools.reader.table_objects.html" title="pds4_tools.reader.table_objects module"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="pds4_tools.reader.label_objects.html" title="pds4_tools.reader.label_objects module"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">PDS4 Python Tools 1.4 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="pds4_tools.reader.html" >pds4_tools.reader package</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">pds4_tools.reader.array_objects module</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2015 - 2025, University of Maryland.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    </div>
+  </body>
+</html>

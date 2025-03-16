@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>pds4_tools.utils.logging &#8212; PDS4 Python Tools 1.4 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinxdoc.css?v=34905f61" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=8e6781f1" />
+    <script src="../../../_static/documentation_options.js?v=0ed52906"></script>
+    <script src="../../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">PDS4 Python Tools 1.4 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" accesskey="U">Module code</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">pds4_tools.utils.logging</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Source code for pds4_tools.utils.logging</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">absolute_import</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">print_function</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">division</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">unicode_literals</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">copy</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">..extern</span><span class="w"> </span><span class="kn">import</span> <span class="n">six</span>
+
+<span class="c1"># Minimum logging levels for loud and quiet operation</span>
+<span class="n">_loud</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">DEBUG</span>
+<span class="n">_quiet</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">ERROR</span>
+
+<span class="c1"># User-configured log level</span>
+<span class="n">_user_level</span> <span class="o">=</span> <span class="kc">None</span>
+
+
+<div class="viewcode-block" id="logger_init">
+<a class="viewcode-back" href="../../../pds4_tools.utils.logging.html#pds4_tools.utils.logging.logger_init">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">logger_init</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; Initializes or obtains the logger for PDS4 tools and its handlers.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    PDS4Logger</span>
+<span class="sd">        The global logger for all pds4 tools.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># Obtain or create PDS4ToolsLogger</span>
+    <span class="n">original_class</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLoggerClass</span><span class="p">()</span>
+
+    <span class="n">logging</span><span class="o">.</span><span class="n">setLoggerClass</span><span class="p">(</span><span class="n">PDS4Logger</span><span class="p">)</span>
+    <span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s1">&#39;PDS4ToolsLogger&#39;</span><span class="p">)</span>
+
+    <span class="n">logging</span><span class="o">.</span><span class="n">setLoggerClass</span><span class="p">(</span><span class="n">original_class</span><span class="p">)</span>
+
+    <span class="c1"># If this is a new logger then initialize its config</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">logger</span><span class="o">.</span><span class="n">handlers</span><span class="p">:</span>
+
+        <span class="c1"># Set default log level for entire logger</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">_loud</span><span class="p">)</span>
+
+        <span class="c1"># Create the stdout handler. This handler outputs to stdout and to warning and errors message boxes</span>
+        <span class="c1"># in the viewer and can be silenced by user (via use of quiet or --quiet).</span>
+        <span class="n">stdout_handler</span> <span class="o">=</span> <span class="n">PDS4StreamHandler</span><span class="p">(</span><span class="s1">&#39;stdout_handler&#39;</span><span class="p">)</span>
+
+        <span class="c1"># Create the log handler. This handler does not output to stdout or to screen and should not</span>
+        <span class="c1"># be silenced.</span>
+        <span class="n">log_handler</span> <span class="o">=</span> <span class="n">PDS4SilentHandler</span><span class="p">(</span><span class="s1">&#39;log_handler&#39;</span><span class="p">)</span>
+
+        <span class="c1"># Create the formatter and add it to the handlers</span>
+        <span class="n">formatter</span> <span class="o">=</span> <span class="n">PDS4Formatter</span><span class="p">()</span>
+        <span class="n">stdout_handler</span><span class="o">.</span><span class="n">setFormatter</span><span class="p">(</span><span class="n">formatter</span><span class="p">)</span>
+        <span class="n">log_handler</span><span class="o">.</span><span class="n">setFormatter</span><span class="p">(</span><span class="n">formatter</span><span class="p">)</span>
+
+        <span class="c1"># Add handlers to logger</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">addHandler</span><span class="p">(</span><span class="n">stdout_handler</span><span class="p">)</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">addHandler</span><span class="p">(</span><span class="n">log_handler</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">logger</span></div>
+
+
+
+<div class="viewcode-block" id="set_loglevel">
+<a class="viewcode-back" href="../../../pds4_tools.utils.logging.html#pds4_tools.utils.logging.set_loglevel">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">set_loglevel</span><span class="p">(</span><span class="n">level</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Enables log messages from the PDS4 tools logger to propagate to ancestor loggers based</span>
+<span class="sd">    on the log level.</span>
+
+<span class="sd">    By default log messages are not propagated. To receive info+ log messages, one would</span>
+<span class="sd">    typically ``set_loglevel(&#39;info&#39;)``, while setting ``pds4_read(..., quiet=True)`` to</span>
+<span class="sd">    avoid duplicate information to stdout.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    level : int or str</span>
+<span class="sd">        Level to set for handler. See Python documentation on logger levels for details.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    None</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">global</span> <span class="n">_user_level</span>
+
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">level</span><span class="p">,</span> <span class="n">six</span><span class="o">.</span><span class="n">string_types</span><span class="p">):</span>
+        <span class="n">_user_level</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">logging</span><span class="p">,</span> <span class="n">level</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">_user_level</span> <span class="o">=</span> <span class="n">level</span></div>
+
+
+
+<div class="viewcode-block" id="PDS4Logger">
+<a class="viewcode-back" href="../../../pds4_tools.utils.logging.html#pds4_tools.utils.logging.PDS4Logger">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">PDS4Logger</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">Logger</span><span class="p">,</span> <span class="nb">object</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; Custom PDS4 Logger, for its internal log use.</span>
+
+<span class="sd">     Additional features over standard logger:</span>
+<span class="sd">        - Get handlers by name</span>
+<span class="sd">        - Has `quiet` or `loud` methods</span>
+<span class="sd">        - Set maximum number of repetitions for a logging message via e.g. ``.log(... max_repeats=n)``</span>
+<span class="sd">        - Set custom line terminator on per message basis for all stream handlers via e.g. ``.log(..., end=&#39;str&#39;)``</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+
+        <span class="c1"># Stores those messages (as keys) which have a max_repeat argument set (see _log() details)</span>
+        <span class="c1"># and the number of repetitions they have had (as values)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_max_repeat_records</span> <span class="o">=</span> <span class="p">{}</span>
+
+        <span class="nb">super</span><span class="p">(</span><span class="n">PDS4Logger</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">stream_handlers</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        logging.StreamHandler or subclasses</span>
+<span class="sd">            Stream handlers bound to this logger.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">return</span> <span class="p">[</span><span class="n">handler</span> <span class="k">for</span> <span class="n">handler</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">handlers</span>
+                        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">handler</span><span class="p">,</span> <span class="n">logging</span><span class="o">.</span><span class="n">StreamHandler</span><span class="p">)]</span>
+
+<div class="viewcode-block" id="PDS4Logger.get_handler">
+<a class="viewcode-back" href="../../../pds4_tools.utils.logging.html#pds4_tools.utils.logging.PDS4Logger.get_handler">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_handler</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">handler_name</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; Obtain handler by name.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        handler_name : str or unicode</span>
+<span class="sd">            The name of the handler.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        PDS4StreamHandler or PDS4SilentHandler</span>
+<span class="sd">            Handler for this logger, matching the *handler_name*.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">for</span> <span class="n">handler</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">handlers</span><span class="p">:</span>
+
+            <span class="k">if</span> <span class="n">handler</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="n">handler_name</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">handler</span>
+
+        <span class="k">return</span> <span class="kc">None</span></div>
+
+
+<div class="viewcode-block" id="PDS4Logger.quiet">
+<a class="viewcode-back" href="../../../pds4_tools.utils.logging.html#pds4_tools.utils.logging.PDS4Logger.quiet">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">quiet</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">handler_name</span><span class="o">=</span><span class="s1">&#39;stdout_handler&#39;</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; Sets a handler to log only errors.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        handler_name : str or unicode, optional</span>
+<span class="sd">            Handler name to select. Defaults to stdout handler.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        None</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">get_handler</span><span class="p">(</span><span class="n">handler_name</span><span class="p">)</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">_quiet</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="PDS4Logger.loud">
+<a class="viewcode-back" href="../../../pds4_tools.utils.logging.html#pds4_tools.utils.logging.PDS4Logger.loud">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">loud</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">handler_name</span><span class="o">=</span><span class="s1">&#39;stdout_handler&#39;</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; Sets a handler to log warnings and above.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        handler_name : str or unicode, optional</span>
+<span class="sd">            Handler name to select. Defaults to stdout handler.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        None</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">get_handler</span><span class="p">(</span><span class="n">handler_name</span><span class="p">)</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">_loud</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="PDS4Logger.is_quiet">
+<a class="viewcode-back" href="../../../pds4_tools.utils.logging.html#pds4_tools.utils.logging.PDS4Logger.is_quiet">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">is_quiet</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">handler_name</span><span class="o">=</span><span class="s1">&#39;stdout_handler&#39;</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; Obtains whether a handler is quiet.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        handler_name : str or unicode, optional</span>
+<span class="sd">            Handler name to select.  Defaults to stdout handler.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        bool</span>
+<span class="sd">            True if the logger is quiet, i.e. logs only errors; false otherwise.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_handler</span><span class="p">(</span><span class="n">handler_name</span><span class="p">)</span><span class="o">.</span><span class="n">is_quiet</span></div>
+
+
+<div class="viewcode-block" id="PDS4Logger.set_terminators">
+<a class="viewcode-back" href="../../../pds4_tools.utils.logging.html#pds4_tools.utils.logging.PDS4Logger.set_terminators">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">set_terminators</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ends</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; Sets line terminator for all stream handlers.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        ends : str, unicode or list[str or unicode]</span>
+<span class="sd">            The line terminator (same for all stream handlers) or sequence of terminators.</span>
+<span class="sd">            Sequence order must be same as order of stream handlers in `stream_handlers`</span>
+<span class="sd">            attribute.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        None</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">num_stream_handlers</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">stream_handlers</span><span class="p">)</span>
+        <span class="n">ends_is_array</span> <span class="o">=</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">ends</span><span class="p">,</span> <span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">))</span>
+
+        <span class="k">if</span> <span class="n">ends_is_array</span> <span class="ow">and</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">ends</span><span class="p">)</span> <span class="o">!=</span> <span class="n">num_stream_handlers</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s1">&#39;Number of stream handlers (</span><span class="si">{0}</span><span class="s1">) does not match number of ends (</span><span class="si">{1}</span><span class="s1">).&#39;</span>
+                            <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">ends</span><span class="p">),</span> <span class="n">num_stream_handlers</span><span class="p">))</span>
+
+        <span class="k">elif</span> <span class="ow">not</span> <span class="n">ends_is_array</span><span class="p">:</span>
+
+            <span class="n">ends</span> <span class="o">=</span> <span class="p">[</span><span class="n">ends</span><span class="p">]</span> <span class="o">*</span> <span class="n">num_stream_handlers</span>
+
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">handler</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">stream_handlers</span><span class="p">):</span>
+            <span class="n">handler</span><span class="o">.</span><span class="n">terminator</span> <span class="o">=</span> <span class="n">ends</span><span class="p">[</span><span class="n">i</span><span class="p">]</span></div>
+
+
+<div class="viewcode-block" id="PDS4Logger.setLevel">
+<a class="viewcode-back" href="../../../pds4_tools.utils.logging.html#pds4_tools.utils.logging.PDS4Logger.setLevel">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">setLevel</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">level</span><span class="p">,</span> <span class="n">handler_name</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; Set log level for entire logger or a specific handler.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        level : int or str</span>
+<span class="sd">            Level to set for logger or handler. See Python documentation on logger levels for details.</span>
+<span class="sd">        handler_name : str or unicode, optional</span>
+<span class="sd">            Handler name to select. Defaults to the entire logger.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        None</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">level</span><span class="p">,</span> <span class="n">six</span><span class="o">.</span><span class="n">string_types</span><span class="p">):</span>
+            <span class="n">level</span> <span class="o">=</span> <span class="n">level</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="n">handler_name</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="nb">super</span><span class="p">(</span><span class="n">PDS4Logger</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">level</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">get_handler</span><span class="p">(</span><span class="n">handler_name</span><span class="p">)</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">level</span><span class="p">)</span></div>
+
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_log</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">level</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Subclassed to allow *end* and *max_repeat* arguments to every logger log call (e.g. ``logger.info``,</span>
+<span class="sd">        ``logger.warning``, etc)</span>
+
+<span class="sd">        When *end* is given, the message will end with the indicated line terminator instead of the handler&#39;s</span>
+<span class="sd">             terminator setting.</span>
+<span class="sd">        When *max_repeat* is given, the indicated message will only be emitted the number of times indicated</span>
+<span class="sd">            from then on.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        None</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">msg</span> <span class="o">=</span> <span class="n">args</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">max_repeat</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;max_repeat&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="n">end</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;end&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+
+        <span class="c1"># Determine if max repeats for this log message has been reached</span>
+        <span class="k">if</span> <span class="n">max_repeat</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+
+            <span class="n">times_repeated</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_max_repeat_records</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_max_repeat_records</span><span class="p">[</span><span class="n">msg</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+
+            <span class="k">if</span> <span class="n">times_repeated</span> <span class="o">&gt;=</span> <span class="n">max_repeat</span><span class="p">:</span>
+                <span class="k">return</span>
+
+        <span class="c1"># Set line terminator (temporarily) for all handlers</span>
+        <span class="k">if</span> <span class="n">end</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">original_ends</span> <span class="o">=</span> <span class="p">[</span><span class="n">handler</span><span class="o">.</span><span class="n">terminator</span> <span class="k">for</span> <span class="n">handler</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">stream_handlers</span><span class="p">]</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">set_terminators</span><span class="p">(</span><span class="n">end</span><span class="p">)</span>
+
+        <span class="c1"># Enable or disable propagation to ancestor loggers based on ``set_loglevel``</span>
+        <span class="n">original_propagate</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">propagate</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">_user_level</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">level</span> <span class="o">&lt;</span> <span class="n">_user_level</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">propagate</span> <span class="o">=</span> <span class="kc">False</span>
+
+        <span class="c1"># Log the message</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">PDS4Logger</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">_log</span><span class="p">(</span><span class="n">level</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+        <span class="c1"># Revert log propagation and line terminator back to previous/default settings</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">propagate</span> <span class="o">=</span> <span class="n">original_propagate</span>
+
+        <span class="k">if</span> <span class="n">end</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">set_terminators</span><span class="p">(</span><span class="n">original_ends</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="PDS4StreamHandler">
+<a class="viewcode-back" href="../../../pds4_tools.utils.logging.html#pds4_tools.utils.logging.PDS4StreamHandler">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">PDS4StreamHandler</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">StreamHandler</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; Custom StreamHandler that has a *name* and a *is_quiet* attributes. &quot;&quot;&quot;</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="n">_loud</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; Initialize the handler.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        name : str or unicode</span>
+<span class="sd">            Name to give the handler.</span>
+<span class="sd">        level : int, optional</span>
+<span class="sd">            Default log level for this handler. Defaults to _loud.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="c1"># Using try due to stream parameter being renamed in Python &lt;2.7)</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">logging</span><span class="o">.</span><span class="n">StreamHandler</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">stream</span><span class="o">=</span><span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
+            <span class="n">logging</span><span class="o">.</span><span class="n">StreamHandler</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">strm</span><span class="o">=</span><span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_name</span> <span class="o">=</span> <span class="n">name</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s1">&#39;terminator&#39;</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">terminator</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">set_level</span><span class="p">(</span><span class="n">level</span><span class="p">)</span>
+
+<div class="viewcode-block" id="PDS4StreamHandler.emit">
+<a class="viewcode-back" href="../../../pds4_tools.utils.logging.html#pds4_tools.utils.logging.PDS4StreamHandler.emit">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">emit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">record</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; Emit a record.</span>
+
+<span class="sd">        Subclassed to allow ``handler.terminator`` to be used as the line terminator rather than hardcode the</span>
+<span class="sd">        newline character on any supported Python version. This is a standard feature on Python &gt;= 3.2, but</span>
+<span class="sd">        not available earlier.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="c1"># Python &gt;= 3.2 (i.e. all PY3 versions supported by this code) provides `self.terminator` by default</span>
+        <span class="k">if</span> <span class="n">six</span><span class="o">.</span><span class="n">PY3</span><span class="p">:</span>
+            <span class="nb">super</span><span class="p">(</span><span class="n">PDS4StreamHandler</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">emit</span><span class="p">(</span><span class="n">record</span><span class="p">)</span>
+
+        <span class="c1"># For PY2, we copy directly from Python 2.7&#39;s emit, which also works for Python 2.6. A minor</span>
+        <span class="c1"># modification is made to allow `self.terminator` attribute to work</span>
+        <span class="k">else</span><span class="p">:</span>
+
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">unicode</span>
+                <span class="n">_unicode</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="k">except</span> <span class="ne">NameError</span><span class="p">:</span>
+                <span class="n">_unicode</span> <span class="o">=</span> <span class="kc">False</span>
+
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">msg</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">record</span><span class="p">)</span>
+                <span class="n">stream</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">stream</span>
+                <span class="n">fs</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">&quot;</span><span class="si">%s{0}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">terminator</span><span class="p">)</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="n">_unicode</span><span class="p">:</span>
+                    <span class="n">stream</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">fs</span> <span class="o">%</span> <span class="n">msg</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="k">try</span><span class="p">:</span>
+                        <span class="k">if</span> <span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="n">unicode</span><span class="p">)</span> <span class="ow">and</span>
+                                <span class="nb">getattr</span><span class="p">(</span><span class="n">stream</span><span class="p">,</span> <span class="s1">&#39;encoding&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)):</span>
+                            <span class="n">ufs</span> <span class="o">=</span> <span class="sa">u</span><span class="s1">&#39;</span><span class="si">%s{0}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">terminator</span><span class="p">)</span>
+                            <span class="k">try</span><span class="p">:</span>
+                                <span class="n">stream</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">ufs</span> <span class="o">%</span> <span class="n">msg</span><span class="p">)</span>
+                            <span class="k">except</span> <span class="ne">UnicodeEncodeError</span><span class="p">:</span>
+                                <span class="n">stream</span><span class="o">.</span><span class="n">write</span><span class="p">((</span><span class="n">ufs</span> <span class="o">%</span> <span class="n">msg</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">stream</span><span class="o">.</span><span class="n">encoding</span><span class="p">))</span>
+                        <span class="k">else</span><span class="p">:</span>
+                            <span class="n">stream</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">fs</span> <span class="o">%</span> <span class="n">msg</span><span class="p">)</span>
+                    <span class="k">except</span> <span class="ne">UnicodeError</span><span class="p">:</span>
+                        <span class="n">stream</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">fs</span> <span class="o">%</span> <span class="n">msg</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s2">&quot;UTF-8&quot;</span><span class="p">))</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span>
+            <span class="k">except</span> <span class="p">(</span><span class="ne">KeyboardInterrupt</span><span class="p">,</span> <span class="ne">SystemExit</span><span class="p">):</span>
+                <span class="k">raise</span>
+            <span class="k">except</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">handleError</span><span class="p">(</span><span class="n">record</span><span class="p">)</span></div>
+
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        str or unicode</span>
+<span class="sd">            Name of the handler.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_name</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">is_quiet</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        bool</span>
+<span class="sd">            True if handler is quiet, False otherwise.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">level</span> <span class="o">&gt;=</span> <span class="n">_quiet</span>
+
+<div class="viewcode-block" id="PDS4StreamHandler.set_level">
+<a class="viewcode-back" href="../../../pds4_tools.utils.logging.html#pds4_tools.utils.logging.PDS4StreamHandler.set_level">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">set_level</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">level</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; Set handler log level.</span>
+
+<span class="sd">        Convenience method for setLevel.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        level : int or str</span>
+<span class="sd">            Level to set for handler. See Python documentation on logger levels for details.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">level</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="PDS4StreamHandler.get_level">
+<a class="viewcode-back" href="../../../pds4_tools.utils.logging.html#pds4_tools.utils.logging.PDS4StreamHandler.get_level">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_level</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; Get handler log level.</span>
+
+<span class="sd">        Convenience method for the *level* attribute.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        int</span>
+<span class="sd">            Level for handler. See Python documentation on logger levels for details.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">level</span></div>
+
+
+<div class="viewcode-block" id="PDS4StreamHandler.setLevel">
+<a class="viewcode-back" href="../../../pds4_tools.utils.logging.html#pds4_tools.utils.logging.PDS4StreamHandler.setLevel">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">setLevel</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">level</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; Set handler log level.</span>
+
+<span class="sd">        Overloads ``logging.StreamHandler.setLevel`` to automatically set whether logger is quiet or loud.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        level : int or str</span>
+<span class="sd">            Level to set for handler. See Python documentation on logger levels for details.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">level</span><span class="p">,</span> <span class="n">six</span><span class="o">.</span><span class="n">string_types</span><span class="p">):</span>
+            <span class="n">level</span> <span class="o">=</span> <span class="n">level</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+
+        <span class="n">logging</span><span class="o">.</span><span class="n">StreamHandler</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">level</span><span class="p">)</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="PDS4SilentHandler">
+<a class="viewcode-back" href="../../../pds4_tools.utils.logging.html#pds4_tools.utils.logging.PDS4SilentHandler">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">PDS4SilentHandler</span><span class="p">(</span><span class="n">PDS4StreamHandler</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; Custom StreamHandler that saves emitted records to *records* attribute.</span>
+
+<span class="sd">    Able to print out previously emitted records via `to_string`. &quot;&quot;&quot;</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+
+        <span class="n">PDS4StreamHandler</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">records</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_recording_start</span> <span class="o">=</span> <span class="kc">None</span>
+
+<div class="viewcode-block" id="PDS4SilentHandler.emit">
+<a class="viewcode-back" href="../../../pds4_tools.utils.logging.html#pds4_tools.utils.logging.PDS4SilentHandler.emit">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">emit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">record</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; Saves emitted record.</span>
+
+<span class="sd">        Emitted record is shallow copied, then message is modified as described. First, we insert</span>
+<span class="sd">        the current line terminator, as otherwise this information would be lost. Second, if the</span>
+<span class="sd">        current or prior record contains a stand alone carriage-return character, we save only</span>
+<span class="sd">        the final state of the stream output as it would be if printed to a terminal. Generally</span>
+<span class="sd">        carriage return is likely only to be used to overwrite old messages on the same line</span>
+<span class="sd">        (e.g. how a download progress bar works); saving each message would pollute the message</span>
+<span class="sd">        queue, and potentially take a huge amount of memory.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        record : logger.LogRecord</span>
+<span class="sd">            Record to emit.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        None</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="c1"># Special processing for messages containing the CR (\r) character</span>
+        <span class="c1"># (see docstring for explanation)</span>
+        <span class="n">record</span> <span class="o">=</span> <span class="n">copy</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">record</span><span class="p">)</span>
+        <span class="n">new_msg</span> <span class="o">=</span> <span class="n">record</span><span class="o">.</span><span class="n">msg</span>
+        <span class="n">last_msg</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">records</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">msg</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">records</span> <span class="k">else</span> <span class="kc">None</span>
+
+        <span class="n">new_msg_has_cr</span> <span class="o">=</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">new_msg</span><span class="p">,</span> <span class="n">six</span><span class="o">.</span><span class="n">string_types</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="s1">&#39;</span><span class="se">\r</span><span class="s1">&#39;</span> <span class="ow">in</span> <span class="n">new_msg</span><span class="p">)</span>
+        <span class="n">last_msg_has_cr</span> <span class="o">=</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">last_msg</span><span class="p">,</span> <span class="n">six</span><span class="o">.</span><span class="n">string_types</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="s1">&#39;</span><span class="se">\r</span><span class="s1">&#39;</span> <span class="ow">in</span> <span class="n">last_msg</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">new_msg_has_cr</span> <span class="ow">or</span> <span class="n">last_msg_has_cr</span><span class="p">:</span>
+
+            <span class="n">last_newline_idx</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">records</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+
+                <span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">records</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">msg</span>
+                <span class="k">if</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span> <span class="ow">in</span> <span class="n">value</span><span class="p">:</span>
+                    <span class="n">last_newline_idx</span> <span class="o">=</span> <span class="n">i</span>
+                    <span class="k">break</span>
+
+            <span class="n">last_record</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">records</span><span class="p">[</span><span class="n">last_newline_idx</span><span class="p">]</span><span class="o">.</span><span class="n">msg</span> <span class="o">+</span> <span class="n">new_msg</span>
+
+            <span class="c1"># Special case when there are no newlines in previous records at all</span>
+            <span class="k">if</span> <span class="n">last_newline_idx</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">records</span> <span class="o">=</span> <span class="p">[]</span>
+
+            <span class="c1"># Deal with &#39;\r\n&#39;, which generally acts equivalent to &#39;\n&#39; in terminals</span>
+            <span class="n">not_contain_str</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">|&#39;</span>
+            <span class="k">while</span> <span class="n">not_contain_str</span> <span class="ow">in</span> <span class="n">last_record</span><span class="p">:</span>
+                <span class="n">not_contain_str</span> <span class="o">+=</span> <span class="s1">&#39;|&#39;</span>
+            <span class="n">last_record</span> <span class="o">=</span> <span class="n">last_record</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\r\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">not_contain_str</span><span class="p">)</span>
+
+            <span class="c1"># Truncate messages from &#39;\r&#39; to previous newline</span>
+            <span class="n">prev_msg</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+            <span class="n">new_msg</span> <span class="o">=</span> <span class="n">last_record</span>
+            <span class="k">while</span> <span class="p">(</span><span class="s1">&#39;</span><span class="se">\r</span><span class="s1">&#39;</span> <span class="ow">in</span> <span class="n">new_msg</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">new_msg</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\r</span><span class="s1">&#39;</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">new_msg</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\r</span><span class="s1">&#39;</span><span class="p">)):</span>
+                <span class="n">head</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">new_msg</span> <span class="o">=</span> <span class="n">new_msg</span><span class="o">.</span><span class="n">partition</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\r</span><span class="s1">&#39;</span><span class="p">)</span>
+                <span class="n">prev_msg</span> <span class="o">+=</span> <span class="n">head</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">head</span><span class="o">.</span><span class="n">rfind</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span>
+
+            <span class="n">record</span><span class="o">.</span><span class="n">msg</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">{0}{1}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">prev_msg</span><span class="p">,</span> <span class="n">new_msg</span><span class="p">)</span>
+            <span class="n">record</span><span class="o">.</span><span class="n">msg</span> <span class="o">=</span> <span class="n">record</span><span class="o">.</span><span class="n">msg</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">not_contain_str</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\r\n</span><span class="s1">&#39;</span><span class="p">)</span>
+
+            <span class="bp">self</span><span class="o">.</span><span class="n">records</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">records</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">last_newline_idx</span><span class="p">]</span>
+
+        <span class="c1"># Save the record</span>
+        <span class="n">record</span><span class="o">.</span><span class="n">msg</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">{0}{1}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">record</span><span class="o">.</span><span class="n">msg</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">terminator</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">records</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">record</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="PDS4SilentHandler.begin_recording">
+<a class="viewcode-back" href="../../../pds4_tools.utils.logging.html#pds4_tools.utils.logging.PDS4SilentHandler.begin_recording">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">begin_recording</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Used in conjunction with `get_recording`. Records emitted after this method is called will be</span>
+<span class="sd">        returned by `get_recording`.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        None</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_recording_start</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">records</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="PDS4SilentHandler.get_recording">
+<a class="viewcode-back" href="../../../pds4_tools.utils.logging.html#pds4_tools.utils.logging.PDS4SilentHandler.get_recording">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_recording</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">reset</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Obtains records since `begin_recording` was called as a joined string.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        reset : bool, optional</span>
+<span class="sd">            If True, begins a new recording from now on. If False, recording from previous point</span>
+<span class="sd">            continues. Defaults to True.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        str or unicode</span>
+<span class="sd">            A string containing the messages that were emitted since `begin_recording` was called.</span>
+
+<span class="sd">        Raises</span>
+<span class="sd">        ------</span>
+<span class="sd">        RuntimeError</span>
+<span class="sd">            Raised if `begin_recording` was not called prior to calling this method.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">record_start</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_recording_start</span>
+
+        <span class="k">if</span> <span class="n">record_start</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s1">&#39;Cannot obtain recording: no recording was started.&#39;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">reset</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">begin_recording</span><span class="p">()</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">to_string</span><span class="p">(</span><span class="n">start_i</span><span class="o">=</span><span class="n">record_start</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="PDS4SilentHandler.to_string">
+<a class="viewcode-back" href="../../../pds4_tools.utils.logging.html#pds4_tools.utils.logging.PDS4SilentHandler.to_string">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">to_string</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">start_i</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">end_i</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; Output emitted records as a joined string.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        start_i : int, optional</span>
+<span class="sd">            Index of first record to include. Defaults to 0 (include records from the beginning).</span>
+<span class="sd">        end_i : int, optional</span>
+<span class="sd">            Index of last record to include. Defaults to None (include records until the end).</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        str or unicode</span>
+<span class="sd">            A string containing the messages in the records that were previously emitted.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">formatted_records</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">record</span><span class="p">)</span> <span class="k">for</span> <span class="n">record</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">records</span><span class="p">[</span><span class="n">start_i</span><span class="p">:</span><span class="n">end_i</span><span class="p">]]</span>
+
+        <span class="k">return</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">formatted_records</span><span class="p">)</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="PDS4Formatter">
+<a class="viewcode-back" href="../../../pds4_tools.utils.logging.html#pds4_tools.utils.logging.PDS4Formatter">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">PDS4Formatter</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">Formatter</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; Custom formatter that varies format according to log level. &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="PDS4Formatter.format">
+<a class="viewcode-back" href="../../../pds4_tools.utils.logging.html#pds4_tools.utils.logging.PDS4Formatter.format">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">format</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">record</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        record : logger.LogRecord</span>
+<span class="sd">            The record to format.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        str or unicode</span>
+<span class="sd">            The formatted record string.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">formatter</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">Formatter</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%(message)s</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="n">formatted_value</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">Formatter</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">formatter</span><span class="p">,</span> <span class="n">record</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">record</span><span class="o">.</span><span class="n">levelno</span> <span class="o">!=</span> <span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">:</span>
+            <span class="n">formatted_value</span> <span class="o">=</span> <span class="n">record</span><span class="o">.</span><span class="n">levelname</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span> <span class="o">+</span> <span class="s1">&#39;: &#39;</span> <span class="o">+</span> <span class="n">formatted_value</span>
+
+        <span class="k">return</span> <span class="n">formatted_value</span></div>
+</div>
+
+</pre></div>
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">PDS4 Python Tools 1.4 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">pds4_tools.utils.logging</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2015 - 2025, University of Maryland.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    </div>
+  </body>
+</html>

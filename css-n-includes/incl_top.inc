@@ -167,7 +167,7 @@ a:active {} /* requires a blank style for :active to stop it being buggy */
 <div class="clear"></div>
 <!-- BEGIN Maintenance banner -->
 
-<table class="important">
+<!-- <table class="important">
 <tr>
 <td><h1>DOWNTIME ANNOUNCEMENT</h1>
 <h3>Intermittent network outages due to network resiliency testing:</h3>
@@ -177,7 +177,7 @@ a:active {} /* requires a blank style for :active to stop it being buggy */
 <p>Thank you for your patience.</p>
 </td>
 </tr>
-</table>
+</table> -->
 
 <!-- END Maintenance banner -->
 

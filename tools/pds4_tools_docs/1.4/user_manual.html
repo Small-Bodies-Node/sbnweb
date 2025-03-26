@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>PDS4 Python Tools - User Manual &#8212; PDS4 Python Tools 1.4 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinxdoc.css?v=34905f61" />
+    <link rel="stylesheet" type="text/css" href="_static/css/custom.css?v=8e6781f1" />
+    <script src="_static/documentation_options.js?v=0ed52906"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">PDS4 Python Tools 1.4 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">PDS4 Python Tools - User Manual</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="pds4-python-tools-user-manual">
+<span id="user-manual"></span><h1>PDS4 Python Tools - User Manual<a class="headerlink" href="#pds4-python-tools-user-manual" title="Link to this heading">¶</a></h1>
+<nav class="contents local" id="table-of-contents">
+<p class="topic-title">Table of Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#introduction" id="id3">1.1  Introduction</a></p></li>
+<li><p><a class="reference internal" href="#installation" id="id4">1.2  Installation</a></p></li>
+<li><p><a class="reference internal" href="#quick-tutorial" id="id5">1.3  Quick Tutorial</a></p>
+<ul>
+<li><p><a class="reference internal" href="#opening-a-pds4-file" id="id6">Opening a PDS4 file</a></p></li>
+<li><p><a class="reference internal" href="#working-with-large-files" id="id7">Working with large files</a></p></li>
+<li><p><a class="reference internal" href="#working-with-pds4-labels" id="id8">Working with PDS4 Labels</a></p></li>
+<li><p><a class="reference internal" href="#working-with-data" id="id9">Working with Data</a></p>
+<ul>
+<li><p><a class="reference internal" href="#image-and-array-data" id="id10">Image and Array Data</a></p></li>
+<li><p><a class="reference internal" href="#table-data" id="id11">Table Data</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#visualization" id="id12">Visualization</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#api" id="id13">1.4  API</a></p></li>
+</ul>
+</nav>
+<section id="introduction">
+<h2>1.1  Introduction<a class="headerlink" href="#introduction" title="Link to this heading">¶</a></h2>
+<p>PDS4 Python Tools are several modules integrated into a Python library to
+provide access to PDS4 data.</p>
+</section>
+<section id="installation">
+<h2>1.2  Installation<a class="headerlink" href="#installation" title="Link to this heading">¶</a></h2>
+<p>See <a class="reference external" href="https://pdssbn.astro.umd.edu/tools/pds4_tools_info/pds4_python_tools.html#installation">Installation instructions</a>.</p>
+</section>
+<section id="quick-tutorial">
+<h2>1.3  Quick Tutorial<a class="headerlink" href="#quick-tutorial" title="Link to this heading">¶</a></h2>
+<p>This chapter provides a quick introduction into using PDS4 Python Tools. The
+goal is to demonstrate basic features without getting into too much detail.
+If you are a first time or occasional user, this is where you should start.</p>
+<p>After installing PDS4 Python Tools, start Python and load the PDS4 tools library.
+Note that the module name is all lower case.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">pds4_tools</span>
+</pre></div>
+</div>
+<section id="opening-a-pds4-file">
+<h3>Opening a PDS4 file<a class="headerlink" href="#opening-a-pds4-file" title="Link to this heading">¶</a></h3>
+<p>Once <code class="docutils literal notranslate"><span class="pre">pds4_tools</span></code> is imported, we can open an existing data file from its
+describing label,</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">structures</span> <span class="o">=</span> <span class="n">pds4_tools</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="s1">&#39;/path/to/label.xml&#39;</span><span class="p">)</span>       <span class="c1"># Local</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">structures</span> <span class="o">=</span> <span class="n">pds4_tools</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="s1">&#39;http://url.com/label.xml&#39;</span><span class="p">)</span> <span class="c1"># Remote</span>
+</pre></div>
+</div>
+<p>For remote URLs, the files will be downloaded to a temporary on-disk cache
+and deleted upon Python interpreter exit.</p>
+<p>The <a class="reference internal" href="pds4_tools.reader.core.html#pds4_tools.reader.core.pds4_tools.read" title="pds4_tools.reader.core.pds4_tools.read"><code class="xref any py py-func docutils literal notranslate"><span class="pre">pds4_tools.read()</span></code></a> function has several optional arguments that control warnings,
+scaling, and lazy-loading. It returns a PDS4 Tools object called a <a class="reference internal" href="pds4_tools.reader.general_objects.html#pds4_tools.reader.general_objects.StructureList" title="pds4_tools.reader.general_objects.StructureList"><code class="xref any py py-class docutils literal notranslate"><span class="pre">StructureList</span></code></a>
+which is a <code class="docutils literal notranslate"><span class="pre">list</span></code>-like object, consisting of Structure objects. A Structure typically
+consists of a data array or table, and the label portion that describes that it.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">structures</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>                   <span class="c1"># First Structure</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">structures</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span>                 <span class="c1"># First two Structures</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">structures</span><span class="p">[</span><span class="s1">&#39;Integration&#39;</span><span class="p">]</span>       <span class="c1"># Structure with LID or name of &#39;Integration&#39;</span>
+</pre></div>
+</div>
+<p>The StructureList has a useful method, <a class="reference internal" href="pds4_tools.reader.general_objects.html#pds4_tools.reader.general_objects.StructureList.info" title="pds4_tools.reader.general_objects.StructureList.info"><code class="xref any py py-meth docutils literal notranslate"><span class="pre">StructureList.info()</span></code></a>, which summarizes
+the data structure content of the opened PDS4 file:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">0</span> <span class="p">:</span> <span class="n">Array_3D_Spectrum</span> <span class="s1">&#39;Primary&#39;</span> <span class="p">(</span><span class="mi">3</span> <span class="n">axes</span><span class="p">,</span> <span class="mi">21</span> <span class="n">x</span> <span class="mi">10</span> <span class="n">x</span> <span class="mi">36</span><span class="p">)</span>
+<span class="mi">1</span> <span class="p">:</span> <span class="n">Table_Binary</span> <span class="s1">&#39;Integration&#39;</span> <span class="p">(</span><span class="mi">9</span> <span class="n">fields</span> <span class="n">x</span> <span class="mi">1000</span> <span class="n">records</span><span class="p">)</span>
+<span class="mi">2</span> <span class="p">:</span> <span class="n">Table_Binary</span> <span class="s1">&#39;Engineering&#39;</span> <span class="p">(</span><span class="mi">38</span> <span class="n">fields</span> <span class="n">x</span> <span class="mi">1000</span>  <span class="n">records</span><span class="p">)</span>
+<span class="mi">3</span> <span class="p">:</span> <span class="n">Table_Binary</span> <span class="s1">&#39;Binning&#39;</span> <span class="p">(</span><span class="mi">9</span> <span class="n">fields</span> <span class="n">x</span> <span class="mi">1000</span> <span class="n">records</span><span class="p">)</span>
+<span class="mi">4</span> <span class="p">:</span> <span class="n">Table_Binary</span> <span class="s1">&#39;PixelGeometry&#39;</span> <span class="p">(</span><span class="mi">12</span> <span class="n">fields</span> <span class="n">x</span> <span class="mi">10000</span> <span class="n">records</span><span class="p">)</span>
+<span class="mi">5</span> <span class="p">:</span> <span class="n">Table_Binary</span> <span class="s1">&#39;SpacecraftGeometry&#39;</span> <span class="p">(</span><span class="mi">36</span> <span class="n">fields</span> <span class="n">x</span> <span class="mi">21</span> <span class="n">records</span><span class="p">)</span>
+<span class="mi">6</span> <span class="p">:</span> <span class="n">Table_Binary</span> <span class="s1">&#39;Observation&#39;</span> <span class="p">(</span><span class="mi">22</span> <span class="n">fields</span> <span class="n">x</span> <span class="mi">1</span> <span class="n">records</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Note that LIDs and names are case-sensitive.</p>
+</section>
+<section id="working-with-large-files">
+<h3>Working with large files<a class="headerlink" href="#working-with-large-files" title="Link to this heading">¶</a></h3>
+<p>The <a class="reference internal" href="pds4_tools.reader.core.html#pds4_tools.reader.core.pds4_tools.read" title="pds4_tools.reader.core.pds4_tools.read"><code class="xref any py py-func docutils literal notranslate"><span class="pre">pds4_tools.read()</span></code></a> function, with default arguments, will immediately read
+all data structures into memory all at once. This may not be desired for labels
+describing many large data structures at once, and for this reason the
+function supports a <code class="docutils literal notranslate"><span class="pre">lazy_load=True</span></code> argument.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">structures</span> <span class="o">=</span> <span class="n">pds4_tools</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="s1">&#39;/path/to/label.xml&#39;</span><span class="p">,</span> <span class="n">lazy_load</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>When enabled, this argument ensures that data will only be transparently read-in
+upon first attempt to access that data. This has minimal impact on smaller files
+as well.</p>
+<p>Additionally, an interface is available to read only portions of PDS4 arrays into
+memory at once. For more information, see
+<a class="reference internal" href="#working-with-image-data"><span class="std std-ref">Working with Image and Array Data</span></a>.</p>
+</section>
+<section id="working-with-pds4-labels">
+<span id="id1"></span><h3>Working with PDS4 Labels<a class="headerlink" href="#working-with-pds4-labels" title="Link to this heading">¶</a></h3>
+<p>As mentioned earlier, each element of a <a class="reference internal" href="pds4_tools.reader.general_objects.html#pds4_tools.reader.general_objects.StructureList" title="pds4_tools.reader.general_objects.StructureList"><code class="xref any py py-class docutils literal notranslate"><span class="pre">StructureList</span></code></a> is a <a class="reference internal" href="pds4_tools.reader.general_objects.html#pds4_tools.reader.general_objects.Structure" title="pds4_tools.reader.general_objects.Structure"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Structure</span></code></a> object
+with <code class="docutils literal notranslate"><span class="pre">.label</span></code>, <code class="docutils literal notranslate"><span class="pre">.meta_data</span></code> and <code class="docutils literal notranslate"><span class="pre">.data</span></code> attributes that can be used to
+access the label and data portions of the Structure. The StructureList
+itself contains a <code class="docutils literal notranslate"><span class="pre">.label</span></code> attribute, which can be used to access the entire
+label.</p>
+<p>If you are not familiar with XML, a brief example would be,</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;record_length</span><span class="w"> </span><span class="na">unit=</span><span class="s">&quot;byte&quot;</span><span class="nt">&gt;</span>65<span class="nt">&lt;/record_length&gt;</span>
+</pre></div>
+</div>
+<p>Where the <code class="docutils literal notranslate"><span class="pre">record_length</span></code> is called an element, the <code class="docutils literal notranslate"><span class="pre">unit</span></code> is called an
+attribute, its value is called an attribute value, and in this case the
+element’s text is <code class="docutils literal notranslate"><span class="pre">65</span></code>.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">.label</span></code> attribute of a <a class="reference internal" href="pds4_tools.reader.general_objects.html#pds4_tools.reader.general_objects.StructureList" title="pds4_tools.reader.general_objects.StructureList"><code class="xref any py py-class docutils literal notranslate"><span class="pre">StructureList</span></code></a> or a <a class="reference internal" href="pds4_tools.reader.general_objects.html#pds4_tools.reader.general_objects.Structure" title="pds4_tools.reader.general_objects.Structure"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Structure</span></code></a> is a <a class="reference internal" href="pds4_tools.reader.label_objects.html#pds4_tools.reader.label_objects.Label" title="pds4_tools.reader.label_objects.Label"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Label</span></code></a> instance,
+another PDS4 Tools object. It provides access to the XML label content, although
+some knowledge of <a class="reference external" href="https://docs.python.org/3/library/xml.etree.elementtree.html#example">XPATH expressions</a>
+is generally required for search and usage. You may however use the <a class="reference internal" href="pds4_tools.reader.label_objects.html#pds4_tools.reader.label_objects.Label.to_dict" title="pds4_tools.reader.label_objects.Label.to_dict"><code class="xref any py py-meth docutils literal notranslate"><span class="pre">Label.to_dict()</span></code></a>
+and <a class="reference internal" href="pds4_tools.reader.label_objects.html#pds4_tools.reader.label_objects.Label.to_string" title="pds4_tools.reader.label_objects.Label.to_string"><code class="xref any py py-meth docutils literal notranslate"><span class="pre">Label.to_string()</span></code></a> methods to obtain more familiar access; see also the parameters
+to these functions for additional capability. Below we provide some examples of using
+<code class="docutils literal notranslate"><span class="pre">.label</span></code> and <code class="docutils literal notranslate"><span class="pre">.meta_data</span></code>.</p>
+<p>To search a <a class="reference internal" href="pds4_tools.reader.label_objects.html#pds4_tools.reader.label_objects.Label" title="pds4_tools.reader.label_objects.Label"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Label</span></code></a> for an element,</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">structures</span><span class="o">.</span><span class="n">label</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;.//record_length&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span>
+<span class="go">65</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">structures</span><span class="o">.</span><span class="n">label</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;.//record_length&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">attrib</span>
+<span class="go">{&#39;unit&#39;: &#39;byte&#39;}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">structures</span><span class="o">.</span><span class="n">label</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;.//start_date_time&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span>
+<span class="go">&#39;2015-06-01T00:36:23.03Z&#39;</span>
+</pre></div>
+</div>
+<p>This uses XPATH to find the first occurrence of the <code class="docutils literal notranslate"><span class="pre">start_date_time</span></code> and
+<code class="docutils literal notranslate"><span class="pre">record_length</span></code> elements, no matter how deep in the XML tree they are.</p>
+<p>To search a <a class="reference internal" href="pds4_tools.reader.label_objects.html#pds4_tools.reader.label_objects.Label" title="pds4_tools.reader.label_objects.Label"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Label</span></code></a> for all occurrences of an element,</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">lids</span> <span class="o">=</span> <span class="n">structures</span><span class="o">.</span><span class="n">label</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">&#39;.//local_identifier&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">lids</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">text</span>
+<span class="go">&#39;Primary&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">lids</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">text</span>
+<span class="go">&#39;Integration&#39;</span>
+</pre></div>
+</div>
+<p>To search a <a class="reference internal" href="pds4_tools.reader.label_objects.html#pds4_tools.reader.label_objects.Label" title="pds4_tools.reader.label_objects.Label"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Label</span></code></a> for elements outside of the core PDS namespace,</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">reference_time</span> <span class="o">=</span> <span class="n">structures</span><span class="o">.</span><span class="n">label</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;.//geom:geometry_reference_time_utc&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">reference_time</span><span class="o">.</span><span class="n">text</span>
+<span class="go">&#39;2019-05-24T10:30:06.724Z&#39;</span>
+</pre></div>
+</div>
+<p>For more details, we encourage you to see the <a class="reference external" href="https://docs.python.org/3/library/xml.etree.elementtree.html#example">Supported XPATH syntax section</a>
+of the Python manual for ElementTree, which underlines the implementation of
+the PDS4 Tools’ Label object.</p>
+<p>To convert a <a class="reference internal" href="pds4_tools.reader.label_objects.html#pds4_tools.reader.label_objects.Label" title="pds4_tools.reader.label_objects.Label"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Label</span></code></a> to a dictionary or string,</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">structures</span><span class="o">.</span><span class="n">label</span><span class="o">.</span><span class="n">to_dict</span><span class="p">()</span>
+<span class="go"># Entire label is output as a dict</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">structures</span><span class="o">.</span><span class="n">label</span><span class="o">.</span><span class="n">to_string</span><span class="p">()</span>
+<span class="go"># Entire label is output as a string</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">structures</span><span class="o">.</span><span class="n">label</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;.//record_length&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">to_dict</span><span class="p">()</span>
+<span class="go">{&#39;record_length&#39;: &#39;113&#39;}</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">structures</span><span class="o">.</span><span class="n">label</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;.//record_length&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">to_dict</span><span class="p">(</span><span class="n">cast_values</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">skip_attributes</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="go">{&#39;record_length&#39;: {&#39;@unit&#39;: &#39;byte&#39;, &#39;_text&#39;: 113}}</span>
+</pre></div>
+</div>
+<p>For an individual <a class="reference internal" href="pds4_tools.reader.general_objects.html#pds4_tools.reader.general_objects.Structure" title="pds4_tools.reader.general_objects.Structure"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Structure</span></code></a> we can use the <code class="docutils literal notranslate"><span class="pre">.meta_data</span></code> attribute to access the
+associated label information. This attribute may be a number of <a class="reference internal" href="pds4_tools.reader.general_objects.html#pds4_tools.reader.general_objects.Meta_Class" title="pds4_tools.reader.general_objects.Meta_Class"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Meta_Class</span></code></a>
+derived instances, all of which inherit from the <code class="docutils literal notranslate"><span class="pre">OrderedDict</span></code> Python data structure.
+Below we show some sample meta data for an array described by the label,</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">array_structure</span> <span class="o">=</span> <span class="n">structures</span><span class="p">[</span><span class="s1">&#39;Primary&#39;</span><span class="p">]</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">array_structure</span><span class="o">.</span><span class="n">type</span>
+<span class="go">&#39;Array_3D_Spectrum&#39;</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">array_structure</span><span class="o">.</span><span class="n">meta_data</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+<span class="go">[&#39;local_identifier&#39;, &#39;offset&#39;, &#39;axes&#39;, &#39;axis_index_order&#39;, &#39;description&#39;, &#39;Element_Array&#39;, &#39;Axis_Array&#39;]</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">array_structure</span><span class="o">.</span><span class="n">meta_data</span><span class="p">[</span><span class="s1">&#39;local_identifier&#39;</span><span class="p">]</span>
+<span class="go">&#39;Primary&#39;</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">array_structure</span><span class="o">.</span><span class="n">meta_data</span><span class="p">[</span><span class="s1">&#39;Axis_Array&#39;</span><span class="p">][</span><span class="s1">&#39;axis_name&#39;</span><span class="p">]</span>
+<span class="go">&#39;Time&#39;</span>
+</pre></div>
+</div>
+<p>The organization and naming of <code class="docutils literal notranslate"><span class="pre">.meta_data</span></code> attributes directly follow those in
+the label, with a few exceptions that are discussed in the notes for each relevant
+meta data class.</p>
+</section>
+<section id="working-with-data">
+<h3>Working with Data<a class="headerlink" href="#working-with-data" title="Link to this heading">¶</a></h3>
+<section id="image-and-array-data">
+<span id="working-with-image-data"></span><h4>Image and Array Data<a class="headerlink" href="#image-and-array-data" title="Link to this heading">¶</a></h4>
+<p>If a Structure’s data is an array, the data attribute of the <a class="reference internal" href="pds4_tools.reader.array_objects.html#pds4_tools.reader.array_objects.ArrayStructure" title="pds4_tools.reader.array_objects.ArrayStructure"><code class="xref any py py-class docutils literal notranslate"><span class="pre">ArrayStructure</span></code></a>
+object will be an object that is for all intents and purposes identical to a NumPy
+<code class="docutils literal notranslate"><span class="pre">ndarray</span></code> object, except possessing an additional meta_data attribute.
+Refer to the <a class="reference external" href="http://docs.scipy.org/doc/numpy/user/quickstart.html">NumPy documentation</a>
+for the complete details on manipulating these numerical arrays.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">structures</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">id</span>
+<span class="go">&#39;Primary&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="n">structures</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">data</span>
+</pre></div>
+</div>
+<p>Here <code class="docutils literal notranslate"><span class="pre">data</span></code> contains the data of the first <a class="reference internal" href="pds4_tools.reader.general_objects.html#pds4_tools.reader.general_objects.Structure" title="pds4_tools.reader.general_objects.Structure"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Structure</span></code></a>, which
+corresponds to the Structure with a local identifier of <code class="docutils literal notranslate"><span class="pre">Primary</span></code>.
+Alternatively, you can access a Structure by its local identifier or its name,</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="n">structures</span><span class="p">[</span><span class="s1">&#39;Primary&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">data</span>
+</pre></div>
+</div>
+<p>For very large arrays it may be convenient to read-in only portions of the array
+into memory at a time. This may be done with the <a class="reference internal" href="pds4_tools.reader.array_objects.html#pds4_tools.reader.array_objects.ArraySection" title="pds4_tools.reader.array_objects.ArraySection"><code class="xref any py py-class docutils literal notranslate"><span class="pre">ArraySection</span></code></a> interface if
+<code class="docutils literal notranslate"><span class="pre">lazy_load</span></code> is set during the initial read-in call,</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="n">structures</span><span class="p">[</span><span class="s1">&#39;Large_Array&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">section</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">50000</span><span class="p">,</span> <span class="mi">25000</span><span class="p">:</span><span class="mi">50000</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>For data with Special Constants, such as flag values indicating missing data,
+you may access a version of the structure where numeric flag values are masked.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="n">structures</span><span class="p">[</span><span class="s1">&#39;Primary&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">as_masked</span><span class="p">()</span><span class="o">.</span><span class="n">data</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="n">structures</span><span class="p">[</span><span class="s1">&#39;Large_Array&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">as_masked</span><span class="p">()</span><span class="o">.</span><span class="n">section</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">50000</span><span class="p">,</span> <span class="mi">25000</span><span class="p">:</span><span class="mi">50000</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>For data access through masked arrays, mathematical functions such as minimum and
+maximum and many other operations will return correct results instead of counting
+flag values.</p>
+<p>In all cases, the returned data has many useful attributes and methods for a
+user to get information about the array; e.g.,</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">data</span><span class="o">.</span><span class="n">shape</span>
+<span class="go">(21, 10, 36)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">data</span><span class="o">.</span><span class="n">dtype</span><span class="o">.</span><span class="n">name</span>
+<span class="go">&#39;float32&#39;</span>
+</pre></div>
+</div>
+<p>Since image data is a NumPy array, we can slice it, view it, and perform mathematical
+operations on it. To see the pixel value at i1=5, i2=2, i3=10:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">9</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>Note that Python is 0-indexed. Additionally, all PDS4 data is required to be
+last index fastest, and the read-in array dimensions will follow the
+<code class="docutils literal notranslate"><span class="pre">sequence_number</span></code> as provided in the labels.</p>
+<p>The next example shows that NumPy array data can be manipulated in a single
+command, specifically a multiplication and division of all values,</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="p">(</span><span class="n">data</span> <span class="o">*</span> <span class="mi">10</span><span class="p">)</span> <span class="o">/</span> <span class="mi">5</span>
+</pre></div>
+</div>
+<p>To access label meta data for an <a class="reference internal" href="pds4_tools.reader.array_objects.html#pds4_tools.reader.array_objects.ArrayStructure" title="pds4_tools.reader.array_objects.ArrayStructure"><code class="xref any py py-class docutils literal notranslate"><span class="pre">ArrayStructure</span></code></a> we can use its <code class="docutils literal notranslate"><span class="pre">.meta_data</span></code>
+attribute. See the <a class="reference internal" href="#working-with-pds4-labels"><span class="std std-ref">Working with PDS4 Labels</span></a>
+section for examples, as well as the <a class="reference internal" href="pds4_tools.reader.array_objects.html#pds4_tools.reader.array_objects.Meta_ArrayStructure" title="pds4_tools.reader.array_objects.Meta_ArrayStructure"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Meta_ArrayStructure</span></code></a> class.</p>
+</section>
+<section id="table-data">
+<h4>Table Data<a class="headerlink" href="#table-data" title="Link to this heading">¶</a></h4>
+<p>If working with a table, the data inside the <a class="reference internal" href="pds4_tools.reader.table_objects.html#pds4_tools.reader.table_objects.TableStructure" title="pds4_tools.reader.table_objects.TableStructure"><code class="xref any py py-class docutils literal notranslate"><span class="pre">TableStructure</span></code></a> can be accessed
+in multiple ways. Similar to array data, an individual field’s data will be an
+object that is for all intents and purposes identical to a NumPy <code class="docutils literal notranslate"><span class="pre">ndarray</span></code>
+object, except possessing an additional meta_data attribute. The underlying
+data object containing all fields is similar to a <code class="docutils literal notranslate"><span class="pre">recarray</span></code>. Refer to the
+<a class="reference external" href="http://docs.scipy.org/doc/numpy/user/quickstart.html">NumPy documentation</a>
+for the complete details on manipulating these numerical arrays.</p>
+<p>Common ways to access data for individual columns (or fields, in PDS4 parlance) are,</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Access the &#39;Wavelength&#39; field in the &#39;Integration&#39; Table</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">structures</span><span class="p">[</span><span class="s1">&#39;Integration&#39;</span><span class="p">][</span><span class="s1">&#39;Wavelength&#39;</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">structures</span><span class="p">[</span><span class="s1">&#39;Integration&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">field</span><span class="p">(</span><span class="s1">&#39;Wavelength&#39;</span><span class="p">)</span>
+
+<span class="c1"># Access the first field</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">structures</span><span class="p">[</span><span class="s1">&#39;Integration&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">field</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="c1"># Access multiple fields at the same time</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">structures</span><span class="p">[</span><span class="s1">&#39;Integration&#39;</span><span class="p">][[</span><span class="s1">&#39;Timestamp&#39;</span><span class="p">,</span> <span class="s1">&#39;Wavelength&#39;</span><span class="p">]]</span>
+</pre></div>
+</div>
+<p>As can be seen in these examples, a field can be obtained by either index or
+by name.</p>
+<p>In many cases it is preferable to access fields by their name, as the field
+name is entirely independent of its physical order in the table. As with
+Structure names, field names are case-sensitive.</p>
+<p>To access the data record-wise,</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Access the entire first record (all fields) in the &#39;Integration&#39; Table</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">structures</span><span class="p">[</span><span class="s1">&#39;Integration&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="c1"># Access the first 10 records (all fields)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">structures</span><span class="p">[</span><span class="s1">&#39;Integration&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>The underlying data object, which is essentially a NumPy record array, may be
+accessed directly via,</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">structures</span><span class="p">[</span><span class="s1">&#39;Integration&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">data</span>
+</pre></div>
+</div>
+<p>The NumPy array returned by the above calls contain the data for the
+requested selection. We can slice it, view it, and perform mathematical operations
+as desired.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">field</span> <span class="o">=</span> <span class="n">structures</span><span class="p">[</span><span class="s1">&#39;Integration&#39;</span><span class="p">][</span><span class="s1">&#39;Wavelength&#39;</span><span class="p">]</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">field</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">]</span>   <span class="c1"># The first 10 rows for field &#39;Wavelength&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">field</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>  <span class="c1"># Take the mean of the field</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">field</span> <span class="o">*</span> <span class="mi">5</span>     <span class="c1"># Multiply each value in the field by 5</span>
+</pre></div>
+</div>
+<p>For data with Special Constants, such as flag values indicating missing data,
+you may access a version of the structure where numeric flag values are masked.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Access a view of the table where flag values are masked</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">masked_table</span> <span class="o">=</span> <span class="n">structures</span><span class="p">[</span><span class="s1">&#39;Integration&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">as_masked</span><span class="p">()</span>
+
+<span class="c1"># Data access and operations are unchanged, e.g.:</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">masked_table</span><span class="p">[</span><span class="s1">&#39;Wavelength&#39;</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">masked_table</span><span class="o">.</span><span class="n">field</span><span class="p">(</span><span class="s1">&#39;Wavelength&#39;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">masked_table</span><span class="o">.</span><span class="n">field</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>For data access through masked tables, mathematical functions such as minimum and
+maximum and many other operations will return correct results instead of counting
+flag values. This is also often advantageous when plotting data, where common
+software will exclude masked values. The underlying label must correctly describe
+Special Constants for them to be masked.</p>
+<p>The object returned when accessing individual fields is for all intents and purposes
+identical to a NumPy <code class="docutils literal notranslate"><span class="pre">ndarray</span></code> object. However, it also provides a <code class="docutils literal notranslate"><span class="pre">.meta_data</span></code>
+than can give the field’s meta data as recorded in the label,</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">field</span><span class="o">.</span><span class="n">meta_data</span><span class="p">[</span><span class="s1">&#39;unit&#39;</span><span class="p">]</span>
+<span class="go">&#39;deg&#39;</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">field</span><span class="o">.</span><span class="n">meta_data</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+<span class="go">[&#39;name&#39;, &#39;location&#39;, &#39;data_type&#39;, &#39;length&#39;, &#39;unit&#39;, &#39;description&#39;]</span>
+</pre></div>
+</div>
+<p>To access label meta data for the entire <a class="reference internal" href="pds4_tools.reader.table_objects.html#pds4_tools.reader.table_objects.TableStructure" title="pds4_tools.reader.table_objects.TableStructure"><code class="xref any py py-class docutils literal notranslate"><span class="pre">TableStructure</span></code></a> we can use its
+<code class="docutils literal notranslate"><span class="pre">.meta_data</span></code> attribute. See the <a class="reference internal" href="#working-with-pds4-labels"><span class="std std-ref">Working with PDS4 Labels</span></a>
+section for examples, as well as the <a class="reference internal" href="pds4_tools.reader.table_objects.html#pds4_tools.reader.table_objects.Meta_TableStructure" title="pds4_tools.reader.table_objects.Meta_TableStructure"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Meta_TableStructure</span></code></a> class.</p>
+</section>
+</section>
+<section id="visualization">
+<h3>Visualization<a class="headerlink" href="#visualization" title="Link to this heading">¶</a></h3>
+<p>PDS4 Tools ship with a GUI that enables basic visualization of PDS4 data. To use
+this,</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">pds4_tools</span>
+</pre></div>
+</div>
+<p>You may then call the GUI via,</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Call an empty Viewer, allowing you to browse disk for file</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pds4_tools</span><span class="o">.</span><span class="n">view</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Specify path to label describing the data product to visualize</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pds4_tools</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="s1">&#39;/path/to/label.xml&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Specify structures that have already been read-in</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">structures</span> <span class="o">=</span> <span class="n">pds4_tools</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="s1">&#39;/path/to/label.xml&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pds4_tools</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="n">from_existing_structures</span><span class="o">=</span><span class="n">structures</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Note that the basic GUI works via Tkinter, which generally ships with
+installations of Python. To enable Image View and Plot View, you must
+also have recent versions of <a class="reference external" href="http://matplotlib.org">Matplotlib</a>
+installed.</p>
+</section>
+</section>
+<section id="api">
+<h2>1.4  API<a class="headerlink" href="#api" title="Link to this heading">¶</a></h2>
+<p>The full API reference is available <a class="reference internal" href="index.html#index"><span class="std std-ref">here</span></a>.</p>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">PDS4 Python Tools - User Manual</a><ul>
+<li><a class="reference internal" href="#introduction">1.1  Introduction</a></li>
+<li><a class="reference internal" href="#installation">1.2  Installation</a></li>
+<li><a class="reference internal" href="#quick-tutorial">1.3  Quick Tutorial</a><ul>
+<li><a class="reference internal" href="#opening-a-pds4-file">Opening a PDS4 file</a></li>
+<li><a class="reference internal" href="#working-with-large-files">Working with large files</a></li>
+<li><a class="reference internal" href="#working-with-pds4-labels">Working with PDS4 Labels</a></li>
+<li><a class="reference internal" href="#working-with-data">Working with Data</a><ul>
+<li><a class="reference internal" href="#image-and-array-data">Image and Array Data</a></li>
+<li><a class="reference internal" href="#table-data">Table Data</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#visualization">Visualization</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#api">1.4  API</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/user_manual.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">PDS4 Python Tools 1.4 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">PDS4 Python Tools - User Manual</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2015 - 2025, University of Maryland.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    </div>
+  </body>
+</html>

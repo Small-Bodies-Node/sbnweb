@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Release Notes &#8212; PDS4 Python Tools 1.4 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinxdoc.css?v=34905f61" />
+    <link rel="stylesheet" type="text/css" href="_static/css/custom.css?v=8e6781f1" />
+    <script src="_static/documentation_options.js?v=0ed52906"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">PDS4 Python Tools 1.4 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Release Notes</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="release-notes">
+<span id="changes"></span><h1>Release Notes<a class="headerlink" href="#release-notes" title="Link to this heading">¶</a></h1>
+<section id="id1">
+<h2>[1.4] - 2025-03-16<a class="headerlink" href="#id1" title="Link to this heading">¶</a></h2>
+<section id="reader">
+<h3>Reader<a class="headerlink" href="#reader" title="Link to this heading">¶</a></h3>
+<p><strong>Added</strong></p>
+<ul class="simple">
+<li><p>Add <a class="reference internal" href="pds4_tools.reader.label_objects.html#pds4_tools.reader.label_objects.Label.iter" title="pds4_tools.reader.label_objects.Label.iter"><code class="xref any py py-meth docutils literal notranslate"><span class="pre">Label.iter</span></code></a> and <a class="reference internal" href="pds4_tools.reader.label_objects.html#pds4_tools.reader.label_objects.Label.itertext" title="pds4_tools.reader.label_objects.Label.itertext"><code class="xref any py py-meth docutils literal notranslate"><span class="pre">Label.itertext</span></code></a> methods</p></li>
+</ul>
+<p><strong>Changed</strong></p>
+<ul class="simple">
+<li><p>Drop support for Python 2.6, 3.4 and 3.5</p></li>
+<li><p>Align docstring for <a class="reference internal" href="pds4_tools.reader.label_objects.html#pds4_tools.reader.label_objects.Label.to_dict" title="pds4_tools.reader.label_objects.Label.to_dict"><code class="xref any py py-meth docutils literal notranslate"><span class="pre">Label.to_dict(skip_attributes=...)</span></code></a> parameter with its existing functionality</p></li>
+</ul>
+<p><strong>Fixed</strong></p>
+<ul class="simple">
+<li><p>Compatibility with Python 3.12+, by updating vendored six to 1.17</p></li>
+<li><p>Compatibility with NumPy 2.0+</p></li>
+<li><p>Correct fill values for masked arrays having dtype of <code class="docutils literal notranslate"><span class="pre">object</span></code>, previously broken after NumPy v1.24+</p></li>
+<li><p>Drop requirement for <code class="docutils literal notranslate"><span class="pre">tkinter</span></code> package when only reader is imported</p></li>
+</ul>
+</section>
+<section id="viewer">
+<h3>Viewer<a class="headerlink" href="#viewer" title="Link to this heading">¶</a></h3>
+<p><strong>Changed</strong></p>
+<ul class="simple">
+<li><p>Allow multiple LIDs in a single Local_Internal_Reference due to PDS4 Standards change</p></li>
+</ul>
+<p><strong>Fixed</strong></p>
+<ul class="simple">
+<li><p>Compatibility with matplotlib 3.9+</p></li>
+<li><p>Do not raise exception for images where the display dictionary includes Movie_Display_Settings</p></li>
+<li><p>Fix data cube functionality of image display for 4+ dimensional arrays</p></li>
+<li><p>Ensure tkagg backend is still enforced with matplotlib 3.3+</p></li>
+<li><p>Fix exception in plot view related to grid visibility with matplotlib 3.7+</p></li>
+</ul>
+</section>
+</section>
+<section id="id2">
+<h2>[1.3] - 2021-10-10<a class="headerlink" href="#id2" title="Link to this heading">¶</a></h2>
+<section id="id3">
+<h3>Reader<a class="headerlink" href="#id3" title="Link to this heading">¶</a></h3>
+<p><strong>Added</strong></p>
+<ul class="simple">
+<li><p>Quiet keyword in <a class="reference internal" href="pds4_tools.reader.core.html#pds4_tools.reader.core.pds4_tools.read" title="pds4_tools.reader.core.pds4_tools.read"><code class="xref any py py-func docutils literal notranslate"><span class="pre">pds4_tools.read</span></code></a> will also accept log-level style values</p></li>
+<li><p>Added <a class="reference internal" href="pds4_tools.utils.logging.html#pds4_tools.utils.logging.pds4_tools.set_loglevel" title="pds4_tools.utils.logging.pds4_tools.set_loglevel"><code class="xref any py py-func docutils literal notranslate"><span class="pre">pds4_tools.set_loglevel</span></code></a> function to control logging</p></li>
+</ul>
+<p><strong>Changed</strong></p>
+<ul class="simple">
+<li><p>Allow line-feed as Table record delimiter due to PDS4 Standards change</p></li>
+<li><p>Recognize FITS 4.0 as plain-text header due to PDS4 Standards change</p></li>
+<li><p>Empty numeric values in Table_Delimited fields will have a default fill value
+of 0 instead of NumPy default</p></li>
+<li><p>Deprecated mask_numeric_nulls keyword in <a class="reference internal" href="pds4_tools.reader.data_types.html#pds4_tools.reader.data_types.data_type_convert_table_ascii" title="pds4_tools.reader.data_types.data_type_convert_table_ascii"><code class="xref any py py-func docutils literal notranslate"><span class="pre">data_type_convert_table_ascii</span></code></a>,
+use mask_nulls instead</p></li>
+<li><p>Propagation to ancestor loggers is off by default, see <a class="reference internal" href="pds4_tools.utils.logging.html#pds4_tools.utils.logging.pds4_tools.set_loglevel" title="pds4_tools.utils.logging.pds4_tools.set_loglevel"><code class="xref any py py-func docutils literal notranslate"><span class="pre">pds4_tools.set_loglevel</span></code></a></p></li>
+</ul>
+<p><strong>Fixed</strong></p>
+<ul class="simple">
+<li><p>Table_Delimited read-in when ASCII_Boolean fields have empty values</p></li>
+<li><p><a class="reference internal" href="pds4_tools.reader.data_types.html#pds4_tools.reader.data_types.PDSdtype" title="pds4_tools.reader.data_types.PDSdtype"><code class="xref any py py-class docutils literal notranslate"><span class="pre">PDSdtype</span></code></a> not-equal operator under Python2</p></li>
+<li><p>Default logger class will no longer be overwritten globally</p></li>
+<li><p>Deprecation warnings for aliases of built-in types under NumPy 1.20+</p></li>
+</ul>
+</section>
+<section id="id4">
+<h3>Viewer<a class="headerlink" href="#id4" title="Link to this heading">¶</a></h3>
+<p><strong>Added</strong></p>
+<ul class="simple">
+<li><p>Quiet keyword in <code class="docutils literal notranslate"><span class="pre">pds4_tools.view</span></code> will also accept log-level style values</p></li>
+</ul>
+<p><strong>Fixed</strong></p>
+<ul class="simple">
+<li><p>Remove refresh-blinking on resize of image or plot with matplotlib 3.4+</p></li>
+<li><p>Deprecation warnings for cbook in matplotlib 3.4+</p></li>
+</ul>
+</section>
+</section>
+<section id="id5">
+<h2>[1.2] - 2020-10-04<a class="headerlink" href="#id5" title="Link to this heading">¶</a></h2>
+<section id="id6">
+<h3>Reader<a class="headerlink" href="#id6" title="Link to this heading">¶</a></h3>
+<p><strong>Changed</strong></p>
+<ul class="simple">
+<li><p><a class="reference internal" href="pds4_tools.reader.label_objects.html#pds4_tools.reader.label_objects.Label.to_string" title="pds4_tools.reader.label_objects.Label.to_string"><code class="xref any py py-meth docutils literal notranslate"><span class="pre">Label.to_string</span></code></a> will preserve trailing whitespace in multi-line strings</p></li>
+<li><p><a class="reference internal" href="pds4_tools.utils.data_access.html#pds4_tools.utils.data_access.download_file" title="pds4_tools.utils.data_access.download_file"><code class="xref any py py-func docutils literal notranslate"><span class="pre">download_file</span></code></a> will fall back to system certificates if Certifi is available and fails</p></li>
+</ul>
+<p><strong>Fixed</strong></p>
+<ul class="simple">
+<li><p>TableDelimited read-in when using semi-colon delimiter</p></li>
+<li><p>Array read-in when label contains an empty Object_Statistics</p></li>
+<li><p><a class="reference internal" href="pds4_tools.reader.general_objects.html#pds4_tools.reader.general_objects.StructureList.__getitem__" title="pds4_tools.reader.general_objects.StructureList.__getitem__"><code class="xref any py py-meth docutils literal notranslate"><span class="pre">StructureList.__getitem__</span></code></a> can still retrieve by name when LID is present</p></li>
+<li><p><a class="reference internal" href="pds4_tools.reader.array_objects.html#pds4_tools.reader.array_objects.ArrayStructure.as_masked" title="pds4_tools.reader.array_objects.ArrayStructure.as_masked"><code class="xref any py py-meth docutils literal notranslate"><span class="pre">ArrayStructure.as_masked</span></code></a> will work when data has no masked values</p></li>
+<li><p><a class="reference internal" href="pds4_tools.reader.data_types.html#pds4_tools.reader.data_types.data_type_convert_dates" title="pds4_tools.reader.data_types.data_type_convert_dates"><code class="xref any py py-func docutils literal notranslate"><span class="pre">data_type_convert_dates</span></code></a> will work for datetimes with fractional seconds</p></li>
+<li><p><a class="reference internal" href="pds4_tools.reader.label_objects.html#pds4_tools.reader.label_objects.Label.to_string" title="pds4_tools.reader.label_objects.Label.to_string"><code class="xref any py py-meth docutils literal notranslate"><span class="pre">Label.to_string</span></code></a> will pretty print empty elements</p></li>
+<li><p>URLOpen deprecation warnings for cafile under Python 3.6+</p></li>
+</ul>
+</section>
+<section id="id7">
+<h3>Viewer<a class="headerlink" href="#id7" title="Link to this heading">¶</a></h3>
+<p><strong>Added</strong></p>
+<ul class="simple">
+<li><p>Added ‘Identification Area’, ‘Observation Area’ and ‘File Area’ to Label View -&gt; View menu</p></li>
+<li><p>Following methods are now exposed: <code class="docutils literal notranslate"><span class="pre">Window.get_window_title</span></code>, <code class="docutils literal notranslate"><span class="pre">Window.set_window_title</span></code>,
+<code class="docutils literal notranslate"><span class="pre">Window.set_window_geometry</span></code>, <code class="docutils literal notranslate"><span class="pre">Window.show_window</span></code> and <code class="docutils literal notranslate"><span class="pre">Window.hide_window</span></code>.</p></li>
+</ul>
+<p><strong>Changed</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">pds4_tools.view</span></code> will warn when IPython is already initialized with non-TK backend</p></li>
+</ul>
+<p><strong>Fixed</strong></p>
+<ul class="simple">
+<li><p>Hiding tick labels in Plot View</p></li>
+<li><p>Label View search after changing which label is shown via View menu</p></li>
+<li><p>SyntaxWarning in Plot View under Python 3.8+</p></li>
+</ul>
+</section>
+</section>
+<section id="id8">
+<h2>[1.1] - 2019-03-30<a class="headerlink" href="#id8" title="Link to this heading">¶</a></h2>
+<section id="id9">
+<h3>Reader<a class="headerlink" href="#id9" title="Link to this heading">¶</a></h3>
+<p><strong>Added</strong></p>
+<ul class="simple">
+<li><p><a class="reference internal" href="pds4_tools.reader.data_types.html#pds4_tools.reader.data_types.PDSdtype" title="pds4_tools.reader.data_types.PDSdtype"><code class="xref any py py-class docutils literal notranslate"><span class="pre">PDSdtype</span></code></a> class, returned by new methods <a class="reference internal" href="pds4_tools.reader.array_objects.html#pds4_tools.reader.array_objects.Meta_ArrayStructure.data_type" title="pds4_tools.reader.array_objects.Meta_ArrayStructure.data_type"><code class="xref any py py-meth docutils literal notranslate"><span class="pre">Meta_ArrayStructure.data_type</span></code></a> and
+<a class="reference internal" href="pds4_tools.reader.table_objects.html#pds4_tools.reader.table_objects.Meta_Field.data_type" title="pds4_tools.reader.table_objects.Meta_Field.data_type"><code class="xref any py py-meth docutils literal notranslate"><span class="pre">Meta_Field.data_type</span></code></a>. Allows easier high-level comparison of PDS4 data types.</p></li>
+<li><p><a class="reference internal" href="pds4_tools.reader.data_types.html#pds4_tools.reader.data_types.data_type_convert_dates" title="pds4_tools.reader.data_types.data_type_convert_dates"><code class="xref any py py-func docutils literal notranslate"><span class="pre">data_type_convert_dates</span></code></a> function, which allows converting dates in PDS4 fields
+from string into datetimes.</p></li>
+</ul>
+<p><strong>Changed</strong></p>
+<ul class="simple">
+<li><p><a class="reference internal" href="pds4_tools.reader.data_types.html#pds4_tools.reader.data_types.mask_special_constants" title="pds4_tools.reader.data_types.mask_special_constants"><code class="xref any py py-func docutils literal notranslate"><span class="pre">mask_special_constants</span></code></a> will check non-numeric matches after stripping
+leading/trailing whitespace in both constant value and input data. The PDS4
+standard is ambiguous on the proper matching method.</p></li>
+<li><p>Improved memory efficiency of <a class="reference internal" href="pds4_tools.reader.array_objects.html#pds4_tools.reader.array_objects.ArrayStructure.as_masked" title="pds4_tools.reader.array_objects.ArrayStructure.as_masked"><code class="xref any py py-meth docutils literal notranslate"><span class="pre">ArrayStructure.as_masked</span></code></a> and <a class="reference internal" href="pds4_tools.reader.table_objects.html#pds4_tools.reader.table_objects.TableStructure.as_masked" title="pds4_tools.reader.table_objects.TableStructure.as_masked"><code class="xref any py py-meth docutils literal notranslate"><span class="pre">TableStructure.as_masked</span></code></a></p></li>
+<li><p><a class="reference internal" href="pds4_tools.utils.data_access.html#pds4_tools.utils.data_access.download_file" title="pds4_tools.utils.data_access.download_file"><code class="xref any py py-func docutils literal notranslate"><span class="pre">download_file</span></code></a> will use Certifi as CA bundle when available</p></li>
+</ul>
+<p><strong>Fixed</strong></p>
+<ul class="simple">
+<li><p>TableDelimited length calculation that could lead to MemoryError</p></li>
+<li><p>Invalid escape sequence deprecation warnings under Python 3.6+</p></li>
+<li><p>ElementTree deprecation warnings related to Python 2.6 support</p></li>
+</ul>
+</section>
+<section id="id10">
+<h3>Viewer<a class="headerlink" href="#id10" title="Link to this heading">¶</a></h3>
+<p><strong>Added</strong></p>
+<ul class="simple">
+<li><p>Manual aspect ratio adjustment in Image View</p></li>
+<li><p>Plotting of Date fields</p></li>
+<li><p>View menu in Plot View and Header View</p></li>
+</ul>
+<p><strong>Changed</strong></p>
+<ul class="simple">
+<li><p>Generic arrays will no longer default to preserving aspect ratio when the difference
+is 1:20 or greater.</p></li>
+<li><p>Image View will default to automatically ignoring Special_Constants when scaling</p></li>
+<li><p>Table View will ignore field_format for scaled/offset values since PDS4 Standard
+is ambiguous whether this format is before or after scaling</p></li>
+<li><p>Fields containing bit strings will be shown as hexadecimal byte values in Table View</p></li>
+<li><p>Fields containing bit strings will be exported as hexadecimal byte values</p></li>
+<li><p>Plots showing only points will default to auto limits rather than tight limits</p></li>
+</ul>
+<p><strong>Fixed</strong></p>
+<ul class="simple">
+<li><p>Grayscale display for individual bands in RGB images</p></li>
+<li><p>Rare cases where zscale would raise an exception</p></li>
+<li><p>Plotting of masked fields against row number</p></li>
+<li><p>Tick label font options in Plot View</p></li>
+<li><p>Compatibility with matplotlib 2.2+ and 3.0</p></li>
+<li><p>Compatibility with OSX 10.14</p></li>
+</ul>
+</section>
+</section>
+<section id="id11">
+<h2>[1.0] - 2018-08-11<a class="headerlink" href="#id11" title="Link to this heading">¶</a></h2>
+<p>First stable release.</p>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Release Notes</a><ul>
+<li><a class="reference internal" href="#id1">[1.4] - 2025-03-16</a><ul>
+<li><a class="reference internal" href="#reader">Reader</a></li>
+<li><a class="reference internal" href="#viewer">Viewer</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id2">[1.3] - 2021-10-10</a><ul>
+<li><a class="reference internal" href="#id3">Reader</a></li>
+<li><a class="reference internal" href="#id4">Viewer</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id5">[1.2] - 2020-10-04</a><ul>
+<li><a class="reference internal" href="#id6">Reader</a></li>
+<li><a class="reference internal" href="#id7">Viewer</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id8">[1.1] - 2019-03-30</a><ul>
+<li><a class="reference internal" href="#id9">Reader</a></li>
+<li><a class="reference internal" href="#id10">Viewer</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id11">[1.0] - 2018-08-11</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/changes.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">PDS4 Python Tools 1.4 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Release Notes</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2015 - 2025, University of Maryland.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    </div>
+  </body>
+</html>

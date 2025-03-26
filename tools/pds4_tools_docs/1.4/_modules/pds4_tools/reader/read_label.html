@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>pds4_tools.reader.read_label &#8212; PDS4 Python Tools 1.4 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinxdoc.css?v=34905f61" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=8e6781f1" />
+    <script src="../../../_static/documentation_options.js?v=0ed52906"></script>
+    <script src="../../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">PDS4 Python Tools 1.4 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" accesskey="U">Module code</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">pds4_tools.reader.read_label</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Source code for pds4_tools.reader.read_label</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">absolute_import</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">division</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">print_function</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">unicode_literals</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">xml.etree.ElementTree</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">ET</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">xml.parsers.expat</span><span class="w"> </span><span class="kn">import</span> <span class="n">ExpatError</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">..utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">compat</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..utils.constants</span><span class="w"> </span><span class="kn">import</span> <span class="n">PDS4_NAMESPACES</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..utils.logging</span><span class="w"> </span><span class="kn">import</span> <span class="n">logger_init</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">..extern</span><span class="w"> </span><span class="kn">import</span> <span class="n">six</span>
+
+<span class="c1"># Initialize the logger</span>
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logger_init</span><span class="p">()</span>
+
+<span class="c1">#################################</span>
+
+
+<div class="viewcode-block" id="read_label">
+<a class="viewcode-back" href="../../../pds4_tools.reader.read_label.html#pds4_tools.reader.read_label.read_label">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">read_label</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">strip_extra_whitespace</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">enforce_default_prefixes</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+               <span class="n">include_namespace_map</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">decode_py2</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; Reads a PDS4 XML Label into an ``ElementTree`` Element object.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        filename : str or unicode</span>
+<span class="sd">            The filename, including the path, of the XML label.</span>
+<span class="sd">        strip_extra_whitespace : bool, optional</span>
+<span class="sd">            If True, then for element text and attribute values, it collapses</span>
+<span class="sd">            contiguous whitespaces (including space, tab and newlines) into a</span>
+<span class="sd">            single space, and removes leading and trailing whitespace altogether.</span>
+<span class="sd">            However, this only done if the value has a single line with</span>
+<span class="sd">            non-whitespace characters. Defaults to False.</span>
+<span class="sd">        enforce_default_prefixes : bool, optional</span>
+<span class="sd">            If True, strips the default namespace, and ensures that</span>
+<span class="sd">            default PDS4 prefixes are used for known namespaces (PDS4_NAMESPACES).</span>
+<span class="sd">            Defaults to False.</span>
+<span class="sd">        include_namespace_map : bool, optional</span>
+<span class="sd">            If True, changes method return to a tuple, where the first</span>
+<span class="sd">            value is the label ElementTree object as usual and the second</span>
+<span class="sd">            is a ``dict`` with keys being the namespace URIs and values being</span>
+<span class="sd">            the namespace prefixes in this label. Defaults to False.</span>
+<span class="sd">        decode_py2 : bool, optional</span>
+<span class="sd">            If True, decodes UTF-8 byte strings (``str``) into ``unicode``</span>
+<span class="sd">            strings in Python 2. Option is ignored in Python 3. Defaults to False.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        ``ElementTree`` Element</span>
+<span class="sd">            Root element for the read-in PDS4 label</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># Read-in XML tree</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">xml_tree</span> <span class="o">=</span> <span class="n">ET</span><span class="o">.</span><span class="n">iterparse</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">events</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;start-ns&#39;</span><span class="p">,</span> <span class="s1">&#39;end&#39;</span><span class="p">))</span>
+    <span class="k">except</span> <span class="ne">IOError</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="s1">&#39;Unable to locate or read label file: &#39;</span> <span class="o">+</span> <span class="n">filename</span><span class="p">)</span>
+
+    <span class="c1"># Adjust XML tree</span>
+    <span class="k">try</span><span class="p">:</span>
+
+        <span class="n">namespace_map</span> <span class="o">=</span> <span class="p">{}</span>
+
+        <span class="k">for</span> <span class="n">event</span><span class="p">,</span> <span class="n">elem</span> <span class="ow">in</span> <span class="n">xml_tree</span><span class="p">:</span>
+
+            <span class="c1"># Add namespace to the namespace map</span>
+            <span class="k">if</span> <span class="n">event</span> <span class="o">==</span> <span class="s1">&#39;start-ns&#39;</span><span class="p">:</span>
+
+                <span class="k">if</span> <span class="n">enforce_default_prefixes</span><span class="p">:</span>
+
+                    <span class="k">for</span> <span class="n">prefix</span><span class="p">,</span> <span class="n">uri</span> <span class="ow">in</span> <span class="n">six</span><span class="o">.</span><span class="n">iteritems</span><span class="p">(</span><span class="n">PDS4_NAMESPACES</span><span class="p">):</span>
+
+                        <span class="c1"># Ensure the PDS4 namespace is the default prefix</span>
+                        <span class="k">if</span> <span class="n">elem</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="n">PDS4_NAMESPACES</span><span class="p">[</span><span class="s1">&#39;pds&#39;</span><span class="p">]:</span>
+                            <span class="n">elem</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">elem</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+
+                        <span class="c1"># Ensure that dictionaries which are referred to in code</span>
+                        <span class="c1"># by prefix (such as disp and sp) have the expected prefix</span>
+                        <span class="k">elif</span> <span class="n">uri</span> <span class="o">==</span> <span class="n">elem</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span>
+                            <span class="n">elem</span> <span class="o">=</span> <span class="p">(</span><span class="n">prefix</span><span class="p">,</span> <span class="n">elem</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+
+                <span class="c1"># Add namespace to map (different prefixes for an existing namespace URI are skipped)</span>
+                <span class="c1"># Technical note: this map is stored dict[URI] = prefix for two reasons:</span>
+                <span class="c1">#   (1) ElementTree itself internally stores the namespace map like this, despite taking</span>
+                <span class="c1">#       it in opposite relation from user</span>
+                <span class="c1">#   (2) It seems ever slightly more legitimate to remember a single prefix to referring to</span>
+                <span class="c1">#       multiple URI (e.g. via local prefixes) than to remember two prefixes referring to</span>
+                <span class="c1">#       the same URI.</span>
+                <span class="c1">#   These are not necessarily good reasons.</span>
+                <span class="k">if</span> <span class="n">elem</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">namespace_map</span><span class="p">:</span>
+                    <span class="n">namespace_map</span><span class="p">[</span><span class="n">elem</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span> <span class="o">=</span> <span class="n">elem</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+                <span class="k">continue</span>
+
+            <span class="c1"># Strip PDS4 namespace tag (a continuation of ensuring default prefix is PDS4 namespace)</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">enforce_default_prefixes</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">PDS4_NAMESPACES</span><span class="p">[</span><span class="s1">&#39;pds&#39;</span><span class="p">]</span> <span class="ow">in</span> <span class="n">elem</span><span class="o">.</span><span class="n">tag</span><span class="p">):</span>
+                <span class="n">elem</span><span class="o">.</span><span class="n">tag</span> <span class="o">=</span> <span class="n">elem</span><span class="o">.</span><span class="n">tag</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;{&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">elem</span><span class="o">.</span><span class="n">tag</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;}&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+
+            <span class="c1"># Strip whitespace in elements and attributes if requested</span>
+            <span class="k">if</span> <span class="n">strip_extra_whitespace</span><span class="p">:</span>
+
+                <span class="n">subiter</span> <span class="o">=</span> <span class="n">compat</span><span class="o">.</span><span class="n">ET_Tree_iter</span><span class="p">(</span><span class="n">ET</span><span class="o">.</span><span class="n">ElementTree</span><span class="p">(</span><span class="n">elem</span><span class="p">))</span>
+                <span class="n">attribs</span> <span class="o">=</span> <span class="n">six</span><span class="o">.</span><span class="n">iteritems</span><span class="p">(</span><span class="n">elem</span><span class="o">.</span><span class="n">attrib</span><span class="p">)</span>
+
+                <span class="c1"># Strip whitespaces at beginning and end of value in elements that do not have children</span>
+                <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">elem</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                    <span class="k">for</span> <span class="n">elem_content</span> <span class="ow">in</span> <span class="n">subiter</span><span class="p">:</span>
+
+                        <span class="k">if</span> <span class="p">(</span><span class="n">elem_content</span><span class="o">.</span><span class="n">text</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">_non_blank_line_count</span><span class="p">(</span><span class="n">elem_content</span><span class="o">.</span><span class="n">text</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">):</span>
+                            <span class="n">elem_content</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">_normalize</span><span class="p">(</span><span class="n">elem_content</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+
+                <span class="c1"># Strip whitespaces at beginning and end of attribute values</span>
+                <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">attribs</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="n">_non_blank_line_count</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+                        <span class="n">elem</span><span class="o">.</span><span class="n">attrib</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">_normalize</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+
+        <span class="n">label_xml_root</span> <span class="o">=</span> <span class="n">xml_tree</span><span class="o">.</span><span class="n">root</span>
+
+        <span class="c1"># For Python 2, we can decode all ``str`` to ``unicode``, such that all meta data strings</span>
+        <span class="c1"># are consistently unicode.</span>
+        <span class="k">if</span> <span class="n">six</span><span class="o">.</span><span class="n">PY2</span> <span class="ow">and</span> <span class="n">decode_py2</span><span class="p">:</span>
+            <span class="n">label_xml_root</span> <span class="o">=</span> <span class="n">_decode_tree</span><span class="p">(</span><span class="n">label_xml_root</span><span class="p">)</span>
+
+    <span class="c1"># Raise exception if XML cannot be parsed. In Python 3 we raise from None to avoid confusing re-raise</span>
+    <span class="k">except</span> <span class="p">(</span><span class="n">ExpatError</span><span class="p">,</span> <span class="n">compat</span><span class="o">.</span><span class="n">ET_ParseError</span><span class="p">):</span>
+        <span class="n">six</span><span class="o">.</span><span class="n">raise_from</span><span class="p">(</span>
+            <span class="n">ExpatError</span><span class="p">(</span><span class="s1">&#39;The requested PDS4 label file does not appear contain valid XML: &#39;</span> <span class="o">+</span> <span class="n">filename</span><span class="p">),</span> <span class="kc">None</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">include_namespace_map</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">label_xml_root</span><span class="p">,</span> <span class="n">namespace_map</span>
+
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">label_xml_root</span></div>
+
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_decode_tree</span><span class="p">(</span><span class="n">xml_tree</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; Decode an XML tree from UTF-8 encoded ``str`` to ``unicode``.</span>
+
+<span class="sd">    Decodes all element tags and text, as well as attribute names and values. Do not call gratuitously</span>
+<span class="sd">    due to efficiency concerns.</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    This function is intended to be used solely in Python 2. Python 3 has no ``unicode`` data type,</span>
+<span class="sd">    all ``str`` are essentially ``unicode`` by default.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    xml_tree : ``ElementTree`` Element</span>
+<span class="sd">        The XML tree to decoded.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    ``ElementTree`` Element</span>
+<span class="sd">        The decoded XML tree, with all strings converted to ``unicode`` from UTF-8 ``str``.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># This function is designed to work solely in Python 2; otherwise we return the tree unchanged.</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">six</span><span class="o">.</span><span class="n">PY2</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">xml_tree</span>
+
+    <span class="c1"># Function that decodes all passed in text to unicode, assuming it&#39;s encoded as UTF-8</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">decode</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+
+        <span class="k">if</span> <span class="n">text</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">None</span>
+
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">text</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">text</span>
+
+    <span class="c1"># Loop over all elements in the tree</span>
+    <span class="k">for</span> <span class="n">elem</span> <span class="ow">in</span> <span class="n">compat</span><span class="o">.</span><span class="n">ET_Element_iter</span><span class="p">(</span><span class="n">xml_tree</span><span class="p">):</span>
+
+        <span class="c1"># Decode elements</span>
+        <span class="n">elem</span><span class="o">.</span><span class="n">tag</span> <span class="o">=</span> <span class="n">decode</span><span class="p">(</span><span class="n">elem</span><span class="o">.</span><span class="n">tag</span><span class="p">)</span>
+        <span class="n">elem</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">decode</span><span class="p">(</span><span class="n">elem</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+        <span class="n">elem</span><span class="o">.</span><span class="n">tail</span> <span class="o">=</span> <span class="n">decode</span><span class="p">(</span><span class="n">elem</span><span class="o">.</span><span class="n">tail</span><span class="p">)</span>
+
+        <span class="c1"># Decode attributes</span>
+        <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">elem</span><span class="o">.</span><span class="n">attrib</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+
+            <span class="k">del</span> <span class="n">elem</span><span class="o">.</span><span class="n">attrib</span><span class="p">[</span><span class="n">name</span><span class="p">]</span>
+            <span class="n">name</span> <span class="o">=</span> <span class="n">decode</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+
+            <span class="n">value</span> <span class="o">=</span> <span class="n">decode</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+
+            <span class="n">elem</span><span class="o">.</span><span class="n">attrib</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+
+    <span class="k">return</span> <span class="n">xml_tree</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_non_blank_line_count</span><span class="p">(</span><span class="n">string</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    string : str or unicode</span>
+<span class="sd">        String (potentially multi-line) to search in.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    int</span>
+<span class="sd">        Number of non-blank lines in string.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">non_blank_counter</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">string</span><span class="o">.</span><span class="n">splitlines</span><span class="p">():</span>
+
+        <span class="k">if</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">():</span>
+            <span class="n">non_blank_counter</span> <span class="o">+=</span> <span class="mi">1</span>
+
+    <span class="k">return</span> <span class="n">non_blank_counter</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_normalize</span><span class="p">(</span><span class="n">string</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; Normalize whitepace in a string according to PDS4 Standards.</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    There are a number of ways to implement this method. The employed implementation is generally</span>
+<span class="sd">    either the fastest or close to the fastest between the various platforms.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    string : str or unicode</span>
+<span class="sd">        String to normalize.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    str or unicode</span>
+<span class="sd">        Whitespace-collapsed string. Collapses contiguous spaces (including line feeds, carriage returns,</span>
+<span class="sd">        tabs) into a single space character, and removes leading and trailing spaces entirely.</span>
+<span class="sd">         white space collapsed</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">string</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+</pre></div>
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">PDS4 Python Tools 1.4 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">pds4_tools.reader.read_label</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2015 - 2025, University of Maryland.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    </div>
+  </body>
+</html>

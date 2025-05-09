@@ -23,6 +23,7 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 <!--
 ===========================================================================
 EDIT HISTORY:
++ 2025-05-09 EMW	LEISSA, MVIC, SDC pluto Encounter migrated datasets
 + 2024-10-04 EMW	added Arrokoth shape model
 + 2024-08-30 EMW	Leisa K1 v6 to PDS4 raw & calibrated under Arrokoth
 + 2024-06-28 EMW	replaced LORRI NH KEM1 PDS3 w/ PDS 4
@@ -637,16 +638,18 @@ EDIT HISTORY:
 <ul>
 <li><a href="/holdings/nh-p-alice-2-pluto-v3.0/dataset.shtml">New Horizons ALICE Pluto Encounter Raw Data v3.0</a></li><!-- NH-P-ALICE-2-PLUTO-V3.0 -->
 <li><a href="/holdings/nh-p-alice-3-pluto-v3.0/dataset.shtml">New Horizons ALICE Pluto Encounter Calibrated Data v3.0</a></li><!-- NH-P-ALICE-3-PLUTO-V3.0 -->
-<li><a href="/holdings/nh-p-leisa-2-pluto-v3.0/dataset.shtml">New Horizons LEISA Pluto Encounter Raw Data v3.0</a></li><!-- NH-P-LEISA-2-PLUTO-V3.0 -->
-<li><a href="/holdings/nh-p-leisa-3-pluto-v3.0/dataset.shtml">New Horizons LEISA Pluto Encounter Calibrated Data v3.0</a></li><!-- NH-P-LEISA-3-PLUTO-V3.0 -->
+<li><a href="/holdings/pds4-nh_leisa:pluto_raw-v1.0/SUPPORT/dataset.shtml">New Horizons LEISA Pluto Encounter Raw Data</a> <code>urn:nasa:pds:nh_leisa:pluto_raw::1.0</code></li>
+<li><a href="/holdings/pds4-nh_leisa:pluto_cal-v1.0/SUPPORT/dataset.shtml">New Horizons LEISA Pluto Encounter Calibrated Data</a> <code>urn:nasa:pds:nh_leisa:pluto_cal::1.0</code></li>
 <li><a href="/holdings/nh-x-lorri-2-plutocruise-v2.0/dataset.shtml">New Horizons LORRI Pluto Cruise Raw Data v2.0</a></li><!-- NH-X-LORRI-2-PLUTOCRUISE-V2.0 -->
 <li><a href="/holdings/nh-x-lorri-3-plutocruise-v2.0/dataset.shtml">New Horizons LORRI Pluto Cruise Calibrated Data v2.0</a></li><!-- NH-X-LORRI-3-PLUTOCRUISE-V2.0 -->
 <li><a href="/holdings/nh-p-lorri-2-pluto-v3.0/dataset.shtml">New Horizons LORRI Pluto Encounter Raw Data v3.0</a></li><!-- NH-P-LORRI-2-PLUTO-V3.0 -->
 <li><a href="/holdings/nh-p-lorri-3-pluto-v3.0/dataset.shtml">New Horizons LORRI Pluto Encounter Calibrated Data v3.0</a></li><!-- NH-P-LORRI-3-PLUTO-V3.0 -->
-<li><a href="/holdings/nh-p-mvic-2-pluto-v3.0/dataset.shtml">New Horizons MVIC Pluto Encounter Raw Data v3.0</a></li><!-- NH-P-MVIC-2-PLUTO-V3.0 -->
-<li><a href="/holdings/nh-p-mvic-3-pluto-v3.0/dataset.shtml">New Horizons MVIC Pluto Encounter Calibrated Data v3.0</a></li><!-- NH-P-MVIC-3-PLUTO-V3.0 -->
+<li><a href="/holdings/pds4-nh_mvic:pluto_raw-v1.0/SUPPORT/dataset.shtml">New Horizons MVIC Pluto Encounter Raw Data</a> <code>urn:nasa:pds:nh_mvic:pluto_raw::1.0</code></li>
+<li><a href="/holdings/pds4-nh_mvic:pluto_cal-v1.0/SUPPORT/dataset.shtml">New Horizons MVIC Pluto Encounter Partially Processed Data</a> <code>urn:nasa:pds:nh_mvic:pluto_cal::1.0</code></li>
 <li><a href="/holdings/nh-p-rex-2-pluto-v2.0/dataset.shtml">New Horizons REX Pluto Encounter Raw Data v2.0</a></li><!-- NH-P-REX-2-PLUTO-V2.0 -->
 <li><a href="/holdings/nh-p-rex-3-pluto-v1.0/dataset.shtml">New Horizons REX Pluto Encounter Calibrated Data</a></li><!-- NH-P-REX-3-PLUTO-V1.0 -->
+<li><a href="/holdings/pds4-nh_sdc:pluto_raw-v1.0/SUPPORT/dataset.shtml">New Horizons SDC Pluto Encounter Raw Data</a> <code>urn:nasa:pds:nh_sdc:pluto_raw::1.0</code></li>
+<li><a href="/holdings/pds4-nh_sdc:pluto_cal-v1.0/SUPPORT/dataset.shtml">New Horizons SDC Pluto Encounter Calibrated Data</a> <code>urn:nasa:pds:nh_sdc:pluto_cal::1.0</code></li>
 <li><a href="/holdings/ro-c-osinac-2-esc3-67pchuryumov-m18-v2.0/dataset.shtml">Rosetta-Orbiter OSIRIS Narrow Angle Camera Escort 3 MTP018 67P Raw Data v2.0</a></li><!-- RO-C-OSINAC-2-ESC3-67PCHURYUMOV-M18-V2.0 -->
 <li><a href="/holdings/ro-c-osinac-3-esc3-67pchuryumov-m18-v2.0/dataset.shtml">Rosetta-Orbiter OSIRIS Narrow Angle Camera Escort 3 MTP018 67P Calibrated Data v2.0</a></li><!-- RO-C-OSINAC-3-ESC3-67PCHURYUMOV-M18-V2.0 -->
 <li><a href="/holdings/ro-c-osiwac-2-esc3-67pchuryumov-m18-v2.0/dataset.shtml">Rosetta-Orbiter OSIRIS Wide Angle Camera Escort 3 MTP018 67P Raw Data v2.0</a></li><!-- RO-C-OSIWAC-2-ESC3-67PCHURYUMOV-M18-V2.0 -->

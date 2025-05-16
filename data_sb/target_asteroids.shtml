@@ -23,7 +23,8 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 <!--
 ===========================================================================
 EDIT HISTORY:
-+ 2025-05-09 EMW	LEISSA, MVIC, SDC pluto Encounter migrated datasets
++ 2025-05-16 EMW	Alice Pluto Encounter migrated datasets
++ 2025-05-09 EMW	LEISSA, MVIC, SDC Pluto Encounter migrated datasets
 + 2024-10-04 EMW	added Arrokoth shape model
 + 2024-08-30 EMW	Leisa K1 v6 to PDS4 raw & calibrated under Arrokoth
 + 2024-06-28 EMW	replaced LORRI NH KEM1 PDS3 w/ PDS 4
@@ -636,8 +637,8 @@ EDIT HISTORY:
 <a name="Pluto"></a>
 <h2>(134340) Pluto (&amp; its Satellites)</h2>
 <ul>
-<li><a href="/holdings/nh-p-alice-2-pluto-v3.0/dataset.shtml">New Horizons ALICE Pluto Encounter Raw Data v3.0</a></li><!-- NH-P-ALICE-2-PLUTO-V3.0 -->
-<li><a href="/holdings/nh-p-alice-3-pluto-v3.0/dataset.shtml">New Horizons ALICE Pluto Encounter Calibrated Data v3.0</a></li><!-- NH-P-ALICE-3-PLUTO-V3.0 -->
+<li><a href="/holdings/pds4-nh_alice:pluto_raw-v1.0/SUPPORT/dataset.shtml">New Horizons Alice Pluto Encounter Raw Data</a> <code>urn:nasa:pds:nh_alice:pluto_raw::1.0</code></li>
+<li><a href="/holdings/pds4-nh_alice:pluto_cal-v1.0/SUPPORT/dataset.shtml">New Horizons Alice Pluto Encounter Calibrated Data</a> <code>urn:nasa:pds:nh_alice:pluto_cal::1.0</code></li>
 <li><a href="/holdings/pds4-nh_leisa:pluto_raw-v1.0/SUPPORT/dataset.shtml">New Horizons LEISA Pluto Encounter Raw Data</a> <code>urn:nasa:pds:nh_leisa:pluto_raw::1.0</code></li>
 <li><a href="/holdings/pds4-nh_leisa:pluto_cal-v1.0/SUPPORT/dataset.shtml">New Horizons LEISA Pluto Encounter Calibrated Data</a> <code>urn:nasa:pds:nh_leisa:pluto_cal::1.0</code></li>
 <li><a href="/holdings/nh-x-lorri-2-plutocruise-v2.0/dataset.shtml">New Horizons LORRI Pluto Cruise Raw Data v2.0</a></li><!-- NH-X-LORRI-2-PLUTOCRUISE-V2.0 -->

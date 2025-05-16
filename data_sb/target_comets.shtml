@@ -109,6 +109,7 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 <!--
 ===========================================================================
 EDIT HISTORY:
++ 2025-05-16 EMW	fixed SWAN Derived link to v3.0
 + 2023-06-01 EMW	ROSINA DFMS Time Series Abundances under  67P
 + 2023-02-15 EMW	because this is an EU mission, changed instances of maneuver to manoeuvre for consistency in the Rosetta datasets
 + 2023-02-09 EMW	8 RPCMIP derived data (PRL-EXT3), 8 RPCMIP/RPCLAP Cross-Calibrated Derived Data (PRL-EXT3) under 67P
@@ -1652,7 +1653,7 @@ EDIT HISTORY:
 <li><a href="/holdings/pds4-compil-comet:nuc_rotation-v1.0/SUPPORT/dataset.shtml">Rotation of Comet Nuclei: Table 1</a> <code>urn:nasa:pds:compil-comet:nuc_rotation::1.0</code></li>
 <li><a href="https://sbn.psi.edu/pds/resource/msxsb.html">MSX Small Bodies Images</a> (infrared images of eight comets from the MSX mission)</li>
 <li><a href="https://sbn.psi.edu/pds/resource/tnocencol.html">TNO and Centaur Colors</a> (broadband colors of four comets with Centaur-like orbits)</li>
-<li><a href="/holdings/pds4-soho:swan_derived-v1.0/SUPPORT/dataset.shtml">SOHO SWAN Derived Cometary Water Production Rates Collection v3.0</a> <code>urn:nasa:pds:soho:swan_derived::v3.0</code></li>
+<li><a href="/holdings/pds4-soho:swan_derived-v3.0/SUPPORT/dataset.shtml">SOHO SWAN Derived Cometary Water Production Rates Collection v3.0</a> <code>urn:nasa:pds:soho:swan_derived::v3.0</code></li>
 
 <li><a href="/holdings/pds4-compil-comet:unid-emis-v1.0/SUPPORT/dataset.shtml">Catalog of Unidentified Cometary Emission Lines</a> <code>urn:nasa:pds:compil-comet:unid-emis::1.0</code></li>
 <li><a href="/holdings/pds4-spitzer:spitzer-spec-comet-v1.0/SUPPORT/dataset.shtml">Spitzer Space Telescope Spectroscopy of Comets</a> <code>urn:nasa:pds:spitzer:spitzer-spec-comet::1.0</code></li>

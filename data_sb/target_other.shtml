@@ -23,6 +23,7 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 <!--
 ===========================================================================
 EDIT HISTORY:
++ 2025-05-16 EMW	Alice Pluto Encounter migrated datasets
 + 2025-02-14 EMW	PEPSSI (PDS3) v6 to (PDS4) v1 PEPSSI Data Archive
 + 2024-12-17 EMW	NH K5 migrations per email 17 Dec TFB
 + 2024-08-30 EMW	Leisa K1 v6 to PDS4 raw & calibrated under Sun
@@ -109,8 +110,8 @@ EDIT HISTORY:
 <li><a href="/holdings/pds4-nh_swap:kem1_data_summary_plots-v1.0/SUPPORT/dataset.shtml">New Horizons SWAP KEM1 Encounter Data Summary Plots</a> <code>urn:nasa:pds:nh_swap:kem1_data_summary_plots::1.0</code></li>
 <li><a href="/holdings/nh-j-swap-2-jupiter-v4.0/dataset.shtml">New Horizons SWAP Jupiter Encounter Raw Data v4.0</a></li><!-- NH-J-SWAP-2-JUPITER-V4.0 -->
 <li><a href="/holdings/nh-j-swap-3-jupiter-v4.0/dataset.shtml">New Horizons SWAP Jupiter Encounter Calibrated Data v4.0</a></li><!-- NH-J-SWAP-3-JUPITER-V4.0 -->
-<li><a href="/holdings/nh-p-alice-2-pluto-v3.0/dataset.shtml">New Horizons ALICE Pluto Encounter Raw Data v3.0</a></li><!-- NH-P-ALICE-2-PLUTO-V3.0 -->
-<li><a href="/holdings/nh-p-alice-3-pluto-v3.0/dataset.shtml">New Horizons ALICE Pluto Encounter Calibrated Data v3.0</a></li><!-- NH-P-ALICE-3-PLUTO-V3.0 -->
+<li><a href="/holdings/pds4-nh_alice:pluto_raw-v1.0/SUPPORT/dataset.shtml">New Horizons Alice Pluto Encounter Raw Data</a> <code>urn:nasa:pds:nh_alice:pluto_raw::1.0</code></li>
+<li><a href="/holdings/pds4-nh_alice:pluto_cal-v1.0/SUPPORT/dataset.shtml">New Horizons Alice Pluto Encounter Calibrated Data</a> <code>urn:nasa:pds:nh_alice:pluto_cal::1.0</code></li>
 <li><a href="/holdings/nh-p-pepssi-2-pluto-v3.0/dataset.shtml">New Horizons PEPSSI Pluto Encounter Raw Data v3.0</a></li><!-- NH-P-PEPSSI-2-PLUTO-V3.0 -->
 <li><a href="/holdings/nh-p-pepssi-3-pluto-v3.0/dataset.shtml">New Horizons PEPSSI Pluto Encounter Calibrated Data v3.0</a></li><!-- NH-P-PEPSSI-3-PLUTO-V3.0 -->
 <li><a href="/holdings/nh-p-pepssi-4-plasma-v1.0/dataset.shtml">New Horizons PEPSSI Pluto Encounter Resampled Plasma Fluxes</a></li><!-- NH-P-PEPSSI-4-PLASMA-V1.0 -->

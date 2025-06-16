@@ -23,6 +23,7 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 <!--
 ===========================================================================
 EDIT HISTORY:
++ 2025-06-16 EMW	PEPSSI NH Pluto Encounter migrated datasets
 + 2025-05-16 EMW	Alice Pluto Encounter migrated datasets
 + 2025-02-14 EMW	PEPSSI (PDS3) v6 to (PDS4) v1 PEPSSI Data Archive
 + 2024-12-17 EMW	NH K5 migrations per email 17 Dec TFB
@@ -112,8 +113,8 @@ EDIT HISTORY:
 <li><a href="/holdings/nh-j-swap-3-jupiter-v4.0/dataset.shtml">New Horizons SWAP Jupiter Encounter Calibrated Data v4.0</a></li><!-- NH-J-SWAP-3-JUPITER-V4.0 -->
 <li><a href="/holdings/pds4-nh_alice:pluto_raw-v1.0/SUPPORT/dataset.shtml">New Horizons Alice Pluto Encounter Raw Data</a> <code>urn:nasa:pds:nh_alice:pluto_raw::1.0</code></li>
 <li><a href="/holdings/pds4-nh_alice:pluto_cal-v1.0/SUPPORT/dataset.shtml">New Horizons Alice Pluto Encounter Calibrated Data</a> <code>urn:nasa:pds:nh_alice:pluto_cal::1.0</code></li>
-<li><a href="/holdings/nh-p-pepssi-2-pluto-v3.0/dataset.shtml">New Horizons PEPSSI Pluto Encounter Raw Data v3.0</a></li><!-- NH-P-PEPSSI-2-PLUTO-V3.0 -->
-<li><a href="/holdings/nh-p-pepssi-3-pluto-v3.0/dataset.shtml">New Horizons PEPSSI Pluto Encounter Calibrated Data v3.0</a></li><!-- NH-P-PEPSSI-3-PLUTO-V3.0 -->
+<li><a href="/holdings/pds4-nh_pepssi:pluto_raw-v1.0/SUPPORT/dataset.shtml">New Horizons PEPSSI Pluto Encounter Raw Data</a> <code>urn:nasa:pds:nh_pepssi:pluto_raw::1.0</code></li>
+<li><a href="/holdings/pds4-nh_pepssi:pluto_cal-v1.0/SUPPORT/dataset.shtml">New Horizons PEPSSI Pluto Encounter Calibrated Data</a> <code>urn:nasa:pds:nh_pepssi:pluto_cal::1.0</code></li>
 <li><a href="/holdings/nh-p-pepssi-4-plasma-v1.0/dataset.shtml">New Horizons PEPSSI Pluto Encounter Resampled Plasma Fluxes</a></li><!-- NH-P-PEPSSI-4-PLASMA-V1.0 -->
 <li><a href="/holdings/nh-p-rex-2-pluto-v2.0/dataset.shtml">New Horizons REX Pluto Encounter Raw Data v2.0</a></li><!-- NH-P-REX-2-PLUTO-V2.0 -->
 <li><a href="/holdings/nh-p-rex-3-pluto-v1.0/dataset.shtml">New Horizons REX Pluto Encounter Calibrated Data</a></li><!-- NH-P-REX-3-PLUTO-V1.0 -->

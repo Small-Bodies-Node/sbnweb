@@ -23,6 +23,7 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 <!--
 ===========================================================================
 EDIT HISTORY:
++ 2025-06-18 EMW	SOHO SWAN derived v4.0
 + 2025-06-16 EMW	PEPSSI NH Pluto Encounter migrated datasets
 + 2025-05-16 EMW	fixed SWAN Derived link to v3.0
 + 2025-05-16 EMW	Alice Pluto Encounter migrated datasets
@@ -1073,7 +1074,7 @@ EDIT HISTORY:
 <li><a href="/holdings/pds4-compil-comet:nuc_properties-v1.0/SUPPORT/dataset.shtml">Properties of Comet Nuclei</a> <code>urn:nasa:pds:compil-comet:nuc_properties::1.0</code></li>
 <li><a href="/holdings/ear-c-phot-5-rdr-lowell-comet-db-pr-v1.0/dataset.shtml">Lowell Observatory Cometary Database - Production Rates</a></li>
 <li><a href="/holdings/pds4-compil-comet:nuc_rotation-v1.0/SUPPORT/dataset.shtml">Rotation of Comet Nuclei: Table 1</a> <code>urn:nasa:pds:compil-comet:nuc_rotation::1.0</code></li>
-<li><a href="/holdings/pds4-soho:swan_derived-v3.0/SUPPORT/dataset.shtml">SOHO SWAN Derived Cometary Water Production Rates Collection v3.0</a> <code>urn:nasa:pds:soho:swan_derived::v3.0</code></li>
+<li><a href="/holdings/pds4-soho:swan_derived-v4.0/SUPPORT/dataset.shtml">SOHO SWAN Derived Cometary Water Production Rates Collection v4.0</a> <code>urn:nasa:pds:soho:swan_derived::v4.0</code></li>
 <li><a href="/holdings/rl-cal-mupus-2-phc-v1.0/dataset.shtml">Rosetta-Lander MUPUS Post Hibernation Commissioning Raw Data</a></li><!-- RL-CAL-MUPUS-2-PHC-V1.0 -->
 <li><a href="/holdings/rl-cal-mupus-3-phc-v1.0/dataset.shtml">Rosetta-Lander MUPUS Post Hibernation Commissioning Calibrated Data</a></li><!-- RL-CAL-MUPUS-3-PHC-V1.0 -->
 <li><a href="/holdings/rl-c-mupus-2-sdl-v1.0/dataset.shtml">Rosetta-Lander MUPUS Separation Descent Landing 67P Raw Data</a></li><!-- RL-C-MUPUS-2-SDL-V1.0 -->

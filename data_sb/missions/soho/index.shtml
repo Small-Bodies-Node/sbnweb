@@ -35,6 +35,7 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 <!--
 ===========================================================================
 EDIT HISTORY:
++ 2025-06-18 EMW	SOHO SWAN derived v4.0
 + 2025-05-16 EMW	fixed SOHO document link to v1.1, SWAN Derived link to v3.0
 + 2020-04-28 EMW	updated doc collection to v1.1, SWAN to v2.0
 + 2017-03-10 EMW	added links to instruments, added SWAN instrument, added 2 PDS4 datasets
@@ -58,8 +59,8 @@ EDIT HISTORY:
 <!-- Instrument List ==================================================== -->
 <h2>Instruments</h2>
 <ul>
-<li><a href="/holdings/pds4-soho:document-v1.0/overview/lasco.txt">Large Angle Spectrometric Coronagraph (LASCO)</a> - Wide-field white light and spectrometric coronagraph consisting of three optical systems.</li>
-<li><a href="/holdings/pds4-soho:document-v1.0/overview/swan.txt">Solar Wind ANisotropies (SWAN)</a></li>
+<li><a href="/holdings/pds4-soho:document-v1.1/overview/lasco.txt">Large Angle Spectrometric Coronagraph (LASCO)</a> - Wide-field white light and spectrometric coronagraph consisting of three optical systems.</li>
+<li><a href="/holdings/pds4-soho:document-v1.1/overview/swan.txt">Solar Wind ANisotropies (SWAN)</a></li>
 </ul>
 
 <!-- lists from old comet/mission page =========================================================== -->
@@ -69,7 +70,7 @@ EDIT HISTORY:
 <li><a href="/holdings/soho-c-lasco-5-kreutzphotom-v1.0/dataset.shtml">SOHO Photometry of Kreutz Family Comets</a></li>
 
 <li><a href="/holdings/pds4-soho:document-v1.1/SUPPORT/dataset.shtml">SOHO Documentation Collection v1.1</a> <code>urn:nasa:pds:soho:document::v1.1</code></li>
-<li><a href="/holdings/pds4-soho:swan_derived-v3.0/SUPPORT/dataset.shtml">SOHO SWAN Derived Cometary Water Production Rates Collection v3.0</a> <code>urn:nasa:pds:soho:swan_derived::v3.0</code></li>
+<li><a href="/holdings/pds4-soho:swan_derived-v4.0/SUPPORT/dataset.shtml">SOHO SWAN Derived Cometary Water Production Rates Collection v4.0</a> <code>urn:nasa:pds:soho:swan_derived::v4.0</code></li>
 </ul>
 
 <h3>Related Datasets</h3>

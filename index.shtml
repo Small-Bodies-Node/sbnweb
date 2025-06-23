@@ -60,9 +60,12 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 
 <!-- 2025.06.18 -->
 <li><span class="date">2025.06.18</span> SOHO
-<br>+ <a href="/holdings/pds4-soho-v1.3/SUPPORT/dataset.shtml">Comet Data from the Solar and Heliospheric Observatory (SOHO) v1.3</a> <code>urn:nasa:pds:soho::1.3</code>
-<br>+ <a href="/holdings/pds4-soho:swan_derived-v4.0/SUPPORT/dataset.shtml">SOHO SWAN Derived Cometary Water Production Rates Collection v4.0</a> <code>urn:nasa:pds:soho:swan_derived::4.0</code>
-</li>
+<ul>
+<li><a href="/holdings/pds4-soho-v1.3/SUPPORT/dataset.shtml">Comet Data from the Solar and Heliospheric Observatory (SOHO) v1.3</a> <code>urn:nasa:pds:soho::1.3</code>
+	<ul>
+	<li><a href="/holdings/pds4-soho:swan_derived-v4.0/SUPPORT/dataset.shtml">SOHO SWAN Derived Cometary Water Production Rates Collection v4.0</a> <code>urn:nasa:pds:soho:swan_derived::4.0</code></li>
+	</ul></li>
+</ul></li>
 
 <!-- 2025.06.16 -->
 <li><span class="date">2025.06.16</span> New Horizons Migration

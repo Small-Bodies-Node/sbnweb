@@ -58,6 +58,30 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 <h2>New @ SBN</h2>
 <ul class="news">
 
+
+<!-- 2025.07.01 -->
+<li><span class="date">2025.07.01</span> New Horizons
+<ul>
+<li><a href="/holdings/pds4-nh_derived-v4.0/SUPPORT/dataset.shtml">Derived Products from New Horizons Data v4.0</a> <code>urn:nasa:pds:nh_derived::4.0</code>
+	<ul>
+	<li><a href="/holdings/pds4-nh_derived:arrokoth_composition-v1.0/SUPPORT/dataset.shtml">New Horizons Arrokoth Encounter Surface Composition Maps</a> <code>urn:nasa:pds:nh_derived:arrokoth_composition::1.0</code></li>
+	<li><a href="/holdings/pds4-nh_derived:arrokoth_geophysics-v1.0/SUPPORT/dataset.shtml">New Horizons Encounter with (486958) Arrokoth: Derived Shape Models and Surface Maps</a> <code>urn:nasa:pds:nh_derived:arrokoth_geophysics::1.0</code></li>
+	<li><a href="/holdings/pds4-nh_derived:ipm_lyman_alpha-v1.0/SUPPORT/dataset.shtml">New Horizons Kuiper Belt Extended Mission: Alice Ultraviolet Imaging Spectrograph Scans of Lyman-alpha Emission from the Interplanetary Medium</a> <code>urn:nasa:pds:nh_derived:ipm_lyman_alpha::1.0</code></li>
+	<li><a href="/holdings/pds4-nh_derived:ipm_solar_wind-v1.0/SUPPORT/dataset.shtml">New Horizons Primary and Extended Missions: Solar Wind Parameters</a> <code>urn:nasa:pds:nh_derived:ipm_solar_wind::1.0</code></li>
+	<li><a href="/holdings/pds4-nh_derived:oss_plasma_fluxes-v1.0/SUPPORT/dataset.shtml">New Horizons Primary and Extended Mission in the Outer Solar System: Averaged Energetic Particle Flux Rates and Counts-per-Second from PEPSSI Observations, 2012-2020</a> <code>urn:nasa:pds:nh_derived:oss_plasma_fluxes::1.0</code></li>
+	<li><a href="/holdings/pds4-nh_derived:plutosystem_atmospherics-v1.0/SUPPORT/dataset.shtml">New Horizons Encounter with the Pluto System: Atmospheric Opacities and Composition, Temperature, Pressure, and Haze Profiles from the LORRI, Alice, and REX Instruments</a> <code>urn:nasa:pds:nh_derived:plutosystem_atmospherics::1.0</code></li>
+	<li><a href="/holdings/pds4-nh_derived:plutosystem_composition-v1.0/SUPPORT/dataset.shtml">New Horizons Encounter with the Pluto System: Global Color Maps, Image Cubes, and Absorption Band Maps from the LEISA and MVIC Instruments</a> <code>urn:nasa:pds:nh_derived:plutosystem_composition::1.0</code></li>
+	<li><a href="/holdings/pds4-nh_derived:plutosystem_geophysics-v1.0/SUPPORT/dataset.shtml">New Horizons Encounter with the Pluto System: Mosaics, Topographic Maps, and Bond Albedo Maps for Pluto and Charon from LORRI and MVIC Observations</a> <code>urn:nasa:pds:nh_derived:plutosystem_geophysics::1.0</code></li>
+	<li><a href="/holdings/pds4-nh_derived:plutosystem_plasma_fluxes-v1.0/SUPPORT/dataset.shtml">New Horizons Encounter with the Pluto System: Time-Averaged Solar Winds Particle and Ion Fluxes from PEPSSI Observations</a> <code>urn:nasa:pds:nh_derived:plutosystem_plasma_fluxes::1.0</code></li>
+	<li><a href="/holdings/pds4-nh_derived:plutosystem_solar_wind-v1.0/SUPPORT/dataset.shtml">New Horizons Encounter with the Pluto System: Solar Wind Parameters from SWAP Observations</a> <code>urn:nasa:pds:nh_derived:plutosystem_solar_wind::1.0</code></li>
+	</ul></li>
+<li><a href="/holdings/pds4-nh_secondary-v1.0/SUPPORT/dataset.shtml">Secondary Collections to Support New Horizons Research Results</a> <code>urn:nasa:pds:nh_secondary::1.0</code>
+	<ul>
+	<li><a href="/holdings/pds4-nh_secondary:aliceocc_charon_sources-v1.0/SUPPORT/dataset.shtml">Raw Product Source List for urn:nasa:pds:nh_derived:plutosystem_atmospherics:pa_cocc_1s_spectra_v10::1.0</a> <code>urn:nasa:pds:nh_secondary:aliceocc_charon_sources::1.0</code></li>
+	<li><a href="/holdings/pds4-nh_secondary:aliceocc_pluto_sources-v1.0/SUPPORT/dataset.shtml">Raw Product Source List for urn:nasa:pds:nh_derived:plutosystem_atmospherics:pa_pocc_1s_spectra_v10::1.0</a> <code>urn:nasa:pds:nh_secondary:aliceocc_pluto_sources::1.0</code></li>
+	</ul></li>
+</ul></li>
+
 <!-- 2025.06.18 -->
 <li><span class="date">2025.06.18</span> SOHO
 <ul>

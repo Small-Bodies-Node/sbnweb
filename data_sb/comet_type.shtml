@@ -23,6 +23,7 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 <!--
 ===========================================================================
 EDIT HISTORY:
++ 2025-07-01 EMW	NH Derived migration release 2025-07-01
 + 2025-06-18 EMW	SOHO SWAN derived v4.0
 + 2025-06-16 EMW	PEPSSI NH Pluto Encounter migrated datasets
 + 2025-05-16 EMW	fixed SWAN Derived link to v3.0
@@ -363,8 +364,8 @@ EDIT HISTORY:
 <li><a href="/holdings/rl-c-rolis-2-fss-v1.0/dataset.shtml">Rosetta-Lander ROLIS First Science Sequence 67P Raw Data</a></li><!-- RL-C-ROLIS-2-FSS-V1.0 -->
 <li><em>Please refer to <a href="/data_sb/missions/rosetta/index_OSIRIS.shtml">Rosetta OSIRIS</a> for a listing of OSIRIS datasets from the <strong><em>comet encounter</em></strong> phases.</em></li>
 <li><em>Please refer to <a href="/data_sb/missions/rosetta/OSIRIS_cruise.shtml">Rosetta OSIRIS</a> for a listing of OSIRIS datasets from the <strong><em>cruise</em></strong> phases (pre-encounter).</em></li>
-<li><a href="/holdings/nh-p_psa-leisa_mvic-5-comp-v1.0/dataset.shtml">New Horizons Pluto Encounter Surface Composition Maps</a></li><!-- NH-P/PSA-LEISA/MVIC-5-COMP-V1.0 -->
-<li><a href="/holdings/nh-p_psa-lorri_mvic-5-geophys-v1.0/dataset.shtml">New Horizons Pluto Encounter Geology and Geophysical Maps</a></li><!-- NH-P/PSA-LORRI/MVIC-5-GEOPHYS-V1.0 -->
+<li><a href="/holdings/pds4-nh_derived:plutosystem_composition-v1.0/SUPPORT/dataset.shtml">New Horizons Encounter with the Pluto System: Global Color Maps, Image Cubes, and Absorption Band Maps from the LEISA and MVIC Instruments</a> <code>urn:nasa:pds:nh_derived:plutosystem_composition::1.0</code></li>
+<li><a href="/holdings/pds4-nh_derived:plutosystem_geophysics-v1.0/SUPPORT/dataset.shtml">New Horizons Encounter with the Pluto System: Mosaics, Topographic Maps, and Bond Albedo Maps for Pluto and Charon from LORRI and MVIC Observations</a> <code>urn:nasa:pds:nh_derived:plutosystem_geophysics::1.0</code></li>
 <li><a href="/holdings/nh-x-lorri-2-kemcruise1-v2.0/dataset.shtml">New Horizons LORRI KEM Cruise 1 Raw Data v2.0</a></li><!-- NH-X-LORRI-2-KEMCRUISE1-V2.0 -->
 <li><a href="/holdings/nh-x-lorri-3-kemcruise1-v2.0/dataset.shtml">New Horizons LORRI KEM Cruise 1 Calibrated Data v2.0</a></li><!-- NH-X-LORRI-3-KEMCRUISE1-V2.0 -->
 <li><a href="/holdings/nh-x-mvic-2-kemcruise1-v2.0/dataset.shtml">New Horizons MVIC KEM Cruise 1 Raw Data v2.0</a></li><!-- NH-X-MVIC-2-KEMCRUISE1-V2.0 -->
@@ -373,8 +374,8 @@ EDIT HISTORY:
 <li><a href="/holdings/pds4-nh_lorri:kem1_cal-v1.0/SUPPORT/dataset.shtml">New Horizons LORRI KEM1 Encounter Partially Processed Data</a> <code>urn:nasa:pds:nh_lorri:kem1_cal::1.0</code></li>
 <li><a href="/holdings/pds4-nh_mvic:kem1_raw-v1.0/SUPPORT/dataset.shtml">New Horizons MVIC KEM1 Encounter Raw Data</a> <code>urn:nasa:pds:nh_mvic:kem1_raw::1.0</code></li>
 <li><a href="/holdings/pds4-nh_mvic:kem1_cal-v1.0/SUPPORT/dataset.shtml">New Horizons MVIC KEM1 Encounter Partially Processed Data</a> <code>urn:nasa:pds:nh_mvic:kem1_cal::1.0</code></li>
-<li><a href="/holdings/nh-a-leisa_mvic-5-comp-v1.0/dataset.shtml">New Horizons Arrokoth Encounter Surface Composition Maps</a></li><!-- NH-A-LEISA/MVIC-5-COMP-V1.0 -->
-<li><a href="/holdings/nh-a-lorri_mvic-5-geophys-v1.0/dataset.shtml">New Horizons Arrokoth Encounter Geology and Geophysical Maps and Shape Models</a></li><!-- NH-A-LORRI/MVIC-5-GEOPHYS-V1.0 -->
+<li><a href="/holdings/pds4-nh_derived:arrokoth_composition-v1.0/SUPPORT/dataset.shtml">New Horizons Arrokoth Encounter Surface Composition Maps</a> <code>urn:nasa:pds:nh_derived:arrokoth_composition::1.0</code></li>
+<li><a href="/holdings/pds4-nh_derived:arrokoth_geophysics-v1.0/SUPPORT/dataset.shtml">New Horizons Encounter with (486958) Arrokoth: Derived Shape Models and Surface Maps</a> <code>urn:nasa:pds:nh_derived:arrokoth_geophysics::1.0</code></li>
 <li><a href="https://sbn.psi.edu/pds/resource/orex/ocams.html">OSIRIS-REx OCAMS Bundle</a></li>
 <li><a href="https://sbn.psi.edu/pds/resource/orex/tagcams.html">OSIRIS-REx TAGCAMS Bundle</a></li>
 <li><a href="/holdings/ihw-c-nnsn-3-edr-halley-v2.0/dataset.shtml">International Halley Watch Near Nucleus Images of Comet Halley v2.0</a></li><!-- IHW-C-NNSN-3-EDR-HALLEY-V2.0 -->
@@ -521,14 +522,14 @@ EDIT HISTORY:
 <li><a href="/holdings/nh-j-swap-3-jupiter-v3.0/dataset.shtml">New Horizons SWAP Jupiter Encounter Calibrated Data v3.0</a></li><!-- NH-J-SWAP-3-JUPITER-V3.0 -->
 <li><a href="/holdings/pds4-nh_pepssi:pluto_raw-v1.0/SUPPORT/dataset.shtml">New Horizons PEPSSI Pluto Encounter Raw Data</a> <code>urn:nasa:pds:nh_pepssi:pluto_raw::1.0</code></li>
 <li><a href="/holdings/pds4-nh_pepssi:pluto_cal-v1.0/SUPPORT/dataset.shtml">New Horizons PEPSSI Pluto Encounter Calibrated Data</a> <code>urn:nasa:pds:nh_pepssi:pluto_cal::1.0</code></li>
-<li><a href="/holdings/nh-p-pepssi-4-plasma-v1.0/dataset.shtml">New Horizons PEPSSI Pluto Encounter Resampled Plasma Fluxes</a></li><!-- NH-P-PEPSSI-4-PLASMA-V1.0 -->
+<li><a href="/holdings/pds4-nh_derived:plutosystem_plasma_fluxes-v1.0/SUPPORT/dataset.shtml">New Horizons Encounter with the Pluto System: Time-Averaged Solar Winds Particle and Ion Fluxes from PEPSSI Observations</a> <code>urn:nasa:pds:nh_derived:plutosystem_plasma_fluxes::1.0</code></li>
 <li><a href="/holdings/pds4-nh_sdc:pluto_raw-v1.0/SUPPORT/dataset.shtml">New Horizons SDC Pluto Encounter Raw Data</a> <code>urn:nasa:pds:nh_sdc:pluto_raw::1.0</code></li>
 <li><a href="/holdings/pds4-nh_sdc:pluto_cal-v1.0/SUPPORT/dataset.shtml">New Horizons SDC Pluto Encounter Calibrated Data</a> <code>urn:nasa:pds:nh_sdc:pluto_cal::1.0</code></li>
 <li><a href="/holdings/nh-p-swap-2-pluto-v3.0/dataset.shtml">New Horizons SWAP Pluto Encounter Raw Data v3.0</a></li><!-- NH-P-SWAP-2-PLUTO-V3.0 -->
 <li><a href="/holdings/nh-p-swap-3-pluto-v3.0/dataset.shtml">New Horizons SWAP Pluto Encounter Calibrated Data v3.0</a></li><!-- NH-P-SWAP-3-PLUTO-V3.0 -->
-<li><a href="/holdings/nh-p-swap-5-derived-solarwind-v1.0/dataset.shtml">New Horizons SWAP Pluto Encounter Solar Wind Derived Characteristics</a></li><!-- NH-P-SWAP-5-DERIVED-SOLARWIND-V1.0 -->
-<li><a href="/holdings/nh-x-pepssi-4-plasma-v1.0/dataset.shtml">New Horizons PEPSSI Derived Plasma Fluxes and Rates</a></li><!-- NH-X-PEPSSI-4-PLASMA-V1.0 -->
-<li><a href="/holdings/nh-x-swap-5-derived-solarwind-v2.0/dataset.shtml">New Horizons SWAP Solar Wind Derived Data v2.0</a></li><!-- NH-X-SWAP-5-DERIVED-SOLARWIND-V2.0 -->
+<li><a href="/holdings/pds4-nh_derived:plutosystem_solar_wind-v1.0/SUPPORT/dataset.shtml">New Horizons Encounter with the Pluto System: Solar Wind Parameters from SWAP Observations</a> <code>urn:nasa:pds:nh_derived:plutosystem_solar_wind::1.0</code></li>
+<li><a href="/holdings/pds4-nh_derived:oss_plasma_fluxes-v1.0/SUPPORT/dataset.shtml">New Horizons Primary and Extended Mission in the Outer Solar System: Averaged Energetic Particle Flux Rates and Counts-per-Second from PEPSSI Observations, 2012-2020</a> <code>urn:nasa:pds:nh_derived:oss_plasma_fluxes::1.0</code></li>
+<li><a href="/holdings/pds4-nh_derived:ipm_solar_wind-v1.0/SUPPORT/dataset.shtml">New Horizons Primary and Extended Missions: Solar Wind Parameters</a> <code>urn:nasa:pds:nh_derived:ipm_solar_wind::1.0</code></li>
 <li><a href="/holdings/nh-x-pepssi-2-kemcruise1-v2.0/dataset.shtml">New Horizons PEPSSI KEM Cruise 1 Raw Data v2.0</a></li><!-- NH-X-PEPSSI-2-KEMCRUISE1-V2.0 -->
 <li><a href="/holdings/nh-x-pepssi-3-kemcruise1-v2.0/dataset.shtml">New Horizons PEPSSI KEM Cruise 1 Calibrated Data v2.0</a></li><!-- NH-X-PEPSSI-3-KEMCRUISE1-V2.0 -->
 <li><a href="/holdings/nh-x-sdc-2-kemcruise1-v2.0/dataset.shtml">New Horizons SDC KEM Cruise 1 Raw Data v2.0</a></li><!-- NH-X-SDC-2-KEMCRUISE1-V2.0 -->
@@ -1083,11 +1084,11 @@ EDIT HISTORY:
 <li><a href="/holdings/rl-c-mupus-3-rbd-v1.0/dataset.shtml">Rosetta-Lander MUPUS Rebounds 67P Calibrated Data</a></li><!-- RL-C-MUPUS-3-RBD-V1.0 -->
 <li><a href="/holdings/rl-c-mupus-2-fss-v1.0/dataset.shtml">Rosetta-Lander MUPUS First Science Sequence 67P Raw Data</a></li><!-- RL-C-MUPUS-2-FSS-V1.0 -->
 <li><a href="/holdings/rl-c-mupus-3-fss-v1.0/dataset.shtml">Rosetta-Lander MUPUS First Science Sequence 67P Calibrated Data</a></li><!-- RL-C-MUPUS-3-FSS-V1.0 -->
-<li><a href="/holdings/nh-p_psa-leisa_mvic-5-comp-v1.0/dataset.shtml">New Horizons Pluto Encounter Surface Composition Maps</a></li><!-- NH-P/PSA-LEISA/MVIC-5-COMP-V1.0 -->
-<li><a href="/holdings/nh-p_psa-lorri_alice_rex-5-atmos-v2.0/dataset.shtml">New Horizons Pluto Encounter Atmosphere Data v2.0</a></li><!-- NH-P/PSA-LORRI/ALICE/REX-5-ATMOS-V2.0 -->
-<li><a href="/holdings/nh-p_psa-lorri_mvic-5-geophys-v1.0/dataset.shtml">New Horizons Pluto Encounter Geology and Geophysical Maps</a></li><!-- NH-P/PSA-LORRI/MVIC-5-GEOPHYS-V1.0 -->
-<li><a href="/holdings/nh-a-leisa_mvic-5-comp-v1.0/dataset.shtml">New Horizons Arrokoth Encounter Surface Composition Maps</a></li><!-- NH-A-LEISA/MVIC-5-COMP-V1.0 -->
-<li><a href="/holdings/nh-a-lorri_mvic-5-geophys-v1.0/dataset.shtml">New Horizons Arrokoth Encounter Geology and Geophysical Maps and Shape Models</a></li><!-- NH-A-LORRI/MVIC-5-GEOPHYS-V1.0 -->
+<li><a href="/holdings/pds4-nh_derived:plutosystem_composition-v1.0/SUPPORT/dataset.shtml">New Horizons Encounter with the Pluto System: Global Color Maps, Image Cubes, and Absorption Band Maps from the LEISA and MVIC Instruments</a> <code>urn:nasa:pds:nh_derived:plutosystem_composition::1.0</code></li>
+<li><a href="/holdings/pds4-nh_derived:plutosystem_atmospherics-v1.0/SUPPORT/dataset.shtml">New Horizons Encounter with the Pluto System: Atmospheric Opacities and Composition, Temperature, Pressure, and Haze Profiles from the LORRI, Alice, and REX Instruments</a> <code>urn:nasa:pds:nh_derived:plutosystem_atmospherics::1.0</code></li>
+<li><a href="/holdings/pds4-nh_derived:plutosystem_geophysics-v1.0/SUPPORT/dataset.shtml">New Horizons Encounter with the Pluto System: Mosaics, Topographic Maps, and Bond Albedo Maps for Pluto and Charon from LORRI and MVIC Observations</a> <code>urn:nasa:pds:nh_derived:plutosystem_geophysics::1.0</code></li>
+<li><a href="/holdings/pds4-nh_derived:arrokoth_composition-v1.0/SUPPORT/dataset.shtml">New Horizons Arrokoth Encounter Surface Composition Maps</a> <code>urn:nasa:pds:nh_derived:arrokoth_composition::1.0</code></li>
+<li><a href="/holdings/pds4-nh_derived:arrokoth_geophysics-v1.0/SUPPORT/dataset.shtml">New Horizons Encounter with (486958) Arrokoth: Derived Shape Models and Surface Maps</a> <code>urn:nasa:pds:nh_derived:arrokoth_geophysics::1.0</code></li>
 <li><a href="/holdings/ro-c-virtis-5-67p-maps-v1.0/dataset.shtml">Rosetta-Orbiter VIRTIS Derived 67P Maps</a></li><!-- RO-C-VIRTIS-5-67P-MAPS-V1.0 -->
 <li><a href="/holdings/pds4-nh_derived:pluto_albedo-v1.0/SUPPORT/dataset.shtml">Bolometric Hemispherical Albedo Map of Pluto from New Horizons Observations</a> <code>urn:nasa:pds:nh_derived:pluto_albedo::1.0</code></li>
 <li><a href="/holdings/pds4-nh_derived:arrokoth_shapemodel_porter2024-v1.0/SUPPORT/dataset.shtml">New Horizons Porter (2024) Arrokoth Shape Model Collection</a> <code>urn:nasa:pds:nh_derived:arrokoth_shapemodel_porter2024::1.0</code></li>
@@ -1193,7 +1194,7 @@ EDIT HISTORY:
 <li><a href="https://sbn.psi.edu/pds/resource/dawn/dwncfcL1.html">Dawn: Ceres digital terrain model</a></li>
 <li><a href="/holdings/rl-c-multi-5-ancdr-v2.0/dataset.shtml">Rosetta-Lander Ancillary 67P data v2.0</a></li><!-- RL-C-MULTI-5-ANCDR-V2.0 -->
 <li><a href="https://sbn.psi.edu/pds/resource/saturnsatshapes.html">Saturn Small Moon Shape Models</a></li>
-<li><a href="/holdings/nh-a-lorri_mvic-5-geophys-v1.0/dataset.shtml">New Horizons Arrokoth Encounter Geology and Geophysical Maps and Shape Models</a></li><!-- NH-A-LORRI/MVIC-5-GEOPHYS-V1.0 -->
+<li><a href="/holdings/pds4-nh_derived:arrokoth_geophysics-v1.0/SUPPORT/dataset.shtml">New Horizons Encounter with (486958) Arrokoth: Derived Shape Models and Surface Maps</a> <code>urn:nasa:pds:nh_derived:arrokoth_geophysics::1.0</code></li>
 <li><a href="/holdings/pds4-dart_shapemodel-v1.0/SUPPORT/dataset.shtml">DART Didymos System Shapemodel Archive Bundle</a> <code>urn:nasa:pds:dart_shapemodel::1.0</code></li>
 
 <li><a href="/holdings/pds4-nh_derived:arrokoth_shapemodel_porter2024-v1.0/SUPPORT/dataset.shtml">New Horizons Porter (2024) Arrokoth Shape Model Collection</a> <code>urn:nasa:pds:nh_derived:arrokoth_shapemodel_porter2024::1.0</code></li>
@@ -1346,7 +1347,7 @@ EDIT HISTORY:
 <li><a href="/holdings/ro-c-virtis-3-ext3-mtp033-v2.0/dataset.shtml">Rosetta-Orbiter VIRTIS Extension 3 MTP033 67P Calibrated Data v2.0</a></li><!-- RO-C-VIRTIS-3-EXT3-MTP033-V2.0 -->
 <li><a href="/holdings/ro-c-virtis-3-ext3-mtp034-v2.0/dataset.shtml">Rosetta-Orbiter VIRTIS Extension 3 MTP034 67P Calibrated Data v2.0</a></li><!-- RO-C-VIRTIS-3-EXT3-MTP034-V2.0 -->
 <li><a href="/holdings/ro-c-virtis-3-ext3-mtp035-v2.0/dataset.shtml">Rosetta-Orbiter VIRTIS Extension 3 MTP035 67P Calibrated Data v2.0</a></li><!-- RO-C-VIRTIS-3-EXT3-MTP035-V2.0 -->
-<li><a href="/holdings/nh-p_psa-leisa_mvic-5-comp-v1.0/dataset.shtml">New Horizons Pluto Encounter Surface Composition Maps</a></li><!-- NH-P/PSA-LEISA/MVIC-5-COMP-V1.0 -->
+<li><a href="/holdings/pds4-nh_derived:plutosystem_composition-v1.0/SUPPORT/dataset.shtml">New Horizons Encounter with the Pluto System: Global Color Maps, Image Cubes, and Absorption Band Maps from the LEISA and MVIC Instruments</a> <code>urn:nasa:pds:nh_derived:plutosystem_composition::1.0</code></li>
 <li><a href="/holdings/pds4-compil-comet:unid-emis-v1.0/SUPPORT/dataset.shtml">Catalog of Unidentified Cometary Emission Lines</a> <code>urn:nasa:pds:compil-comet:unid-emis::1.0</code></li>
 <li><a href="/holdings/pds4-gbo-mcdonald:19p_col_density-v1.0/SUPPORT/dataset.shtml">McDonald Observatory Column Density Observations of 19P/Borrelly</a> <code>urn:nasa:pds:gbo-mcdonald:19p_col_density::1.0</code></li>
 <li><a href="/holdings/ro-c-rosina-2-prl-v2.0/dataset.shtml">Rosetta-Orbiter ROSINA Prelanding 67P Raw Data v2.0</a></li><!-- RO-C-ROSINA-2-PRL-V2.0 -->
@@ -1385,7 +1386,7 @@ EDIT HISTORY:
 <li><a href="/holdings/nh-x-alice-3-kemcruise1-v2.0/dataset.shtml">New Horizons ALICE KEM Cruise 1 Calibrated Data v2.0</a></li><!-- NH-X-ALICE-3-KEMCRUISE1-V2.0 -->
 <li><a href="/holdings/pds4-nh_alice:kem1_raw-v1.0/SUPPORT/dataset.shtml">New Horizons Alice KEM1 Encounter Raw Data</a> <code>urn:nasa:pds:nh_alice:kem1_raw::1.0</code></li>
 <li><a href="/holdings/pds4-nh_alice:kem1_cal-v1.0/SUPPORT/dataset.shtml">New Horizons Alice KEM1 Encounter Calibrated Data</a> <code>urn:nasa:pds:nh_alice:kem1_cal::1.0</code></li>
-<li><a href="/holdings/nh-a-leisa_mvic-5-comp-v1.0/dataset.shtml">New Horizons Arrokoth Encounter Surface Composition Maps</a></li><!-- NH-A-LEISA/MVIC-5-COMP-V1.0 -->
+<li><a href="/holdings/pds4-nh_derived:arrokoth_composition-v1.0/SUPPORT/dataset.shtml">New Horizons Arrokoth Encounter Surface Composition Maps</a> <code>urn:nasa:pds:nh_derived:arrokoth_composition::1.0</code></li>
 <li><a href="https://sbn.psi.edu/pds/resource/orex/ovirs.html">OSIRIS-REx OVIRS Bundle</a></li>
 <li><a href="https://sbn.psi.edu/pds/resource/orex/otes.html">OSIRIS-REx OTES Bundle</a></li>
 <li><a href="/holdings/pds4-gbo-c2012_s1_ison:jan2013_hfosc-v1.0/SUPPORT/dataset.shtml">Comet ISON January 2013 HFOSC Observations Collection</a> <code>urn:nasa:pds:gbo-c2012_s1_ison:jan2013_hfosc::1.0</code></li>
@@ -1505,7 +1506,7 @@ EDIT HISTORY:
 <li><a href="/holdings/ro-x-hk-3-startracker-v1.0/dataset.shtml">Rosetta Spacecraft Startracker Engineering Data</a></li><!-- RO-X-HK-3-STARTRACKER-V1.0 -->
 <li><a href="/holdings/ro-x-hk-3-tcs-v1.0/dataset.shtml">Rosetta Spacecraft Thermal Control System Data</a></li><!-- RO-X-HK-3-TCS-V1.0 -->
 <li><a href="/holdings/pds4-dart_teleobs:document_ldt-v1.0/SUPPORT/dataset.shtml">DART Lowell Document Collection</a> <code>urn:nasa:pds:dart_teleobs:document_ldt::1.0</code></li>
-<li><a href="/holdings/nh-x-alice-5-ipm-v1.0/dataset.shtml">New Horizons ALICE Interplanetary Medium Scans</a></li><!-- NH-X-ALICE-5-IPM-V1.0 -->
+<li><a href="/holdings/pds4-nh_derived:ipm_lyman_alpha-v1.0/SUPPORT/dataset.shtml">New Horizons Kuiper Belt Extended Mission: Alice Ultraviolet Imaging Spectrograph Scans of Lyman-alpha Emission from the Interplanetary Medium</a> <code>urn:nasa:pds:nh_derived:ipm_lyman_alpha::1.0</code></li>
 <li><a href="/holdings/pds4-dart:document_draco-v3.0/SUPPORT/dataset.shtml">DART Documentation for the Didymos Reconnaissance and Asteroid Camera for OpNav (DRACO) instrument v3.0</a> <code>urn:nasa:pds:dart:document_draco::3.0</code></li>
 <li><a href="/holdings/pds4-liciacube:document-v1.0/SUPPORT/dataset.shtml">Light Italian Cubesat for Imaging of Asteroids (LICIACube) Document Collection</a> <code>urn:nasa:pds:liciacube:document::1.0</code></li>
 <li><a href="/holdings/pds4-dart_teleobs:document_lco-v1.0/SUPPORT/dataset.shtml">DART Las Campanas Observatory Telescopic Observations Documentation Collection</a> <code>urn:nasa:pds:dart_teleobs:document_lco::1.0</code></li>

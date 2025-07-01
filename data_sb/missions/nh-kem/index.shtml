@@ -38,6 +38,7 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 <!--
 ===========================================================================
 EDIT HISTORY:
++ 2025-07-01 EMW	NH Derived migration release 2025-07-01
 + 2025-06-16 EMW	PEPSSI Pluto Encounter documents
 + 2025-05-09 EMW	LEISSA, MVIC, SDC pluto Encounter migrated datasets
 + 2025-02-14 EMW	PEPSSI (PDS3) v6 to (PDS4) v1 PEPSSI Data Archive
@@ -82,14 +83,14 @@ EDIT HISTORY:
 <!-- Instrument List ==================================================== -->
 <h2>Instruments</h2>
 <ul>
-<li><a href="/catalogs/NewHorizons/alice.cat">ALICE Ultraviolet Imaging Spectrograph</a> (ALICE)</li>
-<li><a href="/catalogs/NewHorizons/leisa.cat">Linear Etalon Imaging Spectral Array</a> (LEISA/RALPH)</li>
-<li><a href="/catalogs/NewHorizons/lorri.cat">Long Range Reconnaissance Imager</a> (LORRI)</li>
-<li><a href="/catalogs/NewHorizons/mvic.cat">Multispectral Visible Imaging Camera</a> (MVIC/RALPH)</li>
-<li><a href="/catalogs/NewHorizons/pepssi.cat">Pluto Energetic Particle Spectrometer Science Investigation</a> (PEPSSI)</li>
-<li><a href="/catalogs/NewHorizons/rex.cat">Radio Science Experiment</a> (REX)</li>
-<li><a href="/catalogs/NewHorizons/sdc.cat">Student Dust Counter</a> (SDC)</li>
-<li><a href="/catalogs/NewHorizons/swap.cat">Solar Wind Around Pluto</a> (SWAP)</li>
+<li><a href="/holdings/pds4-nh_documents:alice-v1.0/documents/alice_inst_overview.pdf">ALICE Ultraviolet Imaging Spectrograph</a> (ALICE)</li>
+<li><a href="/holdings/pds4-nh_documents:ralph-v2.0/documents/leisa_inst_overview.pdf">Linear Etalon Imaging Spectral Array</a> (LEISA/RALPH)</li>
+<li><a href="/holdings/pds4-nh_documents:lorri-v1.0/documents/lorri_inst_overview.pdf">Long Range Reconnaissance Imager</a> (LORRI)</li>
+<li><a href="/holdings/pds4-nh_documents:ralph-v2.0/documents/mvic_inst_overview.pdf">Multispectral Visible Imaging Camera</a> (MVIC/RALPH)</li>
+<li><a href="/holdings/pds4-nh_documents:pepssi-v2.0/documents/pepssi_inst_overview.pdf">Pluto Energetic Particle Spectrometer Science Investigation</a> (PEPSSI)</li>
+<li><a href="/holdings/pds4-nh_documents:rex-v1.0/documents/rex_inst_overview.pdf">Radio Science Experiment</a> (REX)</li>
+<li><a href="/holdings/pds4-nh_documents:sdc-v2.0/documents/sdc_inst_overview.pdf">Student Dust Counter</a> (SDC)</li>
+<li><a href="/holdings/pds4-nh_documents:swap-v1.0/documents/swap_inst_overview.pdf">Solar Wind Around Pluto</a> (SWAP)</li>
 </ul>
 
 <!-- Mission Data ======================================================= -->
@@ -135,8 +136,8 @@ EDIT HISTORY:
 <li><a href="/holdings/pds4-nh_swap:kem1_raw-v1.0/SUPPORT/dataset.shtml">New Horizons SWAP KEM1 Encounter Raw Data</a> <code>urn:nasa:pds:nh_swap:kem1_raw::1.0</code></li>
 <li><a href="/holdings/pds4-nh_swap:kem1_cal-v1.0/SUPPORT/dataset.shtml">New Horizons SWAP KEM1 Encounter Calibrated Data</a> <code>urn:nasa:pds:nh_swap:kem1_cal::1.0</code></li>
 <li><a href="/holdings/pds4-nh_swap:kem1_data_summary_plots-v1.0/SUPPORT/dataset.shtml">New Horizons SWAP KEM1 Encounter Data Summary Plots</a> <code>urn:nasa:pds:nh_swap:kem1_data_summary_plots::1.0</code></li>
-<li><a href="/holdings/nh-a-leisa_mvic-5-comp-v1.0/dataset.shtml">New Horizons Arrokoth Encounter Surface Composition Maps</a></li><!-- NH-A-LEISA/MVIC-5-COMP-V1.0 -->
-<li><a href="/holdings/nh-a-lorri_mvic-5-geophys-v1.0/dataset.shtml">New Horizons Arrokoth Encounter Geology and Geophysical Maps and Shape Models</a></li><!-- NH-A-LORRI/MVIC-5-GEOPHYS-V1.0 -->
+<li><a href="/holdings/pds4-nh_derived:arrokoth_composition-v1.0/SUPPORT/dataset.shtml">New Horizons Arrokoth Encounter Surface Composition Maps</a> <code>urn:nasa:pds:nh_derived:arrokoth_composition::1.0</code></li>
+<li><a href="/holdings/pds4-nh_derived:arrokoth_geophysics-v1.0/SUPPORT/dataset.shtml">New Horizons Encounter with (486958) Arrokoth: Derived Shape Models and Surface Maps</a> <code>urn:nasa:pds:nh_derived:arrokoth_geophysics::1.0</code></li>
 <li><a href="/holdings/pds4-nh_derived:arrokoth_shapemodel_porter2024-v1.0/SUPPORT/dataset.shtml">New Horizons Porter (2024) Arrokoth Shape Model Collection</a> <code>urn:nasa:pds:nh_derived:arrokoth_shapemodel_porter2024::1.0</code></li>
 </ul>
 
@@ -157,9 +158,9 @@ EDIT HISTORY:
 <h3>Other Mission Datasets</h3>
 <ul>
 <li><a href="https://naif.jpl.nasa.gov/naif/data_archived.html">New Horizons Spice Kernels</a></li><!-- NH-J_P_SS-SPICE-6-V1.0 -->
-<li><a href="/holdings/nh-x-alice-5-ipm-v1.0/dataset.shtml">New Horizons ALICE Interplanetary Medium Scans</a></li><!-- NH-X-ALICE-5-IPM-V1.0 -->
-<li><a href="/holdings/nh-x-pepssi-4-plasma-v1.0/dataset.shtml">New Horizons PEPSSI Derived Plasma Fluxes and Rates</a></li><!-- NH-X-PEPSSI-4-PLASMA-V1.0 -->
-<li><a href="/holdings/nh-x-swap-5-derived-solarwind-v2.0/dataset.shtml">New Horizons SWAP Solar Wind Derived Data v2.0</a></li><!-- NH-X-SWAP-5-DERIVED-SOLARWIND-V2.0 -->
+<li><a href="/holdings/pds4-nh_derived:ipm_lyman_alpha-v1.0/SUPPORT/dataset.shtml">New Horizons Kuiper Belt Extended Mission: Alice Ultraviolet Imaging Spectrograph Scans of Lyman-alpha Emission from the Interplanetary Medium</a> <code>urn:nasa:pds:nh_derived:ipm_lyman_alpha::1.0</code></li>
+<li><a href="/holdings/pds4-nh_derived:oss_plasma_fluxes-v1.0/SUPPORT/dataset.shtml">New Horizons Primary and Extended Mission in the Outer Solar System: Averaged Energetic Particle Flux Rates and Counts-per-Second from PEPSSI Observations, 2012-2020</a> <code>urn:nasa:pds:nh_derived:oss_plasma_fluxes::1.0</code></li>
+<li><a href="/holdings/pds4-nh_derived:ipm_solar_wind-v1.0/SUPPORT/dataset.shtml">New Horizons Primary and Extended Missions: Solar Wind Parameters</a> <code>urn:nasa:pds:nh_derived:ipm_solar_wind::1.0</code></li>
 <li><a href="/holdings/pds4-nh_documents-v4.2/SUPPORT/dataset.shtml">New Horizons Mission Instrument-Specific and Mission-Wide Documents v4.2</a> <code>urn:nasa:pds:nh_documents::4.2</code></li>
 <li><a href="/holdings/pds4-nh_alice:calibration_files-v1.0/SUPPORT/dataset.shtml">New Horizons Alice Reference Files Used in Calibrating Data</a> <code>urn:nasa:pds:nh_alice:calibration_files::1.0</code></li>
 <li><a href="/holdings/pds4-nh_lorri:calibration_files-v1.0/SUPPORT/dataset.shtml">New Horizons LORRI Reference Files Used in Calibrating Data</a> <code>urn:nasa:pds:nh_lorri:calibration_files::1.0</code></li>
@@ -174,6 +175,7 @@ EDIT HISTORY:
 <h3>Related Datasets</h3>
 <p>Use the <a href="https://sbnapps.psi.edu/ferret/">Small Bodies Data Ferret</a> to find other datasets for this mission/target.</p>
 <ul>
+<li><a href="/holdings/pds4-nh_secondary-v1.0/SUPPORT/dataset.shtml">Secondary Collections to Support New Horizons Research Results</a> <code>urn:nasa:pds:nh_secondary::1.0</code></li>
 <li><a href="/holdings/pds4-nh_derived:lorri_cob-v1.0/SUPPORT/dataset.shtml">New Horizons Cosmic Optical Background Observations</a> <code>urn:nasa:pds:nh_derived:lorri_cob::1.0</code></li>
 </ul>
 

@@ -23,6 +23,7 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 <!--
 ===========================================================================
 EDIT HISTORY:
++ 2025-07-01 EMW	NH Derived migration release 2025-07-01
 + 2025-06-16 EMW	PEPSSI NH Pluto Encounter migrated datasets
 + 2025-05-16 EMW	Alice Pluto Encounter migrated datasets
 + 2025-02-14 EMW	PEPSSI (PDS3) v6 to (PDS4) v1 PEPSSI Data Archive
@@ -115,12 +116,12 @@ EDIT HISTORY:
 <li><a href="/holdings/pds4-nh_alice:pluto_cal-v1.0/SUPPORT/dataset.shtml">New Horizons Alice Pluto Encounter Calibrated Data</a> <code>urn:nasa:pds:nh_alice:pluto_cal::1.0</code></li>
 <li><a href="/holdings/pds4-nh_pepssi:pluto_raw-v1.0/SUPPORT/dataset.shtml">New Horizons PEPSSI Pluto Encounter Raw Data</a> <code>urn:nasa:pds:nh_pepssi:pluto_raw::1.0</code></li>
 <li><a href="/holdings/pds4-nh_pepssi:pluto_cal-v1.0/SUPPORT/dataset.shtml">New Horizons PEPSSI Pluto Encounter Calibrated Data</a> <code>urn:nasa:pds:nh_pepssi:pluto_cal::1.0</code></li>
-<li><a href="/holdings/nh-p-pepssi-4-plasma-v1.0/dataset.shtml">New Horizons PEPSSI Pluto Encounter Resampled Plasma Fluxes</a></li><!-- NH-P-PEPSSI-4-PLASMA-V1.0 -->
+<li><a href="/holdings/pds4-nh_derived:plutosystem_plasma_fluxes-v1.0/SUPPORT/dataset.shtml">New Horizons Encounter with the Pluto System: Time-Averaged Solar Winds Particle and Ion Fluxes from PEPSSI Observations</a> <code>urn:nasa:pds:nh_derived:plutosystem_plasma_fluxes::1.0</code></li>
 <li><a href="/holdings/nh-p-rex-2-pluto-v2.0/dataset.shtml">New Horizons REX Pluto Encounter Raw Data v2.0</a></li><!-- NH-P-REX-2-PLUTO-V2.0 -->
 <li><a href="/holdings/nh-p-rex-3-pluto-v1.0/dataset.shtml">New Horizons REX Pluto Encounter Calibrated Data</a></li><!-- NH-P-REX-3-PLUTO-V1.0 -->
 <li><a href="/holdings/nh-p-swap-2-pluto-v3.0/dataset.shtml">New Horizons SWAP Pluto Encounter Raw Data v3.0</a></li><!-- NH-P-SWAP-2-PLUTO-V3.0 -->
 <li><a href="/holdings/nh-p-swap-3-pluto-v3.0/dataset.shtml">New Horizons SWAP Pluto Encounter Calibrated Data v3.0</a></li><!-- NH-P-SWAP-3-PLUTO-V3.0 -->
-<li><a href="/holdings/nh-p-swap-5-derived-solarwind-v1.0/dataset.shtml">New Horizons SWAP Pluto Encounter Solar Wind Derived Characteristics</a></li><!-- NH-P-SWAP-5-DERIVED-SOLARWIND-V1.0 -->
+<li><a href="/holdings/pds4-nh_derived:plutosystem_solar_wind-v1.0/SUPPORT/dataset.shtml">New Horizons Encounter with the Pluto System: Solar Wind Parameters from SWAP Observations</a> <code>urn:nasa:pds:nh_derived:plutosystem_solar_wind::1.0</code></li>
 <li><a href="/holdings/nh-x-alice-2-plutocruise-v2.0/dataset.shtml">New Horizons ALICE Pluto Cruise Raw Data v2.0</a></li><!-- NH-X-ALICE-2-PLUTOCRUISE-V2.0 -->
 <li><a href="/holdings/nh-x-alice-3-plutocruise-v2.0/dataset.shtml">New Horizons ALICE Pluto Cruise Calibrated Data v2.0</a></li><!-- NH-X-ALICE-3-PLUTOCRUISE-V2.0 -->
 <li><a href="/holdings/nh-x-leisa-2-plutocruise-v1.0/dataset.shtml">New Horizons LEISA Pluto Cruise Raw Data</a></li><!-- NH-X-LEISA-2-PLUTOCRUISE-V1.0 -->
@@ -139,8 +140,8 @@ EDIT HISTORY:
 <li><a href="/holdings/nh-x-swap-2-plutocruise-v3.0/dataset.shtml">New Horizons SWAP Pluto Cruise Raw Data v3.0</a></li><!-- NH-X-SWAP-2-PLUTOCRUISE-V3.0 -->
 <li><a href="/holdings/nh-x-swap-3-kemcruise1-v2.0/dataset.shtml">New Horizons SWAP KEM Cruise 1 Calibrated Data v2.0</a></li><!-- NH-X-SWAP-3-KEMCRUISE1-V2.0 -->
 <li><a href="/holdings/nh-x-swap-3-plutocruise-v3.0/dataset.shtml">New Horizons SWAP Pluto Cruise Calibrated Data v3.0</a></li><!-- NH-X-SWAP-3-PLUTOCRUISE-V3.0 -->
-<li><a href="/holdings/nh-x-swap-5-derived-solarwind-v2.0/dataset.shtml">New Horizons SWAP Solar Wind Derived Data v2.0</a></li><!-- NH-X-SWAP-5-DERIVED-SOLARWIND-V2.0 -->
-<li><a href="/holdings/nh-x-pepssi-4-plasma-v1.0/dataset.shtml">New Horizons PEPSSI Derived Plasma Fluxes and Rates</a></li><!-- NH-X-PEPSSI-4-PLASMA-V1.0 -->
+<li><a href="/holdings/pds4-nh_derived:ipm_solar_wind-v1.0/SUPPORT/dataset.shtml">New Horizons Primary and Extended Missions: Solar Wind Parameters</a> <code>urn:nasa:pds:nh_derived:ipm_solar_wind::1.0</code></li>
+<li><a href="/holdings/pds4-nh_derived:oss_plasma_fluxes-v1.0/SUPPORT/dataset.shtml">New Horizons Primary and Extended Mission in the Outer Solar System: Averaged Energetic Particle Flux Rates and Counts-per-Second from PEPSSI Observations, 2012-2020</a> <code>urn:nasa:pds:nh_derived:oss_plasma_fluxes::1.0</code></li>
 <li><a href="/holdings/ro-a-rpcmag-2-ast1-raw-v9.0/dataset.html">Rosetta-Orbiter RPCMAG Steins Raw Data v9.0</a></li><!-- RO-A-RPCMAG-2-AST1-RAW-V9.0 -->
 <li><a href="/holdings/ro-a-rpcmag-2-ast2-raw-v9.0/dataset.html">Rosetta-Orbiter RPCMAG Lutetia Raw Data v9.0</a></li><!-- RO-A-RPCMAG-2-AST2-RAW-V9.0 -->
 <li><a href="/holdings/ro-a-rpcmag-3-ast1-calibrated-v9.0/dataset.html">Rosetta-Orbiter RPCMAG Steins Calibrated Data v9.0</a></li><!-- RO-A-RPCMAG-3-AST1-CALIBRATED-V9.0 -->
@@ -545,9 +546,9 @@ EDIT HISTORY:
 <h2>InterPlanetary Medium (IPM)</h2>
 <p>(similar data may be found in '<a href="https://sbn.psi.edu/pds/archive/dust.html">Dust</a>' or '<a href="/data_sb/target_other.shtml#sun">Sun, Solar Wind</a>' sections)</p>
 <ul>
-<li><a href="/holdings/nh-x-alice-5-ipm-v1.0/dataset.shtml">New Horizons ALICE Interplanetary Medium Scans</a></li><!-- NH-X-ALICE-5-IPM-V1.0 -->
-<li><a href="/holdings/nh-x-pepssi-4-plasma-v1.0/dataset.shtml">New Horizons PEPSSI Derived Plasma Fluxes and Rates</a></li><!-- NH-X-PEPSSI-4-PLASMA-V1.0 -->
-<li><a href="/holdings/nh-x-swap-5-derived-solarwind-v2.0/dataset.shtml">New Horizons SWAP Solar Wind Derived Data v2.0</a></li><!-- NH-X-SWAP-5-DERIVED-SOLARWIND-V2.0 -->
+<li><a href="/holdings/pds4-nh_derived:ipm_lyman_alpha-v1.0/SUPPORT/dataset.shtml">New Horizons Kuiper Belt Extended Mission: Alice Ultraviolet Imaging Spectrograph Scans of Lyman-alpha Emission from the Interplanetary Medium</a> <code>urn:nasa:pds:nh_derived:ipm_lyman_alpha::1.0</code></li>
+<li><a href="/holdings/pds4-nh_derived:oss_plasma_fluxes-v1.0/SUPPORT/dataset.shtml">New Horizons Primary and Extended Mission in the Outer Solar System: Averaged Energetic Particle Flux Rates and Counts-per-Second from PEPSSI Observations, 2012-2020</a> <code>urn:nasa:pds:nh_derived:oss_plasma_fluxes::1.0</code></li>
+<li><a href="/holdings/pds4-nh_derived:ipm_solar_wind-v1.0/SUPPORT/dataset.shtml">New Horizons Primary and Extended Missions: Solar Wind Parameters</a> <code>urn:nasa:pds:nh_derived:ipm_solar_wind::1.0</code></li>
 <li><a href="/holdings/pds4-nh_derived:lorri_cob-v1.0/SUPPORT/dataset.shtml">New Horizons Cosmic Optical Background Observations</a> <code>urn:nasa:pds:nh_derived:lorri_cob::1.0</code></li>
 </ul>
 

@@ -39,6 +39,7 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 <!--
 ===========================================================================
 EDIT HISTORY:
++ 2025-07-01 EMW	NH Derived migration release 2025-07-01
 + 2025-06-16 EMW	PEPSSI Pluto Encounter migrated datasets, docs
 + 2025-05-16 EMW	Alice Pluto Encounter migrated datasets
 + 2025-05-09 EMW	LEISSA, MVIC, SDC Pluto Encounter migrated datasets
@@ -98,14 +99,14 @@ EDIT HISTORY:
 <!-- Instrument List ==================================================== -->
 <h2>Instruments</h2>
 <ul>
-<li><a href="/catalogs/NewHorizons/alice.cat">ALICE Ultraviolet Imaging Spectrograph</a> (ALICE)</li>
-<li><a href="/catalogs/NewHorizons/leisa.cat">Linear Etalon Imaging Spectral Array</a> (LEISA/RALPH)</li>
-<li><a href="/catalogs/NewHorizons/lorri.cat">Long Range Reconnaissance Imager</a> (LORRI)</li>
-<li><a href="/catalogs/NewHorizons/mvic.cat">Multispectral Visible Imaging Camera</a> (MVIC/RALPH)</li>
-<li><a href="/catalogs/NewHorizons/pepssi.cat">Pluto Energetic Particle Spectrometer Science Investigation</a> (PEPSSI)</li>
-<li><a href="/catalogs/NewHorizons/rex.cat">Radio Science Experiment</a> (REX)</li>
-<li><a href="/catalogs/NewHorizons/sdc.cat">Student Dust Counter</a> (SDC)</li>
-<li><a href="/catalogs/NewHorizons/swap.cat">Solar Wind Around Pluto</a> (SWAP)</li>
+<li><a href="/holdings/pds4-nh_documents:alice-v1.0/documents/alice_inst_overview.pdf">ALICE Ultraviolet Imaging Spectrograph</a> (ALICE)</li>
+<li><a href="/holdings/pds4-nh_documents:ralph-v2.0/documents/leisa_inst_overview.pdf">Linear Etalon Imaging Spectral Array</a> (LEISA/RALPH)</li>
+<li><a href="/holdings/pds4-nh_documents:lorri-v1.0/documents/lorri_inst_overview.pdf">Long Range Reconnaissance Imager</a> (LORRI)</li>
+<li><a href="/holdings/pds4-nh_documents:ralph-v2.0/documents/mvic_inst_overview.pdf">Multispectral Visible Imaging Camera</a> (MVIC/RALPH)</li>
+<li><a href="/holdings/pds4-nh_documents:pepssi-v2.0/documents/pepssi_inst_overview.pdf">Pluto Energetic Particle Spectrometer Science Investigation</a> (PEPSSI)</li>
+<li><a href="/holdings/pds4-nh_documents:rex-v1.0/documents/rex_inst_overview.pdf">Radio Science Experiment</a> (REX)</li>
+<li><a href="/holdings/pds4-nh_documents:sdc-v2.0/documents/sdc_inst_overview.pdf">Student Dust Counter</a> (SDC)</li>
+<li><a href="/holdings/pds4-nh_documents:swap-v1.0/documents/swap_inst_overview.pdf">Solar Wind Around Pluto</a> (SWAP)</li>
 </ul>
 
 <!-- Mission Data ======================================================= -->
@@ -183,23 +184,23 @@ EDIT HISTORY:
 <li><a href="/holdings/pds4-nh_mvic:pluto_cal-v1.0/SUPPORT/dataset.shtml">New Horizons MVIC Pluto Encounter Partially Processed Data</a> <code>urn:nasa:pds:nh_mvic:pluto_cal::1.0</code></li>
 <li><a href="/holdings/pds4-nh_pepssi:pluto_raw-v1.0/SUPPORT/dataset.shtml">New Horizons PEPSSI Pluto Encounter Raw Data</a> <code>urn:nasa:pds:nh_pepssi:pluto_raw::1.0</code></li>
 <li><a href="/holdings/pds4-nh_pepssi:pluto_cal-v1.0/SUPPORT/dataset.shtml">New Horizons PEPSSI Pluto Encounter Calibrated Data</a> <code>urn:nasa:pds:nh_pepssi:pluto_cal::1.0</code></li>
-<li><a href="/holdings/nh-p-pepssi-4-plasma-v1.0/dataset.shtml">New Horizons PEPSSI Pluto Encounter Resampled Plasma Fluxes</a></li><!-- NH-P-PEPSSI-4-PLASMA-V1.0 -->
+<li><a href="/holdings/pds4-nh_derived:plutosystem_plasma_fluxes-v1.0/SUPPORT/dataset.shtml">New Horizons Encounter with the Pluto System: Time-Averaged Solar Winds Particle and Ion Fluxes from PEPSSI Observations</a> <code>urn:nasa:pds:nh_derived:plutosystem_plasma_fluxes::1.0</code></li>
 <li><a href="/holdings/pds4-nh_sdc:pluto_raw-v1.0/SUPPORT/dataset.shtml">New Horizons SDC Pluto Encounter Raw Data</a> <code>urn:nasa:pds:nh_sdc:pluto_raw::1.0</code></li>
 <li><a href="/holdings/pds4-nh_sdc:pluto_cal-v1.0/SUPPORT/dataset.shtml">New Horizons SDC Pluto Encounter Calibrated Data</a> <code>urn:nasa:pds:nh_sdc:pluto_cal::1.0</code></li>
 <li><a href="/holdings/nh-p-swap-2-pluto-v3.0/dataset.shtml">New Horizons SWAP Pluto Encounter Raw Data v3.0</a></li><!-- NH-P-SWAP-2-PLUTO-V3.0 -->
 <li><a href="/holdings/nh-p-swap-3-pluto-v3.0/dataset.shtml">New Horizons SWAP Pluto Encounter Calibrated Data v3.0</a></li><!-- NH-P-SWAP-3-PLUTO-V3.0 -->
-<li><a href="/holdings/nh-p-swap-5-derived-solarwind-v1.0/dataset.shtml">New Horizons SWAP Pluto Encounter Solar Wind Derived Characteristics</a></li><!-- NH-P-SWAP-5-DERIVED-SOLARWIND-V1.0 -->
+<li><a href="/holdings/pds4-nh_derived:plutosystem_solar_wind-v1.0/SUPPORT/dataset.shtml">New Horizons Encounter with the Pluto System: Solar Wind Parameters from SWAP Observations</a> <code>urn:nasa:pds:nh_derived:plutosystem_solar_wind::1.0</code></li>
 <li><a href="/holdings/nh-p-rex-2-pluto-v2.0/dataset.shtml">New Horizons REX Pluto Encounter Raw Data v2.0</a></li><!-- NH-P-REX-2-PLUTO-V2.0 -->
 <li><a href="/holdings/nh-p-rex-3-pluto-v1.0/dataset.shtml">New Horizons REX Pluto Encounter Calibrated Data</a></li><!-- NH-P-REX-3-PLUTO-V1.0 -->
-<li><a href="/holdings/nh-p_psa-leisa_mvic-5-comp-v1.0/dataset.shtml">New Horizons Pluto Encounter Surface Composition Maps</a></li><!-- NH-P/PSA-LEISA/MVIC-5-COMP-V1.0 -->
-<li><a href="/holdings/nh-p_psa-lorri_alice_rex-5-atmos-v2.0/dataset.shtml">New Horizons Pluto Encounter Atmosphere Data v2.0</a></li><!-- NH-P/PSA-LORRI/ALICE/REX-5-ATMOS-V2.0 -->
-<li><a href="/holdings/nh-p_psa-lorri_mvic-5-geophys-v1.0/dataset.shtml">New Horizons Pluto Encounter Geology and Geophysical Maps</a></li><!-- NH-P/PSA-LORRI/MVIC-5-GEOPHYS-V1.0 -->
+<li><a href="/holdings/pds4-nh_derived:plutosystem_composition-v1.0/SUPPORT/dataset.shtml">New Horizons Encounter with the Pluto System: Global Color Maps, Image Cubes, and Absorption Band Maps from the LEISA and MVIC Instruments</a> <code>urn:nasa:pds:nh_derived:plutosystem_composition::1.0</code></li>
+<li><a href="/holdings/pds4-nh_derived:plutosystem_atmospherics-v1.0/SUPPORT/dataset.shtml">New Horizons Encounter with the Pluto System: Atmospheric Opacities and Composition, Temperature, Pressure, and Haze Profiles from the LORRI, Alice, and REX Instruments</a> <code>urn:nasa:pds:nh_derived:plutosystem_atmospherics::1.0</code></li>
+<li><a href="/holdings/pds4-nh_derived:plutosystem_geophysics-v1.0/SUPPORT/dataset.shtml">New Horizons Encounter with the Pluto System: Mosaics, Topographic Maps, and Bond Albedo Maps for Pluto and Charon from LORRI and MVIC Observations</a> <code>urn:nasa:pds:nh_derived:plutosystem_geophysics::1.0</code></li>
 </ul>
 
 <h3>Other Mission Datasets</h3>
 <ul>
 <li><a href="https://naif.jpl.nasa.gov/naif/data_archived.html">New Horizons Spice Kernels</a></li><!-- NH-J_P_SS-SPICE-6-V1.0 -->
-<li><a href="/holdings/nh-x-swap-5-derived-solarwind-v2.0/dataset.shtml">New Horizons SWAP Solar Wind Derived Data v2.0</a></li><!-- NH-X-SWAP-5-DERIVED-SOLARWIND-V2.0 -->
+<li><a href="/holdings/pds4-nh_derived:ipm_solar_wind-v1.0/SUPPORT/dataset.shtml">New Horizons Primary and Extended Missions: Solar Wind Parameters</a> <code>urn:nasa:pds:nh_derived:ipm_solar_wind::1.0</code></li>
 <li><a href="/holdings/pds4-nh_documents-v4.2/SUPPORT/dataset.shtml">New Horizons Mission Instrument-Specific and Mission-Wide Documents v4.2</a> <code>urn:nasa:pds:nh_documents::4.2</code></li>
 <li><a href="/holdings/pds4-nh_alice:calibration_files-v1.0/SUPPORT/dataset.shtml">New Horizons Alice Reference Files Used in Calibrating Data</a> <code>urn:nasa:pds:nh_alice:calibration_files::1.0</code></li>
 <li><a href="/holdings/pds4-nh_lorri:calibration_files-v1.0/SUPPORT/dataset.shtml">New Horizons LORRI Reference Files Used in Calibrating Data</a> <code>urn:nasa:pds:nh_lorri:calibration_files::1.0</code></li>
@@ -214,6 +215,7 @@ EDIT HISTORY:
 <h3>Related Datasets</h3>
 <p>Use the <a href="https://sbnapps.psi.edu/ferret/">Small Bodies Data Ferret</a> to find other datasets for this mission/target.</p>
 <ul>
+<li><a href="/holdings/pds4-nh_secondary-v1.0/SUPPORT/dataset.shtml">Secondary Collections to Support New Horizons Research Results</a> <code>urn:nasa:pds:nh_secondary::1.0</code></li>
 <li><a href="/holdings/pds4-nh_derived:lorri_cob-v1.0/SUPPORT/dataset.shtml">New Horizons Cosmic Optical Background Observations</a> <code>urn:nasa:pds:nh_derived:lorri_cob::1.0</code></li>
 <li><a href="/holdings/pds4-nh_derived:pluto_albedo-v1.0/SUPPORT/dataset.shtml">Bolometric Hemispherical Albedo Map of Pluto from New Horizons Observations</a> <code>urn:nasa:pds:nh_derived:pluto_albedo::1.0</code></li>
 </ul>

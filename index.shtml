@@ -59,6 +59,17 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 <ul class="news">
 
 
+<!-- 2025.07.03 -->
+<li><span class="date">2025.07.03</span> New Horizons
+<ul>
+<li><a href="/holdings/pds4-nh_swap-v2.0/SUPPORT/dataset.shtml">New Horizons SWAP Data Archive v2.0</a> <code>urn:nasa:pds:nh_swap::2.0</code>
+	<ul>
+	<li><a href="/holdings/pds4-nh_swap:pluto_raw-v1.0/SUPPORT/dataset.shtml">New Horizons SWAP Pluto Encounter Raw Data</a> <code>urn:nasa:pds:nh_swap:pluto_raw::1.0</code></li>
+	<li><a href="/holdings/pds4-nh_swap:pluto_cal-v1.0/SUPPORT/dataset.shtml">New Horizons SWAP Pluto Encounter Calibrated Data</a> <code>urn:nasa:pds:nh_swap:pluto_cal::1.0</code></li>
+	<li><a href="/holdings/pds4-nh_swap:pluto_data_summary_plots-v1.0/SUPPORT/dataset.shtml">New Horizons SWAP Pluto Encounter Data Summary Plots</a> <code>urn:nasa:pds:nh_swap:pluto_data_summary_plots::1.0</code></li>
+	</ul></li>
+</ul></li>
+
 <!-- 2025.07.01 -->
 <li><span class="date">2025.07.01</span> New Horizons
 <ul>

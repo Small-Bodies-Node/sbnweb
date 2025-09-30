@@ -60,6 +60,17 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 <h2>New @ SBN</h2>
 <ul class="news">
 
+<!-- 2025.09.30 -->
+<li><span class="date">2025.09.30</span> New Horizons
+<ul>
+<li><a href="/holdings/pds4-nh_rex-v1.0/SUPPORT/dataset.shtml">New Horizons REX Data Archive</a> <code>urn:nasa:pds:nh_rex::1.0</code>
+	<ul>
+	<li><a href="/holdings/pds4-nh_rex:kem1_cal-v1.0/SUPPORT/dataset.shtml">New Horizons REX KEM1 Encounter Raw Data</a> <code>urn:nasa:pds:nh_rex:kem1_raw::1.0</code></li>
+	<li><a href="/holdings/pds4-nh_rex:kem1_raw-v1.0/SUPPORT/dataset.shtml">New Horizons REX KEM1 Encounter Calibrated Data</a> <code>urn:nasa:pds:nh_rex:kem1_cal::1.0</code></li>
+	<li><a href="/holdings/pds4-nh_rex:kem1_tnf-v1.0/SUPPORT/dataset.shtml">New Horizons REX KEM1 Encounter Tracking and Navigation Files</a> <code>urn:nasa:pds:nh_rex:kem1_tnf::1.0</code></li>
+	</ul></li>
+</ul></li>
+
 <!-- 2025.07.08 -->
 <li><span class="date">2025.07.08</span> Fixes to the following bundle and collections have been made:
 <br>+ <a href="/holdings/pds4-nh_lorri-v1.0/SUPPORT/dataset.shtml">New Horizons LORRI Data Archive</a> <code>urn:nasa:pds:nh_lorri::1.0</code>
@@ -163,17 +174,6 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 		<ul>
 		<li><a href="/holdings/pds4-nh_documents:sdc-v2.0/SUPPORT/dataset.shtml">New Horizons Documents for the SDC Instrument v2.0</a> <code>urn:nasa:pds:nh_documents:sdc::2.0</code></li>
 		</ul></li>
-</ul></li>
-
-<!-- 2025.02.14 -->
-<li><span class="date">2025.02.14</span> New Horizons Migration
-<ul>
-<li><a href="/holdings/pds4-nh_pepssi-v1.0/SUPPORT/dataset.shtml">New Horizons PEPSSI Data Archive</a> <code>urn:nasa:pds:nh_pepssi::1.0</code>
-	<ul>
-	<li><a href="/holdings/pds4-nh_pepssi:calibration_files-v1.0/SUPPORT/dataset.shtml">New Horizons PEPSSI Reference Files Used in Calibrating Data</a> <code>urn:nasa:pds:nh_pepssi:calibration_files::1.0</code></li>
-	<li><a href="/holdings/pds4-nh_pepssi:kem1_raw-v1.0/SUPPORT/dataset.shtml">New Horizons PEPSSI KEM1 Encounter Raw Data</a> <code>urn:nasa:pds:nh_pepssi:kem1_raw::1.0</code></li>
-	<li><a href="/holdings/pds4-nh_pepssi:kem1_cal-v1.0/SUPPORT/dataset.shtml">New Horizons PEPSSI KEM1 Encounter Calibrated Data</a> <code>urn:nasa:pds:nh_pepssi:kem1_cal::1.0</code></li>
-	</ul></li>
 </ul></li>
 
 </ul>

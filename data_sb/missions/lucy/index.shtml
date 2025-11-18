@@ -1,21 +1,17 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-
 <head>
 <meta http-equiv="content-type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>SBN Mission Support: Lucy Mission</title>
-
 <!-- 
 ########################
 ALL of the head, style links, header and menu code is in the include. Edit that file with extreme care!!
 ########################
  -->
 <!--#include virtual="/css-n-includes/incl_top.inc"-->
-
 <!-- ################################################ LEFT SIDEBAR ########################################## -->
 <!--#include virtual="/css-n-includes/incl_left-side.inc"-->
-
 <!-- ################################################ RIGHT SIDEBAR ########################################## -->
 <div id="rightcol">
 <div class="sidebarSection">
@@ -25,7 +21,6 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 <li>Mission: <a href="http://lucy.swri.edu/" onclick="this.target='_blank'">Lucy</a></li><!-- <li>NSSDC: <a href="https://nssdc.gsfc.nasa.gov/nmc/spacecraftDisplay.do?id=2006-001A" onclick="this.target='_blank'">New Horizons</a></li> -->
 <li>NASA: <a href="https://www.nasa.gov/lucy/" onclick="this.target='_blank'">Lucy</a></li>
 <li>SSE: <a href="https://solarsystem.nasa.gov/missions/lucy/in-depth/" onclick="this.target='_blank'">Lucy</a></li>
-
 </ul>
 </div>
 <!-- end class sidebarSection -->
@@ -42,24 +37,17 @@ EDIT HISTORY:
 + 2023-04-13 EMW	added MBA targets in description
 + 2019-02-08 EMW	added links, desciption, instruments
 + 2019-02-06 EMW	created page
-
 ===========================================================================
 -->
-
 <!-- Mission Title ====================================================== -->
 <h1>Lucy</h1>
-
 <!-- Mission Description ================================================ -->
 <p>Lucy is a NASA mission that will tour six Jupiter trojans, asteroids which share Jupiter's orbit around the Sun, orbiting either ahead of or behind the planet and main belt asteroids 152830 Dinkinesh and 52246 Donaldjohanson. Trojan asteroids may be remnants of the primordial material that formed the outer planets, and serve as time capsules from the birth of our Solar System more than 4 billion years ago. Lucy was launched in Oct 2021 and will arrive at the L4 Trojan cloud in 2027, where it will fly by four Trojans, 3548 Eurybates, 15094 Polymele, 11351 Leucus, and 21900 Orus. After these flybys, Lucy will return to the vicinity of the Earth whereupon it will receive a gravity assist to take it to the L5 Trojan cloud, where it will visit the binary Trojan 617 Patroclus with its satellite Menoetius.</p>
-
 <p></p>
-
 <!-- SBN Role =========================================================== -->
 <p>The SBN is the lead PDS node to archive the Lucy mission data. </p>
-
 <!-- PDS Subscription Service =========================================== -->
 <!-- <p>Use <a href="https://pds.nasa.gov/datasearch/subscription-service/top.cfm" onclick="this.target='_blank'"><strong>PDS Subscription Service</strong></a> to be first to get the New Horizons data. Sign up there to receive an e-mail notification when new data arrives for each New Horizons instrument.</p> -->
-
 <!-- Instrument List ==================================================== -->
 <h2>Instruments</h2>
 <ul>
@@ -73,11 +61,10 @@ EDIT HISTORY:
 
 <!-- Mission Data ======================================================= -->
 <h2>Data Sets</h2>
-
 <h3>Didymos Observations (2022)</h3>
 <ul>
-<li><a href="/holdings/pds4-lucy.llorri:data_didymos_raw-v1.0/SUPPORT/dataset.shtml">L'LORRI Raw Data</a> <code>urn:nasa:pds:lucy.llorri:data_didymos_raw::1.0</code></li>
-<li><a href="/holdings/pds4-lucy.llorri:data_didymos_partially_processed-v1.0/SUPPORT/dataset.shtml">L'LORRI Partially Processed Data</a> <code>urn:nasa:pds:lucy.llorri:data_didymos_partially_processed::1.0</code></li>
+<li><a href="/holdings/pds4-lucy.llorri:data_didymos_raw-v2.0/SUPPORT/dataset.shtml">Lucy L'LORRI Didymos Raw Data v2.0</a> <code>urn:nasa:pds:lucy.llorri:data_didymos_raw::2.0</code></li>
+	<li><a href="/holdings/pds4-lucy.llorri:data_didymos_partially_processed-v2.0/SUPPORT/dataset.shtml">Lucy L'LORRI Didymos Partially Processed Data v2.0</a> <code>urn:nasa:pds:lucy.llorri:data_didymos_partially_processed::2.0</code></li>
 </ul>
 
 <h3>Dinkinesh Encounter (2023)</h3>
@@ -99,10 +86,23 @@ EDIT HISTORY:
 <li><a href="/holdings/pds4-lucy.ttcam:data_dinkinesh_calibrated-v1.0/SUPPORT/dataset.shtml">Lucy TTCam Dinkinesh Calibrated Data Collection</a> <code>urn:nasa:pds:lucy.ttcam:data_dinkinesh_calibrated::1.0</code></li>
 </ul>
 
-
 <h3>DonaldJohanson Encounter (2025)</h3>
 <ul>
-<li></li>
+<li><a href="/holdings/pds4-lucy.mission:document-v2.0/Donaldjohanson_Coordinate_System_Description_v1.pdf">Donaldjohanson Coordinate System Description</a></li>
+<li><a href="/holdings/pds4-lucy.llorri:data_donaldjohanson_raw-v1.0/SUPPORT/dataset.shtml">Lucy L'LORRI Donaldjohanson Raw Data</a> <code>urn:nasa:pds:lucy.llorri:data_donaldjohanson_raw::1.0</code></li>
+<li><a href="/holdings/pds4-lucy.llorri:data_donaldjohanson_partially_processed-v1.0/SUPPORT/dataset.shtml">Lucy L'LORRI Donaldjohanson Partially Processed Data</a> <code>urn:nasa:pds:lucy.llorri:data_donaldjohanson_partially_processed::1.0</code></li>
+<li><a href="/holdings/pds4-lucy.leisa:data_donaldjohanson_raw-v1.0/SUPPORT/dataset.shtml">Lucy L'Ralph LEISA Donaldjohanson Raw Data Collection</a> <code>urn:nasa:pds:lucy.leisa:data_donaldjohanson_raw::1.0</code></li>
+<li><a href="/holdings/pds4-lucy.leisa:data_donaldjohanson_calibrated-v1.0/SUPPORT/dataset.shtml">Lucy L'Ralph LEISA Donaldjohanson Calibrated Data Collection</a> <code>urn:nasa:pds:lucy.leisa:data_donaldjohanson_calibrated::1.0</code></li>
+<li><a href="/holdings/pds4-lucy.mvic:data_donaldjohanson_raw-v1.0/SUPPORT/dataset.shtml">Lucy L'Ralph MVIC Donaldjohanson Raw Data</a> <code>urn:nasa:pds:lucy.mvic:data_donaldjohanson_raw::1.0</code></li>
+<li><a href="/holdings/pds4-lucy.mvic:data_donaldjohanson_calibrated-v1.0/SUPPORT/dataset.shtml">Lucy L'Ralph MVIC Donaldjohanson Calibrated Data</a> <code>urn:nasa:pds:lucy.mvic:data_donaldjohanson_calibrated::1.0</code></li>
+<li><a href="/holdings/pds4-lucy.rss:data_donaldjohanson_ion-v1.0/SUPPORT/dataset.shtml">Lucy Donaldjohanson Encounter Ionosphere Radio Science Data</a> <code>urn:nasa:pds:lucy.rss:data_donaldjohanson_ion::1.0</code></li>
+<li><a href="/holdings/pds4-lucy.rss:data_donaldjohanson_sff-v1.0/SUPPORT/dataset.shtml">Lucy Donaldjohanson Encounter Radio Science Small Forces Files</a> <code>urn:nasa:pds:lucy.rss:data_donaldjohanson_sff::1.0</code></li>
+<li><a href="/holdings/pds4-lucy.rss:data_donaldjohanson_skyfreq-v1.0/SUPPORT/dataset.shtml">Lucy Donaldjohanson Encounter Calibrated Sky Frequency Radio Science Data</a> <code>urn:nasa:pds:lucy.rss:data_donaldjohanson_skyfreq::1.0</code></li>
+<li><a href="/holdings/pds4-lucy.rss:data_donaldjohanson_trk234-v1.0/SUPPORT/dataset.shtml">Lucy Donaldjohanson Encounter TRK-2-34 Radio Science Data</a> <code>urn:nasa:pds:lucy.rss:data_donaldjohanson_trk234::1.0</code></li>
+<li><a href="/holdings/pds4-lucy.ltes:data_donaldjohanson_raw-v1.0/SUPPORT/dataset.shtml">Lucy L'TES Donaldjohanson Raw Data</a> <code>urn:nasa:pds:lucy.ltes:data_donaldjohanson_raw::1.0</code></li>
+<li><a href="/holdings/pds4-lucy.ltes:data_donaldjohanson_hkraw-v1.0/SUPPORT/dataset.shtml">Lucy L'TES Donaldjohanson Raw Housekeeping Data</a> <code>urn:nasa:pds:lucy.ltes:data_donaldjohanson_hkraw::1.0</code></li>
+<li><a href="/holdings/pds4-lucy.ttcam:data_donaldjohanson_raw-v1.0/SUPPORT/dataset.shtml">Lucy TTCam Donaldjohanson Raw Data</a> <code>urn:nasa:pds:lucy.ttcam:data_donaldjohanson_raw::1.0</code></li>
+<li><a href="/holdings/pds4-lucy.ttcam:data_donaldjohanson_calibrated-v1.0/SUPPORT/dataset.shtml">Lucy TTCam Donaldjohanson Calibrated Data</a> <code>urn:nasa:pds:lucy.ttcam:data_donaldjohanson_calibrated::1.0</code></li>
 </ul>
 
 <h3>Eurybates and Polymele Encounters (2027)</h3>
@@ -125,27 +125,24 @@ EDIT HISTORY:
 <li></li>
 </ul>
 
-
 <h3>Other Mission Datasets</h3>
 <ul>
-<li><a href="/holdings/pds4-lucy.llorri:calibration-v2.0/SUPPORT/dataset.shtml">Lucy L'LORRI Calibration Collection v2.0</a> <code>urn:nasa:pds:lucy.llorri:calibration::2.0</code></li>
+<li><a href="/holdings/pds4-lucy.llorri:calibration-v3.0/SUPPORT/dataset.shtml">Lucy L'LORRI Calibration Collection v3.0</a> <code>urn:nasa:pds:lucy.llorri:calibration::3.0</code></li>
 <li><a href="/holdings/pds4-lucy.llorri:document-v2.0/SUPPORT/dataset.shtml">Lucy L'LORRI Document Collection v2.0</a> <code>urn:nasa:pds:lucy.llorri:document::2.0</code></li>
-<li><a href="/holdings/pds4-lucy.leisa:calibration-v1.0/SUPPORT/dataset.shtml">Lucy LEISA Calibration Collection</a> <code>urn:nasa:pds:lucy.leisa:calibration::1.0</code></li>
-<li><a href="/holdings/pds4-lucy.leisa:document-v1.0/SUPPORT/dataset.shtml">Lucy LEISA Document Collection</a> <code>urn:nasa:pds:lucy.leisa:document::1.0</code></li>
-<li><a href="/holdings/pds4-lucy.mvic:calibration-v1.0/SUPPORT/dataset.shtml">Lucy MVIC Calibration Collection</a> <code>urn:nasa:pds:lucy.mvic:calibration::1.0</code></li>
-<li><a href="/holdings/pds4-lucy.mvic:document-v1.0/SUPPORT/dataset.shtml">Lucy MVIC Document Collection</a> <code>urn:nasa:pds:lucy.mvic:document::1.0</code></li>
+<li><a href="/holdings/pds4-lucy.leisa:calibration-v2.0/SUPPORT/dataset.shtml">Lucy L'Ralph LEISA Calibration Collection v2.0</a> <code>urn:nasa:pds:lucy.leisa:calibration::2.0</code></li>
+<li><a href="/holdings/pds4-lucy.leisa:document-v2.0/SUPPORT/dataset.shtml">Lucy L'Ralph LEISA Document Collection v2.0</a> <code>urn:nasa:pds:lucy.leisa:document::2.0</code></li>
+<li><a href="/holdings/pds4-lucy.mvic:calibration-v2.0/SUPPORT/dataset.shtml">Lucy L'Ralph MVIC Calibration Collection v2.0</a> <code>urn:nasa:pds:lucy.mvic:calibration::2.0</code></li>
+<li><a href="/holdings/pds4-lucy.mvic:document-v2.0/SUPPORT/dataset.shtml">Lucy L'Ralph MVIC Document Collection v2.0</a> <code>urn:nasa:pds:lucy.mvic:document::2.0</code></li>
 <li><a href="/holdings/pds4-lucy.rss:document-v1.0/SUPPORT/dataset.shtml">Lucy Radio Science Subsystem Document Collection</a> <code>urn:nasa:pds:lucy.rss:document::1.0</code></li>
 <li><a href="/holdings/pds4-lucy.ltes:document-v1.0/SUPPORT/dataset.shtml">Lucy L'TES Document Collection</a> <code>urn:nasa:pds:lucy.ltes:document::1.0</code></li>
 <li><a href="/holdings/pds4-lucy.ttcam:calibration-v1.0/SUPPORT/dataset.shtml">Lucy TTCam Calibration Collection</a> <code>urn:nasa:pds:lucy.ttcam:calibration::1.0</code></li>
 <li><a href="/holdings/pds4-lucy.ttcam:document-v1.0/SUPPORT/dataset.shtml">Lucy TTCam Document Collection</a> <code>urn:nasa:pds:lucy.ttcam:document::1.0</code></li>
-<li><a href="/holdings/pds4-lucy.mission:document-v1.0/SUPPORT/dataset.shtml">Lucy Mission Document Collection</a> <code>urn:nasa:pds:lucy.mission:document::1.0</code></li>
+<li><a href="/holdings/pds4-lucy.mission:document-v2.0/SUPPORT/dataset.shtml">Lucy Mission Document Collection v2.0</a> <code>urn:nasa:pds:lucy.mission:document::2.0</code></li>
 </ul>
 
 <h3>Related Datasets</h3>
 <p>Use the <a href="https://sbnapps.psi.edu/ferret/">Small Bodies Data Ferret</a> to find other datasets for this mission/target.</p>
-
 <h3>Other Links</h3>
-
 <!-- ************************************************** End editing! ************************************************** -->
 <!--#include virtual="/css-n-includes/incl_bottom.inc"-->
 <br />Last updated:
@@ -160,5 +157,4 @@ EDIT HISTORY:
 </div>
 <!-- close wrapper -->
 </body>
-
 </html>

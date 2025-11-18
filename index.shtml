@@ -1,25 +1,20 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-
 <head>
 <meta http-equiv="content-type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>PDS: Small Bodies Node Home</title>
-
 <!-- 
 ########################
 ALL of the head, style links, header and menu code is in the include. Edit that file with extreme care!!
 ########################
  -->
 <!--#include virtual="/css-n-includes/incl_top.inc"-->
-
 <!-- ################################################ LEFT SIDEBAR ########################################## -->
 <!--#include virtual="/css-n-includes/incl_left-side.inc"-->
-
 <!-- ################################################ RIGHT SIDEBAR ########################################## -->
 <!-- If there is a job (or anything that needs a right sidebar), use the jobs (or other) include and use div id="centercol"; otherwise, delete include line and use div id="centerwide" -->
 <!-- jobs include goes here when we have one -->
-
 <!-- ################################################ MAIN ################################################## -->
 <div id="centerwide"><!-- USE WHEN JUST HAVE LEFT AND MAIN CONTENT -->
 <!-- <div id="centercol"> --><!-- USE WHEN HAVE LEFT AND NEED RIGHT CONTENT -->
@@ -27,44 +22,79 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 <!-- ************************************************** You may begin editing! ************************************************** -->
 <h1>Welcome to the PDS Small Bodies Node</h1>
 <p><img src="/webdings/planets.jpg" width="89" height="92" class="left" alt="thumbnail of planets" />The <strong>S</strong>mall <strong>B</strong>odies <strong>N</strong>ode (SBN), a part of NASA's <strong><a href="https://pds.jpl.nasa.gov/" onclick="this.target='_blank'">Planetary Data System</a></strong>, specializes in the archiving, cataloging, and distributing of scientific data sets relevant to asteroids, comets and interplanetary dust.</p>
-
 <p>More specifically, SBN seeks to archive data from:</p>
 <ul>
 <li>space missions (primarily NASA, but also from other national agencies) that target small bodies or that have collected small bodies data</li>
 <li>laboratory and ground-based data collected in support of small bodies missions as well as contributed ground-based observations</li>
 <li>collected information about small bodies from published literature</li>
 </ul>
-
 <p>NASA missions are <em>obligated</em> to archive their data within PDS so most of the data is related to and in support of NASA missions. Ground-based observers are <em>not required</em> to archive their data (because they are often funded from non-NASA/public sources) but are <em>welcome</em> to <a href="/howto/prepare_PDS4.shtml">contribute their data</a>.</p>
-
 <h2>Data Analysis Proposals Support</h2>
 <p><strong><em>Proposers please note:</em></strong> If you are planning to use PDS data for your ROSES data analysis proposal (e.g., Discovery Data Analysis Program, Cassini Data Analysis, Lunar Data Analysis, etc), please note the archive status indicated on the top of each dataset webpage. A status of &quot;archived&quot; or &quot;locally archived&quot; indicates the data are in their final form, while &quot;certified&quot; indicates there are minor editing corrections still to be made. Data sets with other status levels may be either in active development, or considered to have some significant deficiency. Proposers are urged to consult the ROSES solicitation and the appendix for the Program Element to which they are proposing for the specific guidelines on the use of spacecraft data in general and data sets with known issues in particular.</p>
 <ul class="news">
-
 <li>+ <a href="/proposals/ROSES.shtml">SBN Support for ROSES 2025</a></li>
-
 <li>+ <a href="https://nspires.nasaprs.com/external/solicitations/summary!init.do?solId={2A1D139B-B9C7-CE8C-2E81-223FD08460F9}&path=open" onclick="this.target='_blank'">ROSES 2025</a> at <a href="https://nspires.nasaprs.com/external/" onclick="this.target='_blank'">NSPIRES</a>.</li>
-
 <li>+ <a href="https://nspires.nasaprs.com/external/solicitations/summary.do?solId=%7B600EE5E5-E9D5-FF55-0CAD-764F6D4BEEA9%7D" onclick="this.target='_blank'">ROSES 2024</a> at <a href="https://nspires.nasaprs.com/external/" onclick="this.target='_blank'">NSPIRES</a>.</li>
-
 <!-- <li>+ <a href="https://nspires.nasaprs.com/external/solicitations/summary!init.do?solId=%7B274C8365-A038-339F-A3AE-8F5BFE178312%7D" onclick="this.target='_blank'">ROSES 2023</a> at <a href="https://nspires.nasaprs.com/external/" onclick="this.target='_blank'">NSPIRES</a>.</li> -->
-
 <!-- <li>+ <a href="https://nspires.nasaprs.com/external/solicitations/summary!init.do?solId={341BDCCE-1F95-D00C-38B3-D9CB183FFEEB}" onclick="this.target='_blank'">ROSES 2022</a> at <a href="https://nspires.nasaprs.com/external/" onclick="this.target='_blank'">NSPIRES</a>.</li> -->
-
 <!-- <li>+ <a href="https://nspires.nasaprs.com/external/solicitations/summary!init.do?solId=%7B7E892B3A-4F62-AEB4-6A08-9DCA1977F31A%7D" onclick="this.target='_blank'">ROSES 2021</a> at <a href="https://nspires.nasaprs.com/external/" onclick="this.target='_blank'">NSPIRES</a>.</li> -->
 </ul>
 
 <h2>Data Release Schedule</h2>
 <p>The <a href="https://pds.nasa.gov/datasearch/subscription-service/data-release-calendar.shtml">PDS Data Release Calendar</a> has the proposed dates of when mission data provided to the SBN for archiving will be publicly available. Additionally, SBN maintains a ground-based and R&amp;A <a href="/data_sb/resources/release_sched.shtml">data release schedule</a>.</p>
-
 <h2>New @ SBN</h2>
 <ul class="news">
-
+<!-- 2025.11.18 -->
+<li><span class="date">2025.11.18</span> Lucy
+<ul>
+<li><a href="/holdings/pds4-lucy.llorri-v3.0/SUPPORT/dataset.shtml">Lucy L'LORRI Bundle v3.0</a> <code>urn:nasa:pds:lucy.llorri::3.0</code>
+	<ul>
+	<li><a href="/holdings/pds4-lucy.llorri:data_donaldjohanson_raw-v1.0/SUPPORT/dataset.shtml">Lucy L'LORRI Donaldjohanson Raw Data</a> <code>urn:nasa:pds:lucy.llorri:data_donaldjohanson_raw::1.0</code></li>
+	<li><a href="/holdings/pds4-lucy.llorri:data_donaldjohanson_partially_processed-v1.0/SUPPORT/dataset.shtml">Lucy L'LORRI Donaldjohanson Partially Processed Data</a> <code>urn:nasa:pds:lucy.llorri:data_donaldjohanson_partially_processed::1.0</code></li>
+	<li><a href="/holdings/pds4-lucy.llorri:data_didymos_raw-v2.0/SUPPORT/dataset.shtml">Lucy L'LORRI Didymos Raw Data v2.0</a> <code>urn:nasa:pds:lucy.llorri:data_didymos_raw::2.0</code></li>
+	<li><a href="/holdings/pds4-lucy.llorri:data_didymos_partially_processed-v2.0/SUPPORT/dataset.shtml">Lucy L'LORRI Didymos Partially Processed Data v2.0</a> <code>urn:nasa:pds:lucy.llorri:data_didymos_partially_processed::2.0</code></li>
+	<li><a href="/holdings/pds4-lucy.llorri:calibration-v3.0/SUPPORT/dataset.shtml">Lucy L'LORRI Calibration Collection v3.0</a> <code>urn:nasa:pds:lucy.llorri:calibration::3.0</code></li>
+	</ul></li>
+<li><a href="/holdings/pds4-lucy.leisa-v2.0/SUPPORT/dataset.shtml">Lucy L'Ralph LEISA Bundle v2.0</a> <code>urn:nasa:pds:lucy.leisa::2.0</code>
+	<ul>
+	<li><a href="/holdings/pds4-lucy.leisa:data_donaldjohanson_raw-v1.0/SUPPORT/dataset.shtml">Lucy L'Ralph LEISA Donaldjohanson Raw Data Collection</a> <code>urn:nasa:pds:lucy.leisa:data_donaldjohanson_raw::1.0</code></li>
+	<li><a href="/holdings/pds4-lucy.leisa:data_donaldjohanson_calibrated-v1.0/SUPPORT/dataset.shtml">Lucy L'Ralph LEISA Donaldjohanson Calibrated Data Collection</a> <code>urn:nasa:pds:lucy.leisa:data_donaldjohanson_calibrated::1.0</code></li>
+	<li><a href="/holdings/pds4-lucy.leisa:calibration-v2.0/SUPPORT/dataset.shtml">Lucy L'Ralph LEISA Calibration Collection v2.0</a> <code>urn:nasa:pds:lucy.leisa:calibration::2.0</code></li>
+	<li><a href="/holdings/pds4-lucy.leisa:document-v2.0/SUPPORT/dataset.shtml">Lucy L'Ralph LEISA Document Collection v2.0</a> <code>urn:nasa:pds:lucy.leisa:document::2.0</code></li>
+	</ul></li>
+<li><a href="/holdings/pds4-lucy.mvic-v2.0/SUPPORT/dataset.shtml">Lucy L'Ralph MVIC Bundle v2.0</a> <code>urn:nasa:pds:lucy.mvic::2.0</code>
+	<ul>
+	<li><a href="/holdings/pds4-lucy.mvic:data_donaldjohanson_raw-v1.0/SUPPORT/dataset.shtml">Lucy L'Ralph MVIC Donaldjohanson Raw Data</a> <code>urn:nasa:pds:lucy.mvic:data_donaldjohanson_raw::1.0</code></li>
+	<li><a href="/holdings/pds4-lucy.mvic:data_donaldjohanson_calibrated-v1.0/SUPPORT/dataset.shtml">Lucy L'Ralph MVIC Donaldjohanson Calibrated Data</a> <code>urn:nasa:pds:lucy.mvic:data_donaldjohanson_calibrated::1.0</code></li>
+	<li><a href="/holdings/pds4-lucy.mvic:calibration-v2.0/SUPPORT/dataset.shtml">Lucy L'Ralph MVIC Calibration Collection v2.0</a> <code>urn:nasa:pds:lucy.mvic:calibration::2.0</code></li>
+	<li><a href="/holdings/pds4-lucy.mvic:document-v2.0/SUPPORT/dataset.shtml">Lucy L'Ralph MVIC Document Collection v2.0</a> <code>urn:nasa:pds:lucy.mvic:document::2.0</code></li>
+	</ul></li>
+<li><a href="/holdings/pds4-lucy.rss-v2.0/SUPPORT/dataset.shtml">Lucy Radio Science Bundle v2.0</a> <code>urn:nasa:pds:lucy.rss::2.0</code>
+	<ul>
+	<li><a href="/holdings/pds4-lucy.rss:data_donaldjohanson_ion-v1.0/SUPPORT/dataset.shtml">Lucy Donaldjohanson Encounter Ionosphere Radio Science Data</a> <code>urn:nasa:pds:lucy.rss:data_donaldjohanson_ion::1.0</code></li>
+	<li><a href="/holdings/pds4-lucy.rss:data_donaldjohanson_sff-v1.0/SUPPORT/dataset.shtml">Lucy Donaldjohanson Encounter Radio Science Small Forces Files</a> <code>urn:nasa:pds:lucy.rss:data_donaldjohanson_sff::1.0</code></li>
+	<li><a href="/holdings/pds4-lucy.rss:data_donaldjohanson_skyfreq-v1.0/SUPPORT/dataset.shtml">Lucy Donaldjohanson Encounter Calibrated Sky Frequency Radio Science Data</a> <code>urn:nasa:pds:lucy.rss:data_donaldjohanson_skyfreq::1.0</code></li>
+	<li><a href="/holdings/pds4-lucy.rss:data_donaldjohanson_trk234-v1.0/SUPPORT/dataset.shtml">Lucy Donaldjohanson Encounter TRK-2-34 Radio Science Data</a> <code>urn:nasa:pds:lucy.rss:data_donaldjohanson_trk234::1.0</code></li>
+	</ul></li>
+<li><a href="/holdings/pds4-lucy.ltes-v2.0/SUPPORT/dataset.shtml">Lucy L'TES Bundle v2.0</a> <code>urn:nasa:pds:lucy.ltes::2.0</code>
+	<ul>
+	<li><a href="/holdings/pds4-lucy.ltes:data_donaldjohanson_raw-v1.0/SUPPORT/dataset.shtml">Lucy L'TES Donaldjohanson Raw Data</a> <code>urn:nasa:pds:lucy.ltes:data_donaldjohanson_raw::1.0</code></li>
+	<li><a href="/holdings/pds4-lucy.ltes:data_donaldjohanson_hkraw-v1.0/SUPPORT/dataset.shtml">Lucy L'TES Donaldjohanson Raw Housekeeping Data</a> <code>urn:nasa:pds:lucy.ltes:data_donaldjohanson_hkraw::1.0</code></li>
+	</ul></li>
+<li><a href="/holdings/pds4-lucy.ttcam-v2.0/SUPPORT/dataset.shtml">Lucy TTCam Data Archive v2.0</a> <code>urn:nasa:pds:lucy.ttcam::2.0</code>
+	<ul>
+	<li><a href="/holdings/pds4-lucy.ttcam:data_donaldjohanson_raw-v1.0/SUPPORT/dataset.shtml">Lucy TTCam Donaldjohanson Raw Data</a> <code>urn:nasa:pds:lucy.ttcam:data_donaldjohanson_raw::1.0</code></li>
+	<li><a href="/holdings/pds4-lucy.ttcam:data_donaldjohanson_calibrated-v1.0/SUPPORT/dataset.shtml">Lucy TTCam Donaldjohanson Calibrated Data</a> <code>urn:nasa:pds:lucy.ttcam:data_donaldjohanson_calibrated::1.0</code></li>
+	</ul></li>
+<li><a href="/holdings/pds4-lucy.mission-v2.0/SUPPORT/dataset.shtml">Lucy Mission Bundle v2.0</a> <code>urn:nasa:pds:lucy.mission::2.0</code>
+	<ul>
+	<li><a href="/holdings/pds4-lucy.mission:document-v2.0/SUPPORT/dataset.shtml">Lucy Mission Document Collection v2.0</a> <code>urn:nasa:pds:lucy.mission:document::2.0</code></li>
+	</ul></li>
+</ul></li>
 
 <!-- 2025.11.18 -->
 <li><span class="date">2025.11.18</span> New Horizons
 <ul>
-
 <li><a href="/holdings/pds4-nh_documents-v4.3/SUPPORT/dataset.shtml">New Horizons Mission Instrument-Specific and Mission-Wide Documents v4.3</a> <code>urn:nasa:pds:nh_documents::4.3</code>
 	<ul>
 	<li><a href="/holdings/pds4-nh_documents:lorri-v2.0/SUPPORT/dataset.shtml">New Horizons Documents for the LORRI Instrument v2.0</a> <code>urn:nasa:pds:nh_documents:lorri::2.0</code></li>
@@ -172,25 +202,21 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 		<li><a href="/holdings/pds4-nh_leisa:pluto_raw-v1.0/SUPPORT/dataset.shtml">New Horizons LEISA Pluto Encounter Raw Data</a> <code>urn:nasa:pds:nh_leisa:pluto_raw::1.0</code></li>
 		<li><a href="/holdings/pds4-nh_leisa:pluto_cal-v1.0/SUPPORT/dataset.shtml">New Horizons LEISA Pluto Encounter Calibrated Data</a> <code>urn:nasa:pds:nh_leisa:pluto_cal::1.0</code></li>
 		</ul></li>
-
 	<li><a href="/holdings/pds4-nh_mvic-v2.0/SUPPORT/dataset.shtml">New Horizons MVIC Data Archive v2.0</a> <code>urn:nasa:pds:nh_mvic::2.0</code>
 		<ul>
 		<li><a href="/holdings/pds4-nh_mvic:pluto_raw-v1.0/SUPPORT/dataset.shtml">New Horizons MVIC Pluto Encounter Raw Data</a> <code>urn:nasa:pds:nh_mvic:pluto_raw::1.0</code></li>
 		<li><a href="/holdings/pds4-nh_mvic:pluto_cal-v1.0/SUPPORT/dataset.shtml">New Horizons MVIC Pluto Encounter Partially Processed Data</a> <code>urn:nasa:pds:nh_mvic:pluto_cal::1.0</code></li>
 		</ul></li>
-
 	<li><a href="/holdings/pds4-nh_sdc-v2.0/SUPPORT/dataset.shtml">New Horizons SDC Data Archive v2.0</a> <code>urn:nasa:pds:nh_sdc::2.0</code>
 			<ul>
 			<li><a href="/holdings/pds4-nh_sdc:pluto_raw-v1.0/SUPPORT/dataset.shtml">New Horizons SDC Pluto Encounter Raw Data</a> <code>urn:nasa:pds:nh_sdc:pluto_raw::1.0</code></li>
 			<li><a href="/holdings/pds4-nh_sdc:pluto_cal-v1.0/SUPPORT/dataset.shtml">New Horizons SDC Pluto Encounter Calibrated Data</a> <code>urn:nasa:pds:nh_sdc:pluto_cal::1.0</code></li>
 			</ul></li>
-
 	<li><a href="/holdings/pds4-nh_documents-v4.1/SUPPORT/dataset.shtml">New Horizons Mission Instrument-Specific and Mission-Wide Documents v4.1</a> <code>urn:nasa:pds:nh_documents::4.1</code>
 		<ul>
 		<li><a href="/holdings/pds4-nh_documents:sdc-v2.0/SUPPORT/dataset.shtml">New Horizons Documents for the SDC Instrument v2.0</a> <code>urn:nasa:pds:nh_documents:sdc::2.0</code></li>
 		</ul></li>
 </ul></li>
-
 </ul>
 
 <!-- ************************************************** End editing! ************************************************** -->
@@ -207,5 +233,4 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 </div>
 <!-- close wrapper -->
 </body>
-
 </html>

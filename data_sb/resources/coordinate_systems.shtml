@@ -1,29 +1,24 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-
 <head>
 <meta http-equiv="content-type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>PDS-SBN: Coordinate Systems</title>
-
 <!-- 
 ########################
 ALL of the head, style links, header and menu code is in the include. Edit that file with extreme care!!
 ########################
  -->
 <!--#include virtual="/css-n-includes/incl_top.inc"-->
-
 <!-- ################################################ LEFT SIDEBAR ########################################## -->
 <!--#include virtual="/css-n-includes/incl_left-side.inc"-->
-
-
 <!-- ################################################ MAIN ################################################## -->
 <div id="centerwide">
 <a name="mainContent"></a>
 <!-- ************************************************** You may begin editing! ************************************************** -->
 <h1>Coordinate Systems at PDS-SBN</h1>
-<p>Any project or individual who will be submitting products to SBN that involve coordinates on the surface of a small body must adhere to the international guidelines for such coordinates and must also insure the coordinate system used is sufficiently documented. The <a href="SBN_Coordinate_System_Guidelines20220912.pdf">SBN Coordinate System Guidelines</a> is an essential reference to meeting the PDS and SBN requirements for coordinate systems, and should be read carefully by anyone planning to submit such products to SBN. Examples of coordinate system documents already archived in SBN are below.</p>
 
+<p>Any project or individual who will be submitting products to SBN that involve coordinates on the surface of a small body must adhere to the international guidelines for such coordinates and must also insure the coordinate system used is sufficiently documented. The <a href="SBN_Coordinate_System_Guidelines20220912.pdf">SBN Coordinate System Guidelines</a> is an essential reference to meeting the PDS and SBN requirements for coordinate systems, and should be read carefully by anyone planning to submit such products to SBN. Examples of coordinate system documents already archived in SBN are below.</p>
 
 <h2>Guideline</h2>
 <ul>
@@ -34,19 +29,14 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 <h2>Example coordinate system documents</h2>
 <ul>
 <li><a href="https://sbnarchive.psi.edu/pds4/orex/orex.mission/document/Bennu_Coordinate_System_Description.pdf">OSIRIS-REx Bennu</a></li>
-
 <li><a href="https://sbnarchive.psi.edu/pds4/hayabusa2/hyb2/document/Ryugu_Coordinate_System_Description.pdf">Hayabusa2 Ryugu</a></li>
-
 <li><a href="https://sbnarchive.psi.edu/pds3/dawn/grand/DWNVGRD_1B/DOCUMENT/VESTA_COORDINATES/VESTA_COORDINATES_131018.PDF">Dawn Vesta</a></li>
-
 <li><a href="https://sbnarchive.psi.edu/pds3/dawn/grav/DWNCGRS_2_v3_181005/DOCUMENT/CERES_COORD_SYS_180628.PDF">Dawn Ceres</a></li>
-
 <li><a href="/holdings/ro-c-multi-5-67p-shape-v1.0/document/cheops_ref_frame_v1.pdf">67P/C-G Reference Frames and Mapping Scheme</a></li>
-
-<li><a href="/holdings/pds4-dart:document_draco-v2.0/dimorphos_coordinate_system_description_v1.pdf">Dimorphos Coordinate System Description</a></li>
-
+<li><a href="/holdings/pds4-dart:document_draco-v3.0/dimorphos_coordinate_system_description_v2.pdf">Dimorphos Coordinate System Description v2.0</a></li>
+<li><a href="/holdings/pds4-dart:document_draco-v3.0/didymos_coordinate_system_description_v1.pdf">Didymos Coordinate System Description</a></li>
+<li><a href="/holdings/pds4-lucy.mission:document-v2.0/Donaldjohanson_Coordinate_System_Description_v1.pdf">Donaldjohanson Coordinate System Description</a></li>
 </ul>
-
 
 <!-- ************************************************** End editing! ************************************************** -->
 <!--#include virtual="/css-n-includes/incl_bottom.inc"-->
@@ -62,5 +52,4 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 </div>
 <!-- close wrapper -->
 </body>
-
 </html>

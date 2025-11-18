@@ -1,21 +1,17 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-
 <head>
 <meta http-equiv="content-type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>SBN Mission Support: New Horizons</title>
-
 <!-- 
 ########################
 ALL of the head, style links, header and menu code is in the include. Edit that file with extreme care!!
 ########################
  -->
 <!--#include virtual="/css-n-includes/incl_top.inc"-->
-
 <!-- ################################################ LEFT SIDEBAR ########################################## -->
 <!--#include virtual="/css-n-includes/incl_left-side.inc"-->
-
 <!-- ################################################ RIGHT SIDEBAR ########################################## -->
 <div id="rightcol">
 <div class="sidebarSection">
@@ -83,13 +79,11 @@ EDIT HISTORY:
 					"mission data" section. 
 ===========================================================================
 -->
-
 <!-- Mission Title ====================================================== -->
 <h1>New Horizons Mission</h1>
 
 <!-- Mission Description ================================================ -->
 <p>New Horizons is a robotic spacecraft mission conducted by NASA. It was the first spacecraft to fly by and study the dwarf planet Pluto and its moons, Charon, Nix and Hydra. After the successful flyby of Pluto, the spacecraft continued on for a Jan 2019 flyby of as part of the <a href="../nh-kem/index.shtml">New Horizons (NH) Kuiper Belt Extended Missions (KEM and KEM2)</a>. The mission was prepared primarily by Southwest Research Institute (SwRI) and the Johns Hopkins Applied Physics Laboratory (APL). New Horizons was successfully launched on January 19, 2006. After a flyby of Jupiter on February 28, 2007 at 5:43:40 UTC, New Horizons is expected to arrive at Pluto in July 2015. As New Horizons passed through the Jovian system for a gravity assist in February, it performed scientific observations of Jupiter, the Galilean satellites, the Jovian rings, Himalia, Elara, and Earth.</p>
-
 <p>The New Horizons primary goal is to improve our understanding of the worlds at the edge of our solar system. The mission will image and map the surface appearance with visible-wavelength cameras, perform near infrared spectral studies to determine surface composition, and probe the atmospheres with ultraviolet spectrometers and radio waves to study escape of the atmosphere as well as the interaction of the atmosphere with the solar wind.</p>
 
 <!-- SBN Role =========================================================== -->
@@ -113,7 +107,6 @@ EDIT HISTORY:
 
 <!-- Mission Data ======================================================= -->
 <h2>Data Sets</h2>
-
 <h3>Post-Launch Checkout</h3>
 <ul>
 <li><a href="/holdings/nh-x-alice-2-launch-v2.0/dataset.shtml">New Horizons ALICE Post-Launch Checkout v2.0 - Raw</a></li>
@@ -242,5 +235,4 @@ EDIT HISTORY:
 </div>
 <!-- close wrapper -->
 </body>
-
 </html>

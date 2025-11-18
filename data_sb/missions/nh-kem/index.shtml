@@ -1,21 +1,17 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-
 <head>
 <meta http-equiv="content-type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>SBN Mission Support: New Horizons Kuiper Belt Extended Missions</title>
-
 <!-- 
 ########################
 ALL of the head, style links, header and menu code is in the include. Edit that file with extreme care!!
 ########################
  -->
 <!--#include virtual="/css-n-includes/incl_top.inc"-->
-
 <!-- ################################################ LEFT SIDEBAR ########################################## -->
 <!--#include virtual="/css-n-includes/incl_left-side.inc"-->
-
 <!-- ################################################ RIGHT SIDEBAR ########################################## -->
 <div id="rightcol">
 <div class="sidebarSection">
@@ -64,16 +60,13 @@ EDIT HISTORY:
 + 2019-02-06 EMW	minor edits (needs more!) to description
 + 2018-09-13 EMW	made live
 + 2018-08-15 EMW	created page
-
 ===========================================================================
 -->
-
 <!-- Mission Title ====================================================== -->
 <h1>New Horizons Kuiper Belt Extended Missions (KEM and KEM2)</h1>
 
 <!-- Mission Description ================================================ -->
 <p>Following the success of the Pluto flyby, and with a fully operational and healthy spacecraft and payload, the New Horizons project was approved for its first extended mission: a 5-year long Kuiper Belt Extended Mission (KEM). KEM extends spacecraft exploration of the Kuiper Belt out to a distance of 50 AU, which the spacecraft will reach in early 2021. The main objective of KEM is an extensive study of the Kuiper Belt environment, observing numerous Kuiper Belt Objects (KBOs) and Centaurs in unique ways, and making the first close flyby of the KBO 486958 2014 MU69 (Arrokoth). The close flyby of MU69 occurred on January 1, 2019, and the data are now on the way to the Earth. The mission also delivers pre-flyby and post-flyby cruise data for all instruments.</p>
-
 <p> A further extended mission was granted, the Kuiper Belt Extend Mission 2 (KEM2), to continue to study the Kuiper Belt dust, gas, plasma, energetic particles environments, and any other targets of opportunity.</p>
 
 <!-- SBN Role =========================================================== -->
@@ -97,10 +90,8 @@ EDIT HISTORY:
 
 <!-- Mission Data ======================================================= -->
 <h2>Data Sets</h2>
-
 <h3>Cruise to First KBO Encounter</h3>
 <ul>
-
 <li><a href="/holdings/nh-x-alice-2-kemcruise1-v2.0/dataset.shtml">New Horizons ALICE KEM Cruise 1 Raw Data v2.0</a></li><!-- NH-X-ALICE-2-KEMCRUISE1-V2.0 -->
 <li><a href="/holdings/nh-x-alice-3-kemcruise1-v2.0/dataset.shtml">New Horizons ALICE KEM Cruise 1 Calibrated Data v2.0</a></li><!-- NH-X-ALICE-3-KEMCRUISE1-V2.0 -->
 <li><a href="/holdings/nh-x-leisa-2-kemcruise1-v2.0/dataset.shtml">New Horizons LEISA KEM Cruise 1 Raw Data v2.0</a></li><!-- NH-X-LEISA-2-KEMCRUISE1-V2.0 -->
@@ -187,15 +178,6 @@ EDIT HISTORY:
 <br>The Ring-Moon Systems Node's <a href="https://opus.pds-rings.seti.org" onclick="this.target='_blank'">OPUS search tool</a> can be used to find New Horizons <a href="https://opus.pds-rings.seti.org/#/instrument=New+Horizons+LORRI&widgets=instrument,observationtype,target" onclick="this.target='_blank'">LORRI</a> and <a href="https://opus.pds-rings.seti.org/#/instrument=New+Horizons+MVIC&widgets=instrument,observationtype,target" onclick="this.target='_blank'">MVIC</a> data.
 <br>The Ring-Moon Systems Node's <a href="https://pds-rings.seti.org/viewmaster/volumes" onclick="this.target='_blank'">Viewmaster browsing tool</a> can be used to find New Horizons <a href="https://pds-rings.seti.org/viewmaster/volumes/NHxxLO_xxxx" onclick="this.target='_blank'">LORRI</a> and <a href="https://pds-rings.seti.org/viewmaster/volumes/NHxxMV_xxxx" onclick="this.target='_blank'">MVIC</a> data.
 </p>
-
-
-
-
-
-
-
-
-
 <!-- ************************************************** End editing! ************************************************** -->
 <!--#include virtual="/css-n-includes/incl_bottom.inc"-->
 <br>Last updated:
@@ -210,5 +192,4 @@ EDIT HISTORY:
 </div>
 <!-- close wrapper -->
 </body>
-
 </html>

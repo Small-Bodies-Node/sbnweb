@@ -60,6 +60,21 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 <h2>New @ SBN</h2>
 <ul class="news">
 
+
+<!-- 2025.11.18 -->
+<li><span class="date">2025.11.18</span> New Horizons
+<ul>
+
+<li><a href="/holdings/pds4-nh_documents-v4.3/SUPPORT/dataset.shtml">New Horizons Mission Instrument-Specific and Mission-Wide Documents v4.3</a> <code>urn:nasa:pds:nh_documents::4.3</code>
+	<ul>
+	<li><a href="/holdings/pds4-nh_documents:lorri-v2.0/SUPPORT/dataset.shtml">New Horizons Documents for the LORRI Instrument v2.0</a> <code>urn:nasa:pds:nh_documents:lorri::2.0</code></li>
+	</ul></li>
+<li><a href="/holdings/pds4-nh_swap-v2.1/SUPPORT/dataset.shtml">New Horizons SWAP Data Archive v2.1</a> <code>urn:nasa:pds:nh_swap::2.1</code>
+	<ul>
+	<li><a href="/holdings/pds4-nh_swap:trajectory-v2.0/SUPPORT/dataset.shtml">New Horizons Spacecraft Trajectory v2.0</a> <code>urn:nasa:pds:nh_swap:trajectory::2.0</code></li>
+	</ul></li>
+</ul></li>
+
 <!-- 2025.09.30 -->
 <li><span class="date">2025.09.30</span> New Horizons
 <ul>

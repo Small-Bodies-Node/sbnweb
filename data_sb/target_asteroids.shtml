@@ -19,6 +19,8 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 <!--
 ===========================================================================
 EDIT HISTORY:
++ 2025-11-20 EMW	Lucy LTES calibrated
++ 2025-11-18 EMW	Lucy donaldjohanson release, most instruments
 + 2025-09-30 EMW	NH REX KEM1 K5 migration (added PDS4) under Arrokoth
 + 2025-07-01 EMW	NH Derived migration release 2025-07-01
 + 2025-06-16 EMW	PEPSSI NH Pluto Encounter migrated datasets
@@ -576,6 +578,7 @@ EDIT HISTORY:
 <li><a href="/holdings/pds4-lucy.rss:data_donaldjohanson_trk234-v1.0/SUPPORT/dataset.shtml">Lucy Donaldjohanson Encounter TRK-2-34 Radio Science Data</a> <code>urn:nasa:pds:lucy.rss:data_donaldjohanson_trk234::1.0</code></li>
 <li><a href="/holdings/pds4-lucy.ltes:data_donaldjohanson_raw-v1.0/SUPPORT/dataset.shtml">Lucy L'TES Donaldjohanson Raw Data</a> <code>urn:nasa:pds:lucy.ltes:data_donaldjohanson_raw::1.0</code></li>
 <li><a href="/holdings/pds4-lucy.ltes:data_donaldjohanson_hkraw-v1.0/SUPPORT/dataset.shtml">Lucy L'TES Donaldjohanson Raw Housekeeping Data</a> <code>urn:nasa:pds:lucy.ltes:data_donaldjohanson_hkraw::1.0</code></li>
+<li><a href="/holdings/pds4-lucy.ltes:data_donaldjohanson_calibrated-v1.0/SUPPORT/dataset.shtml">Lucy L'TES Donaldjohanson Calibrated Data</a> <code>urn:nasa:pds:lucy.ltes:data_donaldjohanson_calibrated::1.0</code></li>
 <li><a href="/holdings/pds4-lucy.ttcam:data_donaldjohanson_raw-v1.0/SUPPORT/dataset.shtml">Lucy TTCam Donaldjohanson Raw Data</a> <code>urn:nasa:pds:lucy.ttcam:data_donaldjohanson_raw::1.0</code></li>
 <li><a href="/holdings/pds4-lucy.ttcam:data_donaldjohanson_calibrated-v1.0/SUPPORT/dataset.shtml">Lucy TTCam Donaldjohanson Calibrated Data</a> <code>urn:nasa:pds:lucy.ttcam:data_donaldjohanson_calibrated::1.0</code></li>
 </ul>

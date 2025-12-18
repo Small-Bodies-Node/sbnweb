@@ -35,6 +35,7 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 <!--
 ===========================================================================
 EDIT HISTORY:
++ 2025-12-17 EMW	migrated (raw, calibrated) LORRI Pluto Encounter
 + 2025-11-18 EMW	traj v2
 + 2025-07-03 EMW	PDS3 to PDS4 NH SWAP, encounter
 + 2025-07-01 EMW	NH Derived migration release 2025-07-01
@@ -173,8 +174,8 @@ EDIT HISTORY:
 <li><a href="/holdings/pds4-nh_alice:pluto_cal-v1.0/SUPPORT/dataset.shtml">New Horizons Alice Pluto Encounter Calibrated Data</a> <code>urn:nasa:pds:nh_alice:pluto_cal::1.0</code></li>
 <li><a href="/holdings/pds4-nh_leisa:pluto_raw-v1.0/SUPPORT/dataset.shtml">New Horizons LEISA Pluto Encounter Raw Data</a> <code>urn:nasa:pds:nh_leisa:pluto_raw::1.0</code></li>
 <li><a href="/holdings/pds4-nh_leisa:pluto_cal-v1.0/SUPPORT/dataset.shtml">New Horizons LEISA Pluto Encounter Calibrated Data</a> <code>urn:nasa:pds:nh_leisa:pluto_cal::1.0</code></li>
-<li><a href="/holdings/nh-p-lorri-2-pluto-v3.0/dataset.shtml">New Horizons LORRI Pluto Encounter Raw Data v3.0</a></li><!-- NH-P-LORRI-2-PLUTO-V3.0 -->
-<li><a href="/holdings/nh-p-lorri-3-pluto-v3.0/dataset.shtml">New Horizons LORRI Pluto Encounter Calibrated Data v3.0</a></li><!-- NH-P-LORRI-3-PLUTO-V3.0 -->
+<li><a href="/holdings/pds4-nh_lorri:pluto_raw-v1.0/SUPPORT/dataset.shtml">New Horizons LORRI Pluto Encounter Raw Data</a> <code>urn:nasa:pds:nh_lorri:pluto_raw::1.0</code></li>
+<li><a href="/holdings/pds4-nh_lorri:pluto_cal-v1.0/SUPPORT/dataset.shtml">New Horizons LORRI Pluto Encounter Partially Processed Data</a> <code>urn:nasa:pds:nh_lorri:pluto_cal::1.0</code></li>
 <li><a href="/holdings/pds4-nh_mvic:pluto_raw-v1.0/SUPPORT/dataset.shtml">New Horizons MVIC Pluto Encounter Raw Data</a> <code>urn:nasa:pds:nh_mvic:pluto_raw::1.0</code></li>
 <li><a href="/holdings/pds4-nh_mvic:pluto_cal-v1.0/SUPPORT/dataset.shtml">New Horizons MVIC Pluto Encounter Partially Processed Data</a> <code>urn:nasa:pds:nh_mvic:pluto_cal::1.0</code></li>
 <li><a href="/holdings/pds4-nh_pepssi:pluto_raw-v1.0/SUPPORT/dataset.shtml">New Horizons PEPSSI Pluto Encounter Raw Data</a> <code>urn:nasa:pds:nh_pepssi:pluto_raw::1.0</code></li>

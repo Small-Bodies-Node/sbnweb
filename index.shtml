@@ -45,6 +45,16 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 <h2>New @ SBN</h2>
 <ul class="news">
 
+<!-- 2025.12.17 -->
+<li><span class="date">2025.12.17</span> New Horizons LORRI Pluto Encounter Migrated
+<ul>
+	<li><a href="/holdings/pds4-nh_lorri-v2.0/SUPPORT/dataset.shtml">New Horizons LORRI Data Archive v2.0</a> <code>urn:nasa:pds:nh_lorri::2.0</code>
+	<ul>
+	<li><a href="/holdings/pds4-nh_lorri:pluto_raw-v1.0/SUPPORT/dataset.shtml">New Horizons LORRI Pluto Encounter Raw Data</a> <code>urn:nasa:pds:nh_lorri:pluto_raw::1.0</code></li>
+	<li><a href="/holdings/pds4-nh_lorri:pluto_cal-v1.0/SUPPORT/dataset.shtml">New Horizons LORRI Pluto Encounter Partially Processed Data</a> <code>urn:nasa:pds:nh_lorri:pluto_cal::1.0</code></li>
+	</ul></li>
+</ul></li>
+
 <!-- 2025.11.20 -->
 <li><span class="date">2025.11.20</span> Lucy L'TES Donaldjohanson Calibrated
 <ul>

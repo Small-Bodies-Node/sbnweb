@@ -19,6 +19,7 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 <!--
 ===========================================================================
 EDIT HISTORY:
++ 2025-12-17 EMW	migrated (raw, calibrated) LORRI Pluto Encounter (Imaging)
 + 2025-11-20 EMW	Lucy LTES calibrated
 + 2025-11-18 EMW	Lucy donaldjohanson release, most instruments
 + 2025-09-30 EMW	NH REX KEM1 K5 migration (replaced PDS3 v5 with PDS4) under Radio Science
@@ -352,8 +353,8 @@ EDIT HISTORY:
 <li><a href="/holdings/nh-j-lorri-3-jupiter-v3.0/dataset.shtml">New Horizons LORRI Jupiter Encounter Calibrated Data v3.0</a></li><!-- NH-J-LORRI-3-JUPITER-V3.0 -->
 <li><a href="/holdings/nh-x-lorri-2-plutocruise-v2.0/dataset.shtml">New Horizons LORRI Pluto Cruise Raw Data v2.0</a></li><!-- NH-X-LORRI-2-PLUTOCRUISE-V2.0 -->
 <li><a href="/holdings/nh-x-lorri-3-plutocruise-v2.0/dataset.shtml">New Horizons LORRI Pluto Cruise Calibrated Data v2.0</a></li><!-- NH-X-LORRI-3-PLUTOCRUISE-V2.0 -->
-<li><a href="/holdings/nh-p-lorri-2-pluto-v3.0/dataset.shtml">New Horizons LORRI Pluto Encounter Raw Data v3.0</a></li><!-- NH-P-LORRI-2-PLUTO-V3.0 -->
-<li><a href="/holdings/nh-p-lorri-3-pluto-v3.0/dataset.shtml">New Horizons LORRI Pluto Encounter Calibrated Data v3.0</a></li><!-- NH-P-LORRI-3-PLUTO-V3.0 -->
+<li><a href="/holdings/pds4-nh_lorri:pluto_raw-v1.0/SUPPORT/dataset.shtml">New Horizons LORRI Pluto Encounter Raw Data</a> <code>urn:nasa:pds:nh_lorri:pluto_raw::1.0</code></li>
+<li><a href="/holdings/pds4-nh_lorri:pluto_cal-v1.0/SUPPORT/dataset.shtml">New Horizons LORRI Pluto Encounter Partially Processed Data</a> <code>urn:nasa:pds:nh_lorri:pluto_cal::1.0</code></li>
 <li><a href="/holdings/nh-x-mvic-2-plutocruise-v1.0/dataset.shtml">New Horizons MVIC Pluto Cruise Raw Data</a></li><!-- NH-X-MVIC-2-PLUTOCRUISE-V1.0 -->
 <li><a href="/holdings/nh-x-mvic-3-plutocruise-v1.0/dataset.shtml">New Horizons MVIC Pluto Cruise Calibrated Data</a></li><!-- NH-X-MVIC-3-PLUTOCRUISE-V1.0 -->
 <li><a href="/holdings/pds4-nh_mvic:pluto_raw-v1.0/SUPPORT/dataset.shtml">New Horizons MVIC Pluto Encounter Raw Data</a> <code>urn:nasa:pds:nh_mvic:pluto_raw::1.0</code></li>

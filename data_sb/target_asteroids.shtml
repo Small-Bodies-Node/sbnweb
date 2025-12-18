@@ -19,6 +19,7 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 <!--
 ===========================================================================
 EDIT HISTORY:
++ 2025-12-17 EMW	migrated (raw, calibrated) LORRI Pluto Encounter (6 places)
 + 2025-11-20 EMW	Lucy LTES calibrated
 + 2025-11-18 EMW	Lucy donaldjohanson release, most instruments
 + 2025-09-30 EMW	NH REX KEM1 K5 migration (added PDS4) under Arrokoth
@@ -508,8 +509,8 @@ EDIT HISTORY:
 <a name="15810_Arawn"></a>
 <h2>(15810)&nbsp;Arawn</h2>
 <ul>
-<li><a href="/holdings/nh-p-lorri-2-pluto-v3.0/dataset.shtml">New Horizons LORRI Pluto Encounter Raw Data v3.0</a></li><!-- NH-P-LORRI-2-PLUTO-V3.0 -->
-<li><a href="/holdings/nh-p-lorri-3-pluto-v3.0/dataset.shtml">New Horizons LORRI Pluto Encounter Calibrated Data v3.0</a></li><!-- NH-P-LORRI-3-PLUTO-V3.0 -->
+<li><a href="/holdings/pds4-nh_lorri:pluto_raw-v1.0/SUPPORT/dataset.shtml">New Horizons LORRI Pluto Encounter Raw Data</a> <code>urn:nasa:pds:nh_lorri:pluto_raw::1.0</code></li>
+<li><a href="/holdings/pds4-nh_lorri:pluto_cal-v1.0/SUPPORT/dataset.shtml">New Horizons LORRI Pluto Encounter Partially Processed Data</a> <code>urn:nasa:pds:nh_lorri:pluto_cal::1.0</code></li>
 </ul>
 
 <!-- Target Data ======================================================== -->
@@ -530,8 +531,8 @@ EDIT HISTORY:
 <a name="28978_Ixion"></a>
 <h2>(28978)&nbsp;Ixion</h2>
 <ul>
-<li><a href="/holdings/nh-p-lorri-2-pluto-v3.0/dataset.shtml">New Horizons LORRI Pluto Encounter Raw Data v3.0</a></li><!-- NH-P-LORRI-2-PLUTO-V3.0 -->
-<li><a href="/holdings/nh-p-lorri-3-pluto-v3.0/dataset.shtml">New Horizons LORRI Pluto Encounter Calibrated Data v3.0</a></li><!-- NH-P-LORRI-3-PLUTO-V3.0 -->
+<li><a href="/holdings/pds4-nh_lorri:pluto_raw-v1.0/SUPPORT/dataset.shtml">New Horizons LORRI Pluto Encounter Raw Data</a> <code>urn:nasa:pds:nh_lorri:pluto_raw::1.0</code></li>
+<li><a href="/holdings/pds4-nh_lorri:pluto_cal-v1.0/SUPPORT/dataset.shtml">New Horizons LORRI Pluto Encounter Partially Processed Data</a> <code>urn:nasa:pds:nh_lorri:pluto_cal::1.0</code></li>
 </ul>
 
 <!-- Target Data ======================================================== -->
@@ -553,8 +554,8 @@ EDIT HISTORY:
 <a name="50000_Quaoar"></a>
 <h2>(50000)&nbsp;Quaoar</h2>
 <ul>
-<li><a href="/holdings/nh-p-lorri-2-pluto-v3.0/dataset.shtml">New Horizons LORRI Pluto Encounter Raw Data v3.0</a></li><!-- NH-P-LORRI-2-PLUTO-V3.0 -->
-<li><a href="/holdings/nh-p-lorri-3-pluto-v3.0/dataset.shtml">New Horizons LORRI Pluto Encounter Calibrated Data v3.0</a></li><!-- NH-P-LORRI-3-PLUTO-V3.0 -->
+<li><a href="/holdings/pds4-nh_lorri:pluto_raw-v1.0/SUPPORT/dataset.shtml">New Horizons LORRI Pluto Encounter Raw Data</a> <code>urn:nasa:pds:nh_lorri:pluto_raw::1.0</code></li>
+<li><a href="/holdings/pds4-nh_lorri:pluto_cal-v1.0/SUPPORT/dataset.shtml">New Horizons LORRI Pluto Encounter Partially Processed Data</a> <code>urn:nasa:pds:nh_lorri:pluto_cal::1.0</code></li>
 <li><a href="/holdings/nh-x-lorri-2-kemcruise1-v2.0/dataset.shtml">New Horizons LORRI KEM Cruise 1 Raw Data v2.0</a></li><!-- NH-X-LORRI-2-KEMCRUISE1-V2.0 -->
 <li><a href="/holdings/nh-x-lorri-3-kemcruise1-v2.0/dataset.shtml">New Horizons LORRI KEM Cruise 1 Calibrated Data v2.0</a></li><!-- NH-X-LORRI-3-KEMCRUISE1-V2.0 -->
 <li><a href="/holdings/pds4-nh_lorri:kem1_raw-v1.0/SUPPORT/dataset.shtml">New Horizons LORRI KEM1 Encounter Raw Data</a> <code>urn:nasa:pds:nh_lorri:kem1_raw::1.0</code></li>
@@ -663,8 +664,8 @@ EDIT HISTORY:
 <li><a href="/holdings/pds4-nh_leisa:pluto_cal-v1.0/SUPPORT/dataset.shtml">New Horizons LEISA Pluto Encounter Calibrated Data</a> <code>urn:nasa:pds:nh_leisa:pluto_cal::1.0</code></li>
 <li><a href="/holdings/nh-x-lorri-2-plutocruise-v2.0/dataset.shtml">New Horizons LORRI Pluto Cruise Raw Data v2.0</a></li><!-- NH-X-LORRI-2-PLUTOCRUISE-V2.0 -->
 <li><a href="/holdings/nh-x-lorri-3-plutocruise-v2.0/dataset.shtml">New Horizons LORRI Pluto Cruise Calibrated Data v2.0</a></li><!-- NH-X-LORRI-3-PLUTOCRUISE-V2.0 -->
-<li><a href="/holdings/nh-p-lorri-2-pluto-v3.0/dataset.shtml">New Horizons LORRI Pluto Encounter Raw Data v3.0</a></li><!-- NH-P-LORRI-2-PLUTO-V3.0 -->
-<li><a href="/holdings/nh-p-lorri-3-pluto-v3.0/dataset.shtml">New Horizons LORRI Pluto Encounter Calibrated Data v3.0</a></li><!-- NH-P-LORRI-3-PLUTO-V3.0 -->
+<li><a href="/holdings/pds4-nh_lorri:pluto_raw-v1.0/SUPPORT/dataset.shtml">New Horizons LORRI Pluto Encounter Raw Data</a> <code>urn:nasa:pds:nh_lorri:pluto_raw::1.0</code></li>
+<li><a href="/holdings/pds4-nh_lorri:pluto_cal-v1.0/SUPPORT/dataset.shtml">New Horizons LORRI Pluto Encounter Partially Processed Data</a> <code>urn:nasa:pds:nh_lorri:pluto_cal::1.0</code></li>
 <li><a href="/holdings/pds4-nh_mvic:pluto_raw-v1.0/SUPPORT/dataset.shtml">New Horizons MVIC Pluto Encounter Raw Data</a> <code>urn:nasa:pds:nh_mvic:pluto_raw::1.0</code></li>
 <li><a href="/holdings/pds4-nh_mvic:pluto_cal-v1.0/SUPPORT/dataset.shtml">New Horizons MVIC Pluto Encounter Partially Processed Data</a> <code>urn:nasa:pds:nh_mvic:pluto_cal::1.0</code></li>
 <li><a href="/holdings/pds4-nh_pepssi:pluto_raw-v1.0/SUPPORT/dataset.shtml">New Horizons PEPSSI Pluto Encounter Raw Data</a> <code>urn:nasa:pds:nh_pepssi:pluto_raw::1.0</code></li>
@@ -765,8 +766,8 @@ EDIT HISTORY:
 <a name="307261_2002MS4"></a>
 <h2>(307261)&nbsp;2002&nbsp;MS4</h2>
 <ul>
-<li><a href="/holdings/nh-p-lorri-2-pluto-v3.0/dataset.shtml">New Horizons LORRI Pluto Encounter Raw Data v3.0</a></li><!-- NH-P-LORRI-2-PLUTO-V3.0 -->
-<li><a href="/holdings/nh-p-lorri-3-pluto-v3.0/dataset.shtml">New Horizons LORRI Pluto Encounter Calibrated Data v3.0</a></li><!-- NH-P-LORRI-3-PLUTO-V3.0 -->
+<li><a href="/holdings/pds4-nh_lorri:pluto_raw-v1.0/SUPPORT/dataset.shtml">New Horizons LORRI Pluto Encounter Raw Data</a> <code>urn:nasa:pds:nh_lorri:pluto_raw::1.0</code></li>
+<li><a href="/holdings/pds4-nh_lorri:pluto_cal-v1.0/SUPPORT/dataset.shtml">New Horizons LORRI Pluto Encounter Partially Processed Data</a> <code>urn:nasa:pds:nh_lorri:pluto_cal::1.0</code></li>
 <li><a href="/holdings/nh-x-lorri-2-kemcruise1-v2.0/dataset.shtml">New Horizons LORRI KEM Cruise 1 Raw Data v2.0</a></li><!-- NH-X-LORRI-2-KEMCRUISE1-V2.0 -->
 <li><a href="/holdings/nh-x-lorri-3-kemcruise1-v2.0/dataset.shtml">New Horizons LORRI KEM Cruise 1 Calibrated Data v2.0</a></li><!-- NH-X-LORRI-3-KEMCRUISE1-V2.0 -->
 <li><a href="/holdings/pds4-nh_lorri:kem1_raw-v1.0/SUPPORT/dataset.shtml">New Horizons LORRI KEM1 Encounter Raw Data</a> <code>urn:nasa:pds:nh_lorri:kem1_raw::1.0</code></li>
@@ -821,8 +822,8 @@ EDIT HISTORY:
 <a name="_2010JJ124"></a>
 <h2>2010&nbsp;JJ124</h2>
 <ul>
-<li><a href="/holdings/nh-p-lorri-2-pluto-v3.0/dataset.shtml">New Horizons LORRI Pluto Encounter Raw Data v3.0</a></li><!-- NH-P-LORRI-2-PLUTO-V3.0 -->
-<li><a href="/holdings/nh-p-lorri-3-pluto-v3.0/dataset.shtml">New Horizons LORRI Pluto Encounter Calibrated Data v3.0</a></li><!-- NH-P-LORRI-3-PLUTO-V3.0 -->
+<li><a href="/holdings/pds4-nh_lorri:pluto_raw-v1.0/SUPPORT/dataset.shtml">New Horizons LORRI Pluto Encounter Raw Data</a> <code>urn:nasa:pds:nh_lorri:pluto_raw::1.0</code></li>
+<li><a href="/holdings/pds4-nh_lorri:pluto_cal-v1.0/SUPPORT/dataset.shtml">New Horizons LORRI Pluto Encounter Partially Processed Data</a> <code>urn:nasa:pds:nh_lorri:pluto_cal::1.0</code></li>
 </ul>
 
 <!-- Target Data ======================================================== -->

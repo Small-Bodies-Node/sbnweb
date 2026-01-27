@@ -166,7 +166,7 @@ a:active {} /* requires a blank style for :active to stop it being buggy */
 
 <div class="clear"></div>
 <!-- BEGIN Maintenance banner -->
-
+<!--
 <table class="important">
 <tr>
 <td><h1>DOWNTIME ANNOUNCEMENT</h1>
@@ -178,7 +178,7 @@ a:active {} /* requires a blank style for :active to stop it being buggy */
 </td>
 </tr>
 </table>
-
+-->
 <!-- END Maintenance banner -->
 
 <!-- %&%&%&%&%&%&%&%&%&%&%&%&%&%&%&%&%&%&%&%&%&%& This ends the top include %&%&%&%&%&%&%&%&%&%&%&%&%&%&%&%&%&%&%&%&%&%& -->

@@ -19,6 +19,7 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 <!--
 ===========================================================================
 EDIT HISTORY:
++ 2026-02-26 EMW	added ATLAS collection to Misc
 + 2025-12-17 EMW	migrated (raw, calibrated) LORRI Pluto Encounter (Imaging)
 + 2025-11-20 EMW	Lucy LTES calibrated
 + 2025-11-18 EMW	Lucy donaldjohanson release, most instruments
@@ -1511,6 +1512,7 @@ EDIT HISTORY:
 <li><a href="/holdings/pds4-lucy.ltes:document-v1.0/SUPPORT/dataset.shtml">Lucy L'TES Document Collection</a> <code>urn:nasa:pds:lucy.ltes:document::1.0</code></li>
 <li><a href="/holdings/pds4-lucy.ttcam:document-v1.0/SUPPORT/dataset.shtml">Lucy TTCam Document Collection</a> <code>urn:nasa:pds:lucy.ttcam:document::1.0</code></li>
 <li><a href="/holdings/pds4-lucy.mission:document-v2.0/SUPPORT/dataset.shtml">Lucy Mission Document Collection v2.0</a> <code>urn:nasa:pds:lucy.mission:document::2.0</code></li>
+<li><a href="/holdings/pds4-gbo.ast.atlas.survey:document-v1.0/SUPPORT/dataset.shtml">Asteroid Terrestrial-Impact Last Alert System (ATLAS) Documents</a> <code>urn:nasa:pds:gbo.ast.atlas.survey:document::1.0</code></li>
 </ul>
 
 <!-- ************************************************** End editing! ************************************************** -->

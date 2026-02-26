@@ -47,6 +47,29 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 <ul class="news">
 
 <!-- 2026.02.26 -->
+<li><span class="date">2026.02.26</span>New Horizons SDC and REX migrated
+<ul>
+	<li><a href="/holdings/pds4-nh_rex-v2.0/SUPPORT/dataset.shtml">New Horizons REX Data Archive v2.0</a> <code>urn:nasa:pds:nh_rex::2.0</code>
+	<ul>
+	<li><a href="/holdings/pds4-nh_rex:pluto_raw-v1.0/SUPPORT/dataset.shtml">New Horizons REX Pluto Encounter Raw Data</a> <code>urn:nasa:pds:nh_rex:pluto_raw::1.0</code></li>
+	<li><a href="/holdings/pds4-nh_rex:pluto_cal-v1.0/SUPPORT/dataset.shtml">New Horizons REX Pluto Encounter Calibrated Data</a> <code>urn:nasa:pds:nh_rex:pluto_cal::1.0</code></li>
+	<li><a href="/holdings/pds4-nh_rex:pluto_tnf-v1.0/SUPPORT/dataset.shtml">New Horizons REX Pluto Encounter Tracking and Navigation Files</a> <code>urn:nasa:pds:nh_rex:pluto_tnf::1.0</code></li>
+	</ul></li>
+
+	<li><a href="/holdings/pds4-nh_sdc-v3.0/SUPPORT/dataset.shtml">New Horizons SDC Data Archive v3.0</a> <code>urn:nasa:pds:nh_sdc::3.0</code>
+	<ul>
+	<li><a href="/holdings/pds4-nh_sdc:launch_raw-v1.0/SUPPORT/dataset.shtml">New Horizons SDC Post-Launch Checkout Raw Data</a> <code>urn:nasa:pds:nh_sdc:launch_raw::1.0</code></li>
+	<li><a href="/holdings/pds4-nh_sdc:launch_cal-v1.0/SUPPORT/dataset.shtml">New Horizons SDC Post-Launch Checkout Calibrated Data</a> <code>urn:nasa:pds:nh_sdc:launch_cal::1.0</code></li>
+	<li><a href="/holdings/pds4-nh_sdc:jupiter_raw-v1.0/SUPPORT/dataset.shtml">New Horizons SDC Jupiter Encounter Raw Data</a> <code>urn:nasa:pds:nh_sdc:jupiter_raw::1.0</code></li>
+	<li><a href="/holdings/pds4-nh_sdc:jupiter_cal-v1.0/SUPPORT/dataset.shtml">New Horizons SDC Jupiter Encounter Calibrated Data</a> <code>urn:nasa:pds:nh_sdc:jupiter_cal::1.0</code></li>
+	<li><a href="/holdings/pds4-nh_sdc:plutocruise_raw-v1.0/SUPPORT/dataset.shtml">New Horizons SDC Pluto Cruise Raw Data</a> <code>urn:nasa:pds:nh_sdc:plutocruise_raw::1.0</code></li>
+	<li><a href="/holdings/pds4-nh_sdc:plutocruise_cal-v1.0/SUPPORT/dataset.shtml">New Horizons SDC Pluto Cruise Calibrated Data</a> <code>urn:nasa:pds:nh_sdc:plutocruise_cal::1.0</code></li>
+	<li><a href="/holdings/pds4-nh_sdc:kem1cruise_raw-v1.0/SUPPORT/dataset.shtml">New Horizons SDC KEM1 Cruise Raw Data</a> <code>urn:nasa:pds:nh_sdc:kem1cruise_raw::1.0</code></li>
+	<li><a href="/holdings/pds4-nh_sdc:kem1cruise_cal-v1.0/SUPPORT/dataset.shtml">New Horizons SDC KEM1 Cruise Calibrated Data</a> <code>urn:nasa:pds:nh_sdc:kem1cruise_cal::1.0</code></li>
+	</ul></li>
+</ul></li>
+
+<!-- 2026.02.26 -->
 <li><span class="date">2026.02.26</span>ATLAS
 <ul>
 	<li><a href="/holdings/pds4-gbo.ast.atlas.survey-v1.0/SUPPORT/dataset.shtml">Asteroid Terrestrial-Impact Last Alert System (ATLAS) Supplemental Bundle</a> <code>urn:nasa:pds:gbo.ast.atlas.survey::1.0</code>

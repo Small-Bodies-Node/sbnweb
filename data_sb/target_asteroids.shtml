@@ -19,6 +19,7 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 <!--
 ===========================================================================
 EDIT HISTORY:
++ 2026-02-26 EMW	migrated NH SDC, REX
 + 2025-12-17 EMW	migrated (raw, calibrated) LORRI Pluto Encounter (6 places)
 + 2025-11-20 EMW	Lucy LTES calibrated
 + 2025-11-18 EMW	Lucy donaldjohanson release, most instruments
@@ -670,8 +671,9 @@ EDIT HISTORY:
 <li><a href="/holdings/pds4-nh_mvic:pluto_cal-v1.0/SUPPORT/dataset.shtml">New Horizons MVIC Pluto Encounter Partially Processed Data</a> <code>urn:nasa:pds:nh_mvic:pluto_cal::1.0</code></li>
 <li><a href="/holdings/pds4-nh_pepssi:pluto_raw-v1.0/SUPPORT/dataset.shtml">New Horizons PEPSSI Pluto Encounter Raw Data</a> <code>urn:nasa:pds:nh_pepssi:pluto_raw::1.0</code></li>
 <li><a href="/holdings/pds4-nh_pepssi:pluto_cal-v1.0/SUPPORT/dataset.shtml">New Horizons PEPSSI Pluto Encounter Calibrated Data</a> <code>urn:nasa:pds:nh_pepssi:pluto_cal::1.0</code></li>
-<li><a href="/holdings/nh-p-rex-2-pluto-v2.0/dataset.shtml">New Horizons REX Pluto Encounter Raw Data v2.0</a></li><!-- NH-P-REX-2-PLUTO-V2.0 -->
-<li><a href="/holdings/nh-p-rex-3-pluto-v1.0/dataset.shtml">New Horizons REX Pluto Encounter Calibrated Data</a></li><!-- NH-P-REX-3-PLUTO-V1.0 -->
+<li><a href="/holdings/pds4-nh_rex:pluto_raw-v1.0/SUPPORT/dataset.shtml">New Horizons REX Pluto Encounter Raw Data</a> <code>urn:nasa:pds:nh_rex:pluto_raw::1.0</code></li>
+<li><a href="/holdings/pds4-nh_rex:pluto_cal-v1.0/SUPPORT/dataset.shtml">New Horizons REX Pluto Encounter Calibrated Data</a> <code>urn:nasa:pds:nh_rex:pluto_cal::1.0</code></li>
+<li><a href="/holdings/pds4-nh_rex:pluto_tnf-v1.0/SUPPORT/dataset.shtml">New Horizons REX Pluto Encounter Tracking and Navigation Files</a> <code>urn:nasa:pds:nh_rex:pluto_tnf::1.0</code></li>
 <li><a href="/holdings/pds4-nh_sdc:pluto_raw-v1.0/SUPPORT/dataset.shtml">New Horizons SDC Pluto Encounter Raw Data</a> <code>urn:nasa:pds:nh_sdc:pluto_raw::1.0</code></li>
 <li><a href="/holdings/pds4-nh_sdc:pluto_cal-v1.0/SUPPORT/dataset.shtml">New Horizons SDC Pluto Encounter Calibrated Data</a> <code>urn:nasa:pds:nh_sdc:pluto_cal::1.0</code></li>
 <li><a href="/holdings/ro-c-osinac-2-esc3-67pchuryumov-m18-v2.0/dataset.shtml">Rosetta-Orbiter OSIRIS Narrow Angle Camera Escort 3 MTP018 67P Raw Data v2.0</a></li><!-- RO-C-OSINAC-2-ESC3-67PCHURYUMOV-M18-V2.0 -->
@@ -796,8 +798,8 @@ EDIT HISTORY:
 <li><a href="/holdings/nh-a-leisa-3-kem2-v1.0/dataset.shtml">New Horizons LEISA KEM2 Calibrated Data</a></li><!-- NH-A-LEISA-3-KEM2-V1.0 -->
 <li><a href="/holdings/nh-a-lorri-2-kem2-v1.0/dataset.shtml">New Horizons LORRI KEM2 Raw Data</a></li><!-- NH-A-LORRI-2-KEM2-V1.0 -->
 <li><a href="/holdings/nh-a-lorri-3-kem2-v1.0/dataset.shtml">New Horizons LORRI KEM2 Calibrated Data</a></li><!-- NH-A-LORRI-3-KEM2-V1.0 -->
-<li><a href="/holdings/pds4-nh_rex:kem1_cal-v1.0/SUPPORT/dataset.shtml">New Horizons REX KEM1 Encounter Raw Data</a> <code>urn:nasa:pds:nh_rex:kem1_raw::1.0</code></li>
-<li><a href="/holdings/pds4-nh_rex:kem1_raw-v1.0/SUPPORT/dataset.shtml">New Horizons REX KEM1 Encounter Calibrated Data</a> <code>urn:nasa:pds:nh_rex:kem1_cal::1.0</code></li>
+<li><a href="/holdings/pds4-nh_rex:kem1_raw-v1.0/SUPPORT/dataset.shtml">New Horizons REX KEM1 Encounter Raw Data</a> <code>urn:nasa:pds:nh_rex:kem1_raw::1.0</code></li>
+<li><a href="/holdings/pds4-nh_rex:kem1_cal-v1.0/SUPPORT/dataset.shtml">New Horizons REX KEM1 Encounter Calibrated Data</a> <code>urn:nasa:pds:nh_rex:kem1_cal::1.0</code></li>
 <li><a href="/holdings/pds4-nh_rex:kem1_tnf-v1.0/SUPPORT/dataset.shtml">New Horizons REX KEM1 Encounter Tracking and Navigation Files</a> <code>urn:nasa:pds:nh_rex:kem1_tnf::1.0</code></li>
 <li><a href="/holdings/pds4-nh_derived:arrokoth_shapemodel_porter2024-v1.0/SUPPORT/dataset.shtml">New Horizons Porter (2024) Arrokoth Shape Model Collection</a> <code>urn:nasa:pds:nh_derived:arrokoth_shapemodel_porter2024::1.0</code></li>
 </ul>

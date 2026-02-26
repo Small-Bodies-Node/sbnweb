@@ -34,6 +34,7 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 <!--
 ===========================================================================
 EDIT HISTORY:
++ 2026-02-26 EMW	migrated (SDC, REX)
 + 2025-11-18 EMW	traj v2
 + 2025-09-30 EMW	NH REX KEM1 K5 migration (replaced PDS3 v5 with PDS4)
 + 2025-07-01 EMW	NH Derived migration release 2025-07-01
@@ -104,8 +105,8 @@ EDIT HISTORY:
 <li><a href="/holdings/nh-x-pepssi-3-kemcruise1-v2.0/dataset.shtml">New Horizons PEPSSI KEM Cruise 1 Calibrated Data v2.0</a></li><!-- NH-X-PEPSSI-3-KEMCRUISE1-V2.0 -->
 <li><a href="/holdings/nh-x-rex-2-kemcruise1-v2.0/dataset.shtml">New Horizons REX KEM Cruise 1 Raw Data v2.0</a></li><!-- NH-X-REX-2-KEMCRUISE1-V2.0 -->
 <li><a href="/holdings/nh-x-rex-3-kemcruise1-v2.0/dataset.shtml">New Horizons REX KEM Cruise 1 Calibrated Data v2.0</a></li><!-- NH-X-REX-3-KEMCRUISE1-V2.0 -->
-<li><a href="/holdings/nh-x-sdc-2-kemcruise1-v2.0/dataset.shtml">New Horizons SDC KEM Cruise 1 Raw Data v2.0</a></li><!-- NH-X-SDC-2-KEMCRUISE1-V2.0 -->
-<li><a href="/holdings/nh-x-sdc-3-kemcruise1-v2.0/dataset.shtml">New Horizons SDC KEM Cruise 1 Calibrated Data v2.0</a></li><!-- NH-X-SDC-3-KEMCRUISE1-V2.0 -->
+<li><a href="/holdings/pds4-nh_sdc:kem1cruise_raw-v1.0/SUPPORT/dataset.shtml">New Horizons SDC KEM1 Cruise Raw Data</a> <code>urn:nasa:pds:nh_sdc:kem1cruise_raw::1.0</code></li>
+<li><a href="/holdings/pds4-nh_sdc:kem1cruise_cal-v1.0/SUPPORT/dataset.shtml">New Horizons SDC KEM1 Cruise Calibrated Data</a> <code>urn:nasa:pds:nh_sdc:kem1cruise_cal::1.0</code></li>
 <li><a href="/holdings/nh-x-swap-2-kemcruise1-v2.0/dataset.shtml">New Horizons SWAP KEM Cruise 1 Raw Data v2.0</a></li><!-- NH-X-SWAP-2-KEMCRUISE1-V2.0 -->
 <li><a href="/holdings/nh-x-swap-3-kemcruise1-v2.0/dataset.shtml">New Horizons SWAP KEM Cruise 1 Calibrated Data v2.0</a></li><!-- NH-X-SWAP-3-KEMCRUISE1-V2.0 -->
 </ul>
@@ -122,8 +123,8 @@ EDIT HISTORY:
 <li><a href="/holdings/pds4-nh_mvic:kem1_cal-v1.0/SUPPORT/dataset.shtml">New Horizons MVIC KEM1 Encounter Partially Processed Data</a> <code>urn:nasa:pds:nh_mvic:kem1_cal::1.0</code></li>
 <li><a href="/holdings/pds4-nh_pepssi:kem1_raw-v1.0/SUPPORT/dataset.shtml">New Horizons PEPSSI KEM1 Encounter Raw Data</a> <code>urn:nasa:pds:nh_pepssi:kem1_raw::1.0</code></li>
 <li><a href="/holdings/pds4-nh_pepssi:kem1_cal-v1.0/SUPPORT/dataset.shtml">New Horizons PEPSSI KEM1 Encounter Calibrated Data</a> <code>urn:nasa:pds:nh_pepssi:kem1_cal::1.0</code></li>
-<li><a href="/holdings/pds4-nh_rex:kem1_cal-v1.0/SUPPORT/dataset.shtml">New Horizons REX KEM1 Encounter Raw Data</a> <code>urn:nasa:pds:nh_rex:kem1_raw::1.0</code></li>
-<li><a href="/holdings/pds4-nh_rex:kem1_raw-v1.0/SUPPORT/dataset.shtml">New Horizons REX KEM1 Encounter Calibrated Data</a> <code>urn:nasa:pds:nh_rex:kem1_cal::1.0</code></li>
+<li><a href="/holdings/pds4-nh_rex:kem1_raw-v1.0/SUPPORT/dataset.shtml">New Horizons REX KEM1 Encounter Raw Data</a> <code>urn:nasa:pds:nh_rex:kem1_raw::1.0</code></li>
+<li><a href="/holdings/pds4-nh_rex:kem1_cal-v1.0/SUPPORT/dataset.shtml">New Horizons REX KEM1 Encounter Calibrated Data</a> <code>urn:nasa:pds:nh_rex:kem1_cal::1.0</code></li>
 <li><a href="/holdings/pds4-nh_rex:kem1_tnf-v1.0/SUPPORT/dataset.shtml">New Horizons REX KEM1 Encounter Tracking and Navigation Files</a> <code>urn:nasa:pds:nh_rex:kem1_tnf::1.0</code></li>
 <li><a href="/holdings/pds4-nh_sdc:kem1_raw-v1.0/SUPPORT/dataset.shtml">New Horizons SDC KEM1 Encounter Raw Data</a> <code>urn:nasa:pds:nh_sdc:kem1_raw::1.0</code></li>
 <li><a href="/holdings/pds4-nh_sdc:kem1_cal-v1.0/SUPPORT/dataset.shtml">New Horizons SDC KEM1 Encounter Calibrated Data</a> <code>urn:nasa:pds:nh_sdc:kem1_cal::1.0</code></li>

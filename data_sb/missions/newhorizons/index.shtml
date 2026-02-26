@@ -35,6 +35,7 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 <!--
 ===========================================================================
 EDIT HISTORY:
++ 2026-02-26 EMW	migrated (SDC, REX)
 + 2025-12-17 EMW	migrated (raw, calibrated) LORRI Pluto Encounter
 + 2025-11-18 EMW	traj v2
 + 2025-07-03 EMW	PDS3 to PDS4 NH SWAP, encounter
@@ -122,8 +123,8 @@ EDIT HISTORY:
 <li><a href="/holdings/nh-x-pepssi-3-launch-v1.1/dataset.shtml">New Horizons PEPSSI Post-Launch Checkout v1.1 - Calibrated</a></li>
 <li><a href="/holdings/nh-x-rex-2-launch-v2.0/dataset.shtml">New Horizons REX Post-Launch Checkout Raw Data v2.0</a></li><!-- NH-X-REX-2-LAUNCH-V2.0 -->
 <li><a href="/holdings/nh-x-rex-3-launch-v1.0/dataset.shtml">New Horizons REX Post-Launch Checkout Calibrated Data</a></li><!-- NH-X-REX-3-LAUNCH-V1.0 -->
-<li><a href="/holdings/nh-x-sdc-2-launch-v4.0/dataset.shtml">New Horizons SDC Post-Launch Checkout Raw Data v4.0</a></li><!-- NH-X-SDC-2-LAUNCH-V4.0 -->
-<li><a href="/holdings/nh-x-sdc-3-launch-v4.0/dataset.shtml">New Horizons SDC Post-Launch Checkout Calibrated Data v4.0</a></li><!-- NH-X-SDC-3-LAUNCH-V4.0 -->
+<li><a href="/holdings/pds4-nh_sdc:launch_raw-v1.0/SUPPORT/dataset.shtml">New Horizons SDC Post-Launch Checkout Raw Data</a> <code>urn:nasa:pds:nh_sdc:launch_raw::1.0</code></li>
+<li><a href="/holdings/pds4-nh_sdc:launch_cal-v1.0/SUPPORT/dataset.shtml">New Horizons SDC Post-Launch Checkout Calibrated Data</a> <code>urn:nasa:pds:nh_sdc:launch_cal::1.0</code></li>
 <li><a href="/holdings/nh-x-swap-2-launch-v2.0/dataset.shtml">New Horizons SWAP Post-Launch Checkout v2.0 - Raw</a></li>
 <li><a href="/holdings/nh-x-swap-3-launch-v2.0/dataset.shtml">New Horizons SWAP Post-Launch Checkout v2.0 - Calibrated</a></li>
 </ul>
@@ -142,8 +143,8 @@ EDIT HISTORY:
 <li><a href="/holdings/nh-j-pepssi-3-jupiter-v1.1/dataset.shtml">New Horizons PEPSSI Jupiter Encounter v1.1 - Calibrated</a></li>
 <li><a href="/holdings/nh-j-rex-2-jupiter-v2.0/dataset.shtml">New Horizons REX Jupiter Encounter Raw Data v2.0</a></li><!-- NH-J-REX-2-JUPITER-V2.0 -->
 <li><a href="/holdings/nh-j-rex-3-jupiter-v1.0/dataset.shtml">New Horizons REX Jupiter Encounter Calibrated Data</a></li><!-- NH-J-REX-3-JUPITER-V1.0 -->
-<li><a href="/holdings/nh-j-sdc-2-jupiter-v4.0/dataset.shtml">New Horizons SDC Jupiter Encounter Raw Data v4.0</a></li><!-- NH-J-SDC-2-JUPITER-V4.0 -->
-<li><a href="/holdings/nh-j-sdc-3-jupiter-v4.0/dataset.shtml">New Horizons SDC Jupiter Encounter Calibrated Data v4.0</a></li><!-- NH-J-SDC-3-JUPITER-V4.0 -->
+<li><a href="/holdings/pds4-nh_sdc:jupiter_raw-v1.0/SUPPORT/dataset.shtml">New Horizons SDC Jupiter Encounter Raw Data</a> <code>urn:nasa:pds:nh_sdc:jupiter_raw::1.0</code></li>
+<li><a href="/holdings/pds4-nh_sdc:jupiter_cal-v1.0/SUPPORT/dataset.shtml">New Horizons SDC Jupiter Encounter Calibrated Data</a> <code>urn:nasa:pds:nh_sdc:jupiter_cal::1.0</code></li>
 <li><a href="/holdings/nh-j-swap-2-jupiter-v4.0/dataset.shtml">New Horizons SWAP Jupiter Encounter Raw Data v4.0</a></li><!-- NH-J-SWAP-2-JUPITER-V4.0 -->
 <li><a href="/holdings/nh-j-swap-3-jupiter-v4.0/dataset.shtml">New Horizons SWAP Jupiter Encounter Calibrated Data v4.0</a></li><!-- NH-J-SWAP-3-JUPITER-V4.0 -->
 </ul>
@@ -162,8 +163,8 @@ EDIT HISTORY:
 <li><a href="/holdings/nh-x-pepssi-3-plutocruise-v2.0/dataset.shtml">New Horizons PEPSSI Pluto Cruise Calibrated Data v2.0</a></li><!-- NH-X-PEPSSI-3-PLUTOCRUISE-V2.0 -->
 <li><a href="/holdings/nh-x-rex-2-plutocruise-v2.0/dataset.shtml">New Horizons REX Pluto Cruise Raw Data v2.0</a></li><!-- NH-X-REX-2-PLUTOCRUISE-V2.0 -->
 <li><a href="/holdings/nh-x-rex-3-plutocruise-v1.0/dataset.shtml">New Horizons REX Pluto Cruise Calibrated Data</a></li><!-- NH-X-REX-3-PLUTOCRUISE-V1.0 -->
-<li><a href="/holdings/nh-x-sdc-2-plutocruise-v2.0/dataset.shtml">New Horizons SDC Pluto Cruise Raw Data v2.0</a></li><!-- NH-X-SDC-2-PLUTOCRUISE-V2.0 -->
-<li><a href="/holdings/nh-x-sdc-3-plutocruise-v2.0/dataset.shtml">New Horizons SDC Pluto Cruise Calibrated Data v2.0</a></li><!-- NH-X-SDC-3-PLUTOCRUISE-V2.0 -->
+<li><a href="/holdings/pds4-nh_sdc:plutocruise_raw-v1.0/SUPPORT/dataset.shtml">New Horizons SDC Pluto Cruise Raw Data</a> <code>urn:nasa:pds:nh_sdc:plutocruise_raw::1.0</code></li>
+<li><a href="/holdings/pds4-nh_sdc:plutocruise_cal-v1.0/SUPPORT/dataset.shtml">New Horizons SDC Pluto Cruise Calibrated Data</a> <code>urn:nasa:pds:nh_sdc:plutocruise_cal::1.0</code></li>
 <li><a href="/holdings/nh-x-swap-2-plutocruise-v3.0/dataset.shtml">New Horizons SWAP Pluto Cruise Raw Data v3.0</a></li><!-- NH-X-SWAP-2-PLUTOCRUISE-V3.0 -->
 <li><a href="/holdings/nh-x-swap-3-plutocruise-v3.0/dataset.shtml">New Horizons SWAP Pluto Cruise Calibrated Data v3.0</a></li><!-- NH-X-SWAP-3-PLUTOCRUISE-V3.0 -->
 </ul>
@@ -187,8 +188,9 @@ EDIT HISTORY:
 <li><a href="/holdings/pds4-nh_swap:pluto_cal-v1.0/SUPPORT/dataset.shtml">New Horizons SWAP Pluto Encounter Calibrated Data</a> <code>urn:nasa:pds:nh_swap:pluto_cal::1.0</code></li>
 <li><a href="/holdings/pds4-nh_swap:pluto_data_summary_plots-v1.0/SUPPORT/dataset.shtml">New Horizons SWAP Pluto Encounter Data Summary Plots</a> <code>urn:nasa:pds:nh_swap:pluto_data_summary_plots::1.0</code></li>
 <li><a href="/holdings/pds4-nh_derived:plutosystem_solar_wind-v1.0/SUPPORT/dataset.shtml">New Horizons Encounter with the Pluto System: Solar Wind Parameters from SWAP Observations</a> <code>urn:nasa:pds:nh_derived:plutosystem_solar_wind::1.0</code></li>
-<li><a href="/holdings/nh-p-rex-2-pluto-v2.0/dataset.shtml">New Horizons REX Pluto Encounter Raw Data v2.0</a></li><!-- NH-P-REX-2-PLUTO-V2.0 -->
-<li><a href="/holdings/nh-p-rex-3-pluto-v1.0/dataset.shtml">New Horizons REX Pluto Encounter Calibrated Data</a></li><!-- NH-P-REX-3-PLUTO-V1.0 -->
+<li><a href="/holdings/pds4-nh_rex:pluto_raw-v1.0/SUPPORT/dataset.shtml">New Horizons REX Pluto Encounter Raw Data</a> <code>urn:nasa:pds:nh_rex:pluto_raw::1.0</code></li>
+<li><a href="/holdings/pds4-nh_rex:pluto_cal-v1.0/SUPPORT/dataset.shtml">New Horizons REX Pluto Encounter Calibrated Data</a> <code>urn:nasa:pds:nh_rex:pluto_cal::1.0</code></li>
+<li><a href="/holdings/pds4-nh_rex:pluto_tnf-v1.0/SUPPORT/dataset.shtml">New Horizons REX Pluto Encounter Tracking and Navigation Files</a> <code>urn:nasa:pds:nh_rex:pluto_tnf::1.0</code></li>
 <li><a href="/holdings/pds4-nh_derived:plutosystem_composition-v1.0/SUPPORT/dataset.shtml">New Horizons Encounter with the Pluto System: Global Color Maps, Image Cubes, and Absorption Band Maps from the LEISA and MVIC Instruments</a> <code>urn:nasa:pds:nh_derived:plutosystem_composition::1.0</code></li>
 <li><a href="/holdings/pds4-nh_derived:plutosystem_atmospherics-v1.0/SUPPORT/dataset.shtml">New Horizons Encounter with the Pluto System: Atmospheric Opacities and Composition, Temperature, Pressure, and Haze Profiles from the LORRI, Alice, and REX Instruments</a> <code>urn:nasa:pds:nh_derived:plutosystem_atmospherics::1.0</code></li>
 <li><a href="/holdings/pds4-nh_derived:plutosystem_geophysics-v1.0/SUPPORT/dataset.shtml">New Horizons Encounter with the Pluto System: Mosaics, Topographic Maps, and Bond Albedo Maps for Pluto and Charon from LORRI and MVIC Observations</a> <code>urn:nasa:pds:nh_derived:plutosystem_geophysics::1.0</code></li>
@@ -222,6 +224,7 @@ EDIT HISTORY:
 <br>The Ring-Moon Systems Node's <a href="https://opus.pds-rings.seti.org" onclick="this.target='_blank'">OPUS search tool</a> can be used to find New Horizons <a href="https://opus.pds-rings.seti.org/#/instrument=New+Horizons+LORRI&widgets=instrument,observationtype,target" onclick="this.target='_blank'">LORRI</a> and <a href="https://opus.pds-rings.seti.org/#/instrument=New+Horizons+MVIC&widgets=instrument,observationtype,target" onclick="this.target='_blank'">MVIC</a> data.
 <br>The Ring-Moon Systems Node's <a href="https://pds-rings.seti.org/viewmaster/volumes" onclick="this.target='_blank'">Viewmaster browsing tool</a> can be used to find New Horizons <a href="https://pds-rings.seti.org/viewmaster/volumes/NHxxLO_xxxx" onclick="this.target='_blank'">LORRI</a> and <a href="https://pds-rings.seti.org/viewmaster/volumes/NHxxMV_xxxx" onclick="this.target='_blank'">MVIC</a> data.
 </p>
+
 <!-- ************************************************** End editing! ************************************************** -->
 <!--#include virtual="/css-n-includes/incl_bottom.inc"-->
 <br>Last updated:

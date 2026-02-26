@@ -34,7 +34,7 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 <!-- 
 ===========================================================================
 EDIT HISTORY:
-
++ 2026-02-26 EMW	added Doc collection to Essential Docs
 + 2025-01-29 EMW	created page
 ===========================================================================
  -->
@@ -67,8 +67,11 @@ EDIT HISTORY:
 
 <h3>Essential Documents</h3>
 <ul>
-<li><a href="ATLAS_Operations_and_Data_Processing.pdf">ATLAS History, Operations and Data Processing</a></li>
-<li><a href="ATLAS_PDS_Bundle_Overview.pdf">ATLAS PDS Bundle Overview</a></li>
+<li><a href="/holdings/pds4-gbo.ast.atlas.survey:document-v1.0/SUPPORT/dataset.shtml">ATLAS Documents Collection</a> <code>urn:nasa:pds:gbo.ast.atlas.survey:document::1.0</code>
+	<ul>
+	<li><a href="/holdings/pds4-gbo.ast.atlas.survey-v1.0/document/ATLAS_Operations_and_Data_Processing.pdf">ATLAS History, Operations and Data Processing</a></li>
+	<li><a href="/holdings/pds4-gbo.ast.atlas.survey-v1.0/document/ATLAS_PDS_Bundle_Overview.pdf">ATLAS PDS Bundle Overview</a></li>
+	</ul></li>
 </ul>
 
 <!-- ************************************************** End editing! ************************************************** -->

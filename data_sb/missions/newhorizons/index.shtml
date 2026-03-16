@@ -35,6 +35,7 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 <!--
 ===========================================================================
 EDIT HISTORY:
++ 2026-03-16 EMW	migrated (PEPSSI) (email sent on 11 Mar, but completed 16 Mar)
 + 2026-02-26 EMW	migrated (SDC, REX)
 + 2025-12-17 EMW	migrated (raw, calibrated) LORRI Pluto Encounter
 + 2025-11-18 EMW	traj v2
@@ -119,8 +120,8 @@ EDIT HISTORY:
 <li><a href="/holdings/nh-x-lorri-3-launch-v3.0/dataset.shtml">New Horizons LORRI Post-Launch Checkout Calibrated Data v3.0</a></li><!-- NH-X-LORRI-3-LAUNCH-V3.0 -->
 <li><a href="/holdings/nh-x-mvic-2-launch-v2.0/dataset.shtml">New Horizons MVIC Post-Launch Checkout v2.0 - Raw</a></li>
 <li><a href="/holdings/nh-x-mvic-3-launch-v2.0/dataset.shtml">New Horizons MVIC Post-Launch Checkout v2.0 - Calibrated</a></li>
-<li><a href="/holdings/nh-x-pepssi-2-launch-v1.1/dataset.shtml">New Horizons PEPSSI Post-Launch Checkout v1.1 - Raw</a></li>
-<li><a href="/holdings/nh-x-pepssi-3-launch-v1.1/dataset.shtml">New Horizons PEPSSI Post-Launch Checkout v1.1 - Calibrated</a></li>
+<li><a href="/holdings/pds4-nh_pepssi:launch_raw-v1.0/SUPPORT/dataset.shtml">New Horizons PEPSSI Post-Launch Raw Data</a> <code>urn:nasa:pds:nh_pepssi:launch_raw::1.0</code></li>
+<li><a href="/holdings/pds4-nh_pepssi:launch_cal-v1.0/SUPPORT/dataset.shtml">New Horizons PEPSSI Post-Launch Calibrated Data</a> <code>urn:nasa:pds:nh_pepssi:launch_cal::1.0</code></li>
 <li><a href="/holdings/nh-x-rex-2-launch-v2.0/dataset.shtml">New Horizons REX Post-Launch Checkout Raw Data v2.0</a></li><!-- NH-X-REX-2-LAUNCH-V2.0 -->
 <li><a href="/holdings/nh-x-rex-3-launch-v1.0/dataset.shtml">New Horizons REX Post-Launch Checkout Calibrated Data</a></li><!-- NH-X-REX-3-LAUNCH-V1.0 -->
 <li><a href="/holdings/pds4-nh_sdc:launch_raw-v1.0/SUPPORT/dataset.shtml">New Horizons SDC Post-Launch Checkout Raw Data</a> <code>urn:nasa:pds:nh_sdc:launch_raw::1.0</code></li>
@@ -139,8 +140,8 @@ EDIT HISTORY:
 <li><a href="/holdings/nh-j-lorri-3-jupiter-v3.0/dataset.shtml">New Horizons LORRI Jupiter Encounter Calibrated Data v3.0</a></li><!-- NH-J-LORRI-3-JUPITER-V3.0 -->
 <li><a href="/holdings/nh-j-mvic-2-jupiter-v2.0/dataset.shtml">New Horizons MVIC Jupiter Encounter v2.0 - Raw</a></li>
 <li><a href="/holdings/nh-j-mvic-3-jupiter-v2.0/dataset.shtml">New Horizons MVIC Jupiter Encounter v2.0 - Calibrated</a></li>
-<li><a href="/holdings/nh-j-pepssi-2-jupiter-v1.1/dataset.shtml">New Horizons PEPSSI Jupiter Encounter v1.1 - Raw</a></li>
-<li><a href="/holdings/nh-j-pepssi-3-jupiter-v1.1/dataset.shtml">New Horizons PEPSSI Jupiter Encounter v1.1 - Calibrated</a></li>
+<li><a href="/holdings/pds4-nh_pepssi:jupiter_raw-v1.0/SUPPORT/dataset.shtml">New Horizons PEPSSI Jupiter Encounter Raw Data</a> <code>urn:nasa:pds:nh_pepssi:jupiter_raw::1.0</code></li>
+<li><a href="/holdings/pds4-nh_pepssi:jupiter_cal-v1.0/SUPPORT/dataset.shtml">New Horizons PEPSSI Jupiter Encounter Calibrated Data</a> <code>urn:nasa:pds:nh_pepssi:jupiter_cal::1.0</code></li>
 <li><a href="/holdings/nh-j-rex-2-jupiter-v2.0/dataset.shtml">New Horizons REX Jupiter Encounter Raw Data v2.0</a></li><!-- NH-J-REX-2-JUPITER-V2.0 -->
 <li><a href="/holdings/nh-j-rex-3-jupiter-v1.0/dataset.shtml">New Horizons REX Jupiter Encounter Calibrated Data</a></li><!-- NH-J-REX-3-JUPITER-V1.0 -->
 <li><a href="/holdings/pds4-nh_sdc:jupiter_raw-v1.0/SUPPORT/dataset.shtml">New Horizons SDC Jupiter Encounter Raw Data</a> <code>urn:nasa:pds:nh_sdc:jupiter_raw::1.0</code></li>
@@ -159,8 +160,8 @@ EDIT HISTORY:
 <li><a href="/holdings/nh-x-lorri-3-plutocruise-v2.0/dataset.shtml">New Horizons LORRI Pluto Cruise Calibrated Data v2.0</a></li><!-- NH-X-LORRI-3-PLUTOCRUISE-V2.0 -->
 <li><a href="/holdings/nh-x-mvic-2-plutocruise-v1.0/dataset.shtml">New Horizons MVIC Pluto Cruise Raw Data</a></li><!-- NH-X-MVIC-2-PLUTOCRUISE-V1.0 -->
 <li><a href="/holdings/nh-x-mvic-3-plutocruise-v1.0/dataset.shtml">New Horizons MVIC Pluto Cruise Calibrated Data</a></li><!-- NH-X-MVIC-3-PLUTOCRUISE-V1.0 -->
-<li><a href="/holdings/nh-x-pepssi-2-plutocruise-v2.0/dataset.shtml">New Horizons PEPSSI Pluto Cruise Raw Data v2.0</a></li><!-- NH-X-PEPSSI-2-PLUTOCRUISE-V2.0 -->
-<li><a href="/holdings/nh-x-pepssi-3-plutocruise-v2.0/dataset.shtml">New Horizons PEPSSI Pluto Cruise Calibrated Data v2.0</a></li><!-- NH-X-PEPSSI-3-PLUTOCRUISE-V2.0 -->
+<li><a href="/holdings/pds4-nh_pepssi:plutocruise_raw-v1.0/SUPPORT/dataset.shtml">New Horizons PEPSSI Pluto Cruise Raw Data</a> <code>urn:nasa:pds:nh_pepssi:plutocruise_raw::1.0</code></li>
+<li><a href="/holdings/pds4-nh_pepssi:plutocruise_cal-v1.0/SUPPORT/dataset.shtml">New Horizons PEPSSI Pluto Cruise Calibrated Data</a> <code>urn:nasa:pds:nh_pepssi:plutocruise_cal::1.0</code></li>
 <li><a href="/holdings/nh-x-rex-2-plutocruise-v2.0/dataset.shtml">New Horizons REX Pluto Cruise Raw Data v2.0</a></li><!-- NH-X-REX-2-PLUTOCRUISE-V2.0 -->
 <li><a href="/holdings/nh-x-rex-3-plutocruise-v1.0/dataset.shtml">New Horizons REX Pluto Cruise Calibrated Data</a></li><!-- NH-X-REX-3-PLUTOCRUISE-V1.0 -->
 <li><a href="/holdings/pds4-nh_sdc:plutocruise_raw-v1.0/SUPPORT/dataset.shtml">New Horizons SDC Pluto Cruise Raw Data</a> <code>urn:nasa:pds:nh_sdc:plutocruise_raw::1.0</code></li>

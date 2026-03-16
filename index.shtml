@@ -46,6 +46,22 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 <h2>New @ SBN</h2>
 <ul class="news">
 
+<!-- 2026.03.11 -->
+<li><span class="date">2026.03.11</span> New Horizons PEPSSI migrated
+<ul>
+<li><a href="/holdings/pds4-nh_pepssi-v3.0/SUPPORT/dataset.shtml">New Horizons PEPSSI Data Archive v3.0</a> <code>urn:nasa:pds:nh_pepssi::3.0</code>
+	<ul>
+<li><a href="/holdings/pds4-nh_pepssi:launch_raw-v1.0/SUPPORT/dataset.shtml">New Horizons PEPSSI Post-Launch Raw Data</a> <code>urn:nasa:pds:nh_pepssi:launch_raw::1.0</code></li>
+<li><a href="/holdings/pds4-nh_pepssi:launch_cal-v1.0/SUPPORT/dataset.shtml">New Horizons PEPSSI Post-Launch Calibrated Data</a> <code>urn:nasa:pds:nh_pepssi:launch_cal::1.0</code></li>
+<li><a href="/holdings/pds4-nh_pepssi:jupiter_raw-v1.0/SUPPORT/dataset.shtml">New Horizons PEPSSI Jupiter Encounter Raw Data</a> <code>urn:nasa:pds:nh_pepssi:jupiter_raw::1.0</code></li>
+<li><a href="/holdings/pds4-nh_pepssi:jupiter_cal-v1.0/SUPPORT/dataset.shtml">New Horizons PEPSSI Jupiter Encounter Calibrated Data</a> <code>urn:nasa:pds:nh_pepssi:jupiter_cal::1.0</code></li>
+<li><a href="/holdings/pds4-nh_pepssi:plutocruise_raw-v1.0/SUPPORT/dataset.shtml">New Horizons PEPSSI Pluto Cruise Raw Data</a> <code>urn:nasa:pds:nh_pepssi:plutocruise_raw::1.0</code></li>
+<li><a href="/holdings/pds4-nh_pepssi:plutocruise_cal-v1.0/SUPPORT/dataset.shtml">New Horizons PEPSSI Pluto Cruise Calibrated Data</a> <code>urn:nasa:pds:nh_pepssi:plutocruise_cal::1.0</code></li>
+<li><a href="/holdings/pds4-nh_pepssi:kem1cruise_raw-v1.0/SUPPORT/dataset.shtml">New Horizons PEPSSI KEM1 Cruise Raw Data</a> <code>urn:nasa:pds:nh_pepssi:kem1cruise_raw::1.0</code></li>
+<li><a href="/holdings/pds4-nh_pepssi:kem1cruise_cal-v1.0/SUPPORT/dataset.shtml">New Horizons PEPSSI KEM1 Cruise Calibrated Data</a> <code>urn:nasa:pds:nh_pepssi:kem1cruise_cal::1.0</code></li>
+	</ul></li>
+</ul></li>
+
 <!-- 2026.02.26 -->
 <li><span class="date">2026.02.26</span> New Horizons SDC and REX migrated
 <ul>

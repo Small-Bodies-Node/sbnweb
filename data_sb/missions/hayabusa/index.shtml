@@ -25,7 +25,7 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 <li>Mission: <a href="https://www.isas.jaxa.jp/en/missions/spacecraft/past/hayabusa.html" onclick="this.target='_blank'">Hayabusa</a> (JAXA)</li>
 <li>NSSDC: <a href="https://nssdc.gsfc.nasa.gov/nmc/spacecraftDisplay.do?id=2003-019A" onclick="this.target='_blank'">Hayabusa</a></li>
 <li>NASA: <a href="https://www.jpl.nasa.gov/missions/hayabusa/" onclick="this.target='_blank'">Hayabusa</a></li>
-<li>SSE: <a href="https://solarsystem.nasa.gov/missions/hayabusa/in-depth/" onclick="this.target='_blank'">Hayabusa</a></li>
+<li>SSE: <a href="https://science.nasa.gov/mission/hayabusa/" onclick="this.target='_blank'">Hayabusa</a></li>
 </ul>
 </div><!-- end class sidebarSection -->
 </div><!-- end id rightcol -->
@@ -36,6 +36,7 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 <!--
 ===========================================================================
 EDIT HISTORY:
++ 2026-03-31 EMW	updated mission link;
 + 2022-08-05 EMW	updated mission link;
 + 2014-11-20 EMW	updated link to Ferret
 + 2013-02-19 EMW	cleaned up SPICE links

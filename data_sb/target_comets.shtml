@@ -23,6 +23,7 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 <ul>
 <li class="list"><a href="#SOHO">SOHO Comet Sungrazers</a></li>
 <li class="list"><a href="#Surveys">Surveys</a><br /><br /></li>
+<li class="list"><a href="#003I">3I/2025 N1 (ATLAS)</a><br /><br /></li>
 <li class="list"><a href="#001P">1P/1682 Q1 (Halley&nbsp;1)</a></li>
 <li class="list"><a href="#002P">2P/1818 W1 (Encke&nbsp;1)</a></li>
 <li class="list"><a href="#004P">4P/1843 W1 (Faye&nbsp;1)</a></li>
@@ -109,6 +110,7 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 <!--
 ===========================================================================
 EDIT HISTORY:
++ 2026-04-01 EMW	Added 3I section; added 2 Lucy LORRI under 3I
 + 2025-06-18 EMW	SOHO SWAN derived v4.0
 + 2025-05-16 EMW	fixed SWAN Derived link to v3.0
 + 2023-06-01 EMW	ROSINA DFMS Time Series Abundances under  67P
@@ -255,6 +257,17 @@ EDIT HISTORY:
 <input type="submit" id="results_0" value="SBN Ferret Search" />
 </form>
 </p>
+
+
+<!-- Target Data ======================================================== -->
+<a name="003I"></a>
+<h2>3I/2025 N1 (ATLAS)</h2>
+<ul>
+<li><a href="/holdings/pds4-lucy.llorri:data_3i_atlas_raw-v1.0/SUPPORT/dataset.shtml">Lucy L'LORRI 3I/ATLAS Raw Data</a> <code>urn:nasa:pds:lucy.llorri:data_3i_atlas_raw::1.0</code></li>
+<li><a href="/holdings/pds4-lucy.llorri:data_3i_atlas_partially_processed-v1.0/SUPPORT/dataset.shtml">Lucy L'LORRI 3I/ATLAS Partially Processed Data</a> <code>urn:nasa:pds:lucy.llorri:data_3i_atlas_partially_processed::1.0</code></li>
+</ul>
+
+
 <!-- Target Data ======================================================== -->
 <a name="001P"></a><!-- checked against Tracking DB 2013-10-21 -->
 <h2>1P/1682 Q1 (Halley&nbsp;1)</h2>

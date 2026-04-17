@@ -19,6 +19,7 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 <!--
 ===========================================================================
 EDIT HISTORY:
++ 2026-04-17 EMW	migrated (LEISA) under 132524 APL
 + 2026-02-26 EMW	migrated NH SDC, REX
 + 2025-12-17 EMW	migrated (raw, calibrated) LORRI Pluto Encounter (6 places)
 + 2025-11-20 EMW	Lucy LTES calibrated
@@ -649,8 +650,8 @@ EDIT HISTORY:
 <a name="132524_APL"></a>
 <h2>(132524)&nbsp;APL</h2>
 <ul>
-<li><a href="/holdings/nh-x-leisa-2-launch-v1.1/dataset.shtml">New Horizons LEISA Post-Launch Checkout Raw Data v1.1</a></li><!-- NH-X-LEISA-2-LAUNCH-V1.1 -->
-<li><a href="/holdings/nh-x-leisa-3-launch-v1.1/dataset.shtml">New Horizons LEISA Post-Launch Checkout Calibrated Data v1.1</a></li><!-- NH-X-LEISA-3-LAUNCH-V1.1 -->
+<li><a href="/holdings/pds4-nh_leisa:launch_raw-v1.0/SUPPORT/dataset.shtml">New Horizons LEISA Post-Launch Raw Data</a> <code>urn:nasa:pds:nh_leisa:launch_raw::1.0</code></li>
+<li><a href="/holdings/pds4-nh_leisa:launch_cal-v1.0/SUPPORT/dataset.shtml">New Horizons LEISA Post-Launch Calibrated Data</a> <code>urn:nasa:pds:nh_leisa:launch_cal::1.0</code></li>
 <li><a href="/holdings/nh-x-mvic-2-launch-v2.0/dataset.shtml">New Horizons MVIC Post-Launch Checkout Raw Data v2.0</a></li><!-- NH-X-MVIC-2-LAUNCH-V2.0 -->
 <li><a href="/holdings/nh-x-mvic-3-launch-v2.0/dataset.shtml">New Horizons MVIC Post-Launch Checkout Calibrated Data v2.0</a></li><!-- NH-X-MVIC-3-LAUNCH-V2.0 -->
 </ul>

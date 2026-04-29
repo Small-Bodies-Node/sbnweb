@@ -43,7 +43,7 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 		<li><a href="https://archives.esac.esa.int/psa/" onclick="this.target='_blank'" class="external">ESA Planetary Sci Archive</a></li>
 		</ul></li><!-- end 'SB Data Elsewhere' -->
 	<li><a href="/data_sb/resources/coordinate_systems.shtml">Coordinate Systems @ PDS-SBN</a></li>
-	<li><a href="/data_sb/resources/release_sched.shtml">Data Release Schedule</a></li>
+	<!-- <li><a href="/data_sb/resources/release_sched.shtml">Data Release Schedule</a></li> --><!-- 2026-04-29 per SBN discussion, remove links to R&A schedule -->
 	<li><a href="/data_sb/resources/designation_formats.shtml">Small Body Designation Formats</a></li>
 	<li><a href="/data_sb/resources/periodic_comets.shtml">Periodic Comet Names &amp; Designations</a></li>
 </ul>

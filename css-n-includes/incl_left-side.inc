@@ -19,7 +19,7 @@
 <li>Data-related Resources
 	<ul>
 	<li>+ <a href="/data_sb/resources/coordinate_systems.shtml">Coordinate Systems @ PDS-SBN</a></li>
-	<li>+ <a href="/data_sb/resources/release_sched.shtml">Data Release Schedule</a></li>
+	<!-- <li>+ <a href="/data_sb/resources/release_sched.shtml">Data Release Schedule</a></li> --><!-- 2026-04-29 per SBN discussion, remove links to R&A schedule -->
 	<li>+ <a href="/data_sb/resources/designation_formats.shtml">Small Body Designation Formats</a></li>
 	<li>+ <a href="/data_sb/resources/periodic_comets.shtml">Periodic Comet Names &amp; Designations</a></li>
 	

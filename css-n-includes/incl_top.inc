@@ -99,7 +99,7 @@ a:active {} /* requires a blank style for :active to stop it being buggy */
 		<li><a href="https://archives.esac.esa.int/psa/" onclick="this.target='_blank'" class="external"><span class="item">ESA Planetary<br />Sci Archive</span></a></li>
 		</ul></li><!-- end fly 'SB Data Elsewhere' -->
 	<li><a href="/data_sb/resources/coordinate_systems.shtml"><span class="item">Coordinate Systems @ PDS-SBN</span></a></li>
-	<li><a href="/data_sb/resources/release_sched.shtml"><span class="item">Data Release Schedule</span></a></li>
+	<!-- <li><a href="/data_sb/resources/release_sched.shtml"><span class="item">Data Release Schedule</span></a></li> --><!-- 2026-04-29 per SBN discussion, remove links to R&A schedule -->
 	<li><a href="/data_sb/resources/designation_formats.shtml"><span class="item">Small Body Designation Formats</span></a></li>
 	<li><a href="/data_sb/resources/periodic_comets.shtml"><span class="item">Periodic Comet Names &amp; Designations</span></a></li>
 </ul>

@@ -167,7 +167,8 @@ a:active {} /* requires a blank style for :active to stop it being buggy */
 
 <div class="clear"></div>
 <!-- BEGIN Maintenance banner -->
-<!--
+<!-- When posting a new banner, remember to remove the "<!--" comment opener on the following line as well as the comment closer following the banner. Replace them to take the banner down. -->
+<!-- 
 <table class="important">
 <tr>
 <td><h1>DOWNTIME ANNOUNCEMENT</h1>

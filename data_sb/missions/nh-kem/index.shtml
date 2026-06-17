@@ -34,6 +34,7 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 <!--
 ===========================================================================
 EDIT HISTORY:
++ 2026-06-17 EMW	Alice migration
 + 2026-05-13 EMW	migration for the mission::3.0
 + 2026-04-17 EMW	migrated (LEISA) 
 + 2026-03-16 EMW	migrated (PEPSSI) (email sent on 11 Mar, but completed 16 Mar)
@@ -96,8 +97,8 @@ EDIT HISTORY:
 <h2>Data Sets</h2>
 <h3>Cruise to First KBO Encounter</h3>
 <ul>
-<li><a href="/holdings/nh-x-alice-2-kemcruise1-v2.0/dataset.shtml">New Horizons ALICE KEM Cruise 1 Raw Data v2.0</a></li><!-- NH-X-ALICE-2-KEMCRUISE1-V2.0 -->
-<li><a href="/holdings/nh-x-alice-3-kemcruise1-v2.0/dataset.shtml">New Horizons ALICE KEM Cruise 1 Calibrated Data v2.0</a></li><!-- NH-X-ALICE-3-KEMCRUISE1-V2.0 -->
+<li><a href="/holdings/pds4-nh_alice:kem1cruise_raw-v1.0/SUPPORT/dataset.shtml">New Horizons Alice KEM1 Cruise Raw Data</a> <code>urn:nasa:pds:nh_alice:kem1cruise_raw::1.0</code></li>
+<li><a href="/holdings/pds4-nh_alice:kem1cruise_cal-v1.0/SUPPORT/dataset.shtml">New Horizons Alice KEM1 Cruise Calibrated Data</a> <code>urn:nasa:pds:nh_alice:kem1cruise_cal::1.0</code></li>
 <li><a href="/holdings/pds4-nh_leisa:kem1cruise_raw-v1.0/SUPPORT/dataset.shtml">New Horizons LEISA KEM1 Cruise Raw Data</a> <code>urn:nasa:pds:nh_leisa:kem1cruise_raw::1.0</code></li>
 <li><a href="/holdings/pds4-nh_leisa:kem1cruise_cal-v1.0/SUPPORT/dataset.shtml">New Horizons LEISA KEM1 Cruise Calibrated Data</a> <code>urn:nasa:pds:nh_leisa:kem1cruise_cal::1.0</code></li>
 <li><a href="/holdings/nh-x-lorri-2-kemcruise1-v2.0/dataset.shtml">New Horizons LORRI KEM Cruise 1 Raw Data v2.0</a></li><!-- NH-X-LORRI-2-KEMCRUISE1-V2.0 -->

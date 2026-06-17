@@ -35,6 +35,7 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 <!--
 ===========================================================================
 EDIT HISTORY:
++ 2026-06-17 EMW	Alice migration
 + 2026-05-13 EMW	migration for the mission::3.0
 + 2026-04-17 EMW	migrated (LEISA) 
 + 2026-03-16 EMW	migrated (PEPSSI) (email sent on 11 Mar, but completed 16 Mar)
@@ -114,8 +115,8 @@ EDIT HISTORY:
 <h2>Data Sets</h2>
 <h3>Post-Launch Checkout</h3>
 <ul>
-<li><a href="/holdings/nh-x-alice-2-launch-v2.0/dataset.shtml">New Horizons ALICE Post-Launch Checkout v2.0 - Raw</a></li>
-<li><a href="/holdings/nh-x-alice-3-launch-v2.0/dataset.shtml">New Horizons ALICE Post-Launch Checkout v2.0 - Calibrated</a></li>
+<li><a href="/holdings/pds4-nh_alice:launch_raw-v1.0/SUPPORT/dataset.shtml">New Horizons Alice Post-Launch Raw Data</a> <code>urn:nasa:pds:nh_alice:launch_raw::1.0</code></li>
+<li><a href="/holdings/pds4-nh_alice:launch_cal-v1.0/SUPPORT/dataset.shtml">New Horizons Alice Post-Launch Calibrated Data</a> <code>urn:nasa:pds:nh_alice:launch_cal::1.0</code></li>
 
 <li><a href="/holdings/pds4-nh_leisa:launch_raw-v1.0/SUPPORT/dataset.shtml">New Horizons LEISA Post-Launch Check Raw Data</a> <code>urn:nasa:pds:nh_leisa:launch_raw::1.0</code></li>
 <li><a href="/holdings/pds4-nh_leisa:launch_cal-v1.0/SUPPORT/dataset.shtml">New Horizons LEISA Post-Launch Check Calibrated Data</a> <code>urn:nasa:pds:nh_leisa:launch_cal::1.0</code></li>
@@ -136,8 +137,8 @@ EDIT HISTORY:
 
 <h3>Jupiter Flyby</h3>
 <ul>
-<li><a href="/holdings/nh-j-alice-2-jupiter-v2.0/dataset.shtml">New Horizons ALICE Jupiter Encounter v2.0 - Raw</a></li>
-<li><a href="/holdings/nh-j-alice-3-jupiter-v2.0/dataset.shtml">New Horizons ALICE Jupiter Encounter v2.0 - Calibrated</a></li>
+<li><a href="/holdings/pds4-nh_alice:jupiter_raw-v1.0/SUPPORT/dataset.shtml">New Horizons Alice Jupiter Encounter Raw Data</a> <code>urn:nasa:pds:nh_alice:jupiter_raw::1.0</code></li>
+<li><a href="/holdings/pds4-nh_alice:jupiter_cal-v1.0/SUPPORT/dataset.shtml">New Horizons Alice Jupiter Encounter Calibrated Data</a> <code>urn:nasa:pds:nh_alice:jupiter_cal::1.0</code></li>
 <li><a href="/holdings/pds4-nh_leisa:jupiter_raw-v1.0/SUPPORT/dataset.shtml">New Horizons LEISA Jupiter Encounter Raw Data</a> <code>urn:nasa:pds:nh_leisa:jupiter_raw::1.0</code></li>
 <li><a href="/holdings/pds4-nh_leisa:jupiter_cal-v1.0/SUPPORT/dataset.shtml">New Horizons LEISA Jupiter Encounter Calibrated Data</a> <code>urn:nasa:pds:nh_leisa:jupiter_cal::1.0</code></li>
 <li><a href="/holdings/nh-j-lorri-2-jupiter-v3.0/dataset.shtml">New Horizons LORRI Jupiter Encounter Raw Data v3.0</a></li><!-- NH-J-LORRI-2-JUPITER-V3.0 -->
@@ -156,8 +157,8 @@ EDIT HISTORY:
 
 <h3>Pluto Cruise</h3>
 <ul>
-<li><a href="/holdings/nh-x-alice-2-plutocruise-v2.0/dataset.shtml">New Horizons ALICE Pluto Cruise Raw Data v2.0</a></li><!-- NH-X-ALICE-2-PLUTOCRUISE-V2.0 -->
-<li><a href="/holdings/nh-x-alice-3-plutocruise-v2.0/dataset.shtml">New Horizons ALICE Pluto Cruise Calibrated Data v2.0</a></li><!-- NH-X-ALICE-3-PLUTOCRUISE-V2.0 -->
+<li><a href="/holdings/pds4-nh_alice:plutocruise_raw-v1.0/SUPPORT/dataset.shtml">New Horizons Alice Pluto Cruise Raw Data</a> <code>urn:nasa:pds:nh_alice:plutocruise_raw::1.0</code></li>
+<li><a href="/holdings/pds4-nh_alice:plutocruise_cal-v1.0/SUPPORT/dataset.shtml">New Horizons Alice Pluto Cruise Calibrated Data</a> <code>urn:nasa:pds:nh_alice:plutocruise_cal::1.0</code></li>
 <li><a href="/holdings/pds4-nh_leisa:plutocruise_raw-v1.0/SUPPORT/dataset.shtml">New Horizons LEISA Pluto Cruise Raw Data</a> <code>urn:nasa:pds:nh_leisa:plutocruise_raw::1.0</code></li>
 <li><a href="/holdings/pds4-nh_leisa:plutocruise_cal-v1.0/SUPPORT/dataset.shtml">New Horizons LEISA Pluto Cruise Calibrated Data</a> <code>urn:nasa:pds:nh_leisa:plutocruise_cal::1.0</code></li>
 <li><a href="/holdings/nh-x-lorri-2-plutocruise-v2.0/dataset.shtml">New Horizons LORRI Pluto Cruise Raw Data v2.0</a></li><!-- NH-X-LORRI-2-PLUTOCRUISE-V2.0 -->

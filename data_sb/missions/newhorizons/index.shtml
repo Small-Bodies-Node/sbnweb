@@ -35,6 +35,7 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 <!--
 ===========================================================================
 EDIT HISTORY:
++ 2026-06-25 EMW	NH migration per TB email
 + 2026-06-17 EMW	Alice migration
 + 2026-05-13 EMW	migration for the mission::3.0
 + 2026-04-17 EMW	migrated (LEISA) 
@@ -206,15 +207,15 @@ EDIT HISTORY:
 <ul>
 <li><a href="https://naif.jpl.nasa.gov/naif/data_archived.html">New Horizons Spice Kernels</a></li><!-- NH-J_P_SS-SPICE-6-V1.0 -->
 <li><a href="/holdings/pds4-nh_derived:ipm_solar_wind-v1.0/SUPPORT/dataset.shtml">New Horizons Primary and Extended Missions: Solar Wind Parameters</a> <code>urn:nasa:pds:nh_derived:ipm_solar_wind::1.0</code></li>
-<li><a href="/holdings/pds4-nh_documents-v4.4/SUPPORT/dataset.shtml">New Horizons Mission Instrument-Specific and Mission-Wide Documents v4.4</a> <code>urn:nasa:pds:nh_documents::4.4</code></li>
-<li><a href="/holdings/pds4-nh_alice:calibration_files-v1.0/SUPPORT/dataset.shtml">New Horizons Alice Reference Files Used in Calibrating Data</a> <code>urn:nasa:pds:nh_alice:calibration_files::1.0</code></li>
+<li><a href="/holdings/pds4-nh_documents-v5.0/SUPPORT/dataset.shtml">New Horizons Mission Instrument-Specific and Mission-Wide Documents v5.0</a> <code>urn:nasa:pds:nh_documents::5.0</code></li>
+<li><a href="/holdings/pds4-nh_alice:calibration_files-v2.0/SUPPORT/dataset.shtml">New Horizons Alice Reference Files Used in Calibrating Data v2.0</a> <code>urn:nasa:pds:nh_alice:calibration_files::2.0</code></li>
 <li><a href="/holdings/pds4-nh_lorri:calibration_files-v1.0/SUPPORT/dataset.shtml">New Horizons LORRI Reference Files Used in Calibrating Data</a> <code>urn:nasa:pds:nh_lorri:calibration_files::1.0</code></li>
 <li><a href="/holdings/pds4-nh_leisa:calibration_files-v1.0/SUPPORT/dataset.shtml">New Horizons LEISA Reference Files Used in Calibrating Data</a> <code>urn:nasa:pds:nh_leisa:calibration_files::1.0</code></li>
 <li><a href="/holdings/pds4-nh_mvic:calibration_files-v1.0/SUPPORT/dataset.shtml">New Horizons MVIC Reference Files Used in Calibrating Data</a> <code>urn:nasa:pds:nh_mvic:calibration_files::1.0</code></li>
 <li><a href="/holdings/pds4-nh_pepssi:calibration_files-v2.0/SUPPORT/dataset.shtml">New Horizons PEPSSI Reference Files Used in Calibrating Data v2.0</a> <code>urn:nasa:pds:nh_pepssi:calibration_files::2.0</code></li>
 <li><a href="/holdings/pds4-nh_sdc:calibration_files-v1.0/SUPPORT/dataset.shtml">New Horizons SDC Reference Files Used in Calibrating Data</a> <code>urn:nasa:pds:nh_sdc:calibration_files::1.0</code></li>
 <li><a href="/holdings/pds4-nh_swap:calibration_files-v1.0/SUPPORT/dataset.shtml">New Horizons SWAP Reference Files Used in Calibrating Data</a> <code>urn:nasa:pds:nh_swap:calibration_files::1.0</code></li>
-<li><a href="/holdings/pds4-nh_swap:trajectory-v2.0/SUPPORT/dataset.shtml">New Horizons Spacecraft Trajectory v2.0</a> <code>urn:nasa:pds:nh_swap:trajectory::2.0</code></li>
+<li><a href="/holdings/pds4-nh_swap:trajectory-v3.0/SUPPORT/dataset.shtml">New Horizons Spacecraft Trajectory v3.0</a> <code>urn:nasa:pds:nh_swap:trajectory::3.0</code></li>
 </ul>
 
 <h3>Related Datasets</h3>

@@ -19,6 +19,7 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 <!--
 ===========================================================================
 EDIT HISTORY:
++ 2026-06-26 EMW	NH migration tweaks per TB email
 + 2026-06-25 EMW	NH migration per TB email
 + 2026-06-17 EMW	Alice migration -- replace Alice under Spectra with bundle
 + 2026-05-13 EMW	migration for the NH mission::3.0
@@ -327,22 +328,21 @@ EDIT HISTORY:
 <li><a href="/holdings/pds4-gbo-c2012_s1_ison:nov2013_hfosc_omr-v1.0/SUPPORT/dataset.shtml">Comet ISON November 2013 HFOSC and OMR Observations Collection</a> <code>urn:nasa:pds:gbo-c2012_s1_ison:nov2013_hfosc_omr::1.0</code></li>
 <li><a href="/holdings/pds4-gbo-c2012_s1_ison:hfosc_solar-analog-v1.0/SUPPORT/dataset.shtml">Comet ISON 2014 Solar Analog Spectroscopy Collection</a> <code>urn:nasa:pds:gbo-c2012_s1_ison:hfosc_solar-analog::1.0</code></li>
 
-<li><a href="/holdings/pds4-nh_lorri-v3.0/SUPPORT/dataset.shtml">New Horizons LORRI Data Archive v3.0</a> <code>urn:nasa:pds:nh_lorri::3.0</code></li>
-<li><a href="/holdings/nh-j-lorri-2-jupiter-v2.0/dataset.shtml">New Horizons LORRI Jupiter Encounter Raw Data v2.0</a></li><!-- NH-J-LORRI-2-JUPITER-V2.0 -->
-<li><a href="/holdings/nh-j-lorri-3-jupiter-v2.0/dataset.shtml">New Horizons LORRI Jupiter Encounter Calibrated Data v2.0</a></li><!-- NH-J-LORRI-3-JUPITER-V2.0 -->
 <li><a href="/holdings/pds4-nh_leisa-v3.1/SUPPORT/dataset.shtml">New Horizons LEISA Data Archive v3.1</a> <code>urn:nasa:pds:nh_leisa::3.1</code></li>
+<li><a href="/holdings/pds4-nh_lorri-v3.0/SUPPORT/dataset.shtml">New Horizons LORRI Data Archive v3.0</a> <code>urn:nasa:pds:nh_lorri::3.0</code></li>
 <li><a href="/holdings/nh-x-lorri-2-launch-v3.0/dataset.shtml">New Horizons LORRI Post-Launch Checkout Raw Data v3.0</a></li><!-- NH-X-LORRI-2-LAUNCH-V3.0 -->
 <li><a href="/holdings/nh-x-lorri-3-launch-v3.0/dataset.shtml">New Horizons LORRI Post-Launch Checkout Calibrated Data v3.0</a></li><!-- NH-X-LORRI-3-LAUNCH-V3.0 -->
 <li><a href="/holdings/nh-j-lorri-2-jupiter-v3.0/dataset.shtml">New Horizons LORRI Jupiter Encounter Raw Data v3.0</a></li><!-- NH-J-LORRI-2-JUPITER-V3.0 -->
 <li><a href="/holdings/nh-j-lorri-3-jupiter-v3.0/dataset.shtml">New Horizons LORRI Jupiter Encounter Calibrated Data v3.0</a></li><!-- NH-J-LORRI-3-JUPITER-V3.0 -->
+<li><a href="/holdings/nh-x-lorri-2-kemcruise1-v2.0/dataset.shtml">New Horizons LORRI KEM Cruise 1 Raw Data v2.0</a></li><!-- NH-X-LORRI-2-KEMCRUISE1-V2.0 -->
+<li><a href="/holdings/nh-x-lorri-3-kemcruise1-v2.0/dataset.shtml">New Horizons LORRI KEM Cruise 1 Calibrated Data v2.0</a></li><!-- NH-X-LORRI-3-KEMCRUISE1-V2.0 -->
 <li><a href="/holdings/nh-x-lorri-2-plutocruise-v2.0/dataset.shtml">New Horizons LORRI Pluto Cruise Raw Data v2.0</a></li><!-- NH-X-LORRI-2-PLUTOCRUISE-V2.0 -->
 <li><a href="/holdings/nh-x-lorri-3-plutocruise-v2.0/dataset.shtml">New Horizons LORRI Pluto Cruise Calibrated Data v2.0</a></li><!-- NH-X-LORRI-3-PLUTOCRUISE-V2.0 -->
+<li><a href="/holdings/pds4-nh_mvic-v3.0/SUPPORT/dataset.shtml">New Horizons MVIC Data Archive v3.0</a> <code>urn:nasa:pds:nh_mvic::3.0</code></li>
 <li><a href="/holdings/nh-x-mvic-2-plutocruise-v1.0/dataset.shtml">New Horizons MVIC Pluto Cruise Raw Data</a></li><!-- NH-X-MVIC-2-PLUTOCRUISE-V1.0 -->
 <li><a href="/holdings/nh-x-mvic-3-plutocruise-v1.0/dataset.shtml">New Horizons MVIC Pluto Cruise Calibrated Data</a></li><!-- NH-X-MVIC-3-PLUTOCRUISE-V1.0 -->
 <li><a href="/holdings/pds4-nh_derived:plutosystem_composition-v1.0/SUPPORT/dataset.shtml">New Horizons Encounter with the Pluto System: Global Color Maps, Image Cubes, and Absorption Band Maps from the LEISA and MVIC Instruments</a> <code>urn:nasa:pds:nh_derived:plutosystem_composition::1.0</code></li>
 <li><a href="/holdings/pds4-nh_derived:plutosystem_geophysics-v1.0/SUPPORT/dataset.shtml">New Horizons Encounter with the Pluto System: Mosaics, Topographic Maps, and Bond Albedo Maps for Pluto and Charon from LORRI and MVIC Observations</a> <code>urn:nasa:pds:nh_derived:plutosystem_geophysics::1.0</code></li>
-<li><a href="/holdings/nh-x-lorri-2-kemcruise1-v2.0/dataset.shtml">New Horizons LORRI KEM Cruise 1 Raw Data v2.0</a></li><!-- NH-X-LORRI-2-KEMCRUISE1-V2.0 -->
-<li><a href="/holdings/nh-x-lorri-3-kemcruise1-v2.0/dataset.shtml">New Horizons LORRI KEM Cruise 1 Calibrated Data v2.0</a></li><!-- NH-X-LORRI-3-KEMCRUISE1-V2.0 -->
 <li><a href="/holdings/nh-x-mvic-2-kemcruise1-v2.0/dataset.shtml">New Horizons MVIC KEM Cruise 1 Raw Data v2.0</a></li><!-- NH-X-MVIC-2-KEMCRUISE1-V2.0 -->
 <li><a href="/holdings/nh-x-mvic-3-kemcruise1-v2.0/dataset.shtml">New Horizons MVIC KEM Cruise 1 Calibrated Data v2.0</a></li><!-- NH-X-MVIC-3-KEMCRUISE1-V2.0 -->
 <li><a href="/holdings/pds4-nh_derived:arrokoth_composition-v1.0/SUPPORT/dataset.shtml">New Horizons Arrokoth Encounter Surface Composition Maps</a> <code>urn:nasa:pds:nh_derived:arrokoth_composition::1.0</code></li>

@@ -34,6 +34,7 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 <!--
 ===========================================================================
 EDIT HISTORY:
++ 2026-06-26 EMW	NH migration tweaks per TB email
 + 2026-06-25 EMW	NH migration per TB email
 + 2026-06-17 EMW	Alice migration
 + 2026-05-13 EMW	migration for the mission::3.0
@@ -142,12 +143,13 @@ EDIT HISTORY:
 
 <h3>KEM2 Cruise</h3>
 <ul>
-<li><a href="/holdings/nh-a-leisa-2-kem2-v1.0/dataset.shtml">New Horizons LEISA KEM2 Raw Data</a></li><!-- NH-A-LEISA-2-KEM2-V1.0 -->
-<li><a href="/holdings/nh-a-leisa-3-kem2-v1.0/dataset.shtml">New Horizons LEISA KEM2 Calibrated Data</a></li><!-- NH-A-LEISA-3-KEM2-V1.0 -->
-<li><a href="/holdings/nh-a-lorri-2-kem2-v1.0/dataset.shtml">New Horizons LORRI KEM2 Raw Data</a></li><!-- NH-A-LORRI-2-KEM2-V1.0 -->
-<li><a href="/holdings/nh-a-lorri-3-kem2-v1.0/dataset.shtml">New Horizons LORRI KEM2 Calibrated Data</a></li><!-- NH-A-LORRI-3-KEM2-V1.0 -->
+
+<li><a href="/holdings/pds4-nh_lorri:kem2_raw-v1.0/SUPPORT/dataset.shtml">New Horizons LORRI KEM2 Cruise Raw Data</a> <code>urn:nasa:pds:nh_lorri:kem2_raw::1.0</code></li>
+<li><a href="/holdings/pds4-nh_lorri:kem2_cal-v1.0/SUPPORT/dataset.shtml">New Horizons LORRI KEM2 Cruise Calibrated Data</a> <code>urn:nasa:pds:nh_lorri:kem2_cal::1.0</code></li>
 <li><a href="/holdings/pds4-nh_pepssi:kem2_raw-v1.0/SUPPORT/dataset.shtml">New Horizons PEPSSI KEM2 Cruise Raw Data</a> <code>urn:nasa:pds:nh_pepssi:kem2_raw::1.0</code></li>
 <li><a href="/holdings/pds4-nh_pepssi:kem2_cal-v1.0/SUPPORT/dataset.shtml">New Horizons PEPSSI KEM2 Cruise Calibrated Data</a> <code>urn:nasa:pds:nh_pepssi:kem2_cal::1.0</code></li>
+<li><a href="/holdings/pds4-nh_rex:kem2_raw-v1.0/SUPPORT/dataset.shtml">New Horizons REX KEM2 Cruise Raw Data</a> <code>urn:nasa:pds:nh_rex:kem2_raw::1.0</code></li>
+<li><a href="/holdings/pds4-nh_rex:kem2_cal-v1.0/SUPPORT/dataset.shtml">New Horizons REX KEM2 Cruise Calibrated Data</a> <code>urn:nasa:pds:nh_rex:kem2_cal::1.0</code></li>
 <li><a href="/holdings/pds4-nh_sdc:kem2_raw-v1.0/SUPPORT/dataset.shtml">New Horizons SDC KEM2 Cruise Raw Data</a> <code>urn:nasa:pds:nh_sdc:kem2_raw::1.0</code></li>
 <li><a href="/holdings/pds4-nh_sdc:kem2_cal-v1.0/SUPPORT/dataset.shtml">New Horizons SDC KEM2 Cruise Calibrated Data</a> <code>urn:nasa:pds:nh_sdc:kem2_cal::1.0</code></li>
 <li><a href="/holdings/pds4-nh_swap:kem2_raw-v1.0/SUPPORT/dataset.shtml">New Horizons SWAP KEM2 Cruise Raw Data</a> <code>urn:nasa:pds:nh_swap:kem2_raw::1.0</code></li>

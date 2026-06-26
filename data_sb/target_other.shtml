@@ -23,6 +23,7 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 <!--
 ===========================================================================
 EDIT HISTORY:
++ 2026-06-26 EMW	NH migration tweaks per TB email
 + 2026-06-25 EMW	NH migration per TB email
 + 2026-06-17 EMW	Alice migration (removed from Sun, Earth, added under Jupiter)
 + 2026-04-17 EMW	migrated (LEISA) under 
@@ -123,8 +124,7 @@ EDIT HISTORY:
 <li><a href="/holdings/pds4-nh_rex:pluto_raw-v1.0/SUPPORT/dataset.shtml">New Horizons REX Pluto Encounter Raw Data</a> <code>urn:nasa:pds:nh_rex:pluto_raw::1.0</code></li>
 <li><a href="/holdings/pds4-nh_rex:pluto_cal-v1.0/SUPPORT/dataset.shtml">New Horizons REX Pluto Encounter Calibrated Data</a> <code>urn:nasa:pds:nh_rex:pluto_cal::1.0</code></li>
 <li><a href="/holdings/pds4-nh_rex:pluto_tnf-v1.0/SUPPORT/dataset.shtml">New Horizons REX Pluto Encounter Tracking and Navigation Files</a> <code>urn:nasa:pds:nh_rex:pluto_tnf::1.0</code></li>
-<li><a href="/holdings/nh-x-rex-2-plutocruise-v2.0/dataset.shtml">New Horizons REX Pluto Cruise Raw Data v2.0</a></li><!-- NH-X-REX-2-PLUTOCRUISE-V2.0 -->
-<li><a href="/holdings/nh-x-rex-3-plutocruise-v1.0/dataset.shtml">New Horizons REX Pluto Cruise Calibrated Data</a></li><!-- NH-X-REX-3-PLUTOCRUISE-V1.0 -->
+
 <li><a href="/holdings/pds4-nh_swap-v3.0/SUPPORT/dataset.shtml">New Horizons SWAP Data Archive v3.0</a> <code>urn:nasa:pds:nh_swap::3.0</code></li>
 <li><a href="/holdings/nh-j-swap-2-jupiter-v4.0/dataset.shtml">New Horizons SWAP Jupiter Encounter Raw Data v4.0</a></li><!-- NH-J-SWAP-2-JUPITER-V4.0 -->
 <li><a href="/holdings/nh-j-swap-3-jupiter-v4.0/dataset.shtml">New Horizons SWAP Jupiter Encounter Calibrated Data v4.0</a></li><!-- NH-J-SWAP-3-JUPITER-V4.0 -->
@@ -446,9 +446,7 @@ EDIT HISTORY:
 <ul>
 <li><a href="/holdings/pds4-nh_alice:jupiter_raw-v1.0/SUPPORT/dataset.shtml">New Horizons Alice Jupiter Encounter Raw Data</a> <code>urn:nasa:pds:nh_alice:jupiter_raw::1.0</code></li>
 <li><a href="/holdings/pds4-nh_alice:jupiter_cal-v1.0/SUPPORT/dataset.shtml">New Horizons Alice Jupiter Encounter Calibrated Data</a> <code>urn:nasa:pds:nh_alice:jupiter_cal::1.0</code></li>
-<li><a href="/holdings/nh-j-lorri-2-jupiter-v2.0/dataset.shtml">New Horizons LORRI Jupiter Encounter Raw Data v2.0</a></li><!-- NH-J-LORRI-2-JUPITER-V2.0 -->
 <li><a href="/holdings/nh-j-lorri-2-jupiter-v3.0/dataset.shtml">New Horizons LORRI Jupiter Encounter Raw Data v3.0</a></li><!-- NH-J-LORRI-2-JUPITER-V3.0 -->
-<li><a href="/holdings/nh-j-lorri-3-jupiter-v2.0/dataset.shtml">New Horizons LORRI Jupiter Encounter Calibrated Data v2.0</a></li><!-- NH-J-LORRI-3-JUPITER-V2.0 -->
 <li><a href="/holdings/nh-j-lorri-3-jupiter-v3.0/dataset.shtml">New Horizons LORRI Jupiter Encounter Calibrated Data v3.0</a></li><!-- NH-J-LORRI-3-JUPITER-V3.0 -->
 <li><a href="/holdings/nh-j-rex-2-jupiter-v2.0/dataset.shtml">New Horizons REX Jupiter Encounter Raw Data v2.0</a></li><!-- NH-J-REX-2-JUPITER-V2.0 -->
 <li><a href="/holdings/nh-j-rex-3-jupiter-v1.0/dataset.shtml">New Horizons REX Jupiter Encounter Calibrated Data</a></li><!-- NH-J-REX-3-JUPITER-V1.0 -->

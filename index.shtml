@@ -46,10 +46,24 @@ ALL of the head, style links, header and menu code is in the include. Edit that 
 <h2>New @ SBN</h2>
 <ul class="news">
 
-
+<!-- 2026.07.14 -->
+<li><span class="date">2026.07.14</span> New Horizons MVIC PDS3 to PDS4 migration
+	<ul>
+	<li><a href="/holdings/pds4-nh_mvic-v4.0/SUPPORT/dataset.shtml">New Horizons MVIC Data Archive v4.0</a> <code>urn:nasa:pds:nh_mvic::4.0</code>
+		<ul>
+		<li><a href="/holdings/pds4-nh_mvic:launch_raw-v1.0/SUPPORT/dataset.shtml">New Horizons MVIC Post-Launch Raw Data</a> <code>urn:nasa:pds:nh_mvic:launch_raw::1.0</code></li>
+		<li><a href="/holdings/pds4-nh_mvic:launch_cal-v1.0/SUPPORT/dataset.shtml">New Horizons MVIC Post-Launch Partially Processed Data</a> <code>urn:nasa:pds:nh_mvic:launch_cal::1.0</code></li>
+		<li><a href="/holdings/pds4-nh_mvic:jupiter_raw-v1.0/SUPPORT/dataset.shtml">New Horizons MVIC Jupiter Encounter Raw Data</a> <code>urn:nasa:pds:nh_mvic:jupiter_raw::1.0</code></li>
+		<li><a href="/holdings/pds4-nh_mvic:jupiter_cal-v1.0/SUPPORT/dataset.shtml">New Horizons MVIC Jupiter Encounter Partially Processed Data</a> <code>urn:nasa:pds:nh_mvic:jupiter_cal::1.0</code></li>
+		<li><a href="/holdings/pds4-nh_mvic:plutocruise_raw-v1.0/SUPPORT/dataset.shtml">New Horizons MVIC Pluto Cruise Raw Data</a> <code>urn:nasa:pds:nh_mvic:plutocruise_raw::1.0</code></li>
+		<li><a href="/holdings/pds4-nh_mvic:plutocruise_cal-v1.0/SUPPORT/dataset.shtml">New Horizons MVIC Pluto Cruise Partially Processed Data</a> <code>urn:nasa:pds:nh_mvic:plutocruise_cal::1.0</code></li>
+		<li><a href="/holdings/pds4-nh_mvic:kem1cruise_raw-v1.0/SUPPORT/dataset.shtml">New Horizons MVIC KEM1 Cruise Raw Data</a> <code>urn:nasa:pds:nh_mvic:kem1cruise_raw::1.0</code></li>
+		<li><a href="/holdings/pds4-nh_mvic:kem1cruise_cal-v1.0/SUPPORT/dataset.shtml">New Horizons MVIC KEM1 Cruise Partially Processed Data</a> <code>urn:nasa:pds:nh_mvic:kem1cruise_cal::1.0</code></li>
+		</ul></li>
+	</ul></li>
 
 <!-- 2026.06.25 -->
-<li><span class="date">2026.06.25</span> NNew Horizons KEM2 K7 release
+<li><span class="date">2026.06.25</span> New Horizons KEM2 K7 release
 	<ul>
 	<li><a href="/holdings/pds4-nh_documents-v5.0/SUPPORT/dataset.shtml">New Horizons Mission Instrument-Specific and Mission-Wide Documents v5.0</a> <code>urn:nasa:pds:nh_documents::5.0</code>
 		<ul>
